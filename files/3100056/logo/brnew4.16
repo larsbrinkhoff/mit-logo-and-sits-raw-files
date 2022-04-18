@@ -1,0 +1,98 @@
+.xgp
+.font 0 30vr
+.font 1 37vrb
+.dummy @
+.he1
+Turtle Geometry
+.HE2
+BROOK3
+.ds
+.adjust
+.ce
+1A Partial Ordering of Student Behaviors With Regards To
+.ce
+Turtle Manipulation
+
+0The ways in which students control the movements of the LOGO 
+turtle is an important aspect of their behavior in the LOGO learning
+environment.  
+In this section, we shall describe the range of student behaviors in
+the "learning environment" of "Turtle Geometry", and relate these
+behaviors to fundamental understandings in mathematics.
+
+We have organized our observations into six general categories:
+.nofill
+.indent 6
+1. Acquiring the sense of command.
+2. Qualitative structuring of the number worlds.
+3. Quantitative structuring of the number worlds.
+4. The "group properties" of the number worlds -- structuring
+   of mathematical operations.
+5. The use of coordinate systems -- the "global structure" of the
+   geometric world.
+6. Theorems and heuristics -- movement towards formal mathematics.
+
+.indent 0
+.adjust
+As we shall see from the summaries of student behaviors that follow in
+chapters 5 and 6, we did not observe all of these behaviors in all students.
+Furthermore, different aspects of thse behaviors were usually combined
+in a particular problem domain in which a student was working.  In
+setting up these categories, we are simplifying the
+complexity and interrelatedness of the actual learning environment
+in order to isolate the particular skills that the students learned.
+Their learning may have been more complex than we are
+indicating here.
+
+11. Acquiring the Sense of Command
+.br
+0Although the idea of "command" may seem quite obvious to an adult
+computer scientist, a beginning student may require some time to
+develop a purposeful sense of deliberately controlling the turtle by
+particular commands.  As one might expect, most students develop a sense of
+command after some degree of initial
+contact with a computer.  Sometimes a student who has developed a sense
+of command with regard to basic turtle instructions, may revert to
+seemingly purposeless behavior when in initial contact with a new
+command or idea.
+
+1Behaviors Observed:
+.br
+11.1 A student sees no connection between commands typed at the computer
+terminal, and the actions of the turtle.
+.br
+Example:0 The student looks only at the text display screen.
+Following a teacher's instruction, s/he may type instructions such as
+FORWARD 100 or RIGHT 45, without looking at the graphics display screen
+to see what the turtle does.  Such a student is likely to be more
+interested in messages typed by the computer such as "YOU HAVEN'T TOLD
+ME HOW TO FD19", than in the motion of the turtle.
+
+11.2. A student types random instructions on the keyboard, and then looks
+to see what the turtle has done.
+.br
+1Example:0 Having as yet no basis for predicting the types of
+inputs that might be useful for controlling the turtle, a student may
+type commands such as
+FORWARD 555 or RIGHT 123, choosing numbers on
+the basis of previously familiar number patterns, or because they are
+easy to type.  The student then looks at the screen to see what has
+happened, but is often confused by seemingly random effects or "OUT OF
+BOUNDS" messages.
+
+11.3 0A student who has seemingly mastered the sense of command with
+regard to turtle commands such as FORWARD and BACK, RIGHT and LEFT,
+etc., reverts to the use of random inputs when given the opportunity to
+make use of a procedure such as POLY or POLYSPI (see section 2 below).
+
+1Example0:  Having not understood the connection of the POLY
+procedure with FORWARD and RIGHT command with which s/he is already
+familiar, the student chooses inputs to POLY such as 123 456 or
+555 555, based on their familiarity with number patterns or
+because they are easy to type.  Working in this way, the student may see
+no consistency between the inputs to POLY and the results obtained, and
+may temporarily lose a sense of controlling the behavior of the turtle.
+
+xxx
+
+

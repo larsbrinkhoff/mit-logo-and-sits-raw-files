@@ -1,0 +1,138 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.so r;r macros
+.tr @
+.ls 2
+.begin_table_of_contents
+.sp 6
+bold(Progress Report: Logo Methods in Science Education )
+bold(Using Low Cost Home Computers [SED - 7919033])
+1January, 1981
+
+
+
+1Principal Investigator: Seymour Papert
+
+
+.chapter "1Summary of Proposed Activities and Progress to Date"
+.br
+0In our proposal we defined the following set of objectives for this project:
+.ls 1
+
+.in .5i
+(1) We will develop and adapt new activities from the current LOGO educational environment based on high resolution, to the present generation of low-cost come computers making use of video based graphics.
+
+(2) We will develop and revise activities in the areas of physics and biology -- both as initial projects for beginners and as "advanced topics" for junior high school students who have had an introduction to LOGO programming.
+
+(3) We will prepare teachers' guides, background information and student booklets, covering both introductory and advanced topics.
+
+(4) We will provide a full implementation of a mini-LOGO -- a subset of LOGO sufficiently limited to be implemented in BASIC -- for at least one presently available low cost computer. In addition we will provide a manual for the adaptation of a sub-set of LOGO to any presently available home computer. 
+
+.in 0i
+.ls 2
+Since the beginning of the project, the situation of LOGO has dramatically changed due to the existance of several new microcomputer implementations. Our laboratory has developed full LOGO implementations for the TI 99/4 and the Apple II microcomputers. Colleagues in France have developed a version for a Z-80 based computer, and the Edinburgh LOGO Group in Scotland has produced an implementation for the TERAK computer - an LSI-11 based computer with high resolution graphics.
+
+The existence of two microcomputer versions of LOGO has enormously furthered our overall objective of making the work of our laboratory available to the public. This should be kept in mind as we describe our progress with regard to the four objectives stated above.
+
+.section "1Adapting LOGO activities to video graphics."
+.br
+0Introductory LOGO activities had previously centered on turtle geometry implemented in high resoloution graphics environments. In adapting these activities to video graphics environments there were two major issues to be confronted and resolved:
+.ls 1
+
+.in .5i
+(a) Would it be possible to make successful use of lower resolution drawing  available with video graphics to make effective use of  turtle geometry activities?
+
+(b) Would it be possible to make successful use of new graphics activities to which video graphics are extremely congenial? In particular, would it be possible to develop successful  introductory LOGO activities based on Sprite graphics - an approach to graphics based on animation rather than drawing?
+
+.ls 2
+.in 0i
+Both of the computer systems that we have used, Apple II and TI 99/4 have allowed a "high resolution" graphics mode which provided a resolution of approximately one-fourth of that which had been available for previous turtle geometry activities. Nonetheless we have found that the great majority of introductory turtle geometry activities can be carried out sucessfully at this level of resolution. Students who engage in introductory turtle geometry activities using Apple or TI LOGO seem to move naturally into more advanced individual projects with the same ease and level of interest as students who used the higher resoloution graphics facilities in the past. Some difficulties arise in connection with certain explorations involving comparison of figures with only minor differences. In essence, there seems to be little practical difference in the effectiveness of turtle geometry activities for students new to LOGO.
+
+The development of introductory activities based on sprite graphics has been a more
+complex challenge.  A "sprite" is a small object which can be given a shape, color, direction and speed.  In the graphic system developed for TI LOGO, there can be as many as thirty-two different sprites moving on the TV screen at any one time. Since sprites do not leave a trace of their motion, conventional turtle geometry with the particular kind of visual feedback it provides has not been possible. On the other hand, the dramatic possibilities of creating visual extravaganzas with moving objects, of developing interactive video games and of creating moving sprites that allow for the expression of a child's fantasy ideas on the TV screen have been extremely appealing to beginning programmers of all ages.
+
+At the Lamplighter School in Dallas, Texas, 400 children between the ages of three and nine have had their first introduction to computers and programming through activities based on sprite graphics. 500 students, grades 2-9, have had similar experiences in six New York City public schools. We have found natural ways to introduce the essential concepts of LOGO programming: procedures and sub-procedures, recursion, planning and debugging, and the use of variables. In fact, the necessity to introduce variable names at an earlier stage to account for the different sprite attributes (particularly sprite number, shape, and color) has helped students acquire concepts involved in variable manipulations at an earlier stage of their work than in turtle geometry.
+
+What is still less clear at this point is the ease with which students move from short term introductory activities to long term individual projects. Because there are more details to be mastered at the earliest stages fewer of the students whose work we have been monitoring have yet begun to engage in long term projects. Some activities which seem to have a great deal of promise for extended projects, but which need more time for development are:
+
+.ls 1
+.in .5i
+1--0 making animated "movies" by changing sprite shapes rapidly
+
+1--0 making video games in which sprites interact with each other
+
+1--0 developing complex fantasy "scenarios" with sprites that 
+combine sprite graphics with turtle drawings, and other
+LOGO "worlds".
+.ls 2
+.in 0i
+.section "1Activities in Physics and Biology"
+.br
+0Preliminary trials of activities involving physics and biology were carried out with sixth and seventh grade students in Brookline last winter and spring. Because these activities made use of an older LOGO environment (using the LSI-11 based General Turtle 3500 LOGO system) we will repeat them again this spring to adapt them to Apple  and TI LOGO.
+
+.section "1Preparation of Teaching Materials"
+.br
+0We are presently preparing student and teacher materials for both Apple and TI LOGO implementations. By the end of this project period we expect to have booklets covering most of the topics in the following outline:
+
+.in .5i
+.nf L
+.keep
+.ls 1
+bold(Outline - TI LOGO Curriculum Materials)
+
+Booklet I  Welcome to LOGO - I - Description of System
+Booklet II  Welcome to LOGO - II - Philosophy
+Booklet III  Mechanics of the System
+Booklet IV  Talking to SPRITES
+Booklet V  Talking to the Turtle 
+Booklet VI  Advanced Turtle  Geometry Projects
+Booklet VII  Tile Graphics 
+Booklet VIII  Interactive Projects 
+Booklet IX  Projects with Words 
+Booklet X   Physics Activities
+Booklet XI  Biology Activities
+Booklet XII  Overall LOGO Glossary and Reference Manual
+.end_keep
+.ls 2
+.fi b
+.in 0i
+
+Materials for Apple LOGO will be similar to those for TI LOGO with the exception of chapters IV and VI since sprite graphics and tile graphics are modes that are possible only in TI LOGO.
+
+Apple LOGO materials and activities are presently being tried in classrooms in Brookline Massachusetts. TI LOGO activities are being tried at Lamplighter School in Dallas and in twelve classrooms in six New York City schools. Feedback from these sites will be incorporated in revised versions of the booklets.
+
+We are currently studying possible mechanisms for publication of these materials by talking with a number of educational publishers. In due course we will submit a publication plan to the National Science Foundation.
+
+.section "1Implementation of Mini-LOGO"
+.br
+0A version of Mini-LOGO has been written in BASIC for the Apple II computer. It makes use of the Apple's high resolution graphics and includes such aspects of LOGO as turtle geometry, procedures, subprocedures, and recursion. Mini-LOGO thus allows a wide range of introductory LOGO activities that involve turtle geometry. Curriculum materials that deal with introductory turtle geometry activities will be compatable with mini-LOGO.
+
+A description of Mini-LOGO and a full listing of the BASIC program for the Apple II will be published as a LOGO memo, available for the cost of printing and handling from our laboratory.  We also expect it to be published as an article in a computer magazine with national distribution. The BASIC listing, and the description of the program will also serve as a guide for implementation of the program on other computers.
+
+.chapter "1Current Problems and Other Developments"
+.br
+0The most significant difficulty faced by the project during its first year was the unexpectedly long time period required for the development of TI LOGO. This necessitated developing preliminary materials, and conducting original trials using older versions of LOGO. Currently, there are two functioning microcomputer versions of LOGO both of which are being actively used by teachers and students.
+
+The existence of full LOGO implementations for both the Apple II and the TI 99/4 computers makes it necessary to write separate materials for both systems. While much of the content of the material is similar, enough details are different to entail a significant extra writing effort, which may reduce the number of booklets produced during the term of this grant. On the other hand, availability of both versions of LOGO insures that the material produced will be useful to many more people throughout the country.
+
+.chapter "1Summary of Work to be Performed During the Rest of the Project"
+.br
+0We plan to write, and revise as many of the booklets listed above as possible. In fact, much of the material presently exists in draft form, so that completion is expected by the end of the current academic year (June, 1981).
+ 
+Since trials of biology and physics activities were conducted with an older system last year, we plan to repeat them in Brookline using Apple LOGO, before writing the booklets for those activities.
+
+Most of these trials and revisions will be carried out by Dan Watt, who continues to be available to the project on a half-time basis until the end of June.
+
+.chapter "1Other Pertinent Information"
+.br
+0One of our major implicit goals was to ensure that both LOGO implementations for microcomputers and materials for use with LOGO would be available to the public through commercial channels. We expect this goal to be realized within the very near future.
+
+Texas Instruments recently announced that their version of LOGO will be available to the public as an option for the TI 99/4 home computer. They will also be distributing a comprehensive users manual and some teaching material based on activities used  in the Lamplighter project.
+
+MIT is also considering methods of distribution of Apple LOGO.
+
+The Edinburgh LOGO Group recently announced the availability of their version of LOGO which is implemented on the Terak system, an LSI-11 based system with high resolution graphics. Their version can be obtained directly from the Department of Artificial Intelligence, University of Edinburgh, Edinburgh, Scotland.
+
+The philosophical basis of LOGO is now readily available in a book by Seymour Papert, the director of this project, entitled Mindstorms: Children, Computers and Powerful Ideas, published by Basic Books. Turtle Geometry, by Professors Harold Abelson and Andrea diSessa will be published this year by the MIT Press. A number of other publishers have indicated to us their intention to publish materials to be used with LOGO. These will be produced privately, and will include material oriented for school use as well as material aimed at the home computer market. These materials are likely to be substantially different - at least in format, and possibly in content - from those we will produce for this project. 
+

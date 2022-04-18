@@ -1,0 +1,248 @@
+.xgp
+.font 0 31vg			
+.font 1 31vgb
+.font 2 sup
+.nofill
+.he1
+^
+.he2
+^
+.ss
+.dummy ^
+.twinch 6
+.tlinch 8.5
+.sp 5
+.ce
+1The Unreachable Word0
+.sp 20
+.ce
+1ABSTRACT0
+.ss
+
+.adjust
+^^^^^We have seen pre-school children entering a new relation with the alphabetic language through their use of computers, a relation where alphabetic symbols work for their purposes as never before possible.  The intelligent optical disc is emerging as an especially promising medium for education applications.  We analyze the extension of Logo language-focussed learning environements into this new medium and conclude there is significant potential for pre-readers' natural learning about the alphabetic language with an intelligent videodisc system.
+.sp 3
+.nofill
+.ce
+Lawler & Papert
+.ce
+Logo Project
+.ce
+M.I.T. A.I. Lab.
+.ds
+.adjust
+.page
+.ce
+1The Unreachable Word0
+
+^^^^^^^^^^Before learning to read, the young child suffers an enormous cognitive imbalance.  She lives in a world of objects and images which she can identify and understands well.  But that world is permeated by mysterious graphic symbols, incomprehensible, unattainable sources of power which others can master but she can not control.  We believe the current frontier technology of the intelligent videodisc can change the child's intellectual environment, bringing the written word within reach by rendering it personally useful.
+.twinch 5.5
+.ss
+"...The major reason why children do not write at the same age as they learn to talk is social.  Stated most simply it is that talking is an important activity to an infant -- relating to other people -- while writing serves no purpose at all in a child's life.  (Indeed, it serves very little that could be called a "personal purpose" in the lives of most adults^!)  My expectation of change is based on a vision of how the computer presence will enter the fabric of the child's life, becoming in a very real sense part of the culture.  A simple vignette may begin to explain what I mean.
+
+^^^^^^^^^^Coletta Lewis, a nursery school teacher at the Lamplighter School in Dallas, Texas, wrote a number of programs to enable three and four year old children to manipulate brightly colored objects on a computer screen by hitting a small number of special keys (marked with arrows to indicate directions of movement and colors to indicate color change.)  The children loved playing these games.  But they soon noticed that the teacher was playing a more complex game.  She could change from one game to another by typing something at the keyboard.  They asked to be allowed to do this.  Ms. Lewis is a gifted teacher and immediately saw a great educational opportunity.  Very soon the children were pecking their way about the whole keyboard, spelling out the LOGO commands that would interrupt one game and set up the next^!  They were on their way towards two new worlds of intellectual endeavor: writing and programming...."
+
+.ri
+Seymour Papert  (1980b)
+
+.ds
+.twinch 6
+We propose here the design of a computer system to help children control the power of the word that is now beyond their grasp.  This computer system, the word worlds machine, will replicate the mixing of alphabetic and pictorial material in a single graphics display (See Figure 1) -- and the child will control it.
+
+^^^^^^^^^^The optical storage device (video-disc) operates in two modes, sequential and fixed-frame.  In the latter operating mode, the device may be thought of as "the world's largest slide tray", with a storage capacity for 54,000 individual pictures.  In sequential mode, the device can reproduce a half hour of continuous action (and is, in this sense, equivalent to a half hour video-tape).  Because currently available video-discs are read-only devices, they can only be used for pre-programmed material.210  This profound limitation leads to the hybrid configuration of Figure 1 where magnetic storage and a signal mixer are introduced to produce a "writable" medium, supplementing the capabilities of the optical disc.  In the following applications, we attempt to make a virtue of this necessity.  Through "mixing" optical frames and magnetically stored information, the word worlds machine presents a systems appearance of video quality pictures with "transparent" writable/erasable overlays.  We judge this overlay capability to be a major system feature and believe it shoud be exploited fully.
+.page
+.ce
+1FIGURE 1
+
+.ce
+Word Worlds Machine220
+.ss
+
+.spread
+/^^^^MAGNETIC DISK STORAGE^^  //^^^^OPTICAL DISK STORAGE^^
+.sp 11
+.ce
+LOGO
+.ce
+LANGUAGE
+.ce
+COMPUTER
+.sp 11
+.spread
+/^^CONTROL^^ /^^SIGNAL^^ /^^VIDEO-ALPHA^^
+.spread
+/^^MONITOR^^ /^^MIXER^^^ /^^DISPLAY^^^^^^
+.sp 5
+POSSIBLE INPUT DEVICES:^^keyboard, slot-machine, touch sensitive display.
+.adjust
+.ds
+.page
+.ce
+1Microworlds and Language0
+
+^^^^^^^^^^In our early example of the floor turtle blocks world, one can see how even infants can be introduced to concrete experiences which embody the idea of information as control.  In the microworlds of mathland there are many other powerful ideas, ranging from the simplicity of repetition and symmetry used as generative heuristics to the analytical probing implicit in the isolation of one variable from others and its incremental variation.  Surely in language, as in mathematics, there are certain very general understandings presupposed in the instructional process; we will examine such general understandings in our exploration for powerful ideas of word worlds.  The advent of computers is a revolution of possibilities, one which permits us to ask what we would like children to know about language.  Logo has given children an experience of number like that of the engineer or mathematician.  Would we like children's experience of the alphabetic language to be like that of the writer or linguist^?
+
+^^^^^^^^^The reconceptualization is less of the sciences of language than it is of what you would like a child to learn about language.  If we would introduce children to the main themes of modern language study, what are they ?  Whatever the scientific paradigm in which he places himself, the modern linguist is concerned with these issues: the words of the language and their meanings (lexicology and semantics); the relationships between words and their parts (morphology) and between words in combination (syntax); and the application of words by their users to some purpose (function).  We could call these themes `content', `form', and `function', but we prefer to use the equivalent language-specific labels, "semantics", "syntactics", and "pragmatics".  We will treat each of these themes as the focus of a specific application design in the following five sections.  "Lexicology", the concern with words as such, is a motif which runs through the developments of the three major themes and will be represented also in a specific application in the following.
+
+.block 2
+^^^^^Who is the person for whom these applications are designed ?  She is a child, a "little kid", no longer an infant.  Whether she goes to school or not, she is a pre-reader.  She may not recognize all the letters of the alphabet and probably can not specify  their names or the phonemes which the letters typically represent.  She can "take turns" with considerable sensitivity and is quite able to use speech to specify for others what she wants them to do for her.
+.page
+.ce
+1Developing Five Applications0
+
+1Pragmatics: Making the Written word Useful0
+
+^^^^^^^^^^Any parent can witness how the infant's language of the vocal mode develops gradually in a cyclic pattern, discriminations being made in what is heard then appearing in what is spoken.  This intra-modal cycle surely represents an important kind of language learning even if it is not the only kind.  If we compare speaking with writing, we can notice that from the infant's birth the sounds she makes have a profound and immediate impact on the world around her.  By contrast, the effect of any scribbles she might produce are nil.  Because speaking has a power of its own, it can enter with listening as a significant element in the intra-modal cycle of learning which characterizes the acquisition of the vocal language.
+
+^^^^^^^^^^The alphabetic language is different from the vocal language.   A child might sense reading as something important to learn, perhaps it might appear as a skill equal in value to listening as a way of making sense of the civilized world, but within the mode of the alphabetic language, writing is an expressive skill so difficult to master and so feeble in application that most people never write anything when they can avoid doing so.  This imbalance in the power of interpretation and production of alphabetic words helps explain why learning to read and write can be so hard, i.e. instruction is separated and out of phase, asynchronous.  This imbalance is an expression of a technological constraint; it exists because writing is hard and the written word has had little instrumental use for children.  The applications we propose will give pre-readers an experience of alphabetic words which expresses their potential instrumental power.  We believe computer use will enhance children's production of alphabetic words and make possible, even make "natural" the synchronous development of that alphabetic language knowledge which supports reading and writing skills. 
+
+^^^^^^^^^^The basic application we propose is a SCANNING application (in computer jargon, file search by generic key).  By this we mean that a computer should locate the relevant, stored information when a child keys an operand value.  For example, if a child keyed some letter string, the computer should present whatever information it has stored under its best match for that string.  From this point in the sequential file, the child would command "paging" forward or backward to locate some specific entry of interest.  The objective of such an application is to exhibit the power of a word as a key to something of value.  More specifically, we propose constructing a file of sparsely labelled pictures ordered alphabetically and accessed sequentially  by generic key through an index.  Keying the letter "R", for example, would point to pictures whose labels might include "rabbit", "rat", and "rooster" and show the first.  A "next" function would show "rat" and "rooster" in sequence.  Experience of such a PICTURES microworld would cut across the instruction based categories of reading and writing. The keying of individual letters, noting the symbols' appearance on the computer display, and watching the video disc frames change in response to this keying is a cluster of activities that do not fit neatly into the dichotomy of "reading and writing".  Their relation to these polar terms is more like the highly variable phases of speaking and listening that characterize the intra-modal learning of the vocal language.  This basic application is the beginning, but not the only one, of a new relationship among pictures, words, and people.  We will return to the theme of pragmatics, for a discussion of richer possibilities, after introducing applications related to the themes of lexicology and semantics.
+
+
+1Lexicology: Making a Real Dictionary for a Child0
+
+^^^^^^^^^^Dictionaries have many uses.  Schools promote them for their spelling authority.  More commonly, people resort to them as a source of information, for definitions of unfamiliar terms, or to sharpen their discrimination between synonomous and related terms, thus:
+.indent 2
+.nofill
+.ss
+1Lexicology0: a branch of linguistics that treats of the signification
+^^^^^and application of words.
+1Lexicography0: the principles and practices of dictionary making.
+.indent 20
+(Webster's Third International)
+
+.indent 0
+.ds
+.adjust
+More rarely, dictionaries are explored for amusement - and occasionally they reward the logomaniac ("one insanely interested in words", OED), thus:
+.indent 2
+.nofill
+.ss
+1Lexicographer0: a writer of dictionaries; a harmless drudge who busies
+^^^^^himself in tracing the original and detailing the signification of words.
+.indent 20
+(Johnson's Dictionary)
+
+.indent 0
+.ds
+.adjust
+The adult uses of a dictionary can be quite different from what has been available to pre-readers.
+
+^^^^^^^^^^Children's dictionaries are aggressively didactic.  One readily at hand, My Little Golden Dictionary, (Reed, l949) contains 265 entries of labelled pictures (with verbal elaborations in a smaller font, e.g. "the APPLE is good to eat/ crisp and juicy and sweet").  The dictionary is introduced this way:
+.indent 2
+.ss
+My Little Golden Dictionary can be used in many ways.  The beginning reader will enjoy it by himself.  A child just on the threshold of reading will enjoy the game of matching pictures with words he knows and also learning new words.  He will become familiar with the alphabet through the large marginal letters.  And even a two year old will enjoy having the words and story-like sentences read to him as he looks at the bright, gay pictures.
+
+.ds
+.indent 0
+.block 2
+Despite the didactic cast, the alphabetic words of the dictionary are secondary to, entirely subordinate to the pictures.  There is no sense in which the alphabetic word can be seen as a key for accessing usuable information.  (Even the more richly textured word books confront this limitation.  See for example, Richard Scarry's Best Word Book Ever.)  A second limitation of children's dictionaries is highlighted  by this entry from The Golden Picture Dictionary (Moore, l972):
+.indent 2
+.ss
+.nofill
+LEG: (1) a leg is the part of the body you stand on, run and walk with.
+^^^You and I have two legs.  But most animals have four legs.
+^^^^^^^(2) a leg is the part of a chair, table or other piece of furniture
+^^^^on which it stands.  Chairs have four legs.
+
+.ds
+.indent 0
+.adjust
+By the time a child can read such entries, the information gained from them is nil (at best).  Printed dictionaries appear to require significant inputs of knowledge before any valuable output can be had from them.
+
+^^^^^^^^^^Intelligent optical disc systems can change the balance of input and output so that young children can realize an information gain from a mechanized dictionary.  Mechanical location of entries will remove the requirement of alphabetical ordering as prerequisite knowledge for dictionary use.  Therefore, it will be possible for pre-readers to use dictionaries in new ways.  How best to  design mechanical dictionaries for children is not yet entirely clear to us, but there are some principles we would use for guidance.  There should be a real information gain possible, given that the access path is through words.  Computer-controlled duration and  fixed-frame sequencing could be used to specify the focus of an entry's picture set.  For entries whose inanity would be embarassing, we might hope to offset our unease by using pictorial variety and humor.  An entry for LEG might show in sequence people with one leg, two legs and three ; quadrupeds, insects, spiders, millipedes, herds of animal legs, herds of people legs.  (Notice that labels attached to such pictures would have two constituents, noun and modifier.)  The design of a pre-readers' dictionary is now possible and should be pursued.  We expect the design of the dictionary data-base to be a labor intensive effort and one where several different approaches ought to be explored.
+
+
+1Semantics: The Arbitrariness of Words0
+
+^^^^^^^^^^As a child browses through the sequential file of the pictures microworld, she will encounter many pictures without labels.  She may want to be able to retrieve some specific unlabelled picture directly.  Doing so would be easy once a label is assigned -- so long as the child can recall the assigned label.  This LABELLING application, a straightforward and highly desirable function of an intelligent optical-disc system, plunges the child into one of the central issues of semantics -- the realtions of words to their meanings.
+
+^^^^^^^^^^Words are conventional signs which indicate referents.  Labels which a child can make (especially those made by a pre-reader) may be expected to be quite idiosyncratic at first.  The assignment of a label would be a convention for two -- between child and computer -- one which the computer will honor.  The machine is tolerant and has a dependable and highly specific memory.  The burden of maintaining her self-created convention will fall on the child.  Consequently, she will become sensitive to the arbitrariness of naming and the constraints on that arbitrariness.  (We distinguish between two different levels of arbitrariness, the essential arbitrariness of conventional names and that apparent "arbitrariness" or irregularity of English orthography whose sources are historical.)
+
+^^^^^^^^^^There are at least three basic constraints on arbitrariness in naming.  The first derives from the child's need to recall the label.  The second and third from the desirability of using labels  which other people can understand and of using labels whose encodings reflect the child's groupings of the pictures they refer to.  It is difficult to remember what is remote from familiar knowledge.  Suppose a child wants to retrieve a picture of a bear.  A little knowledge of the sound-letter correspondences, i.e. that the /b/ of "bear" is encoded as "b", if used to create names, could significantly increase a child's control over the search space by using knowledge of the vocal language.  Thus the alphabetic-phonetic correspondence would be exhibited as a powerful mnemonics for alphabetic naming.  This mnemonic power is a weak but useful constraint on the arbitrariness of naming.  Similarly, the social conventions of standard names are useful constraints for a child to respect.  (How can any adviser help a child find something whose key has been forgotten if the key be arbitrary ?)  The third constraint is organizational.  It would be useful for later retrieval to name pictures of similar things or similar focus with similar names.  Children at computer terminals often use keyboard position as a mnemonic device.  For example, a child might label a teddy bear "qwe" because the letters are grouped in the upper left corner of the standard keyboard.  Thereafter, a child might want to label the picture of a grizzly bear "qweb" because it's a big bear.  As the child's naming begins to approach the conventional standard, we would expect the use of generic names with modifiers to come to the fore (and to be justifiable as a partial solution to the child's own problems of recalling labels).  The development of such naming style would permit the child to create his own logical organization for subsets of pictures within the file.
+
+
+1Pragmatics: A Richer View0
+
+^^^^^^^^^^The most significant outcome of a person's interaction with information is whether or not he makes it his own.  The appropriation of information is what education is about.  What is appropriation like in a computer environment ?  We have often witnessed children copy procedures from one another.  When a procedure is copied, the most common next event is that the copier changes the code as he received it.  This may be a way of fitting it in with his existing procedures or his way of thinking.  Most often the changes are entirely superficial, changing the procedure name or line numbering, for example.  These "editing" changes do mark the procedure as the child's own.  How will the word worlds machine machine help a child appropriate its information ?  It will permit a more controllable relationship between pictures and words.  Some creative case studies of writing development, focussed on "drawing and writing" rather than on "reading and writing" (Graves, 1979), illuminate the ways in which this is important.  We infer from  Graves'  descriptions that  children's primary writing problems are poor control of the placement of words in a space (where a drawing provides the context for the text) and a sense of the poverty of the the alphabetic medium (as witnessed by their pervasive use of special techniques to add the emphasis of speech).  These are precisely the kinds of problems that text editors (even rudimentary ones) make easy to solve.
+
+^^^^^^^^^^Let us suppose children want to ANNOTATE specific frames of the pictures file.  Their notes can be created as an on-line overlay for the picture and stored magnetically.   Letters, words, portions of text, can be treated as objects. Moving these objects about on the screen, making corrections where desired, and inserting new information at will can be made very simple to do.  Emphasis is easy to effect with any (or all) of these techniques: capitalization, underscoring, font size changes, varying fonts (boldface, italic, or fancy fonts), spatial organization, emphatic signs (think of comics -- !!!@@@###&&&!!!), even color specification (if the system be color-capable).  Removing these writing blocks for beginners could give children access to  the expressive power of the alphabetic language.
+
+^^^^^^^^^^We expect that feeling the instrumental power of the written word through labelling activities and the expressive power through annotation will radically change the pragmatics of the child's alphabetic language experience.  
+
+
+1Syntactics: Names, Modifiers, and Actions0
+
+^^^^^^^^^^Some surprising research, done in our own laboratory and otherwheres, establishes there is a very strong sense in which today's pre-readers don't know what "words" are.  (Lawler, 1976, Gibson & Levin, 1975.)  Pre-readers typically use two different criteria in making judgments of wordhood.  With the first, derived from their experience of the vocal language, children use "word" as a label for what adults call "syllable", "word", and "phrase".  Words are, in this first view, possibly meaningful collections of sounds.  Moreover, a single sound, e.g. the /pi/ sound of "puppy", could simultaneously be  part of the word "puppy", the letter-name "P", and the verb "pee".  We named this common pattern of judgment HOMOPHONIC CONFUSION.  A second criterion of wordhood derives from children's experiences of naming.  In this, their judgments were similar to adults' treatment of idiom.  For example, in the idiom, "kick the bucket", adults would judge that there are three words and one idiom, arguing that "bucket" names a thing, "kick" is something one can do, and "the" is a word by convention -- without concern that none of these arguments is obviously related to the meaning of the idiom.  A striking observation, based on this modest study, was that the most advanced pre-readers had begun to use disqualifying arguments, derived from name-based wordhood judgments, to suppress homophonic confusion.  Thus, they would argue that /pi/ could not be a word in "The puppy wants to eat." because it was a part of "puppy".  This meta-linguistic, morphological knowledge was not applied by less advanced pre-readers.  We believe experiences in the pictures world will lead children to develop significantly better articulated morphological and syntactic knowledge than is characteristic of pre-readers now.  Consider the two examples below to appreciate why this might be so.
+
+^^^^^^^^^^Let's suppose a child is creating a label for a picture, say a koala bear, and she encounters a duplicate name because of earlier using the label "bear" for a different picture.  If the child can understand the duplicate name condition (and wants to discriminate between the two pictures for direct access), her obvious solution would be to label the second picture "koala bear" or something of the sort.  Such a response immediately engages the child in creating noun phrases wherein she can discriminate between names and modifiers as she uses them to discriminate between pictures she wants to keep separately accessible.
+
+^^^^^^^^^Thus far we have focussed on the fixed-frame use mode of the optical disc.  It is possible to store and reproduce frame sequences which produce movie-like action.  Imagine secondary files, orthogonal to a keyed sequential main file of pictures.  These secondary or EDDY files could contain the sequence of frames necessary to show limited action.  Suppose, for example, a frame of the main file showed a picture of a boy starting to jump.  An intersecting eddy file, run in sequential mode on command, could show the boy in the act of jumping, then return to the static picture of the main file.  An obvious implementation would have the main frame with primary and secondary labels, "boy" and "jumping".  The operation of the optical disc in its two modes permits the crisp discrimination between nominal and verbal uses of alphabetic words.  This activity would present an experience where the reason for the distinction is so obvious that it would make sense.  The "parts of speech", names, modifiers, and actions, would no longer represent merely an academic distinction.  They would be distinctions of use.  Names would be keys for accessing.  Modifiers would permit finer discriminations which the child herself made.  Actions would be labels for activities executed at the child's command.
+.page
+.ce
+1Review: Microworlds and Language0
+
+^^^^^^^^^^We have sketched five computer-based optical disc applications for pre-readers.  We can call them file SCANNING, dictionary LOOK-UP, picture LABELLING and ANNOTATION, and ACTIVATION.  Each of these applications can be expected to enrich a pre-reader's knowledge of the alphabetic language in ways that are now hardly imagined.  We expect the knowledge constructed from such experiences, being personally engaging, rooted in the child's concrete activities, and language intensive, would significantly enhance and advance the "reading skills" of pre-readers.  Children might well teach themselves how to read before we could analyze their development as pre-readers.  That's a problem we could live with.
+
+^^^^^^^^^^In conclusion, we should note that the word worlds machine has been discussed here as an introductory system for the alphabetic language.  One of our further concerns is designing a system that would be useful in its own right but would be "upward-compatible", i.e. have a systems appearance that would be consonant with the computers already usable by more mature children.  We discuss such systems in the companion paper to this, Precursors to Composition.
+.page
+.ce
+1Notes0
+
+1.^The significance of the limitation and our stance with respect to it was argued as below at the education panel of the 1980 Videodisc Applications Conference:
+.twinch 5.5
+.ss
+"A read only storage device is a dead end.  A `write-once' device would be bad but better.  A `write-once' with selective copy to a new storage device would be a usable but uneconomic advance.  What's really needed is a `write-erase-reorganize' capability.  If the videodisc does not permit modification, i.e. if it is a passive store, however interactively accessed I do not see it as a viable learning tool.  Let's assume, then, a machine which permits addition of new frames to the store. Henry Leiberman's suggestions of using the optical disc as a user-controlled store of computer generated graphics... has promise because it would engage the learner in a constructive activity during which he would also construct knowledge in his mind that is personally significant for him.  Applications with such characteristics are the sort for which we should strive -- rather than the construction of clever systems for manipulating people...."  (American Video Institute, 1980).
+
+.ds
+.twinch 6
+2.^The configuration of the word worlds machine is quite similar to a demonstration system now in place at M.I.T.'s Architecture Machine Group.  Specifically different is our focus on the system language of the computer, the Logo language, which has been designed for easy access by young children.  Any implementation of a Logo pre-reader's disk and accessing system should strive for conceptual as well as surface-feature compatibility with the language standard.
+.page
+.ce
+1References0
+.nofill
+.ss
+American Video Institute.  Report: Interactive Videodisc Conference, 1980.
+^^^New York: American Video Institute, 1980.
+
+Gibson, E. & Levin, H.  The Psychology of Reading.  Cambridge, Mass.:
+^^^The M.I.T. Press, 1975.
+
+Graves, D.  Let Children Show Us How to Help Them Write.  In Visible
+^^^Language, vol.13, no. 1, 1979.
+
+Johnson, S.  Johnson's Dictionary -- A Modern Selection.  Prepared by 
+^^^E. L. McAdam, Jr. & George Milne.  New York: Random House, l963.
+
+Lawler, R.  Pre-readers' Concepts of the English Word.  An M.I.T. S.M.
+^^^thesis in Interdisciplinary Science.  Available from the Artificial
+^^^Intelligence Laboratory as Logo Memo 40.  1976.
+
+Lawler, R.  One Child's Learning: An Intimate Study.  Unpublished doctoral
+^^^dissertation, M.I.T., 1979.
+
+Lawler, R.  Introducing Writing with a Computer.  SIGCUE, July 1980.
+
+Lawler, R.  The Progressive Construction of Mind.  Cognitive Science,
+^^^1981a, 5, 1-50.
+
+Lawler, R.  The Articulation of Complementary Roles.  Submitted for
+^^^publication, 1981b.
+
+Moore, L.  The Golden Picture Dictionary.  New York: Golden Press, l972.
+
+Oxford English Dictionary. Oxford: The Clarendon Press, 1928.
+
+Papert, S.  Mindstorms: Children, Computers, and Powerful Ideas.  New York:
+^^^Basic Books, 1980a.
+
+.block 3
+Papert, S.  Redefining Childhood:  The Computer Presence as an Experiment
+^^^in Developmental Psychology.  In Information Processing 80,
+^^^S. H. Lavington (ed.).  North-Holland Publishing Company, 1980b.
+
+Reed, M. & Osswald, E.  My Little Golden Dictionary.  New York:
+^^^Simon and Schuster, 1949.
+
+Scarry, R.  Richard Scarry's Best Word Book Ever.  New York: Golden Press, 1963.
+

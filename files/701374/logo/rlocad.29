@@ -1,0 +1,418 @@
+.xgp
+.squish
+.font 0 31vg
+.font 1 31vgb
+.font 2 20fg
+.font 3 sup
+.ds
+.twinch 6
+.tlinch 8.5
+.dummy ^
+.he2
+Progressive Construction
+.nofill
+.ce
+1THE PROGRESSIVE CONSTRUCTION OF MIND2
+.sp 30
+.indent 20
+Robert W. Lawler
+Massachusetts Institute of Technology
+
+Logo Project, A.I. Laboratory
+M.I.T. Bldg. NE43-334
+Cambridge, Mass., 02139
+.indent 0
+.sp 2
+running head: Progressive Construction
+.page
+.ds
+.ce
+ABSTRACT0
+.adjust
+
+^^^^^An intensive, naturalistic study tracked one six year old's learning for six months and more.  This document presents addition-related matter from the corpus of that study embedded in an interpretation.  The focus is on the learning processes through which a generally applicable  skill emerges from the integration of knowledge based on  specific, particular experiences.
+.page
+.adjust
+.ce
+"Pas de genese sans structures; pas de structures sans genese."
+.ce
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^J. Piaget
+.ds
+
+
+.ri
+1STUDYING NATURAL LEARNING0
+
+     We follow Piaget's abstruse paradox, arguing by example that one can understand learning with structural conceptions and that one can understand cognitive structures in detail by tracing their development.  Focussing on changes in the organization of distinct and separate cognitive structures,  we explain some significant learning as enhancements of performance which emerge from small changes in structural organization.
+
+     We tried to trace the path of natural learning in a project I named "The Intimate Study".  The subjects, my two children Robby and Miriam, were mainly in my care.  Miriam turned six as the study began; Robby's eighth birthday came a little later.  They were out of school; friends were gone for the summer.  Rather than my being merely their sheperd for a while, we three agreed to engage in a research project at my laboratory.  The children were less subjects of my experiment than colleagues.  The project was NOT confined to the laboratory but came home with us to the heart of my family.  The six months of The Intimate Study created an extensive and detailed corpus of observations.  There were 67 sessions at the Logo laboratory and 24 at home; these were typically 30 to 60 minutes in length. (All were recorded on audio tape and many on video tape).  All the material that relates to Miriam's work during this period has been manually transcribed; such is the basic corpus.  A hundred thirty "vignettes" extend the corpus.  These documents of naturalistic observation - think of them as 3 to 4 page long short stories - attempt to capture what the children were doing outside the laboratory.  Since I did not believe that all the children's relevant and significant learning would take place at my contrivance, I took advantage of living with them to try to understand how learning happened in the settings of their everyday life.  The work included pre and post testing - many of the tests were derived from the experimental tradition of Piaget. (Most are not directly relevant to the specific topic of this article.)  The Intimate Study has been further supplemented by recollection and observations of Miriam's years before the project and her subsequent development.
+
+     From this corpus, I have extracted the following story of Miriam's learning to add and on it erected an interpretation of how that learning happened.  Because the case material presented here deals with simple arithmetic, a reader might believe that our theme is "addition".  Such is not the case.  1You can't learn about learning; you can only learn about learning something.0 [1]  How to add is one of the "somethings" which we observed this child master in our attempts to learn about learning.
+
+
+.page
+.ri
+1THE ORGANIZATION OF DISPARATE STRUCTURES0
+
+     1Our commitment is to explore how disparate, i.e. separate and distinct, structures of knowledge interact and become integrated.0  What are the phenomena that argue there is such disparateness of related cognitive structures ?  This example, based on material from late in the study, shows three different solutions to the "same" problem.  I asked Miriam "how much is seventy-five plus twenty-six ?".  She answered, "Seventy, ninety, ninety-six, ninety-seven, ninety-eight, ninety-nine, one hundred, one-oh-one." (counting up the last five numbers on her fingers).  I continued immediately, "How much is seventy-five cents and twenty-six ?".  She replied, "That's three quarters, four and a penny, a dollar one."  Presented later with the same problem in the vertical form of the hindu-arabic notation (a paper sum), she would have added right to left with carries.  Three different structures could operate on the same problem.  The evidence about the disparateness of structures is that Miriam did not, in fact, apply the result of the first calculation to the second formulation of the problem. Moreover, for a long time she did not relate paper sums to mental calculation at all.  We may infer, further, that structures differ in their analysis of what the significant parts of the problem are and how those parts are manipulated to reach a solution.  The first structure analyzes the problem in terms of multiples of ten and counting numbers.  The second deals with coin denominations and known equivalences.  The third deals with the columns of digits and their interactions.  Observing that how a problem is presented affects which specific structure engages the problem confirms the disparateness of cognitive structures in general.
+
+     How can we think of these disparate cognitive structures ?  I propose for consideration structures I call microworlds; they are called so because they reflect in little, in the microcosmos of the mind, the things and processes of that greater universe we all inhabit [2].  Figure^1 exhibits a microworld of counting knowledge, which I have labelled "COUNT".  "PERSPECTIVE" and "FUNCTIONS" name the two classes of procedures in a microworld.  The perspective is comprised of "ELEMENTS" (represented by the small circles in Figure^1) which are active descriptions.  Such elements derive from antecedents in ancestral perspectives.  "REFINEMENT" is a process by which such elements become progressively differentiated from antecedents in ancestral worlds and from others within the microworld.  For example, at first one might see that coins are countable objects of two sorts, copper and silver (Miriam initially described these as "red" and "gold"), and later learn that the silver coins are counted in special ways, e.g. dimes and nickles are counted by tens and fives (and not vice versa as Miriam counted them at an intermediate point) [3].  The perspective parses a problem.  For instance, if, somehow, the question is raised "seventeen plus six is how much ?", the perspective of the Count world would be those procedures which identify seventeen as a significant part, six as a significant part, and the operation, relationship and output as significant parts of the problem.
+.page
+.ce
+1FIGURE 10
+.page
+     The functions of the microworld is what can happen to those identifiable parts of the problem posed.  The functions are activated when the perspective elements assign values to parts of the problem.  One kind of function is a "well-known-result", e.g. 2^+^3 = 5.  Procedures are functions of a second kind.  In answer to the particular problem of Figure^1, which I posed in the initial test of Miriam's calculation skills, she said, "Well, seventeen (then finger counting by the value of the second addend), eighteen, nineteen, twenty, twenty-one, twenty-two, twenty-three.  Twenty-three is the answer."  This counting knowledge was limited in scope, e.g. though Miriam might add 89 plus 7 by finger counting, she couldn't add 89 plus l4.  Her occasional use of hash marks instead of fingers to work out sums beyond ten testifies to the firm rootedness of this knowledge in one-to-one correspondence.
+
+     A crucial question about knowledge in the mind is "how does it function ?".  We address this issue by tieing the function question to a second technical sense of structure, control structure, which names the location of activity and its passage from one point to another in an organization.   Figure^2 contrasts two kinds of control structures.  The `executive' control structure fits best the traditional view of knowledge, one wherein there is a "problem solver" who mediates between the problems in the world and what is known in the mind.  When a problem impinges on the person, this problem solving homunculus invokes specific, appropriate elements of knowledge to meet the problem's demands.  Activity is localized and passes in turn from one single point to another.  The functional characteristic of knowledge, so seen, is that it is dormant until externally activated.
+
+     In immediate contrast with the traditional view of knowledge, we choose to view the microworlds of mind as inherently active, as searching for problems to work on.  We replace the executive control structure with one based on the competition in parallel of active knowledges.  When a calculation problem arises, the competing microworlds  race for a solution.  We have seen how the mention of a money term ("cents") biased the solution in an earlier example (75 cents plus 26).  Which specific microworld provides a particular solution  would depend also on the particular knowledge the different microworlds embody.  For example, Miriam's Count world could quickly calculate 17 plus 6 but would be stalled by 15 plus 15 (not enough fingers; using hash marks is too cumbersome); the Money world would solve that specific problem quickly with its well known result that two packs of gum (at 15 cents each) could be purchased for 30 cents. (Obviously, any interpretation of behavior in this vein requires an enormously detailed knowledge of what's in the subject's mind lest it be vulnerable to criticism as mere speculation.)  
+.page
+.ce
+1FIGURE 20
+.page
+     It is difficult to imagine any experimental evidence capable of proving that the control structure of mind is of such a competitive sort.  We must currently view the assumption as a tool of interpretation to be judged by how coherently it covers a significant corpus of observations.  Beyond this caveat, however, let me note such a conception of mental control structure is attractive for at least two reasons.  First, in contrast with rule-like formulations (the best developed of which I take to be the production systems of Newell [4]) which either serialize execution completely or, if they permit parallelism in activation, serialize execution, microworlds function in parallel through execution.  (One of Newell's followers might consider microworlds as similar to locally defined production systems). This permits the development of structural diversity, a diversity ultimately capable of organization on a more global scale.  Secondly, the assumption is attractive because it gives some hope, albeit a distant one, of explaining where "the problem solver" comes from.  If we can deal with microworlds and see ways where control structure grows out of the interactions of such bodies, we may have some hope of ultimately explaining the emergence of what looks like an homunculus in the mind.  What we seek is a very specific and relatively precise theory of the emergence of a complicated organization of mind.  To the extent that it argues behavior and development emerge from the interaction of competing microworlds, such would be a species of equilibration theory.
+
+
+.ri
+1A NEW WORLD OF EXPERIENCE0
+
+     If some knowledge comes from experience, new experiences bear special scrutiny for the role they have in engendering new knowledge.  One significant new element in The Intimate Study was Miriam's engagement with the computer systems of Project Logo.  Our working sessions mainly occured at M.I.T.'s Artificial Intelligence Laboratory with computer systems using the Logo language.  The central activity through which children have been introduced to Logo is "turtle geometry".  That children's mathematical world is a geometry of action.  The child specifies commands, e.g. move forward some distance or turn right through some angle, for execution by a computer-driven agent, the "turtle".  The turtle exists in two forms: the first, a mechanical robot turns and moves on the floor; the display turtle, a triangular cursor on a computer video display, responds similarly when commanded to move forward or right.  The turtle is equipped with a pen which will, on command, draw a line as the turtle moves from one place to another.  The commands of movement, rotation, and pen control provide a drawing tool - and one significantly different from children's other experiences because of the pervasive quanitification required by the use of the turtle commands.
+.page
+.ce
+1FIGURE 30
+.page
+     The specialness of 90 (as the number of degrees in a right angle on the Babylonian scale) was unrecognized by Miriam at the beginning of The Intimate Study.  For example, (@ age 6;1) when directed by her brother in a game to turn "right 90", Miriam turned her right foot about 60 degrees, brought her left to it and said "one".  She repeated the action and counted with each "two...three..four..." etc.  Robby gave her instruction in what "right 90" means: "look straight ahead and hold your arm out at your side; jump right around so your feet point where your arm is pointing."  The specific knowledge of what right 90 means and that two executions of right 90 are required to turn around were needed to make line-drawings in turtle geometry.  When used in solving particular problems later, this specific result, i.e. 90 plus 90 equals 180, is a sign that Miriam's knowledge rooted in turtle gometry was implicated because that result was well known to her before she knew the result that 9 plus 9 equals 18. (For example, @6;6 Miriam calculated 96 plus 96, using 90 plus 90 = 180, while days later she still calculated 9 plus 9 by deforming it to 8 plus 8 plus 2.)
+
+     The pervasive quantification of computer experience is evident in Miriam's early play with her favorite computer game, SHOOT.  Consider the square boundary of Figure^3 to be the border of a computer video display.  The circle is a target.  The triangular cursor is the display turtle.  The objective of the game is to rotate the turtle until it points at the target, then to command it to shoot forward some distance so that it lands within the target.  A point is scored when the turtle lands in the target.  Should the turtle miss (for example, by going too far as in Figure^3), a trace would be left on the video display and, after a short time, the turtle would return to its initial location and orientation.  In the incident depicted in Figure^3 (@6;1), Miriam first commanded "right 100".  She judged the turtle had turned too far and compensated with a "left 20".  The command "shoot 200" took the turtle beyond the target, whence it returned to its initial state.  The final command shown on Figure^3 is "right 80".  Notice that in her second turning, Miriam compacted the two earlier turning commands to a single one by doing mental calculation with the decades, these decadal numbers ending in zero.  The particular game she played led her into a world of experience where she performed mental calculations with decadal numbers at nearly every turn.  She did not indulge in mental calculation for its own sake; it was a subordinate task rendered meaningful by being embedded in a task she enjoyed for a variety of other reasons.
+
+     Let's suppose that 1from the experience of computer drawing and playing with SHOOT Miriam was developing a new cognitive structure.0  Figure^4 exhibits my description of what it might be like.  Consider a typical calculation problem for Miriam in this Decadal world of turtle geometry, "55 plus 22 is how much ?" (This might arise where she first turned 55 degrees then decided to turn further, 22 degrees).  The perspective exhibited in Figure^4 analyzes the problem as she formulated it into elements; then a set of functions execute.  I will describe how I infer the calculation goes forward then justify the inference. First, the fifty and twenty are grouped, then stripped of their zeroes.  The modified symbols (for `50' and` 20') are passed down into the prior body of counting knowledge from which a result, `7', is returned.  The `7' is reconstituted as a number of the right order of magnitude, `70' (which accounts for one of the two zeroes stripped from the `50' and `20').  Similarly, the five and two are added by invocation of Count world knowledge.  The two partial results are catenated to produce the answer, an operand value, which Miriam then used in the Logo command.
+.page
+.ce
+1FIGURE 40
+.page
+     What evidence is there that the invocation of analagous counting knowledge was involved in calculating such results ?  Four kinds.  First, Miriam's repertoire of well-known-results did not include these decadal numbers.  Secondly, when she asked me for a result, e.g. 50 plus 20, I would typically respond, "It's like 5 plus 2; you figure it out." then confirm her result.  Third, during such calculations, I often witnessed Miriam counting on her fingers.  Finally, Miriam's pattern of "second guessing" when her first result was suspect indicated she was manipulating symbols without fully understanding their significance.  Some detail is necessary to clarify this observation.  To add the numbers `50' and `20' on one's fingers requires deforming the terms to other representable analogs, i.e. `5' and `2'; thus two zeroes are stripped off.  To reconstitute the Count world results for use in Decadal, a single zero is catenated with `7' to make `70'.  This leaves one zero unused, stripped off and not later reaffixed; such is the "extra zero problem".  The problem surfaced as confusion in several instances similar to the following example. Miriam once added 60 plus 90 as 150 but apparently felt I challenged that result.  She guessed again, "500 ?... 1500 ?"  Whatever the actual representation in Miriam's mind, these second guesses show there was a second zero to which she was sensitive, whose non-representation in the result she couldn't account for; I take that as further evidence calculations proceded as described.
+
+.ri
+1GENESIS AND STRUCTURE0
+
+     The evidence for the manner in which the Decadal  perspective analyzes a problem to elements is based on the interpretation of an incident where this new strucutre came into being, a moment of insight, and on a knowledge of the Decadal world's predecessors.  The moment of insight occured (@ 6;1) while the children were playing with SHOOT.  Robby demanded his turn - they were fighting over who would use the terminal - and Miriam ended up with the piano.  She played the piano with her elbows while they argued about how much to turn the turtle; the numbers 50 and 53 were mentioned frequently.  In this midst of this chaotic scene, Miriam inquired of Robby, "How much is fifty  plus fifty-three^?"  How could Miriam not know such a result ?  Is it not likely she knew fifty cents plus fifty three made up a dollar three ? It could very well be.  The point is that Money world knowledge does not imply the existence of cognate Count world knowledge.  Further, the ability to add on a small addend to a counting number name does not imply that such a number name as fifty three could be analyzed into parts which could then be recombined after operations had been performed on them.  Robby answered Miriam's question, "A hundred and three."  I take the question as evidence that Miriam did not know the answer and interpret it as a request for a specific result.  Robby's answer brought with it an insight - that in the world of turtle geometry fifties can be added together and a unit cut off from one can be subsequently re-affixed by a simple catenation of number names.  Miriam confirmed her insight a moment later by asking, "What is fifty-three plus fifty-three ?" She answered the question immediately herself, "A hundred six."  To appreciate her insight into the catenizability of decadal and unitary number names in a context of addition operations we must relate the incident to Miriam's antecedent microworlds of money and counting.
+
+     The Money world had its roots in Count, but it involved counting with a difference: denominations in coin values (pennies, nickels, dimes, quarters, halves, dollars - these are the elemental things of Miriam's Money world).  The procedures were more complicated and various than those of Count.  For examle, Miriam would calculate her allowance (a nickel for each year of her age) by skip-counting (5, 10, 15, 20, etc.) under finger-counting control (i.e. each finger raised represented one year of her age).  The well-known-results of the Money world were highly particular.  Thus Miriam knew that 15 cents plus 15 cents was 30 cents because each five-pack of her favorite gum cost 15 cents and she knew she could buy two of them with her allowance.  Similarly, the elements of denomination each involved some few well known results, e.g. 2, 3, and 4, quarters were 50 cents, 75 cents and a dollar.  Miriam also knew @6;0 some decade sums from counting dimes, but there is no indication of extensive systematic knowledge of dime-based calculations.  The Money world perspective superposed the irregular denominations of coins on the countable-objects of the Count world perspective.  It's knowledge comprised a specialization of the more general counting knowledge extended in particular directions because of the accidents of the American coinage and Miriam's spending habits.  Even though its genesis occurred before the beginning of The Intimate Study,  we can describe with confidence the Money world as an experience-elaborated "DESCENDENT" of the "ANCESTRAL" Count world.
+
+     The perspective of  the Decadal world embodies a specialization of the idea of denomination first introduced with the Money world.  It is a specialization in the sense that the two significant denominations are tens and ones.  The application of the denomination idea to the decadal numbers representing angles in turtle geometry changed the elements  to which the idea was applied from concrete objects to symbolic objects, i.e. to digits and names for large numbers of uncertain significance.  The insight that the number names, used for counting as well as turtle geometry, could be separated as decades and units for addition then recombined by catenation is by itself evidence that Decadal was closely related to Count.  The frequently repeated advice that she should consider Decadal sums as analagous to the well known results of the Count world demands that we describe Decadal as descended from Count as well as the Money world. This common descent from two ancestors is represented in Figure^5 by the channels of comunication through which the Decadal world may invoke results of both ancestors.  That is, 1THE CONTROL STRUCTURE OF MIND EMBODIES THE GENETIC PATH OF LEARNING0
+
+.ri
+1THE INTRODUCTION OF PAPER SUMS0
+
+     The Intimate Study began with Miriam unable to add 10 plus 20 in the vertical form.   When I posed the question, "How much is ten plus twenty ?",  Miriam answered with confidence, "Thirty".  Her response to the first sum below (a) was quite different, "I^don't^know... twelve hundred ?":2
+.ds
+.nofill
+.indent 10
+.block 7
+^^^^^^^^^^@6;0^^^^^^^^^^^^^^^^^^^@6;9
+
+^^^^^|1|0|^^^^^|3|2|4|^^^^^^^^^^2 2 8 5 7
+^^^^+|2|0|^^^^+|2|1|2|^^^^^^^^^+4 7 3 4 5
+^^^^------^^^^--------^^^^^^^^^------------
+^^^^^| | |^^^^^| | | |^^^^^^^^^^7 0 2 0 2
+^^^^^^(a)^^^^^^^^(b)^^^^^^^^^^^^^^^(c)
+
+.indent 0
+.ds
+.adjust
+0(Despite instruction that she should not "read" the individual digits but should add within the columns and assemble a result from the columnar sums, Miriam's inclination persisted, as the sum (b) from the next session shows: her result was  "five hundred nine" [2+1+4+2 = 9].  We continued to use vertical lines to emphasize the column divisions.)   She received instruction for solving problems such as (c) above by a procedure I call "order free adding" - one based on the very simple idea that it doesn't matter in what order one sums column digits as long as any column interaction is accounted for subsequently.   There were many single digit sums which Miriam did not own as well-known-results, e.g. 8 plus 3.  She would calculate such digit sums on her fingers.  The typical problem Miriam confronted in order free adding presented two multi-digit addends in the vertical form.  Her typical solution began with writing down from left to right the well known results of column sums. Next, Miriam would return to the omitted subproblems and calculate them with her fingers.  When this first pass solution produced multi-digit sums in a column - a formal illegality - Miriam had to confront the interaction of columns, i.e. carrying.  I instructed her to cross off the ten's digit of such a sum and add it as a 1 to the next left column, i.e. to "carry the one".  Following such instruction, Miriam quickly succeeded at solving sums with two addends of any length, e.g. ten digits.  Although she accepted and applied these procedures with less than two hours of instruction, Miriam realized no significant gain for the procedures were subject first to confusion and then to forgetting.
+
+     Why were  Miriam's initial skills with paper sums vulnerable ?  Consider the three representative solutions below:2
+.ds
+.nofill
+.indent 10
+.block 6
+^^^^^^^^^^^^^^^^2^^^^^^^^^3
+^^^^^|3|8|^^^^^|3|8|^^^^^|3|8|
+^^^^+|3|4|^^^^+|3|4|^^^^+|3|4|
+^^^^------^^^^------^^^^------
+^^^^^|6|12|^^^^|8|1|^^^^^|9|9|
+^^^^^^(a)^^^^^^^(b)^^^^^^^(c)
+
+.ds
+.indent 0
+.adjust
+0The first (a) shows no integration of columnar sums[5]; the second (b) shows a confusion over which digit to "put down" and which to "carry" (with an implicit rule-like slogan behind the action).  The third (c), a conservation response, is an invention of Miriam's which will be described more fully below.  If you don't already  understand the meaning of the rule, "put down the N and carry the one" why should you prefer that to a comparable rule, "put down the 1 and carry the N" (as exemplified in (b) above).  Miriam was confusible in the sense that she chose, with no regularity and no apparent reason, to apply both these rules.  Although frequently instructed  in the former rule, she did not remember it.  The rule-like formulation made no direct contact with her underlying microworld structures.  Without support from "below", the rule could not be remembered.  Miriam eliminated her confusion by inventing a carrying procedure that made sense to her.  "Reduction to nines", her idiosyncratic carrying procedure shown in (c) above, satisfied the formal constraint that each column could have only a single digit in the result by "reducing" to a "9" any multi-digit column sum and "carrying" the "excess" to the next left column.  (Thus 38 plus 34 became 99 through 12 reducing to a 9 with a 3 carried, i.e. added to the two threes of the ten's place.)  Miriam's invention of this non-standard procedure @6;2 I take as weighty evidence that characterized her understanding of numbers and addition in the vertical form.  (The latter we will discuss shortly.)  About numbers we may conclude she saw the digits as representing quiddities which ought to be conserved, as did the numbers of the Count world.  That columnar sums were achieved by finger counting or by recall of well-known-results further substantiates the relation of paper sums to numbers of the Count world.  Let us declare, then, that these experiences led to the development of a cognitive structure (we call it the PAPER-SUMS-world), a direct descendent of the Count world.
+
+    Miriam did not understand "carrying" as being at all related to place value.  The numbers within the vertical columns did not relate to those of any other column in a comprehensible way.  Despite my initial criticism of "reduction to nines"  - by asking whether she was surprised or not that all her answers had so many nines in them - Miriam was strongly committed to this method of carrying.  For Miriam, at this time, addition in the vertical form had nothing to do with the Money or Decadal sums she achieved through mental calculation.  "Right" or "wrong" was a judgment applicable to a calculation only in the terms of the microworld wherein it was going forward.  We conclude then that the Paper-sums-world shows a diverging line of descent from Miriam's counting knowledge, diverging with respect to those other microworlds which involved mental calculation.
+
+     The final point, the more general one, is that what "made sense" to Miriam completely dominated what she was told.  She could not remember a rule with arbitrary elements (i.e. an incomprehensible specification of what to "put down" and what to "carry").  Why is it that a rule "put down the N and carry the 1" didn't make sense ?  How can we recapture a sense of what that must have seemed like ?  To her, a number represented a collection of things with a name, e.g. "12" was a name by which reference could be made to a collection of twelve things.  Numbers may have seemed to her as words do to us, things which cannot be decomposed without destroying their signification.  If you divide the word "goat" into "go" and "at", you have two other words not sensibly related to the vanished goat.  Similarly, from our common perspective, if you don't see the `1' as a `10' when you decompose a `12' into a `1' and `2', you lose `9'; unless you appreciate the structured representation, the decomposition of 12 can make no more sense than cutting up a word.  What appears as forgetting in Miriam's case  is an interference of equilibration processes, i.e. one where what makes sense in terms of ancestral cognitive structures dominates over what is inculcated as an extrinsic rule.  (We don't claim here to offer a theory of forgetting.  Competition from sensible ideas of long dependability is a very good reason, however, for forgetting what you're told but can't comprehend.)
+
+.ri
+1THE CARRYING BREAKTHROUGH0
+
+     The "carrying problem" was not restricted to Paper-sums and was, in fact, first resolved among the microworlds of mental calculation.  Although she could add double digit numbers that involved no decade boundary crossing (e.g. 55 plus 22), Miriam's Decadal world functions failed with sums only slightly different, e.g. 55 plus 26.  Sums of this latter sort initially produced results with illegal numbers names, i.e. 55 + 22 = 70:11 ("seventy-eleven").  In playing with SHOOT, precision was not required.  Miriam's typical "fix" for this problem was to drop one of the unit's digits from the problem and conclude that 55 + 26 = 76 was an adequate solution.  Miriam could, of course, cross decade boundaries by counting, but this Count world knowledge was not used for a long time in conjunction with her Decadal world knowledge.  Miriam's resolution of one carrying problem became evident to me in her spontaneous presentation of a problem and its solution (@6;3;23).  She picked up some of her brother's second grade homework and brought it to me:
+.nofill
+.ds
+.indent 2
+.block 6
+Miriam: Dad, twenty eight plus forty eight is seventy six, right ?
+Bob:    How did you figure that out ?
+Miriam: Well, twenty an forty are like two and four.  That six is like sixty. 
+    We take the eight, sixty-eight (and then counting on her fingers) sixty-nine,
+    seventy, seventy-one, seventy-two, seventy-three, seventy-four,
+    seventy-five, seventy-six.
+.indent 0
+.ds
+.adjust
+Here was clear evidence that Miriam had solved one carrying problem by relating her Decadal and Count microworlds.   When and how did that integration occur ?
+
+     The corpus of The Intimate Study is sufficiently rich in detail that I have been able to trace to a moment of insight Miriam's integration of formerly disparate microworlds.  We were on vacation at the time.  I felt Miriam had been working too hard at the laboratory and was determined that she should have a rest from our experiments.  I was curious, however, about the representation development of her finger counting and raised the question one day at lunch (@6;3;16):
+.ds
+.nofill
+.indent 2
+Bob:    Miriam, do you remember when you used to count on your fingers 
+   all the time ?  How would you do a sum like seven plus two ?
+Miriam: Nine.
+Bob:    I know you know the answer - but can you tell me how you used to 
+   figure it out, before you knew ?
+Miriam: (Counting up on fingers) Seven, eight, nine.
+Bob:    Think back even further, to long ago, to last year.
+Miriam: (Miriam counted to nine with both addends on her fingers - leaving
+   the middle finger of her right hand depressed.)  But I don't do that
+   any more.  Why don't you give me a harder problem ?
+Bob:    Thirty seven plus twelve.
+Miriam: (With a shocked look on her face) That's forty-nine.
+.ds
+.indent 0
+.adjust
+Something about this problem and result surprised Miriam.  I recorded this situation and her reaction in a Vignette; I did not appreciate it as especially significant at that time.
+
+     When the status of a moment of insight is assigned, this moment of insight can be judged as significant only in the context of an interpretation.  Here is an abstract of the methodology. The interpretation begins by noticing in behavior evidence of two different states of cognitive structure.  For example, Miriam was able to sum 48 plus 28 by finger counting where previously she had dropped one of the units' digits in such a problem. Then the interpretation procedes in the detailed analysis of the corpus (i.e. the examination of every item of overt behavior possibly related to the state change) to determine in what situations and how rapidly the change of state became manifest.  When a moment of insight is assigned to an incident, such as the finger counting incident above, the method reexamines the corpus for conflicting or supporting evidence.  One hopes, with a final interpretation, to find only supporting evidence, as the following.  During the remainder of our vacation, Miriam pestered me to do some addition experiments.  I resisted to give her a rest, and her pestering intensified.  As we drove back from our vacation, she made me promise to do an experiment as soon as we reached home: that day she brought to me the problem of 28 plus 48 described above.  Miriam clearly owned some new knowledge she wanted to employ.  It is the rich corpus of The Intimate Study, conjoined with its detailed analysis that permits me to ascribe with confidence a particular change in cognitive structure to a specific situation.
+
+     How should we characterize this insight ?  Preceisely what was it that Miriam saw ?  Think of the performance of the Decadal world: the problem "thirty-seven plus twelve" would be solved thus, "thirty plus ten is forty; seven plus two is nine; forty nine."  The Decadal world would have produced a perfect result.  Miriam had recently become able to decompose numbers such as "twelve" into a "ten" and a "two".  This marked a refinement of the Count world perspective.  If we imagine the calculation "thirty seven plus twelve" proceding in the Count world - with the modified perspective able to "see the ten in the twelve" - Miriam would say "thirty seven (that's the first number of the Count world perspective), plus ten is forty seven (then counting up on her fingers the second addend residuum) forty eight, forty nine".  Such a Count world calculation yields a perfect answer.  We are not surprised that the answer is the same as that of the Decadal world, but I believe the concurrence surprised Miriam. We can say that Miriam experienced an insight (to which her "shocked look" testifies) based on the surprising confluence of results from apparently disparate microworlds. `Insight' is the appropriate common word for the situation (and I will continue to use it where no confusion is likely), but its range of common usage extends so far as to prohibit its technical use.  Thus I introduce a new name, the elevation of control, as the technical name for the learning process exemplified here[6].  The ELEVATION OF CONTROL names the creation of a new control element which subordinates, in the sense of permitting their controlled invocation, previously independent microworlds; some experiences of insight are the experienced correlates of control elevation.
+
+     The character of control elevation is revealed in the example.  The numbers thirty-seven and twelve were of such a magnitude as would have normally engaged Miriam's Decadal world.  Recall she had just been finger counting (a Count world function) and Decadal could  calculate the sum as well.  If both microworlds were actively calculating results and simultaneously achieved identical solutions, the surprising confluence of results - where none should have been expected - could spark a significant cognitive event: the changing of a non-relation into a relation, (which is the quintessential alteration required for the creation of new structure [7]).  The sense of surprise attending the elevation of control is a direct consequence of a common result being found where none was expected.  The competition of microworlds, which usually leads to the dominance of one and the surpression of others, also presents the possibility of cooperation replacing competition.  So we see, in the outcome, where subsequently Decadal begins a calculation and Count completes it.  This conclusion, howevermuch it is based on a rich interpretation, is an empirical observation.  Where we expected development in response to incrementally more challenging problems, we found this form of insight: cognitive reorganization from the redundant solution of simple problems.
+
+.ri
+1COORDINATING AND TASK-ROOTED STRUCTURES0
+
+     The elevation of control, a minimal change which could account for the integration of microworlds witnessed by Miriam's behavior, would be the addition of a control element permitting the serial invocation of the Decadal world and then the Count world.  Let us declare at this moment of insight the formation of a new microworld, the SERIAL world.  The perspective of the Serial world analyses a problem into a "part-for-Decadal" and a "residuum" (e.g. 28 plus 48 would be regrouped as a part for decadal [28 plus 40] and a residuum [7]).  The functions of this world first invoke Decadal; upon return of the Decadal partial result, they invoke Count to complete the sum.  Structurally, the Serial world is similar to its predecessors, but functionally and genetically it is quite different.  We may note that the Count world is rooted in one-to-one correspondence, the Money world is committed to a coinage-rooted perspective and that the Decadal world handles problems of a magnitude encountered in the Babylonian scale of angles.  These three are task-rooted structures (and the Paper-sums world is another). Microworlds whose perspective elements are descriptions of things, speculations about the relations of which may be verified or disconfirmed by straight-forward experiments, are TASK-ROOTED.  The knowledge which such worlds constitute is constructed through experience by elemental description refinement on a perspective descended from an ancestral world.  Such a world may have only a single ancestor, e.g. the Money world's sole ancestor is Count. The Serial world is of marked contrast.  Coordinating other microworlds, microworlds such as Serial must have at least two ancestors.  Further, the elements of the Serial world perspective are not descriptions of things in the world of common experience but are descriptions of the perspectives of the coordinated microworlds.  The Serial world functions by invoking the subordinated microworlds and not by recall of locally well-known-results or execution of local procedures.  Whereas the generation of the task rooted worlds involves both insights and progressive familiarization with what can be done to the significant elements of the microworlds, the Serial world is so simple as to be complete at its inception.  Finally, 1the problem confronted at the moment of insight (37 plus 12) did NOT require the insight to solve it.  In this specific sense, the cognitive development was "accidental" as opposed to being experience based. 0  In a second sense, it was not accidental at all, for it depended upon the simultaneous engagement of robust ancestral knowledges.  We will return to this issue in our concluding remarks.
+
+
+     Although the Serial world is a minimal change of structure, its integration of subordinated microworlds permitted a significantly enhanced calculation performance, one so striking as to support the observation that a new functional level of calculation emerged from the new organization. This is especially evident where knowledge is articulated by proof.  Consider this example @6;6.  Miriam and Robby (her senior by two years and himself no slouch at calculation) were making a clay by mixing flour, salt and water.  They mixed the material, kneaded it, and folded it over.  Robby kept count of his foldings.  With 95 plies, the material was thick.  He folded again, "96", then cutting the pile in half, flopped the second on top of the first and said, "Now I've got 96 plus 96".  Miriam interjected, "That's a hundred ninety two."  Robby couldn't believe her result and called to his mother to find if Miriam could possibly be right.  Miriam responded first, "Robby, we know ninety plus ninety is a hundred and eighty.  Six makes a hundred eighty six.  (Then counting on her fingers) One eighty-seven, one eighty-eight, one eighty-nine, one ninety, one, ninety-one, one ninety-two."  We can see the Decadal well-known-result (90 plus 90) as a basis for this calculation and its relation to her counting knowledge.  (Both these points support the argument that Miriam's new knowledge was specifically of controlling pre-existing microworlds.)  Robby was astounded - and we too should try a preserve a sense of astonishment in order to remain sensititve to how small a structural change permits the emergence of a new level of performance.
+.page
+.ce
+1FIGURE 50
+.page
+     The advent of the Serial world marks the furthest reach of Miriam's mental calculation skills during The Intimate Study.  Figure^5 summarizes the development of the mental calculation cluster of microworlds.  The genetic structure, the descent of a microworld from its ancestors, is preserved in the functioning control structure of the mind.  1Task-rooted and control microworlds compete among themselves in a race for solution,0 a race open to bias by the presentation of the problem, and they invoke the knowledge of ancestral microworlds where appropriate.  (Such is conceivable even when an invoked ancestor is simultaneously a competitor.)  1The structure is of a mixed form, basically competitive but hierarchical at need.0  The vision of mind, the system of cognitive structures, presents disparate microworlds of knowledge based on particular experiences.  The elevation of control functions to integrate the disparate microworlds.  Most striking is the observation that the moment of insight resulted from solving a problem for which either of two competing microworlds was adequate.  That is, the elevation of control was NOT necessity driven but rather derived from the surprising confluence of results where no such agreement between disparate structures was expected.
+
+.ri
+1PAPER SUMS AND MENTAL ARITHMETIC0
+
+     The core of The Intimate Study came to an end without Miriam having learned to add, in the narrow sense of using the standard algorithm with the vertical form of the hindu-arabic notation, but she did learn to do so subsequently.  In the intervening months, she returned to school (first grade) and chose to do the  school work scheduled for her grade.   Typical calculation problems she confronted were: 2 + 3 = [ ]; if John had 7 cents and bought a nickel candy, how much would he have left ?   Miriam was offered the choice of doing more advanced work.  She chose the standard material (even though she complained privately to me of boredom) so that she would not be separated from her friends or be marked as different from them.  A bad winter that year left us snow bound for a week or more.  We extended The Intimate Study (@6;9) for those snow bound days with several experiments during which Miriam learned to add, in the narrow sense.
+
+     The objective of these late sessions was to lead Miriam to a vision of carrying as making sense in terms of her appreciation of the representation.  In the midst of one session, I posed the problem, "how much is 14 plus 27 ?" by writing in the vertical form (a).  Miriam calculated the answer mentally and wrote "41" on the chalkboard.  I continued, "I want you to look at the problem a different way (writing 10 + 4 and 20 + 7) (b).  Can you see the 10 in the 14 ?  Can you see that 10 plus 4 is 14 ?".  Miriam responded, "Sure," and writing "= 14" and "=27" she concluded, "and the answer is 41; we did that already."  I tried a different tactic:2
+.ds
+.nofill
+.indent 10
+.block 5
+^^^^^14^^--->^^^10 + 4^^^=^^^14
+^^^^+27^^--->^^+20 + 7^^^=^^^27
+^^^^----^^^^^^---------^^^^^----
+^^^^^41^^^^^^^^^30^+^11^^^^^^41
+^^^^^^^^^^^^^30^+^10^+^1
+^^^^^(a)^^^^^^^^^^(b)^^^^^^^^(c)
+.ds
+.indent 0
+0
+^^^^Bob:^^^^Now how much is the ten plus twenty ?
+^^^^Miriam:^Thirty.
+^^^^Bob:^^^^(writes `30 +' in the answer line of (b).)
+^^^^Miriam:^Plus...Oh (tapping `4' first then `7') seven and four.
+^^^^Bob:^^^^How much is that ?
+(1)^Miriam:^Thirty-seven (then using her fingers) thirty-eight, thirty-nine,
+^^^^^^^^^^^^forty, forty-one. (Points to the answer in (a).) `41'.
+^^^^Bob:^^^^How much is seven and four ?
+^^^^Miriam:^(Pause) Eleven.
+^^^^Bob:^^^^Will you write down the `11' ?
+^^^^Miriam:^(She does so.) Eleven.
+^^^^Bob:^^^^Is there a ten in the eleven ?
+^^^^Miriam: Yes.  Equals forty-one (writing `41' in (c).).
+^^^^Bob:^^^^What you have to see, Miriam, is that the eleven there
+^^^^^^^^^^^^is a ten plus a one. (writes `10 + 1' under `11' in (b).)
+^^^^Miriam:^Yeah ?
+^^^^Bob:^^^^And whenever you get a ten in something like an eleven or
+^^^^^^^^^^^^fourteen, you have to add it with the `thirty's (writes
+^^^^^^^^^^^^a second `30 +' before the `10 + 1' in (b).)
+^^^^Miriam:^Why not the `twenty's ?
+(2)^Bob:^^^^So thirty plus ten --
+^^^^Miriam:^(Interrupting) Is forty.
+^^^^Bob:^^^^And then plus one --
+^^^^Miriam:^(interrupting) Is forty-one.
+^^^^Bob:^^^^Does that make sense now ?
+^^^^Miriam:^Yeah.
+^^^^Bob:^^^^Does it really make sense, or are you just humoring me ?
+^^^^Miriam:^I tell you it really makes sense.
+ 
+.ds
+.adjust
+In the dialogue cited (transcribed from videotape), Miriam's Serial world knowledge was active (at (1) above) on the distributed form of the problem (b) to arrive at the result she already knew to be correct.  After my pointing to the "ten in the eleven" (at (2) above), Miriam could see that the results of vertical form calculations could be the same as those of mental calculations.  This amounted to an insight that the Paper-sums world related to the Serial world in a significant way.
+
+     After I set down the next problem (see (a) below), Miriam's Serial world knowledge produced the result `93'.  Congratulating her for a correct result, I erased her answer, drew in the columnar division lines of (b) and asked her to calculate the result differently.  She wrote an `8' in the ten's column, scratched it out and wrote in `93'.  I stopped this attempt to bypass the problem, wrote an `8' and a `13' in the answer line of (b) and asked:2
+.ds
+.nofill
+.indent 10
+
+.block 6
+^^^^^37^^^^^^^^^^|^3^|^7^|
+^^^^+56^^^^^^^^^+|^5^|^6^|
+^^^^----^^^^^^^------------
+^^^^^93^^^^^^^^^^|^80|^13|
+^^^^^^^^^^^^^^^^^^^10|^10|
+^^^^^(a)^^^^^^^^^^^^(b)
+
+.ds
+.indent 0
+0
+^^^^Bob:^^^^Can you tell me why this (the `8' and `13') makes sense ?
+^^^^Miriam:^It makes sense because there's a ten (writing `10' under `13');
+^^^^^^^^^^^^Plus three is in the thirteen.
+^^^^Bob:^^^^I'll buy that.
+(1)^Miriam:^And if there's a ten, you add it to the eighty.
+^^^^Bob:^^^^And what do you get ?
+(2)^Miriam:^(Tapping the `3' of the ten's column in (b).) Is this a thirty ?
+^^^^Bob:^^^^Yeah !
+^^^^Miriam:^(Writes a zero to the right of `8' in the ten's answer cell
+^^^^^^^^^^^^of (b).) Plus ten is ninety-three, and the answer's ninety-three.
+
+.ds
+.adjust
+At point (2) in the citation above, Miriam asked me, for the first time, about the place value of a digit.  This is the moment where she had an insight into the nature of the representation which permitted her thereafter to do addition problems in the vertical form.  Seeing that the `3' was really a `30', she transformed the `8' to an `80', to which it made sense to add the `10' of `13'.  (I interpret the "eighty" of statement (1) above to be the intermediate result, "eighty", of the Serial world calculation.  Notice that Miriam appended the `0' to the `8' only after establishing that the `3' was a `30'.)
+
+     During the core of The Intimate Study, Miriam's Paper-sums knowledge was so remote from her knowledge of mental calculation that she did not imagine results of cognate problems should be the same.  In the preceding incidents we have seen Miriam making sense of the hindu arabic representation - as that intersects with the standard addition algorithm - by connecting it coherently with her dependable knowledge of mental calculation.  Figure^6 names CONFORMAL the structural element connecting the Paper-sums world to the worlds of mental calculation.  The implication of the name is that the knowledge of the Conformal world is a mapping, a set of correspondences between aspects of some calculation worlds and others.  Which worlds ?  Which aspects ?  The most significant insight was that the `3' of `37' was really a `30' as is the "thirty" of "thirty-seven".  This is a part-to-part correspondence of elements in the perspectives of both the Paper-sums world and the mental calculation worlds.  If we pursue the question, "Which worlds ?", we must conclude the description of the place value of Paper-sums columns relates to perspective elements of the Decadal world while the coherence of results relates the Paper-sums and Serial worlds.
+
+     From the CORRELATION OF PERSPECTIVES, our name for the process which joined the Paper-sums world through Conformal to the worlds of mental calculation, Miriam could see that the results of the processes SHOULD be the same and, thus, the manipulations of the paper sums problems could make sense.  The learning exhibited by the correlation of perspectives is different from that of the elevation of control in respect of the resulting structure.  The Serial world intervenes directly in the functioning control structure of the mental calculation cluster.  1The Conformal world represents a species of knowledge essential in integrating disparate microworlds - knowledge whose use is constructive but otherwise non-functional.0  Since the Conformal world does not enter into the control structure of the calculation microworlds, we should not expect it to have functions within its own structure.  The perspective of the Conformal world is a set of equivalences, e.g. a digit in this ten's place is equivalent to a decadal element.  This knowledge of other microworld perspectives permits the coherent registration of one with another.
+.page
+.ce
+1FIGURE 60
+.page
+     The crucial insight into the ten's place value did not establish instantaneous coherence.  First came the conclusion that the results of addition should be the same in Paper-sums and mental calculations, then came a working out of the value of the other places.  For example, in her next two problems (77 + 23 and 137 + 256) Miriam used her mental calculation procedures to effect the carries required (arriving at the answer "tendy", i.e. one hundred, for the first) but could not explain why this made sense in terms of place values.  In subsequent sessions, we worked over a series of problems and applied a re-naming step to carrying.  I criticised the rule "put down the N and carry the 1" as not making sense.  We began renaming and marking the actual value of the carries (as Miriam had marked the actual place value of the `8' in the ten's answer cell above).  Thus Miriam's "tendy" was renamed one hundred and the carry to the hundred's column was as `100'.  Similarly ten hundreds was renamed one thousand.  Miriam decalred that this system made sense, though her execution required the fixing of several procedural "bugs".  Thus, in the sum (a)below at left, Miriam treated the carry into the ten's column as a ten and the 4 and 5 as units; she ignored the carry into the hundred's column (in reaching 11) and  probably disregarded place values entirely in the thousands.2
+.ds
+.nofill
+.indent 10
+
+
+.block 5
+^^^^^|^4^|^7^|^3^|^4^|^5^|^^^^^^^^^^|^2^|^2^|^8^|^5^|^7^|
+^^^^+|^2^|^2^|^8^|^5^|^7^|^^^^^^^^^+|^4^|^7^|^3^|^4^|^5^|
+^^^^----------------------^^^^^^^^^----------------------
+^^^^^|^7^|^0^|^1^|^9^|^2^|^^^^^^^^^^|^7^|^0^|^2^|^0^|^2^|
+^^^^^^^^^^^^^^(a)^^^^^^^^^^^^^^^^^^^^^^^^^^^^(b)
+
+.ds
+.indent 0
+.adjust
+0Miriam had shown me this result (a), believing it correct.  When I pointed out her errors, she was so angry she refused to do any more calculations.   Thus the second sum, (b) above, written on a clean chalkboard, was ignored for days, until Valentine's Day, when Miriam executed the sum as a surprise and present for me.  Since that time, Miriam's addition in this form has been essentially correct.  Her confidence in her understanding is witnessed by the spontaneous extension of her addition to skill to multi-addend multi-digit sums two months later [8].
+
+.ri
+1SUMMARY AND REFLECTION0
+
+    Has our theme been addition, learning to add, or learning more generally considered ? We have dwelt on learning to add as a worked example of a productive method for investigating learning.  Our ambitions are broader than our claims, for we see this work as an early step toward a computational theory of learning of general applicability, one  wherein the specialization and refinement of perspectives expand the application of existing knowledges to new experiences while the countervailing processes of control elevation and perspective correlation permit the progressive integration of disparate microworlds into a coherent mind.  It is from the balance, the equilibration, of these countervailing processes of knowledge application-extension and integration that Piaget's dialectical spiral of cognitive development appears.  We can conclude of our theme that what is commonly called learning is the  enhanced performance which emerges from changes within and between active microworlds of knowledge.
+
+    We have seen four examples of significant cognitive development.  The Decadal and Paper-sums worlds were related to tasks Miriam worked at, i.e. they are task-rooted microworlds whose perspective elements describe things of our common world.  The Serial world is a control world  whose perspective elements are descriptions of subordinate microworld perspectives, e.g. what Serial "knows" is that Decadal can handle in general problems of the form "decade and units plus decade".  The Conformal world perspective elements are likewise descriptions of elements in the perspectives of microworlds it relates.  These last two microworlds coordinate the activity or perspectives of the microworlds their perspectives describe.  We have observed that the perspectives of the task-rooted microworlds derive from the extensions and specialization of ancestral perspectives to make sense of experience in a new domain.  (Recall how the Money world descended from Count and how Decadal was a specialization of the Money world which was powerful in application because the Decadal denominations [decades and units] fit the culturally embedded representation of the hindu-arabic number system.)  We have argued for the competition of microworlds in the formation of the coordinating worlds  and noted the  empirical result that the insights occured when there was a surpising congruence of results where none was anticipated.
+
+     We should ask about those incidents of insight, because they derive from an unexpected congruence, to what extent the occurence was either accidental or necessary.  The particular incidents themselves have very much the flavor of accident, especially that of the Serial insight.  Is it possible to argue that there was some sense in which Miriam was "fated" to make the discovery which integrated the Decadal and Count worlds for  processing  problems of a certain range of complexity ? We could argue, for instance, that the cultural embedding of the number representation would present any child  with a multitude of problems over time which would make most likely her stumbling into a serial-like insight.  Likelihood, however, is not necessity.  Is there such a thing as a mathematical structure which was, in any sense, pulling Miriam's development along a specific line of development ?  It is not necessary to make such an assumption.  What marked the stablility of Miriam's learning was the conjunction of ancestral microworlds; the representation which we impute to Miriam is an emergent from her experience whose stability is based on its integrability through several experiences.  Yet having multiple points of view is not magic; it was their fitting together that produced the stability.  We have seen microworlds of computation, each using different elements for calculation, different bases of calculation if you will.  The significant aspect of number that results in developing a complex cognitive structure is not that there are "really" such things as "mathematical structures" but that the nature of number makes it amenable to calculations which go forward by anchoring thought at some base and varying the base by some other term [9]. What the particular bases  of number used in calculation may be matters far less than that some base is necessary.  It is this epistemological aspect of number's structure (and its conformability to human thought processes) which permits a variety of worlds of experience to arise in separation and subsequently to be intergrated into a coherent  and complex understanding.  
+
+     Since the study was focussed on one child and her experience involved computer exposure to an unusual degree, it is appropriate to raise the issues of how individual differences and differences in experience might affect our conclusions.  The classical argument in the psychological literature for detailed explication of the particular case is that of Lewin [10].  He promotes the general interest of the particular case by arguing that 1unless we can comprehend specific incidents of behavior in all their particularity of occurence we can not rise above  correlations to investigate the lawfullness of mental processes.0  In short, the detailed explication of one child's learning can be of value regardless of variations in native endowment, previous experience and the atypicality of the specific learning observed.  Further, I can not imagine learning going forward to the result of a coherent mind without the existence of the learning processes which perform at least the functions  exemplified in this study.  Therefore, although I will admit some people may learn faster than others - for reasons some of which I surely do not understand  - I do not believe differences between people are significant at the level of processes exemplified here.  With respect to  differences in experience, another observation is appropriate.  Miriam's computer experience was unusual, yet it fit in surprisingly well to her eventual understanding of some common knowledge.  The first conclusion is that there is more than one possible path to the mastery of a skill.  The second conclusion is that the number of paths is constrained by the varieties of experience  which are possible.  The final conclusion, based on the observation that an important type of "forgetting" manifests the dominance of what makes sense to the individual over what has been inculcated  without comprehension, is that the preferred path is whichever one the individual follows in comprehending experiences he judges worth the effort of understanding.  In this sense, that the learner's values determine the optimal path, the individual difference is everything.
+.page
+.ce
+1FIGURE LEGENDS0
+.nofill
+FIGURE 1: The COUNT Microworld
+FIGURE 2: Contrasting Control Structures
+FIGURE 3: SHOOT -- A Turtle Geometry Game
+FIGURE 4: The DECADAL Microworld
+FIGURE 5: The Organization of Five Microworlds
+FIGURE 6: The Relation of the Paper-sums Microworld to Others
+.page
+.nofill
+.ce
+1REFERENCES0
+
+
+Flavell,J.  The Developmental Psychology of Jean Piaget.  New York:
+^^^^D. van Nostrand, 1963.
+
+Lewin, K.  The Conflict Between Aristotelian and Galilean Modes of Thought
+^^^^in Contemporary Psychology. In Lewin, K., A Dynamic Theory of Psychology -
+^^^^Selected Papers (translated by Adams & Zener).  New York and London:
+^^^^McGraw-Hill Company, l935.
+
+Minsky, M., & Papert, S.  Artificial Intelligence. Eugene, Oregon:
+^^^^Oregon System of Higher Education, 197X.
+Newell, A., & Simon, H.  Human Problem Solving. Englewood Cliffs, N.J.:
+^^^^Prentice-Hall, 1972.
+
+Papert, S.  Mindstorms: Computers, Children and Powerful Ideas.  New York:
+^^^^Basic Books, in press.
+
+Tversky, A. & Kahneman, D.  Judgments Under Uncertainty: Heuristics and Biases.
+^^^^Science, Sept. 27, l974, 185, pp. XX-XX.
+
+Winston, P.  Learning Structural Descriptions from Examples.  In P. Winston (Ed.),
+^^^^The Psychology of Computer Vision.  New York.  McGraw-Hill Company, 1975.
+.page
+.nofill
+.ss
+1NOTES0
+
+[1]. This  is a minor modification of Seymour Papert's slogan, "You can't
+^^^think about thinking; you can only think about thinking about something."
+^^^Papert founded the Logo Project (at the M.I.T. Artificial Intelligence
+^^^ Laboratory) where most of this work was done.  His book, MINDSTORMS:
+^^^Computers, Children, and Powerful Ideas, best presents its theories
+^^^and objectives.  
+[2]. This term was used by Minsky and Papert in their book , Artificial
+^^^Intelligence, Oregon System of Higher Education, Eugene.   Their usage
+^^^covers both environments beyond the person and structures within the mind.
+^^^In this place, I restrict my use of the term to the latter sense.  The microworld,
+^^^like Minsky's "frame", names a structure which transcends the dichotomy between
+^^^data structures and procedures as an organization of pattern activated functions
+^^^which embody what otherwheres might be considered data. For example, "2+3=5"
+^^^is a well known result, in effect, a compiled procedure.
+[3]. I imagine refinement could go forward in the manner of the learning process
+^^^described by Winston in Learning Structural Descriptions from Examples in
+^^^The Psychology of Computer Vision, ed. by P. H. Winston, McGraw-Hill, l975,
+^^^New York.
+[4]. See chapter 2, "Information Processing Systems" in  Human Problem Solving,
+^^^Newell, A. and Simon, H., Prentice-Hall, l972,  Englewood Cliffs.
+[5]. The analysis of errors in children's arithmetic was first called to my attention
+^^^by Papert's discussion of John Seely Brown's work in that vein.
+[6]. Wolfgang Kohler has been subject to criticism for attempting to use the
+^^^common word "intelligence" in a technical way by restricting its application.
+^^^(See pp. 3-4 in The Mentality of Apes, translated by E. Winter, l976;
+^^^Liveright, New York.)  I hope to avoid that criticism.
+[7]. In another place  (One Child's Learning, M.I.T. doctoral dissertation
+^^^in Variform Intelligence, R. W. Lawler, l979), I argue that the boundaries
+^^^between microworlds are defined by networks of "MUST-NOT-CONFOUND" links
+^^^which function to suppress confusion between competing, related microworlds.
+^^^It is the conversion of these repressive links, established by experience,
+^^^to more explicit relational links, that generates the "new" control structure
+^^^at moments of insight.  
+[8]. When one evening I complained of having to add these numbers (235, 560,
+^^^650, and 300), Miriam asked if she could do so.  I expected her  to sum
+^^^the four numbers in three separate operations.  After I had read the first
+^^^two addends, Miriam asked me what was the next one and wrote it under the
+^^^first two.  With the fourth addende in place, she summed the four terms
+^^^perfectly.  Although she told me she had never done any sums such as this
+^^^before (which was, strictly speaking, true), her first grade class had
+^^^recently begun to add three single digit addends in both the horizontal
+^^^and vertical forms.
+[9]. See the article by Tversky and Kahneman, "Judgments Under Uncertainty:
+^^^Heuristics and Biases", in Science, vol. 185, September 27, 1974.
+^^^The authors argue that "anchoring with variation" plays a significant role
+^^^in the mental calculation of mathematically sophisticated adults as well
+^^^as in the thinking of children.  Their viewpoint is given prominance in
+^^^the thesis from which this article has been derived (See note [6]).
+[10]. The Conflict Between Aristotelian and Galilean Modes of Thought
+^^^In Contemporary Psychology, Kurt Lewin, in "A Dynamic Theory
+^^^of Personality - Selected Papers", translated by Adams and Zener.
+^^^McGraw-Hill Book Company, New York and London.
+.ce
+*^^^^^*^^^^^*

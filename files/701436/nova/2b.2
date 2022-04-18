@@ -1,0 +1,602 @@
+Page Numbers: No
+
+Example: A Business Office
+
+The operation of the bank's business office is a familiar example of the idea of
+passing messages from one object to another until the message is received by the
+object that actually has the needed information.  Suppose the office manager
+sends the message 'who printed our envelopes?' to the executive secretary.  To
+respond, the executive secretary sends the receptionist the message 'is the
+purchasing clerk in?'; if the response from the receptionist is positive, the
+office manager is returned the response of the executive secretary's query to
+the purchasing clerk: 'who printed our envelopes?'  But the purchasing clerk
+actually passes back the filing clerk's response to the purchasing clerk's
+message: 'look up who printed our envelopes'.  In the end, the office manager
+appears to receive a response from the executive secretary, but is actually
+getting the filing clerk's response.
+
+<==<chapter2-11.press<
+
+
+Example: Door Objects
+
+To illustrate the idea of defining an object by synthesizing from the
+descriptions of a lot of objects of the same kind, let's consider an example
+borrowed (albeit loosely) from a paper by J. Shoch ["An Overview of the
+Programming Language Smalltalk-72", Convention Informatique, Paris, 1977] in
+which he illustrates the task of describing the doors which lead into a house.
+This example further illustrates the notion of distributing state information to
+objects that semantically describe a single kind of object.
+
+First, what is a door?  We might start by describing everything we know about
+doors: they are different sizes and colors; they can be hinged on the left or
+the right; they might fold, slide or split in two; some have glass windows, some
+are all glass and others are all wood; they are located in many different
+entrances of a building and its rooms; and most require a key to open them.  At
+any given time, a door might be open or not.  In addition, doors with locks
+might share some common state, such as the master key which can open them all.
+
+From this general characterization, we can describe particular doors: the brown
+wood door with a glass window that guards the entrance to the apartment house
+(frontDoor); the green Dutch door leading to the kitchen at the back of my
+apartment (backDoor); and the glass sliding door from the family room to the
+patio (patioDoor).  They all lock.  My apartment key (to the backDoor) also
+opens the door to the apartment house (frontDoor).  The key to my neighbor's
+apartment opens the frontDoor, but none of my apartment doors.
+
+We can communicate commands to a door by sending a message.  We might request:
+
+frontDoor areYouOpen	ask the front door if it is ajar
+
+backDoor close	close the back door
+
+patioDoor seeThrough	does the patio door include a glass window?
+
+frontDoor lock	lock the front door
+
+backDoor unlockWith: schlage	if the back door is locked, unlock it with the
+key called schlage
+
+frontDoor recognizes: schlage	is the key called schlage one that unlocks the
+front door?
+
+A door object might not actually retain memory of the key (or keys) that can
+unlock it.  Indeed, in the physical implementation of this object, a door has a
+lock; this lock matches an internal pattern against the pattern of a key in
+order to determine if the key fits the lock.  The response to the message close
+would be to shut the door; depending on whether the lock was engaged or not, the
+door might require a key to re-open it.  To lock a door, you might need a key.
+The response to the message lock might be an indication that there is no lock,
+or that the existing lock requires a key.  It is possible that a door can answer
+the inquiry as to whether or not it recognizes the key (schlage); more likely,
+the door does not know, rather its lock does, and the implementation for the
+message recognizes would pass on the request to the door's lock part.
+
+From the above discussion, we propose that a more detailed view of the message
+dictionary of the object door might be:
+
+areYouOpen	If the state of a special indicator, open, is true, then answer
+'yes'; otherwise answer 'no'.
+
+close	Indicate that door is not open by setting open to false.
+
+seeThrough	If material, a list of materials that make up the door, includes
+'glass', then answer 'yes'; otherwise answer 'no'.
+
+lock	Set the lock.
+
+unlockWith: aKey	Determine if the door is locked.  If so, determine if
+aKey fits the lock and, if so, unlock it.  Otherwise say that the key doesn't
+fit.  If the door is not locked, say so.
+
+recognizes: aKey	Does aKey match the door's lock?  If so, answer 'yes';
+otherwise, answer 'no'.
+
+The methods imply that the object has, as its fields, at least:
+
+open	An object whose value is either true or false, depending on whether or
+not the door is ajar.
+
+material	A list of the names of materials; or a list of references to a
+new kind of object that remembers color as well as the type of a material (a
+Material object).
+
+myLock	a Lock object or nil (meaning no lock is needed for this particular
+door).
+
+Alternatively, the door could have fields:
+
+open	(same as first alternative)
+
+material	(same as first alternative)
+
+myLock	An object whose value is true if the door has a lock, false otherwise.
+
+code	A numeric pattern that must match a corresponding pattern known to the
+message sender's own key.
+
+lockState	An object whose value is true if the lock is set, false
+otherwise.
+
+The difference in the two alternative field descriptions is that, in the first
+case, we distribute the knowledge of the key code and state of the lock to a
+separate kind of object, a Lock.  This Lock object must be capable of responding
+to appropriate messages such as setLock, isLocked (a query), recognizes: aKey,
+and unLock.
+
+In the second alternative, the door itself must provide the space for holding
+this information about a lock, even if it does not have one, and the door must
+be able to respond to messages about the lock.  (Note, we could eliminate the
+field myLock by testing code; if code is nil, then there is no lock on the
+door.)
+
+Here is a possible description of the Lock object.
+
+title	Lock
+
+state	code flag
+
+messages
+
+setLock	Set the lock by setting the flag part to true.
+
+isLocked	Is the lock set (object sends itself the message setLock)?  If
+so, is the flag true?  If so, answer 'yes'; otherwise answer 'no'.
+
+recognizes: aKey	Is the code for aKey identical to code?
+
+unLock	Reset the lock by setting flag to false.
+
+And here are the two possible descriptions of the Door object: each shows all
+the fields, but only the three entries in the message dictionary that differ in
+their dependence on knowledge of the lock.
+
+Alternative 1
+
+title	Door
+
+state	open material myLock
+
+messages
+
+lock	If myLock is nil, answer that the door has no lock.  Otherwise, send
+myLock the message setlock.
+
+unLockWith: aKey	If myLock is nil, then answer that the door has no lock.
+Otherwise, if myLock is already locked (send myLock the message isLocked), then
+send the message myLock unLockWith: aKey.  Otherwise, answer that the door is
+already unlocked.
+
+recognizes: aKey	If myLock is nil, then answer that the door has no lock.
+Otherwise have myLock give its response to the message recognizes: aKey.
+
+Alternative 2
+
+title	Door
+
+state	open material myLock code lockState
+
+messages
+
+lock	If myLock is nil, answer that the door has no lock.  Otherwise, set
+lockState to true.
+
+unLockWith: aKey	If myLock is nil, then answer that the door has no lock.
+Otherwise, if lockState is true, then see if the code for aKey is identical to
+code.  If not, answer that the key does not fit the lock.  If lockState is
+false, answer that the door is already unlocked.
+
+recognizes: aKey	If myLock is nil, then answer that the door has no lock.
+Otherwise, answer whether or not the code for aKey is identical to code.
+
+In the first alternative, the one for which we show the Smalltalk-76 code in
+Appendix 1, the actual work is therefore done by an object that has knowledge
+appropriate to its common function.  We have also assumed the added existence of
+a Key object that responds to the message code by returning a numeric pattern
+that can be equated to the code of the door's lock.
+
+This example has emphasized our ability to introduce two views of any object, an
+external one (message sending) and an internal one (the implementation).  From
+an external view, we can ask a door for its key (e.g., frontDoor key) and
+receive a master key in response.  This says nothing about how the key was
+determined (does the door know or does the door ask a lock?), nor whether the
+determination was a shared or not shared part of all the doors in the system.
+Another way to say this is that from an external view, asking an object "what
+are you?" obtains the dictionary of message patterns, and, if available, a
+description of the intended responses to the messages.  But from an internal
+view, the same question returns the specific values for state information and
+the methods for responding to the messages.
+
+
+
+Constructing an Object Synthetically
+
+So far we have examined several kinds of objects, a BankAccount, a Calculator, a
+Door, a Lock, and a Key.  We have seen that we can create many instances of a
+kind of object, each sharing the same behavior and the same parts of state.  Now
+let's suppose that we want to simulate a world made up of lots of kinds of
+objects and we want to collect these objects in some organized fashion.  From an
+external view, such organization is not necessarily meaningful.  From an
+internal view, that is, for purposes of actually describing an object's
+behavior, it is efficient to impose some classification structure on the
+potentially large number of similar objects
+
+To review, each object demonstrates some behavior, such as responding to a
+particular message.  And several objects may all demonstrate similar behavior,
+so we collect these objects together, leaving separate those objects
+demonstrating dissimilar behavior.  As we have seen in the previous examples,
+the behavior of an object is the actions the object can take.  Each action is
+invoked by sending a message to the object.  So we collect together all those
+objects that understand the same messages and respond in the same way to these
+messages.
+
+Each of these objects also has parts that distinguish the object from another.
+Indeed, the responses to the messages might want to communicate or transform
+these parts.  The message responses can only be identical if they reference the
+same kind of property, and we can therefore use identical reference names.  Each
+object part might have different values.
+
+So the decision to form a collection of objects (a class), given a world to
+capture, depends on these objects' demonstrating similar behavior and differing
+only with respect to the values of state information.  Drawing the division
+between shared information (state, message patterns and methods) and
+individually owned information (state, message patterns and methods) is, again,
+an implementation decision.
+
+Example: An Amusement Park
+
+To illustrate the idea of defining an object from a large world of objects,
+let's look at an amusement park.  Here we will find more than one kind of
+object.  Our goal is to discover a classification scheme that minimizes the
+number of different kinds of objects, yet provides some flexibility in how they
+can be used to represent all the activities in the world we wish to simulate.
+
+What do you think of when considering an amusement park?  There is a
+merry-go-round, cotton candy, ferris wheels and roller coasters, buying tickets,
+buying souveneirs, a fun house, games, side shows (animals, strange people), a
+train ride, ice cream booth, cafeteria, sit-down restaurant, animal rides, lines
+of people waiting to get on a ride or to get a ticket, someone selling balloons,
+and so on.  On the negative side, there are crying kids, and crying parents,
+dizziness, stomach aches, and sunburn.
+
+Focusing our attention on the kinds of places, rather than the people or
+animals, we can organize the parts of an amusement park into rides, game booths,
+and places to buy things (tickets, food, balloons, tee-shirts).  A coarser
+organization might divide the parts into places where you buy things and places
+where you do not buy things (not too many places like this!)  An even finer
+organization divides the parts into:
+
+rides that change all riders at once: merry-go-round, ferris wheel
+
+rides that continuously exchange n riders (where n < the number of all the
+seats): bumper cars, fun house, roller coaster, animals, boats
+
+food vendors: kiosk, cafeteria with and without tables, table service
+
+non-food vendors: tickets, souveneirs
+
+Each has a waiting line of some kind made up of objects waiting for service.  At
+some time, a worker who gives service sends the message "next, please" to the
+line and the next object waiting is given service.  We notice that some lines
+lose more than one object at a time, for example, filling a seat on a
+ferris-wheel removes two people at a time from the waiting line.  At various
+times, objects arrive and enter the line, or objects get tired of waiting and
+leave.  In each case, the object involved sends the appropriate message so that
+the line can adjust to the change.
+
+next		tell me the next object in the line
+
+next:	n	tell me the next n objects in the line
+
+enter:	p	object p enters the line
+
+leave:	p	object p leaves the line
+
+The amusement park contains many lines in different locations; some are long and
+some are short; most contain people, although some have cars (at the entrance to
+the park), and some have animals.
+
+Vendors share the behavior of selling something.  Each gives service to one or
+more objects (people, usually), taking a computable amount of time and
+collecting a fee.  For some vendors, the service includes providing a second
+service which might involve a second waiting line (for example, giving a seat at
+a table followed by serving food, or selling a ticket and then giving a ride).
+
+serve:	p	vendor serves object p
+
+collect:	n	collect fee n from object p
+from:	p	
+
+Vendors appear to remember a waiting line, how many customers to handle at one
+time, what to do for the customer, and a way to compute service time.
+
+We could proceed with this classification effort by looking at the behavior of
+rides.  In talking about the behavior of rides, we will find ourselves, again,
+itemizing all the parts and uses for the variety of rides in the amusement park.
+In the same way, we would examine all the eating places in the park.
+
+We have had to remain somewhat vague about the organization of objects that can
+make up an amusement park.  In order to provide a more concise description, it
+will be necessary for us to specify the purpose in our modelling the park.  That
+purpose would then direct our choice of objects and their classification.
+
+For example, suppose our purpose is to collect information about the amount of
+time people spend in waiting lines versus riding on an attraction or eatting
+food or purchasing an item.  We could then concentrate on the kinds of waiting
+lines and the places where such lines exist in the park.  Indeed, we might
+describe a Place object, an area where people arrive, get in line, wait until
+they can get service, and then, after getting service, leave.  We could have
+this object maintain a tally of the time each person spent waiting and the time
+they spent getting service.
+
+What kinds of messages should an object like Place understand?  The following is
+a possible state and message dictionary for this new object.
+
+title	Place
+
+state	worker customer waitingLine ncust tallyOfCusts tallyOfTime
+
+messages
+
+enter: cust	customer enters the place.
+
+askForService: cust	customer asks for service in the place.
+
+giveService: cust 	customer gets service from worker in the place;
+
+by: worker	how much time is spent giving service is determined by the
+worker.
+
+leave: cust	customer leaves the place.
+
+wait: cust	customer has to wait for service.
+
+nextCust	Check to see if any customers are in the waiting line.
+
+We can imagine that the customer can be told the time at which he enters the
+waiting line as part of the response to the message wait: cust and that, upon
+receiving service (nextCust), the tallyOfCusts would be incremented by 1 and the
+difference between the current time and the time remembered by the customer
+added to a tallyOfTime.  The average time spent in the waiting line at this
+place is computed from these two remembered tallies.
+
+Suppose now that we examine the amusement park and determine that there are
+several kinds of places that demonstrate precisely the behavior of the object
+Place that we just defined.  Then we can add them as part of the amusement park
+by creating them as instances of Place.  Since we are not concerned with the
+product or function of each place, these can be ignored.  Because we want to
+capture places like a train ride as well as a kiosk, we will have to be
+concerned with how many customers are served at one time: we will use an
+additional part of state, ncust, to indicate the number of customers to take out
+of the waiting line, information to be used in the response to the message
+nextCust and in computing the tallies.  The parameter customer might then be one
+customer or a list of ncust customers.
+
+Two Graphic Examples
+
+In the introductory remarks of this chapter, we mentioned two examples of
+objects taken from the definitions available in Smalltalk-76, a system
+implemented on a hardware configuration that includes a graphical output device.
+They are Point and Rectangle.
+
+Example: Point Objects
+
+A Point is simply a pair of numbers designating a location in a two-dimensional
+space.  For example, the two numbers could represent the distances from the left
+side and the top of a display screen.
+
+The description of its messages is:
+
+x	my distance from the y-axis
+
+y	my distance from x-axis
+
++ pt	pt is a Point.  What is the Point that is pt (a vector distance) away
+from me?
+
+- pt	pt is a Point.  What is the vector distance from me to pt?
+
+ pt	Am I a coordinate above and to the left of Point pt?
+
+Note that the first two messages make it possible for some other object to
+request information about the parts of the state of the point.  In this example
+we have introduced the syntax that there are special tokens, such as +, -, and
+, that do not require colons, although the message requires one parameter.  We
+call these tokens infix operators.
+
+Suppose we create a point representing a location 50 units from the left and 100
+units from the top of a display screen.  We could also create another point 100
+units from the left and 25 units from the top.  Let's call these points ptA and
+ptB respectively.
+
+title	ptA
+
+class	Point
+
+state
+
+x	50.
+
+y	100.
+
+
+
+title	ptB
+
+class	Point
+
+state
+
+x	100.
+
+y	25.
+
+
+Notice that we are no longer listing the dictionary of messages and their
+responses separately for each point.  Because each object is classified as a
+point, each can respond to the messages listed above and we can assume that the
+dictionary is shared among the objects in the system that are so classified.  In
+order to look up items in its message dictionary, each instance has a reference
+to its class.
+
+Suppose we send the + message to ptA:
+
+ptA + ptB
+
+The response is a third point at position 150, 125.  This new object has
+different values for the parts of its state, but demonstrates the same behavior
+as ptA and ptB.  To compute the parts of the new object, the response to the +
+message might be something like:
+
+compute the x by adding ptA x and ptB x
+
+compute the y by adding ptA y and ptB y
+
+Example: Rectangle Objects
+
+A Rectangle object is a graphical object with four edges; it could reside on a
+display screen.  One way to completely describe it is that it has an origin, its
+upper left-hand vertex, and a corner, its lower right-hand vertex.  The vertices
+on a display screen may be represented by points as described in the previous
+example.
+
+Suppose we have two rectangles on the display screen, R1 and R2.  Tell R1 to
+move its origin to 0, 0 and its corner to 100, 100; tell R2 to move its origin
+to 200, 200 and its corner to 300, 300.  Now, if we ask each of R1 and R2 for
+its center, we expect to get two different responses (i.e., 50, 50 and 250,
+250).  Clearly each rectangle has state, information describing its location on
+the display screen.
+
+The state distinguishes the two rectangles.  Note that this does not dictate
+anything about what the state is nor how it is stored.  It could be four numbers
+(for example, minX, minY, maxX, maxY), two points (origin, corner), an origin
+point, a width, and a height, or a program that computes the values.  The choice
+really depends on the intended use of the object, that is, what responses are
+desired.
+
+We could add a message to the object Point making it possible to create a
+Rectangle object from two points
+
+rect: pt	create a Rectangle whose origin is me and whose corner is pt
+
+By choosing to share the description of messages and their methods among all the
+objects in the system that demonstrate like behavior, all points (e.g., ptA,
+ptB, ptA + ptB, as well as any other new ones we might create) would be able to
+respond to this new message.
+
+What is an Object-Oriented Language?
+
+We have now seen several examples of what we mean by an object and the
+communication among objects via message sending.  We were once delighted to see
+a seminar announced on "Machines for Object-Oriented Languages."  Much of the
+content however was actually concerned with the language LISP.  While we will
+always have a fond spot in our hearts for the language LISP, we do not consider
+it to be an object-oriented language, and we wish to make clear what we mean by
+the term, as it is a term which characterizes a very significant difference
+between certain high-level languages and others.
+
+We consider that a weak definition of an object-oriented language is that there
+is a separation between the form of external access to an object and the
+internal ways in which access is implemented.  This criterion of separation is
+often referred to as abstract data types.  Some languages which fail to meet the
+criterion of weak object-orientedness are: Fortran, Algol, APL and LISP.  Some
+languages which do not meet this criterion to a lesser or greater degree are:
+SIMULA, records and references in Algol, Pascal, and Mesa.  [Alphard and Clu]
+
+The strong definition of an object-oriented language goes a significant step
+farther: not only must a sender of a message to an object be independent of the
+internal details of that object, it must be independent even of the class of
+that object.
+
+Classes Vs. Types
+
+The reader may wonder why we talk about "class Integer" and "class String" when
+discussions of other programming languages usually talk about "type Integer" and
+"type String".  The reason is that classes and types are not the same.
+
+A class is a grouping mechanism for objects that specifies their representation
+(state) and their behavior (message patterns and message responses).  A type is
+a grouping mechanism for values that specifies their permissible uses.  For
+example, it may be impermissible in a given language to add a string value to an
+integer value.  The reason given would be that they are of incompatible types.
+
+Note that the preceding paragraph used the word "object" to define the term
+"class" and the word "value" to define the term "type".  Again, "object" and
+"value" are not synonyms.  In most languages, a value is either a number or a
+reference to a data structure; in Smalltalk, a value is always a reference to an
+object.  In both cases, the role of a value is the same: it may be stored into a
+variable, passed as an argument, or returned as a result.  An object, on the
+other hand, can serve none of these roles.  It is "out in the environment", and
+only references to it can play these roles.
+
+Types go with values, and classes go with objects.  Therefore, types are
+attributes of variables, of arguments, and of results in the static program,
+while classes are attributes of objects in the dynamic environment.
+
+The language SIMULA has both types and classes.  Even in Smalltalk, the notion
+of a type is a useful concept.  Two values can be thought of as the same type if
+they reference objects that respond to the same certain set of messages.  It is
+not necessary for those objects to belong to the same class for this to be so.
+Two separately defined classes may have some of their message protocol in
+common, although their methods for responding to those messages may differ.
+Types cut across class boundaries, and may involve only some of the messages of
+some of the classes.
+
+Smalltalk-76 does not have any explicit specification of types.  Thus, although
+Smalltalk-76 is strongly object-oriented, it is weakly typed, because the types
+of variables, arguments, and results need not be--and cannot be--declared in a
+program.  It would be possible to have a language that was strong on both
+counts.  However, the benefits of strong typing are mixed, so we have opted to
+avoid it.
+
+Note that we have not mentioned the use of subclassing in Smalltalk; it is not
+officially introduced until Chapter IV.  By subclassing, we mean the ability to
+create a new class description by inheriting the description of an existing
+class.  We say that Smalltalk is weakly typed (rather than untyped), because
+there is a way to get some of the benefits of a typed language, namely, with
+abstract classes.  An abstract class, like a type, lacks the ability to have
+instances (the class description has no distinguishing state).  An abstract
+class, like a type, is associated with a message protocol that cuts across many
+classes, namely, all the concrete subclasses of the abstract class.  Therefore,
+a programming style is possible in which the abstract classes behave like types.
+
+Suppose the abstract class Number were the only class in the system that defined
+the message 'min: x', which computes the lesser of two numbers.  Then Number
+could be thought of as a type restricting the arguments of 'min:' to be
+references to certain objects, namely, instances of subclasses of Number.
+However, the check on the argument type would not happen when the method was
+compiled, but rather when it was executed, so the typing is quite weak.  Still,
+this programming style makes programs easier to understand and hierarchies
+easier to extend, so it is encouraged.  It will be explored further in Chapter
+IV.
+
+Summary of System Objects Referenced in This Chapter
+
+Sequence
+
+next next_ reset empty
+
+Number
+
+String
+
+Constants
+
+nil true false
+
+Point
+
+Rectangle
+
+
+
+Other Readings
+
+Object-Oriented Programming Languages
+
+Clu Alphard Mesa Simula
+
+
+
+
+

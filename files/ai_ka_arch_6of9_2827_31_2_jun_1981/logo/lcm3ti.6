@@ -1,0 +1,745 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi b
+--DRAFT--
+
+LOGO Curriculum Materials
+
+6/1/81
+.sp 5
+1BOOKLET III
+
+Talking to the Turtle0
+
+By Daniel H. Watt
+
+(TI Logo Version)
+.sp 6
+.ls 1
+The turtle is an object that can draw pictures on the TV screen. You can think of the turtle as a "robot" that can move forward and back and
+turn right or left. With its pen down, it can draw geometric shapes in color, as it
+moves around the screen.
+.sp 6
+The development of these materials was supported in part by the National Science Foundation under grant number SED - 7919033 and conducted at the Artificial Intelligence Laboratory, Massachusetts Institute of Technology, Cambridge, Massachusetts. Field tests were conducted in the public schools of Brookline, Massachusetts. The material contained in this document represents the views of its authors and should not be interpreted as necessarily representing the oficial policies, either expressed or implied, of the National Science Foundation or the United States Government.
+
+.chapter "bold(Basic Turtle Commands)"
+.nf L
+bold(To talk to the turtle type the command:)
+
+TELL   TURTLE				s(m)This clears the TV screen and
+				t(m)places the turtle at its center.
+
+bold(Here are some commands that the Turtle understands:)
+
+.nf L
+FORWARD   20	 		t(m)Moves the turtle forward or back the number 
+BACK   15				t(m)of spaces you specify.  If the turtle's pen is
+FD   20				t(m)down, it will draw a line as it moves.  
+BK   15
+.sp 4
+RIGHT   45 			t(m)Turns the turtle right or left the number
+LEFT   30				t(m)of degrees you specify.
+RT   45
+LT   30
+.sp 4
+CLEARSCREEN 			t(m)Clears the TV screen, 
+CS 				t(m)placing the turtle at its center.
+.sp 4
+HT   or   HIDETURTLE		t(m)Hides the turtle so it can't be seen.
+ST   or   SHOWTURTLE		t(m)Shows the turtle again.
+
+bold(To stop using the turtle, and use the entire TV  screen for text, type:)
+
+NOTURTLE		t(m)Clears the whole screen for text.
+				t(m)To use the turtle again type  
+t(m)TELL   TURTLE.
+.bp
+
+bold(Things to try:)
+
+.fi b
+Experiment with the turtle.  Type FORWARD, BACK, RIGHT and LEFT  (or FD, BK, RT, and LT), with a lot of
+different input numbers.  Try very large and very small inputs.
+
+.nf L
+Make the turtle draw a square.  Or a rectangle.  Or a triangle.
+
+Make the turtle draw your initials
+
+Make an unplanned drawing using a variety of turtle commands.
+
+.fi b
+Find the size of the turtle's screen.  
+
+(If you tell the turtle to go too far, it will disappear at one edge of the screen and reappear at the oposite edge, to continue drawing its line. This is called wrapping around the screen. If you tell the turtle to draw too many lines, the computer will print an error message:  OUT OF INK.)
+
+.nf l
+Pick a point on the screen and move the turtle there.
+
+bold(Ideas for simple turtle drawings:)
+
+.chapter "bold(Teaching the Computer a New  Command Using the Logo Procedure Editor)"
+.fi b
+
+You can teach the computer to remember a particular series of steps
+by defining a procedure. When you type   TO   followed by a name that you have
+chosen, the computer changes to edit mode. While you are editing, the computer does not carry out your commands, but just stores them until you finish editing. Here's what you do:
+.nf l
+
+Type   TO   followed by a name.
+Type the   <ENTER>  key to clear a new line.
+Then type each step in order.  
+To stop using the editor, type   <SHIFT> - Z.
+(Hold down the key marked   <SHIFT> and type  Z  at the same time.)
+
+.fi b
+For more information about using the editor, read booklet II - bold(Using the Logo Operating System).
+
+.nf L
+Here are some examples you can try:
+
+TO    FUN		t(m)TO    BOX
+FORWARD    30  t(m)FORWARD    20
+RIGHT    120 t(m)RIGHT    90
+FORWARD    10 t(m)FORWARD    20
+LEFT    90 t(m)RIGHT    90
+BACK    20 t(m)FORWARD    20
+END t(m)RIGHT    90
+		t(m)FORWARD    20
+		t(m)RIGHT    90
+		t(m)END
+
+
+.fi b
+You can use any name that is not already a LOGO command or the name of a procedure
+you have already defined.   The steps of the
+procedure can be any other LOGO commands or procedures.  When you type the command, FUN or
+BOX, the computer will carry out your sequence of steps.
+
+bold(Things to try:)
+
+.nf L
+Type the command,  FUN,  or  BOX,  several times.
+.fi b
+Teach the computer to draw a smaller square, a rectangle, triangle, or any
+other shape you know how to draw.
+.br
+Invent a new shape, by choosing a number of different commands at random.
+
+
+.bp
+bold(Notes about the Logo Screen Editor)
+
+If you want to change a procedure for any reason, type  EDIT    followed by the procedure name. This will return the computer to edit mode, with your procedure displayed on the screen ready for you to edit. When you are finished editing your procedure type:
+
+	   <SHIFT> - Z
+
+You can use all the special editing keys to make changes in your procedure:
+
+bold(Commands to Move the Cursor)
+ 
+.nf L
+	<SHIFT> - 			s(m)moves cursor up one line
+
+	<SHIFT> - 			t(m)moves cursor down one line
+
+	<SHIFT> - 			t(m)moves cursor left one space
+
+	<SHIFT> - 			t(m)moves the cursor right one space
+
+	<SHIFT> - V	t(m)moves cursor to end of line.
+
+	<SHIFT> - W	t(m)moves cursor to beginning of line.
+
+bold(Editing Commands)
+
+	<SHIFT> - F			t(m)erases the character at the cursor.
+
+	<SHIFT> - T				t(m)erases the character behind the cursor,	
+				t(m)just as it does when you are typing
+				t(m)normal LOGO commands.
+
+	<SHIFT> - C	t(m)erases an entire line
+	t(m)to the right of the cursor.
+	
+	<ENTER>                     t(m)creates a new line and moves the cursor 
+                                        t(m)down to the beginning of the new line.
+				t(m)If there is any text to the right
+				t(m)of the cursor it will be moved too.
+
+<SHIFT> - W    <ENTER>		t(m)this combination can be used to
+				t(m)create a blank line.
+.chapter "bold(How the Turtle Uses Its Pen)"
+When you first type  DRAW,  the Turtle always starts with its pen down.  This
+means that it draws lines whenever it is commanded to move forward or back.
+
+.nf L
+You can change what the turtle's pen does:
+
+PENUP    or    PU t(m)The turtle will not draw lines when it moves.
+
+PENDOWN    or    PD t(m)The turtle will draw lines whenever it moves.
+
+PENERASE    or    PE t(m)the turtle will erase existing lines
+	t(m)as it moves.
+
+PENREVERSE  or  PR  t(m)the turtle will erase any existing lines, and,
+		t(m)draw lines where there are none.
+
+.keep
+.nf l
+
+Using  SETCOLOR   (or   SC)  the turtle can draw in any of sixteen colors.
+	
+	SETCOLOR   :CLEAR		s(n)or   SETCOLOR   0
+	SETCOLOR   :BLACK	t(n)or   SETCOLOR   1
+	SETCOLOR   :GREEN	t(n)or   SETCOLOR   2
+	SETCOLOR   :LIME		t(n)or   SETCOLOR   3
+	SETCOLOR   :BLUE		t(n)or   SETCOLOR   4
+	SETCOLOR   :SKYBLUE		t(n)or   SETCOLOR   5
+	SETCOLOR   :RED		t(n)or   SETCOLOR   6
+	SETCOLOR   :CYAN		t(n)or   SETCOLOR   7
+	SETCOLOR   :RUST		t(n)or   SETCOLOR   8
+	SETCOLOR   :ORANGE		t(n)or   SETCOLOR   9
+	SETCOLOR   :YELLOW		t(n)or   SETCOLOR   10
+	SETCOLOR   :LEMON		t(n)or   SETCOLOR   11
+	SETCOLOR   :OLIVE		t(n)or   SETCOLOR   12
+	SETCOLOR   :PURPLE		t(n)or   SETCOLOR   13
+	SETCOLOR   :GRAY		t(n)or   SETCOLOR   14
+	SETCOLOR   :WHITE		t(n)or   SETCOLOR   15
+
+.end_keep
+.keep
+.fi b
+
+SETCOLOR   or   SC   can also be used with a list of two input numbers. This will color the background of each tile on which the turtle draws with the color given by the second input.
+
+Example:     SETCOLOR   [ 1  15 ]
+
+This will cause the turtle to draw black lines on white squares.
+
+
+COLORBACKGROUND   or   CB   will change the entire background, to whatever color you choose.
+.nf l
+
+Examples:
+
+	COLORBACKGROUND   :YELLOW
+	CB   10
+.fi b
+
+To erase any line on the screen, just draw over it with the pen set  to erase by typing   PENERASE  or  PE,  before moving the turtle.
+.end_keep
+
+.chapter "bold(Drawing Circles and Arcs)"
+.fi b
+
+
+Many interesting designs can be drawn using circles and arcs. The turtle can draw a circle by going forward a little and turning a little, and repeating the same steps over and over until it has returned to its starting place.
+
+
+.section "bold(Procedures for drawing circles and arcs)"
+You can teach the computer a set of procedures that draw circles and arcs.
+RCIRCLE  and  LCIRCLE draw 12-sided polygons that look enough like circles to be useful for most turtle drawings.  RARC and  LARC  are used to draw  quarter circles.  If your disk does not already have the circle and arc procedures on it, you will have to carefully copy the procedures given.
+
+.keep
+
+RCIRCLE and LCIRCLE, RARC and LARC are used with an input giving the radius of the circle or arc you are drawing.
+
+
+.nf L
+RCIRCLE    20  t(m)Draws a circle of radius 20, curving to the right.
+.sp 4
+LCIRCLE    10 t(m)Draws a circle of radius 10, curving to the left.
+.sp 4
+RARC    20 t(m)Draws a quarter circle of radius 20, curving 
+	  t(m)to the right.
+.sp 4
+LARC    10 t(m)Draws a quarter circle of radius 10, curving
+	  t(m)to the left.
+.end_keep
+.fi b
+.keep
+If you do not already have circle and arc procedures on your disk, carefully copy all the following procedures. (To type square brackets   [   and   ],    type  <SHIFT> - 4   and  <SHIFT> - 5.)
+
+The following procedures can be used to draw circles and arcs curving to the right.
+
+.nf L
+TO    RCIRCLE    :R t(m)RCIRCLE   stands for "right circle."
+REPEAT    12    [RCP    :R] t(m)Twelve repeats of the subprocedure RCP make
+END				t(m) a complete "circle" of radius  :R
+				t(m)curving to the right.
+
+TO    RCP    :R  t(m)RCP draws one "circle piece" curving to the 
+RIGHT    15       t(m)right.  :R stands for the radius of the circle.
+FD    :R / 2
+RIGHT    15
+END
+
+
+TO    RARC   :R t(m)RARC draws a quarter circle arc
+REPEAT    3    [RCP   :R]	t(m)curving to the right.
+END
+.end_keep
+
+.keep
+.fi b
+The following procedures can be used to draw circles and arcs curving to the left.
+.nf L
+
+TO    LCIRCLE    :R t(m)This draws a circle of radius  :R, 
+REPEAT    12   [ LCP  :R ]		t(m)curving to the left.
+END
+
+
+TO    LCP   :R t(m)LCP draws one "circle piece" curving to the left.
+LEFT    15
+FD    :R / 2
+LEFT    15
+END
+
+
+TO    LARC    :R t(m)LARC  draws a quarter circle arc
+REPEAT    3    [ LCP    :R ]		t(m)curving to the left.
+END
+.end_keep
+.fi b
+.bp
+.section "bold(Some Simple Projects With Circles and Arcs)"
+.bp
+.chapter "bold(Building Complex Shapes Using Subprocedures)"
+.section "bold(Using Shapes as Building Blocks.)"   
+.fi b
+
+Turtle procedures which draw shapes can be used to build more complex 
+shapes.  Here are some examples.
+
+You might start with two procedures.  One draws a box, and the other a triangle:
+
+.nf L
+.keep
+TO    BOX t(m)TO    TRIANGLE
+FORWARD    30 t(m)LEFT    90
+RIGHT    90 t(m)FORWARD    30
+FORWARD    30 t(m)RIGHT    120
+RIGHT    90 t(m)FORWARD    30
+FORWARD    30 t(m)RIGHT    120
+RIGHT    90 t(m)FORWARD    30
+FORWARD    30 t(m)END
+END
+.end_keep
+
+.fi b
+You could build other designs from them, by repeating them
+and combining them in different ways.  You can often make interesting designs 
+in this way.
+
+.nf L
+.keep
+For example,
+
+TO    WINDOW
+BOX
+BOX
+BOX
+BOX
+END
+.sp 6
+.end_keep
+
+.keep
+and
+
+TO    BUTTERFLY
+TRIANGLE
+TRIANGLE
+END
+.sp 8
+.end_keep
+
+and
+.keep
+
+TO    6BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+END
+.sp 4
+.end_keep
+
+.fi b
+.keep
+Putting a box and a triangle together, you can construct a house:
+
+
+.nf L
+
+TO   HOUSE
+TRIANGLE
+RIGHT   30
+BOX
+END
+.sp 4
+.end_keep
+
+.keep
+and, repeating HOUSE four times,
+.sp 4
+TO   HOUSE4
+HOUSE
+HOUSE
+HOUSE
+HOUSE
+END
+.sp 4
+.end_keep
+
+.keep
+.fi b
+HOUSE4  and  6BUTTERFLY  can be put together, to make a new design,
+
+.nf L
+TO    HB46
+HOUSE4
+6BUTTERFLY
+END
+.sp 10
+.end_keep
+
+.keep
+.fi b
+HB46 looks something like a spider. If you add some
+circles you could make a SPIDER procedure.
+
+.nf L
+TO    SPIDER
+HB46
+RCIRCLE    16
+LCIRCLE    16
+RCIRCLE    8
+LCIRCLE    8
+BACK    15
+RCIRCLE    4
+LCIRCLE    4
+END
+.sp 4
+
+.fi b
+To draw the "spider" you must first teach the computer to draw circles, by defining the procedures  RCIRCLE,  LCIRCLE,  RCP,  and  LCP,  given in section 4.1.
+.end_keep
+.bp
+
+
+.section "bold(Building a Planned Shape Using Subprocedures)"
+
+.keep
+.fi b
+Here is an example of a planned project.  You might want
+the turtle to draw a "person" that looked something
+like this:
+.sp 10
+.end_keep
+You could draw the person using a long series of turtle commands--
+FORWARDs, BACKs, RIGHTs and LEFTs. It would probably be simpler
+to solve the problem using subprocedures and a
+superprocedure  named PERSON.
+
+.nf L
+.keep
+TO    PERSON
+LEGS
+BODY
+ARMS
+NECK
+HEAD
+END
+.end_keep
+
+.fi b
+Teaching the computer five different procedures might seem to be
+complicated, but this method offers several advantages.  First, you can
+start by planning your whole project in advance, so you know exactly what
+you have to do to accomplish your goal.  Second, you can try to solve a series of
+small problems, one at a time, rather than one big problem.  Third, when you
+want to change one part of your design while leaving the rest of it the same,
+it will be easier to decide which commands to change.
+.keep
+
+One subprocedure,  VEE,  can be used to draw both the arms and the legs of the person.
+.nf L
+
+TO    VEE
+RIGHT    45
+FORWARD    10    BACK    10
+LEFT    90
+FORWARD    10    BACK    10
+RIGHT    45
+END
+.end_keep
+.keep
+
+Now  use VEE to make procedures for the arms and the legs.
+
+TO    ARMS t(m)ARMS uses VEE directly
+VEE
+END
+.end_keep
+
+.keep
+TO    LEGS t(m)LEGS reverses the turtle's direction before
+RIGHT    180		t(m)using VEE, then reverses the turtle again so that
+VEE		t(m)it ends up where it started.
+RIGHT    180
+END
+.end_keep
+
+.keep
+.fi b
+BODY and NECK are just straight lines.  After experimenting, you might
+decide to try  these sizes:
+
+.nf L
+TO    BODY t(m)TO    NECK
+FORWARD    15 t(m)FORWARD    5
+END t(m)END
+.end_keep
+.keep
+
+To draw the head, you can use a circle procedure.
+
+TO    HEAD
+LEFT    90
+RCIRCLE    5
+RIGHT    90
+END
+.end_keep
+
+.fi b
+Now, when you type the command, PERSON, you should get this result:
+.bp
+.section "bold(Project Ideas Using Subprocedures)"
+.chapter "bold(Making a Repeating Design)"
+It is possible to make complex designs by making the computer repeat a series
+of steps over and over again.  There are several ways to carry out a project
+of this type.
+.section "bold(Making a Repeating Design Using Recursion)"
+The procedure FUN makes a simple turtle design:
+
+.nf l
+.keep
+TO  FUN
+FORWARD  30
+RIGHT  120
+FORWARD  10
+LEFT  90
+BACK  20
+END
+.end_keep
+.fi b
+
+If you teach the computer to FUN, and repeat FUN several times, another design
+begins to appear.  If you make the computer keep repeating these steps
+over and over without stopping an
+interesting design may result.
+
+.nf l
+.keep
+TO  FUNNY
+FORWARD  30		
+RIGHT 120		
+FORWARD  10		
+LEFT  90
+BACK  20
+FUNNY
+END
+.end_keep
+
+.keep
+.fi b
+FUNNY  is the same as  FUN  except for the last line.  When you type the command FUNNY, the computer will draw a shape, then start
+the procedure FUNNY again, draw the same shape, starting from a different place, start
+FUNNY again, etc.  It will keep going, eventually retracing the same design
+unless you stop the computer by typing 
+
+	<SHIFT> - Z.
+
+This way of making a procedure repeat is called recursion.
+.end_keep
+.keep
+
+Here are some other examples of recursion:
+
+.nf l
+TO SQUARE	
+FORWARD  20		
+RIGHT  90		
+SQUARE		
+END		
+.sp 4
+.end_keep
+.keep
+TO FLOWER	
+RCIRCLE   30
+RIGHT  60		
+FLOWER		
+END
+.sp 5
+.end_keep
+.keep
+TO NEWFUN	
+FUN	
+NEWFUN
+END
+.sp 4
+.end_keep
+.keep
+TO STAR
+FORWARD  40
+RIGHT  150
+STAR
+END
+.sp 4
+.end_keep
+.fi b
+Try making some recursive procedures of your own. Change the size of the forward step in  SQUARE or the angle in  FLOWER  or  STAR.
+.bp
+.section "bold(Making Repeating Designs Using the REPEAT Command)"
+
+The LOGO command REPEAT allows you to repeat a command or list
+of commands as many times as you want.
+
+.nf l
+Examples:
+
+.keep
+REPEAT   7   [  FORWARD  10    BACK  10    RIGHT  20 ]
+REPEAT   3   [  FUN  ]
+REPEAT   4   [  RIGHT  90    FORWARD  20  ]
+.end_keep
+.fi b
+
+REPEAT needs two inputs.  The first input is a number telling how
+many times to repeat something; the second input is a list of instructions.
+The list must be enclosed within square brackets  [   ]  ( <SHIFT> - 4  and  <SHIFT> - 5 ). 
+
+REPEAT can also be used in procedures:
+
+Examples:
+
+.nf l
+.keep
+TO  SQUARE
+REPEAT  4    [ RIGHT  90    FORWARD  20 ]
+END
+.sp 5
+.end_keep
+
+.keep
+TO FLOWER
+REPEAT  6    [ RCIRCLE   30  RIGHT  60 ]
+END
+.sp 5
+.end_keep
+.bp
+.fi b
+.section "bold(Ideas for Repeating Designs)"
+Here are some designs that can be made using recursion or REPEAT.
+.chapter "bold(Reference List of Commands)"
+.section "bold(Turtle Commands Used in This Booklet)"
+.keep
+.nf l
+Command		s(m)Type of Input		s(n)Example
+
+TELL   TURTLE							  t(n)TELL   TURTLE
+
+NOTURTLE							  t(n)NOTURTLE
+
+
+FORWARD			   t(m)number			  t(n)FORWARD   30
+FD			   		  t(n)FD   30
+
+BACK			   t(m)number			  t(n)BACK   50
+BK			   			  t(n)BK   50
+
+RIGHT			   t(m)number			  t(n)RIGHT   45
+RT			   			  t(n)RT   45
+
+LEFT			   t(m)number			  t(n)LEFT   60
+LT			   			  t(n)LT    60
+
+PENUP							  t(n)PENUP
+PU							  t(n)PU
+
+PENDOWN							  t(n)PENDOWN
+PD							  t(n)PD
+
+PENERASE	t(n)PENERASE
+PE		t(n)PE
+
+PENREVERSE	t(n)PENREVERSE
+PR		t(n)PR
+.end_keep
+.keep
+
+Command		t(m)Type of Input		t(n)Example
+
+SETCOLOR		   t(m)number  (0 - 15)		  t(n)SETCOLOR   5
+SC		or   t(m)list of two numbers		  t(n)SC  [ 5  15 ] 
+
+COLORBACKGROUND		   t(m)number  (0 - 15)		  t(n)COLORBACKGROUND   1
+CB			t(n)CB   1
+
+
+CLEARSCREEN						  t(n)CLEARSCREEN
+CS							  t(n)CS
+
+HIDETURTLE						  t(n)HIDETURTLE
+HT							  t(n)HT
+
+SHOWTURTLE						  t(n)SHOWTURTLE
+ST							  t(n)ST
+
+HOME							  t(n)HOME
+.end_keep
+.bp
+.keep
+.section "bold(Some Additional Turtle Commands)"
+Command		t(m)Type of Input		t(n)Example
+
+SETHEADING		t(m)number		t(n)SETHEADING   90
+
+SH			t(n)SH  90
+
+SX			   t(m)number			  t(n)SX   20
+
+SY			   t(m)number			  t(n)SY   (-40)
+
+SXY			  t(m)two numbers			  t(n)SXY   40   75
+							  t(n)SETXY   (-20)   50
+
+XCOR							  t(n)PRINT   XCOR
+
+YCOR							  t(n)PRINT   YCOR
+
+HEADING							  t(n)PRINT   HEADING
+
+WHERE		t(n)PRINT   WHERE
+
+
+
+SETHEADING   sets the turtle's direction
+SX   and   SY   set its horizontal and vertical positions.
+SXY   sets both horizontal and vertical positions at once.
+XCOR   and   YCOR  send messages giving the turtle's horizontal and vertical positions.
+HEADING   sends a message giving its heading.
+WHERE   sends a message giving a list of all three - horizontal and vertical positions, and direction.
+.end_keep

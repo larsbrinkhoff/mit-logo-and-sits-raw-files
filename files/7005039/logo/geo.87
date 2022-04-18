@@ -1,0 +1,45 @@
+.xgp
+.font 0 30vr
+.ss
+.adjust
+.ce
+Individual Profiles; Gary
+
+Gary was clearly the "brightest" child in the group.  He had prior knowledge about using computers, and had done some programming in BASIC somewhere.  Last summer he had attended a COMPUTERFAIR held in Boston, and had asked his parents to buy him a computer.
+
+From the beginning he abosrbed ideas voraciously, and rarely had to be shown something twice.  He was extremely eager to learn new things, and although he always stayed with a project until it reached some kind of completion, he seemed to have little desire to improve or alter a finished product.  In one case, however, he completely reprogrammed one complex design at my request, as an exercise in "learning to write better programs").
+
+Gary regularly stayed "late" after the end of classes.  He actually resisted leaving, to the point of making it an issue for a while.
+
+A couple of major programming issues for gary were naming, and using functional subprocedures.  Gary had a strong sense of humor, and enjoyed nonsensical names.  He was introduced to the name FOO as a random procedure name, and decided to name all his procedures as a series of FOOs:  FOO1, FOO2, ..FOO200.  When he began working on his first big project to make a face using arcs and circles, he "buried" his functional procedures, FOO6, FOO7 and FOO8, inside procedures, which were inside other procedures.  His procedures were somewhat involved, and required a fair amount of debugging...Gary had difficulty remembering which procedure he had to edit, and had a lot of confusion as a result. (See figure G-1)
+
+.epage 1
+Gary's general method of working, which persisted for a long time, was to plunge into a problem "headfirst", with very little planning, little consideration for the effects of an action that might go beyond what he was focusing on at the moment.  As an example, in his second project, making a math quiz, he had a set of procedures named MATH, MATH1, MATH3.  He decided that they were ordered incorrectly, and so decided to change the names of the procedures, so that the first procedure used would be MATH1, the second, MATH2, etc.   What he forgot while doing this, was that he would also have to change all the procedures themselves, so that they would be calling the correct subprocedures.  When he finished changing the names around, all his procedures suddenly stopped working.  He was able to debug this situation himself by printing out his procedures and "playing computer". (See figure G-2)
+
+Gary's third major project was the drawing and animation of a starship.  His first attempt abandoned subprocedures in favor of a long, involved step-by-step construction.  This led to some really involved, frustrating debugging.  Gary plugged away at the process, which required that he add many lines to his one basic procedure.  
+
+.epage 1
+.block 4
+.indent 6
+(He had used a HOME command in his original starship plan to reset the turtle at several points during the procedure.  Since this ruined the animation, all the HOME commands had to be eliminated, and, to carry through with the plan, replaced by several steps which would bring the turtle back to the origin.)
+
+.indent 0 
+Following Gary's successful completion of this task, which had taken him about an hour, during which he needed help understanding the initial bug, I explained to him that a "good computer program" would be simple, and easy to understand.  That with a few simple subprocedures he could have made a starship program that was much easier to understand and debug.  I suggested that he re-do his starship from scratch next time, and try to make it really simple.  He agreed to this, and next time made a starship program using modular subprocedures, that could almost serve as a kind of model of LOGO programming.  (It still had some sub-procedures contained within others, contained within others, which made it a bit more compelx that it had to be.)  The exciting thing was that for the first time, Gary understood what it meant to write a "good program" and was able to reflect a bit on organization vs. dis-organization.  (Gary also cleaned up his notebook, put the pages in order, etc. -- another suggestion from me that he was willing to accept and understand, at this point.) (See figure G-3)
+
+From the start, Gary displayed absolute confidence that with my help, he could make the computer do anything he wanted.  For his last project, he decided to use an idea he got from a "creative computing" pamphlet which described a "science project" by a clever high school student who combined a morse code reading program with a discovery that a certain kind of repeating loop program caused interference in a nearby AM radio.  By controlling the running time of the looping procedure, he was able to produce "dot" and "dash" interference on the radio and hence use the computer to transmit an audible morse code.  Gary very much wanted to do this project, and even brought in an AM radio for it.
+
+Despite my protestations that I didn't know how to do it, Gary was determined and convinced that he (and I) could do it.  He did realize that it was a big project, and might not be accomplished completely in the time we had left.  He also agreed to my suggestion that he begin with a program that could translate sentences into morse code, and a reverse program to translate morse code into sentences.  He realized that these would have to be a basis for his larger project, and was content to begin modestly. 
+
+.epage 1
+For the final two classes, Gary had a visitor, his friend John, a seventh grader.  His interactions with John were very suggestive about what might have been possible for Gary in a less restricted learning environment.  (that is -- more people for him to interact with fruitfully) John caught on to the elements of LOGO extremely quickly under Gary's tutilage.  At the same time he supplied a sense of "creativity" that Gary was lacking in his approach to the work.  Two examples that I picked up and referred to in my notes of the last session:
+
+.indent 6
+.block 4
+(1) the boys were animating a "zeppelin" which was oriented horizontally.  Whenever it "flew" it always moved perpendicular to the longitudinal axis.  "Hey", John said at one point, "what if we turned the zeppelin 90 degrees first -- then would it fly in the right direction?"  Of course -- exactly the right solution. [Gary might never have come to it as quickly.] 
+
+.block 8
+(2) similarly, the boys built a maze on the screen, and realized that the Zepplin was too big to animate.  John suggested animating the "turtle" an idea that astounded GEM.  (After all, the turtle was "the turtle") Gary had the conceptual tools to animate the turtle easily with a few words with me.  John had the divergent thought processes to suggest entirely different ideas, outside of gary's usual framework.  
+
+.indent 0
+What might have happened if both had been in the class together from the start -- or if gary's class environment had been such that he could have been exposed to a variety of creative inputs from peers.  This suggests strongly that the ultimate place for the computer is in the classroom, rather than in the "computer lab".
+.indent 0 

@@ -1,0 +1,43 @@
+
+
+
+
+WONDER WORLD CONVENTIONS
+PUFF TO DAN
+
+
+	
+DLIST	::= ( <DEF> ) ! ( <DEF> <LIST> )
+DEF	::= ( EXIST <NUM> <TYPE> ( <PLIST> ) ( <SRLIST> ) )
+PLIST	::= <PROP> ! <SENSE> <QUAL> ! <PLIST> <PLIST>
+SRLIST	::= <PRED> <VERB> ! <SRLIST> <SRLIST>
+VERB	::= LT ! RT ! AT ! FN ! FS ! FE ! FW ! EAT ! DIE ! FD <DIS>
+DIS	::= VSD ! SD ! MD ! BD ! VBD 
+PRED	::= CST ! CSM ! CHR ! CTC
+SENSE	::= ST ! SM ! HR ! TC
+QUAL	::= VSQ ! SQ ! MQ ! BQ ! VBQ
+PROP 	::= LOC <NUM> <NUM> ! TYPE <TYPE> ! SIZE <SIZE>
+TYPE	::= A ! B ! C ! ... ! Z ! <TYPE><TYPE>
+SIZE	::= VSS ! SS ! MS ! BS ! VBS 
+NUM 	::= 1 ! 2 ! 3 ! ...
+
+
+
+
+WONDER WORLD CONVENTIONS
+DAN TO DAVE
+
+
+	
+INST	::= ( <NUM>  <COM> )
+COM	::= <VERB> ! <PRED> <TYPE> ! <SENSE> <QUAL> ! <PROP>
+VERB	::= LT ! RT ! AT ! FN ! FS ! FE ! FW ! EAT ! DIE ! FD <DIS>
+DIS	::= VSD ! SD ! MD ! BD ! VBD 
+PRED	::= CST ! CSM ! CHR ! CTC
+SENSE	::= ST ! SM ! HR ! TC
+QUAL	::= VSQ ! SQ ! MQ ! BQ ! VBQ
+PROP 	::= LOC <NUM> <NUM> ! TYPE <TYPE> ! SIZE <SIZE>
+TYPE	::= A ! B ! C ! ... ! Z ! <TYPE><TYPE>
+SIZE	::= VSS ! SS ! MS ! BS ! VBS 
+NUM 	::= 1 ! 2 ! 3 ! ...
+

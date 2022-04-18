@@ -1,0 +1,1009 @@
+Draft 0 Smalltalk: Dreams and Schemes Chapter IV June 1, 1979 Status: Needs
+examples to be completed, needs better subclassing example before getting into
+hierarchical numbers and needs to provide definitions for those data structures
+introduced in Chapter III.  Will probably also do something about use of the
+word "field".
+
+
+
+IV
+
+Class Class, Subclassing, and Determination of Method
+
+
+
+
+
+We begin with a review of the kernel notions of Smalltalk as introduced in
+Chapter II.  We then describe a special object, the object that represents
+classes of objects, class Class.  In the Smalltak language, a class can be
+declared to be a subclass of another class and thus inherit all the traits of
+that superclass.  Every class is ultimately descended from the class Object.
+Following an explanation of these two special objects, we explore the problems
+of determining the proper response to a message given this hierarchical
+organization of objects.
+
+The Class Class
+
+The two fundamental principles of the Smalltalk design are that all of the parts
+of a system be represented in the same way and that they all interact or
+communicate in the same way.  We have adopted the name object to refer to the
+uniform representation for the parts of a system and the name message sending to
+refer to their uniform method of interaction.  An object is an independent
+activity that maintains its own state and communicates on its own terms with
+other objects.  Therefore, it has the properties of a complete computing
+machine.  Objects are grouped into classes according to their function; the
+objects of a class are called its instances.
+
+Since these classes are fundamental parts of the system and since all parts of
+the system are represented uniformly as objects, it is natural that there are
+objects that represent the classes.  These objects that represent classes of
+objects form a class themselves since they all perform the same function; the
+name of the class is naturally Class.  The object that represents this class of
+objects (i.e., Class) has the interesting property of being a member of the
+class it represents.
+
+Every object knows its class; its class may be thought of as an implicit part of
+the object's state.  In Smalltalk-76, it is not possible to change the class
+membership of an object.
+
+An Archetypal Class: Dictionary
+
+For the sake of the discussion in this chapter, reference will often be made to
+a class we call Dictionary.  A dictionary associates with each of a set of
+objects a corresponding value.  It can tell what value is associated with a
+given object and can insert, delete, and change associations.
+
+A particular instance of class Dictionary might contain the following five
+nonsensical associations:
+
+objects	values
+
+'six'	6
+'twelve'	12
+'+'	'plus'
+'Fastalk'	'slow'
+'Smalltalk'	'fast'
+
+Let us examine this instance from the two viewpoints described in Chapter II,
+the internal viewpoint of its representation or memory, and the external
+viewpoint of its message protocol.  We will then examine methods, the link
+between the two.
+
+From the internal viewpoint, an instance of a class is made up of the parts that
+specify its state.  One of these parts is a reference to the class.  Other parts
+determine properties that distinguish this instance from other members of the
+class; these conceptually form a dictionary, the state or property dictionary,
+that consists of the names of the parts and their current values.  We call each
+item in the property dictionary a field.
+
+<==<chapter4-1.press<
+
+
+
+
+
+
+
+
+Figure 4-1.	An instance references its class and contains a property
+dictionary.
+
+From the internal viewpoint, an instance of class Dictionary is composed of two
+fields called objects and values.  Both fields reference lists whose lengths are
+the same power of 2.  If each list has a length of, say 8, and the dictionary
+has 5 associations, then 3 of the locations in each list will be vacant.  Vacant
+locations are represented by a reference to the special constant nil.
+
+From the external viewpoint of another object wanting to access a dictionary,
+its fields can be reached only indirectly, by sending messages to the instance.
+For example, if dict is our sample dictionary, then one can send a "look-up"
+message to the dictionary with the Smalltalk expression
+
+dict lookup: 'twelve'
+
+and the value returned will be 12.
+
+To support the external viewpoint of a class, each class consists of a message
+dictionary, a sequence of pairs of message patterns and methods.  Basically,
+when a message is passed to an object, Smalltalk selects a method to execute by
+looking up the message in the object's message dictionary.  If the object is an
+instance of a class, the correct message dictionary is the one found in the
+definition of the class.  If the look-up operation is successful, then the value
+obtained is a method to be executed.  This execution takes place in the context
+of the property dictionary of the object, that is, fields that are mentioned in
+the method refer to the values in the property dictionary of that instance.
+
+<==<chapter4-2.press<
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4-2.	The message dictionary is in the class definition.
+
+From the external viewpoint, it is not essential to know that a dictionary is
+represented by a pair of lists and that their length is a power of 2.  If class
+Dictionary were redefined to use a different representation, and if its methods
+were modified appropriately, then all other methods that use dictionaries would
+continue to function.
+
+In creating a class, the fields are named; in creating an instance, the property
+dictionary is automatically set up, providing an item for each named field.
+
+The Pseudo-Variable self
+
+[might move this to Chapter II, depends on Chapter III's needs]
+
+Some standard pseudo-variables are provided automatically to every method.  They
+cannot be assigned values by the method.  The most important one is self, the
+instance whose method is being performed.  An object can send itself a message
+by addressing it to the pseudo-variable self.
+
+[example]
+
+The Class of Classes
+
+Since a class is the one place where detailed representation of its instances is
+known, it is the natural source of new instances.  To create a new rectangle,
+send the message new to the class Rectangle; to create a new dictionary, send
+the message new to the class Dictionary.  Now a very nice aspect to the class
+formalism is that it folds back on itself in a way which allows the higher level
+of creation to be described without introducing any new concepts.  Each
+class--Door, Point, Rectangle--is itself an instance, having as its local
+properties the representation and behavior of its instances.  There is, of
+course, a class to which these classes belong--class Class--and in that class is
+stored the description of how a class is represented, what messages it
+understands (such as new), and how the responses are implemented.
+
+As already stated, a new instance of a class is created by passing its class the
+message new.  That is to say, and as we would expect, the class itself is an
+object to which we can send messages.  The class responds to the message new by
+allocating the property dictionary for the new instance, initializes each value
+in the dictionary to a standard constant nil, and returns the object.  Usually
+the new object is then passed additional messages to initialize it fully.
+
+The message dictionary for class Class, and therefore messages to which all
+class objects can respond, include:
+
+[...choose representative messages--do not be complete here
+
+
+defining the object
+
+fields: myinstvars declare: v rename: newtitle sharing: table subclassOf:
+superclass title: title title: t subclassOf: s fields: f declare: d edit:
+selector para: para formerly: oldpara canUnderstand: selector install: name
+method: method literals: literals code: code backpointers: backpointers
+understands: code
+
+execute: code
+
+identifying the object
+
+Isa: x "is x on my superclass chain?"  print: inst on: strm filout
+
+creating an instance
+
+init init: n new new: length
+
+]
+
+Activations
+
+Each method can declare temporary variables that can be used during the
+execution of the method.  These variables are destroyed automatically when the
+method execution is terminated.  The syntax for defining methods in Smalltalk-76
+is detailed in the next chapter.  Suppose for now that the message dictionary of
+the class Dictionary contains the message pattern growby: size and that the
+method for growing (increasing) the length of the list objects, an instance
+variable of Dictionary, uses a temporary variable copy.
+
+If we send a message such as cust growby: 5, where cust is an instance of
+Dictionary, a new object that we call an activation is created.  This new object
+contains a dictionary for storing the names and values of the temporary
+variables of the method that is currently being executed.  The precise
+description of this object is provided in the Chapter V section on program
+execution.  For now it is sufficient to know that the Smalltalk-76 system
+supports four kinds of object variables in the creation and use of objects:
+pool, class, instance, and temporary (or method).  Pool variables are those
+shared among classes; class variables are those shared among instances of a
+class; instance variables are known only to the individual class member; and
+temporary variables provide the extra storage requirements when running a
+method.
+
+
+
+<==<chapter4-3.press<
+
+
+
+
+
+
+
+
+Figure 4-3.	This activation for an instance of class Dictionary requires
+space for one temporary variable.  The instance holds the dictionary of instance
+variables.
+
+
+Subclasses
+
+When several classes implement the same protocol, i.e., respond to the same
+messages, they may or may not employ the same methods to do so.  If it happens
+that the same methods are employed, it would be awkward to have to repeat their
+definitions in each class.  Therefore, a limited facility for sharing method
+definitions among classes is provided.  A class may have subclasses.
+
+Take as an example the class, HashSet.  A hash set is a set of objects that are
+usually of the same class.  No object appears more than once in such a set.  A
+hash set can tell whether a given object is present and can insert and delete
+objects.
+
+Class Dictionary can be implemented as a subclass of class HashSet; a dictionary
+associates a value with every object in the hash set.  A hash set has only a
+list objects as a field; it has no list values.  And so there is no message like
+lookup: name.  However, there is a find: obj message that returns the location
+of obj in the list objects.  Therefore, class Dictionary need not define a
+method for the find: obj message; it inherits one from HashSet.  It also
+inherits the field objects, so the class definition need only mention the field
+values.
+
+
+<==<chapter4-4.press<
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4-4.	Class Dictionary is a subclass of class HashSet.  The property
+dictionary of an instance of Dictionary contains fields from both classes; the
+instance can respond to messages found in the message dictionary of either
+class.
+
+This ability to form a subclass is inherited by each class.  Thus it would be
+possible to create Dictionary as a subclass of HashSet, and then to create a new
+class, DataDictionary, as a subclass of Dictionary.  Both Dictionary and HashSet
+would be superclasses of DataDictionary.  An individual class might have several
+subclasses.
+
+In Figure 4-5 we show a class Customer in its class hierarchy with HashSet and
+Dictionary.  Note the addition of a "declare" part, a dictionary in which we
+store information shared among all members of the class.  Now suppose cust is an
+instance of class Customer.  Then cust can understand the message growby: 5
+because the message pattern growby: size can be found in the message dictionary
+of a superclass of Customer.
+
+
+<==<chapter4-5.press<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4-5.	The class Customer is a subclass of Dictionary.  The property
+dictionary of its instance contains five items, one for each field in Customer
+and its superclasses.  its methods can also refer to a variable instCount, a
+property shared among all customer objects.
+
+Order of Method Determination
+
+When an instance of class Dictionary is created, it references its class as
+described earlier.  Its class, in turn, references its superclasses.  The
+property dictionary of the new instance consists of all fields from the class
+and its superclasses.  The instance can respond to any message found in its
+class or one of its superclasses.  In looking up a message, Smalltalk first
+checks the message dictionary of the object's class.  If not found in the class,
+Smalltalk looks for the message in the superclasses, in hierarchical order.  If
+the same message is provided in several message dictionaries, the first one
+found determines the method to be executed.
+
+If a method contains a statement in the form of sending a message to the
+pseudo-variable self, that variable refers to the currently running instance,
+regardless of where in the hierarchy of message dictionaries the method is
+actually located.  As an example, take the definitions for HashSet and
+Dictionary.  And suppose we send a message of the form lookup: name to a
+dictionary; the corresponding method is to find the position in the list objects
+of the object whose name is name, and then return the value located in the same
+position of the list values.  The first step, then, is for the instance to send
+itself a message to find name.
+
+self find: name.
+
+The search for the appropriate method to run begins in the message dictionary of
+the class of the instance, in this case, Dictionary.  It is not found.  The
+search continues by looking at the first superclass, HashSet.  The search
+succeeds and a method is executed.  Suppose further that the method for messages
+of the form find: obj contains the statement
+
+self findornil: obj.
+
+Here we assume that the actual work of searching the list is carried out in the
+method associated with the message pattern findornil: obj.
+
+What is the order of searching for this message pattern?  The pseudo-variable
+self refers to the running instance.  Therefore the search begins with the class
+of the instance: the search begins in the message dictionary of Dictionary.  In
+this case, we are assuming that no message pattern for findornil: obj is in
+Dictionary, so the search continues with the class HashSet, where it will be
+found.
+
+We will provide further examples of method determination later.
+
+The Pseudo-variable super
+
+The pseudo-variable super is, like self, provided automatically to every method.
+A message sent to super goes to the currently running instance with the caveat
+that the message-dictionary lookup starts at the superclass of the class whose
+method is being performed, instead of at the class of self.
+
+Suppose it is desired to create DataDictionary, a subclass of class Dictionary;
+its purpose is to add the ability to count the number of look-up accesses to the
+dictionary.  The new subclass adds the field count and then defines the message
+lookup: name as follows.
+
+lookup: name 	count _ count + 1.
+	 super lookup: name.
+
+The message pattern of this message is the same as the one we examined for the
+class Dictionary.  The method consists of two statements (as written in the
+syntax of Smalltalk-76).
+
+	count _ count + 1.
+
+The count of accesses to the dictionary is first incremented by one.
+
+	 super lookup: name.
+
+Control is passed to the superclass in order to perform the actual search of the
+name in the dictionary.  The pseudo-variable super refers to the running
+instance, but indicates that the search for the message pattern should skip
+DataDictionary, the class, and begin with the first superclass, Dictionary.
+
+In sending a dataDictionary the message lookup, Smalltalk will examine the
+message dictionary of the class DataDictionary before that of Dictionary; so the
+above method would be executed for any instance of DataDictionary.  Instances of
+Dictionary continue to respond to the lookup message as before.
+
+<==<chapter4-6.press<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 4-6.	DataDictionary is a subclass of Dictionary.  It reimplements the
+response to the message lookup.  Its instances add an item, count, to the
+property dictionary.
+
+The Class Object--Hierarchical Inheritance
+
+A class, then, can be declared to be a subclass of another class and thus
+inherit all the traits of that superclass.  The subclass can add traits and
+behavior of its own, can override those messages it wishes, and can still invoke
+the overridden ones from within its code (using the pseudo-variable super;
+recursion is effected by using the pseudo-variable self so that the object can
+send itself messages).  This inheritance capability leads to a highly factored
+system.
+
+Every class is ultimately descended from the class Object, and inherits from
+that superclass such behavior as is common to all objects of the system.  A
+default description of how an object would print itself as text is given in
+class Object, so that as soon as one creates a new class, its instances will
+already be capable of printing themselves in a useful way.  Only occasionally is
+it necessary to override this default and provide a refined rule for printing.
+
+The message dictionary for class Object, and therefore messages to which all
+instances can respond, include:
+
+The following is part of the message dictionary for class Object.
+
+sameAs: object	are self and object the very same object?
+class	to which class do I belong?
+is: x	am I a member of the class x?
+Is: x	is the class x a superclass or class of me?
+
+copy	return a copy of me
+
+print	print a representation of me on the display screen
+printon: strm	print a representation of me on device strm
+
+The Classes Object and Class
+
+Class Class and class Object exist as part of the kernel Smalltalk system.  The
+existence of each of them is totally intertwined with the existence of the
+other.  Every object is ultimately a subclass of the class Object; every class
+is an instance of class Class.  This means that Class is a subclass of Object,
+while Object and Class are instances of class Class.  Object is the only class
+in the system that has no superclass.
+
+In the following figures, the relationship notation we use consists of two kinds
+of arrows.
+
+<==<chapter4-7.press<	[use color red here] This is a creation link; it denotes
+that the object nearest the circle end of the arrow is an instance of the object
+to which it is linked.
+
+[use color blue here] This is a link for behavior descriptions; it denotes that
+the object nearest the circle end of the arrow is a subclass of the object to
+which it is linked.
+
+Thus the objects in the kernel Smalltalk system are related in the following
+way.
+
+<==<chapter4-8.press<
+
+
+
+This figure emphasizes that Class is an instance of itself.  It is the only
+object in the system so related.  Notice also that in this and subsequent
+figures all objects have either a single creation link or both a creation and a
+behavior-description link.
+
+Determination of Method
+
+A message dictionary is the specification of potential behavior that is found in
+a class.  It is possible to create instances of a class; in particular,
+instances of class Class are themselves classes.  The potential behavior of
+these instances is found in the message dictionary of class Class.  In the next
+figure, we show a new object named Array.  It is an instance of Class and is
+therefore a class; it is a subclass of Object.  This new object is created by
+first sending the message new to the class Class.  The new object, an instance
+of Class, is then sent the message title: 'Array' subclassOf: Object.  The
+message dictionary of Class contains the message patterns new and title: name
+subclassOf: superclass.
+
+Class new title: 'Array' subclassOf: Object.
+
+<==<chapter4-9.press<
+
+
+
+
+
+
+
+
+An instance, here Array, can understand any message found in its class or one of
+its superclasses.  In order to understand the determination of the potential
+behavior of the instance, we form a composite message dictionary for the
+instance in the following way.  (1) All messages and their corresponding methods
+found in the message dictionary of the class and all the superclasses belong in
+the composite message dictionary.  (2) Any conflicts that occur because two
+classes, a subclass and one of its superclasses, have identical message
+patterns, is resolved by choosing the method found in the subclass.
+
+The composite message dictionary for an object will be represented in the
+figures as a box containing the names of the object's class and all its
+superclasses, ordered with the class at the top.  These are the classes from
+which the messages and associated methods in the composite message dictionary
+are determined.  Note that this means that the box packages classes linked
+together by the subclass relationship, starting with the class that is linked to
+the object by an instance relation.
+
+As an example, suppose we want to evaluate the expression Array new.
+
+The receiver is Array.  The message is new.  The composite message dictionary
+comes from
+
+			<==<chapter4-10.press<
+
+
+The message is understood; the method is found in the message dictionary of
+class Class.
+
+Creating Instances of a Class
+
+Because instances of class Class are themselves classes, it is possible to
+create instances of them.  The message new is used for this purpose.  The
+potential behavior of each instance is found in its composite message dictionary
+as described above.  For example, suppose we have created mat as an instance of
+Array.  And then we evaluate the expression mat length, noting that the message
+pattern length is located in the message dictionary of Array.
+
+<==<chapter4-11.press<
+
+
+Suppose we now try to evaluate the expression mat new.  We note that none of the
+classes used to form the composite message dictionary for the instance mat
+includes new as a message.  So the result of evaluating the expression is the
+error message: mat does not understand the message new.
+
+Subclassing the Class Class
+
+Instances of a subclass of class Class are themselves classes.  An example might
+be to create the class RecordClass.
+
+Class new title: 'RecordClass' subclassOf: Class
+
+The objects in our system now include
+
+<==<chapter4-12.press<
+
+
+
+
+
+
+
+
+
+
+
+
+
+Notice that RecordClass is both an instance and a subclass of class Class.  The
+composite message dictionary for RecordClass contains messages and methods from
+Class and Object.  One message pattern is title: name subclassOf: superclass.
+Suppose we place the same message pattern, but associated with a different
+method, in the message dictionary of RecordClass.  Then create TimeCard as an
+instance of RecordClass by evaluating the expression
+
+RecordClass new title: 'TimeCard' subclassOf: Object
+
+<==<chapter4-13.press<
+
+
+
+
+
+
+
+
+
+
+
+The message RecordClass new creates an instance of RecordClass, itself a class.
+The new object, in turn, is sent the message title: 'TimeCard' subclassOf:
+Object.  (Note the convention of capitalizing titles assists in recognizing the
+object as one able to have instances.)  The composite message dictionary for an
+instance of RecordClass comes from
+
+<==<chapter4-14.press<
+
+
+
+The method associated with the message pattern title: name subclassOf:
+superclass is the one specified in RecordClass, not the one originally specified
+in Class.
+
+Collection Classes
+
+Instances of class Class are classes whose instances have the exact same number
+of fields.  However, Smalltalk-76 includes a Collection class, a subclass of
+class Class; its instances are classes whose instances can have differing
+numbers of fields.  Without this capability to create instances with varying
+length property dictionaries, it is necessary to implement lists as linked
+lists.  Hence for efficiency purposes, a class Collection was added to the
+system.  (For more detailed discussion of this implementation consideration, see
+Chapters III and V.)
+
+Class new title: 'Collection' subclassOf: Class
+
+<==<chapter4-15.press<
+
+
+
+
+
+
+
+
+
+The message dictionary of this new class object, Collection, contains the
+message patterns new and new: length.  The method for the first, new, takes
+precedence over the method found in the class Class; its purpose is to report an
+error because instances of Collection must be created with an argument
+specifying the number of fields in the instance.  The second message, new:
+length, provides the mechanism for creating an instance of Collection, a class
+whose instances can have varying length property dictionaries; the number of
+entries in the state dictionary is specified as the parameter length.
+
+We now create an instance of class Collection we call Vector.
+
+Collection new title: 'Vector' subclassOf: Array
+
+In the above, the first part of the expression to be evaluated is Collection
+new; the receiver is Collection, the message is new; and the composite message
+dictionary comes from
+
+<==<chapter4-10.press<
+
+
+
+So Vector is created as a class that is an instance of Collection.  It is itself
+a class and, as expected, ultimately a subclass of Object.
+
+<==<chapter4-16.press<
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the sake of clarity, let's review this notion of method determination with
+an example using Vector and Array.  We place in the message dictionary of Array
+the message new, and define its method to simply print the statement, 'message
+new was found in class Array'.  Try to evaluate the expression
+
+a _ Array new.
+
+The receiver is Array; the message is new; and the composite message dictionary
+is
+
+<==<chapter4-10.press<
+
+
+The expression is successfully evaluated; since the message new was found in
+Class, the above statement does not print.  Rather, a new instance of Array is
+created; it is referred to by the identifier a.  Now evaluate the expression
+
+a new 
+
+<==<chapter4-17.press<
+
+
+
+
+
+
+
+
+
+
+
+
+The receiver is a; the message is new; and the composite message dictionary for
+an instance of Array comes from
+
+		<==<chapter4-18.press<
+
+
+
+The result is that the message new is found in Array and, so, the statement
+'message new was found in class Array' prints.
+
+Now try
+
+vec _ Vector new.
+
+The composite message dictionary for Vector comes from
+
+
+<==<chapter4-19.press<
+
+
+
+The method for responding to the message new was determined in the message
+dictionary of Collection; the result is the error message specified in the
+method.
+
+Try
+
+vec_ Vector new: 5.
+
+Again the method was determined in Collection; the result is a new instance of
+class Vector whose state dictionary is five entries long.
+
+Now suppose we create a subclass of Vector that we call VecSC.  Since we want it
+to be a class whose instances can have varying length property dictionaries, we
+create it as an instance of Collection, not of Class.
+
+Collection new title: 'VecSC' subclassOf: Vector
+
+<==<chapter4-20.press<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The composite message dictionary for sending messages to VecSC comes from
+
+	<==<chapter4-19.press<
+
+
+
+So the response from the message new to VecSC is an error message; the response
+from new: 4 to VecSC is to create an instance of VecSC.  Suppose the instance is
+vs.  Then it can understand the message length.  The message new results in our
+message 'message new was found in Array'; a new instance of vs is of course not
+created.  The composite message dictionary for vs comes from
+
+	<==<chapter4-21.press<
+
+
+
+
+
+Summary
+
+Any subclass of class Class has the ability to create instances of itself that
+are themselves classes.
+
+An instance of class Class is a class; it can create an instance of itself.
+This second instance is not a class and cannot create instances of itself.
+
+When a new class is created, it is given both an instance relationship to a
+class and a subclass relationship to a class.  An instance is given only an
+instance relationship to a class.
+
+A message goes first to the class of the designated receiver; the class is
+determined by an instance relationship.  Then, if not found in the message
+dictionary of that class, the message goes to each of the superclasses, in turn,
+as determined by subclass relationships.
+
+The subclass relationship is provided mainly for purposes of saving space and
+adding flexibility of information sharing.  Conceptually, when a new object is
+created, its message dictionary is initially the composite message dictionary
+formed by taking the message dictionaries of the object's class and
+superclasses, in order.  Then there is no such notion as "overriding a message"
+-- the message is in the dictionary and the correct method completely replaces
+the one already there.  We would also have to deal with the pseudo-variable
+super differently, if at all.  Because of the space saving requirement and
+because we want to benefit directly from any changes in the superclass, we
+physically do not form the composite message dictionary, not at the time of
+creating an object nor at the time a message is sent.  Rather, we trace through
+the subclass hierarchy, searching message dictionaries for the individual
+classes.
+
+There are No Explicit Type Declarations
+
+It is possible that instances of several classes are able to respond to the same
+message.  To the extent that two or more classes share that ability, it is said
+that they implement the same (message) protocol.  A given class may have part of
+its protocol in common with one class and part in common with another.
+
+To send a certain message to an object, the object must be of the "right type";
+that is, the object's class must be able to respond to that message.  Although
+the notion of class is formalized in Smalltalk, the notion of type is not.
+Types are not declared nor even named.
+
+In Smalltalk, as in LISP and APL, a given variable may reference an object of
+any class and of any type.  Therefore, if a programming error causes an
+unintended object to be assigned to a variable, the error is not detected when
+the program is compiled, nor even when the assignment occurs, but somewhat later
+when an uncomprehended message is sent to the object.
+
+The absence of type qualification has its benefits.  It permits the notation to
+be more concise, and it enables old programs to operate on instances of new
+classes, to the extent that those classes follow old protocols.  Moreover, it
+facilitates the availability of a small, reliable, and easily extended resident
+compiler, thereby permitting direct execution of expressions both for debugging
+methods and for invoking them.
+
+Examples
+
+<some simpler examples to redo the data structures of Chapter III's sysdefs
+before striking with hierarchical numbers>.
+
+Example: Hierarchical Numbers
+
+The subclass organization also expands the utility of the type-independent
+property of Smalltalk code.  For example, the superclass Number implements the
+messages
+
+   min max
+
+In terms of the basic comparisons, < =, and >.  Consequently, after defining
+only the basic comparisons, any new subclass of Number can respond to the full
+numerical protocol.  Other messages in the superclass Number, such as the infix
+ (which creates a Point) and to:by: (which creates an Interval), similarly
+allow coordinates of Points, and limits of for-loop ranges to be FloatingPoint,
+Fraction, or any other kind of Number.
+
+There are several ways one could structure a hierarchy of Number classes.  One
+is:
+
+Number
+
+Complex (a subclass of Number)
+
+Real (a subclass of Complex)
+
+Rational (a subclass of Real)
+
+Integer (a subclass of Rational)
+
+Natural (a subclass of Integer)
+
+Bit (a subclass of Natural)
+
+This structure has pleasant mathematical properties.  The potential instances of
+each class are a proper subset of the potential instances of its superclass.
+But this structure has two serious difficulties.  Class Complex is most
+naturally implemented with two Real fields, rPart and iPart.  However, we do not
+wish these fields to be inherited by subclasses such as Real and Integer.
+Furthermore, instances of class Real in a computing machine are really just
+approximations, and don't deserve to be called "Real".
+
+Both difficulties can be surmounted by considering the classes named above to be
+abstract classes.  An abstract class is a class that has no property dictionary
+and no instances.  An abstract class provides a conceptual framework and a
+message dictionary that its subclasses can all share.
+
+This idea leads to another hierarchy.  In the table below, each abstract class
+is so noted, and each concrete class is followed by the names of its fields and
+the expected class of the value of each field.  Class Bit is concrete, but needs
+no fields because its only requirement is that its two instances (0 and 1) be
+distinguishable.  The nesting defines the levels of subclassing as indicated in
+the first example.
+
+Number (abstract)
+
+Complex (abstract)
+
+CartesianComplex (rPart [Real], iPart [Real])
+
+Real (abstract)
+
+FloatingReal (mantissa [Integer], exponent [Integer])
+
+Rational (abstract)
+
+RatioRational (numerator [Integer], denominator [Natural])
+
+Integer (abstract)
+
+SignedInteger (sign [Boolean], magnitude [Natural])
+
+Natural (abstract)
+
+BinaryNatural (digits [Bit Array])
+
+Bit
+
+The advantages of this hierarchy are suggested by the following example.  Class
+CartesianComplex would have messages rPart and iPart that returned the
+appropriate field of the instance.  In class Real, the message rPart would
+return a reference to itself and iPart would return 0.  Thus, all classes in the
+hierarchy below Complex would automatically respond properly to messages iPart
+and rPart.
+
+To handle mixed-class arithmetic, let each class respond to a message level by
+returning its level in the hierarchy.  A useful set of levels might be:
+
+7	Number
+6	Complex and CartesianComplex
+5	Real and FloatingReal
+4	Rational and RatioRational
+3	Integer and SignedInteger
+2	Natural and BinaryNatural
+1	Bit
+
+When the level changes, it is because the subclass over-rides the level message
+of its superclass.  Thus CartesionComplex inherits its message from its
+superclass Complex, whereas Real does not.
+
+Each class must also respond to a message upLevel by returning an equal instance
+of a class one step higher in the hierarchy.
+
+To handle unmixed addition, each concrete class would have a method 'plus: x'
+that was implementation-dependent and that required x to be of the same class.
+To handle mixed addition, class Number would have a message '+ x' that allowed x
+to be of any class.  Its method would work as follows:
+
++ x		compare my level with the level of x
+
+if equal, reply by sending myself the message plus: x
+
+if less, reply by sending myself the message + with the result of sending x the
+message uplevel
+
+if greater, reply by sending myself the message upLevel and then adding the
+result to 3)
+
+Analogous techniques would be used for other arithmetic operators.  Of course,
+various improvements can be made, such as having direct conversion between
+levels instead of the one-step-at-a-time approach used above.
+
+Although this approach is elegant, it is in practice inefficient for a number of
+reasons.  In particular, arithmetic on relatively small integers is a frequently
+performed operation in all computing.  The approach here requires at least the
+following messages to be passed around in order to add two small integers:
+
+Number +
+
+Natural level
+
+Natural level
+
+Natural equals: Natural
+
+Natural plus: Natural
+
+Array length
+
+.. and several times each:
+
+Array sub: Natural
+
+Bit sum: Bit withCarry: Bit
+
+Bit carry: Bit withCarry: Bit
+
+Therefore, a practical Smalltalk system should make compromises in the
+structuring of the number hierarchy.  Classes Bit and Natural are probably
+superfluous on a word-oriented machine.  Class SignedInteger should have a
+companion class at the same level called ShortSignedInteger that represents the
+most commonly used integers in a single machine word in the representation
+expected by the hardware adder.  This leads to a change in the hierarchy:
+
+Rational (abstract)
+
+RatioRational (numerator [Integer], denominator [Integer])
+
+Integer (abstract)
+
+SignedInteger (sign [Boolean], magnitude [Array])
+
+ShortSignedInteger (a single machine word)
+
+ShortSignedInteger should have its own message for '+ x' implemented in the
+kernel system as follows:
+
++ x		is x 's class also ShortSignedInteger?
+
+if so, do the addition in the implementation machine if not, invoke the 'Number
++ x' method
+
+In the most common case of adding two instances of ShortSignedInteger, no method
+other than ShortSignedInteger + need be invoked.  The class check can be done by
+the kernel directly since it must have access to the class of each object
+anyway.
+

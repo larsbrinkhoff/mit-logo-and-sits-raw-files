@@ -1,0 +1,258 @@
+(declare (special x1 x2 y1 y2 bumper-box-list))
+
+(declare (special pname rules dt age parent picture-array left last-left top last-top
+	  height width mask background picture-heading move-heading omega speed
+		  dx dy keywords-package sprite-test visibility critter-types-list	
+		  ticktockman shiva units-to-pixels pixels-to-units x-conv y-conv
+		  bumper-box-name-list))
+
+(make-new-species BUMPER-LINE NIL (heading x1 y1 x2 y2 visibility) NIL)
+						
+(defun make-bumper-line (1x 1y 2x 2y)
+  (<- BUMPER-LINE-CLASS ':NEW 'x1 1x
+      			 'y1 1y
+			 'x2 2x
+			 'y2 2y
+			 'heading (rads-to-degs (atan (- 1y 2y) (- 1x 2x)))
+  			 'visibility T)  
+  (let ((x1 (draw-convert-x 1x))
+	(y1 (draw-convert-y 1y))
+	(x2 (draw-convert-x 2x))
+	(y2 (draw-convert-y 2y)))
+    (parallines x1 y1 x2 y2 5)
+    )
+  )
+
+(defun parallines (x1 y1 x2 y2 &rest incrlist)
+  (let ((angle (atan (- x1 x2) (- y1 y2))))
+    (careful-tv-draw-line x1 y1 x2 y2 tv-alu-xor )
+    (do ((l incrlist (cdr l)))
+	((null l));(break round-again)
+      (let ((incr (car l)))
+	(let ((xincr (* incr (cos angle)))
+	      (yincr (* incr (- (sin angle)))))
+	  (careful-tv-draw-line (+ x1 xincr) (+ y1 yincr)
+				(+ x2 xincr) (+ y2 yincr)
+				tv-alu-xor )
+	  (careful-tv-draw-line (- x1 xincr) (- y1 yincr)
+				(- x2 xincr) (- y2 yincr)
+				tv-alu-xor )
+	  )
+	)
+      )
+    )
+  )
+
+(defun careful-tv-draw-line (x1 y1 x2 y2 alu )
+  (if (or (minusp x1) (minusp y1) (minusp x2) (minusp y2))
+      "Negative values to tv-draw-line are a real bad idea."
+      (tv-draw-line (fix x1) (fix y1) (fix x2) (fix y2) alu tv-default-screen)))
+						
+(fset-carefully 'cdl 'careful-tv-draw-line )
+
+;(unmake-species 'BUMPER-BOX)
+
+(make-new-species BUMPER-BOX NIL (top bottom left right visibility))
+
+(defun make-bumper-box (pname center-x center-y width height )
+  (if (memq pname BUMPER-BOX-NAME-LIST)
+      (string-append "There already is a bumper-box goes by the name of " pname)
+      (let ((xdif (// width 2))
+	    (ydif (// height 2)))
+	(let ((obj (<- BUMPER-BOX-CLASS ':NEW
+		       'top (+ center-y ydif) 
+		       'bottom (- center-y ydif)
+		       'left (- center-x xdif)			
+		       'right (+ center-x xdif)
+		       'visibility nil
+		       'pname pname
+		       )))
+	  (set pname obj)
+	  (<- obj ':DRAW)
+	  ))))
+
+
+
+(defmethod (BUMPER-BOX-CLASS :DRAW) ()
+  (cond ((null visibility)
+	 (let ((left (draw-convert-x left))
+	       (right (draw-convert-x right))
+	       (top (draw-convert-y top))
+	       (bottom (draw-convert-y bottom)))
+	   (let ((l (+ left 5))
+		 (r (- right 5))
+		 (tp (+ top 5))
+		 (b (- bottom 5)))
+	     (parallines left tp right tp  5)
+	     (parallines r top r bottom  5)
+	     (parallines right b left b  5)
+	     (parallines l bottom l top  5))
+	   (setq visibility T)))))
+
+
+(defmethod (BUMPER-BOX-CLASS :UNDRAW) ()
+  (cond (visibility
+	  (let ((left (draw-convert-x left))
+		(right (draw-convert-x right))
+		(top (draw-convert-y top))
+		(bottom (draw-convert-y bottom)))
+	    (let ((l (+ left 5))
+		  (r (- right 5))
+		  (tp (+ top 5))
+		  (b (- bottom 5)))
+	      (parallines left tp right tp  5)
+	      (parallines r top r bottom  5)
+	      (parallines right b left b  5)
+	      (parallines l bottom l top  5))
+	    (setq visibility NIL)
+	    )
+	  )
+	)
+  )
+
+(defun rads-to-degs (num)
+  (* 90 (// num 1.570796327)))
+
+;(unmake-species 'BUMPER-BOX)
+;(makunbound 'bumpy)
+;(setq bumper-box-list nil)
+(make-bumper-box 'bumpy 40 -40 50 40)
+;(describe 'bumpy)
+(<- bumpy ':DESCRIBE)
+(<- bumpy ':UNDRAW)
+(<- bumpy ':DRAW)
+
+(defmethod (BUMPER-BOX-CLASS :SPECS)()
+  (prog ()
+	(return top bottom left right)))
+
+(defmethod (SPRITE-CLASS :BUMPER-BOX-BOUNCE)()
+  (dolist (bmpr BUMPER-BOX-LIST)
+    (cond (last-left				;this is a start-up kluge--should be fixed
+	    (multiple-value-bind
+	      (b-top b-bottom b-left b-right)
+	      (<- bmpr ':SPECS)
+	      (let ((bottom (- top height))
+		    (last-bottom (- last-top height))
+		    (right (+ left width))
+		    (last-right (+ last-left width)))
+		(cond ((or (betw b-left left last-left)
+			   (betw b-right left last-left))
+		       (setq move-heading (- move-heading)
+			     left (+ left (* 2 (- b-left left)))))
+		      ((or (betw b-right right last-right)
+			   (betw b-left right last-right))
+		       (setq move-heading (- move-heading)
+			     left (+ left (* 2 (- b-right right)))))
+		      ((or (betw b-top top last-top)
+			   (betw b-bottom top last-top))
+		       (setq move-heading (+ (- (- move-heading 90)) 90)
+			     top (+ top (* 2 (- b-top top)))))
+		      ((or (betw b-bottom bottom last-bottom)
+			   (betw b-top bottom last-bottom))
+		       (setq move-heading (+ (- (- move-heading 90)) 90)
+			     top (+ top (* 2 (- b-bottom bottom)))))
+		      )
+		)
+	      )
+	    )
+	  )
+    )  
+  (or (<- self ':LEGAL-POS?) (<- self ':BUMPER-BOX-BOUNCE))    ;in case you're in a corner
+  )
+
+(defmethod (SPRITE-CLASS  :LEGAL-POS?) ()
+  (and (betw top 100. (+ -100. height))
+       (betw left (- 119. width) -119.)))
+
+#m(defmethod (SPRITE-CLASS :BOUNCE) (bouncee)
+  (multiple-value-bind (b-top b-left b-width b-height b-move-heading)
+    (<- bouncee ':POS-SPECS)
+    (let ((bottom (- top height))
+	  (right (+ left width))
+	  (b-right (+ b-left b-width))
+	  (b-bottom (- b-top b-height)))
+      (cond ((and (overlapping left right b-left b-right)
+		  (overlapping top bottom b-top b-bottom))
+	     (let ((reflectangle (// (+ move-heading b-move-heading) 2)))
+	       (setq move-heading (+ (- (- move-heading reflectangle)) reflectangle))
+	       (let ((b-bounce (+ (- (- b-move-heading reflectangle)) reflectangle)))
+		 (<- bouncee ':MOVE-HEADING<- b-bounce)
+		 )
+	       )
+	     )
+	    )
+      )
+    )
+  )
+
+#M(defmethod (SPRITE-CLASS :BOUNCE) (bouncee)
+  (multiple-value-bind (b-top b-left b-width b-height b-move-heading b-speed)
+    (<- bouncee ':POS-SPECS)
+    (let ((bottom (- top height))
+	  (right (+ left width))
+	  (b-right (+ b-left b-width))
+	  (b-bottom (- b-top b-height)))
+      (cond ((and (overlapping left right b-left b-right)
+		  (overlapping top bottom b-top b-bottom))
+	     (<- bouncee ':MOVE-HEADING<- move-heading)
+	     (<- bouncee ':SPEED<- speed)
+	     (setq move-heading b-move-heading speed b-speed)
+	     )
+	    )
+      )
+    )
+  )
+
+(defmethod (SPRITE-CLASS :BOUNCE) (bouncee)
+  (multiple-value-bind (b-top b-left b-width b-height b-move-heading b-speed)
+    (<- bouncee ':POS-SPECS)
+    (let ((bottom (- top height))
+	  (right (+ left width))
+	  (b-right (+ b-left b-width))
+	  (b-bottom (- b-top b-height)))
+      (cond ((and (overlapping left right b-left b-right)
+		  (overlapping top bottom b-top b-bottom))
+	     (let ((old-heading move-heading)
+		   (old-speed speed))
+	       (setq move-heading b-move-heading speed b-speed)
+	       (<- bouncee ':MOVE-HEADING<- move-heading)
+	       (<- bouncee ':SPEED<- speed)
+	       
+	       )
+	     )
+	    )
+      )
+    )
+  )
+
+(defmethod (SPRITE-CLASS :SPECIES-BOUNCE) (&rest species-names)
+  (dolist (species species-names)
+  (check-list species ':BOUNCE)))
+
+(COMMENT   This all exists in CRITTR
+
+
+(defmethod (SPRITE-CLASS :POS-SPECS)()
+  (prog ()
+	(return top left width height move-heading speed)))
+
+(defun check-list (species-name method )
+  (dolist (crit (glomeval species-name "-LIST"))
+    (if (<- self method crit)
+	(return crit))
+    )
+  )
+
+(defun betw (a b c)
+  (or (and ( a b) ( a c))
+      (and ( a c) ( a b))))
+
+    
+(defun overlapping (a1 b1 a2 b2)
+  (or (betw a1 a2 b2)
+      (betw b1 a2 b2)
+      (betw a2 a1 b1)
+      (betw b2 a1 b1)))
+
+END COMMENT)

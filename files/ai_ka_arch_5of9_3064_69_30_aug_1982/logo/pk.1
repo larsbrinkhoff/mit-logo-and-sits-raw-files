@@ -1,0 +1,645 @@
+.dv press   
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman10
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 1
+.fi b
+--DRAFT--
+
+LOGO Curriculum Materials
+
+8/4/81
+.sp 5
+1BOOKLET 7
+
+COMPLETE LISTINGS OF DYNATURTLE GAME PROCEDURES0
+
+(Apple Logo Version)
+
+by Daniel H. Watt
+c. MIT Logo Group, 1981
+.sp 6
+This booklet lists the procedures for all three dynaturtle games.  If you decide to use chapter 6 to personalize the games, this booklet will be helpful.  If you do not have the dynaturtle game procedures on a disk, you can copy them carefully from this booklet.
+.chapter "bold(Procedures for the Target Game)"
+2
+Procedure Tree for the Target Game
+.bp
+.keep
+.nf l
+TO   TGAME
+SETUP
+DT.TGAME
+END
+.end_keep
+.keep
+	TO    SETUP
+	MAKE   "XS   (-70)   MAKE   "YS   (-70)
+	MAKE   "XT   70   MAKE   "YT   70   MAKE   "R   10
+	MAKE   "VX   0   MAKE   "VY   0
+	MAKE   "FORCE   4
+	MAKE    "TRACE   "FALSE
+	DRAWTARGET
+	PENUP
+	SETXY   :XS   :YS   SETHEADING   0
+	SHOWTURTLE
+	END
+.end_keep
+
+.keep
+	   TO   DRAWTARGET
+	   DRAW
+	   BACKGROUND   1   PENCOLOR   0
+	   TARGET   :XT   :YT   :R
+	   END
+
+		TO   TARGET   :XT   :YT   :R
+		HIDETURTLE
+		PENUP   SETXY   :XT   :YT
+		CIRCLE   :R
+		END
+
+		   TO   CIRCLE   :R
+		   PENUP   FORWARD   :R   PENDOWN
+		   RIGHT   90
+		   RCIRCLE   :R
+		   LEFT   90
+		   PENUP   BACK   :R   PENDOWN
+		   END
+.end_keep
+
+.keep
+	TO    DT.TGAME    :T
+	DYNAMOVE
+	COMMAND
+	CHECK.TGAME
+	DT.TGAME   :T + 1
+	END
+
+.end_keep
+.keep
+		TO   CHECK.TGAME
+		IF   NEAREDGE?   LOST   ENDGAME
+		IF   ATTARGET?   HIT   ENDGAME
+		END
+
+.end_keep
+.keep
+
+		    TO NEAREDGE?
+		    IF   ANYOF   XCOR  >  130   XCOR  <  (-135)   OUTPUT   "TRUE
+		    IF   ANYOF   YCOR  >  115   YCOR  <  (-75)   OUTPUT   "TRUE
+		    OUTPUT   "FALSE
+		    END
+
+		    TO   LOST
+		    PRINT   [ YOU ARE LOST IN SPACE! ]
+		    END
+
+		    TO    ENDGAME
+		    REPLAY?
+		    TOPLEVEL
+		    END
+
+			TO   REPLAY?
+			PRINT   [ WOULD YOU LIKE TO PLAY AGAIN? ]
+			CLEARINPUT
+			MAKE    "RESPONSE   REQUEST
+			IF   :RESPONSE   =   [YES]   REPLAY
+			IF   :RESPONSE   =   [Y]   REPLAY 
+			IF   LAST   LAST   :RESPONSE   =  "Y   REPLAY
+			END
+
+			    TO   REPLAY
+			    MAKE   "VX   0   MAKE   "VY   0
+			    PENUP   SETXY   :XS   :YS   SETHEADING   0
+			    MAKE   "TRACE   "FALSE
+			    MAKE   "FORCE   4
+			    DT.TGAME   0
+			    END
+.end_keep
+.keep
+		    TO   ATTARGET?
+		    TEST   DISTANCE   :XT   :YT   <  :R + 2
+		    IFTRUE   OUTPUT   "TRUE
+		    IFFALSE   OUTPUT   "FALSE
+		    END
+
+			TO   DISTANCE   :X   :Y
+			OUTPUT   SQRT   ( ( XCOR - :X ) * ( XCOR - :X ) + 
+			  ( YCOR - :Y ) * ( YCOR - :Y ) )
+			END
+
+.end_keep
+.keep
+		    TO   HIT
+		    PRINT   [ YOU HIT THE TARGET ]
+		    PRINT   ( SENTENCE   [ SPEED: ]   SPEED   [ TIME: ]   :T )
+		    END
+
+			TO   SPEED
+			OUTPUT   SQRT   ( :VX * :VX ) + ( :VY * :VY )
+			END
+
+.end_keep
+.keep
+		TO   DYNAMOVE
+		DOT
+		SETXY   ( XCOR + :VX )   ( YCOR + :VY )
+		END
+
+		    TO   DOT
+		    IF   :TRACE   PENDOWN   FORWARD   0   PENUP
+		    END
+
+		TO   COMMAND
+		MAKE   "COM   READKEY
+		IF   :COM   =   "R   RIGHT   30   STOP
+		IF   :COM   =   "L   LEFT   30   STOP
+		IF   :COM   =   "K   KICK   DRAWKICK   STOP
+		IF   :COM   =   "T   LEAVETRACE   STOP
+		END
+.end_keep
+
+.keep
+		   TO   READKEY
+		   IF   RC?   OUTPUT   READCHARACTER
+		   OUTPUT   "
+		   END
+
+		   TO   KICK
+		   MAKE   "VX   :VX  +  :FORCE * ( SIN  HEADING )
+		   MAKE   "VY   :VY  +  :FORCE * ( COS  HEADING )
+		   END
+
+		   TO DRAWKICK
+		   IF   NOT   :TRACE   STOP
+		   HIDETURTLE
+		   PENUP   BACK   5    PENDOWN
+		   BACK   :FORCE * 4   FORWARD   :FORCE * 4
+		   RIGHT   45   BACK   :FORCE   FORWARD   :FORCE
+		   LEFT   90   BACK   :FORCE   FORWARD   :FORCE
+		   RIGHT   45
+		   PENUP   FORWARD   5   PENDOWN
+		   SHOWTURTLE
+		   END
+
+		   TO   LEAVETRACE
+		   MAKE   "TRACE   "TRUE
+		   END
+.end_keep
+.bp
+0
+.chapter "bold(Procedures for the Racetrack Game)"
+.nf l
+Procedure Tree for the Racetrack Game
+.bp
+2
+
+.keep
+TO   DYNATRACK
+SETUP
+DTRACK   :W
+END
+
+    TO   SETUP
+    NODRAW
+    CLEARTEXT
+    INSTRUCTIONS
+    MAKE   "TRACE   "FALSE
+    MAKE   "VX   0
+    MAKE   "VY   0
+    END
+
+	TO   INSTRUCTIONS
+	INSTRUCTIONS1
+	INSTRUCTIONS2
+	END
+.end_keep
+
+.keep
+	    TO   INSTRUCTIONS1
+	    PRINT   [ ]
+	    PRINT   [ THE OBJECT OF THIS GAME IS TO SEE ]
+	    PRINT   [ IF YOU CAN DRIVE THE DYNATURTLE ]
+	    PRINT   [ ONCE AROUND A CIRCULAR TRACK ]
+	    PRINT   [ WITHOUT CRASHING! ]
+	    PRINT   [ ]
+	    PRINT   [ A LARGER KICK WILL MAKE THE GAME ]
+	    PRINT   [ HARDER, BUT INCREASE YOUR SCORE. ]
+	    PRINT   [ ]
+	    PRINT   [ A WIDER TRACK WILL MAKE THE GAME ]
+	    PRINT   [ EASIER, BUT DECREASE YOUR SCORE. ]
+	    PRINT   [ ] 
+	    PRINT   [ THE LONGER YOU CAN AVOID CRASHING, ]
+	    PRINT   [ THE LARGER YOUR SCORE. ]
+	    PRINT   [ ]
+	    END
+.end_keep
+
+.keep
+	    TO   INSTRUCTIONS2
+	    PRINT   [ HOW WIDE DO YOU WANT THE TRACK TO BE? ]
+	    MAKE   "W   FIRST   REQUEST
+	    PRINT   [ HOW STRONG DO YOU WANT THE KICK TO BE ]
+	    MAKE   "FORCE   FIRST REQUEST
+	    END
+.end_keep
+
+.keep
+    TO   DTRACK   :W
+    DRAWTRACK   50   :W  +  50
+    START
+    DT.DTRACK   0
+    END
+
+	TO   DRAWTRACK   :R1   :R2
+	DRAW   FULLSCREEN
+	BACKGROUND   6
+	HIDETURTLE
+	CIRCLE   :R1
+	CIRCLE   :R2
+	LEFT   90
+	PENUP   FORWARD   :R1
+	PENDOWN   FORWARD   ( :R2   -  :R1 )
+	PENUP   BACK   ( :R2  -  :R1 ) / 2
+	RIGHT   90
+	SHOWTURTLE
+	END
+
+	   TO   CIRCLE   :R
+	   PENUP   FORWARD   :R   PENDOWN
+	   RIGHT   90
+	   RCIRCLE   :R
+	   LEFT   90
+	   PENUP   BACK   :R   PENDOWN
+	   END
+.end_keep
+
+.KEEP
+	TO   START
+	MAKE   "OLDY   0.1
+	FORWARD   0.1
+	END
+
+	TO   DT.DTRACK   :T
+	DYNAMOVE
+	CHECK.DTRACK
+	COMMAND
+	DT.DTRACK   :T + 1
+	END
+
+.END_KEEP
+.KEEP
+	    TO    DYNAMOVE
+	    DOT
+	    SETXY   XCOR + :VX   YCOR + :VY
+	    END
+
+		TO    DOT
+		IF   :TRACE   PENDOWN   FORWARD  0   PENUP
+		END
+
+.END_KEEP
+.KEEP
+	    TO   CHECK.DTRACK
+	    IF   STOPPED?   MAKE   "T   :T - 1   STOP
+	    IF   CRASHED?   CRASH   ENDGAME
+	    IF   FINISHED?   WIN   ENDGAME
+	    END
+
+		TO   STOPPED?
+		IF   ALLOF   :VX = 0   :VY = 0   OUTPUT   "TRUE
+		OUTPUT   "FALSE
+		END
+
+		TO   CRASHED?
+		IF   DISTANCE  0  0  <  50   OUTPUT   "TRUE
+		IF   DISTANCE  0  0  >  50 + :W   OUTPUT   "TRUE
+		OUTPUT   "FALSE
+		END
+
+		    TO DISTANCE  :X   :Y
+		    OUTPUT   SQRT   ( ( XCOR - :X ) * ( XCOR - :X )  +
+		     ( YCOR - :Y ) * ( YCOR - :Y ) )
+		    END
+
+		TO   CRASH
+		PRINT   [ YOU CRASHED! ]
+		END
+
+		TO   FINISHED?
+		IF   ALLOF   YCOR > 0   :OLDY < 0   OUTPUT   "TRUE
+		MAKE   "OLDY   YCOR
+		OUTPUT   "FALSE
+		END
+
+		TO   WIN
+		PRINT   [ CONGRATULATIONS! ]
+		PRINT   [ YOU HAVE CROSSED THE FINISH LINE! ]
+		END
+.END_KEEP
+
+.KEEP
+		TO   ENDGAME
+		CLEARINPUT
+		SPLITSCREEN
+		PRINT   SENTENCE   [ YOUR SCORE IS ]   SCORE
+		REPLAY?
+		TOPLEVEL
+		END
+
+		    TO   SCORE
+		    OUTPUT   10 * :T * :FORCE / :W
+		    END
+
+		    TO   REPLAY?
+		    PRINT   [ DO YOU WANT TO PLAY AGAIN? ]
+		    IF   :RESPONSE = [ YES ]   REPLAY   STOP
+		    IF   :RESPONSE = [ Y ]   REPLAY   STOP
+		    IF   LAST   LAST   :RESPONSE = "Y   REPLAY
+		    END
+
+			TO   REPLAY
+			NODRAW
+			MAKE   "VX   0
+			MAKE   "VY   0
+			INSTRUCTIONS2
+			DTRACK  :W
+			END
+.END_KEEP
+
+.KEEP
+	    TO   COMMAND
+	    MAKE   "COM   READKEY
+	    IF   :COM = "R   RIGHT   30   STOP
+	    IF   :COM = "L   LEFT   30   STOP
+	    IF   :COM = "K   KICK   DRAWKICK   STOP
+	    IF   :COM = "T   LEAVETRACE   STOP
+	    END
+
+		TO   READKEY
+		IF   RC?   OUTPUT   READCHARACTER
+		OUTPUT   "
+		END
+
+		TO   KICK
+		MAKE   "VX   :VX +  ( :FORCE * SIN HEADING )
+		MAKE   "VY   :VY +  ( :FORCE * COS HEADING )
+		END
+
+		TO DRAWKICK
+		IF   NOT   :TRACE   STOP
+		HIDETURTLE
+		PENUP   BACK   5    PENDOWN
+		BACK   :FORCE * 4   FORWARD   :FORCE * 4
+		RIGHT   45   BACK   :FORCE   FORWARD   :FORCE
+		LEFT   90   BACK   :FORCE   FORWARD   :FORCE
+		RIGHT   45
+		PENUP   FORWARD   5   PENDOWN
+		SHOWTURTLE
+		END
+
+		TO   LEAVETRACE
+		MAKE   "TRACE   "TRUE
+		END
+.END_KEEP
+0
+.BP
+.chapter "bold(Procedures for the Lunar Lander Game)"
+Procedure Tree for the Lunar Lander Game
+.bp
+2
+.KEEP
+.nf l
+TO   LUNAR
+INSTRUCTIONS
+SETUP
+DT.LUNAR
+END
+
+    TO   INSTRUCTIONS
+    INSTRUCTIONS1
+    INSTRUCTIONS2
+    INSTRUCTIONS3
+    END
+
+	TO   INSTRUCTIONS1
+	CLEARTEXT
+	PRINT   [ A SIMULATED LUNAR LANDING MODULE ]
+	PRINT   [ IS FALLING TOWARDS THE MOON'S SURFACE. ]
+	PRINT   [ YOUR GOAL IS TO LAND IT SAFELY ON A ]
+	PRINT   [ SPECIAL LANDING PLATFORM. ]
+	PRINT   [ ]
+	PRINT   [ YOUR FUEL WILL BE LIMITED. IF YOU ]
+	PRINT   [ USE UP ALL YOUR FUEL, THE LUNAR ]
+	PRINT   [ LANDER WILL JUST KEEP FALLING. ]
+	PRINT   [ PRESS   <RETURN>  TO CONTINUE. ]
+	MAKE   "RESPONSE   REQUEST
+	END
+
+	TO   INSTRUCTIONS2
+	PRINT   [ HOW MANY FUEL UNITS WILL YOU NEED? ]
+	PRINT   [ 50  UNITS IS THE MOST YOU CAN CARRY. ]
+	MAKE   "FUEL   FIRST   REQUEST
+	IF   :FUEL   >   50   INSTRUCTIONS2
+	END
+
+	TO   INSTRUCTIONS3
+	PRINT   [ ]
+	PRINT   [ HOW WIDE SHOULD THE PLATFORM BE? ]
+	PRINT   [ IT MUST BE SMALLER THAN 60 UNITS. ]
+	MAKE   "W   FIRST   REQUEST
+	IF   :W  >  60   INSTRUCTIONS3
+	END
+
+.END_KEEP
+.KEEP
+    TO   SETUP
+    MAKE   "VX   0   MAKE   "VY   0
+    MAKE   "FORCE   3
+    MAKE   "G   0.2
+    MAKE   "XS   ( -80 )   MAKE   "YS   90
+    MAKE   "XP   80   MAKE   "YP  ( -60 )
+    MAKE   "TRACE   "FALSE
+    DRAWMOON
+    PENUP   SETXY  :XS  :YS
+    SHOWTURTLE
+    USEFUEL   0
+    READY?
+    END
+
+	TO DRAWMOON
+	SETHEADING   0
+	HIDETURTLE
+	MOONSURFACE   :YP - 10
+	PLATFORM    :XP   :YP   :W
+	END
+
+	    TO   MOONSURFACE   :Y
+	    PENUP   SETXY   ( -120 )   :Y
+	    PENDOWN   SETXY   ( 120 )   :Y
+	    END
+
+	    TO   PLATFORM   :X   :Y   :W
+	    PENUP   SETXY   ( :X - :W / 2 )   :Y
+	    PENDOWN   BACK   10   FORWARD   10
+	    SETXY   ( :X + :W / 2 )   :Y
+	    BACK   10
+	    END
+	
+	TO   USEFUEL   :F
+	MAKE   "FUEL   :FUEL - :F
+	IF   :FUEL   <   1   PRINT   [ YOU ARE OUT OF FUEL! ]   STOP
+	PRINT   ( SENTENCE   [ YOU HAVE ]  :FUEL  [ FUEL UNITS LEFT! ] )
+	END
+.end_keep
+
+.keep
+	TO   READY?
+	PRINT   [ WHEN YOU ARE READY TO START ]
+	PRINT   [ PRESS   <RETURN> ]
+	MAKE   "RES   REQUEST
+	END
+
+    TO   DT.LUNAR
+    FALL
+    DYNAMOVE
+    CHECK.LUNAR
+    COMMAND
+    DT.LUNAR
+    END
+
+	TO   FALL
+	MAKE   "VY   :VY   -   :G
+	END
+
+	TO    DYNAMOVE
+	DOT
+	SETXY   XCOR + :VX   YCOR + :VY
+	END
+
+	    TO    DOT
+	    IF   :TRACE   PENDOWN   FORWARD  0   PENUP
+	    END
+.END_KEEP
+
+.KEEP
+	TO    CHECK.LUNAR
+	IF   NEAREDGE?   LOST   ENDGAME
+	IF   LANDED?   HIT   ENDGAME
+	IF   CRASHED?   CRASH   ENDGAME
+	END
+
+	    TO NEAREDGE?
+	    IF   ( ANYOF  XCOR > 130   XCOR < ( -135 )   YCOR > 110 )   OUTPUT   "TRUE
+	    OUTPUT   "FALSE
+	    END
+
+	    TO   LOST
+	    PRINT   [ LOST IN SPACE! ]
+	    END
+
+	    TO   LANDED?
+	    TEST   ( ALLOF   XCOR > ( :XP - :W / 2 )   XCOR < ( :XP + :W / 2 )
+	       YCOR < :YP )
+	    IFTRUE   OUTPUT   "TRUE
+	    OUTPUT   "FALSE
+	    END
+
+	    TO   HIT
+	    PRINT   ( SENTENCE   [ LANDED! SPEED: ]  SPEED  [, HEADING: ]  HEADING )
+	    END
+
+	    TO   CRASHED?
+	    IF   :YCOR < ( :YP - 10 )   OUTPUT   "TRUE
+	    OUTPUT   "FALSE
+	    END
+.END_KEEP
+
+.KEEP
+	    TO   CRASH
+	    EXPLODE   SPEED
+	    PRINT   [ YOU CRASHED INTO THE MOON'S ]
+	    PRINT   SENTENCE  [ SURFACE WITH A SPEED OF ]  SPEED
+	    END
+
+		TO    EXPLODE   :SPEED
+		HIDETURTLE
+		PENDOWN
+		REPEAT   12   [ FORWARD  2 * :SPEED   BACK  2 * :SPEED   RIGHT   30 ]
+		END
+
+		TO   SPEED
+		OUTPUT   SQRT  ( ( :VX * :VX ) + ( :VY * :VY ) )
+		END
+
+	    TO   ENDGAME
+	    CLEARINPUT
+	    REPLAY?
+	    TOPLEVEL
+	    END
+
+		TO   REPLAY?
+		PRINT1   [ WOULD YOU LIKE TO PLAY AGAIN? ]
+		MAKE   "RESPONSE   REQUEST
+		IF   :RESPONSE   =   [ YES ]   REPLAY
+		IF   :RESPONSE   =   [ Y ]   REPLAY
+		IF   LAST   LAST   :RESPONSE   =  "Y   REPLAY
+		END
+
+		    TO   REPLAY
+		    NODRAW
+		    INSTRUCTIONS2
+		    INSTRUCTIONS3
+		    SETUP
+		    DT.LUNAR
+		    END
+.END_KEEP
+
+
+.KEEP
+	TO   COMMAND
+	IF   :FUEL < 1   STOP
+	MAKE   "COM   READKEY
+	IF   :COM = "R   RIGHT   30   USEFUEL  1   STOP
+	IF   :COM = "L   LEFT   30   USEFUEL  1   STOP
+	IF   :COM = "K   KICK   DRAWKICK   USEFUEL  :FORCE   STOP
+	IF   :COM = "T   LEAVETRACE   STOP
+	END
+
+	    TO   READKEY
+	    IF   RC?   OUTPUT   READCHARACTER
+	    OUTPUT   "
+	    END
+
+	    TO   KICK
+	    MAKE   "VX   :VX +  ( :FORCE * SIN HEADING )
+	    MAKE   "VY   :VY +  ( :FORCE * COS HEADING )
+	    END
+
+	    TO DRAWKICK
+	    IF   NOT   :TRACE   STOP
+	    HIDETURTLE
+	    PENUP   BACK   5    PENDOWN
+	    BACK   :FORCE * 4   FORWARD   :FORCE * 4
+	    RIGHT   45   BACK   :FORCE   FORWARD   :FORCE
+	    LEFT   90   BACK   :FORCE   FORWARD   :FORCE
+	    RIGHT   45
+	    PENUP   FORWARD   5   PENDOWN
+	    SHOWTURTLE
+	    END
+	
+	    TO   USEFUEL   :F
+	    MAKE   "FUEL   :FUEL - :F
+	    IF   :FUEL   <   1   PRINT   [ YOU ARE OUT OF FUEL! ]   STOP
+	    PRINT   ( SENTENCE   [ YOU HAVE ]  :FUEL  [ FUEL UNITS LEFT! ] )
+	    END
+		
+	    TO   LEAVETRACE
+	    MAKE   "TRACE   "TRUE
+	    END
+.END_KEEP
+0

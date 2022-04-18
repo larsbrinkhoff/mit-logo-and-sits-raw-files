@@ -1,0 +1,522 @@
+Draft-0 Smalltalk: Dreams and Schemes, Chapter III May 11, 1979
+
+
+
+III
+
+Basics of Smalltalk Implementation
+
+
+
+
+How do we really define a programming language that models the framework
+presented in the previous chapter?  There are many ways to implement a language
+like Smalltalk.  A wide variety of data structures is available for modeling the
+static relationships, and the dynamic behavior could be realized by any of
+several different algorithms.  In the next (seven) chapters, we will attempt to
+give the reader a sense of what is involved in producing a complete Smalltalk
+system.  This discussion will include the language syntax, the way in which
+messages are sent, compilation into compact syllables, and the run-time
+structures which attend the execution of a typical compiled method.  These next
+chapters do not address the higher level of user interface nor the lower level
+of storage management.  Those parallel topics, being somewhat independent, are
+treated separately in this book.
+
+Smalltalk can be viewed in two parts which we will call the Smalltalk virtual
+machine and the Smalltalk system.  The Smalltalk virtual machine provides a
+representation for the basic ideas underlying Smalltalk: objects, messages,
+classes, programs and program execution.  The Smalltalk system is a set of
+specific Smalltalk objects represented in the virtual machine.  The purpose of
+Smalltalk is to allow a user to create and use Smalltalk objects and to create
+new types of objects.  Many specific sets of objects could be envisioned which
+fulfill this purpose, all of which could be represented within the same general
+framework of objects, messages and classes.  This chapter is about how this
+general framework, the Smalltalk virtual machine, is implemented.  It covers how
+a class description is used to generate the actual behavior of objects.
+
+<either replace hardware example below or add here a review of hardware used>
+
+Programs and Programming Languages
+
+Both the Smalltalk virtual machine and the Smalltalk system consist mainly of
+programs.  These programs describe the actions of the computer on which the
+system runs and are expressed in several different programming languages.  Much
+of the system is described in programs written in the Smalltalk language but
+several important parts of the implementation must be written in lower-level
+languages.  This section describes how the various programs in Smalltalk
+actually control the computer.
+
+Interpreters and Compilers
+
+A program is a description of some actions for a computer to perform.  We say
+that the computer executes the program when it actually performs the actions the
+program describes.  There are two types of things that can happen to a program
+in the process of execution which are called interpretation and compilation.
+Interpretation is sometimes called direct execution, since the actions described
+are actually carried out in the process of interpretation.  Interpretation is
+performed by an interpreter which directly controls the computer.  The
+interpreter looks at the program and makes the computer perform the described
+actions.  Compilation is an indirect process by which a program is translated
+from one programming language to another.  The actions described in a program
+are not performed during the process of compilation so the translated program
+must then be interpreted.
+
+There are two types of interpreter, hardware and software.  A hardware
+interpreter is a physical device that is actually part of the computer itself.
+A software interpreter is a program being executed (interpreted) by another
+interpreter.  There can be several levels of software interpretation but the
+lowest level interpreter is always a hardware device.  In the early days of
+computers, the hardware devices were interpreters for what are commonly known as
+machine languages.  In order to interpret a higher level programming language, a
+machine language program was written which used the higher level programs as
+data and had the machine perform the described actions.  Basic is an example of
+a system which was often implemented by a machine language interpreter for Basic
+language programs.  In many systems, the machine language Basic interpreter was
+itself interpreted by a hardware interpreter.  More recently another layer of
+interpretation has been added to many computer systems.  Hardware devices are
+built to interpret languages called microcode.  Software interpreters for
+machine language programs are then written in microcode.  In such a machine, a
+Basic interpreter would be a third layer of interpretation (two software and one
+hardware).
+
+The other possible path for a program on its way to controlling a machine is to
+be compiled or translated into another programming language.  Fortran is an
+example of a language which is normally executed by compiling programs into
+machine language programs.  These machine language programs are then interpreted
+either by a machine or by a microcode program running on a machine.  Compilation
+is a solution to the conflicting goals of efficiency of execution and ease of
+use by the programmer.  Often the form of programs most convenient for humans to
+read and write is difficult and slow for an interpreter to follow.  A compiler
+is a program that translates a "higher level" human usable language into another
+language that can be efficiently interpreted.  Note that a compiler can be
+written in the language that it compiles, while an interpreter cannot be written
+in the language it interprets.  (This needs elaboration).  There are various
+degrees of translation possible, some of which are not ordinarily referred to as
+compilation.  Assembling is a translation from assembly language, which is a
+sequence of alphabetic and numeric characters, to machine language, which is a
+sequence of numbers.
+
+In Smalltalk-76 we find both compilation and interpretation.  A Smalltalk
+program is a string of characters, usually written by a human.  This string of
+characters is presented as data to a compiler which translates it into a
+bytecode program.  The bytecode program then becomes data for the bytecode
+interpreter which executes it.  The compiler is a set of bytecode programs and
+can, therefore, be changed by recompiling it from Smalltalk programs.  It, of
+course, did not originate by compiling itself; that is a trick.  In the Alto
+implementation, the bytecode interpreter is a set of microcode and Nova-like
+machine language programs.  The microcode programs are interpreted by the Alto
+hardware and come in two parts.  One part is solely concerned with bytecode
+programs themselves and the other part is an interpreter for the Nova-like
+machine language programs in the bytecode interpreter.
+
+Virtual Machines
+
+Most interpreters execute programs that are sequences of instructions.  Each
+instruction describes an action to be taken by the interpreter.  The process of
+interpretation is simply to take the next instruction in sequence and take the
+action it describes.  A particular interpreter differs from others in the type
+of actions it can perform and how the actions are described.  The actions
+described by instructions and performed by interpreters are changes made to a
+set of entities under the interpreter's control.  In the case of a hardware
+implemented interpreter, these entities are physical registers.  The
+instructions executed by a hardware interpreter describe changes to be made to
+these registers.  A software implemented interpreter functions in exactly the
+same way except that the entities it manipulates need not be physical devices.
+A software interpreter and the set of entities it manipulates is called a
+virtual machine.  So we have a machine, physical or virtual, consisting of
+entities that retain some state and an interpreter which has the ability to
+change the entities' state.  The interpreter determines how to change the
+entities by consulting instructions in a program.  The two things to be
+described about an interpreter are the nature of the state retaining entities of
+its virtual machine and the set of instructions it understands.
+
+The Alto computer provides several examples of interpretation.  The hardware
+consists of:
+
+1) Two sets of 32 16 bit registers called the R registers and the S registers.
+
+2) A 16 bit two input arithmetic logic unit and a 16 bit shifter.
+
+3) A large (64-256K) memory of 16 bit words and a 16 bit Memory Address
+Register.
+
+4) Three 16 bit registers called T, L and IR.
+
+5) A small (1-2K) memory of 32 bit words used to hold microcode programs.
+
+These are all connected by various busses and control wires to each other and to
+the hardware interpreter for microcode instructions.  The interpreter looks at a
+32 bit microcode instruction and makes a change to the states of some of the
+components.  For instance, an instruction might say that the contents of one of
+the S registers should be changed to be the contents of the L register or that
+the contents of the L register should be set to be the output of the ALU when
+the contents of the T register and one of the R registers are provided as inputs
+and it is asked to add.
+
+All Altos have an interpreter for a Nova-like machine language stored in part of
+their microcode memory.  The virtual machine for this interpreter is similar to
+the Data General Nova.  It has four 16 bit registers, an arithmetic logic unit,
+a memory of 64K 16 bit words which contains both data and machine language
+programs and a 16 bit program address register which contains the address of the
+next instruction to be interpreted.  The interpreter executes 16-bit
+instructions that move data around in the registers and memory, perform
+arithmetic and logical operations on the data in the registers and modify the
+address in the program address register.  A program written in Nova machine
+language is actually data for another program written in microcode.  This
+interpreter uses four of the Alto's R registers to hold the contents of the four
+Nova registers, the IR register to hold the program address and the first 64K of
+the Alto's memory to simulate the Nova memory.
+
+The Nova virtual machine is a straight foreward modification of the actual
+machine on which its interpreter runs (the Alto).  The Smalltalk virtual machine
+is more of a change since it is designed around the concepts of the language
+(i.e. objects, classes and messages) instead of the typical vonNeuman concepts
+(i.e. n-bit binary numbers and linear memories).  The detailed structure of the
+Smalltalk virtual machine will be discussed after the following section which
+describes the structure of a Smalltalk system.
+
+Smalltalk Fundamentals
+
+The most basic concept of the Smalltalk system is that every part of it has the
+same representation.  This uniform representation is an inherently active entity
+called an object.  The two basic features of an object are that it can remember
+and that it can communicate with other objects by sending and receiving
+messages.  Since messages are the only means of interobject communication, it is
+in general impossible for an object to know exactly what another object is
+remembering.  The only thing another object can count on is how an object will
+respond to messages.  For example, an object representing a geometrical point
+needs to remember where it is in order to have a point-like message behavior.
+But from the outside it is impossible to tell whether the point is remembering
+cartesian coordinates or polar coordinates or some other things that allow it to
+answer messages about its location.
+
+Objects and Classes
+
+Much of a Smalltalk system consists of descriptions of how objects behave, which
+means how they communicate with messages.  Even though it must be impossible to
+tell what an object is actually remembering from outside the object, it is
+obviously necessary to know this when creating the description of the object's
+behavior.  The only thing possible for an object to remember is other objects
+(since there is nothing else in the system).  The objects that an object
+remembers are called its parts.  The parts of an object are not directly visible
+from outside the object.  For the purpose of referring to objects internally,
+each object has a unique object reference which is a 16 bit number.  The
+internal representation of an object's memory is the set of object references of
+its parts.
+
+The objects in the Smalltalk system are partitioned into groups of similar
+objects called classes.  The objects that make up a class are called instances
+of the class.  The instances represent different occurences of the same kind of
+thing in the system; for instance, integers, geometrical points, rectangles,
+windows, documents, etc.  There are several kinds of similarity between the
+instances of a class.  One similarity is that all instances of a class have the
+same size memory; that is, they have the same number of parts.  The only
+difference between two instances of the same class is the specific set of
+objects that make up their parts.
+
+The similarities of the instances of a class are described in an object.  Each
+of these class describing objects has a title which indicates the function of
+the instances it describes.  Class titles are typically capitalized, for
+instance: Class Integer, Class Point, Class Rectangle, etc.  Since class
+descriptions are objects, they must be instances of a class.  The class of class
+describing objects is called Class Class.  We will refer to a collection of
+instances as a class, and to the object that describes the instances as their
+Class.  One of the functions of a Class is to give the number of parts in each
+instance.
+
+Messages and Programs
+
+All objects are potentially active.  An object is actually activated when it
+receives a communication from another object in the form of a message.  A
+message is a set of objects which is naturally represented as a set of object
+references.  What an object does when it receives a message is described in a
+program.  The instances of a class share a set of programs that describe their
+behavior on receiving messages.  The particular program that is executed is
+determined by one of the objects in the message which is called the selector.
+One part of a Class is a message dictionary which associates message selectors
+with programs.  The other objects in the message are called arguments and are
+availabe to the program that is associated with the selector in the Class'
+message dictionary.  A program describes a general behavior which depends for
+its specifics on the arguments in the message.  In some messages all of the
+necessary communication is carried in the selector and so no arguments are
+included.  Such messages consist of a single object called a unary selector.
+
+A program is a description of some actions to be taken by the Smalltalk
+interpreter.  The description of an individual action is called an instruction.
+There are two types of action or instruction, state changes and message
+transmissions.  A state change instruction directs the interpreter to replace a
+specific object reference by another.  A state change instruction has two parts:
+
+1) Where to find the object reference to change
+
+2) What object reference to put there
+
+A message transmission instruction directs the interpreter to send a message to
+an object.  A message transmission will result in a new program being executed
+by the interpreter.  A message transmission instruction has three parts:
+
+1) Which object to send the message to (the receiver)
+
+2) Which type of behavior to invoke in the receiver (the selector)
+
+3) Further specifics of the behavior to be invoked (the arguments, which may be
+absent for certain messages)
+
+The stages in sending a message are:
+
+1) A message send description is encountered in a program (the sending program).
+
+2) The selector described in the instruction is looked up in the message
+dictionary of the Class of the receiver described in the instruction, yeilding a
+program (the receiving program).
+
+3) The sending program is suspended and the receiving program is executed.
+
+There are two forms of program in the system, symbolic programs which are
+written by people and bytecode programs which are executable by the Smalltalk
+interpreter.  The Smalltalk compiler translates symbolic programs into bytecode
+programs.  In a symbolic program an instruction can refer to one of the
+receiver's parts by using a name.  In a bytecode program an instruction must
+refer to a part by its index in the receiver's internal representation.  Thus,
+the compiler needs a mapping from name to internal index.  Since the mapping is
+the same for all instances of a class, it is represented in the Class object.
+If two instances of a class are sent the same message, they will run the same
+program.  Where the program refers to one of the parts of an instance, the
+actual object used will be different for the two receivers.
+
+Thus far we have encountered three things shared by all instances of a class and
+stored in their Class:
+
+1) A title.
+
+2) A message dictionary which maps message selectors to bytecode programs.
+
+3) A set of names which can be used in symbolic programs to refer to the
+instances' parts.
+
+Superclasses
+
+The classes of the Smalltalk system are heirarchically structured.  Each class
+is a subset of another class which is called its superclass.  The classes that
+have any one class as their superclass are referred to as its subclasses.  A
+class can have many subclasses but only a single superclass.  The only class
+that has no superclass is the class of all objects which is described by Class
+Object.  A class defining object, or Class, acts as a filter on the Class of its
+superclass.  The Class inherits all of the descriptions in its super-Class but
+may add any new ones or change certain of the old ones.
+
+The nature of the filtering provided by a sub-Class is different for the three
+things found in a Class:
+
+1) A new title must be provided for the subclass.
+
+2) Programs for selectors not found in the superclass may be added to the
+message dictionary or new programs for selectors found in the superclass may
+replace the old programs.
+
+3) New part names can be added but old part names remain the same.
+
+Collection Objects
+
+An object is a set of parts that represents something in the Smalltalk system.
+Each of the parts has a specific function in the object's behavior. ...
+
+The Smalltalk Virtual Machine
+
+A virtual machine is a set of entities which can assume certain states.  The
+program interpreter associated with a particular virtual machine is capable of
+accessing and changing the state of these entities.  The Smalltalk virtual
+machine consists of an object memory and a context register that contains an
+object reference.  The instruction set that the program interpreter executes
+includes a variety of ways of changing certain parts of the object memory's
+state found relative to the context register's contents and two ways of changing
+the context register's contents. (Question: what to say at this point about the
+parts of the Nova virtual machine that are used by the primitives?)
+
+The Object Memory
+
+The vast majority of the state found in a Smalltalk virtual machine is in the
+object memory.  The function of the object memory is to provide an internal
+representation for the objects in the system.  An object is an instance of a
+class and a set of specific parts.  Each object has a unique object identifier
+which is a 16 bit number.  The object memory is an entity that associates an
+object's object reference with:
+
+the object reference of the Class that represents its class and
+
+the object references of its parts.
+
+So, in general, the object memory is a mapping from a 16 bit number to a set of
+16 bit numbers.
+
+The program interpreter can directly perform three types of operations on the
+object memory:
+
+1) What is the object reference of the Class of object obj.
+
+2) What is the object reference of the ith part of object obj.
+
+3) Make the object reference of the ith part of object obj be the object
+reference for object newobj.
+
+The Context Register
+
+In a Smalltalk system there is always an object known as the current Context.
+The entity that implements this is the Context register which holds the current
+Context's object reference.  The current Context gives the interpreter access to
+the executing program, to the variables the program is using in that execution
+and to a stack.  The execution of Smalltalk programs is stack oriented in two
+ways.  First, when programs call other programs, the calls and returns happen in
+a stacklike fashion.  Second, as theb general descriptions in the programs are
+translated into the specific objects used in the actions, these objects are kept
+on a stack called the execution stack.  The call-return stack is basically a
+stack of Contexts, the top of which is pointed to by the Context register.  Each
+Context has its own execution stack for use by its program.
+
+
+
+Sending a Smalltalk Message
+
+The process of sending a message begins when the interpreter encounters a send
+message instruction in a program.  The instruction describes a message which
+consists of a receiver, a selector and possibly some arguments.  The first thing
+the interpreter does is translate the description of these objects into the
+actual objects that make up the message.  Usually, sending a message invokes a
+new program which is determined by the receiver's class and the selector.  The
+interpreter finds the appropriate program and creates a new Context to represent
+its execution.  The program uses the rest of the message in its execution.  The
+new Context becomes the current Context and the interpreter begins executing its
+program; the message has been sent.  The last action taken by the new program
+will be to resume execution of the program in which the send message instruction
+was found.
+
+Translating Instruction to Message
+
+A send message instruction is a sequence of two or more sub-instructions, one
+for each of the objects that make up the message.  The first sub-instructions
+describe any arguments of the message.  These are followed by a sub-instruction
+that describes the receiver and one that describes the selector.  The
+sub-instructions that describe arguments and receivers are called object
+descriptors.  The sub-instruction that describe selectors are called selector
+descriptors.  The simplest message is a selector sent to a receiver; it has no
+arguments.  The instruction that describes such a message is simply an object
+descriptor for the receiver followed by a selector descriptor.
+
+There are several types of object descriptor sub-instruction which will be
+discussed in a later section.  The effect of executing any object descriptor is
+to push the object described on a stack The stack is part of the executing
+program's Context.  The simplest types of object descriptors are single bytes
+that tell where the object to be pushed can be found relative to the Context of
+the program.  For example, a byte might say "push the second field of the
+Context" or "push the third field of the object pointed to by the second field
+of the Context".  The selector is always found in a part of the program called
+the literal frame.  The selector descriptor is a byte that tells where in the
+literal frame the selector is.  When the selector descriptor is encountered it
+signals the end of the send message instruction.  The receiver will be the top
+object on the stack and the arguments will be immediately below it.  The message
+has been assembled.
+
+Translating Message to Program
+
+The assembled message is now sent by performing the action it indicates.
+Usually, this action is accomplished by executing a Smalltalk program.  The
+exception is for messages that invoke primitive actions which will be discussed
+later.  The selector of the message is used to choose a program from a
+dictionary found in the Class of the receiver.  All the instances of a
+particular class will execute the same program when they receive a message with
+a particular selector.  After the interpreter selects the program to execute, it
+sets up a new Context.  The Context keeps track of the progress of the program's
+execution and it gives the program access to the receiver and arguments of the
+message.  After the new Context is initialized, it is installed in the current
+Context register.  Since the interpreter always finds its next instruction
+relative to the Context pointed to by this register, the new program will now be
+executing.
+
+The new Context has references to the following objects:
+
+1) The new program
+
+2) The location of the next instruction to be executed in the program
+
+This is initialized to be the first instruction in the program.
+
+3) The receiver of the message
+
+4) The arguments of the message
+
+5) A set of temporary locations that will be used by the program during its
+execution
+
+These are initialized to nil.
+
+6) The stack that the program uses in its execution
+
+The stack is initially empty.
+
+7) The Context that represents the program that invoked the new program.
+
+This is initialized to from the current Context register before the new Context
+is stored there.  This part of a Context is called its sender.
+
+Translating Program to Actions
+
+When the new Context is stored in the current Context register, the interpreter
+begins executing its program's instructions.  There are four types of
+instructions found in programs:
+
+1) Message send instructions
+
+2) Message response instructions
+
+3) State change instructions
+
+4) Branch instructions
+
+A message send instruction results in a transfer of control to another program
+as described in this section.  The state change and branch instructions do not
+result in a change of the executing program.  These instructions will be
+discussed in the next section.  A message response instruction ends a program's
+execution by transfering control back to the program that invoked it.  This is
+accomplished by storing the sender of the current Context into the current
+Context register.  The program interpreter will execute instructions in the
+program, advancing the Context's pointer to the next instruction in the program.
+Whenever a message send instruction is encountered, the program stops executing
+and a new program executes.  That new program will eventually encounter a
+message response instruction and the original program will continue.  Finally,
+the original program will encounter a message response instruction and it will
+stop executing by returning to its sender.  The message response instruction
+describes a value to be returned to the sender's program.  This return value is
+pushed on the sender's stack.
+
+
+
+Smalltalk Programs
+
+The last section described how a Smalltalk program is executed when a message is
+sent.  The program describes some actions to be taken in a Smalltalk system.
+These actions are actually performed by a part of the virtual machine called the
+program interpreter.  This section describes the form of the programs that the
+interpreter executes.  A program has two basic sections.  The header contains
+some general information used in creating a Context to represent this execution
+of the program.  The rest of the program consists of instructions which the
+interpreter executes.  These instructions are composed of sub-instructions which
+are themselves composed of bytecodes.
+
+Object Descriptors
+
+The most common kind of sub-instruction found in a program's instructions is the
+object descriptor.  For instance, the form of a send message instruction for a
+message of one argument is
+
+<object descriptor><object descriptor><selector descriptor>
+
+An object descriptor describes an object which we will call its referent.  to be
+pushed on the execution stack that is found in the program's Context.  There are
+two kinds of object descriptor, both discussed in the last section on sending
+Smalltalk messages.  The simplest form of object descriptor is one of the single
+bytecodes that describe to the interpreter where to find the object to push on
+the stack.  These are called the push bytecodes.  The other form of object
+descriptor is a send message instruction.  The send message instruction
+qualifies as an object descriptor since the value returned from the program the
+message invoked is pushed on the stack.
+

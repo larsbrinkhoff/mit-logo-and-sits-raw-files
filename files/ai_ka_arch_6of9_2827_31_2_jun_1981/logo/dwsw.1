@@ -1,0 +1,848 @@
+.xgp
+.font 0 31vg
+.font 1 31vgi
+.nohead
+.ss
+.dummy @
+
+
+
+
+
+
+
+
+
+
+.ce
+LOGO:  A Computer Environment for Learning Disabled Students
+
+
+.ce
+by
+
+
+.ce
+Sylvia Weir and Daniel Watt
+.ce
+M.I.T. LOGO Group
+.ce
+545 Technology Square
+.ce
+Cambridge, Massachusetts
+
+.page
+
+.adjust
+.ce
+I.  Introduction
+
+
+This paper describes a project designed to provide an innovative
+computer-based learning environment for learning disabled students in
+grades 5-8.  The students will learn LOGO, a computer language
+for elementary school students and will engage in a variety of
+computer programming activities designed to enhance basic skills and
+to develop problem solving abilities.  They will  learn to use a computer
+text-editor for creative writing.  The project will provide extensive
+training and support for teachers of learning disabled students, and
+will develop a set of curriculum materials and a teacher methodology
+which will allow these methods to be successfully
+implemented in other schools.  The project will provide a model of a
+computer based learning environment which can be adapted to a variety
+of student populations.
+
+The LOGO computer language and associated activities have been
+developed by the MIT LOGO Group over the past twelve years.  Significant 
+learning gains have been observed among students who have had the opportunity to
+participate in these activities, gains which we attribute to a variety of 
+factors.  The prestige associated with learning to program a computer
+leads to an increase in motivation for most students.  The LOGO learning 
+environment operates best when children are allowed to decide the content
+and pace of the activities they undertake and this control of their own learning
+has a strikingly beneficial effect on their self-confidence.  Programming in
+an interactive computer graphics situation lends itself to an emphasis on 
+process rather than product, in that the typical tasks are structured to enable 
+direct feedback on the intermediate steps during the solving of a problem.  A
+discrepancy between what is intended and what actually happens is thus more
+readily available to both teacher and learner than is usually the case, and such
+an error or "bug" becomes a source of insight into the learning process, into
+the problem solving process.
+
+Typical beginning LOGO tasks in Turtle Geometry (see Appendix) mobilize and
+help to cultivate skills in spatial reasoning often not otherwise utilized in the
+conventional curriculum and this fact can be an advantage to those whose gifts
+lie in this direction.  In the process of exploring problems in Turtle Geometry, students 
+gain concrete mathematical experience which provides a foundation for more abstract 
+mathematical subjects such as algebra, geometry and trigonometry.  In addition,
+they develop skills in reading, spelling and typing in the process of inputting
+their programs and in deciphering the computer messages; the availability of a
+text-editor enhances this experience and provides motivation and a 
+practical tool, allowing some students to make dramatic progress in creative
+expression.
+
+All of the above remarks apply most especially to any learning disabled students
+participating in LOGO activities, and following some promising preliminary results with 
+this group, it was decided to set up a project specifically directed at this area
+of special educational need.  
+
+A central goal of the project concerns the need to help teachers of learning 
+disabled students develop the skills and confidence required to integrate
+computer use into students' individual education plans.  The project will also
+provide documentation, curriculum materials and assistance to other schools
+seeking to adopt the methods developed.
+
+
+.ce
+II.  Background
+.twinch 5
+
+1Karl is a tall, awkward boy who has severe learning disabilities.
+In sixth grade, his general academic achievement was at approximately
+a second grade level.  His attitude toward school seemed to be one of
+hostile resignation.  At this point Karl was given the opportunity to
+program a computer, during the course of which he overcame severe
+typing and spelling difficulties to learn LOGO.  Working over a period
+of thirty-six hours, Karl demonstrated skills and understandings in
+geometry, non-verbal reasoning, organization and logical problem
+solving, that had not been previously evident to his classroom
+teachers or his learning disabilities tutor.  (See Appendix II for a sample
+of Karl's work.)
+
+In an interview following the conclusion of the classes Karl was asked
+to solve the problem of finding all the possible different
+arrangements of a group of blocks of four colors.  Rather than lay out
+all the blocks and compare arrangements--the strategy used by most
+students--Karl slowly calculated that there were twenty-four possible
+arrangements.  When the interviewer confirmed his solution, he picked
+up the microphone of her tape recorder, and speaking directly into it
+said, "I'm a brain!" (Papert, et al., 1979)
+
+.twinch 6
+0Karl's story is a dramatic example of what can happen when a
+learning disabled student is provided with a new kind of learning
+opportunity--one which allows him a measure of control over his own
+learning, and one which enables him to make use of skills which have
+not been developed in his prior school experience.  In the remainder
+of this section we shall discuss the nature and extent of the learning	
+gains illustrated here.  First we  provide some general background
+information.
+
+.ce
+LOGO - A Computer Language and Learning Environment
+
+The work proposed here is directly linked with a series of research
+and development projects carried out at MIT and elsewhere during the
+past twelve years.  The computer language, LOGO, was originally
+developed as a computer based learning environment in which children
+could learn computer programming, problem solving and mathematical
+thinking.  The LOGO learning environment is based on the developmental
+psychology of Jean Piaget as well as an approach to the design of
+computer languages as problem solving tools developed in the study of
+Artificial Intelligence.  (Feuerzeig, et al., 1969; Papert and
+Solomon, 1971; Papert, 1971)  In the late sixties, the developers
+of LOGO chose to base their learning environment on computer systems
+that would not be available to the general public for ten to fifteen
+years.  Predicting a rapid decline in computing costs, they spent that
+time developing and exploring the kinds of learning environments that
+would be possible when there was general public access to inexpensive
+computers.
+
+Under the guidance of MIT Professor Seymour Papert, the working
+philosophy of LOGO's developers has been "No threshold, no ceiling."
+Any student should be able to learn in a LOGO learning laboratory and
+the gifted student could exploit the open-ended possibilities made
+available in this environment.  During the past twelve years,
+researchers at MIT and elsewhere have worked with hundreds of
+elementary and middle school students of a range of ages, interests
+and abilities.  They have developed activities which have the dual
+attributes of capturing and holding a child's interest and providing a
+rich intellectual environment to further the child's learning.  While
+students as young as five and six have successfully learned to use
+aspects of LOGO, the usual starting age has been about eight or nine,
+the age when most students can begin to be comfortable with a computer
+keyboard.  At the other extreme, LOGO has been used with extremely
+bright high school and college students.  As a programmer gains
+experience with LOGO, she can carry out complex programming projects,
+just as with any other high level programming language. (Papert, 1973;
+Abelson and diSessa, 1976)
+
+During the past several years, the LOGO group at MIT, part of MIT's
+Artificial Intelligence Laboratory and its Division for Study and
+Research in Education, has been concerned with facilitating the use of
+these methods by educators and by the general public.  In l977-78, a
+computer laboratory was established at the Lincoln School in Brookline
+as part of a research project sponsored by the National Science
+Foundation.  (Papert, et al., 1977) All of the school's sixth grade
+students were given the opportunity to learn LOGO during twenty to
+thirty-six hours of individual computer access.  The learning
+experiences of sixteen of the students representing a full range of
+ability, were carefully documented and formed the basis for the final
+report of the project.  (Papert, et al., 1979) The report details both
+the subject matter learned by the students, and the individual
+learning paths of each of the sixteen students.  It was a major
+finding of the report that the LOGO learning environment had had
+significant impact on the education of exceptional students, at both
+ends of the spectrum of ability.  In particular, learning disabled
+students made dramatic growth in both skills and motivation. Karl,
+described above, and Tina were the prime examples:
+.twinch 5
+
+1Tina is another severely learning disabled student who participated in
+the research project as a sixth grader.  Tina expressed a persistent
+interest in using the computer as a typewriter, rather than in
+programming it.  She was given the opportunity to use a simple text
+editor, which allowed her to write letters and stories, by typing them
+on the computer keyboard.  If she made an error in her typing she
+could go back and rub it out, editing her work as she saw fit.  When
+her work was complete, she used the computer to make as many printed
+copies as she wanted, each one looking like a professionally typed
+document.  Starting with a two line letter to her mother, Tina
+gradually increased her output until she was spending an hour at a
+time on a story, and writing stories that powerfully reflected her
+interests and feelings.  (See Appendix III for a sample of Tina's
+work.)
+
+When the computer teacher sought samples of her creative writing from
+her classroom teachers and her learning disabilities tutor, he found
+that Tina had not done any creative writing during the entire school
+year, and was extremely resistant to school work in general.  Using
+the computer, Tina was not only writing, but was proud of her work,
+making many copies of each story and distributing them to her family,
+friends and teachers.  Tina's blossoming as a writer has continued
+even after the computer classses terminated.  During the following two
+years she has continued to think of herself as a writer, and has
+written and illustrated several small books. (Papert, et al., 1979)
+.twinch 6
+
+.ce
+0III.  A Teacher's Perspective
+
+Clearly, something important is happening here.  In the year and a
+half since the end of the research project, the Brookline Public
+School System has been conducting its own Pilot LOGO Project at Lincoln
+School.  Two computers have been placed in various classrooms, and
+children have been allowed access to computers on an individual basis.
+Because of the original success of learning disabled students with
+LOGO, one of the classrooms involved in the Pilot LOGO Project has
+been the school's Learning Center.  In June, l979, Karl and Tina's
+Learning Center teacher, Ellie Shacter, submitted the following
+report to Jeff Resnick, Brookline's Special Education Supervisor:
+
+.ce
+Use of the LOGO Computer in the Learning Center
+
+The LOGO computer was designed so students could do their own computer
+programming.  Students control the computer, decide what to do and 
+then carry it out; they are in charge and can make things happen.
+
+They are able to succeed without having to rely on building up
+deficient academic skills.
+
+In learning to program the LOGO Computer, students are:
+
+.indent 6
+.undent 2
+- learning an approach to thinking which will eventually allow
+them to program other computers;
+.undent 2
+- gaining understanding which, at least, enables them to live
+more comfortably in a technological age.
+.undent 2
+- developing logical (mathematical) thinking and problem solving;
+.undent 2
+- using strategy and variables;
+.undent 2
+- gaining information about symmetry, design, angles, geometric forms;
+.undent 2
+- learning to develop and test their own theories.
+.indent 0
+
+.adjust
+Personal characteristics such as the ability to take independent
+action, the ability to sustain interest in a project, increased
+self-esteem, and greater self-knowledge about their individual,
+personal ways of exploring are fostered.
+
+Students can develop a sense of being empowered as they are able to
+make decisions about this particular "educational environment."
+
+Deficit skills can be remediated within a pleasant, challenging
+environment (and in conjunction with use of the computer rather than
+as separate problems to be solved.)
+
+.indent 6
+.undent 2
+- Fine motor skills are improved (through the typing).
+.undent 2
+- Near point reading (of CRT screen messages) is encouraged.
+.undent 2
+- Short term memory is developed (while students learn
+to use a typewriter keyboard and the various logging in and
+programming procedures). 
+.undent 2
+- Students learn to spell the commands.
+.undent 2
+- Students learn to receive error messages as informational
+messages that help them reach their chosen objectives i.e. 
+they experience "making mistakes" without "punishment" and gain
+information which enables them to move a step closer toward
+reaching their goal.
+Students can compose, edit, and print-out multiple copies of
+letters and stories they have written at the computer
+keyboard.
+.undent 2
+- Students develop direction-giving and direction-following
+skills.
+.undent 2
+- As they gain skill and experience in the use of LOGO,
+students can move from concrete to more abstract levels of
+thinking.
+.indent 0
+
+.ce
+IV.  A Theoretical Perspective
+
+From a theoretical perspective we would like to raise the following
+issues in considering the impact of LOGO activities on learning
+disabled students:
+
+1.  It may be that we just hit it lucky--that this is a very localized
+phenomenon peculiar to the few individuals studied so far.  It is important,
+therefore, to ascertain just what proportion of the learning disabled
+population responds to this computer based learning experience; i.e.
+to gauge the extent of the phenomenon.
+
+2.  It may be that the felicitous effect observed flows largely from
+the fact that working with computers is seen to be a prestigious
+event which in itself spurred the children involved to achieve in
+ways that had previously been impossible for them.  If this should
+turn out to be the case, that would not necessarily be an argument 
+against using computers for this population.  Rather it should incline
+us towards their use, whilst at the same time forcing us to carefully
+document and constrain any claims we may want to make as to the
+role of the LOGO computer environment in contributing to student success.
+
+3.  In searching for reasons why learning takes place in some
+particular situations, we recall that learning is a complex process,
+and the learner will have had to achieve, at the least,
+.indent 6
+.undent 3
+(a)  the mastery of new facts;
+.undent 3
+(b)  mastery of new procedures and operations connected with those facts.
+.undent 3
+(c)  knowing when and where to use (a) and (b) in solving a problem,
+i.e. the relevance of knowledge.
+.undent 3
+(d)  knowing that she knows (c), i.e. the self-confidence to
+use knowledge.
+.adjust
+.indent 0
+
+The LOGO work claims to have particular virtues in regard to (b), (c),
+and most especially (d), flowing from the nature of the system,
+i.e. the interactive graphics and the explicit decomposition  of
+problems combine to give rather transparent feedback to promote
+the acquisition of this kind of knowledge.  Because of the record
+automatically available during the course of this activity, many of the
+information processing steps involved in the task are explicitly
+available for scrutiny by both the student and his teacher.  (The
+student is learning and the teacher is learning about learning.)
+Using this system, component skills can be teased out and particular
+hypotheses about reasoning strategies can be probed in a relatively
+straightforward way.  (For an example of this see Weir, 1979.)
+
+4.  All this should aid in the analysis of just what is going on.
+LOGO activities can be both diagnostic and interventionist.  There
+is a good deal to indicate that the learning disabled comprise a
+heterogeneous category (summarized in Weir, 1979).   Briefly, the	
+suggestion is that the development of spatial reasoning and linguistic
+ability do not necessarily go hand in hand.  For example, subjects
+weak in linguistic skills can have relatively unimpaired or even
+highly developed spatial intelligence.  The latter is rarely engaged in
+the usual school subjects, and the children whose strengths lie in
+this area go unrewarded (until they show their aptitude for mechanical
+drawing or industrial arts in the non-academic area).  LOGO has the virtue
+of exploiting such spatial skills, allowing their
+owners to shine among their peers and to turn such skills to an
+academic (mathematical) purpose. On the other hand, for some children, 
+the learning problem may lie in exactly this area, viz in an impaired
+spatial sense to the point of affecting the scrutiny of letter strings.
+Thus the performance on LOGO tasks promises to be of diagnostic aid in the
+process of establishing subtypes of learning disability by
+providing one basis for a functional specification of such subcategories.
+
+In addition to the development/documentation project described here,
+we will be seeking funding for a research oriented project, to be
+carried out among the same population of students and teachers.  If
+funded, the two projects will function in a mutually supportive
+manner, providing a collaborative setting in which fundamental
+research and innovative educational development can inform and support
+each other.
+
+An important thread of LOGO research during the last five or six years
+has been the use of LOGO with students who have physical,
+psychological and functional handicaps.  In 1976, one of us (Sylvia Weir)
+then affiliated with the Edinburgh LOGO Group in Scotland, documented
+the successful use of LOGO with an autistic child (Weir and Emanuel,
+1976).  Since June of 1978, Weir has co-directed, with Professor
+Seymour Papert of MIT, a research endeavor exploring the effect of
+LOGO on students with Cerebral Palsy. (Papert and Weir, 1978; Weir, 1980).
+This work seeks to remedy some of the deficiencies
+in the learning environment of a Cerebral Palsy victim due to
+communication difficulties, and to the lack of concrete manipulative
+experiences available to normal children.  With a suitable computer
+language, and with appropriate interface devices to reduce typing
+difficulties it is hypothesized that a computer based learning
+environment such as LOGO can provide both a medium of communication
+and a source of concrete learning activities for the student.  Initial
+results, with students at the Cotting School for the Physically 
+Handicapped in Boston have been extremely encouraging, as well
+as providing much new data about the specific developmental deprivations
+of Cerebral Palsied students.  (Weir, 1980)  Of special interest is the
+development of diagnostic tasks run on a computer graphics screen, thus
+making it possible to test the performance ability of severely 
+physically handicapped children, something which has been notoriously
+difficult to do.
+
+.ce
+V.  A Methodology for Supporting Innovation
+
+At the core of this project is a complex learning experience for the
+teachers involved.  We would like to suggest that the teachers'
+learning can be compared metaphorically to the process of learning to
+skate.  A beginning skater goes through three significant stages.  The
+first is "hand-holding."  A friend, parent or instructor, goes out on
+the ice with the learner, providing her literally with the direct
+support she needs to gain confidence, along with specific instructions
+and feedback.  The second is the "watch me!" stage.  The new skater
+ventures out on the ice alone, but under the watchful gaze of her
+teacher, to whom she can return for support when necessary, and from
+whom she can get specific feedback and suggestions.  The third stage
+is "free skating."  Now the learner is truly on her own, skating
+freely without outside support.  From time to time she may seek
+instruction in special areas, or work to perfect a particular skill,
+but she is essentially free to pursue additional learning at her own
+rate and in accordance with her own interests and desires.
+
+We believe that this metaphor is applicable to the process of
+integrating a new learning environment such as LOGO into the ongoing
+practice of a Learning Center teacher.  Our project plan provides for
+a significant amount of direct support to teachers, especially during
+the first year of their participation.  In addition to working closely
+with each teacher during the "hand-holding" stage, the project will
+create materials for teacher use and eventual dissemination, and will
+build a supportive network for the project within each school, and
+within the community at large.  We believe that these three aspects of
+our plan--direct teacher support, development and dissemination of
+materials, and the building of a support network--are all vital in
+establishing and sustaining the innovation.
+
+The project is designed to initially involve learning centers in five
+schools.  During the second year it will expand to serve about 140
+special needs students in all eight Brookline elementary schools.  The
+successful provision of services to students depends on successful
+training and support of the Learning Center teachers.  During the first
+year, our activities will focus most strongly on training teachers,
+providing the teachers with supportive services and materials, and
+documenting student and teacher learning. As teachers gain 
+experience in project activities, the project staff will
+gradually shift its major focus from training and support
+of teachers, to preparation and dissemination of project
+documentation.  By the third year of the project, the first five
+teachers should be functioning independently, the second group of
+three teachers in their second year of participation, will need less
+support, and the project staff will be devoting most of its
+energy to writing project documents and disseminating information
+about the project to interested schools.
+
+Training and support for teachers will be provided in a variety
+of ways.
+
+.block 4
+1.  Training:
+
+A two week summer workshop at the start of the project will provide
+teachers with an understanding of the philosophy and methods of the
+project, as well as training in the LOGO computer language and
+activities.  By focusing on their own learning during the training,
+teachers will be better able to understand their students' learning
+experiences.  The relationship between LOGO activities and the needs
+of learning disabled students will be thoroughly discussed.
+Additional training will be provided in a series of monthly workshops
+throughout the year.
+
+.block 4
+2.  Materials:
+
+The project staff will provide materials for teachers and students.
+Many of these materials already exist or can be adapted for special
+needs students.  Others are currently being developed by the MIT LOGO
+Group.  Additional materials will be developed by the project staff,
+tested by the teachers and students, and revised by the staff.  These
+materials will be an important part of the dissemination of the
+project's methods to other teachers.
+
+.block 5
+3.  Direct Support:
+
+During the first year of a teacher's participation, regular support
+will be provided by a resource teacher and by an instructional aide.
+The resource teacher will visit classes, observe students and meet with
+the teachers to discuss the overall progress of the project and help
+with planning for individual students.  The instructional aide will
+provide teachers with release time from regular tutorial duties so
+that they can participate more fully in project activities.  The
+amount of support for experienced teachers will decrease during
+the second year as new teachers are added to the project.  During the
+third year, it is anticipated that the original teachers will
+be functioning independently, with only occasional assistance from 
+the project staff.
+
+.block 5
+4.  Project Meetings:
+
+Teachers will be released from regular duties for one half-day per
+month to attend project meetings.  At these meetings they will receive
+additional training, discuss the progress of the project in
+their own classes, share and analyze successes and problems with
+individual students, and participate with the staff in ongoing project
+planning.
+
+.block 5
+5.  A Support Network Within the School and the Community:
+
+The instructional aides and student teachers who make up each Learning
+Center team will be provided with training so that they can
+participate more fully in project activities.  School personnel such
+as classroom teachers, pupil support personnel, the school principal
+and guidance counselor, will attend at least one orientation workshop
+offered by the project staff.  Parents, who play a major role in
+supporting each child's Learning Center program will be invited to an
+orientation meeting and encouraged to visit classes.  Parents who wish
+to volunteer as tutors will be able to receive additional training
+from the project staff.  An Advisory Council will be established to help the
+project maintain contact with various groups within the school system
+and in the community at large.  Information about the project
+published in local, regional and national media will help provide
+support to the project, as well as informing a wider public, as part
+of project dissemination.
+
+.block 9
+.ce
+VI. Goals of the Project
+
+In summary then, the goals of the project are as follows:
+
+.block 4
+1.  Student Goals:
+To help mildly to moderately learning disabled students, grade 5-8,
+who receive remedial services in school Learning Centers, make gains
+in the areas of motivation, self confidence, basic skills in math,
+reading, spelling and punctuation, creative writing, typing, logical
+problem solving, and computer literacy.
+
+.block 4
+2.  Teacher Goals:
+To help teachers of learning disabled students develop competence and
+confidence in educational uses of computers, and the understandings
+necessary to integrate those uses appropriately into each student's
+individual education plan.
+.block 4
+
+3.  Dissemination Goals:
+To securely establish the innovative methods of this project in a
+supportive context within participating schools; to make other schools
+and school systems aware of the project; and to provide documentation,
+training and technical assistance to help them make use of the methods
+developed here.
+
+.ce
+VII.  Evaluation of Project Objectives
+
+Since the project stresses flexibility of approach, and the integration
+of computer activities into individual education plans, all students
+will not be expected to meet all objectives equally.  An important
+aspect of the project will be the development of the best possible
+integration of individual student needs, and project activities in
+order to meet particular objectives.  The project staff and teachers
+will make use of ongoing evaluation of each child's work to make the
+best possible match between student needs and project objectives.  For
+example, some students may make extensive use of the text-editor, with
+reduced emphasis on computer programming.  For others the reverse may
+be true.  The overall evaluation will need to take these individual
+differences into account.
+
+The evaluation design, to be developed by the project staff and an
+evaluation consultant, will make use of previously developed
+standardized measures whenever possible.  In other cases, non-standard
+measures will have to be found or developed.  Since some of the
+student objectives involve indirect effects of the experience (such as
+increased self confidence), or types of learning that are not
+routinely measured in schools (such as computer programming skills or
+problem solving abilities), the development of the evaluation design
+will be a critical task to be addressed early in the project.
+
+A unique form of evaluation data available to this project will come
+from "dribble files" kept automatically by the computer.  These are detailed,
+keystroke by keystroke records of a student's interaction with the
+computer.  They are invaluable in the understanding of problem solving
+strategies, mathematical and logical reasoning, and frequency and
+duration of computer use.  These will be used by project staff and
+teachers in ongoing assessment of student progress and to contribute
+to the overall evaluation and documentation of the project.
+
+.block 6
+.ce
+VIII. The Potential Significance of the Project
+
+We believe that the success of this project could have a significant
+impact on the use of computers in the education of special needs
+students, and on instructional uses of computers in general.  We use
+technology to create a teaching/learning environment which goes far
+beyond the common concept of a computer as a tutorial or record
+keeping device.  We do this by reversing the usual order of things:
+whereas conventional Computer Assisted Instruction systems have a
+"clever" computer program teaching a "dumb" student, our students
+develop an intelligent self image as they learn to teach a "dumb"
+computer.  By stressing learner choices within a range of possible
+activities we seek to remedy the problem of alienation experienced by
+many special needs students, and to accomodate a variety of individual
+needs and capabilities.  Finally, with our stress on the process of
+teacher training and the development of teacher and student materials
+to integrate a new methodology into an ongoing program, we hope that
+this project will provide a model for the incorporation of computers
+into educational programs at all levels, and for a variety of student
+populations.
+.page
+.ce
+IX.  Bibliographic References
+
+Abelson and diSessa, "Student Science Training Program in
+Mathematics, Physics and Computer Science." Aritificial Intelligence
+Laboratory Memo #393, LOGO Memo #29, MIT, 1976.
+
+Feurzeig, Papert, Bloom, Grant and Solomon, "Programming Languages
+as a Conceptual Framework for Teaching Mathematics."  Report No. 1889,
+Bolt, Beranek and Newman, Cambridge, Mass., 1969.
+
+Papert, "Teaching Children to be Mathematicians vs. Teaching About
+Mathematics." Artificial Intelligence Laboratory Memo #249,
+LOGO Memo #4, MIT, 1971.
+
+Papert, "Uses of Technology to Enhance Education." Artificial
+Intelligence Laboratory Memo #298, LOGO Memo #8, MIT, 1973.
+
+Papert, Abelson, diSessa, Watt, "Assessment and Documentation
+of a Children's Computer Laboratory." Artificial Intelligence Memo #460,  
+LOGO Memo #48, MIT, 1977.
+
+Papert, diSessa, Watt, Weir, "Final Report of the Brookline LOGO
+Project.  Part II, Project Overview and Data Analysis.  Part III,
+Individual Student Profiles."  Artificial Intelligence Laboratory 
+Memos #545 and #546, LOGO Memos #53 and #54, MIT, 1979.
+.br
+See especially Part II, Chapter 3, "The Experience
+of Exceptional Students," and Part III, Chapters 10, 15 and 16.	
+
+Papert and Solomon, "Twenty Things to do with a Computer."  Artificial
+Intelligence Laboratory Memo #248, LOGO Memo #3, MIT, 1971.
+
+Papert and Weir, "Information Prosthetics for the Handicapped."
+Artificial Intelligence Laboratory Memo #496, LOGO Memo #51,
+MIT, 1978.
+
+Weir, "The Use of LOGO For the Diagnosis of Children's Abilities
+in Areas of Spatial Reasoning, and the Use of LOGO for Remediation."
+Internal working paper, MIT LOGO Group, 1979.
+
+Weir, "Evaluation and Cultivation of Spatial and Linguistic
+Abilities in Individuals with Cerebral Palsy."  Artificial Intelligence
+Laboratory Memo #570, LOGO Memo #51, MIT, March 1980.
+
+.block 3
+Weir and Emanuel, "Using LOGO to Catalyse Communication in an
+Autistic Child."  Department of Artificial Intelligence Memo #15,
+University of Edinburgh, Edinburgh, Scotland, 1976.
+.page
+
+.ce
+APPENDIX I
+.adjust
+
+.ce
+INTRODUCTION TO LOGO 
+
+0To provide a context for "learning by doing", we link up various
+devices to a computer so that a child can, via a computer, "command" an
+output device to carry out an action.  One device we have used is a
+mechanical "turtle" capable of moving forward or back in a particular
+direction (relative to itself) and of rotating about its central axis.
+It has a retractible pen on its underside which can be in two states
+called PENUP and PENDOWN.
+
+The mechanical turtle can be replaced by a @@@@@@@on a display screen,
+and this is made to "act" by typing commands.  At any one time the turtle
+is set at a particular place and facing a particular direction.
+.block 10
+.sp 9
+.ce
+fig. 1
+
+If the pen is down, then as the turtle moves around, it leaves
+a trace, and so arbitrarily complex patterns can be drawn.  For
+example, the following commands will cause the turtle to draw figure 2.
+
+.indent 2
+.nofill
+.block 10
+PENDOWN
+FORWARD 100
+LEFT 120
+FORWARD 100
+LEFT 120
+FORWARD 100
+
+.ce
+fig. 2
+.adjust
+.indent 0
+
+There are many paths to take from this point depending on the
+individual characteristics of the learner (and of the teacher).  For
+example, the set of instructions required to draw a triangle can be
+wrapped up into a bundle as a PROCEDURE and given a NAME.  Different
+sizes and orientation of triangle can be drawn by introducing a
+variable parameter for the procedure.  This immediately leads to the
+discovery that other polygonal shapes can be drawn by selecting
+appropriate values for the input variables.
+
+.nofill
+.BLOCK 25
+TO TRI :ANGLE :SIDE	TO POLY :ANGLE :SIDE
+10 FORARD :SIDE		10 FORWARD :SIDE
+20 LEFT :ANGLE		20 LEFT :ANGLE
+30 FORWARD :SIDE	30 POLY :ANGLE :SIDE
+40 LEFT :ANGLE		END
+50 FORWARD :SIDE
+END
+.block 24
+.SP 24
+.ce
+fig. 3
+
+
+.adjust
+Notice that in addition to learning computer programming, the student
+is learning mathematical ideas -- he is exploring the notion of
+ANGLE, POLYGONS, RECURSION and so on.
+
+.block 5
+Problem Solving
+
+0Repeated calls of the same triangle procedure were named by children
+in a LOGO class in the Brookline public school system as:
+.block 14
+.sp 14
+.ce
+fig. 4
+
+Complex patterns can be seen as consisting of familiar parts.  For
+example a house can be broken into:
+.block 8
+.sp 8
+.ce
+fig. 5
+
+.page
+This introduces a basic PROBLEM-SOLVING heuristic i.e. break up a
+complex problem into its subparts.  The HOUSE procedure can be built up
+out of a TRIANGLE sub-procedure and a SQUARE sub-procedure.  Putting
+together these procedures produces an unexpected result.
+.block 8
+.sp 7
+.ce
+fig. 6
+
+This is because when the triangle was completed the turtle was left
+facing in the direction of the arrow.  So this introduces the idea of a
+BUG, which can be easily fixed or DEBUGGED because it is so easy to
+follow what is happening -- the relation between the action and its
+consequence is very explicit.
+.page
+.ce
+APPENDIX II
+
+.ce
+AN EXAMPLE OF KARL'S WORK
+
+Karl, a learning disabled student referred to in the body of this paper,
+engaged in a number of programming projects in which he was able to make use of
+and develop his geometric understanding, organizational skill and reasoning
+ability.  In the procedure called ACE, for example, Karl made use of 
+circle commands which had been provided as tools by his teacher.  RCIRCLE 50
+draws a circle of radius 50, in which the Turtle turns to the right as it 
+draws the circle.  LCIRCLE 50 draws a circle of radius 50 turning to the left.
+.block 20
+.sp 18
+.ce
+fig. 7
+
+The geometric organization of ACE is shown in fig. 7.  In drawing his design,
+Karl made use of right/left  and forward/back symmetry and made creative use of
+the relationship between the radius and diameter of a circle.
+
+.page
+.ce
+APPENDIX III 
+
+.ce
+EXAMPLES OF TINA'S WORK
+
+Tina's pattern of computer use was unique among sixteen experimental
+subjects in the Brookline study in that she was not interested in Turtle
+Geometry and never learned to write her own LOGO procedures.  On the other
+hand, Tina established an intense, personal relationship with the computer,
+and, using the computer as a text editor and word processor, wrote a series of
+stories that represented a major achievement in the area of creative writing.
+
+The letter, HELEN, is representative of Tina's first two attempts to use the
+computer for writing:
+
+.nofill
+DEAR HELEN HOW ARE YOU IN YOUR NEW HOME.  I AM GOING TO GET YOU SOMETHING
+ FOR YOUR NEW HOME AS SOON AS I GET MY MONEY
+LOVE TINA
+
+.adjust
+In writing this letter Tina regularly asked for spelling and punctuation
+help.  She was concerned that it be grammatically correct, and in proper 
+form.  A great deal of time was spent making sure each line was correct,
+before going on to the next.
+
+Once she shifted from writing letters to stories, Tina became less
+concerned with spelling and grammar (although she continued to ask for
+help in these areas).  Instead, she was more concerned with the details
+of the story:  the names of the characters, the places they lived, the 
+sequence of events, and the feelings of the characters involved.  Tina 
+had deep feelings about her subject matter.  Her story, SONNY, is typical
+of her style and intensity of feeling:
+
+.nofill
+SONNY IS A LITTLE BOY HE LIVES WITH HIS AUNT HELEN IN CALIFORNIA 
+HE HAS BEEN LIVE WITH HER FOR 9 YEARS.  HE IS GOING TO A HOME FOR
+LITTLE WONDERS 4 WEEKS AFTER THAT TO
+COUPLE A ADOPTED SONNY HE WAS THE HAPPIEST BOY THAT YOU EVERY
+SEEN.  I GUESS IF THAT WAS ME I WOULD BE HAPPY IF SOME ONE WOULD
+ADOPT.  BUT SEE I AM NOT ADOPT I HAVE MY ON MOTHER AND I AM
+GLAD THAT I HAVE MY ON MOTHER.BECAUSE THE KIDS THAT HAVE FEELS
+REALLY BAD.  THAT'S WHY ALL THE KIDS IN THE WORLD SHOULD BE
+GRATEFUL TO THEIR PARENTS.  THE END.
+
+.adjust
+After completing each of her stories, Tina printed many copies to be
+distributed to her friends, family and teachers.  The widespread 
+distribution of her stories was an indication of the pride and 
+satisfaction she felt in her work.
+

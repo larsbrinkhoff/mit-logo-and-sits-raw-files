@@ -1,0 +1,95 @@
+.xgp
+.squish
+.font 0 31vg
+.font 1 31vgb
+.tlinch 9.0
+.twinch 6.5
+.dummy ^
+.nofill
+Elliot Soloway
+Dept. of Computer Science
+Univ. of Massachusetts
+Amherst, Mass., 01003
+
+Dear Elliot,
+.ds
+.adjust
+
+^^^^^^^^^^My viewpoint about "the role of experimentation in AI" derives from a position advanced by Minsky long ago in his Turing Lecture, "Form and Content in Computer Science" -- that computational ideas are a newly available resource applicable to describing the processes of thought.  That position has been carried further (as discussed by Laurence Miller in "Has Artificial Intelligence Contributed to an Understanding of the Human Mind^?", Cognitive Science, 1978, 2, 111-127) to the Minsky-Papert stance that a fundamental A.I. objective is developing  tools for describing complexly organized and interacting processes.
+
+^^^^^^^^^^If we assert that A.I. is developing a kind of mathematics applicable to describing mind, as the calculus is a mathematics applicable to physics, the question of experiment's role clearly depends not on whether some scientist classifies himself as a psychologist or an A.I. person but on whether his objective in a particular labor is more mathematical or concrete (where I use the term in its sense of applying to the specifics of actual experience).  The calculus has an affinity with physics in the sense that it applies so well to the domian.  This is not an accident; the differential focus of the calculus developed through the endeavor to understand astronomy.  It is, nonetheless, an accident of physics that the differential is a central entity, dealing with which gives calculus its derivitive power as an applicable description of a reality.  Similarly, A.I. has an affinity with cognitive psychology because control structure specifically describes an organization of functioning information -- and what else can mind be^?  Calculus is not physics.  No more is A.I. Cognitive Psychology despite its affinity for it.
+				
+^^^^^^^^^^One may quarrel with the name of the discipline if it is used as a boundary beyond which ideas may not be applied. -- for instance, to argue that Artificial Intelligence can only be concerned with functioning information in entities not born but made.  There seems little danger that natural modesty will lead us to impose such an artificial restriction on our work.  On the contrary, the bold claim has been advanced that the end of A.I. is a general theory of intelligence applicable to every sort of organization.  With a more modest claim, capable of substantiation, that we have learned a little about intelligence in two various forms, artificial and natural, I prefer the label Variform Intelligence  to any more grandiose title.  (The seriousness with which I take this argument is witnessed by my having specified that name for my interdisciplinary doctoral degree.) 
+
+^^^^^^^^^^As for talking to the uninitiated, I am willing to call myself a scientist.  When asked, "What kind^?", I reveal the etymological pun in my use, that I am not merely one who uses knowledge and believes in its power but am one who studies its function and structure in whatever embodiments of mind there be.  My interlocutor's eyes usually begin to glaze as I hold forth on the distinction between knowledge and intelligence....and then we turn to some more popular issues such as the potential impact of computers on children's lives.
+
+.ce
+Yours truly,
+
+.page
+.ce
+* * * * * TEXT DUMP * * * * *
+.page
+.ce
+1Bricolage0
+
+.ce
+1Look for Something Special0
+
+.ce
+1Mneonic-naming0
+
+.ce
+1CHANGING SCALE0		;
+
+^^^^^^^^^^The POLYSPI procedure below makes very attractive designs, which are more or less hard to relate and understand:
+.ss
+.nofill
+.indent 5
+2TO^^POLYSPI^^^:DISTANCE^^^:ANGLE^^^:DELTA
+1.^^FORWARD^^:DISTANCE
+2.^^RIGHT^^^^:ANGLE
+3.^^MAKE "DISTANCE^^:DISTANCE^^+^^:DELTA
+4.^^GO^^10
+
+.ss
+.adjust
+.indent 0
+With angle values chosen to be those of regular polygons, e.g. 120, 90 degrees, etc., regular "mazes" appear.  With small variations of angles, e.g. 119, 118 and so forth, spirals emerge from the bumping together of the corners and sides of the mazes.  Tracing the polygon vertices results in a spiral pattern.  But what about the areas in between the more nearly regular polyspis ?  In what sense are the figures spun from angles near 105 degrees related to those near the angles of reguar polygons ?  A new point of view on the question can be gained by changing  the scale of the space on which the turtle draws the polyspi design.  Doing that, you can see that all the polyspi executions result in emerging spiral patterns of vertices as the turtle spirals out from the staring place.  The variety of the attractive polyspi designs on the small scale are very much boundary-condition phenomena of a process more uniform on the grand scale.
+
+^^^^^^^^^^The INSPI procedure below makes very interesting designs when the distance and initial-angle variables are held constant and the delta variable changed (try INSPI 10 0 7):
+.ss
+.nofill
+.indent 5
+.block 5
+2TO^^INSPI^^^:DISTANCE^^^:ANGLE^^^:DELTA
+1.^^FORWARD^^:DISTANCE
+2.^^RIGHT^^^^:ANGLE
+3.^^MAKE "ANGLE^^:ANGLE^^+^^:DELTA
+4.^^GO^^10
+
+.indent 0
+.ss
+.adjust
+When you try different values of the initial angle (such as INSPI 10 2 5 ), you run into a blank wall because the figures drawn by the turtle very quickly go off the edge of the display screen.  The figures made on the display by multiple wrapping of the turtle make it even harder to perceive the order that such figures do, in fact, possess.  The way to appreciate this order is to increase the size of the display screen (from its noraml 400 x 400 turtle steps) to some larger field of movement (such as 1000 x 1000 turtle steps) where the figures can close on themselves without wrapping.
+
+SUMMARY:  Logo designs are emergents of local processes.  What you see very much depends on how you look at it.  Choosing the scale is an important factor in how you look at and understand designs.
+
+
+ Suppose, for example, you want to put a list of numbers or letters in the computer's collating sequence.  If your procedure can find the lowest member of the list and put it at the head (after some other procedure has sorted the rest of the list), your procedure can quite easily become a general sorting procedure.  The one below moves the members of "LIST" to "NEWLIST" one at a time; it puts the comparatively low-valued members at the head of the list and the high-valued members at the end of "NEWLIST".  Once this is done, the buck is passed to a SORT procedure:
+.ss
+.nofill
+.indent 2
+2TO^^YOUR-PROCEDURE^^^^:LIST
+1.^MAKE "NEWLIST FIRST :LIST
+2.^IF EMPTY? :LIST, MAKE "LOWMAN FIRST :NEWLIST
+^^^^^^^^^^^^^^^^^^^^OUTPUT FIRSTPUT (SORT BUTFIRST :NEWLIST) :LOWMAN
+3.^IF NOT GREATER FIRST :NEWLIST FIRST :LIST, LASTPUT "NEWLIST FIRST :LIST
+^^^ELSE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^FIRSTPUT "NEWLIST FIRST:LIST
+4.^MAKE "LIST BUTFIRST :LIST
+5.^GO 20
+
+.ss
+.adjust
+.indent 0
+What good is passing the buck --all we've done here is extract one member of the set and invoke some as yet unwritten "SORT" procedure ?  The good trick of passing the buck is that SORT is already written -- it is just another name for YOUR-PROCEDURE !  How can that be ?  When SORT is finally passed a list with only one member, it will surely put that member at the head of its output list.  The preceding invocation of SORT guaranteed that its "LOWMAN" was less than the members of the list passed to SORT.  Since this is true of every invocation, and that "LOWMAN" is always put at the head of the list as it is successively output by each preceding instance of sort SORT, the final list output will necessarily be in collating sequence, i.e. sorted.

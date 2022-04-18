@@ -1,0 +1,777 @@
+.HEADER 5-
+.QUOTE #
+.adjust
+.line 65
+.fill
+.double
+.ce
+CHAPTER 5
+.ce
+INPUT OUTPUT
+	Any timesharing  system  must,  of  course,  have  some
+method of dealing with the input/output needs of user programs.
+Although  it  would be  possible to  simulate the  operation of
+hardware input-output devices  on a virtual  machine, the  only
+advantage to this approach is that it allows running standalone
+programs  in   timesharing   without   modifying   them.    The
+disadvantages  are  that  this   is  difficult  to   implement,
+inefficient  and  does  not  provide the  user  with  any extra
+conveniences.   Since the  disadvantages greatly  outweigh  the
+advantages, at least as we see them, we have decided to adopt a
+system very similar to that of ITS, but also incorporating some
+of  the features of  TENEX input/output handling  which we feel
+are desirable.  Therefore we have defined a set of system calls
+which inform the system of  the input/output needs of the  user
+program.
+	Like  ITS the user refers all his I/O system calls to a
+channel number which he chooses.   Before any tranfers can  take
+place  through a  channel the user  must open it  with a #.OPEN
+call;  this specifies the device and file, and also what  types
+of transfers may be requested in the future.   Since many types
+of transactions may be requested in  the open but some of  them
+might be illegal, if the user wishes the channel will be opened
+as long as just one legal mode is specified.  When the user is
+through  with a device (or a file on a device) he may close the
+
+
+channel with (surprise!) a #.CLOSE call;  this will finish  any
+pending  transfers and then free the device for other use.   If
+the user does a #.OPEN specifying a channel that he already has
+open, either the open fails, or the previous channel is closed,
+depending on a bit in the provided by the #.OPEN call. 
+	Each device has a set of conditions associated with it.
+These conditions are of two types:  errors and status.   Errors
+are conditions which should always be noticed by the user, e.g.
+an attempt to read past the end of a file, or the occurrence of
+a non-recoverable data error.   Status condtions may or may not
+be of interest to a particular program, e.g. the output  buffer
+for  a  device  being nearly  empty.   Error  conditions either
+interrupt the user if he  has interrupts enabled on errors,  or
+cause  an  interrupt to  the  user's superior  if not.   Status
+conditions only interrupt the user,  and then only if they  are
+enabled.
+	Channels  0 and 1  are defined to  be the primary input
+and output  channels for  all  users.   These channels  may  be
+opened in the normal fashion, but if no other device is open on
+them, the teletype belonging to the user's tree is assumed.  If
+I/O  is requested on the teletype when it is being used by some
+other job  in the  tree, the  user hangs  unitl he  may  obtain
+control  of  the teletype.   Note  that  in the  case  where an
+inferior of a user who wishes to do teletype output has control
+of   the  device,  the  superior  may  request  control  of  it
+
+
+temporarily.  The teletype is special in that it may be open by
+several jobs in one tree at the same time.
+.br
+IMPLEMENTATION
+	Each user has 8 channels  on which he may open  various
+devices.  Each channel has 3 words associated with it, arranged
+in 3 parallel tables.   The first word contains in one byte the
+device number, and in the other, the modes which the channel is
+open in.   The  possible modes  are read,  write, random  read,
+random write, write after end of file and ascii/image.   Except
+for ascii/image, these  bits allow or  prohibit certain  system
+calls form referring to the channel in question, e.g. if random
+read  where not set, #.RACCES would  be illegal on the channel.
+The second word is the status word for the channel.   This word
+contains  two  bits  which  enable  interrupts  to  occur under
+certain conditions.   The first allows interrupts when an error
+condition  occurs on the channel;  the second allows interrupts
+when certain non-error conditions occur on the  channel.   Four
+bits  of this word are used for indicating non-error conditions
+which might  be of  interest to  the user.   These  are:  input
+buffer  not empty, input  buffer near full,  output buffer near
+empty and output buffer near  full.   Six bits in the low  byte
+are  used  to  indicate  any error  which  has  occurred  on the
+channel;  these bits are zero for  a channel which is open  and
+has no errors, and 000001 for a channel which is not open. The
+reamaining two bits indicate pending interrupts for conditions
+or errors.  The
+last  of the three words is a pointer to the block of addresses
+
+
+to dispatch to for each of the I/O system calls when they refer
+to this channel.  This word is zero for an unopened channel.
+	There are  sixteen system  calls which  are related  to
+input/output  operations;  six of these  cause actual transfers
+of data, while the other ten provide control  operations.   All
+of the data transforming calls are two operand  instructions;
+the  source is  the channel number  and the  destination is the
+data to be transformed.  Three of the calls are for input while
+the  other  three  are  output.   The  calls  are:  byte  input
+(#.BYIN),  byte  output  (#.BYOUT), word  input  (#.WDIN), word
+output  (#.WDOUT),  block  input  (#.BLIN),  and  block  output
+(#.BLOUT).   The byte instructions transfer one byte to or from
+the device; the  address specified for  the destination may  be
+odd or even.
+	The word instructions of course transfer a full sixteen
+bit word.   In the case of a byte oriented device such a  paper
+tape  reader,  this is  just  the transfer  of  two bytes;  the
+address may be odd.   However, in the case of a word of a block
+oriented device, such as a disk file, the access pointer of the
+file  and the pointer  into user core  must both be even.   The
+block transfer  instructions may have  similar  restrictions for some
+devices.   The
+destination address for a block instruction is a pointer to two
+words:  the  first  is a  count of  the number  of bytes  to be
+
+
+transferred, the second  is the starting  core address for  the
+transfer.   If  the device is word oriented, both of these must
+be even.   If a  block input instruction  transfers all of  the
+bytes  indicated  by  the byte  count,  the  Z flag  is  set on
+returning;  otherwise the flag is cleared.
+	Normally, #.BYIN, #.WDIN and  #.BLIN return with the Z
+bit  set.   However, if  an end-of-file  condition occurs which
+prevents all  of  the requested  data  from being  supplied  in
+response  to  the call,  they return  with all  condition codes
+cleared.   When an  EOF prevents  data  from being  input,  the
+actual data input depends on the type of call.   In the case of
+#.BYIN, a 203 is input as the requested byte.   #.BLIN  returns
+with  the byte count set to  indicate how many of the requested
+bytes were not input.   If there are no bytes available when a
+#.WDIN  is executed, it  returns with a  203 in both bytes;  if
+there is  exactly one  byte  available before  the EOF,  it  is
+returned in the first byte;  the second byte is set to 203.  If
+another  input call is attempted  after an end-of-file has been
+indicated,   the  channel   gives  an  attempt   to  read  past
+end-of-file error.
+	Two other I/O  calls provide for  setting the read  and
+write  random access  pointers (#.RACCES  and #.WACCS).   These
+calls give  pointers  to two  words  in user  core  which  give
+absolute byte address within the file.   If the device does not
+have random access capabilities, the call is illegal.   If  the
+
+
+device  can be random accessed, the new address is stored until
+a transfer is attempted on the channel at which time the actual
+access is performed, if  it does not go  beyond the end of  the
+file.   
+	Three  of the calls  are related to  the channel status
+word.   These are  set status  (.IOSTS) (.IOSTR),  read  status
+(.IOSTT), and test status.  The set status call allows the user
+to  set and clear the state of any writeable bits in the status
+word.   The two interrupt enable bits are usually the only bits
+of this type.   The read status call transfers the word to user
+memory so  that  he  may examine  it.   The  test  status  call
+effectively  does  a  BIT  on the  status  word  with  the user
+supplied word.   The processor status at the return of the call
+indicates the result of the BIT.
+	One  general  purpose  call  (.IOOPR)  is  defined  for
+special purpose  device  control (e.g.  rewinding  mag  tapes).
+This  call provides  a pointer  to a  block, the  first word of
+which is a code for the operation to be  performed.   Depending
+on  the operation, the words following may be arguments further
+describing the function, or might receive values as a result of
+the function.
+	The remaining two  operand I/O call  is the open  call.
+If  the channel specified in an open is already open it must be
+closed before the actual open can proceed.  Once the channel is
+free to  be opened,  the block  pointed to  by the  destination
+
+
+address is transferred into a special area.   The first word of
+the block gives information  about the open, including  desired
+modes.  The following bytes are an ASCII string which specifies
+the device and the file name.
+	Whenever  an open is  done, the open  block supplied by
+the user must first be copied into a special system area before
+processing can actually begin.   This is done so that the block
+may  be examined without having  to reference user core;  also,
+the block may be  examined as bytes.   There  is a system  byte
+which  contains the  user number of  the user  who is currently
+using the block;  it is  -1 if the  block is free.   The  first
+word  of the user's open  block is copied directly;  the string
+which follows this word  is examined as  it is copied;  when a
+character  with  it's  200  bit  set  is  copied,  the  copy is
+finished.   If 32  words are  transferred and  the end  of  the
+string  is not found, the 200 bit  is set in the last character
+copied and  the  open  continues.   Once the  string  has  been
+copied,  it  is  scanned  for a  colon;  if  one  is  found any
+characters with  values  greater  than 140  octal  which  occur
+before the colon have 40 octal subtracted from them (converting
+lower  case to upper case).   If no  colon is found the desired
+device is assumed  to be  the disk and  control is  immediately
+transferred to the disk open routine, which is described below.
+If  a colon is  found, the characters  before the colon specify
+the device;  the  first 3  characters  are the  general  device
+
+
+name.   For  some  devices,  characters after  the  first three
+specify which unit of a particular type is to be opened.  There
+is a  table  (figure  5-2)  of  devices  which  gives  the  three
+character  device name, the address of the open routine and the
+first and last device numbers (these  are the same if there  is
+only  one device of that type).   This  table is searched for a
+match between the device names and the first three charcters of
+the open string.   If no match is found, a no such device error
+is  given;  if a match is found the appropriate open routine is
+jumped to.   Most  open  routines will  do  a small  amount  of
+processing  on the rest  of the string  (e.g. checking that the
+next character is a colon) and then free the system open block.
+If a lot more  processing must be done  (e.g. for a disk  open)
+the  string is copied to an area  related to the device and the
+open block is  freed.   The device open  routine then does  any
+necessary file lookups, determines which of the requested modes
+are  legal, and, if all the  requested modes are legal, returns
+with the Z bit set in  the processor status word.   If none  of
+the modes are legal, or if all requested modes are required for
+the  open to succeed,  the open returns  with the all condition
+bits set to  zero.   If only  some of the  requested modes  are
+required for success, the call returns with the N bit set.
+	The  device open routine determines  if the rest of the
+file specification is valid and if it is, performs the open  as
+indicated by the first word of the block.   In particular, if a
+
+
+unit is specified after the first 3 characters of device  name,
+the  open routine determines if  this device exists.   Also, in
+any case, the  routine determines if  the device is  available.
+Most  open routines ignore the  rest of the file specification;
+file oriented devices  use it to  find the file  desired.   The
+format  of the first word of the  open block is shown in figure
+5-3.  The high two bits are simply copied into the channel status
+word as the interrupt enable  bits if the open  succeeds.   The
+next  bit indicates if  the open should succeed  even if all of
+the desired modes are  not allowed.   The fourth bit  indicates
+whether the open should succeed even if the channel was already
+open.  No other user is allowed to have the file we have opened
+open if the next bit (freeze file) is a one;  if the file is already open, an
+open with this bit set will fail.  The bottom byte of this word
+gives  the modes which  this channel is  to be opened in;  this
+byte is organized exactly as is the similar byte in the channel
+word.   The three remaining input-output calls are one  operand
+instructions.  They all take a channel number as their operand.
+The  first of these is the  #.CLOSE  call;  this call finishes any
+transfer in progress on the  specified channel, and then  frees
+the  user channel.   If  the device  is not  open on  any other
+channel, it is freed.   The two other calls are reset input and
+reset  output;  these  calls reset  any  buffered data  for the
+channel on  either input  or  output.   These calls  only  have
+effect on certain devices.
+
+
+	This  general  description of  the  I/O calls  has been
+necessarily vague  since each  device handles  the calls  in a
+different  manner.   We will  now discuss some  of the possible
+devices and their peculiarites. 
+	The simplest device is  called the null  device.   This
+device  provides write-only memory  on output, and  a source of
+nothing, that is, an immediate end of file condition, on input.
+The 3 character name of this device is NUL.   The #.OPEN  routine
+for it checks that the next character after the NUL is a colon;
+if it is not, a non-existent device error occurs.  If the colon
+is  there, the interrupt enable bits are copied into the status
+register, all requested  modes are  set into  the opened  modes
+byte,  the routine  pointer and device  number are  set and the
+call returns with  the Z bit  set.   The routines for  #.BYOUT,
+#.WDOUT,  #.RSETI, #.RSETO, #.RACCES, and #.IOOPR return to the
+user immediatly, setting the Z bit.  #.BLOUT returns with the Z
+bit set  after  adding the  supplied  byte count  to  the  word
+address in user core, and setting the byte count to zero.   The
+first attempt  at inputting  any data  returns the  end-of-file
+indication for each of the different calls;  the second attempt
+at  input causes an "attempt to read past EOF" error.   All three
+calls return  with the  N bit  set.   The routine  for  #.CLOSE
+simply  set the  channel status  word to  channel not  open and
+clears the routine pointer and device number.
+	The next level of complication  in devices are what  we
+
+
+will call the simple buffered character oriented devices.  This
+class  includes  line  printers  and  paper  tape  readers  and
+punches.   Teletypes, due to  their many special  requirements,
+are  not in  this class.   For  the sake  of examples,  we will
+discuss the paper  tape reader (device  PTR) and punch  (device
+PTP).   The #.OPEN routines
+for devices  of  this  class check  that  a  colon  immediately
+follows  the three character device name;  if it does not, a no
+such device error is given.   If the device is not in use by a
+user  other  than  the  one  doing  the  open  and  the mode(s)
+requested are legal (or at least one is, if the user  indicates
+the  channel should be  opened if at least  one mode is legal),
+the device is  flagged as being  in use by  this user, and  the
+count  of  times the  device is  open is  incremented.   If the
+device is  an  input  device (e.g.  PTR)  the  interrupt  level
+routine is started to input characters from the device. 
+	The standard format for device variables for this class
+of  devices is shown in figure 5-4.   The first two words are the
+segmentation register  values which  give the  location of  the
+device  buffer.   When any routine wishes to access the buffer,
+it must first load these values into the segmentation registers
+for the first hack  kernal page.   This means  that all of  the
+device buffers start at the same virtual kernal address;  also,
+they  are  not  permanently  part of  the  kernal  virtual map,
+leaving more address space for other things.   This is not  too
+
+
+important  for  devices   with  small   buffers,  but   becomes
+significant  for a  device such as  a line  printer which might
+have a 2K buffer.   On the  interrupt level, first the  current
+contents  of the hack kernal page's segmentation registers must
+be pushed  onto the  stack, then  they may  be  loaded;  before
+exiting,  they must be restored.   On  the main program level,
+they may be loaded immediately.   The next word is a pointer to
+the end of the buffer plus one.  This is used to determine when
+the  pointers into the  buffer must be  reset to the beginning.
+The next word is a count of bytes in the buffer;  this is  used
+to  determine if any characters may be removed from the buffer.
+The next two  words are,  respectively, the  interrupt and  the
+main  program level pointers into the buffer.   When the values
+of these two pointers are equal, no characters may be put  into
+the  buffer.   The next byte is the device error code;  when an
+interrupt level routine detects a device error which should  be
+noted, it sets this byte non-zero for the enjoyment of the main
+program  level routine.   For  example, if the  punch or reader
+runs out of tape, this byte is set.  In the case of the reader,
+the main program  level considers  this to  be an  end of  file
+condition;  the  punch routine  causes a  device full  error if
+there is no more tape.  The next byte is the number of the user
+who currently has the device open;  the byte after that is  the
+count of how many channels he has it open on.  The last byte is
+unassigned, but might be used for flags for some devices.
+
+
+	The  PTR of course can only be opened for read, the PTP
+only for write.   Read random, write random and write after EOF
+modes  are not allowed.   The image mode  bit for the PTR means
+that characters should be passed exactly as they are read  from
+the  tape;  the only cause of  an end-of-file condition will be
+running out of tape.   In ascii input mode, zeros read from the
+tape  are  not  passed to  the  program;  also the  200  bit is
+cleared before  passing  the character  to  the  program.   Two
+succesive  characters with value 203 as read from the tape will
+cause an EOF condition, as will an out of tape  situation.   If
+the  ascii  output bit  is set  in the  PTR open,  the incoming
+characters are  checked  for parity;  if  incorrect  parity  is
+detected, an error is generated;  the program may then read the
+incorrect  character and  subsequent characters  after clearing
+the error.
+	As with PTR, when  the PTP is open  in image mode,  all
+characters  are passed directly  from the program  to the tape.
+In ascii mode, when the channel is first opened, several inches
+of blank tape are punched;  when  it is closed, the same  thing
+happens.  Also, the 200 bit supplied by the user is ignored and
+instead  parity is punched.   Note  that even in  ascii mode, a
+zero character with the  parity bit set will  be passed to  the
+user by the PTR routines.
+	The #.RACCE, #.WACCE, and #.IOOPR calls are illegal for
+these devices.   Also either the input or the output calls will
+
+
+be illegal, depending on  the device.   The #.RSETI or  #.RSETO
+call,  depending on the device, will clear the current contents
+of the buffer.   In the case of #.RSETI, a new buffer load will
+be input as if the channel had just been opened.   The word and
+block instructions cause an appropriate  number of bytes to  be
+transferred;  in  the case of the word intructions, no transfer
+will be done until  two bytes are  available to be  transferred.
+The  block instructions  will modify  the count  and address in
+user core  as they  proceed.   The  close routines  do  nothing
+except clear the channel words if the device will still be open
+on  another channel;  if the  channel being closed  is the last
+channel the device is open  on, the device variables are  reset
+for the next user.   In the case of an output device, first any
+output pending on the interrupt level is finished.
+	The teletype device poses  special problems because  of
+the  fact that sometimes control of one teletype must be passed
+between  several  users.   Also,  for  reasons  of  efficiency,
+special  requirements are  placed on  the device,  such as LOGO
+line input and edit modes  which allow the typing and  editting
+of  a full line without requiring any action on the part of the
+user requesting the input.   Fortunately,  most of the work  on
+these  special modes has already been done for the current LOGO
+system, so we will mention it here only in passing.
+	When a  teletype is  not  in use  by any  user,  typing
+control  Z  on  it  will  attract  the  system's  attention and
+
+
+eventually make the teletype the controlling device for a  user
+tree.   A  teletype  being  used  in this  manner  is  called a
+console.   A user  may access  his tree's  console normally  by
+inputting  from channel  0 and outputting  to channel 1;  these
+primary  input  and  output  channels  normally  refer  to  the
+console.   The user may also open his console on any channel by
+opening device TTY:  ;  he may open any other free teletype  by
+opening device TTYN:  where N is a number.
+	The console is passed from a superior to an inferior by
+means  of the #.GIVTTY call.   This  one-operand call gives the
+console to the user specified by the  operand,
+if  it is an  inferior of the user  doing the call.   This call
+will return with the Z bit  set if the console is  successfully
+given  to the specified  job.   If the user  executing the call
+does not currently  have control  of the  console himself,  the
+call  will return with the N  bit set;  if he does have control
+of the console but specifies a user who is not an inferior, the
+call returns with no bits set.   In order to regain control  of
+the  console, a user does a  #.GETTTY;  if the console is being
+controlled by an inferior, control  is passed to the user,  the
+number  of  the  user it  was  taken  from is  returned  as the
+operand, and  the  Z  bit  is  set.   If  the  console  is  not
+controlled by an inferior or the user who executes the call, it
+returns with no bits set.
+	The  variables for  each teletype include  a byte which
+
+
+contains the number of the user who currently has control and a
+byte which contains a  count of the total  number of times  the
+device  is  open.   Also there  is  a word  which  contains the
+special mode bits for the teletype (e.g. line input mode,  edit
+mode,  etc.).   This  word is  saved  in a  user  variable when
+control of  a  console is  taken  away, and  is  restored  when
+control is returned.
+	A possible set of teletype variables is shown in figure
+5-5.  The status word is divided into two parts;  one byte refers
+to  the  current  mode,  the  other  to  character conversions.
+Output from the user to  the teletype goes to different  places
+depending  on the mode;  normally  it goes to  output buffer for
+the teletype. However, if we are in stuff edit buffer
+stuff tyi  buffer  mode, the  characters  go to  these  buffers
+instead.  Stuffing the edit buffer allows the user to provide a
+line  to be  editted;  stuffing the  tyi allows  a user  to pass
+input  characters  to  the  user  he  gives  the  teletype  to.
+Similarly,  input  to  the  user normally  comes  from  the tyi
+buffer, and the user hangs if there is no more input, or if  he
+is  in line input  mode, he hangs until  the line is completed.
+However, in gobble  tyi or  edit buffer  modes, characters  are
+input  from the  specified buffer until  there are  no more, at
+which time an end-of-file condition is indicated.   These modes
+are used so that teletype can be taken from a user, his tyi and
+edit  buffers saved,  then later he  may be  restarted with the
+contents of these buffers restored by means of the stuff modes.
+
+
+When the waiting on line input bit is set, the user hangs if he
+attempts to input  a character  until a  line is  input to  the
+buffer.   The other byte controls character conversion on input
+and output, and echoing of input.
+	Each teletype has two words which are the  segmentation
+register  values  which  point  to  the  buffer  set;  this  is
+composed of the tyi buffer, the edit buffer and the tyo buffer.
+The tyi and edit buffers are  the same size for all  teletypes.
+The tyo buffer might vary in size depending on the speed of the
+line  (i.e. a buffer for a 240  cps device would be larger than
+that for a 10 cps device).
+	Certainly the most complicated device on the system  is
+the  disk.   Part of the handling of  disks is described in the
+section on memory management;  the rest will be discussed here.
+In particular, the memory management routines handle all of the
+actual disk transfers as  part of the  normal handling of  page
+faults. 
+	As  mentioned earlier, the disk is selected in the open
+by either  specifying DSK  as  the first  3 characters  of  the
+string  or by not including a  colon in the string.   Each user
+has a  default  disk  and directory;  this  is  implemented  by
+having  a  user variable  which points  to  an SPT  entry which
+describes the directory.   Since many users may wish to  access
+the  same disk at one time, there are a number of disk channels
+which provide the variables needed to handle disk transactions.
+
+
+The format  of  these channel  blocks  is shown  in  figure  5-6.
+Rather  than try to explain what  each variable is used for, we
+will refer to the  variables as we  describe how transfers  and
+opens take place.
+	When  the  disk  open  routine  is  entered,  it  first
+determines if the  user is  actually requesting an  open on  an
+extant disk.  If there is a colon immediately following DSK, or
+if  there is  no colon in  the open string,  the user's default
+disk and  directory are  assumed;  if he  has no  default,  the
+system default is used.   Otherwise, the characters between the
+DSK and the colon are taken as the disk name;  the mounted disk
+table is searched for  a disk of the  specified name and if  no
+match is found a no such disk error is given.
+	Once the open is found to refer to a valid disk, a free
+disk  channel is  found and set  up for the  user.   There is a
+system variable which  points to the  first free disk  channel;
+the  first word  of each free  channel points to  the next free
+one.  The end of the free list is marked by a zero pointer.  If
+the system variable that  points to the  first free channel  is
+zero,  there  are  no  channels  available  and  a  device  not
+available error  is given.   The  channel is  set up  by  first
+copying  the open block  into the channel,  allowing the system
+open block to be freed.  Then a pointer to an SPT entry for the
+starting directory is placed in the channel, some pointers into
+the open block are  set up and the  interpretation of the  file
+
+
+specification begins.   Except when they serve to delimit parts
+of the file  specification, characters which  have values  less
+than  or equal  to 40 octal  (space) have  no effect;  they are
+called null characters.   The read descriptor pointer is set to
+point  to the first  non-null character after  the device name.
+The string is then searched  until a null or special  character
+is encountered.  The special characters are ##, >, <, ;, and ~.
+Whenever  the character  ;  is encountered  in the  string, the
+read pointer is  set to  point to the  next non-null  character
+after  the ;  and the directory SPT  pointer is set to point to
+an SPT  entry for  the  root directory  for the  current  disk.
+Similarly, whenever a ~ is encountered, the read pointer is set
+after  it and the  mother of the  current directory becomes the
+new current directory.   When  a null character  is found,  the
+write  descriptor pointer  is set to  point to it  and the next
+non-null character  is  found;  if the  end  of the  string  is
+reached  or the next  non-null is not  a special character, the
+current directory is  searched for  an entry with  a name  that
+matches the characters between the read and write pointers.  If
+no  match  is found  and the  end  of the  string has  not been
+reached, a file not found error  is given.   If the end of  the
+string has been reached, no error is given immediately;  a flag
+is set and the open continues.  
+	Note that wnenever a link is encountered, it is spliced
+into  the  file  specification;  this  allows  links  to   link
+
+
+references  to directories or files in many useful ways.   When
+the splicing is done, a space is inserted between the link  and
+the  previous specification;  if  the total  space used  by the
+link and  the  rest of  the  specification exceeded  the  space
+available  for  them,  a  "too  many  links"  error  is  given;
+inserting the extra  space insures  that a set  of links  which
+would  otherwise be searched indefinitely will eventually cause
+a "too many links" error.   Also, if the last character of  the
+link information is a 200 (rather than some other character with it's 200
+bit  set) it will be copied and will signal the end of the file
+specification(normally the 200 bit  is not copied because  this
+would defeat the purpose of splicing in the link).  If the next
+non-null  found  after finding  a null  character is  a special
+character, or  if a  special character  is found  instead of a
+null,  the action taken depends  on the special character.   If
+the character  is a  ~ or  ;  the action  taken is  as  already
+described;  the  previous  information  is  not  used.   If the
+special character is  a ##,  the next  non-null is  found;  the
+numeric  characters after the  ## are interpreted  as a decimal
+number.   When a  non-numeric  is encountered  the  accumulated
+number is used as a version number.   We then proceed to search
+the directory  exactly as  described above,  but search  for an
+entry  with  the  specified  version  number.   If  the special
+character is a >, we also search the directory, but looking for
+the entry with the greatest version number.   Similarly, if a <
+
+
+is encountered, we search for the least version number.   If no
+entry is found which matches the name and has a version number,
+an entry which just  matches the name will  be used for both <
+and >.  
+	Once  the file specification has been interpreted, the
+channel must be  set up  for the  requested modes.   First  the
+write  modes are set up, then the read modes are trivial.   The
+three write mode bit in the open are actually decoded to one of
+eight different modes (figure 5-7).  The mode determines what the
+opened modes bits will be  set to;  this is not necessarily  in
+one-to one correspondence with the related open bits.
+	No  write mode  willl set  both write  and random write
+opened bits to zero.   If the file does not exist, an error  is
+given  since no read mode can succeed;  if the file exists, the
+descriptor is copied into  the channel and  any read modes  are
+set up. 
+	Exist  only (EOF) causes an error  if the file does not
+exist.   If it does  exist, the descriptor  is copied into  the
+channel  and the  descriptor is  read through  to determine the
+address of the last block of the file.   The last byte used bit
+is then interrogated;  if it is set, the write access pointer is
+set  up to point to the first byte in the next block, the write
+SPT pointer is cleared, the write  flags,(except for type  of
+current byte and no current byte) are cleared and we proceed to
+set  up read access modes.   If the  last byte is not used, the
+
+
+write SPT pointer is set to point to an SPT block for the  last
+block  of  the  file  and  the  last  word  not  used  bit   is
+interrogated.  If the last word is not used, it contains a count
+of  bytes not  used in the  last block  and is used  to set the
+access pointer and  last valid  byte pointer;  otherwise  these
+point  to the last byte oin  the block.   The last block before
+EOF bit is set and we proceed with read modes.  
+		The create if non-existent (beg)modes allows a
+user  to begin writing at the beginning of a file;  if the file
+already exists, he writes over it;  if it does not exist, a new
+file is created.   If the file does not exist the file name  is
+copied  into  the  descriptor  area,  the  access  pointer, SPT
+pointer, address of current block,  and flag bits are  cleared,
+except  for the current byte , which is set.   If the file does
+exist, the same things are done except that the file descriptor
+is copied  instead  of  just the  file  name.   The  create  if
+non-existent(EOF)  mode  is  similar;  if  the  file  does not
+exist, it acts exactly like create if non-existent  (beg).   If
+the file exists, it acts like exist only (EOF)> 
+	Create  new  mode always  creates a  new file,  just as
+create a non-existent does if the file is not found.   However,
+in  the case  of create  now, the  created file  supercedes any
+existent one;  create new  if non-existent is  similar, but  if
+the  file  already  exists,  it  causes  an  error  rather than
+superceding the old file.
+
+
+	Write over if exists mode(beg)  causes an error if  the
+file  does not exist;  otherwise it acts exactly like writeover
+if exists else create (beg) mode.
+	Once the write modes have  been set up, the read  modes
+follow  trivially.    If  neither  read  nor  random  read   is
+requested,these  bits are cleared  in the opened  modes and the
+open is finished.   If just read is requested, the read  access
+pointer  has been changed bit is  set and the access pointer is
+set equal to the write  access pointer.   The read opened  mode
+bit  is set.   If both read and  random read are requested, the
+access pointer is set  to the beginning  of the file;  if  only
+random  read is requested, the access pointer is set to the end
+of the file.   In either case,  both read and random read  open
+mode bits are set, as is the read access has been set flag.
+	In  all  of the  above we  have  failed to  mention the
+handling of  any access  information  which may  accompany  the
+directory  entries.   As the file specification is interpreted,
+access information may be encountered in 3 types of places:  in
+an entry  that  points at  a  directory,  in the  header  of a
+directory,  or  in  an  entry  for  a  file  or  link.If access
+information which refers to the user doing the open is found in
+an entry  which  points  at  a directory,  it  applies  to  the
+directory  it points  to and  all desendents  of that directory
+until  superceded  by  another  directory  entry.   The  access
+information  in  the  directory  entries  specify  the  type of
+
+
+directory accesses  allowed.   This  use  of  the  access  bits
+requires  that they have somewhat different meanings from those
+assigned for files.   If the allow loading for execution bit is
+clear,  all attempts to access  the directory are aborted;  the
+allow appending bit, if set, allows files with new names to  be
+added  to  the  directory.    The   allow  deletion  or   write
+modification  bit, if set, allows files  with old names but new
+version numbers to be added to the directory.  The do not allow
+name to be listed  and allow access  information to be  changed
+bits  have their usual meanings;  the  allow reading bit has no
+meaning.   As the file specification is interperted, a byte  is
+maintained  to  reflect the  current allowed  directory access;
+this byte is initially 77.   If the allow loading for execution
+bit  is ever found clear in  any directory entry which the user
+wishes to reference, the open is aborted.
+	Access information in the header of a directory applies
+to  all  file  and  link  entries  in  that  directory,  unless
+overruled  by access information  in the directory.   Directory
+entries must  have  their  own access  information  if  any  is
+desired.   There is a byte which contains the access bits which
+apply if the user  opens a file;  whenever  a new directory  is
+selected,  if there  is access  information in  the header, the
+byte is set according  to the first triplet  which is found  to
+apply to the user doing the open;  if none is found the byte is
+set  to zero.   If the header does not have access information,
+
+
+the byte is set to 77.   When the desired entry is found in the
+directory, if it has access information pertaining to the user,
+it  is put into the byte;  otherwise the old contents are used.
+In the case of a link, the allow reading bit, if clear,  causes
+the  link to be ignored.   Otherwise,  if the allow loading for
+exection bit is  set, the  link is  used;  if it  is clear,  an
+error  is given.   The allow  appending bit has  no meaning for
+links.  
+	Once the open  has succeeded the  user may execute  the
+data  transfer calls  referring to  the channel  which has been
+opened;  also, the  status and  certain  #.IOOPR calls  may  be
+executed.  Which calls are legal for a channel is determined by
+examining  the  opened modes  bits;  read must  be set  for the
+input calls  to be  legal, write  must be  set for  the  output
+calls.   The  read  random and  write  random bits  control the
+legality   of  #.RACCES  and  #.WACCES  respectivly.	In  the
+following description of these calls,  we will assume the  call
+is legal;  the routine for the call is not jumped to unless the
+call is legal.  
+	The  set random  access calls are  very simple:  if the
+call requests that the  pointer be set  to anything other  than
+its  current  value, the  appropriate  access pointer  has been
+changed flag is set and  the pointer is clobbered.   All  other
+processing  to actually  change the place  in the  file that is
+being referenced is done when  the next transfer is  requested,
+
+
+including the determination of errors (i.e. attempts to read or
+write past the end of the file).
+	Since  the  English  language   is  not  conducive   to
+descriptions  where  many conditionals  must  be used,  we have
+resorted to  flowcharting the  execution  of input  and  output
+calls (figures 5-8 to 5-19).  These flowcharts are intended to include
+most  of  the  details  of  the  calls,  however,  they  may be
+incomplete in some details.
+	The main complication of  the disk routines comes  from
+handling  random  access and  allowing  reading and  writing to
+progress simultaneously on the same channel.  Whenever the user
+departs from accessing the file sequentially, many things  must
+be  rearranged, and  checks for  errors must  be made.   In the
+special case where the user changes the access pointer to point
+to a different place  in the current  block, things are  fairly
+simple;  all  that has to  be checked is that  the user did not
+attempt to access beyond the end of file, if the current  block
+is  the last block of the file.   In the case where the pointer
+is   moved  to  another  block,  things  become  somewhat  more
+complicated;  first the proper block of the file must be found,
+and then the  end of file  checks can be  done.   Additionally,
+care  must be taken if we are reading from and writing into the
+same block;  the same copy of the  block must be used for  both
+transfers.
+	As  we have already  stated, it is  our intent that the
+
+
+flowcharts describe the  implementation details;  figures 5-8  to 5-13
+describe  the  execution of  the six  calls, and  figures 5-14 to 5-19
+describe subroutines required by these calls.
+	The #.RSETI call  causes the current  read block to  be
+flushed  from core  if there  is one;  #.RSETO  causes the same
+thing to happen to the  write block;  if it has been  modified,
+it is first written onto the disk.
+	When  the channel is closed, if  there is a write block
+in core that  has been  modified, it is  written out;  any  SPT
+entries  for either read or  write are flushed.   The directory
+SPT entry is then linked into  the first hack kernal page,  and
+the directory is searched for an entry which corresponds to the
+entry  which has been built in  the channel.   If the file name
+included a  < or  > and  a new  file has  been created,  a  new
+directory  entry  is added.   If  no current  entry has  a name
+corresponding to the name of the new entry, it is given version
+number 0;  otherwise,  the lowest  version number  of any  file
+which  corresponds to the new one is decremented (for <) or the
+highest version number is incremented (for >).  If the file was
+not a new file, but rather was written over, or if the name did
+not contain a < or >, any conflicting entry is deleted and  the
+new entry is inserted.   Then the directory and the channel are
+released, and the user's channel variables are set to  indicate
+that the channel is not open.   This finishes the processing of
+the #.CLOSE.
+
+
+	Two #.IOOPR's are defined  for the disk;  the first  is
+the  set file length  call.   This sets the  length of the file
+open on the specified channel to the value of the write  access
+pointer.   This  might involve adding or removing blocks at the
+end of the file.  If blocks are removed, the descriptor will be
+shortened and the blocks  will be freed  in the bit  table;  if
+the  file must be lengthened, new  blocks are obtained from the
+bit table, and the  descriptor is again appropriately  modified.
+In either case, the last word unused and last byte unused flags
+and the last word of the last block will also be set to reflect
+the length of the file as an exact number of bytes.  The second
+#.IOOPR  is the modify access information call.   The two words
+following the operation code in the block supplied by the  call
+are  used as the triplet;  the extra byte contains a flag which
+indicates if the triplet is to be added to or removed from  the
+access list.   New access triplets are added in such a way that
+the most specific triplets always come first in the  list;  the
+triplet,  if it  exists, that  refers to  all projects  and all
+programmers is always the last one.
+	We have tried  to outline  here a  system of  simulated
+input/output operations which sometimes correspond to real data
+transfers on hardware devices.   This system is intended to fit
+not too awkwardly into the  framework of the PDP11  instruction
+set  and philosophy.   It is intended to give the user a lot of
+flexiblity in manipulating hardware devices in cooperation with
+
+
+other users, while still being fairly simple to implement.   Of
+course  we do not claim to have solved all of the implementation
+problems here;  in particular, we  have offered no  suggestions
+towards solving the problems related to PCLOSERing.  As always,
+the  implementation  itself  will  be  the  only  place   where
+(hopefully) all of the problems are solved.
+.end
+
+

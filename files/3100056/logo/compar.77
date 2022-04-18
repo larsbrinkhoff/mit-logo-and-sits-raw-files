@@ -1,0 +1,164 @@
+.xgp
+.font 0 30vr
+.font 1 37vrb
+.he2
+Comparisons
+.ce
+1C o m p a r i s o n s0
+
+.ds
+.adjust
+1I. A Comparison of the Work of Deborah and Donald:  Two Heads Are
+More Interesting Than One
+.br
+0Deborah and Donald, students in two different classes both carried
+out similar projects.  Both students made the computer draw a picture
+of a head.  Deborah's was a "rabbit", Donald's a "man with a beard".
+Both projects involved the use of subprocedures and superprocedures,
+and both projects took several classes to complete.  Both used
+subprocedures to draw the different features of the head, and both
+students used a method which combined advance planning of the overall
+design, with a trial and error approach to work out the details.
+
+The two drawings, and the superprocedures used to draw them are shown
+in Figure C-1.
+.block 25
+.sp 22
+.ce
+Figure C-1
+
+Although the similarities between outcomes of the two projects is
+clear, the two projects were carried out in strikingly
+different ways.  Donald wrote out his superprocedure, HEAD, when he began
+work, and defined each subprocedure as he went along.
+Deborah's superprocedure was written last, after
+all of its elements had already been defined.  Donald had clear
+functional names for each of his subprocedures, while Deborah's naming
+was inconsistent.  Deborah had an excellent intuitive grasp of which
+inputs to use for FORWARD and RIGHT and LEFT commands to draw the
+features of her rabbit, while Donald had a poor intuitive sense of
+Turtle Geometry, and relied largely on mathematical analysis to draw
+each of the features of his head, Donald absorbed a lot of new ideas in
+mathematics, computer programming and problem solving, while Deborah
+relied mainly on soldifying ideas with which she was already familiar
+before she started her project.  These differences will now be examined
+in more detail.
+
+.block 5
+11. Planning and the Use of Superprocedures
+.br
+0Donald and Deborah each began with a drawing of how they expected
+their finished project to look.  Once they had drawn a picture, each of
+them made an initial attempt to have the computer draw the entire figure using direct
+commands.  Once they saw that this was too large a task for them to
+accomplish in a single procedure, each of them was shown how to carry
+out the project more easily by making use of subprocedures.
+
+Donald began by writing his superprocedure, TO HEAD, in a way that included
+most of the significant details that he planned to include.  In this
+way his superprocedure itself became a specific "plan" for the project he
+was attempting to carry out.
+
+Deborah, on the other hand, carried her plan in her head.  She 
+defined different subprocedures as she went along, thus dividing
+the larger project into more managable chunks.  Her superprocedure, TO
+RABBIT, was written last, after her entire rabbit head had been built.
+RABBIT includes both subprocedures and a large number of direct
+commands which Deborah used to draw the rabbit's ears.
+Although RABBIT causes the computer to draw the rabbit, it does not
+provide an easily readable "plan" of the project.
+
+.block 5
+12. The Naming of Subprocedures0
+.br
+Donald's subprocedures were consistently named according to the part of
+the head that they drew.  The only exception was BOX which was used to
+draw the outline of the head.  Some of his sub-procedures had names that
+told how they "worked".  STRING, drew one "hair" of a beard; LBOX made
+a box of variable size; POLY drew a polygon.  Others had functional
+names:  HAIRY drew one "hair" of a head of hairs and EAR drew one ear.
+
+Deborah's naming was much less consistent.  In some cases she was able
+to think of an appropriate name for a subprocedure.  In other cases she
+picked something else that came to mind.  Her procedure HAT drew the
+outside of the rabbit's face.  LITTLEEYES drew the eyes -- it got its
+long name because Deborah already had a different procedure called EYES.
+NOSE made the rabbit's nose out of two arcs, but the procedure which
+moved the turtle from where LITTLEEYES finished, to the center of the
+face, and drew the nose was called FACE.  The procedure EARS
+drew only on of the rabbit's ears.  Only one of Deborah's
+subprocedures, FACE, contained a sub-procedure, NOSE, within it.
+
+.block 5
+13. "Intuitive" vs. "Analytic" Approach to Turtle Geometry
+.br
+0Deborah was able to make use of a powerful visual intuition in
+making designs with the turtle.  In her earliest experimentation with
+inputs to turtle commands, she limited herself to multiples of ten, and
+eventually came to use certain numbers, especially 30, 60 and 90, much
+more often than others.  This strategy enabled her to create a number
+of successful designs.
+For example, a rotation of 60 degrees was a perfect first choice for
+drawing a six-pointed star.  By repeating a fixed rotation such as
+RIGHT 30, a number of times, Deborah was able to make a variety of
+angles including 90, 180, 270 and 360 degrees.  By using a
+"useful" set of limited numbers, Deborah was able to avoid analysis and
+planning which were difficult for her.  She "knew" that if she repeated
+RIGHT 30 often enough, she could get the turtle to go wherever she
+wanted it, and could solve all her problems by experimentation, without
+having to remember that 90 degrees makes a "right angle" or that 180
+degrees turns the turtle to face in the opposite direction.  Similar
+effects were obtained with FORWARD steps.  Deborah made a square of
+side 120 by repeating FORWARD 90 FORWARD 30.  Later, she could easily
+find the center of the square using FORWARD 30 FORWARD 30.
+
+Deborah never consciously articulated the strategies she used for
+choosing these particular inputs for turtle commands, or for solving
+problems like "turning the turtle all the way around" by repeating a
+series of RIGHT 30 commands.  She seemed to have an intuitive sense of
+what would "work" rather than a conscious "plan".
+
+Donald, on the other hand, had very poor results when he tried to solve
+problems in turtle geometry by experimentation and visual evaluation of
+the results.  He could estimate a distance or rotation, but his results
+were often "just a little off," and he had difficulty making the small
+corrections necessary.  Donald had a good understanding, however, of
+careful analytic planning.  He knew that the distance across his square
+was 100, and that half way was 50 and one quarter of the way was 25.
+He could use this information in planning the location of features of
+his head.  He could make use of the fact that the RARC procedure
+rotated the turtle through a total angle of 90 degrees, to assist him
+in figuring out how to position the turtle in order to draw a mouth on
+his face.  Although he had problems when he tried to use "geometric
+intuition" to carry
+out his project, a combination of analysis, planning and
+experimentation allowed him to be successful.
+
+.block 5
+14. The Learning of New Ideas
+.br
+0Before she started working on her rabbit, Deborah had already made
+use of most of the techniques she was to use in carrying out her
+project.  She had already developed the strategy of relying heavily on
+inputs of 30, 60, and 90 for FORWARD, RIGHT and LEFT commands.  She
+had also begun to use subprocedures as building blocks in her FLOWER
+and STAR procedures.  Her major learning during the course of the
+project represented a consolidation of those ideas and the
+understanding that a large complex project, whose details could not be
+known in advance, could be carried out in a step-by-step fashion using
+the approaches with which she was already familiar.
+
+Donald, on the other hand, acquired a great deal of new skills and
+knowledge, while working on his head project.  He learned
+the
+use of superprocedures and top-down planning; the use of geometrical
+analysis to solve problems of detail, breaking problems into sub-parts;
+and the use of sub-subprocedures within procedures to carry out
+particular parts of the tasks involved.  In addition he learned to use
+variables to control size and direction; to write procedures that
+repeat a small module over and over; to use a conditional stop rule in
+a repeating procedure; and to make use of circle and arc procedures.
+He was comfortable working toward a long range goal which required many
+skills that he did not possess, confident
+that he could acquire them along the way as needed.
+

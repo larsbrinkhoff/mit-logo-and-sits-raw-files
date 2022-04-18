@@ -1,0 +1,899 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.nofill
+.ss
+.twinch 4.5
+.ce
+1FINAL TECHNICAL REPORT OF THE 
+.ce
+BROOKLINE LOGO PROJECT
+
+.CE
+"An Assessment and Documentation of a 
+.ce
+Children's Computer Laboratory"
+
+.ce
+(Grant #77-19083SED)
+
+.ce
+TABLE OF CONTENTS
+
+1.  Introduction
+
+    1.1  Aims of the Study
+    1.2  Questions we are trying to answer
+    1.3  Overview of the Project and Summary
+         of Major Findings
+
+2.  Organization and Teaching in the LOGO Classroom
+
+    2.1  Goals of Teaching LOGO
+    2.2  Organization of the LOGO Classroom
+    2.3  Teaching Strategies in the LOGO Classroom
+
+3.  Research Methodology
+
+4.  Detailed Organization of the Project
+
+    4.1  Selection of Students
+    4.2  Scheduling of the Trial Classes
+    4.3  Scheduling of Observations
+    4.4  Interviews of Teachers and Students
+
+.twinch 6
+.he1
+Final Technical Report
+.he2
+Brookline LOGO Project
+.dummy @
+.adjust
+.page
+.adjust
+11. Introduction0
+
+11.1 Aims of Study
+
+0 During the period 1972-1976 the MIT Artificial Intelligence
+Laboratory and the Division for Study and Research in Education
+jointly developed a computer based learning environment whose
+components include:
+
+.indent 6
+.nofill
+--the computer language LOGO
+--subject matters suitable for beginning students to move
+  easily into programming
+--a set of instructional methods
+--a small pool of trained teachers
+
+.indent 0
+.adjust
+In 1977 we received a grant from the NSF to  document the use of
+this total environment in the context of
+a typical urban elementary school.  This 
+report is based on a very careful study during the period October, 1977
+-- June 1978 of 16 sixth grade students of a wide range of abilities.
+Although there have been a fair number of projects in which elementary
+school students have been given the opportunity to learn to program
+computers there is very little published documentation of what
+transpired in such experiments.  We have made a special effort with
+regard to the detail with which we report on the teaching, the data
+collection and the performance of the students.
+
+A major benefit of this type of detailed documentation is the
+contribution it can make to an evaluation of the learning process
+in relevant domains.  Finding good ways of making such an evaluation is
+clearly a complex task and we have explored several ways of pinpointing
+the skills, knowledge and attitudes which children may acquire during
+their LOGO work and of devising ways of demonstrating such acquisition
+and its transfer to other more general cognitive skills.  We have used
+classroom observers and an interview schedule containing several
+measures of skill.  These latter have been selected for their judged
+relevance rather than on the basis of previous standarization and we
+are clearly at the exploratory stage in this matter.
+
+Further, we hope to provide evidence that there are advantages peculiar
+to a computer-based learning environment in general, and to a LOGO
+environment in particular as a source of pedagogical insights into
+the learning-teaching process.
+.pa
+11.2 Questions We Are Trying To Answer
+
+0 In our proposal we list questions which our project is designed to
+answer.  
+
+.indent 6
+1. How much can 6th grade children, in a regular school setting, learn
+about computer programming, using a LOGO environment?  
+
+2. What concomitant skills that are part of the standard school
+curriculum (mathematics, science, and language) do children learn in
+the course of their LOGO work?  Do they acquire concepts that would
+normally be considered "advanced for their age level?
+
+3. What non-standard skills (problem-solving through planning and
+debugging; use of procedural thinking and computer metaphors, etc.) do
+children acquire in the course of the LOGO work?
+
+4. Does the LOGO experience produce any changes in the child's attitude
+towards learning or toward himself/herself as a learner, both in
+general, and in relation to particular subjects (e.g. mathematics)?
+
+5. What changes, if any, can be found in the child's attitude towrds
+using computers and towards the role of computers as part of our
+technological society?
+
+.indent 0
+.block 5
+11.3  Overview of the Project and Summary of Major Findings
+
+0The M.I.T. LOGO group has developed over the years an approach to
+teaching programming and to using computational environments to
+facilitate the learning of a variety of subject matters as well as the
+enhancement of general intellectual development.  The work described
+here consisted of defining a particular "learning unit" embodying this
+general approach and studying the implantation of this unit in a public
+school.  The content of the learning unit includes the elements of
+writing computer programs, topics in mathematics and science and some
+explicit heuristic methods.  The school is in the lower socio-enconomic
+section of the town of Brookline, Mass.  The student population spanned
+the range of academic performance from students who have presented
+serious learning difficulties to students who have shown exceptional
+mathematical talent.  The unit is designed to be realistic in its
+length (approximately 30 class hours per student) as well as in the
+teacher-training and computer system necessary to implement it.  Since
+the primary purpose of the study was to document the students' patterns
+of learning, we were rigorous in selecting typical students and in
+confining their interaction with the computer to the conditions
+prescribed by the experiment.  We were less rigorous in selecting a
+"typical" teacher and in standardizing the teacher training process.
+Indeed, while staying within the general ball-park of what we consider
+to be feasible under normal operational conditions, we allowed
+ourselves a "safety margin" in giving our teacher 2 or 3 times the
+extent of training we consider to be minimally necessary.
+
+Another area in which we gave ourselves a "safety margin" was in the
+use of a computer with more power and flexibility than would be
+generally available to schools at a reasonable price.  Apart from
+allowing us
+to modify the conditions of
+work of the students in the study, the machine's power contributed
+essentially to the collection of data which includes a complete
+transcript of all interactions with the machine in addition to notes
+taken by the teacher and by observers.
+
+In October 1977 a computer laboratory consisting of four independent
+LOGO computer systems was established in a classroom of the William H.
+Lincoln School, Brookline, Massachusetts.  Sixteen representative
+students selected from among fifty sixth graders were provided with
+special LOGO classes for approximately four hours per week.  Two groups
+of four students were exposed to approximately 25 hours  of LOGO
+experiences over a seven week period in the Fall; two additional groups
+of four students were exposed to approximately 36 hours of LOGO
+experiences over a ten week period in the Spring.  The work of the
+sixteen experimental subjects was carefully monitored by means of
+annotated dribble files, teacher's observations, and by regular
+observations by members of the MIT LOGO Group and outside consultants.
+The students were interviewed before and after their LOGO experience to
+establish a base-line of interests, abilities, and attitudes from which
+we could assess each student's progress during the LOGO classes.
+Additional feedback was provided by the regular teaching staff of the
+school by means of routine meetings and conversations, and by
+interviews conducted after the end of each series of LOGO classes.
+
+A preliminary analysis of the data collected with regard to the first
+eight subjects was published as LOGO Memo No. 49: "Interim Report of
+the LOGO Project in the Brookline Public Schools," in June 1978.  
+The detailed data analysis submitted with this
+report represents the first full analysis of all the data and the first
+report on the learning experience of all sixteen subjects.  This
+detailed data analysis is being sent to the National Science Foundation
+under separate cover.
+
+The product of the work can be seen on several levels.
+
+.twinch 4.5
+.block 4
+A DEMONSTRATION OF FEASIBILITY:  
+.br
+Elementary school students CAN learn
+to program computers.  We believe that this is the first systematic
+documentation of how a group including average and below average
+elementary school students actually learned to program under realistic
+school conditions.  (Data analysis:  Chapters 1, 2, 3, and 4)
+
+.block 4
+THE ESTABLISHMENT OF BENCHMARKS:  
+.br
+We have a list of programming skills achievable within the typical time
+limits of a single semester course.  As more knowledge about learning
+to program is acquired the set of skills achievable in this time will
+undoubtedly change both qualitatively and quantitatively.  In the
+meantime the set of skills established here will serve as a guide-line
+to teachers and as a base line for further research.  (Data analysis:
+Chapters 1 and 4)
+
+.block 4
+A COGNITIVE ANALYSIS OF PROGRAMMING
+.br
+Our data on patterns of learning provides insights into the cognitive
+structures underlying programming and the difficulties encountered by
+students.  (Data analysis:  Chapter 4)
+
+.block 4
+A DEMONSTRATION OF MATHEMATICAL LEARNING IN A COMPUTATIONAL ENVIRONMENT:
+.br
+Our students were learning mathematics as an integral part of
+the same learning experience that led to skill in programming.  The
+data collected here illuminates this process.  And just as we have
+established "benchmarks" for the learning of programming at elementary
+school level we have also established benchmarks for the learning of
+the topic in computational mathematics we have called "Turtle
+Geometry".  (Data analysis:  Chapter 5)
+
+.block 3
+A DEMONSTRATION THAT THE COMPUTER CAN BE USED TO RENDER VISIBLE, TO
+EXPLORE AND DEVELOP VARIED COGNITIVE STYLES.  (Data analysis:  Chapters
+2 and 3 and individual profiles)
+
+.block 3
+A DEMONSTRATION THAT THE COMPUTER CAN SIGNIFICANTLY CHANGE A STUDENT'S
+SELF-IMAGE 
+.br
+as a learner and provide a context within which serious learning
+difficulties can be overcome.  (Data analysis:  Chapters 2 and 3)
+
+.block 4
+ON A META-LEVEL:  DATA RELEVANT TO FORMULATING A METHODOLOGY OF EVALUATION
+.br
+of the process of learning in the open ended learning environments made
+possible by personal computers.  (sections 3 and 4 of this report)
+
+.twinch 6 
+.page
+12. Organization and Teaching in the LOGO Classroom
+
+2.1  Goals of Teaching LOGO
+
+0The LOGO language and introductory LOGO activities can form the
+basis for several different kinds of learning, integrated in a complex
+way into the actual classroom activities of the children.  While these
+types of learning can and do occur simultaneously, it is valuable to
+list them as separable goals, and to assign priorities, for the purpose
+of developing a classroom organization and teaching strategies.  The
+major goals of teaching LOGO, as defined in our research proposal are:
+
+.indent 6
+1. Learning to feel comfortable with a computer, and in control of what
+the computer does.  The child will learn that s/he can decide what
+the computer will do, and have the computer carry out a set of
+instructions.  There are many ways in which children can use the
+computer in their own fashion.
+
+2. Learning the elements of the LOGO computer language.  This includes
+commands that are included in the language, how to write and name
+procedures and subprocedures, use recursion and/or iteration, how to
+define, name and use variables, as well as conditionals and stop rules,
+etc.
+
+3. Learning the "subject matter" of Turtle Geometry.  This includes
+concepts involving measurement and estimation of angles and distances;
+the relations among angles and distances, necessary to produce certain
+well defined shapes such as a square, triangle, polygon, star or
+circle; such general geometric concepts as similarity, scaling and
+symmetry, etc.
+
+4. Learning to develop problem solving skills.  This includes such
+things as procedural thinking, "playing turtle", "playing computer",
+the concept of a "bug" in a computer program, and strategies for
+debugging and planning, the usefulness of generalizations or "big
+ideas"; and the development of a language with which to discuss all
+these things.
+
+.indent 0
+The LOGO language and computer activities are designed so that all
+these things can happen simultaneously as the child works on projects
+which he or she has initiated.
+
+The initial projects and the initial knowledge needed are 
+simple enough that a child can learn them relatively easily, and
+begin to feel successful, and in control, right from the start.
+Additional aspects of the language and projects of greater
+sophistication are added as each child becomes comfortable with them.
+Directing the computer to carry out a series of steps involves
+planning.  Gaps, misconceptions or errors in the planning lead to
+"bugs" which have to be eliminated.  Thus the teacher can help the
+child begin to develop problem solving skills needed to debug the
+child's work.  By discussing all of these things explicity, a language
+is built up that can be applied to other kinds of problem-solving
+situations. 
+
+In practical situations, with a group of children and one teacher,
+different children tend to be successful with different aspects of LOGO.
+Some children are extremely adept at using elements of Turtle
+Geometry
+but have a great deal of
+difficulty with the syntax of the computer language.  For others, the
+reverse may be true.  
+In order to create a learning
+environment that supports the learning of all of the children in a
+group, we have made learning to be comfortable with the computer:
+enabling the learner to feel in control -- the first priority among the four
+goals.  As the students develop their own working styles and sets
+of priorities, they develop a sense of confidence
+about what they have
+done.  On the other hand, they will not all cover the same subject
+matter in any given period of time.  
+Our experience shows that children have many different
+approaches to LOGO, and successfully follow several different learning paths.
+
+12.2 Organization of the LOGO Classroom
+
+0The classroom itself consists of four independent microcomputers,
+each with its own keyboard, display screen and disk drive.  A printer is
+available for use with one of the computers when necessary.  The
+children are supplied with notebooks, graph paper drawing paper,
+different kinds of pens, pencils and markers, as well as a full set of
+stationary supplies.  A small round table, near a blackboard 
+provides a setting for group lessons or discussions, and
+for informal conversation among the children.  Children's work is
+displayed on bulletin boards around
+the room.
+
+.block 5
+12.3 Teaching Strategies in the LOGO Classroom
+
+0A child's initial contact centers around learning the basic TURTLE commands,
+FORWARD, BACK, RIGHT, LEFT and CLEARSCREEN; mastering syntax matters
+such as spacing, and reading and taking notice
+of error messages.  The children are encouraged to define their own
+tasks, typically involving drawing a specific, "simple" figure such as a
+square, a house, a flower, or their initials; and to record the steps
+as they go along, so that they will be able to "teach it to the
+computer".  The latter involves an early introduction to procedure writing.
+
+It is at this point, that the child begins to feel a sense of control:
+"I made that design!" Procedures can now be saved, repeated, showed
+off to friends, integrated into a larger design.  The importance of the
+child's first procedure being an individual one (even if it's an idea
+that the teacher suggested and helped with ) is very critical in
+determining the child's relationship with the computer as the
+classes progress.
+
+From this point on, each child's work is different.  Some get
+interested in repeating simple figures, introducing simple variations
+and repeating again.  These children might get into using recursion and
+variables in a fairly short time.  Others might have elaborate ideas
+for computer drawings.  These children might get into use of
+superprocedures and subprocedures right away.  The best of all worlds
+occurs when children begin to show each other their work and swap
+ideas and approaches.  Children are encouraged to borrow each other's
+procedures, even to copy them line-by-line at times.  A lot of very
+useful debugging can occur when a "copied" procedure leads to an
+unexpected result.
+
+As the classes continue, the teacher takes on a guiding role
+helping the children choose projects or suggesting projects to
+children based on their interests and abilities.  S/he introduces
+new material when appropriate, encourages children to improve their
+programming styles by the use of model programs and suggestions for
+debugging, encourages the children to investigate certain areas more
+deeply, and in general, helps the children consolidate their learning.
+
+At intervals, the children meet for group lessons and to share and
+discuss their work.  They each keep a notebook in which they make
+drawings, write out plans, record information, keep printed records of
+their procedures, and make a brief daily comment about what they have
+accomplished.  
+
+Throughout the classes, the teacher makes a daily study of each child's
+"dribble file" -- the complete printed record of the child's
+interaction with the computer.  In addition to providing much of the
+data on which our study of the children's learning is based,
+the dribble files are an invaluable source of information to the
+teacher as to what each child's working style, methods of
+problem-solving, strengths and weaknesses really are.  This information
+is used in planning the individual teaching strategies that are
+developed for each child as the classes progress.
+
+.block 7
+13. Research Methodology
+
+0We rely primarily on qualitative methodology:  on observations,
+interviews and documentation, organized in a carefully designed
+framework, which provides both a conceptual structure for the project
+and a data management system.
+
+Our research design was developed by our project team in a series of
+meetings with Dr. George Hein and Ms. Stephanie (Penny) Dunning,
+consultants to Education Development Center, who also participated in
+the data collection.  The methods of analysis owe a great deal to
+discussions with Prof. Hermine Sinclair-de Zwaart of the University of
+Geneva who visited classes and commented critically on our first
+attempts at analysis.
+
+.block 7
+0The following data collection methods supplied the information upon
+which this report is primarily based:
+
+.twinch 4.5
+1. Dribble files which recorded each child's daily interaction with the
+computer.  Following each class, printouts of the dribble files were
+carefully annotated by the teacher and/or a regular class observer.
+
+2. The teacher's anecdotal records of each child's daily work.
+
+3. A daily compilation of each child's work -- printouts of procedures,
+hard copy of computer drawings, etc.
+
+4.  Observations by Ms. Dunning, conducted on a regular basis, and
+written up to focus on child-teacher, child-child and child-computer
+interactions. 
+
+5. Regularly conducted observations by members of the MIT LOGO Group.
+
+.twinch 6
+The following sources of data were useful in corroborating other
+findings, offering fresh insights into children's experiences providing
+information about transfer of both skills and attitudes to other areas
+of school, and understanding the overall community reaction to the project:
+
+.twinch 4.5
+6.  Occasional observations by members of the MIT faculty, Dr. George
+Hein, other evaluation consultants and visitors to the LOGO classes.
+
+7.  Informal meetings and workshops with the classroom teacher and the
+school principal.
+
+8.  A series of pre/post student interviews developed by the
+project staff in collaboration with Dr. Hein and Ms. Dunning, and
+carried out by Ms. Dunning.  Pre-interviews were useful
+in providing us with baseline information about each child's interests,
+skills, problem solving abilities, and attitudes towards themselves,
+their school work and towards computers.  Post-interviews were not
+as useful as we had hoped in providing external information about
+student gains during the LOGO classes.  While some students showed
+improvements on some tasks, they showed regression on others, and we
+have not been able to establish enough consistencies to draw any
+conclusions from the post-interview data.
+
+9.  Interviews with the classroom teachers conducted by Dr. Hein, after
+the conclusion of each series of classes.
+
+10.  Seminars and meetings with evaluation consultants who commented on
+the data.
+
+11.  Comments made at parents' meetings, school "open house" etc.
+
+12.  An independent study made by Ms. C. Solomon of the diffusion as
+seen in the year following the work reported here of LOGO knowledge in
+the school.
+.twinch 6
+.page
+.block 5
+14.  Detailed Organization of the Project
+
+4.1  Selection of Students for the Trial Classes
+
+0The subjects for the trial classes were chosen on the basis of
+consultations among the project staff and the regular classroom
+teachers.  The teachers were asked to rate the 50 sixth-grade students
+on a 3-point scale of overall ability in school work: "average", "below
+average", and "above average".
+
+The students were then divided into groups of four, so as to achieve
+the following:
+
+.nofill
+.indent 6
+--a range of abilities within each group
+--a balance of boys and girls in each group
+--a minimum of scheduling problems in relation to other classroom activities
+--compatibility among individuals in the group to ensure that the
+  groups could be as supportive as possible for each child
+
+.indent 0
+.adjust
+Two of these 4-unit groups from each of the two school classes formed
+the 16 subjects of the experiment.  The range of abilities of students
+in the trial classes, was compared with the range of abilities in the
+sixth grade as a whole, to ensure that our sample was a representative
+one:
+
+.nofill
+.block 13
+.ce
+Teachers Rating of Students
+
+.spread
+//Entire 6th Grade/Experimental Group
+.spread
+//n = 50/n = 16
+.spread
+/I. Above average/19/6
+.spread
+/II. Average/15/4
+.spread
+/III. Below Average/16/6
+
+
+.adjust
+In addition to the teacher ratings of student abilities, the latest
+national achievement test scores of students in our sample were
+compared to the scores in the entire sixth grade.  In this way we
+confirmed that our sample was representative, although no attempt was
+made to achieve a random selection, or to match our subjects with a
+control group.
+
+An additional commitment to the school was that no child in the 6th
+grade was to be excluded from the LOGO experience and this was achieved
+using M.I.T. student volunteers.  These latter children do not form
+part of the experiment and their activities are not recorded here.
+
+During April of 1978, the school administered a battery of achievement
+tests to all sixth grade students.  Their results, made available to
+us, allow us to rank fifteen of our subjects according to their
+percentile ratings when compared to national norms (the sixteenth
+subject, Karl, was not tested with his classmates because of severe
+learning problems).
+
+.block 22
+.ce
+Insert National Percentile Achievement Tests Scores Here
+.sp 20
+
+.block 16
+14.2  Scheduling of the Trial Classes
+.br
+.sp 13
+
+0Fall classes met four times a week, for periods ranging from 40
+minutes to 90 minutes.  In the Spring it was possible to arrange to
+hold the classes three times a week, and to standardize the times at
+approximately 80 minutes for each class.  Each of the four groups had
+approximately 4 hours of exposure to LOGO per week.  Late notification
+of the award by the National Science Foundation resulted in a late
+start for the fall classes, and a total duration of approximately three
+weeks less than that of the Spring classes.
+
+.block 5
+14.3  Scheduling of Observations
+
+0A major source of data for the project was derived from written and
+verbal comments of observers who attended the trial classes.  These
+observations were of four types.
+
+.twinch 4.5
+1. Members of the MIT LOGO Group -- faculty, and students.  At least
+two different MIT observers visited each of the trial classes once each
+week.  Bi-weekly meetings were held at which the entire project staff
+shared their observations and monitored the progress of the classes.
+
+2. A regular consultant observer, Ms. Penny Dunning, visited the trial
+classes weekly in the Fall, and bi-weekly in the Spring.  Her written
+observations of each session she visited form a significant part of the
+data of the experiment.
+
+3. Other consultants paid irregular visits to the trial classes.  Their
+insights were shared in group meetings and in written reports to the project.
+
+4. Visitors to the project were asked to leave a written comment before
+departing.
+
+.twinch 6
+.block 5
+14.4 Student and Teacher Interviews
+
+0Interviews were conducted with each of our 16 students both before
+and after their LOGO experiences.  The students in the Fall classes
+were interviewed in October, and again in January.  The students in the
+Spring classes were interviewed in October, and were given a second
+pre-interview in February, to form a comparison with the students who
+had completed their LOGO classes in the Fall.  The students in the
+Spring Classes were also given a post-interview, following the
+completion of the classes in June.
+
+The three teachers of our students were interviewed by Dr. George Hein
+after the Fall series of classes, and again after the Spring classes.
+
+A copy of the student interview schedule is included as part of the data
+analysis to be submitted under separate cover.
+    
+.he1
+Student Summaries
+.he2
+BROOK1
+.page
+.ss
+.ce
+1Student Summaries -- Introduction
+
+0The section that follows offers a brief assessment of the progress of each of the eight children in our trial classes.  The assessments are summaries of the detailed analysis of each child's work to be found in section II of this report.  The summaries include a statement of how the child is perceived as a student in the regular academic areas of the school, a description of "what the child learned" in the LOGO classes, an analysis of each child's particular strengths and problems, and the particular teaching strategies that were considered appropriate for each child.
+In surveying this material, one should bear in mind
+that the students' learning took place in a project oriented setting
+and no attempt was made to expose all students to the same "standard
+Logo curriculum." Rather, the teacher introduced new Logo material to
+students on an individual basis, and in a way which would be integrated
+in their
+individual projects. Consequently, we observed different students concentrating
+on different aspects of Logo. For example, some organized most of their
+learning experiences around the creation of free-form "emergent" designs, while
+others concentrated on elaborately planned projects. Most of the
+students' work related to computer graphics, but a few also undertook
+non-graphics projects. The eight students in the
+experimental group spanned a wide range of interests and cognitive
+styles.    
+One of the strengths of this kind of Logo
+learning environment is that it can appeal to students across such a
+spectrum and allow for projects that can be of interest to each of them.
+.he2
+Individual Profiles
+.page
+.ce
+KEEP ASIDE
+13. Individual Profiles
+.ss
+
+1Gary
+
+0Gary's considered to be "extremely bright" by his teachers.  (His overall national percentile ranking of 99 on his most recently recorded school achievement tests, makes him one of the two or three highest scoring students in his grade at Lincoln School.)  His teachers report that they find it difficult to find ways to challenge him within his regular school program, while at the same time reporting "peculiar gaps" in his academic knowledge -- in the area of standard computational skills, for example.
+
+Gary seems to have found LOGO to be a satisfactory challenge.  He completed three major projects in different areas:  using arcs and circles to draw a face; (session 7-8) creating a simple math quiz; (sessions 10-13) and drawing and animating a starship. (Sessions 13-16)  He had confidently begun a fourth major project -- writing a computer program capable of "understanding" morse code, and transmitting it to a radio receiver -- when the series of classes ended.  During the course of his work, Gary  mastered the use of recusion and variables in a number of different contexts; he understood the use of conditionals and "branching"; he learned to write state transparent procedures, and to use superprocedures with modular subprocedures in drawing his starship.  He was beginning to understand list and word processing, as well as the concepts of the "empty list" and the "empty word" in his last project.
+
+Gary 's method of working was to plunge confidently into a problem "headfirst", with little advance planning.  He would then encounter many bugs, which he usually enjoyed finding and eliminating -- sometimes asking for help when frustrated.  He took particular delight in bugs which produced designs unlike what he had intended.  Most of his work was carried out in a step-by-step fashion, resulting in long, complicated procedures, difficult to debug.  Once, when specifically requested to, he carried out a revision of his starship design, to use a superprocedure, and modular subprocedure, rather than one long procedure.  In this way he showed that he was quite capable of learning to improve his programming style.
+
+My strategy in teaching him was to offer him simple models of a particular kind of procedure, give him the information he needed, and leave him alone to elaborate on the model, providing help only when asked...  When one phase of a project was finished, I generally suggested some challenges that built on the finished work -- or occasionally requested that he alter or improve his work.  In this way, Gary  was able to move ahead on his own, at as fast a rate as he could absorb.
+.page
+1LAURA
+
+0Laura is considered to be an "average" student by her teachers.  (On her most recently recorded school achievement tests, her national percentile ranking was 38.)  Laura got off to a good start in her LOGO work, quickly mastering the basic turtle commands, and the use of subprocedures.  By session 8 she had completed a substantial project -- drawing - foce using a top-down program structure with subprocedures for the various parts, but did not maintain a high rate of progress throughout the classes.
+
+Laura showed great interst in making large, freely conceived designs on the display screen.  She created the designs one step at a time, considering thoughtfully the size and placement of each new addition to her creation.  It was difficult for Laura to make the transition to formalization of her work; to breaking it down into small tasks, and to planning and organization.  Consequently, there was often a gap between what Laura wanted to accomplish, and what she was able to accomplish.  Laura did carry out a few major projects:  a FACE project with several subprocedures; a series of designs using circles and squares of variable sizes constructed by means of recursive procedures with changing inputs (sessions 10-15); a "madlibs" language game ((sessions 17-19), for which Laura created the basic story, wrote out lists of nouns, verbs, adjectives, and adverbs, and for which the teacher helped with most of the programming; and causing the computer to draw her initials (session 25).
+
+Sometimes Laura appeared to be bored.  In hindsight, this appears to have been a manifestation of confusion, rather than boredom.  Too much stress was placed on offering her new ideas, rather than understanding her confusion, and taking steps to help her limit her choices and consolidate her earlier learning.  Laura's difficulties were compounded by the fact that she did not like to ask for help, she did not like to be observed in her work, and she assumed an "air of confidence", at all times.
+.page
+1Deborah
+
+0Deborah is considered by her teachers to be below average in overall ability.  (Her most recent scores on a school achievement test place her in the 20th percentile nationally).  She is extremely quitet and appears quite reserved in a new situation.
+
+Deborah was very dependent on the teacher for constant reassurance, during the early stages of her work in LOGO and all through her first project -- drawing her initials (sessions 5-7). Deborah (beginning in session 8) was encouraged to experiment freely with the basic turtle commands.  By limiting the numbers she chose to use as inputs to FORWARD, RIGHT and LEFT commands, she was gradually able to gain confidence and control over her work.  She seemed to hve a "knack" for choosing numbers which produced interesting designs, and she gradually learned to write procedures to teach her designs to the computer.  This seems to have been a breakthrough for Deborah, and she began to suggest and carry out independent projects in a purposeful way.
+
+By the end of the series of classes Deborah had created some unusual designs which won praise from her classmates; had carrried out a major project of drawing a rabbit, which required the use of planning and subprocedures (sessions 17-24); and had developed confidence in herself and in her ability to use the computer.  Deborah's parents reported that this was the first time she had been excited about anything in school.  Her teachers reported that she had become more assertive in class and had asked for extra help after school, etc.
+
+The teaching strategy that was developed in response to Deborah's extreme dependence, and her compulsive need for getting a "correct result" on her first project, was to encourage her to "experiment" with a few basic commands -- without striving for any particular result.  In this way, she was able to design some simple projects, after first carrying them out by direct commands.  When she chose to undertake her rabbit project, after 7 or 8 classes of free experimentation, she already understood how to write simple procedures, and how to use subprocedures as part of a larger entity.  She was able to carry out the experimentation needed for each part of her project independently.  The teacher's role became one of providing Deborah with help, when she needed it, in the context of work which she herself had defined, and understood.
+.epage 2
+.page
+1Ray
+
+0Ray is a student who has been diagnosed by school personnel as having "learning disabilities".  He is tutored individually by a learning disabilities specialist several times each week.  His teachers feel that at the beginning of the year he was noticeably "slipping" in his seriousness as a student.  (His most recent school administered achievement test placed him in the 9th percentile, based on his overall scores.)
+
+Although Ray was initially quite successful in controlling the motion of the turtle, he held himself somewhat aloof from the activities in the LOGO classes.  As a result, he never succeeded in writing a procedure without assistance, although he had considerable success (with help) on several projects such as drawing and animating a rocket (sessions 13-15), and in using the computer with procedures that enabled him to explore geometric shapes. In general, Ray had success using the computer in two kinds of situations; when a teacher was helping him intensely during a session, and when he was working in a way that required him to remember only one variable at a time.
+
+The teaching strategy for Ray was to try to structure situations in which he could be successful.  When these situations required a lot of help from the teacher, he would usually "forget" what to do when the teacher was no longer present. For the longest time, Ray did not engage in much "free experimentation" with the turtle.  But towards the end of the series of classes (session 19) he was given a POLY procedure which requires two inputs to produce a series of closed geometric shapes, and a SPIRAL procedure which required three inputs and produced a variety of spiral shapes.  Ray gradually learned how to control the inputs to produce certain shapes in a predictable way.  For the first time, he began to experiment in a purposeful way, to write things down in his notebook, to use those notes to remember successful designs.  He began to gain confidence in his ability to control the computer.  He invited a friend to class -- together they had a very exciting time exploring the shapes produced by the POLY and SPI procedures.  Ray's teachers also reported a noticeable improvement in his attitude in class, which they attributed partly tohis feeling of success in the LOGO classroom.
+.epage 2
+.page
+1Monica
+
+0Monica is considered to be an "average" student by her teachers.  (Her most recent school administed national achievement test ranking was in the 47th percentile.)  Her teachers find that she prefers to base her activities solidly on things she knows, rather than to strike out into new areas.  
+
+Monica's work in the LOGO classes followed this pattern as well.  She learned the basics of LOGO quickly and easily.  She established a very successful technique for making interesting geometric designs by having the computer draw a shape, rotate the turtle through a fixed angle, and then repeat the sequence over and over.  She learned to use recursion to produce this kind of effect easily, and eventually learned to make the angle of rotation a variable, so that the same procedure could be used to make a number of different, though related, designs. Toward the end of the series of classes, she had learned to make regular use of recursive procedures with inputs and stop rules.  Throughout her work Monica had a very good sense for the state of the turtle at any moment, and could predict the location of the next shape drawn by the computer more easily than her classmates.
+
+Monica worked very closely with Kathy during the LOGO classes and the two girls often adapted and built upon each other's projects.
+Monica did not work on any long term projects, or get seriously involved with editing and debugging.  She often had difficulty deciding what to do, and in choosing names for her procedures.  Her projects tended to be short, and if they didn't work out, she usually preferred to disregard the procedure entirely, rather than to ask for help or to try to change it.  Teaching strategies for Monica focussed on helping her become more aware of the non-graphics output of the computer -- error messages for example, and of different types of bugs and how to identify and correct them.  Through her own choice of working with repeated rotations, Monica was helped to understand recursion, and the use of variables, and was beginning to use conditionals and stop rules.  Toward the end of the series of classes Monica expressed interst in "correcting" (debugging) a rather lengthy procedure, and was beginning to be able to look at procedures in a step-by-step manner for the purpose of analyzing and correcting them.
+
+It is possible that Monica's would have benefitted from being able to use a carefully designed set of worksheets, structured to lead her from one concept to another, with many small projects along the way.
+.epage 2
+.page 
+1Kathy
+
+0Kathy, a student who was new to the school this year, is considered to be an "above average" student.  (Her most recent school administered achievement tests place her in the 54th percentile* overall.)  She is cheerful, confident, and enjoys "playing" with words and ideas.  Kathy and Monica worked together very closely during the LOGO classes.
+
+*61 in reading, 66 in language, 29 in mathematics.
+
+Kathy worked mainly on small projects, gradually increasing the size and scope of her work as the classes went on.  She often used the strategy of making a design, then repeating it, until it closed or until she had a design she liked.  When bugs occurred, Kathy would analyze them, and work on her procedure until she felt she had corrected it.  She enjoyed thinking about her work -- often making extensions or comparisons in ways that showed that she understood the importance of relations among different objects.  (For example, she made a WORM procedure, then proceeded to make WORMY, twice as big, or in a different kind of relation, copied a procedure called HORSE, which drew a series of rotated boxes.  When she repeated HORSE five times, she called it BARN.) Most of Kathy's work involved this kind of repeated free-form design, and the various design strategies served as vehicles for introducing such programming constructs as inputs, recursion and stop rules.
+
+Kathy's last two projects, MONSTER and BIRDMAN (sessions 19-22), were more elaborate designs, using carefully related arcs and circles.  They led Kathy into situations in which she had to use subprocedures and to engage in careful debugging.
+
+Teaching strategies for Kathy involved suggesting projects that allowed her to extend her knowledge of ways of using LOGO, and of encouraging her to undertake projects that involved larger degrees of planning, and made it more likely that she would get involved with debugging situations.  Although Kathy enjoyed creating new ideas, and she like carefully defined challenges, she did have a tendency to keep her work focussed on small challenges.  She was also urged to be more analytical in understanding the effects of the variables she used.
+.epage 2
+.page
+1Kevin
+
+0Kevin is a student who is considered to be conscientious, but "below average" in most of his school work.  (His overall national percentile ranking of 31 on his most recently recorded achievement tests corresponds with this assessment by his teachers.)  Nevertheless, Kevin was consistently a very able student in working with LOGO.
+
+Kevin began the series of classes with a confident and accurate control of the turtle, which persisted throughout his work.  He did not initially have the same sureness in using the computer as a tool to simplify and organize his work.  Kevin's most significant project was the design and animation of a large turtle (sessions 10-17), which he drew on the display screen using circle and arc procedures.  While working on this project, he began to use the idea of subprocedures and state transparent procedures to simplify his work.  During the last few classes he worked on projects involving the use of two and three variables to produce designs which used the idea of similarity as a guiding feature, such as his TUNNEL procedure (session 21).
+
+Kevin demonstrated a clear understanding of the concept of variables and was able to add
+variables to his procedures to control both the size and shape of the design elements and the starting and stopping of the procedure.  He had moved in his work from using the computer to control the turtle, to learning how to use variables to control the processes of the computer itself.
+
+Kevin's major difficulty in working with the computer was an initial reluctance to plan ahead, or to think about and structure his work more than one step at a time.  The teaching strategy that was used to deal with this was to supply Kevin with new ideas, at exactly the moment when they made the greatest sense to him.  When they simplified his work or answered an immediate need.  In this way he was able to assimilate new ideas, and incorporate them in his subsequent work.
+.epage 2
+.page
+1Donald
+
+0Donald is considered to be "above average" by his teachers.  He is new to the school this year (no achievement test scores available.)  Donald's work in the LOGO classes revealed an overall competence in analytical approaches, combined with a certain amount of confusion about details.
+
+Donald spent most of his class time on a single extended project:  making the computer draw an elaborate HEAD, which included a beard, hair, a hat and a flower, in addition to the usual features -- eyes, ears, nose and mouth.  Donald worked over a period of 14 sessions on this project (sessions 8-22).  He began by drawing a picture of what he wanted the head to look like, and following the teacher's suggestion, wrote out a super-procedure to draw the head, and used separate subprocedures to add each of the features.  In the course of his work, Donald had to do a great deal of estimating of both distances and angles, use arc and circle procedures, use procedures that repeat, use variables to control size and angles, and especially, learn to separate a problem into parts, to make it easier to solve.  In addition, he used a POLY procedure to make a FLOWER for his head, and had to use recursion, as well as a conditional and stop rule.
+
+Through his work, Donald had difficulty in understanding the effect of the state of the turtle at any given time.  He could not always predict where the next step would occur.  At times it seemed as if Donald had some difficulty in seeing exactly where the turtle was headed.  The teaching strategy employed to help Donald deal with these problems was to help him develop tools of mathematical analysis, to help him figure out the best way to aim the turtle, without relying totally on visual experimentation.  In this way he was exposed to the idea of using a kind of "grid" to help him maneuver the turtle around his HEAD, and to see how the total angle turned by the turtle in a given situation, was key to deciding how much more he had to turn it next.  In addition, he was shown how to break up even a small problem into parts -- for example, in placing a mouth on his face, he had to decide which arc to use for the mouth, how to orient of the turtle, and to choose the correct starting point for the mouth.  By separating this problem into three distinct steps he was able to overcome obstacles that might have interferred with his success.  At the same time he was learning principles of geometry, computer programming, design and planning.
+  
+.page
+.block 5
+13.3 Similar Work in Educational Research
+.br
+0Our approach is similar to other research or evaluation efforts
+which are undertaken in direct collaboration with educational
+practitioners, and which are intended to have immediate impact on
+school situations.  They are illustrative of one trend in education
+research, an effort to work in natural settings and to use field
+experiences as a basis for improving education.  Similarly to other
+social science work in the field, the preferred methods are qualitative
+(Filstead, 1970) and the research design is typically of the sort that
+is variously described as phenomenological (Wilson, 1977) or, in the
+recent educational literature, as "ecological" (Bronfenbrenner, 1976),
+"illuminative" (Parlett and Hamilton, 1976) or "interactive" (Stake,
+1967), rather than the experimental and quasi-experimental designs
+which are derived from controlled laboratory settings (Campbell and
+Stanley, 1963).
+
+Campbell himself now takes the view (1974) that qualitative approaches
+are particularly appropriate when the subject of study is an
+interconnected area, and the goals are not simply to find out if one
+factor has an effect on another, but in what ways a range of factors
+interact with one another.  The researcher is working not with a single
+testable hypothesis but rather within a general set of hypotheses that
+make up a position:  a theory of personality for example, or a concept
+of how children learn.  This deliberately makes room for the
+observation of surprising, or unexpected phenomena.  It emphasizes the
+importance of setting (hence the "ecology" of education); the subject's
+participation in the evaluation or research; and a recognition of the
+role of the experimentor or evaluator in any results.
+
+[OMIT THIS PARAGRAPH?] The traditional approach to the problem of
+experimenter intrusion (experimenter bias) is to try to make the
+situation as impersonal as possible.  Thus a typical testing situation
+places a tester and a child (often strangers to each other) in a bare
+room with the tester reading a script and engaging in little
+interaction with the child being tested.  The alternative, advocated by
+the qualitative method, is to recognize that even such stylized
+controlled encounters have a biasing effect on children.  Thus,
+standardization is considered less important than a description and
+recognition of the evaluator's role.  The intention is not to make the
+situation neutral, but to find a place for the person in research, to
+set up certain rules of behavior, and to assure that the role of the
+person is known, reported and understood.
+
+Our particular approach to data collection is similar to that employed
+by a number of other educational researchers.  To evaluate children's
+progress in school and to re-assess curriculum.  Two outstanding
+evaluation efforts in the public schools are the work of Brenda Engel
+(1977, a,b) at the Cambridge Alternative School and that of Ruth Ann
+Olson (1973, 1974) at the Marcy Open School in Minneapolis.
+
+In each case a wide range of data was gathered:  observations,
+interviews with teachers, children and parents, results of manipulative
+tasks and work samples.  The process of the evaluation was as
+important as the results:  all components of the school community were
+involved, and the tasks as well as the results were simple and direct,
+so that all members of the community could understand them.
+
+At the Prospect School, North Bennington Vermont, a long-term
+confidential effort devoted to a detailed program or evaluation and
+research is being carried out under the direction of Patricia Carini,
+founder of the school.  An impressive collection of materials have been
+gathered since 1965, including (Carini, 1973): children's work; eg.
+drawings, photos, etc; children's journals; children's notebooks or
+written work; teachers' weekly records; teacher's reports to parents;
+teachers' assessment of children's work in math, reading, activities;
+curriculum trees; and sociograms.
+
+This systematic data collection is based on a carefully thought out
+research design (Carini, 1972) has been successful, not only in
+shedding light on child development, but as a guide for decisions about
+children and curriculum and as a source of data for teacher training
+and staff development.
+.indent 0
+.page
+.block 5
+14. Comparisons with Similar Studies
+
+0In this section we comment briefly on four previous studies with a close relationship
+to our own. In each case we point out the salient difference in methodology.
+
+.block 5
+14.1 Work in Edinburgh0
+
+0The largest study has been carried out in Edinburgh where three successive
+cohorts
+of 11 year-old boys at George Heriot's School have had an ongoing
+experience in a LOGO environment for the past 3 1/2 years.  This
+enterprise is currently being written-up and there is as yet no
+published account of the work.  However, personal communication between
+our lab and the Edinburgh group is close, and it is clear that an
+impressive amount of documentation of the LOGO work there has been
+accumulated.  This will allow for interesting and productive
+comparisons, once the results of the Edinburgh LOGO experience is
+available.  What we see emerging is the possibility of isolating the
+consequences of particular teaching styles within what may be thought
+of as rather similar learning environment.
+
+For example:  the Edinburgh approach has been summarised from a talk
+given by O'Shea at the summer LOGO meeting in 1977.
+
+"While much LOGO work has concentrated on one to one interaction of
+teacher and student in a LOGO environment, this effort was concerned
+with tactics and materials for a large group of kids.  A primer was
+developed, with descriptions of concepts, sample programs, and
+worksheets.  Students maintained scrapbooks documenting their
+successes, as well as accumulating computer output.  The teacher
+strategy favored kids working with each other and exploring for their
+own answers, rather than asking the teacher to solve problems which developed.
+
+O'Shea noted three stages of learning most of the students went through:
+
+.indent 6
+1. Programming only for the end product, verbal output or graphic design.
+
+2. Style conscious programming -- making programs which include correct
+form, perhaps using a new concept which is being studied;
+
+3. Programming to solve problems. O'Shea (SIGQUE 19..)
+.RI
+[GET REFERENCE]
+.indent 0
+We have not found much evidence in our study of a progression through these
+three phases of
+learning.  Instead we find examples of students whose predominant mode
+is (1) or (3) above with no obvious evidence of (2). We suggest that there may be an
+important connection between
+this difference and the work-from-a-manual approach which tends to
+characterize the Edinburgh work.  In such a framework, there is a
+notion of a sequence of topics  to be followed in which the
+presentation of topic 1 is accompanied by exposure to model programs
+and working through worksheet examples of the concept, after which
+topic 2 is moved to.
+
+14.2 The Muzzy school experiment, (Feuerzeig, 1971)0
+
+This took place
+at an early stage in the evaluation of these ideas before turtle
+geometry had been developed.  We deliberately selected "average"
+children as our subjects (unlike the present sample which contains
+children of a greater range of abilities).  We used as outside observers four
+leading figures in the field of math education and whilst their
+comments were very helpful in contributing to the theoretical basis of
+our work, their participation did not yield useful information about
+how to look at children in this learning situation.  Our present
+project constitutes a great advance in this respect.
+
+.block 5
+14.3Work at Xerox Palo Alto Research Center, 1974 - .0
+
+This is reported in TEACHING SMALLTALK by Adele Goldberg and Alan Kay (1977). There
+are important ways in which our learning environment resembles that developed and
+used by this group. As regards the selection of students, much of the Xerox work is
+done with "mentally gifted minors." The published details do not allow for the kinds
+of analyses-in-depth which we present here, concerning the different ways in which
+children use the possibilities of the system, and the particular
+subject matter learned by the students.
+
+.block 5
+14.4 Work at Syracuse0
+
+Joyce Statz reports work using mechanical turtles. The positive aspects of her work
+are in line with what we observe here. However, the limitations in the quantity and
+quality of hardware made it impossible for her subjects to become as involved as ours
+were in individual projects. This factor, together with the evolution of
+instructional techniques since then accounts for the fact that our subjects seem to
+make more progress in similar time.
+
+Work at McGill
+.br
+Write section on Groen/Okumura Report
+
+Work at Lamplighter
+
+Work at Stanford
+

@@ -1,0 +1,64 @@
+Lynn
+
+I like this a lot better.  We can argue about lower bounds and flows later, but
+now is clearly not the time.  This is bullet proof and that's what we need.
+
+Have a good week - Carver
+
+    The relationship between logical and thermodynamic entropy can be clarified
+by considering a CMOS inverter, such as that in Fig 9.2.  The charge on the
+output node can be viewed as made up of a number particles; electrons with
+charge -q and holes with charge +q.  The total number of particles is fixed at
+N0=CV/2q.  Our resources consist of N0 electrons and N0 holes.  The logarithm of
+the number of ways to achieve any given voltage on the node is the dimensionless
+thermodynamic entropy, ST, of the node at that voltage.  When the node contains
+N0 electrons, its voltage is -V/2.  When the node contains N0 holes, its voltage
+is +V/2.  These are both states of zero entropy, since there is only one way we
+can deploy our resources to achieve each of them.  All other states are mixtures
+of some electrons and some holes, and may be achieved by deploying our resources
+in a number of different ways.  When the output node is at zero voltage, half
+way between the positive and negative supply rails, it contains N0/2 electrons
+and N0/2 holes.  This is the point of the maximum thermodynamic entropy.  It is
+likewise the point of maximum uncertainty in the logic state of the node, and
+hence of logical entropy.  The amount of energy required to change the
+thermodynamic entropy by one unit is kT.  The amount of energy required to
+change the logical entropy by one bit is Esw .  The term Esw/kT appearing in the
+above equations is just the conversion factor between the energy scales involved
+in changing the two types of entropy.	
+
+    We may now view the voltage limit developed in section 9.2 in a more
+fundamental way.  Let us consider the flip-flop of Fig. 9.13 as an isolated
+thermodynamic system.  It can interact with its environment by absorbing
+electrons and holes from the two rails of the power supply.  Each rail can be
+viewed as a gas of the appropriate particles, each with an average energy qV/2.
+The environment can also absorb heat from the flip-flop.  Under what conditions
+can this device spontaneously evolve from a "hung" state of high internal
+entropy to one of lower entropy?  Each electron or hole entering the flip-flop
+decreases the entropy of the environment by one unit.  The energy qV/2 carried
+into the flip-flop by each such particle is, on the average, dissipated inside
+and causes an equal quantity of heat to flow into the environment.  This heat
+increases the entropy of the environment by qV/2kT units.  The entropy change in
+the overall system, that of the environment plus that of the flip-flop, must be
+greater than zero.
+
+DStotal = qV/2kT - 1 + (DS of flip-flop) > 0
+
+In order that the entropy of the flip-flop decrease, the first two terms must be
+greater than zero.
+
+qV/2kT - 1 > 0 or V > 2kT/q
+
+This result is identical to that of sec 9.2 .
+
+       Computation in a macroscopic system can be viewed in the same terms.
+With respect to a given computation, an assemblage of data in an information
+processing structure possesses a certain logical and spatial entropy.  Under
+proper conditions, we may be able to remove all of the logical and spatial
+entropy from a system leaving it in the state of zero logical and spatial
+entropy; we call this state "the right answer".  An outflow of sufficient heat
+is required during the computation to raise the entropy of the environment by at
+least an equal amount.  Viewed this way, we see that information processing
+engines are really just heat engines, and information is just another physical
+commodity, being churned about by the electronic gears and wheels of our
+intricate computing structures.	
+

@@ -1,0 +1,242 @@
+.dv press
+.fo 0 Helvetica11
+.fo 1 Helvetica12B
+.fo 2 Helvetica10
+.so r;r macros
+.ls 1
+.nf L
+.margin 1.25i 1.25i 1.25i 1.25i
+.tr ^
+1Powerful Ideas and Cognitive Reorganization0
+.sp 2
+RLPCR4
+.sp 18
+1ABSTRACT0
+.fi b
+
+See RLPCR1^^^^^^^^^^The material of this paper is Miriam's pre-programming computer experiences with Logo during THe Intimate Study.  The theme is the pattern shown in the incorporation of powerful ideas and how this pattern permits us to better envison the organization of cognitive structures.
+.sp 2
+.in 4i
+Bob Lawler^^^7/25/81
+.in
+.bp
+.nf L
+theme: how superstructure of mind develops through and reflects S-M ayatem
+
+title: what do microworlds connect to?
+title: a speculative discussion
+title: breaking open syntonicty
+
+basic ideas:
+^1. syntonicty = affective aspect of connection to prior structures.
+^2. this is unanalyzed term in Papert: connection to what, precisely ?
+^3. we try to break open the kinesthetic system in the following 
+^^^obvious way: the major foci of development have been -
+^^^^^a. body/legs^^^^^somatic port
+^^^^^b. hand^^^^^^^^^^manual port
+^^^^^c. eye^^^^^^^^^^^visual port -> Noton/Stark rings
+^^^^^d. tongue^^^^^^^^verbal port -> Analysis by synthesis
+^^^^^e. other ports:(body solus,head, nose?,ear?,skin?)
+^4. we attempt to map microworlds postulate onto kinesthetic base, thus:
+^^^^^a. TG -> somatic port
+^^^^^b. CG -> visual port (i.e. there is no navigation cluster)
+^^^^^c. Design worlds -> visual port
+^^^^^d. Rods world - > where ? i,portant becuase of archetype status.
+^5. clusters reflecting the world: there is a navigation cluster.
+^6. how do we describe Miriam's design knowldge:
+^^^^^a. clear basis in settings of functional knowledge, e.g. she knew
+^^^^^^^^how to get the slot machine to work.
+^^^^^b. confusion across proto-microworlds because of pervasive
+^^^^^^^^overlapping of phenomena, e.g. she couild (and did) make
+^^^^^^^^polyspiral designs in the Mpoly, Slot, Shapes, and Families
+^^^^^^^^micro-settings.  Further, her classification of the artifacts
+^^^^^^^^was based on appearance, not setting: stars, mazes, messes, and
+^^^^^^^^pretty flowers.  Her design world was chaotic, more like a cosmic
+^^^^^^^^cloud than a cluster of well defined worlds.
+^^^^^c. there is a design cluster in world terms because the artifacts
+^^^^^^^^are all appreciated through the visual port.
+^^^^^d. the cluster is chaotic because figures are too complex to be
+^^^^^^^^easily resolvable into shape primitives familiar to Miriam
+^^^^^^^^(although her classification in fact succeeds at that task).
+^7. What about the Rods world and its connections ?
+^^^^^a. local learning necessary => no immediate linkage to ancestors
+^^^^^b. crisp definition of objects and operations in world
+^^^^^c. task not locomotive in character but placement like
+^^^^^d. at least a significant variation of TG navigation; no indication
+^^^^^^^^of movement analogy in Miriam's speech
+^^^^^e. artifact (and didactic) connection to Design worlds (not her idea).
+^^^^^f. turtle-on-bed: this was evidence of connection to TG, none earlier.
+^^^^^g. persistence of construct: over later years, when I brought out the
+^^^^^^^^quisenaire rods and Miriam took them up, her typical construction
+^^^^^^^^was a squiral, identical to the original (contrast: in kindergarden
+^^^^^^^^we had built piles,arches, and buildings.
+^^^^^h. did in fact the squiral serve as post-cedent ancestor ? can't tell.
+^8. GRANT ME EVERYTHING I WANT TO HAVE YOU BELIEVE, THEN:
+^^^^^a. the TG navigation and Design worlds were hard for this six year old
+^^^^^^^^to connect BECAUSE they connected differently to the kinesthetic
+^^^^^^^^system ports.
+^^^^^b. the Rods world arguably connected to another separate port, that of
+^^^^^^^^manual kinesthetic system; this was easier to understand -- in the
+^^^^^^^^specific sense of connect to TG navigation world -- because the hand
+^^^^^^^^is a very special part of the body and the hand subsystem of the
+^^^^^^^^kinesthetic system a highly specialized, ancillary coupled subsystem:
+^^^^^^^^in effect, the human kinesthetic system built during the SM period
+^^^^^^^^has the information processing characteristics of a distributed
+^^^^^^^^intelligence system; we may be amused to think of the dinosaur and
+^^^^^^^^his secondary brain at the end of his spine; our intelligence --
+^^^^^^^^although local in space, in the brain -- can be thought of in
+^^^^^^^^functional terms as equally distributed, and more so.
+^^^^^c. the Design worlds were still beyond Miriam's reach at the age of six
+^^^^^^^^the visual system effective primitives are different from those of
+^^^^^^^^the kinesthetic main system: in what sense are they related but
+^^^^^^^^different ?  Consider POLY story of the SQUARE.  I saw 24 lines
+^^^^^^^^being drawn.  She saw SQUARES being drawn.  It may be (probably is,
+^^^^^^^^in fact) the case the she watched individual lines being laid out,
+^^^^^^^^but the special development of the visual subsystem for shape
+^^^^^^^^recognition packages those "feature ring"program paths, at which
+^^^^^^^^level the visual system hooks into the kinesthetic system, into
+^^^^^^^^well-known shape agglomerations.  That is, the objects of the
+^^^^^^^^visual subsystem are different from those of the kinesthetic
+^^^^^^^^primitives.  The translation is not transparent.
+^^^^^d. the crawling-on-the-bed game is evidence then of what ?  is it
+^^^^^^^^of connecting design worlds to TG navigation ?  Prefer to believe
+^^^^^^^^it is of connecting design worlds to TG navigation through the
+^^^^^^^^mediation of the RODS world: conclude: the hand-eye coordination
+^^^^^^^^is deeper and better developed than is the trunk-eye or the
+^^^^^^^^trunk-hand coordination.  Here we have developing a structure of
+^^^^^^^^logical filiation which is different from but related to the
+^^^^^^^^corresponding physical relations ---> needed here: something to
+^^^^^^^^contrast the homunculus brain map with the logical filiation of
+^^^^^^^^microworld structures; something where we can see both the 
+^^^^^^^^relation and the difference.
+^^^^^e.
+
+.bp
+* * * * * text dump * * * * *
+1CONTENTS0
+.nf L
+IV.^The Nucleation of Microworld Clusters (rlpcr4)
+^^^^^A.^Miscomprehension and Malattachment is inescapable1
+^^^^^B.^Competition from a Powerful Idea3
+^^^^^C.^The Organization of Disparate Knowledges
+^^^^^D.^Networks of Confusability
+.bp
+The Nucleation of Clusters
+
+IVA.^^^^^Miscomprehension and Mal-attachment is inescapable.
+^^A0.^"We have had the experience and missed the meaning." T.S.Elliot
+^^A1.^from PCM: genetically derived network; competitive, hierarchical at need.
+^^A2.^from ACR: imitation of others; concerns becoming control elements.
+^^A3.^here: post-cedent ancestor and cluster nucleation. (Bridge).
+
+IVB.^^^^^Competition from a Powerful Idea
+^^B0.^"All animals are equal, but some are more equal than others."  Orwell.
+^^B1.^MAKEDOTS and RODS functioned with more power than other worlds. Why ?
+^^B2.^The intrinsic root of power: simplicity = inescabable inferences.
+^^B3.^The extrinsic root of power: reality fitness.
+^^B4.^The extrinsic root of power: generality of idea.
+^^B5.^effects of relative power - winning at competition = dominating the
+^^^^^^present, channelling access to the future.
+
+IVC.^^^^^The Organization of Disparate Knowledges
+^^C1.^how are they connected^?: propose a network of clusters, a la Minsky's
+^^^^^^geographic capitols:
+^^C2.^ powerful ideas as capitols; the coherence of a mind
+^^^^^^is evaluable by mapping powerful ideas and specifying their potential and
+^^^^^^actual conectedness.
+^^C3.^ Reflections of the model on a possible theory of
+^^^^^^forgetting: competition of invented solutions based on a powerful idea
+^^^^^^may overwhelm search through a still existing but deep experiential episodic
+^^^^^^memory tree.
+^^C4.^Reflections on the interpretation of metaphor and thinking:
+^^^^^^Jeff's analysis of the images of William James -- the clash of metaphor
+^^^^^^as a sign both of confusion and avant-garde thought...where the contact is
+^^^^^^through circumstantial microworlds more than through archetypes.
+
+.bp
+* * * * *text dump2 * * * * *
+
+IVD.^^^^^
+.ls 2
+.fi b
+1The Nucleation of Microworld Clusters0
+
+^^^^^^^^^^The intention of this section is primarily theoretical -- to make sense of the earlier material of the chapter.  We begin with a summarizing formulation of how these various experiences may be organized in an attempt to view the material in a way compatible with the simpler challenge of The Progressive Construction of Mind.  We conclude with an attempt to interpret the experience through which Miriam came to understand interation as the genesis of a microworld which can function as an archetype.
+
+^^^^^^^^^^omit 13.1.1
+^^^^^^^^^^the following needs drastic revision
+
+The microworlds formulation must be extended considerably to encompass the challenge of this material.  Let me criticise the QUERY formulation as  way of revealing those p[roblems we must confront/  The first criticism is that the "perspective" can not be extended to cover any situation more complex than simple calculation problems.  This leads to a summary description of the material in sections 10-12 as a response.  Thesecond criticism is more profound, that the competition between microworlds is wrong or vaguely described.  The most direct wat of connecting this discussion with The Progressive Construction of Mind is to begin with those formulations and attempt to cope with the criticisms.  Since the response to the first criticism leads to the bind where the second can not be escaped, let us proceed in that sequence, recalling in this more detailed discussion that we weill conclude with the view presented in section 4.5.
+
+^^^^^^^^^^Microworlds are distinguished by their perspectives, the parts into which the mental structures parse a situation.  We described those structres as activated by the presentation of a question.  For example, "how much is 76 plus 25^?" verbally presented, activated the SERIAL microworld (and others in turn) of mental calculation when the Serial world perspective analyzed the query to parts more fully than competing microworlds could.  Can this query formulation be carried over to Miriam's broaded computer experiences^?  The prospect does not look promising because the questions put to the worlds of calculation appear so simple.  What is an equivalent simple sort of question these computer-related microworlds might confront^?  A simple qeustion of common form, relevant to most of the microworlds, is "What is a good value for ANGLE^?"  But that depends so much on the activity^!  Precisely so.  A value of 180 might frequently be good in using the DRAW+ program.  For SHOOT, the answer must be whatever value reduces the difference between the current heading and a line through the target center.  The question does not even apply to SEAHORSE^!  In The Progressive Construction of Mind, we concluded that the activation of one microworld rather than another, e.g. Paper-sums instead of Serial, was much influenced by the presentation of the query.  What similar presentational distinctions should we be on the lookout for in the computer-focussed cluster of microworlds^?  Before any microworld could possibly confront so simple a question as "What's a good value for angle^?", some prior questions must have been answered.  Let me represent this process of prior commitment to a problem solving context by the question presented below:
+
+.ls 1
+.in .5i
+.nf L
+1.^Do you want to go to Logo today ? Or stay home^?Or go elsewhere^?
+2.^[At Logo] What do you want to do ?  (The basic and obvious choices
+^^^were from these possibilities: use the computer, do puzzles, socialize,
+^^^get snacks, run around.)
+3.^[When using the computer] What sort of activity interests you today ?
+^^^Would you like to use a game (e.g. SHOOT), an interface (e.g. DRAW+) ?
+^^^Would you like to use the Logo interpreter directly ?
+
+.ls 2
+.in
+.fi b
+If problem questions can only artise in a context selected by such prior commitments, we might expect that each subsystem Miriam encountered must have engendered a new microworld.  Let uis now follow this speculation in detail.  In order to preserve easy reference to the context of the related experienc, I choose to refer to each of these conjectural microworlds in Miriam's mind by the name of the associated Logo interface used.  (The risk of confusing references to programs with those of mental structure is small; when confusion is possible, specific references will be used.)  Figure N  attempts a preliminary sketch of Miriam's computer-focussed knowledge as described so far.  It shows an initial grouping of microworlds in five separate clusters.  The difficulties with the figure are several, but let us approach the most serious one first.  The grouping into NAVIGATION and DESIGN clusters appears to be based on a superficial similarity ofphenomena more than anything else; that may be, of itself, a legitimate organization to impose, but it does not connect at all with a view of microworlds and clusters as defined by knowledge of the parts of a situation.  This is a more specific restatement of the criticism that the microworld formulation is not obviously applicable to situations  more complicated than doing sums.
+
+^^^^^What ius a perspective as applied to DESIGN worlds^?  How does it relate to its phenomena^?  Let us return to a prior example, the Serial world of mental calculation.  When confronted by a query, "How much is 76 plus 25^?", the Serial perspective analyzed the parts of the question to a form on which its procedures could function.  Specifically, Serial's perspective broke the numeric terms into tens and units.  The procedures re-grouped the components, acquired intermediate results, and retunred the final result to the inquisitor.  We can ask of this example, "What is the phenomenon analagous to the design produced by some drawing procedure^?"  Is not the direct answer that the result of calculation is the "phenomenon" of the Serial world^?  Now if we consider the perspective of Serial as creating an analyzed description of a whole situation, we note the perspective must:
+.ls 1
+.in .5i
+.nf L
+1.^represent the requirement for a result; the result is the output
+^^^of the knowledge when it is applied.  Let us say the perspective
+^^^should represent the function of the microworld knowledge.
+2.^represent the arts, the entities of the microworld, both operands
+^^^and operations.
+3.^represent the relation obtaining between all the parts of the
+^^^perpsepctive (the result is one part).
+.ls 2
+.in
+.fi b
+Further, it is quite possible that other aspects of a situation must be representable.  We will describe this representation as a collection of slots.  SLOT is the generic name for the place where a value for a variable goes.  (Recall that a variable is the association of a name with a slot.)  The process through which values are assigned to slots is key.  The slots are not passive but active.  The processes which assign values are demons, at least one for each slot.  By using this erm I mean that for each slot a pattern recognition process is activated, i.e. assigns sopme aspect of a situation a variable value, when its pattern is recognized.  We may think of each slot as having a little man in it who "wants" to find in the situation some aspect which he can assign.  Having come this far together, another step or two will lead us to connect directly the microworlds of Miriam's computer-focussed experience with those of The Progressive Construction of Mind.
+
+^^^^^^^^^^First consider mental calculation.  Queries were [put to Miriam in the form "How much is 75 plus 26^?"  Are such the same as this second question of different form, "What number plus 25 makes 101^?"  They need not be seen as different.  The same specification of slots could respond to each of these situations, different as they appear on the surface.  (I believe there are, in fact, separate microworlds for response to each of these surface query forms, but consider it an empirical question I bypass here.)  Is this second question not one where the result (the phenomenon of The Progressive Construction of Mind) is seen as a component, iu.e. as another part of the whole which the perspective describes^?
+
+^^^^^^^^^^Similarly, we could ask these two questions:
+.ls 1
+.in .5i
+.nf L
+"What are good value of our variablkes to make a make ?"
+"Will [S 10 60 4] draw a maze ?
+.ls 1
+.in
+.fi b
+We conclude that the same sort of description can apply to situations where the desideratum is either a "result" or the specification of some "input" to a process creating a result.  Indeed, thedistinction between "input" and "result" can be maintained only if the process realting the two has no accessible inverse.  (This must frequently be just the case during development.)  We expect that it is through the cleavage of microworlds with compatible perspectives, i.e. amalgamation, that the reciprocity of a procedure and its inverse become manifest.
+
+^^^^^^^^^^Now think of paper and pencil calculations.  As in the Paper-sums world of vertical form addition, where an addition problem decomposes into a set of component subproblems, we find similar organizations in the computer-focussed microworlds.  We can see that the parts of a story or letter in the TEXT worlds, e.g. the individual lines of the text being composed, can be written one after another (in any order) until the composition is completed.  Thus they have a serial organization of beginning, middle, and end with indefinitely repeated subproblems in the middle section.  Figure N+1 directly compares the queries confronted in the Paper-sums world and the two TEXT micro-worlds after a commitment, in the first, to "do some adding" and in the others to write a story or letter.  This repetition of subproblem queries is characteristic of the SHOOT world, MAKEDOTS, R.A.F. and of DRAW+ as well (inthe latter, one selects, locates, and assigns sizes to component shapes, erasing unsatisfactory trials until satisfied).  Repetition of subproblems is not so obviously characteristic of worlds using iterative procedures, such as TIEMS, the FAMILIES world, or SEAHORSE, but they can be seen that way.  The case is slearest in the use of MPOLY programs.  One version asks specifically "What angle^?" should be used in the next design.  Was Miriam's objective in committing to MPOLY ever merely the creation of a single design^?  I think not.  Her focus may have varied considerably.  One common possiblity would be creating a set of designs.  From this point of view, the question "What angle^?" corresponds to the question "What line next^?" although there is no reason to believe Miriam's objective to create a set of designs was as specific as her intentions in composing a story or, as in the extreme case, dictating in entirety the song "Little Rabbit Foofoo".  If this line of reasoning holds for the MPOLY world, does it not hold as well for the other worlds^?  Specifically, it does hold for the FAMILIES world, for the SEAHORSE and TIEMS and SLOT worlds.  The outstanding example is SEAHORSE, where Miriamwas clearly exploring the behavior of the S procedure with varying input values.  Why have I dwelt on this particular issue, the apparent repeated confronting of relatively simple queries within a context to which one has previously committed himself^?  Precisely because it appears to undermie utterly the competitive activity of microworlds, which I argued earlier is the mental matrix from which learning emerges.  The atomicity of microworlds, an apparent consequence of the association of knowledge structures with the specific contexts in response to which they were constructed, conjoined with the important of presentation and objective argues first that there is no such thing as a functioning cluster of compting microworlds and in consequnce, that the development oif structure, organization in the mind, cannot derive therefrom.  This is a most painfull conclusion, if true.
+
+^^^^^^^^^^What I argue now is that a theory of confusion is integral with a theory of learning, in the specific sense that a cluster of microworlds is, at the detail levlel of slots in disparate perspectives, a network of confusability.  There is no reason to believe that a person's top-level commitment to some objective stifles the active agenda of residual objectives in the mind.  Think of the hopes you once had, the many lives you might have led.  Do not such thoughts plague your every attempt at concentration^?  The Walter Mitty in every mind is evidence worth attending to, testimony that the apparently coherent mind is preeminently interruptible.  This once granted, why should one believe that all such interruption must come from the profoundest levels of an organisms being^?  The point restated here was argued before: cpognitive structures are active.  Another metaphor -- think of the mind as a classroom.  A question is put to you, little-man (because others have committed to solve a particular problem), "What's a good value for angle^?" -- and you have no idea.  Here the other children, "I know^! I know^! Listen to me^!" and you are o the hot seat....  Have you ever taken bad advice^?  From someone who answered with certainty a question whose context was beyond his ken^?  I am sure we both have.  Does not this willingness (or need) to provide some answer, when your own resources are paralyzed by conflict or utter ignorance, does not this characterize confusion^?  Whence comes such "bad" advice within your own mind if not from other microworlds which have enough in common with the currently dominant perspective to see at least a part of it as "theirs"^?  If microworlds with similar perspectives can intrude during confusion, this is phenomenological evidence that there is reality in the competition of microworlds.  A discrimination of levels of slots in microworld perspectives permits us to save the position that the competition of active microworlds is a major factor in mental organization and development.  But this saving is not without cost.  The competition must be described as at a slot-level of activity instead of at a perspective level.  There can be no such simple things as a cluster of microworlds as described in The Progressive Construction of Mind.  We must substitute for it the idea of a Network of Confusability.  Let me attempt now to exhibit, in as simple a case as is useful, a confusability network and how it derives, at least partly, from the genesis of knowledge.  The EEL programs and the turtle geometry primitives, which Miriam knew best through SHOOT, were joined together as the Logo language compatible subsystem in DRAW+.  The three microworlds embodying her knowledge of these programs constitute a genetically based system of interlocked perspectives.  That is, both the EEL and SHOOT worlds were ancestral to DRAW+.  Confusions about what to do when using DRAW+ can be traced to the competing advices of the two ancestral worlds.  Contrasting the perspectives of these three worlds, as is done in Figure N+# permits us to see how precisely DRAW+ is constructed with the guidance of EEL and SHOOT.  The confusability in this example is basically limited to the relational details.  The manipulation of parts in EEL was performed by mnemonically encoded operations which applied to the current component shape.  The manipuilation of parts in DRAW+ is through the agency of the turtle.  Not merely are procedure different; the entities acted upon are different.  The competition of separate knowledges at this level of detail is witnessed by Miriam's question about a component shape when using DRAW+: "How do I make it bigger^?^^B^?"  Although at that point Miriam had been using DRAW+, locating one shape after another by placing the turtle in position, guidance from the "wrong" ancestor surfaced when her experience with SHOOT did not suggest any specific way to alter the basic size of the component shape.  This exemplifies genetically based confusion of detail.  Such confusions resurface when constructed knowledge of the conjunct world (DRAW+ in this case) is only partly formed or imperfectly recalled.  Think of Miriam's confusion in her early encounters with R.A.F.  That genetic confusion was inescapable until a (temporally) post-cedent ancestor (MAKEDOTS) was established and capable of competing withth edifferential oriented guidance of SHOOT.
+
+^^^^^^^^^^In any newly created microworld descended from more than a single ancestor the possibility of genetic confusion is endemic in the society of demons.  How is the confusion suppressed^?  Consider again Miriam's hypothesis that enlarging shapes in DRAW+ could be effected by keying a "B" command.  That hypothesis is wrong in fact, but it is a perfectly good hypothesis.  In both artificial and natural problem contexts, there exist many sensible possibilities which do not obtain.  The point is that such confusions are suppressed on the basis of experiment or of knowledge already in the microculture.  We can think of my rejection of Miriam's hypothesis as establishing a MUST-NOT-CONFOUND LINK in the network of confusibility, i.e. this legitimate operation of EEL does not generate a corresponding one in DRAW+, and this represents a specific sense in which knowledge about EEL must not be confounded with knowledge of DRAW+.
+
+^^^^^^^^^^This new formulation leads us to a new nd unexpected insight into the nature of microworlds.  The boundaries of microworlds can be seen as the system of must-not-confound links derived from the individual's putting questions to nature and the microculture.  That is, microworlds are the large-scale images of already suppressed confusions in the mind.  Recall the simultaneous activity of microworlds as a central element of the insights whereat the Serial and Conformal worlds were engendered in The Progressive Construction of Mind.  Pushing this new view further, we can sharpen those results into a seeming paradox: insight results from a balance where confusions are suppressed for ongoing functioning but not so well suppressed that insights are inhibited.
+
+
+IV.?.^^^^.ls 2
+.fi b
+^^^^^^^^^^The hallmark of the archtype is the accessible sense of the necessity of the relation between things and the operations performable upon them.  THe second characteristic was noted as the capability of ramifying, i.e. serving as an ancestor to other microworlds.  Miniworlds can be defined, can be designed as exemplars for the inspiration of such archtypes.  Because I deem archtypes of fundamental important in the mind and the development of exemplars a newly defined but fundamental task of education, I will offer here the following extended presentation of an exemplar.
+
+^^^^^^^^^^Imagine yourself at a party of adults, among a group of people who think of themselves as competent problem solvers.  Imagine the introduction of this puzzle as an "ice breakert".  Strangers have enjoyed working together at solving this puzzle.  To engage each couple, you need two pieces of string, at least a yard long.  Take one string and tie it loosely around each wrist of one "victim".  The circle of string, arms and body forms the first loop.  Pass the second string through that loop once, then tie each end loosely around each wrist of the partner.  Again the string, arms and body make a loop.  Passing the second string through the first victim's loop has made the two loops interlocking.  The puzzle is how these two victims can separate without untying any knots or cutting the string.
+.sp 10
+^^^^^^^^^^The typical experience is of this sort.  The victims go through various physical contortions, such as stepping over the strings, passing one behind the other, and so forth.  After the obvious contortions are exhausted, the sophisticated problem solvers stand back and make observations of three types.  The legalistic query demands to know whether or not there is a solution which fits the rules of the problem statement.  It searches for tricks and focusses on verbal equivocation, ambiguity, or underspecification.  For example: if you can not untie the knots, is it permissible to slip the loosely tied wrist-encircling loop off one hand^? (The answer here is "No".)  A second style of coping with this puzzle is "physical" in character.  It looks to the obvious boundaries (where the strings meet the hand) as singularities wherein must lie the clue to solution.  A third style, "constraining" might be an appropriate label, asks "What can we really count on^?".  It observes that if we do indeed have two interlocking loops, ofnecessity the puzzle is insoluble.  Therefore, if we can believe the setting of the puzzle, the initial problem solving framework must be wrong.
+
+^^^^^^^^^^All three of the approaches have merit.  The focus on rules and their specification gets directly at the question of what class of difficulty is at the core of the puzzle.  The focus on singularities changes the scale of one's concern -- it becomes possible to think more porecisely and with greater detail about a limited part of the puzzle.  The constraining rejection of an inappropriate gframework is critical for this particular problem's solution.  Let me show how each of these three styles contributes to the puzzle's solution.
+
+^^^^^^^^^^First, the constraining style rejects the image of interlocking loops.  However natural and obtrusive, this image must be wrong.  The physical focus on singularities notes that there are four of them, each one like the others.  The simplest approach is to think of only one singularity -- for if a little magic can be performed at one wrist, doing the same at the others would be simple, but evben more important, unnecessary.  Therefore, one should only worry about what happens at one victim's wrist where the partner's string tries to get by.  If you drawpoorly, you might represent the arm and hand as a pole and the tied string as a wrist-loop with a string going beyond theneighborhood of concern, thus:
+.sp 10
+If the partner's string, between the two terminal marks, were an elastic band, could not its center be stretched through the lose wrist-loop, over the arm-pole, and down the other side^?  Indeed, it could.  Doing so disconnects the interlocking loops and solves the puzzle, i.e. the partner's string is slipped through the loosely tied wrist-loop , over the hand, and then returned through the wrist-loop oiutside the circle of arms and string.
+
+^^^^^^^^^^I present this puzzle for your consideration as an exemplar, an ideal example/  Why do I value it so highly^?  There are two separate reasons; its accessibility, and the importance of the idea exhibited by the solution, i.e. the description you impose upon a problem constrains the set of candidate solutions you can imagine.  This idea may be the single most important idea in problem solving.  The interlocking loops puzzle is an exemplar because it exhibits this powerful idea in an accessible form, in an almost inescapable form.  There appear to be three aspects of this accessibility.  It does not appear at first to be a complicated puzzle.  Its solution does not appear mainly to depend upon persistenance.  The puzzle's "trick" is not based upon some verbal quibble or some obvious cheat, not is it designed to "set up" or victimize the would-be puzzle masters.  The interlocking loops puzzle simply uses the natural patterns of thought without forcing.  It is not computationally forbidding and demands insight more than tenacity.  Therefore, people generally believe they should be able to solve it quickly and feel stupid when they can not.  These elements all sharpen focus on the role in problem solving of the perspective or framework of thought one imposes in the interpretation of the problem.  They also increase the sense of inevitability of the conclusion drawn from the solution -- even though it be based on only a single experience.  [* * strong conclusion needed here]
+

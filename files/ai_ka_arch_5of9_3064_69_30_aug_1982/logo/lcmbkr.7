@@ -1,0 +1,209 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi b
+
+.sp 6
+LOGO Curriculum Materials
+
+Specially Adapted for the Brookline Public Schools
+
+June 1981
+.sp 3
+Introductory Turtle Geometry
+
+Reference Sheets of Logo Commands
+
+by Daniel H. Watt
+.sp 10
+The development of these materials was supported in part by the National Science Foundation under grant number SED - 7919033 and conducted at the Artificial Intelligence Laboratory, Massachusetts Institute of Technology, Cambridge, Massachusetts. Activities were used extensively with students in grades  4 - 8 at Lincoln School, in Brookline, Massachusetts.  The material contained in this document represents the views of its author and should not be interpreted as necessarily representing the official policies, either expressed or implied, of the National Science Foundation or the United States Government.  
+
+
+.chapter "bold(Reference Sheets)"
+.section "bold(Keyboard Diagram)"
+.bp
+.section "bold(Special Keys on the Keyboard)"
+
+
+.nf l
+KEY			s(n)USE		s(m)EXPLANATION
+
+<RETURN>		t(n)do-it	t(m)sends a command to the computer and moves
+					t(m)the cursor down to the next line.
+
+<ESC>			t(n)back-space	t(m)erases one character behind the cursor,
+			t(n)rub-out		t(m)and moves the cursor back one space.
+	
+<     >			t(n)move-right		t(m)moves the cursor one space to the right.
+
+<     >			t(n)move-left		t(m)moves the cursor one space to the left.
+
+<SHIFT> - 2		t(n)"  (`quotes')		t(m)prints the   "   symbol on the screen
+
+<SHIFT> - N		t(n)[		t(m)prints the   [   symbol on the screen.
+
+<SHIFT> - M		t(n)]		t(m)prints the   ]   symbol on the screen.
+
+<REPT>			t(n)repeat	t(m)repeats the effect of the key you
+					t(m)typed just before typing   <REPT>.
+					t(m)To repeat the effect of a key continuously,
+					t(m)hold down both the key you want to repeat
+					t(m)and the  <REPT>  key for as long as you want.
+
+<CTRL> - G		t(n)STOP! t(m)stops whatever the computer is doing, and
+					t(m)returns to Logo, ready for a new command.
+.bp
+.section "bold(Turtle Commands and Screen Control)"
+
+bold(Turtle Commands)
+.nf l
+Command			s(m)Short Form		s(n)Example with Input
+
+DRAW
+NODRAW 	t(m)ND
+
+FORWARD   t(m)FD			   			  t(n)FORWARD   30
+BACK   t(m)BK			   			  t(n)BACK   50
+
+RIGHT   t(m)RT  			   			  t(n)RIGHT   45
+LEFT   t(m)LT			   			  t(n)LEFT   60
+
+PENUP      t(m)PU		
+PENDOWN   t(m)PD		
+
+PENCOLOR      t(m)PC		   		  t(n)PENCOLOR   5
+
+BACKGROUND		   		  t(n)BACKGROUND   1
+
+CLEARSCREEN      t(m)CS
+
+HIDETURTLE      t(m)HT		
+SHOWTURTLE   t(m)ST
+
+HOME
+
+SPLITSCREEN
+FULLSCREEN
+
+bold(Special Keys for Screen Control in DRAW  Mode)
+
+	<CTRL> -  T			t(n)Text Screen
+
+	<CTRL> -  F			t(n)Full Turtle Screen
+
+	<CTRL> -  S			t(n)Split Turtle Screen
+.bp
+.section "bold(Circle Procedures, REPEAT and Other Commands)"
+
+	Command			s(n)Example with Input
+
+	RCIRCLE						t(n)RCIRCLE   50
+	LCIRCLE						t(n)LCIRCLE   50
+
+	RARC			t(n)RARC   25
+	LARC			t(n)LARC   25
+
+
+	REPEAT			t(m)REPEAT   10   [ FORWARD  10  RIGHT  36 ]
+			t(m)REPEAT   5    [ BOX   FORWARD  20 ]
+
+	PRINT			t(m)PRINT   "HELLO
+			t(m)PRINT   [ HELLO,  HOW  ARE  YOU? ]
+			t(m)PRINT   [ 5  +  3  =  ]
+			t(m)PRINT   5  +  3
+			t(m)PRINT   [ ]
+
+bold(Arithmetic and Numbers)
+
+	+		t(m)48  +  39
+	-		t(m)PRINT   29  -  15
+	*		t(m)RIGHT   7  *  20
+	/		t(m)FORWARD   100 / 10
+
+	RANDOM		t(m)PRINT   RANDOM  10
+			t(m)REPEAT   20   [ PRINT  RANDOM  100 ]
+			t(m)REPEAT   15   [ BACKGROUND  6 ]
+.bp
+.section "bold(Editing and Saving Procedures)"
+
+bold(Commands for Editing and Examining Your Work:)
+
+.nf l
+	Command			s(m)Explanation
+
+	CLEARTEXT		t(m)clears all text from the TV screen.
+
+	NODRAW   			t(m)clears all text and turtle drawings.
+or	ND
+
+PRINTOUT   (procedure name)	t(m)prints out the procedure.
+or	PO (procedure name)
+
+	POTS			t(m)prints the titles of all procedures.
+				t(m)POTS  is short for   PRINTOUT  TITLES
+
+	CATALOG			t(m)prints a list of all the files 
+				t(m)on the disk you are using.
+
+EDIT     (procedure name)	t(m)starts the editor with the text of
+or  ED   (procedure name)					t(m)your procedure displayed on the screen.
+
+	<CTRL> - C		t(m)finishes editing and returns
+				t(m)to a normal LOGO mode.
+
+bold(Commands for reading and saving files:)
+
+	READ  "JOHN		t(m)reads the information in a disk file
+				t(m)named   "JOHN,   and  places it in
+				t(m)the computer's working memory.
+
+	SAVE  "JOHN		t(m)Saves the information in the computer's
+				t(m)working memory, on the disk, in a
+				t(m)file named   "JOHN
+.bp
+.section "bold(Special Keys for Editing)"
+bold(Commands to Move the Cursor)
+ 
+.nf L
+	<CTRL> - P			s(m)moves cursor up one line
+
+	<CTRL> - N			t(m)moves cursor down one line
+
+	<     > 			t(m)moves cursor left one space
+
+	<     > 			t(m)moves the cursor right one space
+
+	<CTRL> - A			t(m)moves cursor to beginning of line
+
+	<CTRL> - E			t(m)moves cursor to end of line
+
+	<REPT>				t(m)repeats the effect of the key you
+					t(m)typed just before typing   <REPT>.
+					t(m)To repeat the effect of a key continuously,
+					t(m)hold down both the key you want to repeat
+					t(m)and the  <REPT>  key for as long as you want.
+
+.keep
+bold(Editing Commands)
+
+	<CTRL> - D			t(m)erases the character at the cursor.
+
+	<ESC>				t(m)erases the character behind the cursor,	
+				t(m)just as it does when you are typing
+				t(m)normal LOGO commands.
+
+	<CTRL> - K			t(m)"kills" or erases an entire line
+					t(m)to the right of the cursor.
+	
+	<RETURN>                     t(m)creates a new line and moves the cursor 
+                                        t(m)down to the beginning of the new line.
+				t(m)If there is any text to the right
+				t(m)of the cursor it will be moved too.
+
+	<CTRL> - O			t(m)creates a new line at the cursor
+			     t(m)and moves all the other lines down.
+.end_keep

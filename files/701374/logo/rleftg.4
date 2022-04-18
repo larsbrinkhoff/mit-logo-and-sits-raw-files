@@ -1,0 +1,144 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.dummy ^
+.he1
+R. W. LAWLER
+.he2
+DRAFT 6/9/80
+.ss
+.tlinch 9.5
+.twinch 6
+.adjust
+.ce
+1EMERGING FORMS IN TURTLE GEOMETRY0a
+
+
+
+
+
+
+
+
+
+
+
+.ce
+insert nine-fold MPOLYSPI 177 here
+
+
+
+
+
+
+
+
+
+
+.ce
+1ABSTRACT0
+^^^^^We follow the development of a programming idea as an example of "mildly creative" thinking.  Guided by a persistent concen to explore emergence, the idea begins with a concrete inception.  Once this concrete end product is generalized, the former "end" is available as a "means", a procedural tool useful to a super-ordinate level of control.  The elevation of control creates structure.  We conclude by witnessing the flowering of effects from new structure and raise the question of whether such "elevation of control" could be implicated in the growth of cognitive structure.
+
+
+
+.indent 16
+.nofill
+R. W. LAWLER
+Logo Project
+M.I.T. Artificial Intelligence Laboratory and
+^^the Division for Study and Research in Education
+June 1980 
+.indent 0
+.adjust
+.page
+.ri
+1INTRODUCTION0
+^^^^^As educators, one of our major concerns is helping people learn how to think better.  In a series of seminars assembled by Seymour Papert at M.I.T.'s Division for Study and Research in Education, we tried to examine the process of thinking in the context of solving simple problems, e.g. puzzles, by thinking out loud during the attempt to solve those problems.  In the spirit of those seminars, I have undertaken this paper as a case study of the developmpent of a simple but non-trivial idea.  Because the focus is on the development of an idea, a generative process whose timing can never be well planned in advance, the approach here is retrospective.  It is possible for me to take such an approach because my habit of long standing has been to keep an intellectual journal.  The content of this paper is thus a noting of the appearance of ideas, their sources and interconnections.  My hope is that this glimpse of the genesis of an idea will help us see more clearly what kinds of activities and circumstances we should offer our students in the attempt to foster their intellectual growth.
+
+
+.ri
+1A CASE STUDY0
+1.1^^The generative theme of this work has been the idea of emergence.  In a lecture focussed on the history of Artificial Intelligence, Marvin Minsky asked whether, in the human mind, mental coherence is a centrally generated phenomenon or an incidental artifact, emergent from the interaction of parts with clustering procedures.  He remarked further that a rich theory of the kinds of emergence that can occur in the human mind is needed and that it is more likely to come from computer-related sciences than from mathematics for the former confront the issue of complex interaction immediately while the latter has failed to develop any profound method for dealing with the relation of wholes and parts.  At that time, I was sure I didn't know what Marvin meant; now, I am not so certain.
+
+1.2^^From my journal's notes of the ensuing month touching on the issue of emergence (and many of those notes did so) most entries related to language and do so in two aspects which are adequately characterized by the terms ontogenetic and phylogenetic.  One motif, the latter, springs from another observation of Minsky's, that "evolutionary genesis" must be addressed by any theory which purports to explain the human mind.  This observation lead, later, to various works of Susanne Langer, which will be mentioned in more detail later.  The former aspect, the ontogenesis of linguistic forms takes its keynote from the two observations that what is needed is an explanation of structure as an emergent in linguistic development and that mathematics has failed to adequately deal with the problems of parts and wholes and their interactions.  I note these observations not to raise argument but to reflect my building sense of the importance of the phenomenon of emergence and, consequently, a developiong motivation to confront and explore that phenomenon where it might appear accessible.
+
+1.3^^More than a month after the planting of this seed in my mind, the process by which it became embodied began with a terminal session at the computers of the Logo Project.  Claudette, a colleague in a teacher's group, asked me to discuss her work on the computer; she wanted someone to talk to so that she could externalize her ideas, tape record and subsequently analyze their development.  At the end of that session, we spent some time developing a procedure to draw some of the designs shown in Figure^I [1].  I saw at that point the "Squiral" as manifesting emergence in a form investigable in our environement.  This minor insight led to the ruminations in my journal of the folowing morning:
+.indent 2
+.nofill
+"variablized version of Claudette's procedure -
+^^TO^DESIGN^^:distance^^:angle^^:decrement
+^^1^^FORWARD^:distance
+^^2^^RIGHT^^^:angle
+^^3^^DESIGN^^(:distance^-^:decrement)^^:angle^^:decrement
+what I found interesting:
+^^emerging forms:^^^^^^^^^^angle for closed form:^^^^^^^^^^#^spiral^arms
+^^1.^triangle^^^^^^^^^^^^^^^^angle^=^120^^^^^^^^^^^^^^^^^^^^^three
+^^2.^square^^^^^^^^^^^^^^^^^^angle^=^^90^^^^^^^^^^^^^^^^^^^^^four
+^^3.^pentagon^^^^^^^^^^^^^^^^angle^=^^72^^^^^^^^^^^^^^^^^^^^^five
+for angles near to but not equal to the closed form angle, emerging spirals
+form some sort of  envelope of the shrinking figure.  Note -
+^^1.^for zero decrement, the emergent is a circle.
+^^2.^for angles greaster than the closed form angle, the emergent spiral
+^^^^^goes clockwise tighter.
+^^3.^if the decrement is too big, the illusion of emergence disappears...
+^^^^^the illusion seems to depend on -
+^^^^^^^a. near contiguity of corners in the next ring to the side in any
+^^^^^^^^^^prior ring.
+^^^^^^^b.^only a slight precession of the basal form..."
+.indent 0
+.adjust
+
+
+1.4^^When the general issue of the cause of this illusion of emergent form had arisen, I realized it could be investigated simply by using a higher level procedure to manipulate the DESIGN procedure.  The specific question I posed for myself was about the nature of the transformation of a three armed spiral (seen with angles near 120 degrees) to the four armed spiral (seen with angles near 90 degrees).  How did the change in arms and the directional sense occur ?  Was there some sort of flipping phenomenon in the central region ?  Or degeneration to an amorphous mess ?  I had not trustworthy intuition on this point.  Here the computer could come to my aid  by displaying those designs at the requisite level of detail which would permit me to see what I could not imagine.
+
+1.5 I thought the best way to see the transformation from three to four spiral arms would be through an executive procedure which would step-down from 120 to 90 degrees displaying, for each angle, the appropriate design.  Here a technical divagation is necessary to render comprehensible what follows.  Some of the terminals on the Logo system at that time permitted the displaying of "snapshots" of drawings made by procedures.  I intended my executive procedure to display in rapid succession the snapshots generated by secoind super-ordinate procedure.  When next in the Logo lab I tested these procedures but failed of my objective because the software support for the "snapshot" facility was limited with respect to how many drawing lines could be "stored" at one time.  This impasse exhausted the time and efffort I was willing to spend of this idea so I dropped it.
+
+1.6  I followed Marvin's idea that one should be concerned with "evolutionary genesis".  I vaguely recalled having read in Susanne Langer's Philosophy in a New Key some speculations about the genesis of language.  I re-read her recounting of the "FestalOrigins"hypothesis.  That book was written i the early forties.  With her later work available, Mind: An Essay on Feeling, I looked there for new ideas she or others had on the issue of how language came into being  - and read more of that book than her references to that single issue.
+
+1.7  How does such a divagation connect with the geometric designs of our alternate theme ?  We had run into a technical impasse.  Here is how it was resolved.  Explaining to a visitor at the Logo lab that one of the values of a computer system lies in an expansion of one's intuition, I showed him the DESIGN procedure.  Explaining the use of the command XORDOWN [2] available on a second terminal type attached to the Logo system, I stumbled across two facts that I had already known: first, designs on these second terminal types (TV displays with bit-map representation) are not limited in complexity by being restricted to a small list of lines (such was the impasse I had encountered previously); secondly, with the cursor image suppressed, the drawing speed of the TV terminal types could be fast enought eo permit my program for exploring emergence to carry on.  Once this realization was achieved, I coded an executive procedure to manipulate the DESIGN procedure.  
+
+1.8  Reading over the next few days in Langer's book Mind, I encountered the drawing reproduced as Figure^II, her example of an emergent form dominating its component figures.  My reaction: "I can do that easily, and doing so would add a second level of emergent form to the exploratory procedure I am  developping."  I encoded a new executive procedure, SPADES, below (N.B. I do not expect you to interpret this procedure in detail; I present it as an example of vry limited, fixed-purpose procedure):
+.indent 2
+.nofill
+TO^SPADES^^:distance^^:angle
+1^^CLEARSCREEN^^PENUP^^HIDECURSOR
+2^^RIGHT^^90^^BACK^^:distance
+3^^LEFT^^^90^^PENDOWN
+4^^MAKE^^"COUNTER 6
+10^^MAKE^^"BASE^^HERE
+20^RIGHT^^30
+30^DESIGN^:distance^^:angle
+40^PENUP^^SETTURTLE^^:BASE
+50^RIGHT^^30
+60^FORWARD^:distance^^PENDOWN
+70^RIGHT^^30
+80^MAKE^^"COUNTER^^(:COUNTER^^-^1)
+90^IF EQUAL ZERO :COUNTER STOP^^ELSE GO 10
+end
+.indent 0
+.adjust
+This procedure is vulnerable to criticism because of its rigidity, drawing  six figures in emulation of Langer's design regardless of how ill they might fit together.  In a quickly made modification, I composed a final version of a top level control procedure, MPOLYSPI [an abbreviation for Multiple polygonal spiral], cleaned up for public use.  The latter involved an analysis of what variables might possibly be significant in executing the designs and permitting their manipulation at the top level.  This brought the development to the end of a natural cycle.
+
+.ri
+1REFLECTIONS0
+3.1^^The pattern we observe in this procedure development is this:
+.nofill
+.indent 2
+1.^ a special purpose construct is made.
+2.^that construct is variablizied to remove accidental constraints.
+3.^a super-ordinate level of control is introduced to manipulate the
+^^^most interesting variables of the lower level components.
+4.^the final product is rationalized for public accessibility.
+.indent 0
+.adjust
+One can neame the first step a concrete inception, the second a generalization, adn the last a consolidation.  Step number three has no name, yet it appears to be the most significant step in the development: first, because it pre-supposes selection of some range of variables as possibly the most interesting dimensions in the lower level structures; secondly, because it is the essential step in the development of structure.  Call it 1ELEVATION0.  Notice that elevation is a concrete construction based on a survey of the generality of the lower level structures.  It is not a mystery in any sense at all.  One may fairly ask whether this pattern is idiosyncratic or whether it may be characteristic of programmers.  I know of know data which permit answers to the question.
+
+3.2  What general conclusions can we reach about the genesis of this exploratory design procedure, MPOLYSPI ?  This innovation emerged from an insistent concern where both the personal and environmental means were available to construct a theory-in-action for exploring the issue at the center of that concern.
+
+3.3 concludiung paragraph o the genesis opf congitive structures and forward pointer to OCL and otehr articles.
+.page
+.nofill
+[1].
+[2].
+[3].

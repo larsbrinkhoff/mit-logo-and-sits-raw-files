@@ -1,0 +1,234 @@
+<Caution, I have only just begun the editing of this>
+
+
+
+VIII
+
+Compilation of Smalltalk-76
+
+
+
+
+
+The Purpose of Compilation
+
+The compiler takes a single method expressed in the Smalltalk source language
+and translates it to the byte-coded object language.  If it detects errors
+during translation, it notifies the user by inserting an error message into the
+source text at the point of the error.  If no errors are detected, the method is
+installed in the specified message dictionary and immediately becomes part of
+the environment.
+
+The Structure of the Compiler
+
+The compiler has three major phases of operation: initialization, translation,
+and installation.  Initialization builds a symbol table with the names of fields
+of the class and other standard names, such as self.  It also initializes and
+links up the various routines needed during translation.  Translation scans the
+source text and generates object code.  Installation converts certain special
+methods (such as those with no code body) to a special form, installs the object
+code in the message dictionary, and updates the class organizer.
+
+The translation phase is performed by five cooperating modules: the scanner, the
+parser, the tree builder, the optimizer, and the emitter.  The scanner scans the
+source text and tokenizes it.  The parser matches the token stream against the
+productions of the grammar by recursive descent.  The tree builder constructs a
+parse tree with one node per production matched.  The optimizer walks the tree
+finding opportunities for optimization.  The emitter walks the tree emitting
+optimized object code.
+
+The translator operates in three passes.  In pass one, the scanner, the parser,
+and the tree builder march together through the input stream; the scanner and
+parser are coroutines and the builder is a set of subroutines of the parser.  In
+pass two, the optimizer walks the parse tree.  In pass three, the emitter walks
+the parse tree and appends byte codes to the output stream.  Of the three
+passes, only the first is through the source text, and only the third is through
+the object code.  All three passes span the parse tree, the first one building
+it, the second one seeking optimizations, and the third one emitting optimized
+code.
+
+The time taken by a typical compilation is divided as follows:
+
+
+
+Initialization	17%
+
+Translation	61%
+
+Installation	22%
+
+Translation time is typically divided as follows:
+
+
+
+Scanner	42%
+
+Parser	42%
+
+Tree Builder	 6%
+
+Optimizer	 5%
+
+Emitter	 5%
+
+These times were determined using the Smalltalk "spy" facility [see chapter Y].
+Note that a large portion of the time is taken in scanning and parsing.  If the
+method were stored and edited in parsed form, as in the program template
+notation (chapter T), these modules could be eliminated and the compiler would
+become about twice as fast.  Of course, the speed advantage and the clarity of
+program template notation must be weighed against the conciseness and the
+free-form editability of linear text notation.
+
+
+
+The Scanner
+
+The scanner is a typical table-driven one.  Each time it is asked for a token,
+it scans over one identifier, number, or special character and tells its
+coroutine (the parser) what it found by sending a message such as integer: chars
+where chars is a string of the characters forming a token that is an Integer
+literal (see Figure S/P).  The scanner used by the compiler is general enough
+that it is used as a front end to other programs such as a code compressor.
+
+The Parser
+
+The parser is a typical recursive descent type.  When it finds a complete
+syntactic construct it tells its helper (the tree-builder) what it found and the
+helper returns an object that shall represent that construct in enclosing
+constructs. (see Figure P/B) For example, during the parse of x _ y + z, the
+parser executes the following statements:
+
+...
+
+var _ helper variable: 'x'
+
+...
+
+rcvr _ helper variable: 'y'.
+
+...
+
+arg _ helper variable: 'z'.
+
+...
+
+expr _ helper rcvr: rcvr op: '+' args: arg.
+
+...
+
+stmt _ helper assign: var expr: expr
+
+...
+
+The parser is general enough to be used as a front end in other applications
+than compilation.  All one must do is provide a helper other than the tree
+builder.  This technique is used in a program that parses a method and displays
+it as a two-dimensional program template.
+
+The Tree Builder
+
+Each call on the tree builder returns a node of the parse tree.  The node
+belongs to a class associated with the syntactic construct reported by the
+parser, e.g., ParsedAssignment in the last example above, ParsedMessage in the
+next-to-last.  The fields of the node include the arguments of the call (e.g.,
+var and expr in a ParsedAssignment).
+
+The Optimizer
+
+The optimizer makes a top-down scan through the tree.  The scan is performed by
+passing a message to the root node, which passes messages to each of its
+descendants, and so forth.  In response to the message it receives, each node
+returns the number of bytes of object code that it will emit.  Of course, the
+node is able to find out from all its descendants how much code they will emit
+before it must compute its own amount.  Thus, in a single pass through the tree,
+the size of the object code can be determined (see Figure OP).
+
+During the tree walk, any node may attempt an optimization.  For example, a node
+of class ParsedConditional representing ifExpr[thenExpr]elseExpr can tell
+ifExpr to generate jumps for and/or expressions instead of generating
+true/false results.  It can determine the relative destinations of the jumps
+before activating ifExpr by first measuring thenExpr and elseExpr.
+
+Thus, each node must be ready to measure itself and emit code differently when
+it is in normal use or when it is the condition of a conditional.  Another
+distinction is made as well: whether the value of the expression the node
+represents is to be used in further computation (wanted for value) or discarded
+(wanted for effect).  Each node should respond to three different measuring
+messages:
+
+sizeForValue
+
+returns the amount of code the node would emit to evaluate its subtree and to
+return the result.
+
+sizeForEffect: nextPush
+
+returns the amount of code the node would emit to evaluate its subtree and to
+discard the result.  The argument nextPush (if not false) is a variable that the
+parent node knows will be pushed onto the stack immediately after this node
+completes its evaluation (the statements in a block are asked their size from
+right to left).  If the last code emitted by this node would be store&pop var
+and the next code would be var, then this node emits only store without a pop
+and the next node emits var, which has the same overall effect but is less
+expensive.
+
+sizeForTruth: trueSkip falsity: falseSkip
+
+returns the amount of code the node would emit to evaluate its subtree and to
+jump falseSkip when the value is false, trueSkip otherwise.
+
+For some classes of node, some of these messages are defined in terms of each
+other or are defined in superclasses.
+
+Each node remembers certain information it computed during the optimizer pass so
+that it can generate the correct code during the emitter pass.
+
+Because Smalltalk is a structured language without a goto statement, each node
+is able to measure its descendants in an order that assures that the jumps are
+measured after the code they jump over.
+
+The Emitter
+
+At the end of the optimizer pass, the compiler knows how much code will be
+generated by the method, and it allocates exactly the needed amount of space.
+
+The emitter then makes a top-down scan through the tree by passing messages to
+the nodes.  One argument of each message is a stream onto which the node must
+emit the amount of code it promised in the optimizer pass.  Another argument to
+each message is an object that keeps track of the current and maximum depth of
+the stack that will be needed during evaluation; the node must inform that
+object of all pushes and pops (see Figure EM).
+
+Each node should respond to three different measuring messages:
+
+emitForValue: code on: stack
+
+appends bytes to code (informing stack of pushes and pops) to evaluate its
+subtree and to return the result.
+
+emitForEffect: code on: stack
+
+appends bytes to code (informing stack of pushes and pops) to evaluate its
+subtree and to discard the result.
+
+emitForTruth: trueSkip falsity: falseSkip into: code on: stack
+
+appends bytes to code (informing stack of pushes and pops) to evaluate its
+subtree and to jump falseSkip when the value is false, trueSkip otherwise.
+
+As above, some of these messages are defined in terms of each other or are
+defined in superclasses.
+
+Quality of Code
+
+The compiler has no peephole optimizer and no postscans over the object code,
+yet it optimizes boolean expressions perfectly and optimizes out pop-push pairs.
+It is cheaper to walk a parse tree an extra time than to recopy object code
+squeezing out unneeded bytes.
+
+The implementation of parse tree nodes as objects means that they can retain
+state between passes, and that they can receive and pass different messages to
+evaluate their subtrees for different purposes.
+
+
+

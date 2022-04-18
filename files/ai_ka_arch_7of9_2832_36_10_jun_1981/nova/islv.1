@@ -1,0 +1,475 @@
+
+
+A  KNOWLEDGE-BASED
+
+VLSI  DESIGN  SYSTEM
+
+
+
+I.  INTRODUCTION
+II.  INTERNAL REPRESENTATION.
+2.1. Basic Representational Terminology.
+2.2. Contexts.
+2.3. Abstraction Levels.
+2.4. Constraints.
+2.5. Dependencies.
+III.  EXTERNAL REPRESENTATION.
+3.1. The Graphics Display: the Human Interface.
+3.2. The Mapping Between Display and Knowledge Base.
+
+IV.  EXPERT DESIGN AIDS.
+
+4.1. Automated Layout: The Mapping from Topology to Geometry.
+
+
+
+I.  INTRODUCTION	KINCAID (Knowledge-based INteractive Computer
+Aid for Integrated circuit Design) is an interactive system which
+assists designers in creating IC (Integrated Circuit) mask layouts
+from a component type description of a circuit. KINCAID is comprised
+of: A Design Editor. KINCAID overcomes many of the limitations of
+current IC design systems. For example, most current IC design systems
+operate in a "breadth first" manner: they require a designer to fully
+specify the entire circuit at a given level of detail (e.g. logic
+level) before moving on to a more detailed level of specification
+(e.g. sticks level). The system's design editor is capable of
+handling:
+	1) mixed-level design notations.
+	2) mixed, multi-level design specifications.
+	3) multiple design alternatives (contexts).  An Expert Design
+Assistant. Except for some rigidly structured design systems such as
+master slice or standard cell systems, most design systems provide
+only limited assistance to a designer in transforming one level of an
+IC design into a more detailed level (e.g. from sticks to layout
+level), or in maintaining the relationships between the various levels
+of circuit specification. KINCAID is capable of knowledge-based,
+expert system design aids such as automatically carrying out a
+refinement from one level of detail to another.
+
+A Knowledge Editor, for updating and modifying the expert knowledge
+contained in the system's knowledge base.
+
+	KINCAID's external representation of an evolving circuit
+design is via a graphics display. The system permits a designer to use
+mixed-level design notation. For example, at some point in the design
+process, part of a particular design alternative for a circuit may be
+externally represented by rectangles denoting "black box" components,
+part by standard symbols denoting component functionality (e.g. an
+inverter symbol), part by stick-type diagrams specifying the planar
+topology and mask levels, and part by mask layouts. This mixed-level
+notation enables the designer to suppress details until they are
+needed in the design process. The system will automatically maintain
+the relationships between the more abstract and the more detailed
+circuit specifications. This mixed-level specification capability, in
+addition to the capability to specify several alternative designs,
+allows the user and the system to explore a least commitment approach
+to IC design, delaying decisions until they are necessary. See Figure
+1.
+
+II.  INTERNAL REPRESENTATION.
+2.1. Basic Representational Terminology.
+
+The basic KINCAID representational scheme is a semantic net composed
+of nodes and links (relations) and implemented via a relational
+database.
+
+An assertion is simply a list containing an n-ary relation and n
+arguments for that relation.
+				(relation arg1 arg2 . . . argn).
+Assertions comprise the bulk of the relational database's contents.
+
+We will frequently refer to assertion sets.
+				(assertion set A1 (a1 a2 . . .) )
+
+A context is an ordered list of assertion sets: {A1,A2,...,An}.
+Intuitively, the ordering establishes a priority for considering
+information valid: to determine whether a is true, first look for a
+(or ~a) in A1; if no sucess, look in A2, etc. In practice, contexts
+will be used for storing and comparing multiple design alternatives
+(see :2.2) - we anticipate that ordinarily the user will have fewer
+than ten contexts around at a given time.
+				(context C1 (A1 A2 . . .) ) .
+
+The database contains a special assertion set called the base set.
+Typically, this set will contain those assertions which are valid in
+any (or most) contexts.
+
+A semantic category for a node is a particular metaproperty of that
+node. Nodes can either have semantic category "prototype" or
+"instance". The internal form is an assertion, e.g.
+			(semantic category ALU1 prototype).
+
+As mentioned above, a particular node can be assigned the semantic
+category prototype. Intuitively, a prototype node is a generic; in
+practice, it provides a useful shorthand for storing information true
+of many entities.  Assertions which involve only prototype nodes must
+necessarily be in the base set. (Intuititively, this says that
+assertions about prototypes are generally context-independent.)
+
+Another semantic category for a node is instance. Typically, an
+instance will be a member of a class; it will usually be
+context-dependent. Many instances will be objects that have locations
+in a coordinatized workspace perusable by graphical display.
+
+The most important relationship prototype and instance nodes bear
+toward each other is represented by the instance link. An instance
+link connects a prototype node p and an instance node i; the following
+will hold. For any assertion a(p,c) (where c is a particular context),
+if a(p,c) is valid then a(i,c) is valid. Thus in practice, a prototype
+node provides a useful shorthand for storing information true of
+several entities (those designated its instances). From the point of
+view of an instance, a prototype may appear an incomplete description,
+whereas the instance is fully specified.
+
+A specialization link runs from prototype p1 to prototype p2 iff for
+every assertion a(p1,c) about p1 in a context c, a(p2,c) is also
+valid.
+
+An abstraction level link runs from a given node N to a the node A
+representing a particular level of abstraction (e.g. sticks node).
+Nodes connected to N via specialization or instance links also inherit
+an abstraction level link to the same abstraction level node.
+Intuitively, the abstraction level link from N to A indicates that N
+represents a description with A's level of detail.
+
+constraint: instructions for processing unknowns.
+
+evolving circuit
+
+	As an example of how the various relations function, consider
+the following scenario. The knowledge base contains an ALU prototype.
+This prototype has as components an accumulator, a bus, a processing
+unit, and wires connecting these. The knowledge base also contains an
+Accumulator prototype, Bus prototype, Processing Unit prototype, and
+Wire prototype. Because there is more than one wire involved, a list
+of components in the ALU prototype cannot simply point to the other
+prototypes. Some means for distinguishing between copies of a
+prototype is necessary; furthermore, because we are describing an
+attribute of an abstract entity (a prototype), this means should not
+lose any of the abstractness of prototypes.	This is the motivation
+for indefinite nodes. The components list in the ALU prototype is a
+list of indefinite nodes, say, Accumulator indefinite, Bus indefinite,
+Processing Unit indefinite 1, Wire indefinite 1, Wire indefinite 2,
+and Wire indefinite 3. A particular indefinite node will essentially
+consist of simply an individuating name (like Wire indefinite 1) and a
+pointer to a particular prototype. Thus the indefinite node functions
+to provide uniqueness for abstract concepts without losing the level
+of abstraction. The existence of an indefinite node implies the
+existence of some prototype which makes reference (in some way, e.g.
+its components) to the indefinite node's associated prototype.	Now
+suppose the knowledge base also contains three specific instances of
+the ALU prototype: ALU instance 1, ALU instance 2, and ALU instance 3.
+Then the links between prototypes, instances, and indefinite nodes are
+as in Figure 1. [The creation of an instance of a prototype is a
+recursive procedure; whenever an instance of a prototype is created,
+instances of its components are also created.]?
+
+Implicit hierarchies defined by the links.
+:2.2. Contexts.
+
+	The concept of context is particularly useful as applied to
+decision-making. Suppose a user wishes to design an ALU and knows that
+the ALU will have as its components an accumulator, a bus, a
+processing unit, and wires running between these. The user is as yet
+uncommitted toward a particular choice of processing unit. In fact,
+the user has several choices in mind. What the user can then do is
+declare a choice point in the design process; each of the choices for
+a processing unit will then correspond to a new context.	In
+practice, a tree of contexts is created. In the above example, the
+assertions that declared that the ALU was composed of an accumulator,
+a bus, a processing unit, and wires belong to a context c. Each of the
+new contexts ci still live within the environment of c, each still
+having an ALU with the abstract structure described in c. But each has
+additional information, namely, a specific choice of processing unit.
+Thus, a great deal of information is naturally inherited by new
+contexts from their spawning context. The system handles contexts as
+follows: At any given moment the system has a context declared its
+focus of attention. Whenever information is desired, the set of
+assertions belonging to its focus of attention are examined. If this
+context is found inadequate, the parent context is subsequently
+examined. And so forth, until adequate information is found. (Thus an
+offspring context can override information contained by its
+ancestors.) This chain of ancestor contexts represents the user's
+commitment to that particular set of design decisions. If the user
+wishes to change commitments, he or she simply changes the context to
+be considered the focus of attention, say, returning to a previous
+choice point and exploring a new set of choices.  Maintains history.
+Reference to Bobrow?
+
+:2.3. Abstraction Levels.
+	Boolean function level, functional level, switch/gate level,
+stick level and layout level are commonly used levels of abstraction
+in describing a circuit. Associated with each is:
+
+1) A design methodology.
+2) A means for displaying the circuit at that level.
+3) Rules/advice associated with that level.
+4) A means for reasoning about the behavior of the circuit at that
+level. (E.g. the ability to simulate the circuit.)
+
+Metaproperties of abstraction levels:
+
+1) There are procedures (refinement rules) for transforming a circuit
+description at one level into a description at another. There are also
+additional requirements/constraints added when a level is refined.
+
+2) There are levels which are hybrids of simpler levels: e.g. mixed
+stick/gate level notation. All of points (1)-(5) above must then be
+hybridified appropriately. For example, consider point (2) in a mixed
+sticks/layout level. An appropriate compromise must be reached between
+the geometry-dependent display for layout level and the looser
+topology-based display for sticks level. (One heuristic for
+compromise: the less restricted level compromises to meet the
+requirements of more restricted levels.)
+
+3) Certain assertions about a circuit are preserved, regardless of the
+level it is being described at.  Refinement links connect nodes
+corresponding to descriptions of the same circuit at different levels
+of abstraction.
+
+If a user attempts to change something which would normally be
+preserved (as in (3) above), he/she should be alerted by the system.
+Furthermore, if the user decides to make the change, the system will
+attempt to make corresponding changes in descriptions of the circuit
+at other abstraction levels.:2.4. Constraints.:2.5. Dependencies.A
+Mycin-like capability to provide "justifications" for a particular
+system decision.  In terms of rules, metarules, metametarules, etc.
+and their arguments.
+
+Default: "because you told me so."
+
+How/where are justifications attached?
+
+Function of metarules:
+	1) To resolve conflicts in lower order rules by establishing priorities.
+	2) To increase system efficiency.
+
+Rules and metarules should be imbedded in the knowledge base itself.
+Metarules should be distinguishable from rules, even though they will
+have the same representation.
+
+
+Sample rules:
+When deleting an instance, delete all subcomponents and connecting wires.
+
+III. EXTERNAL REPRESENTATION.
+
+
+:3.1. The Graphics Display: the User Interface.
+
+The only visible items on the screen correspond to instances in a
+given context.
+
+Ideas:
+
+A user-defined scroll bar: choose 2 points via mouse to select a
+scrolling direction. Choose a 3rd point in the scroll bar to indicate
+how far to move in that direction.
+
+:3.2. The Mapping Between the
+Display and the Knowledge Base.  Describe MRS.
+
+The Symbolic Drawing Editor.1. Clear drawing DB. 
+	a) Delete all DESIGN INSTANCES.
+
+2. Load Drawing DB (from DRAWING KB).
+
+3. Update (delete and replace) DRAWING KB from DRAWING DB.
+	    Copy old information somewhere (in case of UNDO command.)
+	a) Update the LOWER LEFT CORNER slot in each RECTANGLE.
+	b) Update the TRANSFORM SLOT in each RECTANGLE.
+	
+4. Undo last drawing KB update.
+
+5. 
+
+6. Exit.
+
+7. Save world.
+
+8. Move drawing window.
+
+9. Symbolic drawing manipulation.
+	a) Instantiate.
+
+	b) move cell.
+		Update RECTANGLE coordinates.
+
+	c) Apply <rigid transform> to cell instance.
+
+	d) Show pin names of <cell instance>.
+		( (getval (Pins <cell instance>) ) )
+		
+	e) Draw "wire".
+		Create INTERCONNECTION CELL.
+		Fill in slots.
+
+	e) Place contact.
+
+	f) Route <cell,pin> to <cell,pin>.
+
+	g) 
+
+Frame operations needed:Display the contents of the sl slot in frame fr.
+
+Create a frame named fr, an instance of frame FR.
+
+Delete the frame named fr.
+(Delete a hierarchy of frames?)
+
+Set the contents of slot sl in frame fr to list.
+
+
+IV.  EXPERT DESIGN AIDS.4.1. Automated Layout: the Mapping from
+Topology to Geometry.Harold's baby.
+
+References:
+Brachman, 
+Davis, R.
+
+Friedland, P. Knowledge-based experiment design in molecular genetics.
+Doctoral dissertation. Stanford, California: Stanford University,
+1979.
+
+Genesereth, M., Greiner, R., Smith, D. MRS Manual. 
+
+Lindsay, R., Buchanan, B., Feigenbaum, E., Lederberg, J. Applications
+of Artificial Intelligence for chemical inference: the DENDRAL
+project. New York: McGraw-Hill, 1980.Sandewall, Ideas about Management
+of LISP Data Bases.
+
+Shortliffe, E. Computer-based medical consultation: MYCIN. New York:
+Elsevier/North Holland, 1976.
+
+Stefik, M. Planning with Constraints. Artificial Intelligence.
+Stefik, M. Planning and Metaplanning. Artificial Intelligence.
+Wilensky, Metaplanning.
+
+APPENDIX A: The Contents of the Knowledge Base.
+
+
+Knowledge about relations:
+
+(Relations (Prototype Instance Specialization Isa Component
+ComponentOf Refinement RefinementOf SemanticCategory AbstractionLevel
+Inverse) )(Inverse Prototype Instance)
+
+(Inverse Isa Specialization)
+(Inverse Component ComponentOf)
+(Inverse Refinement RefinementOf)
+(TransitiveRelation Isa Specialization)
+
+List of semantic categories:
+(all (x y) (iff (SemanticCategory x y) (mem y (Prototype Instance)) ) )
+
+Definition of transitivity:
+(all (r w y z) (if (and (TransitiveRelation r) (r w y) (r y z)) (r w z)) )
+
+Inheritance of assertions across instance links:
+(all (p c i) (if (and a(p,c) (Instance i p)) a(i,c)) )
+
+Inheritance of abstraction level across instance and specialization links:
+
+(all (x y z) (if (and (AbstractionLevel x y) (Instance z x))
+(AbstractionLevel z y) ) )
+
+(all (x y z) (if (and (AbstractionLevel x y) (Specialization z x))
+(AbstractionLevel z y) ) )
+
+AbstractionLevel:
+(SemanticCategory prototype)
+
+
+
+Object:
+(SemanticCategory Object Prototype)
+(InstanceAttributes FunctionalDescription Height Length)
+(FunctionalDescription Object ToBeFilled)
+(Specialization Object CellClass Wire)
+
+CellClass:(SemanticCategory CellClass Prototype)
+
+(Isa CellClass Object)(FunctionalDescription CellClass
+ToBeFilled)(Specialization CellClass CellType)
+
+(Instance CellClass ToBeFilled)
+(GraphicsDisplay Box)
+CellType:(SemanticCategory CellType Prototype)
+(Isa CellType CellClass)(FunctionalDescription CellType ToBeFilled)
+(Pins CellType ToBeFilled)
+(Specialization CellType Cell)
+(Instance CellType ToBeFilled)
+
+Cell:
+(SemanticCategory Cell Prototype)
+(Isa Cell CellType)
+(FunctionalDescription Cell ToBeFilled)
+(Pins Cell ToBeFilled)
+(Instance Cell ToBeFilled)
+
+GRAPHICS DISPLAY PROTOTYPES
+
+
+DisplayRoutine:
+(SemanticCategory DisplayRoutine Prototype)
+(Specialization Box)
+
+Box:
+(SemanticCategory Box Prototype)
+(Isa Box DisplayRoutine)
+(Instance Box ToBeFilled) )
+
+( if (DisplayObject Box x) (DisplayText Box (getval
+(FunctionalDescription x))) )
+
+
+Ignore the following:
+
+SOFT TEXT:
+FUNCTIONAL DESCRIPTION	counter
+	shifter
+	memory
+	combinational
+	switch
+	register
+	divider
+	selector
+	clock
+PRIMITIVE SCHEMA CELLASSOCIATED LAYOUT PROCEDURE:
+	LISP function
+ASSOCIATED GRAPHICS DATA STRUCTURE:
+	layout
+HARD TEXT:
+	to be filled
+	TO COMPUTE:
+		fill in
+
+Targets:A design instance cannot be transformed into another instance.
+Only delete and replace are allowed.
+
+No dangling wires. Wires are deleted when instance is.
+
+Pins from wires must be specified before routing. (Lower left,
+clockwise convention?)
+
+Typical bottom up cycle:
+	Instances
+	Connect
+	Create Macro
+
+Drawing data base: coordinatized workspace
+
+Drawing Knowledge Base: skewed toward graphics.
+
+Transform between the two.
+
+Horizontal, vertical line lists as data structures useful for routing alg.
+
+
+
+CONTENTS OF THE DRAWING DATA BASE
+
+1. The names of all symbolic cells on the virtual screen.
+
+2. 
+

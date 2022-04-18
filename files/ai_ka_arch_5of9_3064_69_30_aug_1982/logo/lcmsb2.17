@@ -1,0 +1,736 @@
+.dv press
+.fo 0 timesRoman12
+.fo 1 timesRoman12b
+.fo 2 Helvetica10b
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 1
+--DRAFT--
+
+Logo Curriculum Materials
+
+August 1981
+.sp 3
+
+Student Booklet 2
+
+Using the Logo Operating System
+
+by Daniel H. Watt
+
+c. MIT Logo Group, 1981
+.sp 5
+.fi b
+This introductory Logo reference booklet provides information you will
+need for loading Logo into your computer, using the keyboard, defining
+and editing Logo procedures, saving Logo procedures and pictures on a
+disk and reading them from a disk. At the end of the booklet is a
+reference list of Logo Commands.
+.sp 6
+The development of these materials was supported in part by the National Science Foundation under grant number SED - 7919033 and conducted at the Artificial Intelligence Laboratory, Massachusetts Institute of Technology, Cambridge, Massachusetts. Activities were tested extensively with students in grades  4 - 8, in Brookline, Massachusetts.  The material contained in this document represents the views of its authors and should not be interpreted as necessarily representing the official policies, either expressed or implied, of the National Science Foundation or the United States Government.  
+.chapter "bold(Loading Logo into your Apple Computer)"
+To start using Logo you will need to load the Logo language from a special disk, into the computer's memory. The steps are simple:
+
+.nf L
+1. Turn off the Apple's power switch located at the left rear corner of the Apple.
+
+2. Insert the disk labelled "Logo Release Disk" or "Logo disk" into the slot of the disk 
+drive, and pull the cover down.
+
+3. Turn the power on.
+
+.fi b
+At this point the red light on the disk drive should go on, and you should hear it begin to click and whirr. After several seconds a square bracket,    ` ] '   should appear on the screen and the disk should continue whirring softly. After about one minute, a   "Welcome to Logo"   message should appear.
+
+Sometimes the disk does not make clicking noises. In such a case press the   <RESET>   key, remove the disk, and start the whole process again.
+
+bold(Note for users of Apple integer systems:)
+
+If your computer happens to be equipped with Integer Basic Roms instead of Applesoft Roms, your procedure will be a little different. Follow the first three steps as given. After the computer clicks for a while, a message saying "language not available" will appear, followed by a prompt, ` > ' . When the ` > '  appears, type  BRUN  LOGO  <RETURN>. After about thirty seconds a "Welcome to Logo" message should appear.
+.chapter "bold(Getting Started with the Logo System)"
+.section "bold(Using the Keyboard)"
+The computer keyboard is like an electric typewriter which allows you to communicate
+with the computer.  Like a typewriter it prints each character you type 
+but it prints on the TV screen.  
+The blinking cursor on the TV screen shows you where the next character will appear.
+
+
+
+Here is a Diagram of the Apple II Keyboard
+.bp
+.section "bold(Logo Typing Hints)"
+
+Logo is a computer language, that is, a special code that translates words, symbols and numbers that people understand into electronic signals that the computer understands.  Every computer language has its own special rules which can be
+confusing when you are learning to use it.  When you type something
+the computer does not understand it will complain by sending you an
+error message. If you follow a few simple rules you can avoid most
+typing difficulties.  In these booklets, a word like  bold(<RETURN>)  or   bold(<ESC>) , contained inside   bold(<  >) ,  means  press the key with that label.  Do not type the word   bold("R,E,T,U,R,N")  or  bold("E,S,C").
+
+1. The  ` ? '  symbol at the left of the screen is a prompt.
+
+?
+.fi b
+
+This tells you the computer is waiting for you to type a Logo command.
+
+2.  Pressing the  <RETURN>  key means   do-it!  Press  <RETURN> to send a command to the computer.  Pressing   <RETURN>  at the end of a command line is like putting a "period" at the end of a sentence in English.   To send the computer a command like:
+
+	FORWARD  100,		you have to type
+
+	FORWARD  100   <RETURN>
+
+Try this:
+
+Type		DRAW
+
+Notice that the cursor is next to the "W", and that the computer hasn't done anything yet.
+
+Now press the   <RETURN>   key.
+
+When you press   <RETURN>  the computer carries out your command. It is now ready to draw with the turtle.  You should see a cleared screen with a triangle - "the turtle" - in the center of it.
+
+Now type	FD   50  <RETURN>
+
+The turtle should move forward  50 steps.
+.bp
+3.  Always leave a space after a Logo command or input (except at the
+end of a line).  (The computer needs a space after every word to avoid confusion,
+just as we leave a space after a word in English.)
+
+Examples
+
+	Type	FD	100	not	FD100
+
+	Type	PRINT   "HI	not	 PRINT"HI
+
+
+
+4.  When using  ` " '   as in  PRINT   "HI,  or  READ   "JOHN,  think of the  ` " '   as the first "letter"
+of the name. (Never leave a space after    ` " '  unless you want to print a blank line.)
+
+	Type	PRINT	"HI	not	PRINT"   HI
+				or	 PRINT   "   HI
+
+(The same is true of    ` : '    in  Logo. Never leave a space after   ` : '   .)
+.keep
+
+5.  Explore what happens when you make a typing mistake by
+trying to type some buggy commands. Each of these commands will result in an error message:
+
+.nf l
+Examples:
+
+	FD100   <RETURN>
+
+	FORWARD   <RETURN>
+
+	100   <RETURN>
+
+	PRINT"HI   <RETURN>
+
+	PRINT   "   HI   <RETURN>
+.end_keep
+.bp
+.section "bold(Special Keys on the Keyboard)"
+.fi b
+Some keys, or combinations of keys  have special purposes.  When using combination keys   <CTRL>,   <SHIFT>,  or  <REPT>  hold it down while typing the other
+key.   The   <SHIFT>  key is normally used to print the character marked on the top of the key, just as with an ordinary typewriter. Try typing each of the special keys. Some of them, like  <    >,  <    >  or   <ESC>, won't do anything until you've typed something else.
+
+bold(Commonly Used Keys)
+
+.nf l
+KEY			s(n)USE		s(m)EXPLANATION
+
+<RETURN>		t(n)do-it	t(m)sends a command to the computer and moves
+					t(m)the cursor down to the next line.
+
+<ESC>			t(n)back-space	t(m)erases one character behind the cursor,
+			t(n)rub-out		t(m)and moves the cursor back one space.
+
+<CTRL> - D		t(n)delete	t(m)erases one character at the cursor.
+
+<     >			t(n)move-right		t(m)moves the cursor ahead one space to the right.
+
+<     >			t(n)move-left		t(m)moves the cursor back one space to the left.
+
+<SHIFT> - N		t(n)[		t(m)prints the   ` [ '   symbol on the screen.
+
+<SHIFT> - M		t(n)]		t(m)prints the   ` ] '   symbol on the screen.
+
+<REPT>			t(n)repeat		t(m)repeats the effect of the key you
+					t(m)typed just before typing   <REPT>.
+					t(m)To repeat the effect of a key continuously,
+					t(m)hold down both the key you want to repeat
+					t(m)and the   <REPT>  key, for as long as you want.
+
+<CTRL> - G		t(n)STOP! t(m)stops whatever the computer is doing, and
+					t(m)returns to Logo, ready for a new command.
+
+.fi b
+.keep
+bold(WARNING!!  DO NOT TYPE the    <RESET>    key:)  This will restart the computer, erasing all your procedures, forcing you to restart Logo all over again.
+.end_keep
+.nf l
+.bp
+bold(Less Frequently Used Keys)
+
+KEY			s(n)USE		s(m)EXPLANATION
+
+<CTRL> - E		t(n)move-to-end	t(m)moves the cursor out to the end 
+						t(m)of a line.
+
+<CTRL> - A	       move-to-beginning	t(m)moves the cursor back to the beginning 
+						t(m)of a line.
+
+<CTRL> - K		t(n)"kill"-line	t(m)"kills" or erases entire line 
+						t(m)to the right of the cursor.
+
+<CTRL> - P		previous-line	t(m)prints out the entire last line you typed.
+
+
+bold(Keys for Controlling the Screen in DRAW Mode)
+
+
+<CTRL> - F		t(n)full-screen	t(m)shows the full turtle screen. No text
+						t(m)is visible.
+
+<CTRL> - S		t(n)split-screen	t(m)shows the split screen. The turtle's
+						t(m)drawings and four lines of text are visible.
+
+<CTRL> - T		t(n)text-screen	t(m)shows the full text screen. Turtle drawings
+						t(m)are not visible.
+.fi b
+.chapter "bold(Using the Logo Editor)"
+The Logo procedure editor makes it easy to change or define a procedure.
+In addition to normal typing, you can use special editing keys to:
+
+- add something to a line
+.br
+- rub out and change part of a line
+.br
+- erase an entire line
+.br
+- add a new line
+
+
+To change an existing procedure type ED, or EDIT followed by the procedure
+name.  To start writing a new procedure using the editor, type TO, followed by a new procedure name.  To stop using the editor, and return to
+Logo command mode, type  <CTRL> - C.	
+
+.section "bold(Special Commands for Editing)"
+
+.fi b
+Once you type EDIT or TO, you will be communicating directly with the
+editor, instead of the Logo interpreter. Logo commands will not be
+carried out. While using the editor you can teach the computer a new
+procedure, or change an old procedure.  By moving the edit cursor and
+using editing commands, you can make changes in what has been typed.
+
+.keep
+bold(Commands to Finish Using the Editor)
+
+<CTRL> - C		return-to-Logo			t(m)This tells the computer that you are 
+				t(m)finished editing and ready to return
+           			t(m)to Logo command mode.
+
+<CTRL> - G		t(n)STOP-editing	t(m)this also tells the computer to return
+			t(n)erase-editing	t(m)to Logo command mode, but erases
+						t(m)the editing you have just done.  Use this
+						t(m)only when you have made a mistake while
+						t(m)editing, and want things to be the way
+						t(m)they were before you started.
+				
+.end_keep
+
+.keep
+
+bold(Commands to Move the Cursor)
+
+You can move the edit cursor using the  <CTRL>  key, and the arrow keys.
+
+.nf L
+KEY			s(n)USE		s(m)EXPLANATION
+
+<CTRL> - P		t(n)move-up	t(m)moves the cursor up one line.
+
+<CTRL> - N		t(n)move-down	t(m)moves the cursor down one line.
+
+<     > 		t(n)move-right	t(m)moves the cursor right one space.
+
+<     > 		t(n)move-left	t(m)moves cursor left one space.
+
+<CTRL> - E		t(n)move-to-end	t(m)moves the cursor out to the end 
+						t(m)of a line.
+
+<CTRL> - A	         move-to-beginning	t(m)moves the cursor back to the beginning 
+						t(m)of a line.
+
+<REPT>			t(n)repeat	t(m)repeats the effect of the key you
+					t(m)typed just before typing   <REPT>.
+					t(m)To repeat the effect of a key continuously,
+					t(m)hold down both the key you want to repeat
+					t(m)and the   <REPT>   key for as long as you want.
+.end_keep
+
+.keep
+bold(Commands for Moving the Cursor When The Screen is Full)
+
+.fi b
+When you have typed more text than will fit on the computer's screen at any one time, there are three editing commands that allow you to move the cursor forward or back one "screen" at a time.
+.nf l
+
+KEY			s(n)USE		s(m)EXPLANATION
+
+<CTRL> - B	       back-one-screen		t(m)moves the cursor back to the previous
+						t(m)screen of text.
+
+<CTRL> - F	      forward-one-screen	t(m)moves the cursor forward to the next
+						t(m)screen of text.
+
+<CTRL> - L		t(n)center	t(m)centers the cursor so that the line
+						t(m)it is on is at the center of the screen.
+.end_keep
+
+.keep
+bold(Commands for Changing the Text)
+
+KEY			s(n)USE		s(m)EXPLANATION
+
+<ESC>			t(n)back-space	t(m)moves the cursor back one space and
+			t(n)rub-out	t(m)erases the character behind the cursor.
+
+<CTRL> - D		t(n)delete			t(m)erases the character at the cursor.
+
+<CTRL> - K		t(n)"kill"-line	t(m)"kills" or erases entire line 
+						t(m)to the right of the cursor.
+
+<RETURN>		t(n)new-line                     t(m)creates a new line and moves the cursor 
+                                        t(m)down to the beginning of the new line.
+				t(m)If there is any text to the right
+				t(m)of the cursor it will be moved too.
+
+<CTRL> - O		t(n)open-line	t(m)creates a new line at the cursor
+			     t(m)and moves all the other lines down.
+.end_keep
+.bp
+.section "bold(An Example to Help You Learn to Use the Logo Editor)"
+
+.fi b
+The best way to learn to use the Logo editor is to try editing a procedure.
+If you already have a procedure, you can edit it by typing:
+
+	EDIT	(name of your procedure)	<RETURN>
+
+Then experiment with the different editing commands to see what to do.
+When you are finished editing type
+.nf L
+
+	<CTRL> - C
+
+.keep
+.fi b
+
+To show you a little about how to use the editor, here is a simple example. You you can type
+each command and follow along using your computer if you wish.
+
+First, you'll need a simple procedure to practice on.  Type in a
+procedure like this:
+
+.nf l
+	TO   HI    <RETURN>
+
+.fi b
+The TV screen will clear, with  TO  HI  at the upper left hand corner, and LOGO SCREEN EDITOR printed at the bottom. You can now copy the next two lines.
+
+
+.nf l
+	PRINT   [HELLO  FRIEND]  <RETURN>
+	END   <RETURN>
+
+Your procedure is now complete. To return from edit mode to Logo command mode, type
+
+	<CTRL> - C
+.end_keep
+
+.keep
+To try out the procedure, type
+
+	HI  <RETURN>
+
+.end_keep
+.keep
+To print out all the steps in your procedure, type
+
+	PO   HI   <RETURN>		t(m)PO  is short for "print out."
+
+The computer will now print
+
+	TO   HI
+	 PRINT   [ HELLO   FRIEND ]
+	END
+.end_keep
+.keep
+
+Now you can use the editor to change the procedure.  Type:
+
+	EDIT   HI   <RETURN>
+
+.fi b
+and the entire procedure will be printed on the editing screen, with the edit
+cursor at the T in the upper left-hand corner. (The underlining  (__)  shows the position of the cursor.)
+
+.nf l
+	TO   HI
+	PRINT  [HELLO   FRIEND]
+	END
+.end_keep
+
+.fi b
+.keep
+Here's how you could add the word "MY" between "HELLO" and "FRIEND".
+
+1.  Move the edit cursor down one line using 
+
+.nf l
+	<CTRL> - N     		t(m)TO   HI
+				t(m)PRINT   [HELLO   FRIEND]
+				t(m)END
+.end_keep
+.keep
+2.  Move the cursor over several spaces using
+
+	<     > 			t(m)TO   HI
+				t(m)PRINT   [HELLO__FRIEND]
+				t(m)END
+.end_keep
+.keep
+
+3.  Type in the new word.
+
+	<SPACE>  MY			t(m)TO   HI
+				t(m)PRINT   [HELLO   MY__FRIEND]
+				t(m)END
+.end_keep
+
+.keep
+.fi b
+4.  If this was all you wanted to do, you could
+return to Logo command mode by typing
+
+	<CTRL> -  C
+
+.end_keep
+.keep
+Suppose you wanted to add another line before doing that.  
+
+1. Move the cursor out to the end of the line it is
+already on, using
+
+.nf l
+	<     >			t(m)TO   HI
+				t(m)PRINT   [HELLO   MY   FRIEND] __
+				t(m)END
+.end_keep
+
+.keep
+2. To move the cursor down and open up a new line, type
+
+	<RETURN>				t(m)TO   HI
+				t(m)PRINT   [HELLO   MY   FRIEND]
+				t(m)__
+				t(m)END
+.end_keep
+
+.keep
+3. Now, type in a new line.  For example,
+
+				t(m)TO   HI
+				t(m)PRINT   [HELLO   MY   FRIEND]
+				t(m)PRINT   [HOW ARE YOU TODAY?]__
+				t(m)END
+.end_keep
+
+.keep
+.fi b
+4. The procedure has now been changed, and if you are satisfied, type
+
+	<CTRL> - C
+
+This will return you to Logo command mode ready to type regular Logo commands. The computer will now print
+
+	HI   DEFINED
+
+.end_keep
+.bp
+You can print out the procedure by typing
+
+	PO   HI   <RETURN>
+
+Or try out the new command by typing
+
+	HI    <RETURN>
+
+
+.section "bold(Defining More Than One Procedure at a Time)"
+
+
+0You can define more than one procedure at a time, using the editor.  After
+typing END, go on to define another procedure in the usual way. When you are finished defining all your procedures, type
+
+	<CTRL> - C
+.fi b
+.chapter "bold(Saving and Recalling Information)"
+.section "bold(Saving Your Procedures on a Disk)"
+Once you have taught the computer some new procedures you may want to save them, so that you can use the procedures
+at a later date.
+
+First make sure that you have a Logo file disk. (Information about
+making Logo file disks is available in bold(Teacher Booklet 1), and
+in the Instruction Manual that comes with the Logo disk.)
+
+Next, open the cover of the disk drive, and carefully insert the disk, making sure that the label is on top, and goes into the slot last. See the diagram below.
+.keep
+
+
+
+
+
+
+
+
+
+.end_keep
+
+
+When the disk is inserted all the way, close the cover.
+
+Once your disk is in place, you should probably leave it there until you are finished using the computer.
+
+Before saving your procedures it is a good idea to type:
+
+	POTS   			t(m)POTS is short for "print out titles."
+
+The computer will print a list of the names of all the procedures you are about to save.
+
+To save the procedures on the disk type:
+.nf l
+
+	SAVE   "JOHN		t(m)"JOHN is the name of a file. 
+				t(m)You can choose any one-word name you like.
+.fi b
+
+You must type   ` " '   before the name! Do not type    ` " '   after the name.
+
+	SAVE   "JOHN	not	SAVE   "JOHN"
+
+You may check to see that your file is properly stored on the disk by typing:
+
+	CATALOG
+
+The computer will now print a list of all the files stored on the disk. You will see your new file among them. It will be called  JOHN.LOGO. The  .LOGO  after  JOHN  is the computer's way of remembering that  "JOHN   is the name of a  Logo  file. Since all your files will be  Logo  files, you only have to remember the name   "JOHN.
+
+You can choose any name you like for a file name. If you are not used to computer files it might be a good idea to  use your own name at first.
+.section "bold(Reading Files From a Disk.)"
+
+To get procedures back into the computer's memory from the disk, type:
+.nf l
+
+	READ   "JOHN		t(m)Use your file name instead of   "JOHN,
+				t(m)of course.
+.fi b
+
+The computer will print a message listing all the new procedures that have been defined.
+
+.section "bold(Erasing Files From a Disk.)"
+
+To erase a file from a disk, type:
+
+.nf l
+	ERASEFILE   "JOHN
+
+.fi b
+When you erase a file, you only change what is on the disk. The information in the computer's working memory is not changed. It is important to separate the disk memory and the computer's working memory in your thinking. File commands   SAVE  and  READ  transfer information between the working memory and the disk, without changing the information. ERASEFILE erases information from the disk, without changing the working memory.
+
+
+bold(Warning: Be sure not to erase a file that you still want. An error in erasing files can be a disaster because you can lose information it may have taken you a long time to create!)
+.bp
+.section "bold(Some Suggestions About Filing For Beginners.)"
+
+
+It is a good idea to always use the same file name, when you are first starting out. Your own name would be a good choice, especially if you share the same disk with other people. Here is a good method for making sure you never lose your information.
+
+1. When you first start using the computer type   GOODBYE   to clear the computer's working memory.
+
+2. Read your file by typing  READ  "JOHN   (if your name is John). This will return all your old procedures to the computer's working memory.
+
+3. After writing a new procedure and testing it to see if it works, type  SAVE  "JOHN  (using your own name, of course).  In this way you will save all your procedures as you go along.
+
+
+bold(WARNING!!!   Be sure to  READ  your file when you start work. If you  SAVE  new procedures before READing your old ones, you will lose all your old procedures!!!)
+
+
+4. When you are all finished working, type GOODBYE. This will leave the computer's working memory clear for the next user.
+
+.section "bold(Saving Logo Pictures as Files on a Disk)"
+
+Logo commands  SAVEPICT,  READPICT,  and  ERASEPICT  can be used to save pictures on your disk, read them from the disk, or erase a picture file from a disk.
+
+To save a picture, yopu must have a Logo turtle drawing on the TV screen. Choose a name for the picture and type:
+
+.nf l
+	SAVEPICT   "BUTTERFLY		t(m)Or any name you choose.
+
+.fi b
+If you then type CATALOG,  you will see that there is a file called  BUTTERFLY.PICT stored on the disk.  The picture on your screen will not be changed by SAVEPICT.
+
+To read a picture from the disk, type:
+
+	READPICT   "BUTTERFLY
+
+This will cause the computer to draw the picture (the one previously saved with the name  "BUTTERFLY ) on the TV screen. Any picture that had been there will be erased as the new one is drawn.
+
+Picture files use up a lot of disk memory. You may need to erase old pictures in order to have room to store new ones. The command
+
+	ERASEPICT   "BUTTERFLY
+
+will erase the picture file from the disk.
+
+.chapter "bold(Reference List of Logo Commands)"
+.section "bold(Turtle and Screen Control Commands)"
+
+bold(Turtle Commands)
+.nf l
+Command			s(m)Short Form		s(n)Example with Input
+
+DRAW
+NODRAW 	t(m)ND
+
+FORWARD   t(m)FD			   			  t(n)FORWARD   30
+BACK   t(m)BK			   			  t(n)BACK   50
+
+RIGHT   t(m)RT  			   			  t(n)RIGHT   45
+LEFT   t(m)LT			   			  t(n)LEFT   60
+
+PENUP      t(m)PU		
+PENDOWN   t(m)PD		
+
+PENCOLOR      t(m)PC		   		  t(n)PENCOLOR   5
+
+BACKGROUND		   		  t(n)BACKGROUND   1
+
+CLEARSCREEN      t(m)CS
+
+HIDETURTLE      t(m)HT		
+SHOWTURTLE   t(m)ST
+
+HOME
+
+SPLITSCREEN
+FULLSCREEN
+
+bold(Special Keys for Screen Control in DRAW  Mode)
+
+	<CTRL> -  T			t(n)Text Screen
+
+	<CTRL> -  F			t(n)Full Turtle Screen
+
+	<CTRL> -  S			t(n)Split Turtle Screen
+.bp
+.section "bold(Circle Procedures, REPEAT and Other Commands)"
+
+	Command			s(n)Example with Input
+
+	RCIRCLE						t(n)RCIRCLE   50
+	LCIRCLE						t(n)LCIRCLE   50
+
+	RARC			t(n)RARC   25
+	LARC			t(n)LARC   25
+
+
+	REPEAT			t(m)REPEAT   10   [ FORWARD  10  RIGHT  36 ]
+			t(m)REPEAT   5    [ BOX   FORWARD  20 ]
+
+	PRINT			t(m)PRINT   "HELLO
+			t(m)PRINT   [ HELLO,  HOW  ARE  YOU? ]
+			t(m)PRINT   [ 5  +  3  =  ]
+			t(m)PRINT   5  +  3
+			t(m)PRINT   [ ]
+
+bold(Arithmetic and Numbers)
+
+	+		t(m)48  +  39
+	-		t(m)PRINT   29  -  15
+	*		t(m)RIGHT   7  *  20
+	/		t(m)FORWARD   100 / 10
+
+	RANDOM		t(m)PRINT   RANDOM  10
+			t(m)REPEAT   20   [ PRINT  RANDOM  100 ]
+			t(m)REPEAT   15   [ BACKGROUND   RANDOM  6 ]
+			t(m)RIGHT   ( RANDOM  10 ) * 10
+.bp
+.section "bold(Commands for Editing and Saving Procedures)"
+
+bold(Commands for Editing and Examining Your Work:)
+
+.nf l
+	Command			s(m)Explanation
+
+	CLEARTEXT		t(m)clears all text from the TV screen.
+
+	NODRAW   			t(m)clears all text and turtle drawings.
+	ND
+
+     PRINTOUT  (procedure name)	t(m)prints out the procedure.
+	   PO  (procedure name)
+
+	POTS			t(m)prints the titles of all procedures.
+				t(m)POTS  is short for   PRINTOUT  TITLES
+
+	CATALOG			t(m)prints a list of all the files 
+				t(m)on the disk you are using.
+
+        EDIT  (procedure name)	t(m)starts the editor with the text of
+          ED  (procedure name)					t(m)your procedure displayed on the screen.
+
+	<CTRL> - C		t(m)finishes editing and returns
+				t(m)to Logo command mode.
+
+      ERASE   (procedure name)	t(m)erases the procedure you name from
+         ER   (procedure name)	t(m)the computer's working memory.
+				t(m)If the procedure was already saved in a disk file,
+				t(m)it will still be there next time that file is read,
+				t(m)unless the file is saved again, after erasing
+				t(m)the procedure.
+
+.keep
+
+bold(Commands for reading and saving files:)
+
+
+	READ  "JOHN		t(m)reads the information in a disk file
+				t(m)named   "JOHN,   and  places it in
+				t(m)the computer's working memory.
+
+	SAVE  "JOHN		t(m)Creates a file named   "JOHN on the disk,
+				t(m)and saves the information currently 
+				t(m)in the computer's working memory,
+				t(m)in that disk file.
+
+	ERASEFILE   "JOHN	t(m)Erases a file named   "JOHN  from the disk.
+
+
+bold(Commands for reading and saving picture files:)
+
+
+	READPICT   "BUTTERFLY	t(m)Reads a picture file named  "BUTTERFLY
+				t(m)from the disk, and displays that picture
+				t(m)on the TV screen.
+
+	SAVEPICT   "BUTTERFLY	t(m)Creates a picture file called  "BUTTERFLY
+				t(m)on the disk, and stores a turtle picture
+				t(m)currently on the screen, in that file.
+
+	ERASEPICT   "BUTTERFLY	t(m)Erases a picture file named   "BUTTERFLY
+				t(m)from the disk.
+.end_keep

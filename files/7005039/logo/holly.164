@@ -1,0 +1,431 @@
+.xgp
+.font 0 30vr
+.font 1 37vrb
+.dummy @
+.ds
+.adjust
+.ce
+1Profile; Holly0
+
+Holly is one of the brightest, most successful students in our project
+(her most recent national achievement test scores placed her in the
+99th percentile).  In her regular school work, Holly loves reading and
+writing, but finds mathematics and science "boring".  She enjoys
+"playing with words," and prides herself on her creativity and the
+uniqueness of her ideas.
+
+While Holly was one of the most able LOGO students, she was one of the
+least enthusiastic.  She carried out two interesting and unique turtle
+geometry projects, but announced that she was "bored with drawing
+pictures".  She rarely initiated project ideas, but responded very well
+to suggestions.  She carried out two complex "advanced" projects:
+programming the computer to play "tictactoe", and writing a program
+that would generate a series of "silly" stories, by randomly
+substituting nouns, verbs, adjectives, etc. for those in the original story.
+
+Holly seemed to like the idea of each of her large projects, and
+was very quick to learn the LOGO commands and programming ideas
+necessary to carry them out.  Although she found the necessary detailed
+work of planning, typing, testing and debugging to be quite tedius, she
+worked quite steadily over a number of class periods, and finished both
+projects quite satisfactorily.
+
+Holly was always extremely responsive to "testing" and to the teacher's
+sugestions.  She would often understand and absorb a new idea at the
+first hearing -- resolving minor problems by experimentation.  Holly
+was also responsive to error messages from the computer, corrected her
+mistakes when she could, and was conscientious about asking for help
+when she needed it.
+
+Holy also enjoyed helping others.  She developed a strong relationship
+with Tammy, and regularly helped her with the details of her work.
+
+.block 5
+1I -- Holly's Working Style0
+.br
+Holly's way of working in the LOGO classes offered a clear
+demonstration of the skills and strategies that make her an extremely
+successful student.
+
+11.0 Holly chooses interesting projects and sticks with them.
+She has a sense of what it means to be "creative", and has the ability
+to carry it off.  Her ideas are always a little bit different than
+those of her peers, and Holly values this.  Holy recognizes the value
+of completing a project, and is willing to continue with the work
+necessary to fill in the details of an idea, even after it is no longer
+"fun" or "creative".  In this way, her completed work tends to have a
+superior quality.  On the other hand, often while completing a project,
+Holly would declare that the necessary work was "boring".
+
+12.0 Holly is willing to explore on her own. She attends to
+error messages, and corrects herself when she can.  When she gets stuck
+she immediately asks for help -- and is usually aware of exactly where
+the confusion is.
+
+From the very beginning of classes, Holly's dribble file reveals a lot
+of exploratory activities.  She would try out new commands, and was
+able to debug spelling or syntax errors by interpreting the error
+messages she received.  If she was confused the first time a particular
+bug appeared, she would usually know exactly what to do the second time.
+
+13. 0 Holly follows directions explicitly. She absorbs new
+approaches without being confused.  She applies the same approach of
+confident exploration to new ideas she has been taught, that she
+applies to her own experimentation.  Only when a bug appears does she
+question what she is doing, and ask for help.  Holly's two large
+projects, her TICTACTOE game, and her MADLIB story generator, both
+involved her with the use of new LOGO commands, new syntax and new
+programming ideas.  She seemed to absorb most of these ideas on first
+exposure -- copying a formula, rather than analyzing.  Occasionally
+this led to a bug which she did not understand.  Usually it led to
+success in using the new idea with little difficulty.
+
+14. 0Holly adds her own creative variations to other people's
+ideas.  Holly can easily find a new "wrinkle" or a creative way to do
+something.  Her first project (SMILY -- see below), was a totally
+unique way to draw a face.  She used an extremely clever set of words,
+to make a funny set of stories, in her madlib project.  In this way,
+Holly was able to adapt an idea -- my idea of a madlib procedure, for
+example -- and make it uniquely and specially her own.
+
+There were, however, some aspects of Holly's work that tended to
+interfere with her success as a student.
+
+15. 0Holly did not show much initiative in choosing projects.
+When finished with one piece of work, Holly tended to feel aimless, at
+loose ends, until she had redirected her energy.  At these times she
+seemed to want direction from another person.  When offered a choice of
+alternatives, she was able to easily choose among them -- but the
+choices themselves did not come easily to her.
+
+16. 0Holly's major approach seemed to be "exploratory" rather
+than "analytical."  She was very comfortable at the "try it out, and
+debug it," approach; but much less successful with planning and using
+analytical techniques to solve problems, and avoid difficulties.  (See
+below for clear examples of this difficulty in Holly's work with turtle
+geometry).
+
+17. 0Holly tended to get bored with the details of a project,
+long before it was completed. She would persevere out of a
+committment to "completeness", rather than out of a sense of enjoyment
+of her work.  This left her with a rather anti-climatic feeling at the
+end of a project, rather than the satisfaction of a job well done,
+which she could have had.
+
+In part, this kind of feeling is a result of her lack of analysis --
+she would start a long project, intrigued with the idea, not
+realizing how much detailed work was involved.  Partly it was a result
+of my suggesting complex projects to her, to give her a better sense of
+what she could accomplish with the computer.  In general, it seems that
+she had some difficulty in finding the proper balance between the
+originality and power of what she wanted the computer to do -- and the
+complexity of detail needed to bring it off.  (See a discussion of
+Holly's TICTACTOE and MADLIB projects for more detailed description of
+this kind of dilemma.)
+
+1II -- Holly's Work with Turtle Geometry0
+.br
+Holly started out with an excellent sense of how to manipulate the
+turtle, together with a strong desire to explore beyond what she alrady
+knew, to find new ways of using the computer.  When she was being shown
+how to use forward and turn commands, Holly was asking how to leave
+spaces in a drawing (I showed her PENUP and PENDOWN, which she used
+immediately).  As soon as she began drawing with the turtle she asked
+about how to make curved lines.  She quickly got into spinning designs,
+with reversing spins, and with finding the largest input she could to a
+SPIN command.
+
+Holly's very first turtle drawing exploration led to a project taking
+three class periods to complete -- her unique "smily face."  (Figure H-1)
+.block 23
+.figure 21
+.ce
+Figure H-1: SMILY
+
+As Holly worked on this project, her approach was to explore each part
+of the figure, writing down the correct steps -- then make each part a
+procedure.  The greatest difficulty was in making the mouth.  Although
+Holly had a very good sense of what she wanted to do, and a plan drawn
+on paper, she had a lot of difficulty figuring out how to make the
+mouth symmetrical.  She worked by a process of trial and error, and did
+not do any calculations as she worked.  Once she finished the mouth,
+she did use an approach involving symmetry to make the "SMILE", the
+upper part of the mouth.
+.block 18
+.figure 16
+.ce
+Figure H-2: MOUTH and SMILE
+
+It seemed that she developed a sense of how she could make use of the
+numbers she had already used, in completing her project, while
+continuing to work in an exploratory mode.
+
+.epage 1
+By the time she completed this project, Holly had mastered the use of
+90, 30 and 180 degrees, had learned how to use symmetry, had
+mastered the basic idea of procedures, sub and super-procedures, and
+had a good understanding of how to use error messages for debugging.
+
+Holly's next project in turtle geometry arose out of some explorations
+she was doing with SPIN commands.  Combining SPINs with forwards and
+circles, she got the idea of making a cowboy, twirling a rope.  I
+suggested that this would make a nice, although difficult project.
+Holly made the cowboy quite nicely, and then decided to put a hat on
+his head.  Since the turtle was spinning at the end of a loop, I had to
+show her how to reverse the steps of SPINs, turns and forwards, to get
+the turtle back to where it started, so that she could add the hat.
+Holly needed help with debugging turtle state problems several times
+during this project.  I introduced her to the idea of "playing
+computer" -- working out the bugs by going through a procedure step by
+step.  I also encouraged her to number her steps by fives, and to use
+subprocedures.  She did not choose to use subprocedures for the COWBOY,
+but did ultimately use subprocedures to draw and locate the HAT.
+(Figure H-4)
+
+.epage 1
+The rest of Holly's turtle geometry work consisted of small projects:
+some spinning designs, an oval, a clock, and a TICTACTOE "board" that
+turned into her next major projects.  In working on her TICTACTOE
+board, Holly made use of the same kind of exploratory approach --
+combined with a lack of overall analysis -- that she used in her SMILY
+project.  Her final drawing of a TICTACTOE board, made use of
+horizontal, but not vertical symmetry, and had uneven spacing.  It
+seems clear from analysis of her dribble file, Holly's idea of what a
+TICTACTOE board looks like:  two lines crossing two other lines at
+right angles.  She did not have the idea of the board consisting of
+"nine squares", which would have led to a symmetrical drawing, and
+simplified her trial and error work, in making the procedure.
+Similarly, in making her "X", for use in the TICTACTOE goame, Holly
+worked by a process of trial and error, to get a somewhat asymmetrical
+X, rather than an analytical approach.
+.block 26
+.figure 10
+.ce
+Holly's TicTacToe Board@@@@@@@@@@@"Idealized TicTacToe Board
+
+.figure 7
+.ce
+Holly's X@@@@@@@@@@@@@@@@@@@@@@"Idealized" X
+
+.ce
+FIGURE H-5
+
+In making her X, Holly did make use of 30, 60 and 90 degree angles,
+eventually combining them into 120 degree angles, which she used at
+both top corners of the X.
+
+1III - Holly's Work on Major Interactive Projects
+.br
+TicTacToe and Madlib0
+.br
+The TicTacToe project lasted for seven class sessions.  Holly had
+expressed a sense of boredom with turtle geometry, and a curiosity
+about what else the computer could do.  When she used the turtle to
+draw a tictactoe board, I suggested that she develop this idea further,
+making a game which could be played by two people, in which the
+computer would draw the game, and keep track of the score.  A
+possibility of making the computer one of the players was put off until
+later.
+
+In order to carry out this project, Holly had to learn a number of new
+ideas about LOGO:
+.nofill
+.indent 6
+the use of TYPE and PRINT commands
+the use of MAKE to name points and variables
+the use of REQUEST to get inputs from the players
+the use of SETT to place the turtle at the right spot to 
+	draw an X or 0
+the use of IF and =, to determine where the next move should go; as
+	well as the status of the game
+the use of lists to keep track of moves and of winning combinations
+the use of SENTENCE to add new elements to a list
+setting up a data structure to keep track of the game
+functional names for subprocedures
+.indent 0
+.adjust
+Since I knew that it would be difficult for Holly to absorb all this
+new material, I adopted an approach of suggesting things to her in
+smallish doses, as she expressed a need for them.  We would talk
+through the procedure first, as I tried to elicit as much description
+from her as possible, of what she wanted the computer to do.  After
+talking an idea through verbally, I would show her how to translate it
+into LOGO.  Together we would establish the pattern that should be
+followed, writing down the steps and sequences in Holly's notebook.
+Holly then would copy them with careful attention to detail.
+
+Holly Functioned extremely well in this mode.  Although she did not
+fully understandn what she was doing, she felt confident that she could
+get the bugs worked out.  Although this project required a lot of
+typing, Holly was an excellent typist, and made few typing errors.
+When she did need to correct, revise or add to a line, she easily
+learned to use EDL and CTRL-N, as editing aids.
+
+The problems occured when Holly began to make the program intelligent
+enough to keep track of moves qnd record a win by either player, or a
+tie.  Here she ran into difficulty because she was a bit confused about
+the overall structure of her programs -- not always sure where a
+particular subprocedure should be put -- into PLAY1 and PLAY2, her key
+subprocedures, or into a sub-sub-procedure.  In such a case, "playing
+computer" was again needed, and Holly was not able to resolve these
+bugs without help.  Once the bugs were found, however, Holly seemed to
+understand what had caused the bug, and why it had been fixed.
+
+One example of this type of problem should suffice.  Near the end of
+the project, Holly had completed her game to the point where it would
+announce a winner, draw a line through the three Xs or 0s, and stop.
+If the game was a tie, however, the computer would just keep playing,
+asking for additional moves.  I asked Holly how she thought the
+computer could keep track of whether the game was a tie.  After some
+thought, she suggested having the computer count the number of moves.
+If the total number of moves is nine, the computer declares the game a
+tie, and stops.
+
+.epage 2
+In implementing this idea, I reminded Holly of how to initialize the
+variable "COUNT, by using MAKE "COUNT 0, and how to increase it by
+using MAKE "COUNT :COUNT+1.  The problem was, where to put these
+instructions, and the final game ending instruction, IF :COUNT = 9
+STOPLEVEL.  By talking it through, we realized that the initialization
+of "COUNT should go into the superprocedure, TICTACTOE, and that the
+increases should go into the PLAY1 and PLAY2 procedures.  Holly also
+realized that the ending condition only needed to be put into PLAY1,
+because the value of "COUNT could only be 9 during the first player's
+turn. 
+
+What Holly forgot, was to put the line MAKE "COUNT :COUNT+1, into PLAY2
+as well as PLAY1.  Thus the count condition did not work.  Holly could
+not debug this by herself.  I showed her how to PR :COUNT (which
+printed 5), indicating that only the odd moves had been counted.  Then
+we printed out PLAY2, and Holly realized that MAKE "COUNT :COUNT+1 was
+missing.  She added it at the appropriate place with no difficulty.
+
+.ce
+ .  .  .  .  .  .  .
+
+MADLIB lasted for five class sessions. After completing her TICTACTOE
+project, Holly was at a loss for what to do nexct.  I suggested a
+choice of six different projects.  The idea of doing a "madlib" story
+was the most appealing of the six.  The basic idea is simple.  The
+computer prints out a simple story, substituting randomly chosen nouns,
+verbs, adjectives, etc., for specific words in the story.  This project
+offered many fewer "new learnings", for Holly, and so was one that she
+could readily manage on her own.  The new ideas she had to learn were these:
+
+.nofill
+.indent 6
+procedures with outputs
+the use of RANDOM to choose a number which would determine
+	the particular word to be OUTPUT from a preset list
+the use of % to create spaces in TYPEd output
+the distinction between TYPE and PRINT
+
+.indent 0 
+.adjust
+Once I showed Holly the syntax for using RANDOM and OUTPUT, she was
+able to carry through the project almost entirely on her own.  The
+structure of the project was much simpler than that of the TICTACTOE
+project, so that when bugs occured, Holly could usually fix them
+herself.  She had a little difficulty understanding that she had to
+provide an output for each number, 0 through 9, output by RANDOM.  In
+some of her procedures she listed 10 rather than 0, and would sometimes
+get a confusing "NOUN DIDN'T OUTPUT AT LEVEL 1 LINE -- in MADLIB."
+This message was confusing to Holly because it occurred very seldom
+(approximately once out of every ten tries).
+NOUN appeared to work perfectly some of the time and not work at all at
+other times.  As we debugged each one of her subprocedures Holly
+gradually came to understand the cause of this occasional problem.
+
+Another more straightforward bug in the MADLIB procedure involved the
+length of each statement involving a PRINT or TYPE command.  Since the
+randomly chosen words had varying lengths, the typed lines would
+sometimes run over the edge of the page, causing a word to be split
+between two lines (see figure H-6)  Holly began the process of
+eliminating these over-runs by adjusting the length of each line.  Of
+course, shortening the first line made the second longer, so that the
+process had to be repeated for each succeeding line.  Holly had not
+completed this when the series of classes ended.
+.block 19
+.figure 17
+.ce
+Figure H-7
+.epage 2
+.page
+1IV - Holly's Interactions with Other Students
+.br
+0Holly seemed to have several kinds of interactions with other
+students during the course of the LOGO classes.  With Tammy, Holly
+developed a very protective, helping relationship, based on a growing
+respect for Tammy's originality, outspokenness and sense of humor.
+With David, Holly maintained a friendly teasing relationship, with a
+strong component of competitiveness which became most clear when Holly
+and David played DYNATURTLE games together in classes 20 and 21.  With
+Larissa, a girl in another class, Holly was directly competitive --
+Holly was quite upset when Larissa started on a tictactoe project
+shortly after Holly did.  When Holly chose a new project, she carefully
+avoided choosing one that was a "conversational" procedure, similar to
+Larissa's "SHRINK".  In Holly's reaction to Larissa's work, it was
+clear that Holly palced a great deal of importance on originality and
+uniqueness in her work.  lShe was not content that the work be
+independently and creatively carried out herself -- she also wanted to
+be sure than noone else was doing work that might be directly compared
+with hers.
+
+During the course of the LOGO classes, Holly developed a special
+relationship with Tammy.  When the classes started, Holly had a rather
+minimal tolerance for Tammy.  During the classes, Tammy would often ask
+Holly for help -- usually with spelling a word, sometimes with matters
+relating directly to using the computer.  Holly spent most of class 7
+helping Tammy with her work.  Tammy was trying to use the SPIN command
+to spin some designs she had already made.
+
+Holly showed her how to use the SPIN command before drawing the
+picture, and showed her how to make the design spin faster by clearing
+the screen, using a larger input for the SPIN command, and repeating the
+drawing.  Later in the period, Holly helped Tammy type a procedure.
+Tammy had been having difficulty copying a procedure from her notebook.
+Holly dictated the steps to her one at a time, so that she could type
+each one and check it before going on.  In helping Tammy, Holly showed
+an unusual degree of sensitivity to what Tammy really needed to know,
+and was able to explain things to her in simple direct terms which
+Tammy easily understood.
+
+Another way that Tammy and Holly related was through a sort of
+"teasing" relationship that both girls seemed to enjoy.  This
+culminated in a computer story that Tammy wrote called HOLLY.  Tammy
+asked for information from Holly for the story, and Holly made it a
+joke by supplying ludicrous names for the story.
+
+By the end of the series of classes, Holly's English teacher reported
+that Tammy had moved her seat in the classroom to be near Holly's, and
+that Tammy was accepted by Holly and her circle of friends.
+Previously, the teacher reported, Tammy had been isolated within the
+classroom. 
+
+1V -- Holly's Relationship With the Computer and With Computer Activities0
+.br
+At the outset of the LOGO classes, Holly was intrigued with the
+computer, and curious about what it could do, and how to do it.  She
+had less interest in actually carrying out computer activities.  She
+became bored with Turtle Geometry rather quickly, despite (or perhaps
+partly because of) the fact that using the turtle was fairly easy for
+her.  She got interested in the idea of using a turtle drawing, to
+play TicTactoe.  She started off on the tictactoe project with great
+enthusiasm.  Although she followed through on the details with great
+care and thoroughness, she became bored with the project once the
+"creative" phase was over.  The same syndrome occurred during her
+MadLib project.
+
+Holly was one of the most competent of the children in our sample
+groups at using the computer keyboard, understanding the computer's
+possibilities, and at using diverse elements of the LOGO language
+appropriately to achieve her purposes.  At the same time, her sense of
+"creative involvement" was minimal.  The more creative her project, the
+more tedius typing and debugging were required.  She did not enjoy the
+process of finding and eliminating bugs, the way that Gary, a student
+in one of the earlier classes did.
+
+After her last class, I asked Holly whether she would like to work with
+a computer again if she had a choice.  "Well," she reflected, "it would
+depend on what the other choices were."
+

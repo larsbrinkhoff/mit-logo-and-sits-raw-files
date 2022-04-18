@@ -1,0 +1,111 @@
+.xgp
+.font 0 30vr
+.font 1 37vrb
+.he2
+Comparisons
+.ds
+.adjust
+.ce
+1I. A Comparison of the Work of Deborah and Donald:  Two Heads ARe
+More Interesting Than One
+.br
+0Deborah and Donald, students in two different classes both carried
+out similar projects.  Both students made the computer draw a picture
+of a head.  Deborah's was a "rabbit", Donald's a "man with a beard".
+Both projects involved the use of sub-procedures and superprocedures,
+and both projects took several classes to complete.  Both used
+subprocedures to draw the different features of the head, and both
+students used a method which combined advance planning of the overall
+design, together with a trial and error approach to work out the details.
+
+The two drawings, and the superprocedures used to draw them are shown
+in Figure C-1.
+.block 25
+.sp 22
+.ce
+Figure C-1
+
+Although the similarities between outcomes of the two projects is
+clear, the way the two students carried out the projects was strikingly
+different.  Donald wrote out his superprocedure, HEAD, when he began
+work, and defined each subprocedure as he went along, to carry out its
+specific function.  Deborah's superprocedure was written last, after
+all of its elements had already been defined.  Donald had clear
+functional names for each of his subprocedures, while Deborah's naming
+was inconsistent.  Deborah had an excellent intuitive grasp of which
+inputs to use for FORWARD and RIGHT and LEFT commands to draw the
+features of her rabbit, while Donald had a poor intuitive sense of
+Turtle Geometry, and relied largely on mathematical analysis to draw
+each of the features of his head, Donald absorbed a lot of new ideas in
+mathematics, computer programming and problem solving, while Deborah
+relied mainly on soldifying ideas with which she was already familiar
+before she started her project.  These differences will now be examined
+in more detail.
+
+.block 5
+11. Planning and the Use of Superprocedures
+.br
+0Donald and Deborah each began with a drawing of how they expected
+their finished project to look.  Once they had drawn a picture, each of
+them made an initial attempt to draw the entire figure using direct
+commands.  Once they saw that this was too large a task for them to
+accomplish in one single procedure, each of them was shown how to carry
+out the project more easily by making use of subprocedures.
+
+Donald began by his superprocedure, TO HEAD, in a way that included
+most of the significant details that he planned to include.  In this
+way his superprocedure itself became a specific plan for the project he
+was attempting to carry out.
+
+Deborah, on the other hand, carried her plan in her head.  She did
+define different subprocedures as she went along, generally dividing
+the whole project into more managable chunks.  Her superprocedure, TO
+RABBIT, was written last, after her entire rabbit head had been built.
+RABBIT includes both subprocedures and a large number of direct
+commands which Deborah used to draw the rabbit's ears.
+
+.block 5
+11. The Naming of Subprocedures0
+.br
+Donald's subprocedures were consistently named according to the part of
+the head that they drew.  The only exception was BOX which was used to
+draw the outline of the head.  Some of his subprocedures had names that
+told how they "worked".  STRING, drew one "hair" of a beard; LBOX made
+a box of variable size; POLY drew a polygon.  Others had functional
+names:  HAIRY drew one "hair" of a head of hairs and EAR drew one ear.
+
+Deborah's naming was much less consistent.  In some cases she was able
+to think of an appropriate name for a subprocedure.  In other cases she
+picked something else that came to mind.  Her procedure HAT drew the
+outside of the rabbit's face.  LITTLEEYES drew the eyes -- it got its
+long name because Deborah alread had a different procedure called EYES.
+NOSE made the rabbit's nose out of two arcs, but the procedure which
+moved the turtle from where LITTLEEYES finished, to the center of the
+face, in order to draw the nose was called FACE.  The procedure EARS
+drew only on of the rabbit's ears.  Only one of Deborah's
+subprocedures, FACE, contained a subprocedure, NOSE, within it.
+
+.block 5
+13. "Intuitive" vs. "Analytic" Approach to Turtle Geometry
+.br
+0Deborah was able to make use of a powerful visual intuition in
+making designs with the turtle.  In her earliest experimentation with
+inputs to turtle commands, she limited herself to multiples of ten, and
+eventually came to use certain numbers, especially 30, 60 and 90, much
+more often than others.  This led to a lot of successful design work.
+For example, a rotation of 60 degrees was a perfect first guess for
+drawing a six-pointed star.  By repeating a fixed rotation such as
+RIGHT 30, a number of times, Deborah was able to make a variety of
+angles including 90, 180, 270 and 360 degrees.  By using such a
+"useful" set of limited numbers, Deborah was able to avoid analysis and
+planning which were difficult for her.  She "knew" that if she repeated
+RIGHT 30 often enough, she could get the turtle to go wherever she
+wanted it, and could solve all her problems by experimentation, without
+having to remember that 90 degrees makes a "right angle" or that 180
+degrees turns the turtle to face in the opposite direction.  Similar
+effects were obtained with FORWARD steps.  Deborah made a square of
+side 120 by repeating FORWARD 90 FORWARD 30.  Later, she could easily
+find the center of the square using FORWARD 30 FORWARD 30.
+
+Deborah never consciously articulated the strategies she used for
+choosing these particular inputs for turtle command

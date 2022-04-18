@@ -1,0 +1,108 @@
+SUNDAY  AUG 17,1980
+NM+6D.7H.40M.57S.
+Max's music board reads a section of ram at some preset speed into an
+8-bit d/a converter to produce your favorite waveform. The output is
+passed through another d/a converter to give 8 bits of control over
+the amplitude.  To store music we could use up to three bytes as follows:
+
+1) top four bits would indicate pitch relative to tonic set elsewhere,
+so transposition would be easy). After the 12 tones and one for rest (maybe)
+there are 4 bit combinations left over. We could use these for things
+like keychange -- specifying the new key in the "octave" field,
+instrument change, destroy-pentagon-and-start-The-revolution, and
+other, more esoteric, functions.
+
+  The rest of the byte (or at least three bits of it) would
+specify the octave.
+
+If the number in the pitch field of the first byte is an actual note
+(as opposed to a control code) then we could use the remaining bit
+(i.e., the one in neither the rel. pitch field nor the octave field)
+to indicate that an amplitude byte follows. In the default (bit not
+set) case, the duration byte would immediately follow the rel.
+pitch/octave
+byte. In this case, all three bytes would appear. It is my guess that
+this would save a considerable amount of memory at the cost of just a
+little computation.
+
+2) One whole byte for amplitude. (optional)
+
+3) one whole byte for duration. (not used of (2) present) - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - Ok, so we're
+dealing with an actual representation of the sound in this system. We
+can [?] digitally record, say, an oboe's sound.  Each note in a, say,
+1 1/2 octave range would have a waveform image stored. Sending this
+out to the maxdevice would make the same sound that the oboe made when
+doing just what it was doing to make the sound (huh?). What do we do
+about scaling octaves? Simply add together (or interpolate a new value
+from) each pair of amplitude specifications in the note image. [No.
+what a bad idea: we don't do anything.]  (N.B. The note image is a
+digital "picture" of the waveform, and NOT the music descriptor format
+above.) Somehow that doesn't appeal to me.  Maybe we can come up with
+a way of scaling each individual instrument differently. Surely there
+are differences in sound that cannot be totally accounted for by
+frequency doubling or halving. [I'm leaving the last section in for
+historical interest only. I don't think that we should try to produce
+sounds that we don't have recorded.]
+
+Custer thinkgs that the transitions between different notes would be
+rough. Likewise, Pat thinks it would be easy to have the maxdevice
+slur things a little bit, but I don't. Too many cases to account for:
+I don't know whether this would be a problem or not. However, I do
+think that controlling the envelope is not only not a bad idea, but
+necessary. I don't know how much control we should give the user over
+attack, decay, and sustain, but we better make sure that they're
+reasonably accurate, if not for each individual instrument then at
+least enough to keep it from sounding verry strange. A full-volume
+tone all of a sudden sounds horrible, right?
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Different voices or instruments.
+
+Since we are dealing with the actual, digital representation that the
+maxdevice uses, we can do some Things to it. We can have as many
+voices as we want! If there are known to be two voices, we divide the
+numbers in the image by two and add them together. 
+
+Above [far] when I talked about changing instruments I wan't sure
+exactly what I meant. I'm still not. How about if we allow up to
+16 voices, and beforehand specify that voice n corresponds to
+instrument (i.e. music image) m? Things get slightly hairy unless
+we keep a sep. buffer for each voice and sum them later.
+
+This brings us to the big bugaboo: memory. If we store music in the
+above-mentioned format, will the processor be fast enough to get the
+note #, index off its voice's location, expand or contract the table
+to the right octave, and then output it to the maxdev in time?
+Maybe if we keep a BIG buffer of done stuff (this would make adding
+voices easier than doing it on the fly) and then change the address
+the maxdev looks at, or dump in 256 bytes at a time. I like the idea
+of changing the address of the device. It cuts down a lot on moving
+stuff around in the buffer.
+
+Sounds like we could have the cpu converting our format into the
+maxdev format and then dumping it to the buffer if necessary on
+interrupts. (We can get interrupts, right?)
+
+In conversations with Johnb and Pat I've spoken about an idea for
+making the maxdev a little different. Perhaps we could stick 64k of
+eprom on it with the sounds recorded there. Then we just pass to the
+device the address of the instrument and pitch we want, along with
+other info such as the amplitude and duration.
+This, however makes multiple voices impossible. But if we made the
+device a little smarter (say give it a z80 with a few k of ram) then
+it might be fast enough to get the sounds and blend them in time to
+pass them to the hardware which actually plays the stuff. That's going
+to take some consideration, though: Will a 4mhz z80 be fast enough to
+get a few [how many? it depends on the sampling rate, also to be
+announced] kilobytes and shift them all to the right twice and add
+them together. (4 voices obviously take 2 shifts. detail: shift left
+truncates negative numbers toward -1 instead of 0. We'll survive,
+probably.)
+
+Pat wants to know if this will be expensive. $200 for the z80, how
+much for the two d/a converters (and amplifier for the second one to
+control), how much for the eproms? How about getting the stuff in
+eprom? That means we have to cons up some hardware for encoding it.
+D/A and stuff, put it in ram and burn it in eprom. Not by hand, I
+hope. I guess the encoding will be the big thing there.

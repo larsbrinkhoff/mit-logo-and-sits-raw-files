@@ -1,0 +1,106 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi b
+bold(Changes in Apple LOGO Version 2)
+
+.ls 2
+Most of the new features of Apple Logo version 2 have to do with color drawing commands.
+.nf l
+
+BACKGROUND		The turtle can now draw on seven different backgrounds.
+
+BACKGROUND   0          Black
+BACKGROUND   1		White
+BACKGROUND   2		Green
+BACKGROUND   3		Violet
+BACKGROUND   4		Orange
+BACKGROUND   5		Blue
+
+.fi b
+(BACKGROUND   6 is also black, but different from BACKGROUND 0. This will be explained later.)
+
+.nf l
+
+PENCOLOR   or   PC	The turtle can draw in seven colors.
+
+PC   0        		Black
+PC   1			White
+PC   2			Green
+PC   3			Violet
+PC   4			Orange
+PC   5			Blue
+
+(PC   6   has a different effect which will be explained later.)
+.fi b
+
+The  pencolors have consistent effects in all backgrounds,  except that orange and blue cannot be drawn on a green or violet background, and green and violet cannot be drawn on an orange or blue background. On a green or violet background, pencolors 4 and 5 make the turtle draw green and violet. On an orange or blue background, pencolors 2 and 3 make the turtle draw in orange and blue.
+
+
+If you use  BACKGROUND   6, you will get the sharpest possible lines, but the color will not be consistent.
+
+PENCOLOR  6  or  PC  6  has a special effect which you can think of as a  "color reversing" effect. When it draws over a blank space, it leaves a line. When it draws over a line drwan by pencolor 6, it erases it.  When the turtle draws over a line of another color, strange effects occur. When it retraces the line, the original colors will be restored.
+
+
+To erase any line on the screen, just draw over it with the pen set to the background color.
+
+Other changes in LOGO Version 2:
+
+Screen modes:
+
+FULLSCREEN   or   <CTRL> - F   makes the entire screen available for the turtle.
+
+SPLITSCREEN  or   <CTRL> - L   splits the screen, allowing four lines of text
+
+                  <CTRL> - T   makes the entire screen available for text.
+
+<CTRL> - F,   <CTRL> - L,   or  <CTRL> - T, can be used while a procedure is running.
+
+FULLSCREEN   and SPLITSCREEN  are also normal LOGO commands and can be used in procedures. (There is no command equivalent to  <CTRL> - T.)
+
+TURTLESTATE   or   TS    Now outputs two more parameters, the background and pen colors, in addition to XCOR,  YCOR,  HEADING,  penstate, and turtle visibility.
+
+SETTURTLE   or   SETT   can now be given two additional paramenters, background and pen colors.
+
+
+TOWARDS  :x :y   needs two inputs, the x and y coordinates of a point, and outputs the bearing of that point from the turtle's current position. For example, if the turtle is at home,  TOWARDS  100  100  will output  45.00.
+
+
+Conditionals,  AND  and  OR have been changed:
+
+AND   is now   ALLOF
+
+OR   is now   ANYOF
+
+
+Paddle inputs:
+
+PADDLE   0   and   PADDLE   1   output the value of paddle setting,  0 to 255.
+
+PADDLEBUTTON   0   and   PADDLEBUTTON   1   output   "TRUE   if the button is pressed, and   "FALSE  if the button is released.
+
+
+File commands:
+
+DELETE  has been replaced  by  ERASEFILE.
+
+
+picture saving commands have been added:
+
+SAVEPICT    "filename   saves a turtle picture as a file.
+
+READPICT    "filename   reads a turtle picture file.
+
+
+ERASEPICT   "filename   erases a turtle picture file.
+
+
+Debugging Commands:
+
+TRACE   turns on a function that causes each procedure to be stepped through one line at a time, by  typing  <RETURN>.
+
+NOTRACE  turns off  TRACE.

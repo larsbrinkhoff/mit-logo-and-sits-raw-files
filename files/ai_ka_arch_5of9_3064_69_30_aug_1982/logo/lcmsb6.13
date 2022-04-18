@@ -1,0 +1,708 @@
+.dv press   
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman10
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 1
+.fi b
+--DRAFT--
+
+LOGO Curriculum Materials
+
+September 1981
+.sp 4
+1Student Booklet 6
+
+Personalizing The Dynaturtle Games0
+
+(Apple Logo Version)
+
+by Daniel H. Watt
+c. MIT Logo Group, 1981
+.sp 4
+This booklet tells you how the dynaturtle game procedures work. It
+offers ideas for changing the games, to make them more individualized
+and interesting. People with some previous LOGO experience will be
+able to change the games or invent new ones. Procedures for the
+dynaturtle games are given in
+bold(Booklet 7, Complete Listings Of Dynaturtle Game Procedures).	
+.sp 6
+The development of these materials was supported in part by the National Science
+Foundation under grant number SED - 7919033 and conducted at the Artificial
+Intelligence Laboratory, Massachusetts Institute of Technology, Cambridge, Massachusetts.
+Activities were tested extensively with students in grades 4 - 8, in Brookline,
+Massachusetts. The material contained in this document represents the views of its authors
+and should not be interpreted as necessarily representing the official policies, either
+expressed or implied, of the National Science Foundation or the United States Government.
+.bp
+.chapter "bold(How Dynaturtle Game Procedures Work)"
+
+Each of the dynaturtle games is constructed from a similar set of procedures.  Each game is started by a superprocedure named for the game, TGAME,  DYNATRACK,  or  LUNAR.  Each superprocedure has two subprocedures,  one called  SETUP, which sets up the starting conditions for each game, and one whose name begins with  DT  (short for "dynaturtle"), which is used to control the dynaturtle's motion, and the action of the game. 
+
+This bold(procedure tree) lists all the procedures used in the target game. It serves as a kind of "road map" by showing each procedure and its subprocedures. To study any procedure in detail, just print out the procedure and then print out each of its subprocedures. The behaviors of the most important procedures are explained in the next few pages, and in Chapter 2, bold(Changing the Target Game).
+.bp
+Here is the superprocedure for the target game:
+.nf l
+	
+	TO   TGAME
+	SETUP
+	DT.TGAME  0
+	END
+.keep
+
+The SETUP  procedure sets up the conditions for starting the game:
+
+	TO    SETUP
+	MAKE   "XS   (-70)   MAKE   "YS   (-70)
+	MAKE   "XT   70   MAKE   "YT   70   MAKE   "R   10
+	MAKE   "VX   0   MAKE   "VY   0
+	MAKE   "FORCE   4
+	MAKE    "TRACE   "FALSE
+	DRAWTARGET
+	PENUP
+	SETXY   :XS   :YS   SETHEADING   0
+	SHOWTURTLE
+	END
+.end_keep
+.fi b
+
+"XS   and   "YS   are the horizontal (x) and vertical (y) positions at which the dynaturtle starts the game.   
+
+"XT   and   "YT   are the horizontal and vertical position of the target.  
+
+"R is the radius of the target.  
+
+"VX   and   "VY   are the horizontal (x)  and vertical  (y)  components of the  velocity of the dynaturtle.  
+
+"FORCE  determines the strength of the kick during the game.
+
+"TRACE determines whether the dynaturtle will trace its path or not. When the game starts,  "TRACE  has the value  "FALSE.  Typing  <T>  during the game changes the value of  "TRACE   to  "TRUE, so that lines will be traced.
+
+DRAWTARGET  is the procedure that draws the target on the screen.
+.keep
+
+
+The fundamental procedure that makes the dynaturtle work is called   DT.TGAME.  This is an abbreviation for  "dynaturtle for the target game."	
+
+.nf l
+	TO    DT.TGAME    :T
+	DYNAMOVE
+	COMMAND
+	CHECK.TGAME
+	DT.TGAME   :T + 1
+	END
+
+.fi b
+The input,  :T  keeps track of the "time" as you play the game. Everytime the procedure  DT.TGAME  is called,  :T  is increased by  1.  
+
+DYNAMOVE changes the turtle's position  with each cycle of the  DT.TGAME  procedure.  
+
+COMMAND  checks to see whether you have pressed one of the command keys, and tells the computer what to do if you have.  
+
+CHECK.TGAME   checks the dynaturtle's position to see if it has hit the target, or whether it is "lost in space."  
+
+Another important procedure,  KICK,  increases the dynaturtle's  velocity  in the direction of its heading.
+.end_keep
+
+.keep
+.fi b
+The  DYNAMOVE  procedure changes the turtle's position during each cycle of DT.TGAME:
+
+.nf l
+	TO   DYNAMOVE
+	DOT
+	SETXY   (XCOR  +  :VX)   (YCOR  +  :VY)
+	END
+.fi b
+
+The  distance the dynaturtle moves each time depends on how large the velocity values,  :VX  and   :VY are.  When the game starts they are both set at zero, so that the dynaturtle won't move until you give it a kick.  The   DOT   procedure leaves a dot at each point, if the computer is tracing the dynaturtle's path.
+
+.end_keep
+.keep
+.nf l
+The  COMMAND  procedure controls the effects of the keys you press:
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RIGHT  30   STOP
+	IF   :COM   =   "L   LEFT   30   STOP
+	IF   :COM   =   "K   KICK   DRAWKICK   STOP
+	IF   :COM   =   "T   LEAVETRACE   STOP
+	END
+
+.fi b
+The first line of  COMMAND  "reads" the key you press and gives the name  "COM   (short for "command") to whatever letter you type. The next four lines check to see if you typed  "R,  "L,   "K  or  "T.  If you did, the rest of each line tells the computer what to do, and tells the  COMMAND  procedure to stop.  If you do not press any of the command keys during a particular cycle of the game, the dynaturtle's motion will not change during that cycle.
+.end_keep
+
+.keep
+.nf l
+The  KICK  procedure changes the dynaturtle's velocity:
+
+	TO   KICK
+	MAKE   "VX   :VX  +  :FORCE * (SIN  HEADING)
+	MAKE   "VY   :VY  +  :FORCE * (COS  HEADING)
+	END
+
+.fi b
+Every time you press  <K>,  the procedure  KICK changes the values  :VX  and  :VY.  The amount of change depends on how large the  force is  (in the SETUP procedure, the value  of "FORCE  was made equal to 4), and the direction in which the dynaturtle is heading.   SIN   and   COS  are  Logo commands  (short for sine and cosine)  which output  ratios to determine how much of the force is in the horizontal (x) direction and how much of it is in the vertical (y) direction.
+.end_keep
+
+DRAWKICK   draws an arrow showing the location and direction of your kick if the pen is down, and   LEAVETRACE  puts the pen down so that the dynaturtle will leave a "trace."	
+
+CHECK.TGAME  has subprocedures that check whether the dynaturtle has reached the edge of the screen or hit the target. If so, other procedures tell you that the game is over, print some information telling you how you did, and ask you whether you want to play again. If you are interested in examining these subprocedures in detail,  print out  CHECK.TGAME and each of its subprocedures to see how they work.
+
+.chapter "bold(Changing the Target Game)"
+
+The dynaturtle games have been kept deliberately simple for two
+reasons. First, so that people who play them will not be confused
+while they are learning how to control the dynaturtle.  Second, so
+that people can improve and personalize the game by adding their own
+features.
+
+Most people who play the games have ideas about how it might be improved. Here are some suggestions that have been made for improving the target game.
+
+.in 8
+Make the game easier to play. Add some instructions for beginners. Put the command keys all together at one side of the keyboard, instead of using  <R>,  <L>,   <K>   and  <T>.  Or, have the dynaturtle controlled by the paddles, instead of by keys.
+
+Make the game more interesting by having more interesting messages, using more
+colors, and having special effects like sounds or explosions when the dynaturtle
+hits the target.  Have the dynaturtle "bounce" of the sides of the screen
+instead of getting "lost in space."  Make the computer print messages as the
+game goes on, telling how far the dynaturtle is from the target, or what its
+speed and heading are.
+
+Allow for different levels of difficulty, and make the game more challenging for better players. Make the dynaturtle move faster  or make the target smaller as a player improves.  Add a time or fuel limit. Require a "soft" landing on the target, or assign points to different parts of the target. Add a gravitational or wind effect to complicate the situation.  Have a friction force to slow the dynaturtle down as it moves.  Add obstacles that the dynaturtle has to avoid.
+
+Make the game more dynamic, by having the target move, or having moving meteors that the dynaturtle has to avoid. Make a two person game - a race between two dynaturtles perhaps.
+.in 0
+
+
+Many of these changes are relatively easy to make if you know a little about Logo programming, and understand how the dynaturtle game procedures work.  Others require a higher level of programming skill or an understanding of complex mathematics. Some of the suggestions may be impossible, given the limitations of the particular computer you are using.
+
+In this chapter we will explain how to make some fairly easy changes. As you increase your knowledge of mathematics and Logo programming, you will be able to make more complicated changes yourself.  If you understand how to make the changes suggested here, you should be able to invent many other improvements of your own.  Don't be afraid to try a change that seems hard to figure out.  One of the best ways to learn is to try something that challenges your own knowledge, or the limits of the system you are using.
+
+One thing to keep in mind as you make changes to a complicated system like a set of dynaturtle procedures is the way that changing one procedure requires changes in another.  For example, when you change the starting conditions by changing the  SETUP procedure, you may also have to change the  REPLAY  procedure, so that when the game restarts the conditions are the same as at the original start.  It is extremely important to test the game after each change before considering it complete.  
+
+Changing one procedure of a system often introduces bugs that cannot be detected
+until you play the game several times.  Sometimes you may have to follow the
+computer's actions, tracing its behavior step by step.  One way to do this is to
+"play computer", pretending to be the computer as it goes through its list of
+commands.  This is similar to playing turtle, which is used for debugging turtle
+geometry problems.  The procedure tree for each game, given in bold(Student Booklet 7)
+in may be helpful for playing computer. It can show you which procedure is "in
+charge" at each point of the game.
+
+It is impossible to anticipate all the problems that may occur when you make changes to the games.  The suggestions in this chapter are offered as examples of some of the things that you need to think about when modifying a system of procedures. In describing each of the suggested changes, we have included all the procedures that had to be changed when making a single change to the game.  If you study these examples carefully, you may have an easier time making changes on your own.
+.bp
+.section "bold(Changing the Keyboard Commands)"
+
+The COMMAND procedure determines the way in which the dynaturtle is controlled from the keyboard.  The original  COMMAND  procedure is:
+
+.nf l
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RIGHT   30   STOP
+	IF   :COM   =   "L   LEFT   30   STOP
+	IF   :COM   =   "K   KICK   DRAWKICK   STOP
+	IF   :COM   =   "T   LEAVETRACE   STOP
+	END
+
+.fi b
+The letters of the keys,  <R>,  <L>,   <K>  and   <T>,  were chosen to stand for the functions, "right turn," "left turn," "kick," and "trace." Some players might find it easier to play the game if the keys were located near each other at one end of the keyboard. For example, you could use the  <Q> and  <W>  keys, located next to each other at the left end of the keyboard, to stand for "left" and "right".  The  <A>  key, located directly under  <Q>  and  <W>  might be used for "kick".   <S>,   next to   <A>,  could be used for "trace."  To accomplish this change, just edit the command procedure as follows:
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "W   RIGHT   30    STOP
+	IF   :COM   =   "Q   LEFT   30   STOP
+	IF   :COM   =   "A   KICK   DRAWKICK   STOP
+	IF   :COM   =   "S   LEAVETRACE   STOP
+	END
+
+
+(Insert keyboard diagram here.)
+.bp
+.keep
+You might want to add commands to make the kick harder or softer. If you use the keys  <H>  and  <S> to stand for "harder" and "softer", the command procedure could be edited to look like this:
+
+.nf l
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RIGHT   30   STOP
+	IF   :COM   =   "L   LEFT   30   STOP
+	IF   :COM   =   "K   KICK   DRAWKICK   STOP
+	IF   :COM   =   "T   LEAVETRACE   STOP
+	IF   :COM   =   "H   MAKE   "FORCE   :FORCE   +   1   STOP
+	IF   :COM   =   "S   MAKE   "FORCE   :FORCE   -   1   STOP
+	END
+.end_keep
+
+.fi b
+(One interesting effect with these new commands is that if you press  <S>  for "softer" enough times, you can actually produce a negative or backwards force on the dynaturtle.)
+
+If you want to start each new game with the same force as the first game, add a line to   the   REPLAY procedure:
+
+	MAKE   "FORCE   4
+
+If you change the starting value of the force in the  SETUP procedure, you will need to change it in the   REPLAY  procedure as well.
+
+.keep
+If you want to keep track of the dynaturtle's state  - that is, its speed and heading - as you play the game, you can add commands to print those whenever you press  <P>, standing for "printinfo".
+
+	IF   :COM   =   "P   PRINTINFO   STOP
+
+
+and add a new procedure,
+
+.nf l
+	TO   PRINTINFO
+	PRINT   ( SENTENCE [ SPEED  = ]   SPEED   [, HEADING  =  ]   HEADING )
+	END
+.end_keep
+.fi b
+.bp
+.section "bold(Changing the Printed Messages.)"
+
+If you want to have the computer print instructions before the game starts, you could add an  INSTRUCTIONS   subprocedure to  the  SETUP  procedure which starts the game. For example:
+
+.nf l
+.keep
+	TO   INSTRUCTIONS
+	PRINT  [ DO YOU WANT INSTRUCTIONS? ]
+	MAKE   "ANSWER   REQUEST
+	TEST   ANYOF   :ANSWER  =  [YES]  :ANSWER  =   [ Y ]
+	IFFALSE   STOP
+	NODRAW
+	CLEARTEXT
+	PRINT   [ THIS IS HOW THE GAME IS PLAYED: ]
+
+
+	(Print any instructions you want here.)
+
+
+	PRINT   [ PRESS   <RETURN>   WHEN YOU ARE READY TO PLAY. ]
+	MAKE   "ANSWER   REQUEST
+	END
+
+.end_keep
+.fi b
+The first two  lines of  INSTRUCTIONS  find out if the player wants instructions, and stops the procedure if he doesn't.  PRINT  commands are used to actually give the instructions.   The last line of the procedure makes the computer wait for the player to press  <RETURN>  before starting the game.  (The program doesn't actually  use the variable named   "ANSWER  for anything, but this is a useful trick for making the computer wait.
+
+You might want to add  INSTRUCTIONS as a subprocedure to both  SETUP   and   REPLAY.  That way a player playing the game a second time will be able to read the instructions again.
+.bp
+
+If you want to change the messages that the computer prints when the dynaturtle hits the target, or when it reaches the edge of the screen, you will have to change the procedures which  have the job of printing each message:
+
+.nf l
+.keep
+	TO   HIT
+	PRINT  [YOU HIT THE TARGET!]
+	PRINT   ( SENTENCE  [SPEED:] SPEED  [TIME]  :T  )
+	END
+
+	TO   LOST
+	PRINT   [LOST IN SPACE]
+	END
+.end_keep
+.fi b
+
+.keep
+To change the message asking about playing a new game, you will have to change the procedure   REPLAY? :
+.nf l
+
+	TO   REPLAY?
+	PRINT   [DO YOU WANT TO PLAY AGAIN?]
+	CLEARINPUT
+	MAKE   "RESPONSE   REQUEST
+	IF   :RESPONSE   =  [ YES ]   REPLAY
+	IF   :RESPONSE   =   [ Y ]   REPLAY
+	IF   LAST   LAST   :RESPONSE   =   "Y   REPLAY
+	END
+.end_keep
+.fi b
+
+Notice that   REPLAY?  (with a  "?")  has the job of asking  about playing again.  The procedure   REPLAY   (without a "?" )  has the job of starting the game over.  REPLAY?  can check for three different responses.  If any other response is given, the procedure does nothing.  The computer then goes on to the next command of the  ENDGAME  procedure (see the procedure tree), which ends the game.  If you want to force a player to answer yes or no, add these lines to the end of the procedure:
+
+.NF L
+	IF   :RESPONSE   =   [ NO ]   STOP
+	IF   :RESPONSE   =   [ N ]   STOP
+	PRINT   [ PLEASE ANSWER YES OR NO! ]
+	REPLAY?
+.fi b
+With these commands, if the player did answer  NO  or  N,  REPLAY?  stops, and the ENDGAME procedure continues to end the game.  If the palyer did not answer yes or no clearly, the message is printed and  REPLAY?  starts all over again.
+.bp
+.section "bold(Changing the Size, Shape or Location of the Target.)"
+To change the size or location of the target, you only have to change one line of the  SETUP  procedure - the line in which   "XT,  "YT,  and  "R  are  specified.  If you change these values the computer will draw and check the target in its new location.  For example:
+
+	MAKE   "XT   50   MAKE   "YT   50   MAKE   "R   5
+
+.section "bold(Allowing a Player a Limited Amount of Fuel.)"
+First you have to make sure that the player starts with some fuel by adding a line to  SETUP:
+
+	MAKE   "FUEL   25   (or whatever you want)
+
+Then you have to add a line to the KICK procedure that reduces the fuel after each kick:
+
+.keep
+.nf l
+	TO   KICK
+	MAKE   "VX   :VX   +   :FORCE * SIN  HEADING
+	MAKE   "VY   :VY   +   :FORCE * COS  HEADING
+	MAKE   "FUEL   :FUEL - :FORCE
+	END
+.end_keep
+.fi b
+.keep
+
+The  COMMAND   procedure needs to be changed so that  it won't respond if there is no fuel left:
+.nf l
+
+	TO   COMMAND
+	IF   :FUEL < 1  PRINT  [OUT OF FUEL!]   STOP
+	MAKE   "COM   READKEY
+	IF   "COM   =   "R   RIGHT   30   STOP
+	IF   "COM   =   "L   LEFT   30   STOP
+	IF   "COM   =   "K   KICK   DRAWKICK   STOP
+	IF   :COM   =   "T   LEAVETRACE   STOP
+	END
+.end_keep
+.fi b
+
+To complete the change we need to add the same line to REPLAY  that we added to  SETUP  so that when the game starts again  it  starts with enough fuel:
+
+	MAKE   "FUEL  25   (or whatever amount you used in  SETUP)
+.bp
+.section "bold(Adding a Gravitational Force, Pulling the Dynaturtle Downward.)"
+
+This change makes a big difference in the game, and in the strategies you need to hit the target.  If you make the effect of gravity strong enough, you can make the target game a lot like the lunar lander game.  Adding gravity is like adding a small constant downward kick to every cycle of the game.
+
+.keep
+You can make this change, by adding a new subprocedure,  FALL,  to the basic dynaturtle procedure,  DT.TGAME:
+
+.nf l
+	TO   DT.TGAME   :T
+	FALL
+	DYNAMOVE
+	COMMAND
+	CHECK.TGAME
+	DT.TGAME  :T  +  1
+	END
+
+.fi b
+FALL must cause a constant downward change in velocity, in addition to any changes you make to the velocity by kicking.  This can be done by subtracting a constant amount from  :VY,  the value of the velocity in the  "y," or vertical, direction.
+.nf l
+
+	TO   FALL
+	MAKE   "VY   :VY   -   :G
+	END
+.fi b
+.end_keep
+
+The value,  :G,  determines the strength of the gravitational force.  This value is set by adding a line to the  SETUP  procedure. 
+
+	MAKE   "G   0.2   
+
+By changing the value of  "G  you  can create games which require very different strategies for hitting the target. Try values such as 0.02,  0.05,  0.1, 0.2, 0.5  and 1, to see how they effect the game.
+
+.bp
+.section "bold(Adding Obstacles to the Game.)"
+
+
+Adding obstacles to the game makes it more difficult.  It also slows the game down because the computer has to check for more conditions. Suppose we add a large  "asteroid"  near the target.  First specify its position by adding lines to  SETUP:
+
+.keep
+.nf l
+	MAKE   "XA  (20)   MAKE  "YA   (70)   MAKE  "RA  5
+	DRAWASTEROID
+.end_keep
+.keep
+
+and make a new procedure:
+
+	TO   DRAWASTEROID
+	HIDETURTLE
+	PENUP
+	SETXY   :XA   :YA
+	CIRCLE   :RA
+	END
+.end_keep
+.keep
+
+New lines need to be added to the checking procedure,   CHECK.TGAME
+
+	TO   CHECK.TGAME
+	IF   NEAREDGE?   LOST   ENDGAME
+	IF   ATTARGET?   HIT   ENDGAME
+	IF   ATASTEROID?   :XA :YA :RA  CRASH   ENDGAME
+	END
+.end_keep
+
+.keep
+Two more new procedures are needed:
+
+	TO   ATASTEROID?  :X  :Y   :R
+	TEST   DISTANCE  :X  :Y  <  :R  + 2 
+	IFTRUE   OUTPUT   "TRUE
+	IFFALSE   OUTPUT   "FALSE
+	END
+
+and
+
+	TO   CRASH
+	PRINT   [ YOU'VE  CRASHED  INTO  AN  ASTEROID ]
+	END
+.end_keep
+
+.fi b
+If you find it easy to play the game and avoid the obstacle,  try adding more obstacles  and trying to maneuver the dynaturtle around them.  (To get around the obstacles, you might want to make the kick very soft, so that you have time to think.)
+
+You could also add a procedure to make the dynaturtle explode when it hits an asteroid.  As an example, look at the  EXPLODE  procedure which is part of the  lunar lander game.  You could add it to   CHECK.TGAME,  right after the  CRASH  procedure:
+
+.nf l
+.keep
+	TO   CHECK.TGAME
+	IF   NEAREDGE?   LOST   ENDGAME
+	IF   ATTARGET?   HIT   ENDGAME
+	IF   ATASTEROID?   :XA :YA :RA  CRASH   EXPLODE   ENDGAME
+	END
+.end_keep
+.chapter "bold(Changing the Dynatrack Game)"
+
+Many of the changes you might want to make for the dynatrack game are similar to
+those for the target game.  Notice that the dynatrack game already includes some
+of those changes. The dynatrack game offers instructions, and allows for
+different skill levels by letting a player choose the strength of the kick and
+the width of the track.  No matter how expert a player becomes, the conditions
+can be changed to make the game more difficult.  Two players can also play
+against each other by keeping track of their scores, each time the game is
+played.  Here are some other changes that players of the game have suggested.
+.in 8
+
+The game might be more challenging if the computer kept track of a
+player's score each time the game was played.  It could keep track of
+several players' scores, if it asked for a player's name each time.
+The computer could also print the score as the game progressed so that
+you would know how well you were doing.
+
+Adding gravity or obstacles might make this game much more difficult.
+One type of obstacle suggested is an "oil slick."  If the dynaturtle
+hits an oil slick, it instantly slides across it, regardless of its
+previous direction or momentum.
+
+Change the shape and vary the width of the track,
+to allow a variety of games.
+
+Make the dynaturtle explode when it hits the edge of the track.
+
+.in 0
+In this chapter we will describe some simple changes that are different from
+those suggested for the target game.  Before trying to make any of these changes
+you should study the procedure tree and the DYNATRACK procedure system, in
+bold(Student Booklet 7, Chapter 2).  Although the key procedures that make the
+dynaturtle work are similar to those for the target game, many important
+procedures are different.
+.bp
+.section "bold(Changing the Shape of the Track.)"
+
+Before making any changes to the dynatrack game, you should think of how easy or
+difficult it will be to make the changes, and whether they will really improve
+the game.  For example, many people would like to have a complicated track with
+interesting twists, turns, and obstacles.  Before trying to draw such a
+complicated track, howver, remember that the computer will have to check the
+dynaturtle's position during every cycle of the game, to see if it is on or off
+the track.  If the track shape is complicated, the checking could take a long
+time. The mathematics needed to do the checking can get very difficult, if a
+complicated shape is used.
+
+One of the simplest changes to make is to change the shape to a rectangle, with its width twice its height.  First we need a procedure to draw a rectangle, if the largest and smallest vales of x and y are given.  There are many possible rectangle procedures. This one uses  the Logo commands  SETXY,  SETX  and  SETY.
+
+.nf l
+.keep
+	TO   RECTANGLE   :X1   :X2   :Y1   :Y2
+	PENUP
+	SETXY   :X1   :Y1
+	PENDOWN
+	SETX   :X2					(diagram of rectangle)
+	SETY   :Y2	
+	SETX   :X1
+	SETY   :Y1
+	PENUP   HOME
+	END
+.end_keep
+
+.keep
+A new version of DRAWTRACK uses this procedure to make a symmetrical track.
+
+	TO   DRAWTRACK   :IN   :OUT
+	DRAW   FULLSCREEN
+	BACKGROUND   6
+	HIDETURTLE
+	RECTANGLE   ( -:IN )   :IN   ( -:IN / 2 )   :IN / 2
+	RECTANGLE   ( -:OUT )  :OUT   ( -:OUT / 2 )   :OUT / 2
+	LEFT   90
+	FORWARD   :IN
+	PENDOWN
+	FORWARD   :W   BACK   :W / 2
+	RIGHT   90
+	PENUP
+	SHOWTURTLE
+	END
+.END_KEEP
+.fi b
+
+.keep
+With a new track shape, the procedure for checking whether the dynaturtle has crashed needs to be changed.
+
+.nf l
+	TO   CRASHED?
+	IF   INSIDEBOX   ( -:IN )  :IN   ( - :IN / 2 )   :IN / 2   OUTPUT   "TRUE
+	IF   OUSIDEBOX   ( - :OUT )   :OUT   ( -:OUT / 2 )   :OUT / 2   OUTPUT   "TRUE
+	OUTPUT   "FALSE
+	END
+
+Procedures   INSIDEBOX  and  OUTSIDEBOX   must also be defined:
+
+TO   INSIDEBOX  :X1  :X2  :Y1  :Y2
+IF   ( ALLOF   XCOR > :X1   XCOR < :X2   YCOR < :Y1   YCOR > :Y2 )   OUTPUT   "TRUE
+OUTPUT   "FALSE
+END
+
+TO   OUTSIDEBOX   :X1   :X2   :Y1   :Y2
+IF   ( ANYOF   XCOR < :X1   XCOR > :X2   YCOR > :Y1   YCOR < :Y2 )   OUTPUT   "TRUE
+OUTPUT   "FALSE
+END
+.sp 10						(rectangle diagram)
+.fi b
+To make all these procedures work properly, the values of  "IN   and   "OUT must be set  as part of the   DTRACK   procedure:
+
+.nf l
+	TO   DTRACK   :W
+	MAKE   "IN   50   MAKE   "OUT   50 + :W
+	DRAWTRACK   :IN   :OUT
+	START
+	DT.DTRACK   0
+	END
+.END_KEEP
+.fi b
+.bp
+.keep
+.section "bold(Keeping Track of a Player's Score.)"
+It might be fun to keep track of a player's score as several games in a row are
+played.  You could keep track of the average score and the best
+score as you go along.  This will require adding three new commands to the ENDGAME
+procedure:
+
+.nf l
+	TO   ENDGAME
+	CLEARINPUT
+	SPLITSCREEN
+	PRINT   SENTENCE   [ YOUR SCORE IS: ]   SCORE
+	MAKE   "NEWSCORE   SCORE
+	BESTSCORE
+	AVERAGESCORE
+	REPLAY?
+	TOPLEVEL
+	END
+
+Endgame has two new subprocedures,  BESTSCORE   and  AVERAGESCORE.
+
+	TO   BESTSCORE
+	TEST   "NEWSCORE   >   "BESTSCORE
+	IFTRUE   MAKE   "BESTSCORE  "NEWSCORE
+	IFTRUE   PRINT   [ THIS IS YOUR BEST SCORE SO FAR! ]
+	IFFALSE   PRINT   SENTENCE   [ YOUR BEST SCORE SO FAR WAS ]   :BESTSCORE
+	END
+
+	TO   AVERAGESCORE
+	MAKE   "SCORESUM   :SCORESUM + :NEWSCORE
+	MAKE   "AVERAGESCORE   :SCORESUM / :GAME
+	PRINT   SENTENCE   [ YOUR AVERAGE SCORE IS NOW ] :AVERAGESCORE
+	END
+.end_keep
+
+.keep
+A new line must be added to the beginning of  REPLAY,
+
+	MAKE   "GAME   :GAME + 1
+
+.fi b
+And the values of   "GAME,   "BESTSCORE,   and   "SCORESUM  must be set initially in the SETUP  procedure:
+
+.nf l
+	MAKE   "GAME   1
+	MAKE   "BESTSCORE   0
+	MAKE   "SCORESUM   0
+
+.end_keep
+.fi b
+As you play the game, these values, which were  initialized in  SETUP,  will be  updated  in the  REPLAY,   BESTSCORE,   and   AVERAGESCORE  procedures.   When we added new variables, we needed to take care of  both  initializing and updating them.  Failure to do one or the other is a common bug in creating  or changing complex procedure systems.
+.section "bold(Other Changes to the Dynatrack Game)"
+Many changes to the dynatrack game can be made by following the changes
+suggested for the target game.  Any of those changes, except for those that
+involved the target can be made for the racetrack game.  If you want to change
+the keyboard commands, change the messages, limit the amount of fuel, add
+gravity (or a sideways "wind" force), or add obstacles, you can see how to make
+the changes by re-reading bold(Chapter 2). Be careful to study the procedure
+tree for the Dynatrack game, and try each change several times to be sure it
+works before saving your procedures.
+.chapter "bold(Changing the Lunar Lander Game)"
+
+When you play Lunar Lander you will notice that many of the changes suggested
+for the Target and Dynatrack game are already part of this game. An extra force
+(gravity) constantly pulls the dynaturtle during the game. The instructions
+allow players to make the game easier or harder.  When the lunar lander crashes
+into the moon's surface, a visible "explosion" occurs.  The player also gets
+information about the amount of fuel remaining as the game proceeds.
+
+Before making any changes to the game, be sure to study the procedure tree and
+procedures for  LUNAR,  given in bold(Student Booklet 7, Chapter 3).
+
+Here are some changes that have been suggested by people who have played LUNAR:
+
+Make a safe landing harder to achieve.  The present game accepts any
+landing, as long as the dynaturtle is within the platform area.  You
+might want to require the dynaturtle to have a heading of zero
+(straight up), and a speed less than a certain amount to avoid a
+crash.  To accomplish this, you only need to add some more conditions
+to the LANDED?  procedure, which is a subprocedure of CHECK.LUNAR.
+
+Another change would be to make the dynaturtle start from the Moon's surface or
+from a launching platform.  To do this you need to change the starting
+positions, "XS and "YS, in the SETUP procedure.  To avoid having the dynaturtle
+crash immediately,(if it starts from the moon's surface) you need to
+change the READY? procedure to give the dynaturtle an initial kick or two to get
+it on its way and allow time for maneuvering it.  You could also ask the player to
+choose a launching force (which would use up precious fuel of course), by adding
+a new subprocedure,  INSTRUCTIONS4  to  INSTRUCTIONS  and to  REPLAY.
+
+A third change would be to add an obstacle on the surface that the dynaturtle
+has to avoid.  The easiest kind of obstacle to add would be a rectangular
+"mountain."  This would be easy to draw at the start of the game, and relatively
+easy to check.  You would have to write a new checking procedure,  ATMOUNTAIN?, 
+which would check to see if the dynaturtle's x and y coordinates are within the 
+rectangle.  Then, another line:
+
+		 IF ATMOUNTAIN? CRASH ENDGAME, 
+
+would have to be added to CHECK.LUNAR.  You would also need to add a
+DRAWMOUNTAIN procedure to SETUP.  If you want to get really fancy, you
+could make the mountain have different dimensions and a different
+location whenever the game is played.  ATMOUNTAIN?  and DRAWMOUNTAIN
+would have to allow for those changes of course.
+
+Finally, you might want to experiment with different values of gravitational
+force.  You can do this by changing the line in  SETUP  which determines the value
+of "G.  If you do this you may also want to allow the player to increase or
+decrease the value of the kick force, as described in
+bold(Section 2.1, Changing The Keyboard Commands).
+
+By now you should be able to think up other changes for yourself, and
+even invent your own dynaturtle games using the ideas from these three.	
+Remember that changes in one subprocedure often require changes in
+others, and be sure to test the game several times for unexpected bugs
+before you decide that a change is complete.  You are on your own.
+Good luck!
+
+
+

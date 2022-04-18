@@ -1,0 +1,709 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 Helvetica12B
+.fo 2 TimesRoman8
+.so r;r macros
+.margin 1i 1i 1.25i 1.25i
+.tr ^
+.nf L
+.ls 1
+.sp 5
+1The Progressive Reorganization of Mind0
+
+
+2Powerful Ideas and Cognitive Structures0
+.sp 20
+running head: Mental Reorganization
+.sp 2
+.in 3i
+Bob Lawler
+.in
+.bp
+1Contents0
+
+Introduction
+^^^^the problem: how is communicable order an emergent of construction
+^^^^microworlds and archtypes.
+^^^^picture puzzles and multiple descriptions as relation-ancestor
+
+Two Geometries: the missing link.
+^^^^Turtle Geometry as Navigation
+^^^^Coordinate Geometry: a failure to assimilate new knowledge.
+^^^^Construction of a microworld to bridge the gap
+^^^^Conclusion: post-cedent ancestors.
+
+Computer Designs and Iteration: cluster separation
+^^^^microworlds encountered
+
+The Nucleation of Clusters
+.bp
+.ls 2
+.fi b
+^^^^^^^^^^The hallmark of the archtype is the accessible sense of the necessity of the relation between things and the operations performable upon them.  THe second characteristic was noted as the capability of ramifying, i.e. serving as an ancestor to other microworlds.  Miniworlds can be defined, can be designed as exemplars for the inspiration of such archtypes.  Because I deem archtypes of fundamental important in the mind and the development of exemplars a newly defined but fundamental task of education, I will offer here the following extended presentation of an exemplar.
+
+^^^^^^^^^^Imagine yourself at a party of adults, among a group of people who think of themselves as competent problem solvers.  Imagine the introduction of this puzzle as an "ice breakert".  Strangers have enjoyed working together at solving this puzzle.  To engage each couple, you need two pieces of string, at least a yard long.  Take one string and tie it loosely around each wrist of one "victim".  The circle of string, arms and body forms the first loop.  Pass the second string through that loop once, then tie each end loosely around each wrist of the partner.  Again the string, arms and body make a loop.  Passing the second string through the first victim's loop has made the two loops interlocking.  The puzzle is how these two victims can separate without untying any knots or cutting the string.
+.sp 10
+^^^^^^^^^^The typical experience is of this sort.  The victims go through various physical contortions, such as stepping over the strings, passing one behind the other, and so forth.  After the obvious contortions are exhausted, the sophisticated problem solvers stand back and make observations of three types.  The legalistic query demands to know whether or not there is a solution which fits the rules of the problem statement.  It searches for tricks and focusses on verbal equivocation, ambiguity, or underspecification.  For example: if you can not untie the knots, is it permissible to slip the loosely tied wrist-encircling loop off one hand^? (The answer here is "No".)  A second style of coping with this puzzle is "physical" in character.  It looks to the obvious boundaries (where the strings meet the hand) as singularities wherein must lie the clue to solution.  A third style, "constraining" might be an appropriate label, asks "What can we really count on^?".  It observes that if we do indeed have two interlocking loops, ofnecessity the puzzle is insoluble.  Therefore, if we can believe the setting of the puzzle, the initial problem solving framework must be wrong.
+
+^^^^^^^^^^All three of the approaches have merit.  The focus on rules and their specification gets directly at the question of what class of difficulty is at the core of the puzzle.  The focus on singularities changes the scale of one's concern -- it becomes possible to think more porecisely and with greater detail about a limited part of the puzzle.  The constraining rejection of an inappropriate gframework is critical for this particular problem's solution.  Let me show how each of these three styles contributes to the puzzle's solution.
+
+^^^^^^^^^^First, the constraining style rejects the image of interlocking loops.  However natural and obtrusive, this image must be wrong.  The physical focus on singularities notes that there are four of them, each one like the others.  The simplest approach is to think of only one singularity -- for if a little magic can be performed at one wrist, doing the same at the others would be simple, but evben more important, unnecessary.  Therefore, one should only worry about what happens at one victim's wrist where the partner's string tries to get by.  If you drawpoorly, you might represent the arm and hand as a pole and the tied string as a wrist-loop with a string going beyond theneighborhood of concern, thus:
+.sp 10
+If the partner's string, between the two terminal marks, were an elastic band, could not its center be stretched through the lose wrist-loop, over the arm-pole, and down the other side^?  Indeed, it could.  Doing so disconnects the interlocking loops and solves the puzzle, i.e. the partner's string is slipped through the loosely tied wrist-loop , over the hand, and then returned through the wrist-loop oiutside the circle of arms and string.
+
+^^^^^^^^^^I present this puzzle for your consideration as an exemplar, an ideal example/  Why do I value it so highly^?  There are two separate reasons; its accessibility, and the importance of the idea exhibited by the solution, i.e. the description you impose upon a problem constrains the set of candidate solutions you can imagine.  This idea may be the single most important idea in problem solving.  The interlocking loops puzzle is an exemplar because it exhibits this powerful idea in an accessible form, in an almost inescapable form.  There appear to be three aspects of this accessibility.  It does not appear at first to be a complicated puzzle.  Its solution does not appear mainly to depend upon persistenance.  The puzzle's "trick" is not based upon some verbal quibble or some obvious cheat, not is it designed to "set up" or victimize the would-be puzzle masters.  The interlocking loops puzzle simply uses the natural patterns of thought without forcing.  It is not computationally forbidding and demands insight more than tenacity.  Therefore, people generally believe they should be able to solve it quickly and feel stupid when they can not.  These elements all sharpen focus on the role in problem solving of the perspective or framework of thought one imposes in the interpretation of the problem.  They also increase the sense of inevitability of the conclusion drawn from the solution -- even though it be based on only a single experience.  [* * strong conclusion needed here]
+.bp
+1Two Geometries0
+
+^^^^^^^^^^Geometry is a term that covers a lot of ground -- and other spaces besides.  My application of the term to our work, as much as it was limited in scope, is justified by Miriam's having dealt with the primitive space descriptions of Turtle Geometry and Coordinate Geometry.  The latte designates any point in a plane as an ordered pair of numbers.  The first number is commonly referred to as the X-coordinate (X is the horizontal axis); the perpendicular or vertical Y-axis defines the second number of the pair.  Miriam's use of coordinates involved specifying that some object should appear at a destination described by this ordered pair of numbers.  (Miriam's introduction to this geometry is described subsequently).
+
+1Turtle Geometry0
+
+^^^^^^^^^^Turtle geometry is an action-based geometry developed for use by children. The space is described by movement through it.  The primitive terms of description are actions, executed commands to move forward or back some distance or to turn right or left through some angle.  The commands are implicitly directed to an agent, the TURTLE (embodied as either a mechanical robot which lumbers over the floor or as a triangular cursor which zooms through a bounded space on a computer video display).  The commands are state centered, i.e. go forward so far from wherever-you-are and turn right so much from wherever-you-are-heading.  These are the basic geometri concepts Miriam was to deal with during our project.  Because Turtle Geometry exhibits a seminal idea (the design of knowledge environments specifically for children as a central endeavor of education) and because its realization in the Logo programming language is the nexus of what the Logo project has to show for the labors of its erly years, many activities which are commonly described as Turtle Geometry will not appear in this place.  Here we focus on descriptions of space and simple navigations in space through those descriptions.
+
+^^^^^^^^^^In the year preceding The Intimate Study, Miriam's interest at Logo focussed on addition.  She played minimally with the three novice subsystems she had encountered the year before.  Her favorite subsystem, EEL (predecessor of DRAW+), employed commands incompatible with the primitives of turtle geometry.  ZOOM, which used single character key-in to turn or advance the turtle a fixed amount, Miriam found too non-suggestive to enjoy.  She liked playing with SHOOT.  If I generously estimate her total use of these subsystems at ten hours, I would allocate seven hours to EEL, one to ZOOM, and two to SHOOT.  Let us begin recounting Miriam's re-introduction to turtle geometry by asking what she recalled from previous experience.
+.nf L
+.ls 1
+.in .5i
+Bob:^^^^You remember how to play SHOOT ?
+Miriam:^Yes.  I want to play it.
+Bob:^^^^O.K.  You play it, and we'll see if you know how ?
+Miriam:^Yeah....but how do I get the turtle turned back ?
+Bob:^^^^Ah ha.  That's a good question.
+Miriam:^But Daddy....
+Bob:^^^^Do you remember the turtle commands ?  To make the turtle turn ?
+^^^^^^^^... Well, he can turn in what direction, Miriam ?
+Miriam:^Right, left.
+Bob:^^^^O.K.  Right and left.
+Miriam:^R is for RIGHT ?
+Bob:^^^^R-T is for RIGHT TURN (M. keys `RT').... Then you have a space,
+^^^^^^^^(M. keys), then you give it a number of degrees to turn.
+Miriam:^How about fifty ?
+Bob:^^^^O.K....You watch what he does.
+
+.in
+When re-introduced to ZOOM a little later:
+
+.in .5i
+Bob:^^^^Do you know how to ZOOM ?
+Miriam:^Yeah.
+Bob:^^^^Do you want to do a little ZOOMing ?
+Miriam:^What's forward, F ?
+
+.ls 2
+.in
+.fi b
+Miriam knew the turtle executed two basic actions.  She was confused about how to command it, but when given a hint to think about the direction of turning, she responded with the single letter commands of ZOOM.  Her speculation (correct) that F was the equivalent of FORWARD for ZOOM shows her retaining that knowledge intact despite the correction of her earlier speculation that R (used for RIGHT in ZOOM) was a valid command for the SHOOT subsystem (it is not).  I infer that Miriam held at this point two lexically distinct descriptions of the commands executable by the turtle in his space.  I believe that Miriam's easy recall of this knowledge was due less to the extent of her earlier exposure (which was small and approximately a year before the above observations) than to the connectability of knowledge about the turtle's actions to her own personal geometry, that egocentric perspective on space we al;l develop in our earliest years.  Indeed, the action definition of the turtle's space is so natural that it stretches credibility to describe what Miriam knew in these excerpts as "learned".  But "natural" is well known to be a difficult word; let me be more explicit about the ways in which turtle geometry is natural to a person before pursuing the examination of what Miriam learned.
+
+^^^^^^^^^^I have seen a baby at six months turn on her belly to reach a toy initially beyond her grasp and at seven months crawl forward to reach another toy.  The states before and after he action were obviously meaningful to the infant and their changes were effected by intended actions.  These states of the infant's geometry are specifiable either by naming, e.g. I am HERE and the toy is THERE, or by operations, e.g. if I turn this much and go that far I will get from here to there.  The origin of the geometry is progressive, i.e. it resides at the body and moves with it.  It would be absurd to argue that Miriam learned ab initio such things at six years.  Since the same descripotion applies to the states ad actions of the turtle, can Miriam be said to have learned anything at all about turtle geometry ?  This problem, which we will return to shortl;y, exhibits one sense in which turtle geometry is natural.  The second evidence of "naturalness" is how easily ideas propagate through the mind to different contexts.  Consider this extended example from age (--;--;--):
+.ls 1
+.margin 1i 1i 1.75i 1.75i
+^^^^^^^^^^The children enjoy printing to paper the various drawings they command the turtle to create, and they have made many such drawings.  The other day we walked to the Coop to buy each child a large notebook for keeping the pictures they made with th eLogo printer.  As we three trekked across the campus, the children fell in "follow the leader" and an immediate argument over who should lead.  My turn-taking suggestion (one to the Coop, the other on the way back) was no solution: it left unsettled who should lead first.  Robby went first despite objections.  Miriamundercut him by giving Robby turtle commands to follow the obvious path whenever that path was clear.  To the Coop and back this game gradually elaborated as Robby raised syntactic quibbles to avoid doing what Miriam commanded.  For example, "You haven't told me how to `forward 30' (by which he indicated that Miriam had not verbally specified that a space separated the word "forward" from the word "30").  The most puzzling impediment Robby introduced occured while we were returning, skirting the side of building 26.  Miriam tried to make Robby walk into the wall by commanding "LEFT 90" (to be followed by a forward).  He stopped and said nothing.  After several commands and repetitions, Robby burst out laughing, "You haven't done a carriage return^!"  Miriam said, "New line." and Robby obliged her by walking into the wall.
+
+.margin 1i 1i 1.25i 1.25i
+.ls 2
+This (and other incidents as well) document the second sense in which turtle geometry is seen as a natural geometry, and now we can return to address specifically the question of what it means to learn something which is natural.
+
+^^^^^^^^^^A first answer, to be returned to in the final section, is this:  if the new, natural knowledge provides a specific and lucid description of what was known before, it is a new kind of knowledge about what was known before; if the increased articulation of knowledge renders old knowledge more widely accessible in the mind, that articulation is an especially important kind of knowledge.  A second answer, to be more fully developed now, is that one needs a very specific was of describing how new knowledge relates to old knowledge and what constiututes a significant difference between one agglomeration of knowledge and another.  Let us admit that the child's actions and the operations of turtle geometry conform sufficiently well that the latter is not learned in early encounters with turtle geometry.  All that can be said to be learned is the application of those actions to a new domain -- the floor plane of the mechanical turtle or his video display domain.  Couched in such terms, this conclusion demeans the important of applying knowledge.  It is especially misleading if, as I believe, knowledge is augmented and refined primarily through the application of old knowledge to new problems for which it is not yet perfectly well suited.  What is novel in the turtle geometry context is the persistent, explicit quantification of actions.  Let us pursue in detail the growth of Miriam's knowledge about angles, and even more specificaly, about turning 90 degrees, since this focus provides the cleanest example of how her prior knowledge connected with specification through numbers in turtle geometry.
+
+^^^^^^^^^^The first question to arise is whether Miriam (and poerhaps other children) conceive of turning as a continuous or a stepped action.  If you imagine the concept of turning is best examplified in a child's mind by a wheel's rotation around its axle of the hands of a clock moving around their central shaft, you might expect the child to conceive of turning as continuous.  Miriam did not conceive of turning as continuous.  If turning is a stepped actioned, quantification reduces primarily to problems of scale.  What is the smallest increment that makes an interesting change^?  What is a good default number to try when you can make no well motivated guess about what's appropriate^?  Miriam appears to have recalled at the beginning of the review session (when she played with SHOOT) that you need big numbers as operands to generate significant actions.  Her first angle operand was fifty degrees, and she repeated her RIGHT 50 three times till the turtle was nearly pointed at a target.  Her first distance was 20 turtle steps and was increased by incrmenets of 10 for successive trials in SHOOTing the target.  Playing turtle in Logo session 3 (age --;--;--) Miriam revealed the connectedness of her thinking about turtle geometry and her personal geometry.
+.nf L
+.ls 1
+.in .5i
+Bob:^^^^There's another way we could do this [play SHOOT]
+^^^^^^^^if we didn't want to use the computer; I made this hoop
+^^^^^^^^(a three foot diameter plastic hoop).  We could play
+^^^^^^^^SHOOT (dropping the hoop to the floor).
+Miriam:^You direct me how far to go and then I'll do it.
+Bob:^^^^What I was thinking was like this -- one of you could
+^^^^^^^^be the guy who's pretending to be the turtle and the
+^^^^^^^^other guy could pretend to be the person at the
+^^^^^^^^keyboard.
+Robby:^^I'll be the keyboard.
+Bob:^^^^We need some thing to measure the number of steps,
+^^^^^^^^and we have to know how to turn.
+Miriam:^I'll count them.
+Bob:^^^^Let's use this as a measure for steps [a ruler].  Is
+^^^^^^^^that a good person step ?  You could have baby steps
+^^^^^^^^[ruler size] and giant steps [picking up a three
+^^^^^^^^foot cane].
+Miriam:^That would be about a thousand and that would be about
+^^^^^^^^a hundred.
+Bob:^^^^Oh.  The ruler would be a hundred turtle steps ?
+Miriam:^Yeah.
+Bob:^^^^And this would be...?
+Miriam:^Count 'em.
+Bob:^^^^Well, let's see.  (Measuring the cane with the ruler.)
+^^^^^^^^One, two, three hundred turtle steps.
+Miriam:^Daddy, tell me how far to go.
+Bob:^^^^Well, Robby --
+Robby:^^(Assuming control) RIGHT 90.
+Bob:^^^^(To Miriam) RIGHT 90.  Do you know what to do^?
+Miriam:^Yeah.  (She starts turning right.)
+Bob:^^^^That's right.
+Miriam:^(Turns right a little bit -- about 30 degrees -- counts 1;
+^^^^^^^^continues counting one for every turn of thirty degrees
+^^^^^^^^up to about 15, i.e. more than one full turn....)
+Robby:^^(Laughing)
+Bob:^^^^We've got a bug here don't we.
+Miriam:^24, 25, 26, 27,...(laughing. She continues.)
+Bob:^^^^Oh Miriam
+Miriam:^30, 31, 32, 33, 34, 35, 36...
+Bob:^^^^Stop.
+Robby:^^Stop. Stop.
+Bob:^^^^You pressed the stop button, Rob ?
+Robby:^Yeah.
+Miriam:^(Stops.)
+Bob:^^^^We've got a turning bug of some kind here.  What does
+^^^^^^^^it means when we say right, then a number ?
+Miriam:^I'm the turtle, see.  You go right, this (again turning
+^^^^^^^^right about 30 degrees).
+Robby:^^Suppose I told you LEFT 90 ?  You do that.  (Robby 
+^^^^^^^^demonstrates a left 90.)
+Miriam:^O.K.
+Bob:^^^^What was that again, Rob ?
+Miriam:^If you're facing like this, he said turn like that.
+^^^^^^^^(Miriam lifts her arm at her side, then "jumps" under it.)
+Bob:^^^^That's sort of like it.  I know: get a piece of paper.
+^^^^^^^^We'll write it down to help us remember.
+
+.ls 2
+.fi b
+.in
+Because Miriam had no stron theory of how 90, the operand of Robby's command, was to be interpreted, she fell back in her simulation of the turtle onm the personal geometry's interpretation of what RIGHT 90 might mean, i.e. turn to the right a little bit, 90 times.  Such is a sensible and sound tactic.  By an accident of history, the Babylonian scale uses magnitudes which do not fit transparently with the basic units of turning in personal geometry, i.e. around (180), halfway (90), and all the way (360).  In two subsequent sessions, Miriamcame to appreciate and verify the correspondences of the Babylonian scale and her personal geometry.  In the following episode from Logo session 6 (age --;--;--), we three worked through a short series of speculations about how turns of 90 degree multiples affect the turtle's heading:
+.nf L
+.ls 1
+.in .5i
+Bob:^^^^Take a look at the turtle.  See where he's pointing.
+Robby:^^Heading, yes.
+Bob:^^^^That is called his heading.  Do you know how to find out
+^^^^^^^^what his heading is in numbers ?
+Robby:^^No.
+Bob:^^^^Watch.  Type the word "heading" ... and Logo says you
+^^^^^^^^don't say what to do with 180.  Well, his heading is 180.
+^^^^^^^^If we say "print heading" Logo says "180".  We'll clear 
+^^^^^^^^the screen (does so).  What do you think his heading will be ?
+Miriam:^180.
+Bob:^^^^O.K.  Print heading.  What's it gonna be.
+Miriam:^180.
+Robby:^^(No speculation)
+Bob:^^^^(Keys new line; 0 appears)  Isn't that weird ?
+Robby:^^I said zero.
+Bob:^^^^(Keying) Right turn 90. Now we'll print the heading.  What's
+^^^^^^^^his heading going to be, Miriam ?
+Miriam:^Uhm... zero.
+Robby:^^180
+Bob:^^^^(Keys print heading - the result is 90.)
+Miriam:^What ?
+Bob:^^^^Another right turn 90.  So he's done one right turn
+^^^^^^^^90 and his heading is 90.
+Robby:^^Oh.  He right turned 90.  That's what it is.
+Bob:^^^^(Keys) We'll do another right turn 90 and see where he's
+^^^^^^^^pointing.  What's his heading going to be ?
+Miriam:^90
+Bob:^^^^O.K.  He's done right turn 90 twice.  His heading is
+^^^^^^^^going to be what ?
+Miriam:^90
+Robby:^^180
+Bob:^^^^You say 90, Miriam.  You say 180, Robby.  Why is it 180 ?
+Robby:^^90.  90 (Correcting his last guess.)
+Bob:^^^^You think it's 90.
+Miriam:^180
+Bob:^^^^Why do you think it's 180, Miriam ?
+Miriam:^'Cause last time it was 180.
+Bob:^^^^When it pointed that way ?
+Miriam:^Yeah.
+
+.ls 2
+.in
+.fi b
+Miriam's correct recall of an earlier observation contrasts with Robby's attempt to deduce the result from remembered actions.  It exhibits the fixed frame of reference in which she sees 180 as related to heading more than to turning.  A few days later (in Logo Session 9) Miriam made the explicit connection between 90 degree multiples and turning around.  Let me sketch the context then cite the relevant dialogue from the session.  Miriam made a simple picture of a mouse face (Figure 1).  The head was an equilateral triangle.  The face showed circular ears and a small blob for a nose.  Miriam assembled these components in the sequence suggested by Ed Emberly's book Animal Faces. I advised her to turn the turtle before invoking the procedure TRI to draw the head.  My candidate turn was 60 degrees, which would have been the smallest turn leading to a horizontal side above an opposite vertex (the nose).  This interfered with my understanding Miriam's better idea:
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^If the triangle shoudl be turned, we should sort of
+^^^^^^^^turn the turtle...
+Miriam:^How ?
+Bob:^^^^You know how to turn it ?  You go right turn or left turn.
+Miriam:^(As she keys) R, T, space...
+Bob:^^^^What's a good number ?
+Miriam:^70....What would that big number be: 90 plus 90 ?
+^^^^^^^^What's  90 plus 90 ?
+Bob:^^^^A hundred eighty.  I don't think that -- that would just
+^^^^^^^^make him.... Oh, that's a brilliant idea !
+Miriam:^(Keys RT 100 then corrects it to 180).
+Bob:^^^^Gee, that's really a good idea.  Is that what you knew
+^^^^^^^^would happen ? 
+Miriam:^Robby was right.  One turn like that would be 90 and...
+Bob:^^^^Then all the way around is --
+Miriam:^(Interrupting) Halfway.
+Bob:^^^^And halfway round's 180.
+
+.ls 2
+.in
+.fi b
+When once she caught on to the specialness of 90 and 180 degrees, Miriam because able to navigate the turtle in its space quite skillfullly and with good comprehension.  This  is further witnessed by her careful placement of features in drawing Football Fred (See Figure 1) and the PERSON of Logo Sessions 59 and 60 (See Figure N).
+
+.bp
+1FIGURE 1
+Two Drawings
+.bp
+1Coordinate Geometry0
+
+^^^^^^^^^^In contrast with the learning requirements for navigating in turtle geometry, knowing how to get around in a system of absolute coordinates required Miriam to learn a description of space with which she was not already intrinsicly familiar.  If I traced her experience in exquisite detail, I would present mainly a chronicle of non-comprehension crowned finally by an insight.  It is not my intention to trace development in such detail in this place.  Here, it can be more profitably asked first, "Why was Miriam unable to tke the advice initially offered her^?" and then "What made the difference in her later access to the knowledge she could not initially comprehend^?"  Addressing these questions requires explication ot two new novice subsystems.  Let us begin with the first one introduced.
+.bp
+1FIGURE 20
+.bp
+1READY, AIM, FIRE0
+
+^^^^^^^^^^This system of procedures was written at Robby's suggestion and for his delight.  During the preceding school year his reading interests had been dominated by the Second World War, with a sharp focus on naval war in the Pacific and the air war in Europe.  The scene set for using the system was that of a tailgunner protecting his bomber from attacking fighters.  Think of the gunner's canopy as providing the guidance for locating his gunsight while the airplane appears at a random location in a second, remote space.  Figure 2A shows that gunsight.  The gunsight is not re-set after the command FIRE.  This in Figure 2B the gunsight appears where the last airplane was shot down.  The command READY draws an airplane at a random locus and orientation.  A "yes" rsponse to the question "Guidance^?" draws the scaled X and Y axes.  The gunner now attempts to locate his gunsight on target through one or more AIM commands (he may AIM as many times as necessary before commanding FIRE).  The AIM command requests inputs for the X and then Y coordinates to which the gunsight will move.  Figure 3A shows the gunsight moved horizontally from its former lkocus in response to the input value "145" for the X coordinate.  Figure 3B shows the gunsight moving on target vertically after the A coordinate had been set as in 3A.  With the gunsight on target (more or less), the gunner commands FIRE.  The cannon fire is represented as "BAM BAM BAM".  If the cross hairs are located within the area of the fuselage, the airplane explodes, "KA-BOOM".  Figure 4A shows that when the fifth plane is shot down the gunner is congratulated as an "ACE".  If the cross hairs are not on the fuselage, the airplane disappears, i.e. the gunner hjas missed his opportunity.  But whenever he commands READY, a new target appears in a different random location.
+.bp
+1FIGURE 30
+.bp
+^^^^^^^^^^This game fell into its specific scenario because of Robby's interests.  Its design, more generally considered, reflects my objectives and pedagogical point of view.  I wanted to present both children with a game quite similar to SHOOT, but one based on this contrasing geometry, so that subsequent explicit comparisons could be focussed on the differences in spatial description.  But if the children had seen imediately the similarity, they would not have accepted the different spatial description as justified by the differentness of the problem.  That is, if I offered them a form of SHOOT in absolute coordinates, they would have rebelled, rejected the idea as stupid in the extreme.  I would agree with them but for one thing.  I believe that sensitivity to multiple descriptions is an important and powerful aspect of intelligence.  My justification was quite beyond their appreciation, and since we are democrats in the home (at least they are), I needed to be somewhat devious and manipulative to engage them with the issue.
+.bp
+1FIGURE 40
+.bp
+^^^^^^^^^^Robby had a good experience with R.A.F.  It took him a while to accede to the description, but when he caught on (as he did in Logo session 14), his engagement was intense.  Let me be specific.  I had hoped to leave the lab early that day.  A friend, with his infant daughter, was awaiting a ride home with me, but Robby would not leave.  He kept us at the lab an hour beyond my preference, shooting at airplanes so that he could become an "ace".  He reached an insight and in effect demanded to consolidate that learning at that time.  The permanence of tht insight is shown by his subsequent use of the coordinate description of space as an ancestral perspective in terms of which he interpreted others.  For example, some months after the close of The Intimate Study, when I introduced the children to the game of Go, Robby interpreted the alphbetic/numeric descriptions of board locations (in playing directions) as "being like that X Y business" in R.A.F.
+
+^^^^^^^^^^But what of Miriam ?  The two children were simultaneously introduced to R.A.F. in a joint session (Logo session 11).  As much as the system catered to Robby's special interests, I also expected Miriam's competitiveness to engage her with the system.  The outstanding special peripheral problem in Miriam's introduction to absolute coordinate geometry was her unfamiliarity with negative numbers, to which this citation from from her initial arithmetic examination testifies:
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^Do you think there's any number tinier than one ?
+Miriam:^Yeah.  Zero.
+Bob:^^^^Are there and numbers tinier than zero ?
+Miriam:^No.
+
+.ls 2
+.in
+.fi b
+It would have been possible to locate an origin at the lower corner of the video display screen, thus describing the space in terms of positive numbers.  In retrospect, I can imagine that Miriam might have had easier access to coordinate geometry if introduced to a corner-origined rather than a center-oprigined frame of reference.  My error of judgment in the pedagogy of design is less justified than redeemed by the clarity with which her resulting difficulties illuminate the process of her learning.  Its immediate consequence was my offering a learning aid to relate the partitioning of space into four quadrants to the positive and negative values of the X and Y coordinates.  The little diagram below duplicates the "hint card" both children had available when using R.A.F.
+.sp 10
+This was both to exhibit and remind them that positive and negative coordinates would result in the gunsight's moving into the appropriate quadrant of the four defined by the axes' intersection.  This hint, first on a 3 x 5 card, thend rawn on a chalkboard, is important as the initial form of guidance the children received.  In Logo session 11, there were no scaled axes, merely a center-mmarking cross ten units length from the origin in both directions along both axes.  Miriam suggested I add the pluses and minuses to the video display in Logo session 12:
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^...That shouldn't be too hard.  See how close it (the airplane)
+^^^^^^^^s to zero ?
+Miriam:^Is it plus ?
+Bob:^^^^It looks just about as though it's near zero.
+Miriam:^It's minus.
+Bob:^^^^A little bit minus....It's on the side where the X's are plus,
+^^^^^^^^and it's just a ittle bit down here where the Y's are minus....
+^^^^^^^^This cross(pointing to the screen) is the same as this cross
+^^^^^^^^(pointing to the chalkboard hint).  You understand that ?
+Miriam:^^^^Why not put it on the screen ?
+Bob:^^^^You mean I should put the pluses and minuses up here too.
+Miriam:^Yeah.
+
+.ls 2
+.in
+.fi b
+I cite this dialogue as evidence that Miriam was willing to accept the iportance of plus and minus in this problem, but not s evidence that she understood the application.  Why is it important to establish Miriam's sensitivity to the issue ?  Plus and minus are classifying divisions of point place names.  If we hope to comprehend the nature of Miriam's understanding of coordinate geometry, we must build up a sense of the genetic path of that understanding.  Doing so begins with the attempt to establish what she perceived as relevant to the problem and what advice dominated her thought.  Let this second citation from Logo session 12 represent my advice to her:
+.ls 1
+.in .5i
+.nf L
+One way you could think about the X and the Y, Miriam, is that each place on the screen has a name.  Like the X is the first name and the Y is the second name....
+.ls 2
+.in
+.fi b
+Miriam's initial conception was not confomrable to my advice, and between us we generated the confusion cited here from Logo session 12, attempting to read a target at Y^=^-70:
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^You had Y as minus 60.  Maybe you want to make it --
+Miriam:^(Keys a positive number)
+Bob:^^^^No.  Minus.
+Miriam:^That will make it go up ?... Rubout, minus. Minus
+^^^^^^^^(keying)...minus goes up.  (As the gunsight rises from Y^=^-60
+^^^^^^^^to Y^=^-11).
+
+.ls 2
+.in
+.fi b
+What this witnesses is a partitioning of input variables focussed on state change with the quantity assigned to how far the gunsight should move and the sign determining the direction of movement, i.e. X^=^-10 means "move left ten units".  The contrast of our perspectives becomes explicit in Logo session 14 when Miriam tried locating the gnsight on a target at (-155,^-35):
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^Minus forty; real close./
+Miriam:^(Directing the keying) Next move over a little bit. 
+^^^^^^^^How about ten ?
+Bob:^^^^O.K.  Right not it (the gunsight) is at minus 160.
+^^^^^^^^Let's make it at minus 150.
+Miriam:^No^!
+Bob:^^^^Why^?  What will that do ?
+Miriam:^(Gesturing past the left edge of the screen) Put it
+^^^^^^^^over there.
+Bob:^^^^Oh.  I see.  You think what we are doing here is putting 
+^^^^^^^^in a change.  That's not so.  What we are doping is putting
+^^^^^^^^in the name of the place we want it to go.  If you put in
+^^^^^^^^the name minus 10, it will go way over here to minus 10
+^^^^^^^^and som Y number.  How about we AIM again.  What would be
+^^^^^^^^the name of this place (the target) ?
+Miriam:^I don't know.
+Bob:^^^^We know the name of a place close by was minus 160.
+^^^^^^^^I think the name of this place is minus 150, minus 35.
+^^^^^^^^Are you willing to try that ?
+Miriam:^O.K.
+Bob:^^^^Do you know how I know that's a good idea ?
+Miriam:^You made it (R.A.F.).
+Bob:^^^^It'sbecause I made it, but also because of the way
+^^^^^^^^I think of these numbers.
+
+.ls 2
+.in
+.fi b
+The session from which this dialogue is drawn markled the end of our early use of READY, AIM, FIRE.  The theme of guidance and the tsk of navigation in absolute coordinate geometry were supplanted for a while by the work reported in [* subsequent sections*].  My conclusion from these sessions was that Miriam's focus on two objects, the gunsight and the target, reinforced the disposition she had (from her recent play with SHOOT and other turtle geometry sources) to conceive of the task in terms of difference reduction and state change produced by correponding actions; i.e. X^=^10 meant "change X by ten" and not "go to a place with the name X^=^10".  In my manual trnscript of these sessions, I entered a marginal note: "make a game of XY values as names moving the turtle around".  How I did so and the consequences are recorded in this next section.
+
+1MAKEDOTS0
+
+^^^^^^^^^^Miriam had long enjoyed making pictures bu connecting serially numbered dots in "dot-to-dot" drawings when I introduced her to this subsystem in Logo session 50.  The system is very simple and executes through two subprocedures, MAKEDOTS and DODOTS.  The firs procedure requests X and Y coordinates; when both are input, a small square is drawn at the point they define and the location is entered in a list of places.  During this procedure the turtle is hidden.  Nothing moves anywhere.  DODOTS draws lines from the locus of each memner in the place list to the next one.  Figure 5A shows eight dots set in place by MAKEDOTS.  Figure 5B shows those same dots as connected in order of specification by DODOTS.  (If the products of this system seem terribly asbtract as designs and you, my reader, can easily imagine better ways to do more interesting things, be sure that I agree with you.  MAKEDOTS is a "throw away" system, one that can be of interest to a person only at a specific point of development -- when it provides a way of working towards the solution to a long-standing problem which interests him for external reasons.)  Surprisingly enough, Miriam enjoyed playing with MAKEDOTS.  In Logo Session 54, she made the desighns of Figure 6A and 6B.  These desings were made with my help and advice, and I do not claim she understood fully well what was happening.  But some specific, novel knowledge is shown.  The typical execution of the system saw us two alternately making dots with my interjecting requests that Miriam speculate about where each would appear before keying new line.  The following, from Logo session 54, is typical but also an important incident in its own right:
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^I'm gonna make X zero.  And I'm gonna make Y zero.
+^^^^^^^^Where's it gonna go ?
+Miriam:^(With noi hesitation) Middle.
+Bob:^^^^(Keying) Absolutely right.
+Miriam:^I'm going to make... ah... minus zero  and minuz zero.
+Bob:^^^^Where's it gonna go ?
+Miriam:^(Keying new line)
+Bob:^^^^Same place.  Hah !  I guess plus and minus zero are
+^^^^^^^^just the same.
+Miriam:^O.K.
+
+.ls 2
+.in
+.fi b
+How much clearer could it be that here Miriam made an experiment, knitting together the domain of plus and minus in the nexus of the "middle", the central origin of the absolute coordinate system we used ?  Her knowledge connecting quantites to the origin is extremely specific.  How much further did it extend ?  Did she adequately distinguish the order of terms and connect that order with spatial placement ?  These two citations argue against that interpretation.  First :
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^I'm going to make X minus 50...And I'm going to make Y zero.
+^^^^^^^^You know where it's going to go ?
+Miriam:^No.
+
+.in
+And later:
+.in .5i
+Miriam:^Ah, I think I'll make [X^=^] one hundred nineteen...
+^^^^^^^^[Y^=^] minus --
+Bob:^^^^(Interrupting) Hold on.
+Miriam:^(Keys new line)...minus one hundred eighteen.
+Bob:^^^^Where dfid it go ?
+Miriam:^(Point to the lower right quadrant)
+Bob:^^^^Oh.  O.K.  My turn...I'll make [X^=^] minus a hundred
+^^^^^^^^nineteen and I will make [Y^=^] a hundred eighteen.
+^^^^^^^^Where do you think it will go ?
+Miriam:^I don't know./
+
+.in
+Immediately following this response, which with the former argues poor
+
+discrimination in relating number order to axes, Miriam was able to
+
+take my advice in this dialogue (Logo session 54):
+
+.in .5i
+Bob:^^^^I'm going to put one over here.  (Pointing to Y axis).
+Miriam:^O.K.
+Bob:^^^^I'll make X equal a hundred seventy seven (looks at
+^^^^^^^^Miriam) and I'll make Y equal to -- No !  I made a mistake.
+Miriam:^Why ?
+Bob:^^^^That's O.K. I'll make Y equal to a hundred seventy seven...
+^^^^^^^^Actually, I think it's going to go way up here now (pointing
+^^^^^^^^to the upper right quadrant).
+Miriam:^(Keys new line)
+Bob:^^^^I wanted it right there in the middle (pointing to the
+^^^^^^^^positive Y axis).  If you make a number with X equal to zero,
+^^^^^^^^then a hundred seventy seven, it will be right in the middle.
+Miriam:^(Keying) [X^=^] zero.  New line... [Y^=^] a hundred sevety seven.
+
+.ls 2
+.in
+.fi b
+Miriam already knew that (0,0) was the middle of the screen.  The bit of knowledge acquired here is that an initial zero constrains the dot to "the middle", i.e. to the Y axis.  THe dot placed during this dialogue is noted by the arrow (1) in Figure 7B.  The next dot placed, noted by the arrow (2) in the same figure, is constrained to the X axis by the second placed zero:
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^What was it we said ?...X was gonna be zero, to get it
+^^^^^^^^in here somewhere.
+Miriam:^Yeah.
+Bob:^^^^Let's try that and see if it works... seemed to work that time...
+^^^^^^^^Try about a hundred and fifty.
+Miriam:^(Keys 50)
+Bob:^^^^What do we do now?... I would like a line to sort of go down
+^^^^^^^^that way (gestures negative slop from arrow 1).  I think that
+^^^^^^^^would make it look prettier.
+Miriam:^O.K.
+Bob:^^^^How am I gonna get a dot out there ?
+Miriam:^Dunno.  Try one.
+Bob:^^^^You have any good ideas ?
+Miriam:^How about making minus ?
+Bob:^^^^You think it will go over here pretty good ?
+Miriam:^A hundred forty nine.
+Bob:^^^^O.K.  Give it a try.
+Miriam:^(keys new line -- starts toward keying digit 1 for the leading
+^^^^^^^^digit of the Y coortdinate)
+Bob:^^^^How about trying Y equals zero ?
+Miriam:^(Changes, keys zero).  Zero.
+Bob:^^^^O.K.  Where'd it go ?
+Miriam:^(pointing) Right here [along negative X axis].
+
+.ls 2
+.in
+.fi b
+These incidents, not especially notable by themselves, assume important as the immediate precursors of the incident through which Miriam grasped the essence of the description of space by absolute coordinates.
+
+1Catching On0
+
+^^^^^^^^^^Figure 5B showed an execution of READY, AIM, FIRE weith a "carrier" substituted as target for the airplane and a "sub" substituted for the gunsight.  We refered to this form of R.A.F. as CARRIER.  In the version Miriam used, the original gunsight of R.A.F. had not yet been replaced by the sub.  In the three executioons of this game immediately following the work documented above, Miriam rapidly "caught on" to the significance of numbers in the absolute coordinate description of space.  What Miriam learned and the genetic path of her learning can be clearly seen in these incidents and will be discussed in the  next subsection.
+
+^^^^^^^^^^The three confusions Miriam grappled with in the following are: relating the X and Y symbols for quantites to their respective axes on the display screen; concevining the quantites s state changers and not as partial point names; confusions about how plus and minus determine movement up or down and right or left.  The confusions all appear.  In Logo session 54, we find Miriam determinging a coordinate value from the negative Y axis and applying the value to the X coordinate, thus:
+.ls 1
+.in .5i
+.nf L
+Bob:^^^^It [AIM] wants to know what X is.
+Miriam:^A hundred...twenty (reading off the negative Y axis).
+Bob:^^^^O.K.
+Miriam:^(Keys 120 and new line; the gunsight moves along the X axis 
+^^^^^^^^instead of down as Miriam expected; she appears to shrug her
+^^^^^^^^shoulders.  Luckily, both target coordinates had the same
+^^^^^^^^magnitude though different sign.)
+Bob:^^^^There goes our gunsight....Is it on target ?
+Miriam:^(Starts to measure the distance down from Y^=^0 --
+^^^^^^^^then adopts her previous candidate). 120. Try as hundred twenty
+^^^^^^^^(Keys 120 and new line; the gunsight moves up).  Rats !
+^^^^^^^^It went up.
+
+.in
+After some confusion, Miriam asked:
+
+.in .5i
+Miriam:^How do you get it to go down ?
+Bob:^^^^(Pointing to the symbols at the axis ends)  Remember,
+^^^^^^^^we have plus Y's and minus Y's.  You said right.  This
+^^^^^^^^is a hundred twenty (pointing to the Y axis, then to
+^^^^^^^^the sign below) minus.
+Miriam:^Minus !
+
+.ls 2
+.in
+.fi b
+Miriam succeeded in locating the gunsight over the target, FIREd on her first carrier, and was jubilant ("I knew it^!  I knew it^!") at a success for which she felt responsible.  This success was a relatively easy one because at her first AIMing, the gunsight was centrally origined.  The coordinates were numerically the same value as the distance the gunsight had to move.  Thus two accidents (the equal coordinate magnitude and the locus of the gunsight near the origin ) simplified the possible interactions of confusions so that she could interpret her original as a single mistake (not accounting for the minus sign) and correct it.
+
+^^^^^^^^The second target appeared in the third quadrant (approximately at [-120,^-120].  This quirk of the random number generator (producing two sets of coordinates identical in magnitude) simplified understanding how selected inputs produce results.  To AIM the gunsight at the new target, the minimal change was from X^=^120 to X^=^-120.  Let us trace in detail Miriam's solving this problem,  I consider it a breakthough in her ise of XY coordinates.  Focus your attention in the following dialogue on two points.  How does Miriam keep the gunsight where it is despite being required to enter an input variable ?  How does Miriam adjust the value [X^=^-100] to get the gunsight over the target at [X^=^-120] ?
+
+.ls 1
+.in .5i
+.nf L
+Miriam:^Wasn't a hundred twenty, a hundred twenty a good idea ?
+Bob:^^^^Yes.  That was very good when the carrier was here 
+^^^^^^^^[at prior location], but now the carrier is in a different
+^^^^^^^^place.  (Pointing to the X axis) These are minus numbers
+^^^^^^^^on this side, and that's a hundred.
+Miriam:^Think I'll go minus a hundred.
+Bob:^^^^(pointing to the 100 marker)  But that will get it right
+^^^^^^^^where the big line is.  Is that where you want it ?
+Miriam:^Yeah.  (Miriam assumes the gunsight will go onto the X axis,
+^^^^^^^^as I had just indicated it would). And then what I'll do
+^^^^^^^^is I'll get it down.  (Keys X^=^-100; the gunsight moves over).
+Bob:^^^^Oh boy.  If you can keep the Y just where it is, you'll
+^^^^^^^^be in great shape.
+Miriam:^Y zero ?
+Bob:^^^^No.  Y was what ?  It was minus...a hundred and twenty ?
+Miriam:^Yeah. (Keys -120) A hundred twenty.  (No movement)
+Bob:^^^^O.K.  All you have to do is get you X over here to the center
+^^^^^^^^of the carrier.
+Miriam:^(Keys AIM and new line)  Here I go.  X will be...
+Bob:^^^^Plus or minus ?
+Miriam:^Plus ?  No. Minus  Minus 20.  (Keys -20; the gunsight
+^^^^^^^^moves right -- the wrong way, to [-20, -120].)
+^^^^^^^^Oh grumble.
+Bob:^^^^Hmmm.
+Miriam:^Thin I'll do plus 40.
+Bob:^^^^Hold on.
+Miriam:^On my next X.
+Bob:^^^^What you have to understand, Miriam, when you say plus
+^^^^^^^^or minus, it doesn't tell you how much to move the gun,
+^^^^^^^^but it tells you the name of the place where it's going to go.
+Miriam:^Where ?
+Bob:^^^^What you have to figure out is what's the name of that place,
+^^^^^^^^ where the carrier is.  It's kind of like using the MAKEDOTS...
+^^^^^^^^(Points to the carrier) Right now we're waiting to put in minus
+^^^^^^^^a hundred twenty for Y.
+Miriam:^Yeah.
+Bob:^^^^O.K.  (Keys it in.)  So let's AIM again, and we know minus
+^^^^^^^^one hundred was might close (pointing to the marks) and this way
+^^^^^^^^(left) gets bigger minus.
+Miriam:^(Puts hands on the X axis to count the divisions)  Minus
+^^^^^^^^a hundred twenty (as she drops the line down from the X axis).
+Bob:^^^^Give it a try.
+Miriam:^(keys ) minus 1, 2, 0 (gunsight moves over the carrier).
+Bob:^^^^Right on, if you can keep Y in the same place --
+Miriam:^a hundred twenty !
+Bob:^^^^Plus or minus ?
+Miriam:^Minus (keys -120 mand new line)
+Bob:^^^^Are you ready to FIRE ?
+Miriam:^(Keying) F, A, R, E.
+Bob:^^^^That's "fare".  Give it a try and seewhat the turtle says.
+Miriam:^(Keys new line and laughs at the error message.)  F --
+Bob:^^^I, R, E.
+Miriam:^(keyin) I, R, E.
+Bob:^^^^(Reading from the terminal) BAM BAM BAM !  You shot down 
+^^^^^^^^number two.
+Miriam:^What happens when I get five ?
+Bob:^^^^It will say "Congratulations Ace" if you ever get to five.
+
+.ls 2
+.in
+.fi b
+Miriam's first suggestion to keep the gunsight fixed was "Y zero".  That is, she thought of the Y coordinate as a state-changing quantity.  But when that option was blocked, she accepted the previous value of Y [-120] as an alternative.  Subsequently, when the X coordinate in so specified as to bring the gunsight over the target, she volunteered the correct value for keeping the location foxed.  Here it the essential contrast in the simplest case: do you maintain a thing by doing nothing (Y^=^0, the coordinate seen as a change operand) or by doing what you did before (Y^=^-120, the coordinate seen as relative to the extrinsic reference point. [0,0]).  In R.A.F. the second option works.
+
+^^^^^^^^^^When Miriam tried to modify the X coordinate from -100 to -120, she naturally thought of -20 as the appropriate change of specification.  Her correction when -20 was shown faulty was +40, i.e. the compensation for the error plus what "must" be required to achieve the original objective.  One more the coordinates were seen as change operands.  When Imtold her that "It's kind of like useing MAKEDOTS" and "We know minus 100 was mighty close and this way [left] gets bigger minus," Miriam for the first tiome got her own solution in terms of XY coordinates, first locating the gunsight on the target with X^=^-120, then keeping it there with Y^=^-120 without prompting or correction.  I hold that this change of behavior signals an insight, an intellectual breakthough.
+
+^^^^^^^^^^As she tackled her third target, Miriam was able to work her way out of a related confusion with sound justification.  With the gunsight at [-120,^-120] she keyed:
+
+.ls 1
+.in .5i
+.nf L
+Miriam:^Minus (Keys -120 and new line)  Oh oh.  It didn't move.
+Bob:^^^^Why didn't it move ?
+Miriam:^'Cause it didn' do X yet.  I did Y.
+Bob:^^^^No. Actually, that moves every time you key in a number.
+Miriam:^That's where minus a hundred twenty is.
+Bob:^^^^Oh, right !  So if it's already where iut should be,
+^^^^^^^^it doesn't move.
+
+.ls 2
+.in
+.fi b
+What I make of these incidents is the following.  Miriam showed at this point two competing interpretations of XY coordinates.  The first occuring explained a coordinate value as an operand for a change.  Think back to the interlocking strings puzzle of our introduction.  A critical contribution in solving that puzzle was the constraining style of thought.  In the citation above, I provided that constraint, the rejection of an incorrect speculation, after which Miriam's second candidate, the correct one, came forward.  Did Miriam ever go do far herself as to reject her salient, state-change interpretation of what coordinates might mean ?
+
+^^^^^^^^^^There were many incidents where Miriam's good success at a target followed mny ocrrection of her first inclination to indenitfy the corrdinate with a change operand.  In her last use of R.A.F. Miriam showed self-correction.  After first identifying the Y coordinate value as the vertical distance between the sub and carrier, she recalculated the operand without my intervention.  The citation begins with the sub at [150,^50] and the carrier at [100, 100].
+.ls 1
+.in .5i
+.nf L
+Miriam:^Overt forty.
+Bob:^^^^Is that the name of the place ?
+Miriam:^Plus forty.
+Bob:^^^^Is that the name ?
+Miriam:^(Looking puzzled)
+Bob:^^^^It's not how much you're going to move it.
+Miriam:^(Looks back at the terminal, slapping her forehead) No !...
+^^^^^^^^Putting her hand on the large marker of the X axis) It's
+^^^^^^^^exactly one hundred.  So we just say 100
+Bob:^^^^You think that's right ?
+Miriam:^Yeah !
+Bob:^^^^O.K.
+Miriam:^(Keys 100; the sub lines up)
+Bob:^^^^Beautiful.
+Miriam:^Ahh... Up.  Up 50, but... I mean (moves fingers from the sub
+^^^^^^^^to the Y axis, then up to the target height; then moving her
+^^^^^^^^hand from the target back to the Y axis, holding up forefinger)
+^^^^^^^^One hundred ! (Keys 100; sub moves into the center of the target)
+^^^^^^^^Yeah !!
+Bob:^^^^Oh, I hope you're gonna get it here.  You think so ? (she keys
+^^^^^^^^FIRE; Bob reads) "Congratulations Ace".  Good for you.
+
+.ls 2
+.in
+.fi b
+This session ended Miriam's experience with R.A.F. and coordinate geometry during The Intimate Study.  Let us now discuss what we may conclude about Miriam's appreciationof the two geometries, their natural application to a single space, and how these interact with the theme of guiodance.
+
+1Discussion0
+
+^^^^^^^^^^In her introduction to coordinate geometry, three confusions dominated Miriam's thought.  First, she did not consistenly identify the X coordinate and the Y coordinate with their respective axes.  This confusionwas exeracerbated by AIM's requesting the coordinates in the standard order while Miriam inclined to be first concerned about vertical rather than horizontal placement.  The second confusion related to interpretation of plus and minus signs as signifying operations which had import for changing the location of the gunsight.  When her candidate values did not have expected consequences, Miriam chose to fault the sign-action correspondences she had chosen.  For example, when she keyed -11 for a Y value and the gunsight rose from Y^=^-60 to Y^=^-11, Miriam concluded, "minus goes up".  The third confusion was identification of the coordinate quantity as a value by which the state description would be changed.  The first confusion seems a matter of convention merely.  A more richly presented set of axes, such as this below, could minimize confusion about whether the vertical or hirizontal axis is X or Y.
+.sp 10
+Requestingvalues in the user's preferred order would be an insignificant implementation change.  The second and third confusions are essential confusions because they derive from Miriam's capability to imagine what the coordinate values might mean.
+
+^^^^^^^^^^The quintessential confusion is that Miriam analyzed a form such a +35 or -60 into two constituents, an operation signifier and and operand signifier (with sign ommitted, the quantity interpreted as having an implicit or default operation specified).  Miriam interpreted the quantites as having a structure they do not have.  Why ?  There are several reasons.  A first one would be called a lexical convention.  Plus means "add"; minus means "take away".  Both are operations whose operands change the value of the terms to which they apply.  A second reason is tha task itself.  One object, the gunsight, is to be moved over another, airplane or carrier.  The salient obstacle is that they are apart.  Action is the way to reduce such a difference, i.e. mve the gunsight from here to there.  Thinking in terms of a geometry of action was clearly natural to Miriam in a profound sense tha coordinate geometry was not.  Let us pursue this point a little further.  We can represent the microworlds of experience which Miriam called on to do turtle geometry and coordinate geometry as in Figure 8A.  At any locus in such a genetic cluster of microworlds, the tempoorally earlier microworlds can be called the ancestors of those developed later.  Thuis the world of personal geometry is ancestral to turtle geometry.  The worlds of Miriam's arithmetic and geometry knowledge developed simultaneously.  Such worlds are cognate.  Miriam's essential confusion was to conceive of coordinate geometry as descendent from turtle geometry anbd arithmetic, which implies a very strong form of likeness, one wherein the operations of the ancestors provide through "analogy" strong hypotheses for operations in the descendent world.  Miriam assumed such a relation obtained when in fact it did not.
+
+^^^^^^^^^^To say that Miriam "assumed such a relation obtained" implies that she could have thought of the coordinates of R.A.F. as something other than she did.  But if coordinate geometry is unnatural as turtle geometry is natural, maybe she had, in effect, no choice.  How can I make such a statement seem sensible ?  Let me put you in Miriam's position.  Suppose you confron a problem beyond your experience.  That system of perspectives (the partsiong into part and whole relations) and procedures you need even to comprehend the problem is inchoate.  You can only begin to make sense of a more-than-trivial problem if you can see it through the perposective of an ancestral microworld, which provides a preliminary parsing of the relevant forms into parts and wholes with which you can attempt to reason.  Such ancestral worlds will also communicate strong hypotheses about what functional procedures might be appropriate for experimental testing.  If you lack, in fact, experience which might have provided you with relevant ancestral microworlds, what will happen ?  Will you not attach your new problem-context-specific microworld to an inappropriate cluster of ancestral microworlds ?  Having made such a commitment, Miriam was not able to take advice wherein the forms (+55 or -60) were not analyzable into the constitutents she saw them as, i.e. operation code and operand.  She abandoned R.A.F. early in the project.
+
+^^^^^^^^^^My intention in introducing MAKEDOTS was to provide, albeit temporally after the fact, an ancestral microworld for R.A.F.  Miriam could not interpret the X and Y coordinates as names when it was possible toiinterpret them as actions.  MAKEDOTS was designed to appear action-free.  The only events were the appearing of dots upon their being named.  Recall that when playing with R.A.F. in Logo session 54 Miriam's insight followed hard upon my advice that "It's kind of like MAKEDOTS".  If we merely note that "analogy" was a significant factor in her insight, we miss the central point.  This particular advice was not about some transient similarity; it was advice about how Miriam should organize her mind.  It directed her to relate coordinate geometry to a different parsing oif the forms encountered from that of turtle geometry and arithmetic.  And she was able to take that advice -- because she now owned a microworld wherein her perspective, in fact, fitted the requirements for R.A.F.  That is, MAKEDOTS could serve as ancestreal to R.A.F. though it was temporally a later creation.
+
+^^^^^^^^^^But problems, profound ones remained.  Once you have made a commitment in cognitive structure, how do you get out of it ?  Miriam had trouble in Logo sessions 54 and 55.  She still saw X and Y as with an operation-operand structure, but there was a profound advance.  When I intervened to inhibit that view of coordinates, she could now interpret their signification through her perspective on coordinates in MAKEDOTS, i.e. she owned a competing, albeit secondary ancestor to her coordinate geometry world.  Miriam's finally showing self-directed inhibition of the coordinate geometry connection to the personal geometry cluster (in Logo session 65) is important precisely because it shows how gradually she broke the dominance of the conncetion betweencoordinate geometry and the personal geometry cluster.  Further, it permits the argument tat the suppression of intrusive, inapplicable ideas occurs when the inhibition of communication between microworlds (as well as and  distinct from procedural modification within microworlds).  The suppression of the interfering mis-comprehension can be an aspect of mental organization, i.e. we can see the MAKEDOTS/COORDINATE microworlds splitting off from the personal geometry cluster as a cognate cluster (see Figure 9B) whereas this coordinat world was originally seen as a descendent of the personal cluster.  With the developing separation of these knowledge clusters, Miriam's understanding was less a prisoner of a single point of view.  This is a most important aspect of multiple perspectives, and it returns us again to the first theme of this paper, "guidance".
+
+^^^^^^^^^^The guidance "lesson" I hoped to impart in its most general form is this: a second description of a problem domain can suggest condidate solutions and strategies for a problem couched in a primary description.  Robby exhibited a spontanteous example of such thinking when first introduced to R.A.F. (Logo Session 11).  As I named for him the X and Y coordinate axes, with the airplane and the gunsight on the screen:
+.ls 1
+.nf L
+.in .5i
+Bob:^^^This is X along this way.  If it's over here, those are numbers
+^^^^^^^of X greater than zero.  If you're over here [on th left], it's
+^^^^^^^numbers of X smaller than zero.
+Robby:^Hey, Dad.  You know what ?
+Bob:^^^Yeah ?
+Robby:^You know what I would do if we were playing SHOOT ?  I'd say
+^^^^^^^"SHOOT X 120" so it would be even with the target, then "right turn 90,
+^^^^^^^SHOOT Y" so it would go in.
+Bob:^^^I don't understand.
+Robby:^What I would do is get him lined up with the target, then right
+^^^^^^^or left turn it, then I'd say SHOOT the other number to get it in
+^^^^^^^because of the X's and Y's and get it in.
+.in
+.ls 2
+.fi b
+Miriam's closest approach to such an alternate way of looking at the task of SHOOT occured at the end of Logo Session 55, when I introduced guidance in the form of the scaled axes of R.A.F. to the domain of SHOOT.  Miriam was abgry at my altering a favorite game and at firsty refused to play.  After her refusal, I started to execute SHOOT.
+
+.ls 2
+.in .5i
+.nf L
+Bob:^^^^I will do it with guidance.  Watch.
+Miriam:^(unhappily) Yeah.
+Bob:^^^^(The turtle points at the target along a line parallel to the Y axis;
+^^^^^^^^the target appears to be centered at [20,^-30]; the turtle is at [25,^-150].)
+^^^^^^^^There are several ways I could do this.  I could tell the thrtle just
+^^^^^^^^to go straight forward --
+Miriam:^(Interrupting) I want to do it.
+Bob:^^^^Go ahead then.
+Miriam:^(Counts under her rbeath division lines along the Y axis)
+Bob:^^^^I get what you're doing.  You're sort of counting how many places
+^^^^^^^^it is to find how far... Is that right ?
+Miriam:^Yeah (She keys a command, probably FD 140, which carries the turtle
+^^^^^^^^beyonfd the target) Wah !
+Bob:^^^^I guess you didn't count right or something.
+Miriam:^I'll B, K, (Keying) space, 10, new line.  (The turtle remains outside
+^^^^^^^^the target).  Hold it.  (Keys B, K, space, 10 , new line; verifies 
+^^^^^^^^that the turtle is in the target; keys SHOOT 0.)
+
+.ls 2
+.in
+.fi b
+Robby's perception of the description interactions of coordinate geometry and turtle geometry was an entirely new method for handling the task of SHOOT based on one description providing guidance for a problem defined in oither terms.  Miriam's performance at the end of The Intimate STudy, though similar to Robby's, was clearly dependent on special factors, i.e. only one variable (Y) matters; the problem was further simplified by the turtle's initially pointing at the target.  Should we claim this as evidence that Miriam had acceded to the lesson I offered and that she learned how to use multiple descriptions during The Intimate STudy^? Surely not; but if we try to conceive of how skill  such as Robby showed first develops, it is sensible to argue that incidents such as her use of scaled axes to specify operand quantity are incrementa; landmarks along a genetic path to that state where skill such as his could be exhibited.  After the preceding incident, I introduced Miriam to JUMP, a procedure which would set the turtle down at a point specified by X and Y coordinates entered in response to a request.  When I demonstrated its use, Miriam was vastly amused and asked for a turn.  (I believe Miriam immediately recognized JUMP as a more general and powerful form of "the clever hack" she enjoyed in early Logo sessions.)
+.ls 1
+.in .5i
+.nf L
+Miriam:^JUMP is fun.
+Bob:^^^^But you don't want to try it, right^?
+Miriam:^(Takes the keyboard to her lap as the target appears at [-50,^-20].)
+Bob:^^^^Do you want any guidance ?
+MIriam:^(Keys "Y" and scaled axes appear over the screen.)
+Bob:^^^^You want to try making the turtle jump ?
+Miriam:^Can I jump it backwards ?
+Bob:^^^^You have to tell it where to jump to and that's where it goes.
+^^^^^^^^(Videotape goes to end of reel here.  Audio continues.)
+Miriam:^JUMP to X minus --
+Bob:^^^^Do you want to stop or...jump to minus ?
+Miriam:^What do I type ?
+Bob:^^^^Type JUMP.
+Miriam:^Oh. (Keys JUMP and new line)...X equals, ah...minus.... Y.
+^^^^^^^^Should I make Y 50 if I want it over there or minus 50 ?
+Bob:^^^^That's a problem.
+Miriam:^Hold it....Rats !  I jumped it but he missed.
+Bob:^^^^Tell h im to JUMP again.
+Miriam:^Unh-uh.  You.
+Bob:^^^^Should we stop ?
+Miriam:^Unh-uh...Yeah.  I think I will. (End of session.)
+
+.ls 2
+.in
+.fi b
+This incident, like the former, does not show Miriam in flexible and effective command of two overlapping descriptions.  We can not say Miriam had learned the lesson of my objective.  Excuses abound if theyu are necessary: her asthmatic lethargy; the tenacity of the coordinate geometry/ personal geometry connection; even her tender years and my unwillingness to push her as a subject.  But let there be no special pleading.  Ifwe can not argue that Miriam achieved some compact and balanced system of thought, we can say that in these incidents she was learning and that these imperfect attempts help characterize a genetic path through ignorance and confusion to competence.  There are more important objectives than achieving some arguable closure on an issue or proving you can teach a six year old what any child of twelve will stumble upon.  We can see in these small incidents and others in The Intimate Study an opportunistic intelligence taking advantage of accidents and occasionally surprising itself into insights it more or less "knew about" all along.  It is the interplay between familiar knowledges of incompletely realized connectedness that provides those occasional,apparent saltations of an incrementally developing universe of knowledge -- the mind.  This obscure pronouncment will be illuminated a little as we struggle with the relation of the puzzle archetype to Miriam's experience of two geometries.
+
+^^^^^^^^^^Did Miriam come to see any relation between our work on picture puzzles and that on two geometries ?  The answer to this question is clearly, "No".  How then can the archetype of guidance be offered as relevant to the other work if the connection was merely in my mind and not in hers ?  The connections are, of course, not "merely in my mind".  Inasmuch as we were sharers of an experience which she ould appreciate, such as problems defined in turtle geometry, and inasmuch as I indoctrinated her into new perspectives with which she struggled but began acquiring and inasmuch as I presented her with a vocabulary for describing problems and perspectives and their relations, I was the embodiement of an obtrusive culture.  This theme of guidance exemplifies how the didactic thrust of a culture functions so that an opportunistic intelligence will surprise itself into insights it more or less "knew about all along".  That I have described both the relation of pictures to piece fitting and of scaled axes to a space wherein problems are set as "guidance" is a common kind of social contract.  It promises grounds of similarity which, if not yet appreciated, are worth exploring at need.  In this specific sense, language, as the repository for labels for past and current points of view, provides a rich milieu of guidance for the oprganization and reorganization of microworld connections.  Archetypes , may be of didactic use as ancestral microworlds, but that is not their only value or even their most important.  As we have seen MAKEDOTS' descriptions come to Miriam's aid in reducing confusion from her original attachment of a coordinate geometry microworld to an inappropriate cluster, we mayu expect archtypes to serve eventually as nuclei of new microworld clusters forming during periuods of mental reorganization.
+.page
+.ce
+1The Nucleation of Microworld Clusters0
+

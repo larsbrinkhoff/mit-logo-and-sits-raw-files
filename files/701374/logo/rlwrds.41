@@ -1,0 +1,590 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+0
+.he1
+WORD WORLDS PROPOSAL
+.he2
+LAWLER 6/26/80
+.ss
+.dummy ^
+.twinch 6.5
+.tlinch 9
+.ce
+1FROM A MATHLAND TO WORD WORLDS0
+.sp 20
+.ce
+1ABSTRACT0
+
+.adjust
+We apply ideas and observations from past Logo Project research to the analysis of how the computer presence might impact children's experience of the lexical language.
+.nofill
+
+
+
+
+
+
+
+
+
+.indent 25
+R. W. Lawler
+Logo Project
+M.I.T. A.I. Lab.
+.indent 0
+.page
+.nofill
+1. PROPOSAL SUMMARY
+
+
+2. THEORETICAL POSITION: FROM A MATHLAND TO WORD WORLDS
+
+^^2.1.  THREE LOGO IDEAS
+^^^^2.1.1. MINIWORLDS AND MICROWORLDS
+^^^^2.1.2. THE INSTRUMENTAL USE OF WHAT'S-TO-BE-LEARNED
+^^^^2.1.3. REFLECTION: THINKING ABOUT DOING
+^^2.1.+ BACK TO THREE LOGO IDEAS
+
+^^2.2  DEVELOPING A PERSPECTIVE ON LEARNING
+^^^^2.2.1. MICROWORLDS IN THE MIND
+^^^^2.2.2. HANDLING OBJECTIONS (CHANGE TITLE LATER)
+^^^^2.2.3. CHOOSING SIGNIFICANT PHENOMENA
+
+^^2.3. LEARNING THE LEXICAL LANGUAGE
+^^^^2.3.1. CONTRASTING THE VOCAL AND LEXICAL LANGAUGES
+^^^^2.3.2. WORDHOOD JUDGMENT PHENOMENA
+
+^^2.4. COMPUTER EXPERIENCE AND LANGAUGE LEARNING
+^^^^2.4.1. AN INTELLIGENT VIDEO-DISC SYSTEM FOR INFANTS
+^^^^2.4.2. SINGLE AGENT SYSTEMS FOR CHILDREN
+^^^^2.4.3. MULTIPLE AGENT SYSTEMS FOR CHILDREN
+
+^^2.5. CONCLUSIONS ABOUT WORD WORLDS
+^^^^2.5.1. PIGGYBACKING OR INTEGRATINGG DISPARATE WORLDS
+^^^^2.5.2. A COMPUTER-BASED LEXICAL LEARNING CYCLE
+^^^^2.5.3. COMPUTERS AND THE POWER OF THE WORD
+
+^^2.2+ BACK TO PERSPECTIVE ON LEARNING
+
+2.+ BACK TO WORD WORLDS
+
+3. PROJECT PLANS
+4. RESEARCH OBJECTIVES
+5. PERSONNEL
+6. EXPLANATION OF THE BUDGET
+
+.ds
+.adjust
+.page
+.ce
+1FROM A MATHLAND TO WORD WORLDS0
+
+2.   The central problem of humane education is how to instruct while respecting the self-constructive character of mind.  During the past decade, the M.I.T. Logo Project has made significant contributions to resolving this problem.  This is  most clearly true in domains of mathematical focus.  The advent of optical-disc storage and the declining cost of significant computational power encourage us to apply our best results to domains the new technology brings within reach [1].  We believe Logo ideas can be exported coherently from the "mathland" of the past to the world of language.
+
+.twinch 6
+1 THREE LOGO IDEAS0
+
+21.     There is a difference between ideas you accept as true or likely and that smaller set of ideas which function through and inform your work.  Consider this witticism:
+.ss
+.indent 10
+.nofill
+You can lead a child to Euclid,
+But you can't  make him think.
+
+.ds
+.indent 0
+.adjust
+This reformulation of the old saw ("You can lead a horse to water, but you can't make him drink.") is accepted as true by practically everybody, but it runs contrary to the general practice of the education industry.  Who takes such a formulation seriously ?  When a child fails to learn, the imputation of stupidity is made - as if the real opinion by which schooling functions is "You can lead a horse to water, but not a horse's ass".  The student is blamed and rarely does it occur to the instructor that he's trying to put the halter on the wrong end of the animal.
+
+     If one merely categorizes the situation by admitting that "motiovation" is a problem, he prejudices the possible solutions.  A central contribution of the Logo Project is the following cluster of ideas which have epistemological depth as well as cognitive and affective components: the experience of computer-based virtual worlds can prepare a learner's mind for his private insight into the powerful ideas of our culture;  the instrumental use of what-must-be-learned is required because the knowledge comprising a mind is a closed system; the primary educational tactic is to engage the learner in thinking about what he is doing.
+
+.twinch 5.5
+1MINIWORLDS AND MICROWORLDS0
+
+211. The Logo Project has defined a new engineering task for the education industry, the design of miniworlds and microworlds.  1MINIWORLDS0 are designed environments for the learning of domain-specific knowledge.  They are made possible by the coming of computers and typically involve the reconceptualization of an intellectual domain in such a way as to permit its connection with knowledge the learner can be expected to bring to the experience.  The outstanding example is the design of turtle geometry so that even young children can interpret  their mathematical experience in terms of their own actions in moving through space.  Miniworlds are general, and microworlds are more particular.  When realized as systems of computer procedures, 1MICROWORLDS0 are specializations of miniworld facilities for the learning of task-rooted knowledge.  Examples of microworlds are specific games or drawing systems conceived in terms of and composed in turtle geometry commands.  The design of such microworlds could legitimately be called "applications engineering".	
+
+     Miniworlds and microworlds address the central problem of education by creating intellectual spaces wherein a learner can act, through which action he will progressively construct within his mind cognitive structures embodying the relations among elements of the microworld and miniworld domains.  As compared to suffering instruction, an extrinsic inculcation of society's most valued ideas, the use  of these virtual  worlds (so long as they are well conceived) is a better things for the learner to experience because, while he shapes his learning to what's in his mind already, the  virtual world shapes his new knowledge to fit the powerful ideas achieved by the culture.
+
+
+.ce
++ + + rewrite this section + + + +
+1THE INSTRUMENTAL USE OF WHAT'S-TO-BE-LEARNED0
+
+212. There is a famous argument in Plato's dialogue, the MENO, whose sense amounts to this: [2]:
+.ss
+.nofill
+.indent 5
+There can be no such thing as learning because
+^^either a person knows something or he does not know it;
+^^if he knows something already, he cannot learn it;
+^^if he doesn't know something, he doesn't know
+^^^^what he doesn't know and therefore cannot learn it.
+
+.ds
+.indent 0
+.adjust
+The argument in clearly fallacioua, and Socrates dismisses it as sophistical logic chopping.  Its relevance for us, despite its flaws, is in highlighting the issue of how one can be engaged with material he doesn't know.  We observe that a person will only freely learn what he can value and one can't value as an individiual  what he doesn't know.
+.ce
++ + +bad bug here - insert discussion of home and intellectual values + + +
+  Coercion and manipulation, of course, work to a certain degree.    A learner may study selected material because of a teacher's authority.  Competition with peers may be used to "motivate" students.  But as for the material itself, who cares about addition or percentages, for example, before understanding them ?  
+
+     The Logo contribution to this problem is by pervasive embedding of what's-to-be-learned in the virtual worlds, the designed environments where today's experience must be justified by its intrinsic interest.  A second embedding of these mmicroworlds and miniworlds in an intellectual culture  + + + + +
+
+  Let this serve as an example of the strategy:
+.ss
+.indent 5
+     One six year old child, whose typical mental calculation was adding by finger counting a number under ten to some base value, through playing a Logo game, SHOOT, became familiar with mental calculations and understood well enough to add mentally such sums as seventy-five plus twenty-six and to prove that ninety-six plus ninety-six is one hundred ninety-two.  For her, this became the knowledge through which she later became able to understand the vertical form addition of the hindu-arabic notation. [Extensive detail of this development is presented in Appendix I.]
+.ds
+.indent 0
+
+1REFLECTION: THINKING ABOUT DOING0
+
+^^^^^The importance of refllection is emphasized by our view of the interaction of experience and the development of mind^[4].  Experience is a public matter, wherein one gains ad hoc knowledge, but understanding is a private matter, a very personal construction of one's own mind.  The development of ideas comes from the integration of the ad hoc knowledges of experiences, but the ideas can not precede the experience or be a goal of experience.  The sense that the durable knowledge of ideas comes from a casual, goal-free, mulling over of previous activity recalls William Wordsworth's  observation "poetry  is passion recollected in tranquility".  We should not be surprised at the echo of this great poet and early psychologist converging with our formulation that "1UNDERSTANDING0 is a description of experience articulated through reflection."  To the extent that understanding is the future-effective residue of education, a focus on reflection, providing a taste of reflection in the hope that the learner will come to relish it, goes to the heart of humane education in the world of letters as in mathland.
+.ce
++ + + transition + + +
+^^^^^The primary characteristic of truly novel experience is that you don't understand it upon first encounter.  You have the experience and miss the meaning.  What use is that ?  "None", we might say at first, but there is always the possibility that one will recall later and make sense of what he once merely suffered without comnprehension - the possibility exists as long, that is, as one has the inclination to reflect upon past experience.  Beyond highlighting the issue, two aspects of Logo work have fostered the development of reflexive thought: the crisp instantiation  of powerful ideas  in virtual worlds; and the engagement with and the discussion of procedure debugging as a model of thinking.  Let me exemplify the two aspects.
+
+     Controlled variation of one of several variables is a powerful idea in science and is one of the cluster recognized by Piaget and Inhelder [3] as characteristic of adolescent [formal] thought.  A famous procedure of the Logo culture, the polygonal spiral - 1POLYSPI0 for short - permits the crisp presentation of that idea:
+.ss
+.indent 5
+.nofill
+TO POLYSPI^^^:SIDE^^^:ANGLE^^^:INCREMENT
+1^^FORWARD^^:SIDE
+2^^RIGHT^^^^:ANGLE
+3^^POLYSPI^^^(:SIDE^+^:INCREMENT)^^^:ANGLE^^^:INCREMENT
+END
+
+.ds
+.indent 0
+.adjust
+When the angle value is that of a regular polygon, this simple procedure draws a maze-like spiral.  With other angle values, the "sides" may overlap.  When they do so, and the polygon vertices of the next spiral ring are near, spiralling lines appear as emergent from the contiguous intersections.  Projects exploring such emergent forms lend themselves naturally to the incremental alteration of a single variable. [Appendix II documents how one child, introduced to a crisp formulation of this powerful idea with POLYSPI, first generalized it in application to INSPI designs then exported it in his private investigation of a topological puzzle.]
+     For a learner who programs a computer, debugging is an accessible and perfectly natural form of reflection. [ Its accessiblity, even to a preschooler, can be witnessed in the incidents presented in Appendix III where debugging is seen to dominate excuse-making after the former is introduced.]
+.ce
++ + + this synopsis of OCL section 15 is yet to be written + + +
+  The sense in which debugging is natural depends on the learner's perception of a computer procedure as embodying his ideas for the direction of the turtle.  When someone can see some of his thought embodied in a procedure, he can then imagine other ideas as existing procedures in the mind which may be as amenable to debugging as are the computer procedures he can execute and examine.
+
+.twinch 6
+1BACK TO THREE LOGO IDEAS0
+
+21+  These three central ideas, which focus on the design of virtual worlds, the instrumental use of what's-to-be-learned, and reflection, all have exhibited value in the learning of mathematical concepts.  It is appropriate they should form the core of an attempt to address the learning of language skills.	
+
+.twinch 6
+1DEVELOPING A PERSPECTIVE ON LEARNING0
+
+22 We have described mini-worlds and microworlds as designed environments, limited domains of special focus intended to present powerful ideas through virtual experience.   We will now procede in a new direction from this original description in order to consider the knowledge developing within the mind as a consequence of computer experience.  We take guidance from two earlier studies done at the Logo Project.  The first study, The Progressive Construction of Mind, presents our framework for conceiving of learning.  The second, Pre-Readers' Concepts of the English Word, introduces empirical material and an ur-theory or proto-theory of how children learn to read.  We will deal with the relevant ideas of each in that order.
+
+.twinch 5.5
+1MICROWORLDS IN THE MIND0
+
+221 We described computer microworlds earlier.  The cognitive structure built within the mind by the individual as a consequence of experience with such a computer microworld we have chosen to call microworlds as well.  (When confusion is possible, we will distinguish between them as computer microworlds and mental microworlds.)  Mental microworlds are described succinctly in The Progressive Construction of Mind (and more extensively - but not more clearly - in One Child's Learning).  The guidance we take from that work centers on three themes. First, structures of knowledge in the mind are disparate, i.e. separate and distinct, and many of them are "task-rooted" (this means the definition of their elements are based directly on an everyday recognition of what's what in the task domain).  Secondly, the genetic path of microworld formation is essential to know in describing learning (whether seen as the formation of a new microworld rooted in task experience or as the development of control over or correlation between task-rooted microworlds).  Finally[+ + + + this third theme is either weak in itself or poorly expressed + + +], we describe learning, in its everyday sense, as a gain in performance that results from some rather simple interactions of task rooted microworlds.  This framework gives us an unusual perspective for analyzing what is involved in learning the skills of the lexical language - i.e. reading and writing.  We see in the analytical task the need to distinguish kinds of experience in the natural world in response to which people build up mental microworlds whose interactions permit the emergence of "reading" and "writing".  
+
+.ce
++ + + + this whole section is no good, needs to be replaced + + + + +
+.ce
++ + +issue is important; writing is bad + + +
+1HANDLING OBJECTIONS (CHANGE TITLE LATER) (an unnecessary fight ???)0
+222In its general sense, reflective thought is considered a characteristic of the mature mind.  In a more technical sense, Piaget and Inhelder have described the reflection upon one's practical knowledge as the basis of the formal patterns of thought they witness appearing in adolescence.  If learning depends upon thinking about, reflecting on, your doing, should we not expect reflection - or at least its precursors, whatever they might be - to be evident early in life ?  Consider the incidents reported in Lois Bloom's  landmark book, Language in the Crib, where an infant was overheard practicing the phoneme couples in sets corresponding to their differentiation on the basis of distinctive features (as described by Roman Jakobson).  Is this an example of "reflection" ? The question is difficult to answer definitively because the child could not speak in terms sufficiently meaningful that one could infer what she was thinking.  It has been my good fortune to discover (in an ongoing study) a series of incidents which permit a decisive answer to this question with a slightly older child.  In summary, they amount to this: the two year child, Peggy, learned  a knock-knock joke in such a way that she could only participate in the dialogue as the initiator of the joke, thus:
+.nofill
+.indent 10
+PEGGY:^^Knock-knock.
+VICTIM:^Who's there  ?
+PEGGY:^^(laughter)
+.adjust
+.indent 0
+Peggy would not respond when someone else initiated the joke.  The next morning, alone in her crib, she was overheard reciting, "Knock-knock.  Who's there ?  (laughter)".  Later that morning, as soon as she met an appropriate victim, she began "Knock-knock".  When next her victim initiated the joke a second time, Peggy responded "Who's there ?" in her appropriate turn.  If this behavior, which apparently resulted in better command of what she had experienced and knew only imperfectly, is not reflection, it is surely an immediate precursor of what we woiuld admit as reflection for any older person articulate enough to describe publicly his mental processes.
+
+1CHOOSING SIGNIFICANT PHENOMENA0
+
+223  The guidance of The Progressive Construction of Mind commits us to seek disparate bodies of knowledge in the mind from which significant learning might develop through their interaction.  A good clue in trying to isolate such structures are experimental results which seem counter-intuitive or paradoxical.  The focus of Pre-readers' Concepts of the English Word is the WORD JUDGMENT PARADOX, one which we found could be coherently related to a theory of reading development which is essentially "cognitive" (as opposed to other alternatives, such as "linguistic").  Employing two different experimental paradigms, we established that pre-schoolers used two different criteria in making judgments of wordhood.  The first experiment, a checker taking task (after Karpova, [7]), asked the subjects to take a checker from a pile for each word in phrases and sentences recited to them.   The typical subject took one checker for each phrase in the utterance.  For example, three checkers were taken for  "The puppy wants to eat".  A request for judgment and justification, (after Karmiloff, [8]), the second task asked the same subjects questions such as these: "Is X a word ?... How do you know it's a word (or is not one) ? "  ("X" would be a phrase, word or syllable from the phrases and sentences of the checker taking utterances.)  The typical pre-reader gave evidence of owning an 1INCLUSIVE0 word concept.  For example, within the context of the utterance, "pup", "-py", and "puppy" would all be judged to be words.  Based on these results, we concluded that pre-readers typically owned two separate and imperfectly compatible cognitive systems by which wordhood could be judged, two different concepts-in-action of what words are.
+
+     The first concept of wordhood derives from speech used in communication and has an inclusive character.  The children used "word" as a common label for what adults call "syllable", "word" and "phrase".  Words were, essentially, possibly meaningful collections of sounds.  In this, their judgments were similar to adults' treatment of idiom.  For example, in the phrase, "kick the bucket", adults would judge there are three words and one idiom, arguing that "bucket" names a thing, "kick" is something one can do, and "the" is a word by convention - without concern that none of these arguments is obviously related to the meaning of the idiom.  (The curious will find a discussion of this idiom in the Oxford English Dictionary, Vol.I, p.1150, col.2 under "bucket" sub. 2.)  Similarly, children judged "puppy" and "py" both as words in the same context, unconcerned with the obliteration of meaning of the sound /pi/ in the word "puppy".
+
+     The second concept of wordhood derives from language experience as a tool of naming and topic of instruction; it has an 1ATOMIC0 character.  The language is composed of independent things, called "words", each of which means something by itself; one sound can not be a part of two different" words" at the same time.   There are also things you can say that mean nothing, e.g. "genk"; those are not words.  There are other sounds used when you put words together in speech, e.g. "of", but they are not words because they are not meaningful.
+
+     The standard word concept, the 1LEXICAL0 concept as such, is different still.  Meanings are what's important in heard or spoken language.  In written or printed language, knowing what "words" are is also important.  A word is something you know is a word (there are several ways you can tell if an item is a word or not).  If you decide something is a word, it can't be part of another word at the same time.  What you are talking about or reading helps you tell whether a sound is part of one word or another.
+
+     The incompatabilities of the inclusive and atomic word concepts is rarely a problem for children until they confront the task of learning to read. (Who but a psychologist would ask them to judge the wordhood of utterance elements ?) In Pre-Readers' Concepts of the English Word, I proposed that it is the socially imposed task of learning to read that induces a conflict between the inclusive and atomic word concepts and thus engenders the lexical concept as a synthesis. [cf. Karpova, Huttenlocher, Gibson & Levin].
+
+.ce
++ + + now we go on to discuss three languages + + +
+
+     We described the vocal language earlier (in section _________) in general as if it were a uniform thing of nor major internal structure.  The distinction between the inclusive and atomic concepts of words - both witnessed within the context of the vocal langauge - suggests we should conceive of the vocal language as composed of at least two major components: the first, focussed on phrases as units of meaning ; the second, focussed on free (unbound) morphemes as units of meaning.  (The latter would include specifically the names of objects, actions and modifiers of both.)  What should we call these components ?  Does it pervert the senses which we have used the word "language" to call them languages ?  The phrasal and morphemic languages ?  The reason for wanting to do so is that the lexical language is a modal variation growing predominantly out of the morphemic language - and one perfected by the socially imposed condition that it relate to the phrasal language of everyday speech.
+
+.nofill
+
++++++ here is place of an important distinction: 
+describe atomic words of MORPHEMIC language.
+This assumes a precursor of lexical language - not tobe confused with it
+names of things, actions, vocally based (no reading yet) - but outside the
+continuum of the phrasal language & its context for meanings.
+
+
+
+.adjust
+  On the basis of Pre-readers' Concepts of the English Words, we choose the paradox of wordhood judgment as a central phenomenon reflecting the activation of different bodies of knowledge in response to the putting of the question of wordhood.  We were able to see in the interaction of postulated separate bodies of knowledge ways in which reading could emerge when the child was confronted with the task of reading.
+
+
+224 It  can't escape notice that we propose here a non-standard theory reading acquisition.  It grew out of the question "What knowledge does a learner bring to the learning task ?"  In raising that same question, Harris Savin goes on to characterize the prevailing theory of learning to read thus [5]:
+.ss
+.indent 2
+"...Practically all discussions of learning to read assume that the child already perceives speech as a sequence of phonemes and that the heart of learning to read (at least at the beginning, in the CAT-RAT-HAT stage) is quite simply learning which letters of the alphabet correspond with which phonemes.  If he masters the system of letter-phoneme associations, then a child will know everything he needs to know except for the treatment of irregular forms.... [M]any children learn to read quickly and effortlessly.  However, and perhaps surprisingly, given the apparent simplicity of the skill of reading, large numbers of apparently normal children do not learn to read, or learn only after an inordinate amount of instruction.... [T]he prevailing theory of the skill of reading fails to account satisfactorily for the observed pattern of difficulties.  This theory fails to identify a component skill that is demonstrably lacking in each child who does not learn to read...."
+
+.ds
+.indent 0
+1WHY LEARNING TO READ IS EASY OR HARD0
+     Let me propose learning to read requires a child to:
+.ss
+.indent 2
+.nofill
+1. discriminate between 26 different symbols, the letters of the alphabet,
+^^^their sounds and variants.
+2. use the convention that spaces between strings of symbols segment the
+^^^set of letters into elements which are individually meaningful.
+3. connect letter strings, words, read with meanings known.        + + +AWKWARD
+
+.ce
++ + + rephrase this so PHRASAL/MORPHEMIC distinction is clear+ + +
+
+4. assemble units of meaning from groups of words.
+5. subordinate possible sound-based confusions to disambiguation
+^^^by the conventional representation of words, i.e. lexical word
+^^^definition takes priority over sequences of sounds.
+6. subordinate meaning assembly to replacement of elemental meanings
+^^^in sequences recognized as idioms.
+
+.ds
+.adjust
+.indent 
+This description of reading skillls is an advance beyond Savin's caricature of the standard theory because it is possible to see many different ways children could have trouble.  It is also possible to see how learning to read could be easy for some children and many adults, as this striking report of Morris Halle's witnesses: [n+2]
+.ss
+.indent 2
+"...It is significant that literacy in Cherokee is attained by many "late in life", and then almost without  benefit of special courses, teachers, or teaching material.  "It is thought of as a sudden revelation.  A Cherokee will say, for example, that it is easy to learn to read Cherokee, that he learned it in two days, in a day, or even in an afternoon.  Thus one Cherokee claims to have learned to read in an afternoon, stretched out under a tree alone with the Bible...."
+.indent 0
+.ds
+     The main possibility for explaining in detail what is the specific difference with respect to reading in the cognitive development of children from privledged and disadvantaged homes is the solidity and extent of childrens' specifically relevant knowledge about words.  Suppose a child approaches reading with previously well developed inclusive and atomic word concepts.  Even if deriving the lexical concept is necessary to make sense of text, he will have the prerequisite knowledge that task requires.  Acquiring the six sub-skills would be no harder that it appears on the surface.  Suppose now, on the contrary, that a child approaches reading with an impoverished atomic word concept, one that is not supported by the broad command of specific naming that characterizes the knowledge of children from privledged homes, suppose he has not yet reached the conclusion that a sound can not simulataneously be part of two words in one context.  What can such a child depend on, in his own mind, as he attempts to isolate the significant elements of text and figure out their relations. (One child, after claiming he could read, proceded to read "MOMMY" thus, "M, O, M, M, Y", i.e. reciting the names of the letters.)  However rich his oral speech, if such a child lacks a robust, contrasting system of naming knowledge at the base of his atomic word concept, the conflict which for others is resolved by the synthesis of the lexical concept will be for him a morasss of confusion.  Of what value is instruction when the infrastructure is lacking ?  Can a bird fly on one wing^?
+
+      If this vision of reading skill development seems too remote from the standard, note that recent work by the respected linguist Fillmore, (as reported  in his address, "Some Problems with Ungenerated Language" at the Second Annual Cognitive Science Scoiety Conference), shows strong tendencies to separate language production into disparate but interacting systems.
+
+.twinch 6
+1LEARNING THE LEXICAL LANGUAGE0
+
+23   What does "lexical language" mean ?  Let us make an obvious distinction first, then procede to ask how real and/or profound it may be.  The spoken language comprises all that we can say and all that we can hear (and make sense of) and includes all those knowledge structures that are accessible only through its use.  The lexical language, to the extent that is is distinct from the spoken language, is comprised of all that we can write and all that we can read (and make sense of) and includes all those knowledge structures that are accessible only through its use.  This sort of parallel description is meant to suggest  that there is a parallelism and possible equality between the two languages of English. We do this to raise the issue of how separate are the two languages based of the different modes of communication, and how are they related.  Does the lexical language derive necessarily from the vocal ?  Or are the two separate in essential ways and communicating at some "high level".  Is the distinction real and profound or superficial ?
+
+.twinch 5.5
+1CONTRASTING THE VOCAL AND LEXICAL LANGAUGES0
+
+231  The distinction between the cognitive structures supporting the vocal and lecxical languages is very real.  People used speech for at least tens of thousands of years before the invention of writing.  There can be no stronger evidence required to show how the vocal language is independt of the lexical.  But could the converse be true ?  Could it be that lexical languages can be independent of the spoken language ?  Although the cases are rare, specific examples surely establish that it can be.  Helen Keller's learning to communicate with a lexical language though born blind and deaf is the outstanding example.
+
+       A further argument supporting the distinctness of the vocal and lexical languages s developmental.  Any parent can witness how the infants vocal language develops gradually in a cyclic pattern, discriminations being made in what is heard then appearing in what is spoken.  Consider this example from the ongoing study of Peggy's learning:
+.ss
+.indent 2
+^^^We have been trying to get Peggy out of diapers.  She has thoroughly explored her little toilet, she has seen other people used the larger toilets for sometime, and she has even used her toilet successfully - but not always, and some days are worse than others.  Yesterday she was  running around the house with a bare bottom, pissing all over.  After about thirty such "accidents", when she stood over a puddle and informed her mother, Gretchen scolded her, "Shame on you !".  This morning, before others were up, Peggy repeated that section of conversation to herself in her crib: "I just pissed. (Then, in a loud voice) Shame on you."   Later in the day, this phrase was evident in her repertoire.  When Peggy commanded her sister to move off a place she considers her own, and Miriam did not, Peggy began tugging at her and said "Shame on you."  At supper, Peggy climbed in her brother's chair.  When he asked what she was doing and touched her head, she whacked him and sais "Shame on you".
+
+.indent 0
+.ds
+We don't have to argue that this is the only way in which children learn the vocal language forthe importance of this sort of learning to be recognized.
+
+^^^^^We don't really know how children actually learn to read.  [The sense in which this outrageous comment is true can be appreciated by reference to The Progressive Construction of Mind;.  That document describes in detail the knowledge structures ascribable to one child's mind and pinpoints the incidents through which those structures modified themselves to produce a complex organization from which the recognizable skills od addition emerged.  Until there is such a study of reading (I am working on one now), it will remain true that we don't know how children actuallylearn to read.]   We only know how reading is taught.  The standard theory of reading instruction, desccribed earlier by Savin, attempts to PIGGYBACK the lexical language system on the spoken language by explicitly insturction the child in the low-level part-to-part correspondences of the lexical and vocal modes.  Our sense of the close binding of the vocal and lexical languages may be primarily an artifact of two things, the instructional process and a technological constraint.  Let me elaborate.  Consider this simple contrast:
+.nofill
+.ss
+^^^^^^^^^^^^^^^^^^^^^|^interpretation^|^^production^^|^^^^learning^^^^|
+----------------|--------------|------------|--------------|
+^^vocal language^^^|^^^^listening^^^|^^^speaking^^^|^^modal^cycle^^^|
+----------------|--------------|------------|--------------|
+lexical language^^^|^^^^reading^^^^^|^^^writing^^^^|^^piggybacking^^|
+-------------------------------------------------------------
+
+.indent 0
+.adjust
+.ds
+If we compare speaking with writing, we can notice that from the infant's birth the sounds he makes have a profound and immediate impact on the world around him.  By contrast, the effect of any scribbles he might produce are nil.  Because speaking has a power of its own, it can enter with listening as a significant element in the INTRA-MODAL CYCLE of learning which characterizes the acquisition of the vocal language.  A child might sense reading as something important to learn, perhaps it might appear as a skill equal in value to listening as a way of making sense of the civilized world, but within the mode of lexical expression, writing is an expressive skill so difficult of access and so feeble in application that most people never write anything when they can avoid doing so.  This imbalance of the language modes explains why the reading instruction has been  "piggybacking" on the vocal language for millenia.  The sense in which this is an expression of a technological constraint will be dealt with extensively below (+ + +be very clear about this pointer+ + +).  
+
+     Let us admit that adults experience language as a unified experience in the mind.  Of course the lexical language makes extensive use of knowledge developed through the vocal language ( and we have just seen a way of understanding why the vocal language is the dominant of the couple).  But the issue remains: is the adult's experienced unity of language a consequence of the derivation of lexical knowledge from vocal language or a consequence of the  integration of robust and possibly distinct systems ?
+
+REVIEW OF LEXICAL LANGUAGE DISCUSSION
+
+.nofill
+     Significance of paradox:
+my theory of learning to read is: two languages --> relation. 
+reading requires integration into lexical language and concepts from both.
+if morphemic is impoverished --> reading is hard
+if rish --> reading is easy.
+
+.ce
++ + +this is the ultimate conclusions of the section + + +
+
+     BRIDGE: strong claim: we believe computer use will enhance morphemic
+language development; this is a significant boon for the culturally
+disadvantaged.
+
+.adjust
+
+.twinch 6
+1COMPUTER EXPERIENCE AND LANGAUGE LEARNING0
+
+24  We believe the best way to get a feeling for the computer's impact on language learning is to present a worked example of how significant events might occur in an imaginary scenario of the developmental sequence and what the phenomena of learning on the path to reading might be like in a computer rich environment.  In what follows most of the references to be made will be appreciated as relating primarily to producing words of the  morphemic langauge; this is appropriate because it is commonly the weaker of the two predecessors of the lexical mode. (The computer's pertinence to morphemic production it can be appreciated as the profound basis of its significance for lexical language learning).  We now present short descriptions and appreciations of three different systems.
+
+.twinch 5.5
+1THE PICTURES WORLD - A "LOGO" VIDEO-DISC APPLICATION FOR INFANTS0
+
+241. Our ideological goal is to design systems  to support development of the infrastructure of mind from which socially valued skills are engendered.  In this sense, we want to make formal instruction as unnecessary for all children as it has always been for some of the priveledged few.  How do we go about it ?
+     Consider the SHOOT game (decribed in detail in Appendix I) as an archetype of an application supporting the development of addition skills.  The game is very simple, enjoyable in itself, and requires dealing with the aggregation of large numbers.  The game does not require mental addition but is biased to favor it.  Enjoying the game does not depend upon calculation perfection - "nearly right" is near enough.  This forgiving character leaves room for the gradual discrimination of elements and progressive refinement of calculation procedures.  Finally, number is the salient element, in that microworld, which specifies the quantification of very well known actions of common experience, e.g. turning and moving in a line.
+
+Can we imagine any system where the "word" (the atomic word) serves the same operand function as do numbers in the Logo mathland ?  The basic application we propose is (in computer jargon) file search by key.  By this we mean that a computer should locate the relevant, stored information when a child keys an operand value.  For example, if a child keyed some letter string, the computer should present whatever information it has stored under its best match for that string.  The objective of such an application is to exhibit the power of a word as a key to something of value.  In a video-disc enviroment, stored pictures could be the things of value.  The instrumental use of words will lead to the internalization of much ad hoc knowledge which can later be integrated into the descriptions of language necessary for reading. (+ + + more detail is presented in the project description of section 3.-.-.).
+
+     Experiences of the pictures microworld cut across the instruction categories of "reading" and "writing" and would contribute to the  development of that predecessor of lexical knowledge we have named "morphemic".  We do NOT intend to argue that these terms and the judgements them imply are vacuous. Reading and writing are polar terms within the mode of lexical language.  Keyin of individual letters, noting the symbols' appearance on the computer display, and watchjing the video disc frames change in response to this keying is a cluster of activities that do not fit neatly into the dichotomy of "reading and writing".  Their relation to these polar terms is more like the highly variable phrases of speaking and listening that characterize the intra-modal learning of the vocal language.  Let us examine how computer experience for post-infancy children could expand upon such a beginning.
+
+SINGLE AGENT SYSTEMS FOR CHILDREN
+
+242.     It is customary to conceive of literacy and mathematical knowledge as distinct and even remote each from the other; we see the situation differently.  We have discussed word worlds as distinct from the Logo mathland for conceptual clarity and specificity of intentions but we see underlying the surface differences of these knowledge domains profound elements of unity of two sorts:  the first, that there is no compelling evidencce that proves  learning processes of the human mind vary with the content learned; the second, that epistemological features of the content domains define whether or not activities are of such a sort as knowledge from their experience can be organized into a general understanding.  (See the comments in the penultimate paragraph of The Progressive Construction of Mind for an example of what this means.)
+
+     We can easily imagine that in the future the composition of text and computer procedures will be intimately related.  Why so ?  Let us continue with our examination of how computer experience could impact significantly the development of language knowledge.
+.nofill
+
+    - what is the miniworld corresponding to the video microworld ?
+    - THE  WORDS WORLD (we need some name, what should it be ?)*:
+       our world is the world of FINDING (as will be developed 
+       later), DOING and NAMING (to a limited extent).
+    -SURPRISE ! it's single agent logo
+    - relevance to "reading"
+      -- tell the EEL, PIGGY, COMPUTER, TYPER, READING story.
+.sp 10
+    - possible impacts of experience:
+      after the permanence of real objects, computer objects (things
+       that hide - you don't know where - but you know HOW to find 'em).
+      the necessity of lexical communication with the machine involves:
+       writing morphemes; reading phrases (error messages); reading morphemes.
+    - a new issue accessible with interpreter modification: aspect and iteration:
+      Bronkart and Sinclair article: children's usage; an issue we might find
+      worth exploring in familiar turtle geometryu worlds.
+
+    - CONCLUDE: the computer use of words is orthogonal to the standard
+      dichotomy of reading and writing;
+      we propose can be imagine to be a precursor of both.
+    - CONCLUDE: Logo is a good miniworld for words as well as math - 
+       computer experience of the sort we propose can be imagined
+       as a precursor for both and can become such a precursor
+       if we use it with sensititivity.
+
+
+MULTIPLE AGENT SYSTEMS FOR CHILDREN
+
+243  The gist of this section is that having a computer makes writing
+      a  little worthwhile.
+     -possible activities and impacts:
+       agency specification is the biggy: SP form becomes the norm.
+       
+
+       next is the interactions possible between multiple turtles and demons.
+
+
+       finally is the script/prose distinction possible to draw in multi-mode
+       output systems.
+
+
+
+
+???      -- tell the DALLAS STORY of four year olds.
+.adjust
+.ce
++ + + here launch into multi-agent system and its potential impact + + +
+
+.nofill
+.ss
+^^2.3.2. Possible Microworld Relations
+^^^^^^^^^1 AVOID any appearance of simple additivity of skills0
+
+^^^^^^^- here we want to emphasize our intention of having the child, like Moliere's
+^^^^^^^^^M. _________________ ,discover later to his great surprise and delight that
+^^^^^^^^^he had been writing prose and even verse all the time.
+
+.ce
++ + + this is a specific example of microworlds for miniworld + +
+^^^^^^^- what fundamental categories of text use do these four microworlds cover ?
+^^^^^^^^^^1. utilitarian (text annotating pictures)
+^^^^^^^^^^2. mnemonic and artistic (verses for songs known/to be learned)
+^^^^^^^^^^3. humor (cartooning where the words will carry moreof the messge than
+^^^^^^^^^^^^will the expression or articulation of the characters).
+^^^^^^^^^^4. obligatory writing/ expansible at choice to personal uses or to the
+^^^^^^^^^^^^^personalization of obligatory writing e.g. T.G. designs for letter heads.
+^^^^^^^^^^5. could even lead to the writing of children's plays by kids...as a
+^^^^^^^^^^^^^natural outgrowth of playing turtle.
+
+^^^^^^^- how do these relate ?  in all four worlds, text plays a subordinate but central
+^^^^^^^^^^role.  Text will be used in a way the child will perceive as personally
+^^^^^^^^^^meaningful  - it will be embedded in activities.
+
+^^^^^^^^- we don't know what will happen - but our experience leads us to believe
+^^^^^^^^^^that what will emerge from the interaction of the child own knowledges
+^^^^^^^^^^of experience with the microworlds of computer activity will be more
+^^^^^^^^^^profound than the simple instructional goals we might fabricate at this time.
+
+consider these as  possible outcomes, none of which we specifically expect
+but whose occurrence would not surprise us.
+^^^^^^^- infection of one world by ideas from another:
+^^^^^^^^^^1. Form letters and formats for mechanical drawings
+^^^^^^^^^^2. the audience reaction to cartoons and consideration of the audience
+^^^^^^^^^^^^(as people, not as graders) in composition.
+^^^^^^^^^^3. form letters, verses to songs and the french forms of verse, e.g.
+^^^^^^^^^^^^the villanelle and rondolet.
+^^^^^^^^^^4. form letters and rigid scripts for purely verbal humor (knock-knocks).
+^^^^^^^^^^5. the copying of cartoon characters from the photo-world and the 
+^^^^^^^^^^^^imititation of exemplary verse,e.g. limericks, verse insults, etc.
+^^^^^^^^^^6. others  ?  
+
+if we don't know what will happen
+^^^^^^^^- a fair question, then, might be "how will you tell when something important
+^^^^^^^^^^has happened ?  Further, how will you be able to disentangle the actual
+^^^^^^^^^^causes of the changes from irrelevant, accidental features ?"  We believe
+^^^^^^^^^^this problem is not soluable, in general; detailed case studies do permit
+^^^^^^^^^^an inkling of how the interactions of experience and structure formation
+^^^^^^^^^^affect profoundly the function of knowledge - but we hold that not enough
+^^^^^^^^^^is now known to make honest predictions that a specific experience will
+^^^^^^^^^^affect a particular mind in a specific way.  
+
+
+
+
+.adjust
+DISCUSSION: WRITING AND MULTI-AGENT WORLDS vs. THEM !
+.nofill				
+ The specific
+^^^^^^^^^^aspects of computer experiences which give them power within the mind is the
+^^^^^^^^^^conjunction of specificity and schematization. 
+^^^^^^^^^^ - this is not a single sentence argument. 1THIS IS AN
+^^^^^^^^^^IMPORTANT ARGUMENT BECAUSE IT IS THE PATH THROUGH WHICH WE
+^^^^^^^^^^RE-CONNECT THE IDEA OF REFLECTION WITH PARTICULAR EXPERIENCES.
+^^^^^^^^^^THAT IS, WE ARGUE SPECIFICTY AND SCHEMATIZIATION ARE PRECISELY
+^^^^^^^^^^THOSE CHARACTERISTICS WHICH GIVE CERTAIN COGNITIVE STRUCTURES
+^^^^^^^^^^THE POWER OF ARCHETYPES AROUND WHICH THOUGHT REORGANIZES.0 
+
+^^^^^^^^- the role of Einstein's persistent interest in the unification
+^^^^^^^^^^of fundamental forces is parallelled by our society's persistent
+^^^^^^^^^^interest in the enculturation of our children to those points of
+^^^^^^^^^^of view and attitudes toward knowledge wich will permit them to
+^^^^^^^^^^be fully participating members of our intellectual community.
+^^^^^^^^^^Thus we see the developing of microworlds as providing learners
+^^^^^^^^^^with tools of thought of the same sort as have been of so much
+^^^^^^^^^^value in the modern history of science.  
+
+.adjust
+- the essential point of a thought experiment is you do it because you are not able to execute an empirical experiment; the similar point about about an archetypical mental microworld  is that you can't do any new experiment before you can imagine it; In this sense we are more interested in enhancing a learner's imagination that his skill; but it is trhough enhancing his imagination that he will develop his skills himself.
+
+.adjust
+.twinch 6
+1COMPOSING IN LEXICAL LANGAUGE0
+23.     There is much excitmenmt among congitive scientists, hope for a synergistic engagement among the disciplines of cognitive psychology, artificial intelligence and linguistics in a common onslaught on the p[roblem of functional literacy.  How deep the foundation of that enthusiasm remains to be seen, but the enthusiasm itself brings to light new perspectives worth examing.
+
+     Bruce [n] carries forward the slogan of psycholoinguistics with his arguments that "wrtiting is a communicative act" (and so it surely can be) and that his perspective is central to the possible formulation of a new theory of writing.  It is not very hard toi think of significant counter-examples to such a formulation.  Emily Dickinson spent a lifetime writing poems, expressing but not communicating the feelings and thoughts captured in her writing.  Charles Darwin wrote and wrote and wrote - and never published his ideas until forced to.  (See the discussion of this issue in the new Chicago Press edition of DARWIN ON MAN , H. Gruber.)  Darwin wrote in his journals for nearly twenty years before communicating his thoughts. In what sense was his writing a "communicative act" ?   One could tell a story that Darwin and Dickinson were communicating with themselves, but hasving to save appearances this way raises the question of how apt is this description of the phenomenon.  Further, even though the distinction between reading and writing is natural, we have argued that this distinction confuses the analysis of those mixed activities through the experience of which learning occurs.  To the extent that a focus on writing as a communicative act reinforces that unproductive dichotomy, the perspecxtive is counter-productive.
+
+     Hayes [n+1] offers a process model of text production in the style of Newell's production systems.  This is a significant contribution to the understanding of writing in the boldness of the attempt.  The inability of the model to address how learning happens raises the significant wewakness of systems designed to match the body of knowledge known before essential discoveries are made: they have no place for the new knowledge yet to be discovered.  We expect to develop a genetic/functional model of the sort exhibited for arithmetic in The Progressive Construction of Mind  - but we can't do that in detail because no such detailed corpus / detailed study has yet been performed. It may well be the case that knowledge structures of the human mind are so "unnatural" in respect of what the mind is able to conceive that it is only possible to imagine an apposite description of them if that description emnbodies a theory of their development.
+
+     More congenial to our perspective is the taxonomy proposed by the developmental psychologist Bereiter.  He describes five categories of writing and chartacterizes them individually and as forming a natural, but not a necessary, order.  
+.nofill
+.ss
+.indent 5
+^^^CATEGORIES^^^^^^^^^^CHARACTERISTICS
+1. associative^^^^^^^^transcribing wehatever comes to mind
+2. performative^^^^^^^writing under guidance of conventional standards
+3. communicative^^^^^^writing for a specific, external audience
+4. unified^^^^^^^^^^^^writing for oneself as a reader
+5. epistemic^^^^^^^^^^writing as an integral part of thinking
+
+.adjust
+.indent 0
+.ds
+    These descriptions of writing are functional in the sense that they help us classify how we think some one else is going about writing.  This is useful.  But they are so remote from the specific things a particular person is doing that they provide little guidance on how writing quality can be improved.  We hope to collect sufficiently detiailed observations that we can approach a model like that of The Progressive Construction of Mind with confidence.  But why, and this question must be asked now, why do we expect anything to happen in a time scale that could be examined ?
+
+.twinch 6
+1CONCLUSIONS ABOUT WORD WORLDS0
+25 Have I been arguing one doesn't need vocal language to learn to read ?  It would be possible to make such an argument, but would be vain, a divagation for those of us fortunate enough to have access to the vocal language.  
+
+.nofill
+.twinch 5.5
+2.5.1. PIGGYBACKING OR INTEGRATINGG DISPARATE WORLDS
+piggybacking won't do; it has been a failing standard for thousands of years.
+it may even deform the optimal outcome (readers who must unlearn silent reading)
+
+2.5.2. A COMPUTER-BASED LEXICAL LEARNING CYCLE
+vocal: do speech in and out
+lexical: do lexical in - and do lexical out five years later
+computers can change that now.
+
+2.5.3. COMPUTERS AND THE POWER OF THE WORD
+the epistemological significant of computer use in word worlds is that
+each cycle of lexical words in and out can be justified by the
+expressive power of the result the computer produces : 
+typewriters are transducers; computers are amplifiers through their
+execution of stored knowledge.
+.nofill
+.ss
+.twinch 6
+^^2.2+1 BACK TO PERSPECTIVE ON LEARNING0
+.twinch 6.5
+2.+ 1BACK TO WORD WORLDS0
+
+3. PROJECT PLANS
+    - imagine such systems as ultimately located in the equivalent of 
+      a "headstart" enviroment.
+    - in the pilot phase, development would be in a much more limited environemt,
+     where an essential value would be understanding as precisely as possible
+     how such a system is received and what its impact is, in detail.
+4. RESEARCH OBJECTIVES
+5. PERSONNEL
+6. EXPLANATION OF THE BUDGET
+
+
+.ce
++ + + + + +  TEXT DUMP  + + + + + + 
+				
+
+
+.adjust
+
+     Let us now turn to a different approach to that objective, one thoroughly speculative but rooted in particular activities and focussed on how the interactions of knowledge derived from them might lead to an improved performance in respect of how othersd judge writing quality.
+
+
+.page
+.ss
+.twinch 6.5
+.nofill
+[1]. The ripening of this new technology is clearly described in Automated
+   Dictionaries, Reading and Writing, George A. Miller, N.I.E., l979
+[2].  Meno, Plato's Dialogues (Jowett)
+[3]. The Growth of Logical Thinking from Childhood to Adolescence,
+   Piaget and Inhelder.
+[4]. See One Child's Learning: Tic Tac Toe or The Articulation of
+   Complementary Roles, R. W. Lawler (in preparation).
+[5]. What the Child Knows About Speech When He Starts to Learn
+   to Read, pp. 319-320, Harris Savin, in Kavanaugh and Mattingly (eds.),
+   Language by Ear and by Eye, Cambridge, Mass.  The M.I.T. Press, l972.
+[6]. Pre-Readers's Concepts of the English Word, (an M.I.T.  S.M. Dissertation
+   in  an Interdisciplinary Science focussed on Educational Technology)
+   R. W. Lawler, 1976.  Available from the M.I.T. Artificial Intelligence
+   Laboratory as A.I. Memo 395  (Logo Memo 40).
+[7]. The Pre-schooler's Realization of the Lexical Structure of Speech,
+   Karpova, S. N., abstracted and translated by Dan I. Slobin in Smith, F.
+   and Miller, G. A. (eds.) The Genesis of Language, Cambridge, Mass.,
+   The M.I.T. Press, 1966.  This work is described in summary in 
+   The Psychology of Reading, Gibson, E. and Levin, H., Cambridge, Mass.,
+   The M.I.T. Press, 1975.
+
+[n]. BRUCE
+
+[n+1]. Hayes
+
+[n + 2]. Bereiter
+
+[n+2]. Halle, in Language by Ear and Eye, cites this material from a text, Cherokee Primer by W. Walker, Carnegie Corporation Cross-Cultural Education Project of the University of Chicago, (l965).
+
+
+
+APPENDIX I: Compact story of One Child's Learning: Addition
+APPENDIX II: Compact story of Exporting a Powerful Idea
+APPENDIX III: Compact story of One Child's Learning: Debugging
+
+
+
+
++++

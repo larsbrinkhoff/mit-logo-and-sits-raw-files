@@ -1,0 +1,419 @@
+;SIZE 11
+;VSP 6
+;TOPMAR 0
+;BOTMAR 0
+;LFTMAR 0
+;SKIP 1
+;KSET FONTS;31VG KST,,,,,,,,,
+AI:LAWLER;TJ6 27
+
+
+
+Å x
+Å ^NOTES ON INTRODUCING AGASSIZ KIDS TO TI COMP
+Å x
+Å x<These Çnotes Çare Çsketchy, Çsince Çthey Çwere Çfor Çthe Çmost Çpart Çtaken Çdown Çafter--
+Å xsometimes Çby Ça Çfew Çhours--the Çsession Çwith Çthe Çkid.Ç  In Çalmost Çall Çcases, ÇJaffrey
+Å xwas Çtaking Çnotes Çfull-time.Ç  In Çaddition, Çsome Çof Çthe Çsessions Çwere Çtape-recorded.
+Å xFrom April 29, the first day I spent with Çthe kids through the sessions on May 13, ÇI
+Å xwas Çby Çrequest Çfor Çthe Çmost Çpart Çunaware Çof Çthe Çconceptual Çcategories Çused Çand
+Å xindividual assessments made Çby Jaffrey Çand Sherry in Çtheir previous Çwork with Çthe
+Å x"group of Çfive" Çand their Çreactions Çto various Çcomputer Çtoys.  I Çdid, Çhowever, Çknow
+Å xwho Çthe Çfive Çwere.Ç  Occasionally, Çtoo, Ça Çremark Çabout Ç"intelligibility" Çor Ç"opacity"
+Å xwÅ(as Çmade Çin Çmy Çpresence.Ç  I Çinferred Çthat Çthese Çwere Çamong Çthe Çconceptual
+Å xcategories Çand Çhad Ça Çvague, Çthough Çgenerally Çcorrect Çsense Çof Çwhat Çwas Çmeant Çby
+Å xthese.  I had also skimmed Çsome of the early protocols Çwritten up by Jaffrey Çabout
+Å xa Çmonth Çpreviously, Çbut Çhad Çno Çclear Çrecollection Çof Çthem.Ç  All Çthis Çaside, Çthese
+Å xnotes Çwere Çmade Çpretty Çmuch Çin Çthe Çdark, Çwhich Çfact Çgives Çthem Çwhatever Çvalue
+Å xthey Çmight Çhave.Ç  They Çshould Çbe Çread Çin Çconjunction Çwith ÇJaffrey's Çnotes, Çsince
+Å xthose notes Çundoubtedly Çconvey a Çmuch Çclearer picture Çof Çthe range Çand Çsequence
+Å xof each child's activities.>
+Å x
+Å x
+Å NPAGE 2
+
+Å xApril 29, Tuesday
+Å x
+Å x<Note:  During Çall Çsessions Çat Çthis Çpoint, Çthe ÇTI-LOGO Çprimitives Çwere Çall Çused.
+Å x"CARRY" Çwas Çused Çinstead Çof Ç"LOOK.LIKE";  sprites Çwere Çaddressed, Çnot Çmerely Çby
+Å xnumber, but as "SPRITE Ç0" etc.;  color names Çand shape names Çwere used, and Çkids
+Å xwere Çnot Çtold Çthat Çnumbers Çcould Çbe Çused Çinstead.Ç  Later, ÇI Çsubstituted Çmy Çown
+Å xsÅ(hort forms Çto Çfacilitate typing.Ç  These Çwere Çnot just Çabbreviations, Çbut Çwere
+Å xcÅ(onceptually Çdifferent, Çin Çthat Çthey Çwere Çabbreviations Çof Çnouns Çdenoting Çthe
+Å xpÅ(articular quality instead of a verb denoting in literal or metaphorical way the
+Å xassumption Çof Ça Çproperty Çby Ça Çsprite.Ç  Together Çwith Çthis Çinnovation Çin Çlanguage, ÇI
+Å xaÅ(lso Çtold Çkids Çthe Çquickest Çway Çto Çobtain Ça Çgiven Çeffect, Çeliminating Çthe Çword
+Å x"SPRITE" Çand Çsuggesting Çthe Çuse Çof Çnumbers Çwhere Çpossible.Ç  Interestingly, Çthe
+Å xlatter Çsuggestion Çwas Çvery Çrarely Çpicked Çup.Ç  I Çalso Çwrote Ça Çsimple Çprogram, Ç"BG
+Å xCOL" which Çtook Ça Çcolorname Ças Çargument Çand Çcaused Çthe Çbackground Çto Çchange Çto
+Å xthat color.>
+Å x
+Å xBNY
+Å x
+Å xB.Ç  showed Çlittle Çinitial Çtrepidation Çand Çpicked Çup Çthe Çuse Çof ÇSETCOLOR Çwithout
+Å xmuch Çdifficulty, Çalthough Çit Çwas Ça Çwhile Çbefore Çthe Çidea Çof Çusing Çthe Çabbreviation
+Å xSETC became Çclear.  SETH, Çhowever, Çseemed to Çstrike him Ças Ça great Çmystery.Ç  He
+Å NPAGE 3
+
+Å xshowed tremendous patience slowly hunting for keys.
+Å x
+Å xI Çintroduced ÇMS Çand Çused Çit Çto Çproduce Ça Çgrid.Ç  I Çasked ÇB. Çwhat Çkind Çof Çshape Çhe
+Å xwanted Çto Çmake.Ç  His Çfirst Çcomment Çwas, Ç"Leave Çit Çlike Çit Çis."Ç  In Çquestioning Çhim, ÇI
+Å xgot Çthe Çimpression Çthat ÇB. Çthought Çthis Çwould Çbe Ça Çbox.Ç  What ÇI Çdidn't Çclarify Çwas
+Å xthat the grid itself would not appear.  Later I adopted the practice of setting things
+Å xup so that Ça sprite Çwith the Çshape being designed Çwould appear Çalongside the Çgrid.
+Å xAnyway, ÇI Çexplained Çto ÇB. Çthat Çthat Çwould Çbe Çinvisible.Ç  B. Çthen Çsaid Çhe'd Çlike Çto
+Å xmake a whale.  He proceeded, very gingerly to press the arrow keys, then at times
+Å xappearing Çquite Çintent, Çthen Çpausing, Çseeming Çto Çreflect Çand Çdebate Çmoves Ç(this ÇI
+Å xinferred Çfrom Çhead Çand Çeye Çmovements Çand Çsoft Çcomments Çlike Ç"hm" Çand Ç"oops",
+Å xand at one point a sigh).
+Å x
+Å xAfter Çhe Çhad Çcreated Çthe Çshape, Çwhich Çhe Çthen Çdeclared Çto Çbe Ça Çmachinegun Ç(it
+Å xactually Çlooked Çlike Çone) ÇI Çtold Çhim Çhow Çto Çget Ça Çsprite Çto Ç"carry" Çit.Ç  I Çexplained
+Å xwhat Çhe Çcould Çdo Çwith Çit Çand Çhe Çsaid Çhe Çwould Çchange Çits Çcolor.Ç  He Çdecided Çto
+Å xchange Çit Çto Çorange, Çwhich Çwas Çone Çof Çthe Çfew Çcolors ÇI Çhad Çalready Çshown Çhim.Ç  As
+Å xIÅ('m Çcopying Çfrom Çmy Çnotes, ÇI Çremember Çthat Çwe Çset Çthe Çsprite Çin Çmotion, Çbut
+Å xunfortunately ÇI Çdon't Çremember Çany Çof Çthe Çdetails.Ç  I Çthen Çtold Çhim Çhow Çto Çchange
+Å xthe background color, using only primitives.  He decided to change it to orange, Çtoo.
+Å xHe Çenjoyed Çthis Çchange.Ç  At Çthe Çtime, ÇI Çhad Çhad Çno Çexperience Çwith Çother Çkids Çto
+Å NPAGE 4
+
+Å xcompare his Çreaction too.Ç  In retrospect, Çhowever, it Çappears to Çme that Çhis Çdelight
+Å xiÅ(n Çthis Çchange Çwas Çmilder Çthan Çmany.Ç  (I Çdo, Çhowever, Çslightly Çdistrust Çthis
+Å xreminiscence, Çsince Çit Çemerged Çin Ça Çlater Çconversation Çwith ÇSherry Çand ÇSeymour
+Å xand Çwas Çconsistent Çwith Ça Çdeveloping Çtheory Çabout ÇB. Ças Çsomeone Çwho Çwas Çmore
+Å xtaken Çwith Çsubtle Çeffects.)Ç  What Çis Çvery Çclear Çis Çmy Çrecollection Çof Çhow Çcharmed
+Å xBÅ(NY Çwas Çwith Çthe Çoccasional Çpassing Çof Çthe Çnow Çgenerally Çobscured Çorange
+Å xmachinegun over the black text, a subtle phantom-like effect to be sure.
+Å x
+Å xGroup of 5 seventh graders
+Å x
+Å x<Mrs.  Cox brought in Çthis group of 5 Çseventh graders.  She had Çtold me that Çthere
+Å xwas Ça Çreal Ç"problem" Çwith Çthis Çgrade--that Çthe Çfew Çbright Çkids Çwere Çtotally Çheld
+Å xbÅ(ack Çfrom Çexhibiting Çtheir Çintellectual Çkeenness Çby Ç"peer Çgroup Çpressure".
+Å xAlthough Çshe Çdidn't Çsay Çso Çexplicitly, Çit Çseemed Çclear Çthat Çthese Çfive Çwere Çthe
+Å xones Çshe Çhad Çdecided Çwere Çthe Çbright Çones, Çespecially Çsince Çmy Çimpression Çafter
+Å xworking with them a bit was that they were pretty sharp.>
+Å x
+Å xI spent Ç1 Ç1/2 Çhours Çwith Çthis Çgroup.Ç  They Çsaw ÇBNY's Çmachinegun Çwhen Çthey Çcame
+Å xin Çand Çeach Çwanted Çto Çmake Ça Çshape.Ç  They Çquickly Çlearned Çthe Çsyntax.Ç  What Çwas
+Å xrÅ(efreshing Çabout Çall Çthis Çwas Çthe Çextent Çto Çwhich Çthey Çcooperated Çand
+Å xcollaborated--telling Çeach Çother Çcommands Çwhen Çone Çforgot, Çetc.Ç  Showed Çthem
+Å NPAGE 5
+
+Å xtÅ(eams.Ç  They Çknew Çabout Çdegrees Çand Çdid Ça Çlot Çof Çplaying Çaround Çwith ÇSETH.
+Å x<notes break off here>
+Å x
+Å xBLE
+Å x
+Å xBÅ(LE Çstruck Çme Ças Çextremely Çquiet, Çalmost Çmorose.Ç  This, Çhowever, Çwas Çnot
+Å xJaffrey's impression;  since ÇI Çmyself Çwas Çrather Çmorose Çthat Çday ÇI Çam Çinclined Çto Çat
+Å xleast slightly discount my impression as Çprojection.  I think too that the Çintroduction
+Å xI Çgave ÇBLE Çwas Çsomewhat Çinferior Çto Çthe Çintroductions Çto Çthe Çmachine ÇI Çusually
+Å xgÅ(ive--too Çfast Çand Çshowing Çthe Çneat Çstuff Çthe Çkids Çbefore Çhad Çdone:  all Çthe
+Å xcreated shapes whirling about.  I then told him about MS.
+Å x
+Å xBLE Çwas Çvery Çslow Çand Çmethodical.Ç  Seemed Çto Çbe Çfilling Çin Çthe Çwhole Çgrid.Ç  <My
+Å xnotes Çdo Çnot Çindicate Çwhat Çhis Çfinal Çshape Çwas>.Ç  BLE Çdidn't Çhave Çany Çideas Çabout
+Å xwÅ(hat Çto Çcall Çhis Çshape.Ç  He Çseemed Çannoyed Çwith Çhimself Ças Çhe Çwas Çfilling Çthe
+Å xsquares in.  He looks to Jaffrey for approval and defers to her.
+Å x
+Å x<Notes here extremely fragmentary>
+Å x
+Å xIt appears Çfrom Çmy Çnotes Çthat Çin Çsome Çway or Çother ÇI Çhad Çhad Çoccasion Çto Çacquaint
+Å xBLE Çwith ÇSETH Çand Ç360. ÇIn Çconnection Çwith ÇSETS Ç(??Ç  am Çnot Çsure Çthis Çwas Çthe
+Å NPAGE 6
+
+Å xcÅ(ommand--Jaffrey Çmight Çbe Çable Çto Çfill Çin), ÇI Çsaid, Ç"Now Çtyou Çcan Çpick Ça Çhigh
+Å xnumber."  He paused and picked 356.
+Å x
+Å xSoon after ÇI told Çhim Çthat you Çcould change Çthe Çcolor of Çthe background.Ç  He Çasked,
+Å x"can you make it blue?"  I said yes and proceeded to tell him how.
+Å x
+Å x<I Çfound Çout Çafterwards Çthat ÇBLE Çhad Çleft Ça Çsoftball Çgame Çto Çgo Çwith ÇJaffrey.Ç  That
+Å xmÅ(ight explain what appeared Çto me to be Çhis low spirits.  I Çthought this was Ça
+Å xterriBLE Çidea, Çeven Çthough ÇJaffrey Çhad Çgiven Çhim Ça Çchoice.Ç  After Çdiscussion, Çwe
+Å xdÅ(ecided that I Çwould start coming Çinto the school Çearlier and avoid Ças much Ças
+Å xpossible pulling kids away from social activities to work with us.>
+Å x
+Å x****
+Å x
+Å xAÅ(fter Çsome Çdiscussion Çwith ÇSeymour, Çduring Çwhich ÇI Çworried Çabout Çthe
+Å xlÅ(aboriousness Çof Çall Çthe Çtyping Çthe Çkids Çhad Çto Çdo, Çdecided Çto Çstart Çusing
+Å xabbreviations, mentioned in a note at the beginning of this file.
+Å x
+Å xMay 1, Thursday
+Å x
+Å x<I Çworked Çwith ÇRCL Çand ÇApril Çtoday Çand Çfailed Çto Çkeep Çnotes.Ç  Jaffrey, Çhowever,
+Å NPAGE 7
+
+Å xtook Çextensive Çnotes ÇI Çthink, Çkeeping Çan Çalmost Çverbatim Çtranscript.Ç  My Çonly Çclear
+Å xrecollection was Çthat I Çwas extremely Çimpressed with ÇRCL's speed Çin picking Çthings
+Å xup Çand Çthat Çit Çwas Çclear Çto Çme Çthat Çshe Çcontinued Çto Çlook Çup Çto Çme Çfor Çdirection
+Å xwhen Çit Çwas Çperfectly Çclear Çto Çher Çwhat Çto Çdo.Ç  My Çimpression Çwas Çthat Çshe Çwas
+Å xbeing flirtatious in the way little girls can be flirtatious.>
+Å x
+Å x
+Å xMay 5, Monday
+Å x
+Å x<Am Çsearching Çfor Çnotes.Ç  Seymour, ÇJaffrey Çand ÇI Çwith ÇTell Çand Çanother Çgirl Çnamed
+Å xRÅ(CL.Ç  Tell Çis Çextremely Çwarm Çand Çaffectionate:  he Çwas Çclimbing Çall Çover Çme,
+Å xlooking up for confirmation and to make contact.>
+Å x
+Å xMay 6, Tuesday
+Å x
+Å xRCL and April
+Å x
+Å xAÅ(pril Çbecame Çfascinated Çwith Çthe Çway ÇSETS Ç169 Çchanged Çthe Çsprite Çto Çthe
+Å xopposite Çheading.Ç  I Çsuggested Çshe Çtry Çother Çspeeds Çso Ças Çto Çfigure Çout Çwhat Çws
+Å xgÅ(oing Çon Çbut Çgave Çno Çdirections Çre Çmethod.Ç  She Çtried ÇSETS Ç399. ÇThe Çsprite
+Å xreversed Çagain Çand Çslowed Çdown.Ç  Then Çshe Çtried ÇSETS Ç3. ÇRCL Çclamored Çmildly Çfor
+Å NPAGE 8
+
+Å xher Çturn, Çso Çno Çprogress Çwas Çmade Çin Çeither Çfiguring Çout Çwhat Çwas Çhappening Çor Çin
+Å xbeginning Çto Çhome Çin Çon Ça Çmethod Çfor Çfiguring Çout Ç(as Çlater Çbegan Çto Çhappen Çwith
+Å xthe 7th grade group;  see below).
+Å x
+Å xRÅ(CL remembered many Çof the commands Çfrom before.  She Çseemed to have Çno
+Å xproblem Çwith Çthe Çidea Çof Çusing ÇRANDOM Ças Çinput Çto Çthe Çcommands Çshe Çknew Çnor
+Å xwith the concept that you can use numbers instead of colornames.
+Å x
+Å xOne Çdelightful Çthing Çwas Çto Çsee Ç"shift-U" Ç(the Çdelete Çkey) Çpicked Çup Çby ÇRCL Ç(?Ç  or
+Å xwas it April--consult Jaffrey) as a verb.  Matthew
+Å x
+Å xThis Çwas Ça Çone-shot Çdeal Çfor ÇMatthew, Ça Çthird-grader.Ç  He Çhad Çused ÇSETS Ç90, Çso
+Å xwÅ(hen ÇI Çintroduced ÇRT Çhe Çtried ÇRT Ç90. ÇI Çwasn't Çclear Çon Çhow Çto Çbring Çthe
+Å xsignificance Çof Çthis Çhome.Ç  Seymour Çintervened Çand Çsaid, Ç"I Çwonder Çwhat Çwould
+Å xhappen Çif Çyou Çwent ÇRT Ç90 Çagain?"Ç  Matthew Çwasn't Çtoo Çinterested Çand Çdecided
+Å xiÅ(nstead Çto Çtry Çgoing ÇRT Ç100.Ç  Afterwards Çhe Çtried ÇRT Ç4 Çand Çthen ÇRT Ç9. ÇI Çtoo
+Å xqÅ(uickly Çqueried Çhim Çabout Çthe Çadditive Çquality Çof Çgiving ÇRT Çcommands, Çand
+Å xintroduced Çthe Çprimitive ÇHEADING.Ç  Point Çwas Çcompletely Çlost.Ç  Unsurprisingly, ÇM's
+Å xfirst response to "how far right" the sprite was now "heading" was 9.
+Å x
+Å xBNY
+Å NPAGE 9
+
+Å x
+Å xThis Çwas ÇBNY's Çsecond Çtime.Ç  Like Çthe Çfirst Çtime, Çhis Çfavorite Çactivity Çwas Çto Çmake
+Å xhis own Çshape.Ç  This Çtime Çwe Çused Çthe Çfollowing Çset Çof Çabbreviations, Çwhich ÇI Çhave
+Å xused consistently Çwith all Çthe kids Çexcept the Ç7th grade Çgroup who Çhave been Çtold
+Å xthey can use either:
+Å x
+Å xT = TELL
+Å xSH = CARRY
+Å xC = SETCOLOR
+Å xSP = SETSPEED
+Å xBG = TELL BACKGROUND SETC
+Å x
+Å xBNY is not nearly as impressed with changing the background colors as most of the
+Å xothers.
+Å x
+Å xLate in the session (which Seymour was conducting) Seymour suggested that BNY
+Å xmight like to give a sprite a speed.  Even though Seymour had been using a sheet
+Å xof paper with the new abbreviations, BNY typed in SAT--evidently a corruption of
+Å xSETS, which he had been using a full week before.
+Å x
+Å xBNY, like almost all the kids I've worked with, seem to think that merely a number
+Å ;PAGE 10
+
+Å xwill suffice, i.e. that no LOGO primitive is required.
+Å x
+Å xAt the end of the session, BNY had set one sprite going at a speed of 1 and
+Å xanother--which, I believe was not traveling precisely parallel to the first--at a
+Å xmuch higher speed--I think around eighty.  He conceived the idea of having a race
+Å xand tried counting how many times the faster sprite was moving across the screen
+Å xas the slower one inched across.  After a while his counting lost very close
+Å xcorrespondence to the actual movement of the fast sprite and since after 49 he
+Å xsaid 30 (a kind of memory mistake I had completely forgotten about making myself),
+Å xthe point couldn't really be followed through.  I also think that the way sprites
+Å xwrap on the machine is really opaque and wonder if the screen shouldn't be
+Å xconceived as the visible portion of a globe for the purposes of wrapping.
+Å x
+Å xMay 8, Thursday
+Å x
+Å xBNY
+Å x
+Å xI knew that BNY was coming in first and wanted to see his reaction to a dramatic
+Å xeffect so I used SHOUT to get all the sprites, which were carrying turtles, to spray
+Å xout in a circle and then wrap against a background regularly flashing random colors.
+Å xWell, BNY liked it but didn't go wild over it the way some kids do.   I told him how
+Å ;PAGE 11
+
+Å xto change the turtles into planes, which he did.  Then, as he was watching the
+Å xcircle phase recurred--he really loved this.  I made a little show of "making the
+Å xuniverse run backwards" by giving changing the speed of the sprites to their
+Å xnegative speed.  I think the idea was a throwaway, but he was very happy to see
+Å xthe circle appear again.
+Å x
+Å xImmediately after, though, BNY asked to do what clearly is his favorite thing--
+Å xmaking shapes.  I notice him intently at work, pausing now and then, putting finger
+Å xto front tooth and reflecting, then back to work, sometimes with what appears to
+Å xme to be mildly amused fascination.  Now and then he bites his lip in concentration.
+Å xBefore any particular shape was clear I asked him what he was drawing.  He said,
+Å x"A design".  A little later, a fairly neat looking robot, a sketch of which I have,
+Å xemerged.
+Å x
+Å xI asked B. what he wanted to do.  He wanted to make it move and gave it a speed
+Å xof 1.  I then told him about RT and LT.  Right off he tried LT 90, which I tried to
+Å xpursue, but with no success.  He next gave the sprite a speed of 6.  Jaffrey asked
+Å xhim whether he thought this was fast enough.  He said yes.
+Å x
+Å xThen I asked him what the figure was.  He said, "A man with his arms stretched
+Å xout," and said he'd like to make it juggle.  I suggested making some new shapes
+Å ;PAGE 12
+
+Å xand calling new sprites so that the balls or pins the man was juggling could move
+Å xseparately.  BNY didn't want to do this, though.  He very clearly stated that he
+Å xwanted to get the same shape back, which he did with my help and filled in a
+Å xcouple of squares to achieve the effect he wanted.
+Å x
+Å xI told him about BG, the program to change background colors which seems to be
+Å xmost kids' favorite thing.  He wasn't at all interested.  I suggested that maybe he'd
+Å xlike to try getting the sprite to go faster.  He then gave it a speed of 70.  I asked
+Å xwhether it was better to get things to go fast or slow and he said fast, but, I think,
+Å xwithout conviction.
+Å x
+Å xGroup of Five 7th Graders
+Å x
+Å xToday the central topic of discussion was why certain high numbers given as input
+Å xto SETS cause heading to reverse and speed to diminish.  Maria wondered whether
+Å xeven numbers made the sprite go one way and odd numbers another.  Sherman
+Å xwondered whether prime numbers might not have some special effect.  Maria
+Å xasked whether you could ask the computer questions.  I said you could ask some
+Å xkinds--what kinds did she want to ask?  She wanted to know why it did things like
+Å xthat.  I said we couldn't ask it that.  Sherman, Mike and Maria are most interested
+Å xin this whole issue.  Francois and Tony are not all that interested.  I notice that
+Å ;PAGE 13
+
+Å xMaria and Sherman, despite their interesting hypotheses have no systematic way
+Å xof going about testing them.  Sherman did SETH 270.  Maria says, "270's not a
+Å xprime number, is it?"  Various numbers are tried by Sherman.  I suggest that maybe
+Å xsomeone would like to keep a record of what's happening to help figure things out.
+Å xSherman sagely points to his head and says "I'll remember".  Mike goes second to
+Å xlast and despite lack of time is the only one to begin taking a systematic approach
+Å xto figuring out at which point things change.  He's aware of this, because
+Å xafterwards he came up and was fishing for some praise.  I told him I thought he
+Å xwas on the right track.
+Å x
+Å xRCL (and initial notes on Roy)
+Å x
+Å xRCL asked me right off, "How do you talk to a sprite?  I'm pretty rusty..."  I told
+Å xher, but my impression is that she is not rusty at all.  She asks me questions, I
+Å xthink, in part to show off and in part to make a connection.  This time she's taking
+Å xturns with Roy who is exuberant, perhaps a bit scattered and the first kid I've
+Å xseen who types in whatever he can into the machine.  Roy is also tremendously
+Å xconcerned with whether the computer can answer your questions.
+Å x
+Å xRCL seems supremely confident today.  She's fascinated by the concept of random,
+Å xwhich I briefly introduced the last time.  She's wondering whether you can get the
+Å ;PAGE 14
+
+Å xcomputer to get a sprite to take a random shape or a random speed.  Since we
+Å xnow had abbreviations at our disposal, somehow the idea of writing a program
+Å xcame up and I instructed her in writing a program to make all sprites become
+Å xinvisible.  I suggested calling it VANISH, wh ich is what Seymour always calls this,
+Å xbut RCL suggested the abbreviation VS, which I said was fine.  Between us (mostly
+Å xat my direction) she typed in the one-line program.  She then typed in VS.  It
+Å xworked and RCL looked up at me, winked and beamed.
+Å x
+Å xVery competently, she types in T 27 SH :BALL C :PURPLE then looks up and asks,
+Å x"Did I spell purple right?"
+Å x
+Å xSince she had decided to talk to SPRITE 27, it kept getting wiped out by prior (but
+Å xinvisible) shapes.  I explained that lower numbered sprites took precedence and
+Å xshe volunteered:  "Oh, so it's going behind the other shapes?"
+Å x
+Å xToday, I'm letting RCL do pretty much as she wants.  She decided to talk to more
+Å xsprites and proceeds backwards from 27.  I then told her how to use a list to talk
+Å xto more than one sprite at a time.  She did this and wondered how to talk to
+Å xindividual sprites within the list, so I told her about F and BF, which she
+Å xunderstood and used immediately.
+Å x
+Å ;PAGE 15
+
+Å xAt one point I was telling her about "asking" the computer what the heading was.
+Å xShe asked, "How do you ask it what speed it wants to go?"  I asked, "Does it Å&wantÅ'Å'
+Å xto go a speed?"  She said, "Well, I guess not."  Then she asked me, "How do you
+Å xget the list of random colors?"  I tried to get her to clarify, she didn't , and since I
+Å xrealized what she wanted I reminded her about PONS.  We did PONS, got the list
+Å xof colors and numbers and RCL asked, "How am I going to remember this?"   I told
+Å xher, "Well, you can always type PONS."
+Å x
+Å xRCL was wondering about what the effect of shift on all keys would be.  I
+Å xsuggested she try, not thinking of shift-Q.  Well, shift-Q crashed it.  I explained
+Å xwhat was lost--mostly the abbreviations.  She had no trouble  reverting to the
+Å xlonger form primitives.
+Å x
+Å xMay 13
+Å x
+Å xBLE
+Å x
+Å xBLE took immediately to the new abbreviations.  I have noticed that he says the
+Å xnames of the abbreviations after he has typed in a line with my help--as if he is
+Å xtranslating from code to something more closely approximating natural language.
+Å x
+Å ;PAGE 16
+
+Å xBLE  put a truck on the screen.  It has been a couple of weeks since his first
+Å xencounter.  This time he's much faster.  I can't be sure why:  because the
+Å xabbreviations make typing easier, because of greater familiarity, because he's in
+Å xbetter spirits, because I am.
+Å x
+Å xHe next wanted to make his own hape, saying at first that he wanted to make a
+Å xflying saucer.  When it was clear that this wasn't turning out, he modified his plans
+Å xand said he would make a building.  During the course of filling in the grid he
+Å xmoved from an unsystematic approach to filling in a solid area to an extremely
+Å xsystematic, though slightly uneconomical approach.  He moved inwards by squirals,
+Å xbut each time overshot by one and had to erase.
+Å x
+Å xHe then asked to get more sprites on the screen and wondered how to get them
+Å xto be different colors.  I said there was a "mre complicated but faster way, using a
+Å xprocedure I had written called SHOUT." Or, we could talk to the sprites one by
+Å xone, which was simpler but took longer.  He said, "Let's do it the simpler way."
+Å x
+Å xDarnell
+Å x
+Å xDarnell came in with his friend Page while I was just finishing typing in
+Å xabbreviations.  Darnell couldn't wait to get his hands on the machine.  When he did,
+Å ;PAGE 17
+
+Å xhe first followed instructions, but did lots of random typing and played with the
+Å xknobs on the TV display to create a broken TV effect, wh ich he really loved.  He's
+Å xextremely independent:  I offered to help him by pointing out the keys to him but
+Å xhe fairly resolutely refused.  I got a little worried when I saw him eyeing the
+Å xon/off switch on the extra-memory box.  I explained if he pressed that, the
+Å xcomputer would forget all I had taught it and would cost me lots of work.  he said,
+Å x"oh, you didn't tell me that" and then stayed away and warned Page away from the
+Å xswitch but seemed tempted the whole time.
+Å x
+Å xDarnell was the first kid I've seen who really tried talking to the machine,
+Å xapparently with some expectation that it would respond.
+Å x
+Å xOccasionally, he7d turn to Jaffrey and ask to play some other game.  He would
+Å xfocus occasionally, but never for long.
+Å x
+Å xBNY
+Å x
+Å xI asked him what he wanted to do.  He said, "I like making things a lot."  I asked
+Å xwhether he liked making other things too, like things out of wood.  Laconic yes.
+Å xAnd drawing?  Mhmm.
+Å x
+Å ;PAGE 18
+
+Å xThen we had a strange crash, which was actually pretty attractive, so this turned
+Å xout to be a fairly short sess ion.
+Å x
+Å xRoy
+Å x
+Å xJaffrey and Sherry both have notes on this.  It was a pretty wild time:  a gerbil
+Å xgot loose and we spent some time catching it.  Roy seemed very much to want the
+Å xmachine to respond to him personally.  He'd type all kinds of stuff in.  His friend
+Å xtyped in his name.  Roy typed in something about the computer eating dogfood.
+Å xMy sense is that this guy might possibly get into using a text editor, but it's hard
+Å xfor me to imagine him focussing enough to use LOGO.
+Å x
+Å x**** Afterwards, Sherry, Jaffrey and I had some discussion much of which Sherry
+Å xrecorded.  Some convergence on idea of sensual kids--who get off on color and, on
+Å xthis machine, artifactual stuff--having more difficulty focussing on controlling
+Å xparticular properties through use of formal language
+

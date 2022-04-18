@@ -1,0 +1,649 @@
+.HEADER 1-
+
+.quote #
+.adjust
+.line 65
+.fill
+.double
+.ce
+			    Chapter 1
+.br
+.sect
+1 The Job Tree and Scheduling Jobs
+.br
+.sect
+1.1 Introduction
+	It is necessary to provide,  as part of our system,  what
+might  be referred to as a handle on the resources of the system.
+This type of facility is,  of necessity, explictly provided  for,
+in  one form or  another, in every timesharing  system we know of
+and is generally  referred to as  a job, process,  user or  task.
+Often  these terms are used somewhat interchangeably;  personally
+we like the  terms "job"  and "user", which  we will  interchange
+freely.   A  job in  our system is  a unit  capable of possessing
+system   resources  and  executing  instructions  (both  hardware
+instructions and system calls);  by executing appropriate  system
+calls,  a job may cause  input/output operations to be performed,
+request or  release various  system resources  and interact  with
+other jobs.   In particular, a job may create an arbitrary number
+of other jobs;  these jobs may,  of course, in turn create  other
+jobs.   The  creating job is called the immediate superior of the
+created job;  the created job is called an immediate inferior  of
+the creator.
+.br
+.sect
+1.2 The Job Tree
+.br
+.sect
+1.2.1 The LOGGER
+	All  jobs  are  inferiors  of a  special  job  called the
+LOGGER;  the LOGGER is  loaded when  the system  first comes  up.
+
+
+Whenever  someone types a control Z on a free console, the LOGGER
+is given a special interrupt.   It  may then enter into a  simple
+dialogue  with the person at  the console;  this dialogue usually
+results in the LOGGER  creating a new  job, loading some  program
+into  that job, starting  the program and  passing control of the
+console to  it.   This created  job remains  an inferior  of  the
+LOGGER,  but is special in that the LOGGER marks it as the top of
+a console controlled tree;  this means that control Z's typed  on
+the console will never cause an interrupt to the LOGGER until the
+job  goes away;  also,  top of  tree status  has implications for
+scheduling,   as  we  shall  see  later.    If  the  LOGGER  ever
+experiences some catastrophic failure the system will reload  it;
+anyone  who is  acually dialoguing with  the LOGGER  will have to
+start over, but all of the inferiors which the failing LOGGER had
+already created will not  be affected;  they become inferiors  of
+the  new LOGGER.   It is the function  of the LOGGER to implement
+any access  control  which  may exist,  maintain  any  accounting
+files,  and possibly to  determine what program  should be loaded
+for the person. 
+.br
+.sect
+1.2.2 Job Interaction
+	The organization  of jobs  into a  tree structure  allows
+easy  and  powerful  control  by one  job  of  other jobs.   This
+structure is copied from the  ITS system;  it is most often  used
+for  two purposes:  first,  the normal  top level  job on  ITS is
+capable of keeping  track of  up to 8  inferiors;  this allows a
+
+
+user  of  the  system  to  easily  set  up  one  job  for  a long
+computation and leave it running while he interacts with a second
+job.   Secondly, since the normal  top-level procedure is also a
+debugging  program, other jobs can  be loaded with programs which
+are to be  debugged, and  the top-level  job allows  the user  to
+control  the execution of  the program and  examine or modify it.
+The "separation of powers" that the job tree provides allows  the
+program  being debugged to run  completely out of control without
+having any damaging effect on  the debugging program, unlike  the
+all  too  common  situation   where  the  debugger  must   reside
+unprotected  in  the  same  virtual  core  as  the  program being
+debugged.   Anyone who  has worked  with  both types  of  systems
+realizes the advantages of being able to look at what's left of a
+program  after it  wipes out one  of its  instructions, which, on
+another   system,  might   have  been   one  of   the  debugger's
+instructions.   Essentially, the advantages which ITS gains  from
+this job structure are the same as those we hope to gain for this
+system.  Additionally, since the PDP11 has such a limited address
+space,  it  is possibly  useful to  divide  a large  program into
+several interacting jobs.
+	Jobs are kept track  of in the system  by means of  their
+user  variables;  there  is  a  one-to-one  correspodence between
+blocks of user variables which are being used and existing  jobs.
+The  user variable block contains data and pointers that comprise
+almost all of  the information  that the system  keeps about  the
+
+
+job,  including  the  values  of its  registers  when  it  is not
+running, its memory map,  its input/output channels, pointers  to
+its  immediate inferiors, and  to its immediate superior.   Since
+user variables are arranged  in blocks, referencing a  particular
+variable  in  that  block   requires  adding  some  fixed   value
+associated  with the desired variable to a number called the user
+index.   Each job is assigned a  number, called its user  number,
+which  indicates which user  variable block this  job resides in.
+Multiplying this number by the length of the variable block gives
+the user index.   In general the user number is used rather  than
+the  user index to refer  to a user, since  it always fits into a
+byte.   
+	Every job has  two pointers to  other jobs:  an  inferior
+pointer and a superior pointer.  The inferior pointer is the user
+index of one of the job's inferiors.  The superior pointer, if it
+is  even, is the user  index of another job  which is inferior to
+the same job that this job is  inferior to;  if it is odd, it  is
+the  user index  plus one of  the immediate superior  of the job.
+Thus there is a list of jobs which are all immediate inferiors of
+the same job;  the list ends with the user index plus one of  the
+superior of the jobs.
+.br
+.sect
+1.2.2.1 Job Specification
+	All  calls which take  a job specification  as an operand
+take this specification in a standard format.  The address of the
+operand points to a block of words;  the format of the first word
+
+
+is shown in figure 1-1.   If the high order bit of this word is a
+one,  the name  of the  desired job  follows;  otherwise, the low
+order byte of the word is the number of the desired job.  If this
+byte is 377, the  specification refers to  the job executing  the
+call.     If the  next bit  in the  high byte  is a  zero, we are
+referring to a job inferior to the one making the call;  if it is
+a one, we are refering to  an inferior of the LOGGER.   The  next
+bit,  if  it is  a  one, specifies  that the  job  we wish  is an
+immediate inferior either of the  LOGGER or of the job  executing
+the call, depending on the previous bit.   If this bit is a zero,
+the   job  might  be  further  down  on  the  tree,  rather  than
+immediately inferior.   If the call is supplying the name of  the
+job,  the words  following the first  one are  a character string
+specifying the job.   Since jobs are  arranged in a tree, a  name
+must  be  supplied  for  each node  of  the  tree;  each  name is
+terminated by having the 200 bit set in its last characteer.  The
+string  is  terminated  by  a  zero  character;  anymore  than 8
+characters  in a name are ignored.   For example, suppose we have
+the job tree illustrated by  figure 1-2.   For the job PAPERT  to
+refer  to HACK if it does not know its user number, it can either
+specify it as an inferior  of itself with the string  RUG!HACK!#%
+(where #! indicates that the preceeding character has its 200 bit
+set  and #% indicates a zero character), or it may refer to it as
+an inferior of the LOGGER with PAPERT!RUG!HACK!#%.  If RUG wishes
+to refer to  HACK1 it  must refer  to it  as an  inferior of  the
+
+
+logger with LEBEL!RUG1!HACK1!#%.  RUG can refer to HACK simply as
+an  immediate inferior.   Two of the  remaining bits in the first
+word specify whether  the name  or number  of the  job should  be
+stored  back into the user's core if the call succeeds in finding
+the job.   If the number is to  be stored back, the "name  given"
+bit  in the first word is cleared and the number of the job which
+was found is stored in the low byte.  If the name is to be stored
+back, a string is stored  after the first word.   This string  is
+consistent  with the bits in the  first word, i.e. the block will
+properly specify the job if the "name given" bit is set.
+.br
+.sect
+1.2.2.2 Creating, Destroying and Disowning Jobs 
+	The system call #.CRJOB creates a new job as an immediate
+inferior of the job  that executes it.   The  one operand of  the
+call is a job specification.  The job number of the newly created
+job  might be  placed in the  first word when  the call finishes.
+The user must specify  the the name  that is to  be given to  the
+job.   If  a job with  the name specified  in the #.CRJOB already
+exists as an immediate inferior of the job executing the call, it
+returns without  creating  a  new  job, setting  the  N  bit  and
+clearing  the Z  bit.   Otherwise a  free user  variable block is
+searched   for;  if  necessary,  the   core  allocated  for  user
+variables is expanded.   If no block  is free and more cannot  be
+added,  the call returns  with all the  bits cleared.   If a free
+block   is  found,  it  is   initialized  and  the  call  returns
+successfully (i.e. with the Z bit set). 
+
+
+	The #.KILLJ call  takes a  job specification  as its  one
+operand  and destroys the specified job  and any inferiors it may
+have had,  if  the  job  is an  immediate  inferior  of  the  job
+executing the call.  This is done by first stopping the specified
+job  and all of its inferiors,  then releasing all facilites they
+possess, and finally freeing the block(s) of user variables  they
+were  using.   If a block  of user variables  is freed that would
+allow the allocation of space for user variables to decrease, the
+extra  space  is  freed.    The  #.GUN  call  performs  the  same
+operation, except that  the specified  job must  be an  immediate
+inferior  of the  LOGGER and the  job executing the  call must be
+privileged.
+	The #.DISOWN  call  takes  a  job  specification  as  its
+operand;  if  the job specified  is an immediate  inferior of the
+job executing  the  call that  job  is marked  as  the top  of a
+disowned  tree and made into an immediate inferior of the LOGGER.
+The #.OWN call performs the inverse operation:  if the  specified
+job  is  the top  of a  disowned tree  it is  marked as  a normal
+inferior and made an immediate inferior of the job executing  the
+call.   
+	All  of the  calls #.UVSET, #.KILLJ,  #.GUN, #.DISOWN and
+#.OWN return with the Z bit set if they are successful.   If they
+are given a job specification for a non-existent job, they return
+with the N bit set.   If the call fails for some other reason, it
+returns with all of the bits cleared.
+
+
+.br
+.sect
+1.2.2.3 Manipulating User variables
+	In order to allow reading and writing of user  variables,
+there  is a two operand system call, #.UVSET.   The first operand
+of this call is a  job specification block.   The address of  the
+second  operand points to two  words which are, respectively, the
+count of the number of variables to be accessed and a pointer  to
+a block of pairs of words.   The first word of each pair contains
+in the low byte a number  which has been arbitrarily assigned  to
+the variable to be accessed.  The high bit of this word, if it is
+a  one, indicates that the variable is to be written into;  if it
+is a zero,  the value  is read from  the system  into the  user's
+core.   The  next bit indicates where the value is to be found or
+placed in the user's core;  if this  bit is a one, the next  word
+in  the pair contains the address in  user core;  if the bit is a
+zero, the next word is used as  the location to store or fetch a
+value.   There  are  two tables  which define  the correspondence
+between the arbitrary variable numbers and the real variables and
+provide access protection for the variables.  The first table has
+one byte of flags  (figure 1-1) for  each legal variable  number;
+the second table has one byte of offset.   If one of the variable
+numbers supplied  is  greater than  the  largest legal  value  an
+illegal instruction error is generated.   If the number is within
+the legal range,  the access  byte determines if  the request  is
+legal.   If  the "dispatch to routine" bit  is set, the offset is
+multiplied by  two and  added to  a constant,  and the  resulting
+
+
+address  is  jumped  to.    The  routine  at  that  address  then
+determines  if the  request is  legal and  modifies or  reads the
+requested variable if it is.   Note that this routine might  only
+allow  certain bits of  a word to  be modified, or  might allow a
+word to only be set to  certain values.   If the dispatch bit  is
+not  on, the rest  of the flag  byte is used  to determine if the
+request is legal according to  the relationship between the  user
+executing  the  call  and  the  user  whose  variables  are being
+accessed, and then either causes an illegal instruction error  or
+services  the request.   The address  of the variable  to read or
+write is determined by multiplying the offset by two, adding  the
+address  of the first word of  user variables and then adding the
+user index.   Once a  request is serviced,  the user's count  and
+address  are  updated and  if  the count  is  not zero,  the next
+request in the block is serviced.
+.br
+.sect
+1.2.2.4 Modifying a Job's Memory Map
+	The other important call associated with the job tree  is
+the  #.UMAP call.   The one  operand of this call  is a four word
+block, shown  in figure  1-4.   The  result of  the call,  if  it
+succeeds,  is to  specify the status  of some page  in some job's
+map;  the page will be  called the destination  page and the  job
+the destination job.  In specifying the status of the destination
+page,  reference might be made to  another page, the source page,
+and to a job or a disk channel.   The first word of the four word
+block  contains  various  flags indicating  the  operation  to be
+
+
+performed and the number of the destination page.   The next word
+is a pointer to a job specification for the desstination job;  if
+it is -1, the job executing the call is the destination job.  The
+third  word is  a pointer to  a job specification  for the source
+job, or a pointer to a word containing the channel number if  the
+source is a disk channel.   If this word is -1, the source is the
+job executing the call;  if it is zero, there is no source.   The
+last  word contains the  page number or  starting block number in
+the source.
+	The   desired  effect   upon  the   destination  page  is
+determined from the four word operand.  The high order bit of the
+low byte of the  first word indicates  that the destination  page
+should  be identical to  its corresponding I page,  if the bit is
+set.	If  the high  order bit  of the  first word  is set,  the
+destination page is deleted from the destonation job's map if the
+job  executing the call has expand access to that page;  the rest
+of thee operand is ignored.  If the high bit is not set and there
+is no source, an attempt is  made to set up the destination  page
+according  to the specified length and write permission.   If the
+request write permit  bit is  set, the destination  job is  given
+write  permission to  the destination  page, if  this is allowed;
+otherwise, read only  permission is  given.   If the  destination
+page did not already exist, a new page is created;  if it did, it
+might  be expanded  or contracted  according to  the length bits.
+Again, the job executing the call must have expand access on  the
+
+
+destination  page, unless  the specified  length is  equal to the
+current length  of the  page.   If  a new  page is  created,  its
+expansion  direction is  set from  the expand  upDown bit  in the
+first word.  Finally, if the delete bit is not set and there is a
+source page, the destination page is mapped onto the source page;
+the source page is not modified.  If the destination page already
+exists, it must be deleted;  the job executing the call must have
+expand access for the page.  If the source is a job, the value of
+the length bits  is ignored;  the  length of the  source page  is
+written  into them.   If the request write permit bit is set, the
+destination job is given write permission if this is allowed.  If
+the specified page  does not exist  in the source  job, the  call
+fails.   If  the source is a channel and a disk file is opened on
+the specified  channel, a  file  window page  is created  as  the
+destination  page with the  length specified in  the length bits.
+If the specified length would cause accessing beyond the the  end
+of  the  file and  write permission  is  not requested,  the call
+fails;   if write permission is requested and granted the file is
+lengthened appropriately.  If the beginning of the requested file
+window is beyond the end of the file, the call always fails.
+	If the call succeeds, it returns with the Z bit  set;  if
+it  fails, it  returns with  all bits  cleared.   If it succeeeds
+except that  write  access  was requested  and  not  granted,  it
+returns with the N bit set.
+.br
+.sect
+1.3 Scheduling
+
+
+	The  problem of scheduling  in a swapping  system must be
+considered carefully;  our system must take into account not only
+the compute time required by the various jobs, but also what core
+requirements  the  jobs  will  impose  upon  the  system.   In a
+non-swapping  environment, it is sufficient to pick a user to run
+on the basis of fairly simple things like the amount of time  the
+job has run, its priority with respect to other jobs, etc.   When
+the job we  choose becomes  blocked for  some reason,  or if  its
+quantum  (the amount  of time the  job is allowed  to run) runs
+out, a new job  is selected in the  same manner.   In a  swapping
+system this method would result in disaster.  If several jobs are
+all  reasonable candidates  for running according  to this simple
+algorithim and the sum of the  core required to by these jobs  is
+greater  than the available  core, we will  encounter a situation
+where each job  is causing  the others to  be swapped  out.   The
+result will be that all of the jobs will usually be waiting for a
+page to be swapped in, and none of them will succeced in actually
+doing  much  computing.   The solution  to  this problem  that we
+choose is to select a subset  of the jobs which might  reasonably
+be  run such that the  sum of the core  they require is less than
+the available core.   Unfortunately, the  core requirements of a
+job  cannot  be  predicted  in  advance  without  having detailed
+knowledge  of  the  program;  however,  we  can  make  reasonable
+assumptions  based on the previous behavior of the job.   We will
+call this estimate the average core requirement of the job.
+
+
+.br
+.sect
+1.3.1 The Running Set
+	Whenever the  system wishes  to  find a  job to  run,  it
+consults what we call the running set.  The running set is a list
+of  runnable jobs that are "compatable"  in the sense that all of
+the jobs can fit into the available core at the same  time.   The
+running  set is determined by first ordering the runnable jobs by
+their current  priority  for compute  time  (as determined  by a
+procedure  below), and then  adding the best  jobs to the running
+set until the sum of their average core requirements is  slightly
+less than the available core, or until there are no more runnable
+jobs.
+.br
+.sect
+1.3.1.1 The Compute-Time Priority
+	The  priority for compute time for a job is determined by
+examining a  few variables  in  each job  and computing  its  net
+priority.  Each job has one word, called the JMTU, which gives an
+approximation  of  the  amount  of time  that  the  job  has used
+"recently".   Whenever the job is  run, a number proportional  to
+the amount of time that the job ran is added to the JMTU.   Every
+so often (probably every 1/4 or 1/2 second) some fraction of  the
+value  of the  JMTU is subtracted  from it.   The  result of this
+manipulation is  that the  value of  the JMTU  clusters around a
+number  proportional to  the average percentage  of the machine's
+time that the job  is getting.   As the  fraction of the  machine
+time  that  the job  gets varies,  the value  of the  JMTU slowly
+follows to the new percentage of time.   Each job also has a word
+
+
+which  points to a word which is the  sum of the JMTUs for all of
+the jobs  in a  particular tree  (the tree  JMTU).   In order  to
+compute  the net priority of a job, its JMTU is added to the tree
+JMTU;   the  resulting  value is  then  multiplied by  the  job's
+priority  variable,  and the  result  is the  net priority.   The
+priority variable is a 6  bit quantity associated with each  job;
+normally  its value is 4  for a job in  a console controlled tree
+and 32 for  a job  in a  disowned tree,  but it  may be  modified
+temporarilly  if  there is  some reason  for  the job  to recieve
+higher or lower priority.   Also, a  job may modify the value  of
+its priority if it wishes to obtain better or worse service.  The
+LOGGER's  priority is  1.   If the  net priority  is greater than
+177777, it is reduced to  that so that it  may fit into 16  bits.
+This  method of computing the net priority will result in an even
+distribution of compute time between  job trees and between  jobs
+within a tree, assuming equal priorities.   The large priority of
+disowned jobs prevents them from using much compute time if other
+jobs are runnable.  Once the values are computed for all runnable
+jobs, they are sorted and the running set may be determined.
+.br
+.sect
+1.3.1.2 The Average Core Requirment of a Job
+	Once the net priorities for  all runnable jobs have  been
+determined, we begin adding jobs to the new running set.  The job
+with  the lowest value as its  net priority is always included in
+the running set;  others are added if core is available.
+	As jobs are added to the running set, their average  core
+
+
+requirement  is  computed and  added  to the  total  average core
+required by the running set.   If adding a particular job to  the
+running  set would cause the average  required core to exceed the
+core available for swapping,  the job is not  added unless it  is
+the  one with  the lowest  net priority  value, in  which case it
+becomes the only job in the running set.   When the total average
+core  required by the running set  reaches some fixed fraction of
+the core available for swapping, or if there are no more runnable
+jobs, the running set is complete.
+	When a  job  is being  considered  for inclusion  in  the
+running  set, its average required  core is computed by examining
+its page map.   Any pages in the map which are shared with a  job
+already  in the running set are ignored.   Any pages which are to
+be prepaged and are not shared with a job already in the  running
+set are counted fully towards the average core requirement.   The
+number of blocks of  pages which are not  to be prepaged and  are
+not  shared with a job already  in the running set are multiplied
+by the job's  "average fraction of  non-prepaged core  required".
+This fraction is computed for the job whenever it is removed from
+a  running set, and is the ratio of the number of blocks that had
+to be swapped in for the job  while it was running to the  number
+of  non-prepaged blocks it had when  it first entered the running
+set.   Under optimal circumstances,  this fraction  would not  be
+expected  to exceed one, but  actually several things could cause
+it to be greater than one.   Since file accesses can cause  pages
+
+
+to  be swapped in that  are not in the  page map, accessing files
+will cause  the  number  of  pages swapped  in  for  the  job  to
+increase.   Also,  if  either the  estimate  of the  average core
+required for the running set is  too small or the value used  for
+the amount of available core is too large, a stituation can arise
+where  a job requires a  page swapped in but  the only pages that
+might be swapped out belong to jobs in the running set.   In this
+case,  the job that needs  the page will have  to wait until some
+job leaves  the running  set.   In order  to try  to prevent  the
+situation from happening again, the page that caused the wait is
+counted as if it had to be swapped in twice.   This will increase
+the estimate of the  average core required for  the job the  next
+time  it  is being  considered for  inclusion  in a  running set.
+Thus,   the  estimate  of  average  core  required  tends  to  be
+self-correcting.
+.br
+.sect
+1.3.1.3 The Quantum for a Job
+	The quantum for a job is determined from several factors.
+The choice of the quantum  is important for two  reasons:  first,
+switching  from one job to another requires a fairly large amount
+of time, and  second, if  several jobs  are running  at the  same
+time, the size of the quantum determines, in part, how often each
+job will obtain service.   A quantum that is too small will cause
+the first consideration to be a problem, while a quantum which is
+too large might give poor service to interactive jobs due to  the
+second problem.   Normally the quantum for a job is one the order
+of 1/15 of a second.   The quantum is increased as the percentage
+of  machine  time(as  indicated by  the  JMTU) a  job  is getting
+increases.   We choose rather arbitrarily the points at which the
+quantum  increases:  at  25%,  the  quantum  doubles;  it doubles
+again at 50%, and finally it  doubles at 75%, reaching about  1/2
+
+
+second.   This  is done on  the assumption that  since the job is
+getting a large portion of the machine's time anyway, it might as
+well get  it in  large  chunks to  avoid wasting  time  switching
+between jobs.
+.br
+.sect
+1.3.1.4 The Running Set Quantum
+	Once the running set is determined, the quantum for  each
+of  the jobs  is added to  obtain the  running set quantum.   Any
+pages which should be prepaged are put on the swapin  list.   One
+of  the  jobs in  the  set is  then  started and  run  until some
+blocking condition  occurs or  its quantum  runs  out.   Blocking
+condtions are of five types:  page waits, swap blocked, short waits, long waits
+and  stops.   Whenever a job references one  of its pages that is
+not currently resident, a request for  the page to be swapped  in
+is  generated, and the  job enters the page  wait state until the
+page is swapped in. If the page cannot be
+swapped in for some reason, the job enters the swap blocked state.
+If a system call encounters some  condition
+
+
+that  prevents it  from continuing temporarily,  it enters either
+the short wait or the long wait state.   The call should cause a
+long  wait if the condition  will take more than  about 1/10 of a
+second to clear;  otherwise the short wait state should be  used.
+If  some error occurs which will  prevent the job from continuing
+to run, the stopped state is entered.  If a job is either stopped,
+in a  long wait, or its quantum runs out, it  is removed immediately  from the  running
+set.
+.br
+.sect
+1.3.1.5 Selecting a Job to Run
+	Whenever the currently running job either becomes blocked
+or has its quantum run out a new job is selected from the running
+set,  unless a new running set must be found or there are no runnable jobs in
+the running set, in which case a "dark horse" is selected to run.  A dark horse
+is  any job not in the running set which is runnable.   If a dark
+horse is found it is given  a short quantum and started;  if  the
+dark  horse encounters some blocking  condition or if its quantum
+runs out, the running  set is again  searched for runnable  jobs.
+If a dark horse enters the page wait state, no attempt is made to
+swap  in the  desired page  until the  job eventually  enters the
+running set; it becomes swap blocked
+until then.   If  no  runnable  job can  be  found,  the  system
+executes  a WAIT  instruction;  when the  WAIT returns,  we again
+look for a runnable job in the running set.
+.br
+.sect
+1.3.1.6 Selecting a New Running Set
+	It of course periodically becomes necessary to discard the
+current running set and select a new one. If half or more of the
+jobs in the running set become swap blocked or enter the long
+wait state, a new running set will be found. The current running
+set is also discarded if its total quantum is exceeded.
+.br
+.sect
+1.4 Stopping and Blocking Jobs
+.br
+.sect
+1.4.1 Saving the State of a Job
+	Whenever  a  job  which was  running  is  stopped, either
+because its quantum has run  out, because it has become  blocked,
+or  for some other  reason, information must be  saved so that it
+may be continued later from the point it was stopped at.   If the
+job  was  in  user  mode, we  must  save  the  general registers,
+including the PC and user stack pointer.   The PS must be  saved,
+and  the status and registers of the floating point processor, if
+it exists, must  be preserved.   The W  bits in the  segmentation
+registers  must be copied  into the appropriate  CPT entries, and
+the appropriate ages should be cleared for all of the A bits that
+are set.
+	If the  job  was  in  kernel mode,  a  different  set  of
+information  must be saved.   The general registers, PC and stack
+pointer must of  course be saved  and the segmentation  registers
+must  be examined  and appropriate action  taken for the  A and W
+bits.   However, we do not save the status of the floating  point
+processor,  and special consideration must be given to the kernel
+stack.   Since in the course of executing a system call,  various
+pieces  of information  must be  saved on  the kernal  stack, the
+contents of this stack  must be saved in  the user variables  for
+the job whenever it is stopped.  This could be done by having the
+
+
+kernel  stack pointer  point into the  user variables  at a place
+reserved for the stack.   The problem with this is that the  area
+would  have to  be quite  large to  allow for  interrupt routines
+saving temporary information and for saving arguments for various
+routines during the execution of the call, even though the job is
+never stopped  during the  execution of  those  routines.   Also,
+there  is no  reasonable way to  insure that the  the stack never
+overflows the allocated area.   To avoid these problems, we  have
+the kernel stack pointer point to a large block reserved for this
+stack.  When a job is stopped in kernal mode, this stack is saved
+in  the user variables,  after checking that  it has not exceeded
+the allocated space.
+.br
+.sect
+1.4.2  Stopping a Job When Its Quantum Runs Out
+	Whenever a job's quantum runs  out, it should be  stopped
+as  soon as posible.   Since the clock interrupt that signals the
+
+
+end of the  quantum may  happen during the  execution of  another
+interrupt routine, the only thing that happens at the clock level
+is  that a  program interrupt  request is  generated on  level 1.
+When this interrupt happens, the only possible program that could
+have been interrupted is the  user program or main program  level
+system  code.   If an interrupt is out of user mode, the state of
+the job is saved and the scheduling code is entered  immediately.
+If  the interrupt  happens while  the machine  is in  kernal mode
+(presumably executing a system call), a flag is set;  the  system
+call  should check this  flag periodically and  save the state of
+the job and enter the scheduler if it is set.
+.br
+.sect
+1.4.3 Blocking Conditions
+	As mentioned earlier, there are five states a job can  be
+in:  runnable,  page  wait, short  wait,  long wait  and stopped.
+There are two words  which indicate the  state of the  job.   The
+USTOP  word if non-zero indicates  that the job is stopped.   The
+top byte is reserved for specific reasons that the job is stopped
+(figure 1-5).   The low byte is a count of reasons for the job to
+be stopped.   If the USTOP word is zero the FLSADR word indicates
+if the  job  is runnable.   If  the  word  is zero,  the  job  is
+runnable;  otherwise,  the  job  is  in  a  long  or  short wait,
+indicated by a bit  somewhere.   If FLSADR is  non-zero it is  an
+address to JSR to in order to determine if the blocking condition
+still exists.
+	When  a job  is in  a long or  short wait,  its FLSADR is
+
+
+non-zero.   If we wish to determine if the condition causeing the
+wait has cleared, we restore the general registers and JSR to the
+address in the FLSADR.  Eventually, the routine at FLSADR (called
+the  flush routine) returns, possibly having modified the general
+registers,   the  type  of  wait  and  the  FLSADR  itself.    In
+particular, it might clear the FLSADR, indicating that the job is
+now runnable.   Note that the stack is not restored before we  go
+to  the  flush routine,  nor is  it saved  afterwards;  the flush
+routine can only use  the contents of  the general registers  and
+any system variables that may be relavant.   This is done so that
+calling flush routines may be  done quickly, since we don't  want
+to waste much time finding runnable jobs.   In order to initially
+set the FLSADR and the type of wait, the routine which wishes  to
+wait executes a JSR PC,SFLUSH or a JSR PC,LFLUSH.  These routines
+cause the stack, registers, etc.   to be saved as outlined above;
+the return address saved  by the JSR is  put into the FLSADR  and
+the  type of wait  is set according to  which routine was called.
+The scheduler is  then called to  find a job  to run.   When  the
+scheduler causes the flush routine to be started by JSRing to the
+FLSADR  after  restoring  the   general  registers  the   routine
+determines  if the condition which it  is waiting for has cleared
+yet.  If it has, the routine executes a JSR PC,RUNME.   The RUNME
+routine  clears the FLSADR, sets  the PC of the job to
+the PC saved on the stack and returns to the scheduler.   If  the
+condtion  has  not  cleared yet,  the  routine again  does  a JSR
+
+
+PC,SFLUSH or JSR PC,LFLUSH;  this  time, these routines just  set
+the FLSADR and the type of wait, and return to the scheduler.
+	Note that after a job executes a JSR PC,RUNME,
+it still may not be the next job to be run. The call to RUNME
+simply indicates that the blocking condition is temporarilly
+clear. If it is possible that the condition will recur if
+the job is not the next one run, instead of calling
+RUNME the job should push an address onto the stack and call
+MRUNME. If MRUNME is called when the FLSADR is
+zero, the pushed address is ignored and the routine returns immediately.
+If the FLSADR is non-zero, it is cleared to indicate
+that the job is runnable and the pushed address is saved as
+the place to continue the job at when it is run.
+The pushed address should point at a routine which will
+recheck the blocking condition and call one of the flush
+routines if it has recured. If the condition is still clear,
+it may call MRUNME, which will return immediately.
+.end
+

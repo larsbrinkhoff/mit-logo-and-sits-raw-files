@@ -1,0 +1,211 @@
+.xgp
+.font 0 30vr
+.ss
+.dummy @
+.adjust
+.ce
+Individual Profiles; Kevin
+
+Kevin was an able and enthusiastic student.  From the beginning he had an exceptional ability to control the turtle -- quick with accurate estimations, changing or combining steps with confidence.  Kevin was the first student in his group to see that a turn of 90 degres was necessary to make a box; the first to see that RT 90, RT 90, could be replaced by one instruction, RT 180 which would always turn the turtle around.  Kevin was also very quick to combine FOWARD commands.  He rapidly learned to shift the position of his head, to parallel the position of the turtle, in order to decide which direction to turn it.  In general, the world of the turtle was a very comfortable one for him.
+
+Kevin was a compulsive note taker.  He took notes as he worked, and then recopied them, so that they would be "neat" in his notebook.  When the children all worked as a group for the first four classes, Kevin was the first to take on the role of "recorder".  At the end of the first day, after the group had made the turtle draw a box, but had not yet learned how to write a procedure, Kevin wrote down the steps in his notebook, so that they could be remembered:
+
+.block 9
+.nofill
+	TO MAKE A SQUARE
+
+	FD 100
+	RT 100
+	LT 20
+	RT 10
+	X
+	3
+
+.adjust
+In his project work, Kevin made a great effort to finish everything he started (with the exception of a very complicated "flag" which he abandoned).  He was willing to experiment patiently, and when something did not work out exactly right, start again.  He took careful notes of successful steps, enabling him to start easily from where he had left off.
+
+Kevin was very responsive to suggestions from the teacher.  He seemed to absorb new ideas quickly, when they were relevant to his work and to his existing sense of how things could be done.  In the same way that Kevin automatically combined steps to rewrite FD 50, FD 50, as FD 100, the next time he wrote it, or RT 90, RT 45 as RT 135, he seemed to be extremely quick to seek out and accept other ideas that led to shortcuts, or streamlining in his work.
+
+Kevin had a linear approach to problem solving.  He liked to approach his tasks one step at a time, in order.   Advance planning was not his specialty.  Although he did learn to use subprocedures within a larger project, when he had one part that was repeated over and over, or when he needed to break up his work into manageable chunks, he was never interested in "top down" planning, in which he would have had to decide in advance which subprocedures he wanted to use, and how to organize them.
+
+Kevin's work during the series of classes can be divided into five major segments.  During sessions 1-4 he worked with the entire group, learning the basics of LOGO by developing some designs involving squares.  Sessions 5 and 6 were spent inventing a triangle procedure, and creating other shapes using the triangle.  Sessions 7 and 9 were devoted to a complex flag project which Kevin decided to drop.  In session 10, he began a major project -- making the computer draw and then animate a large turtle.  This project was continued for a period of two weeks, and was worked on for the major part of 6 different classes.  During his last three working sessions, Kevin worked with POLY procedures, exploring angles, shapes, variables and stop rules.
+
+During the first four classes, Kevin took a lot of leadership, as the class worked together on a series of projects involving boxes.  Kevin suggested ideas for projects, names for projects, and was especially helpful in suggesting the steps needed to carry out the projects.  It was only when the teacher suggested that one of the projects be carried out in a "top down" "plan-ahead" manner, that Kevin had difficulty understanding what was happening, and how to proceed.
+
+During the first four classes, Kevin demonstrated again and again a quick, intuitive grasp of the world of the turtle.  While he seemed to have a good sense of what step should be taken next -- especially where the turtle should be aimed -- he was not always able to decide how far the turtle should go.  He also had difficulty knowing exactly where the BOX procedure would appear on the screen when it was used.
+
+His intuitive grasp of Turtle Geometry became even more apparent during his first independent project -- making a triangle.  His very first attempt was RT 45, FD 100, RT 45, RT 45, FD 100, producing the figure shown. 
+
+.block 4
+.sp 4
+.ce
+figure Ke-1
+
+He needed two tries, experimenting with the angle at point C, before hitting on RT 45, RT 40, RT 50, which he first combined to RT 45, RT 90, and then to RT 135, when he wrote the procedure.  He easily estimated the distance to close the triangle as 150, then went BK 10, and changed the total to FD 140 in his procedure.  Kevin's triangle procedure, arrived at in about 25 minutes of exploration was:
+
+.block 9
+.INDENT 6
+.nofill
+TO OF
+1 RT 45
+2 FD 100
+3 RT 90
+4 FD 100
+5 RT 135
+6 FD 140
+END		figure Ke-2
+
+
+.adjust
+.indent 0
+When Kevin repeated OF, it made a flower-like design.  He also used his OF procedure, along with BOX, to make his own version of a house, and a row of two houses.
+
+.block 13
+.sp 13
+.ce
+figure Ke-3
+
+Kevin's next project was to make a large American Flag.  His flag was worked out as along sequence of steps.  It was based on the procedure BIGBOX, which provided a background of 100 by 100 squares in a 4 by 3 grid.  Kevin used the boxes of the grid as markers, as a kind of "coordinate system," so that he could tell how long the stripes should be.  The flag, which Kevin worked out experimentally by direct command, looked something like this:
+
+.block 12
+.sp 12
+.ce
+figure Ke-4
+
+Kevin took careful notes, and attempted to write down each successful step in his notebook.  Unfortunately, there were many steps, and Kevin had made a few mistakes in copying.  The process of debugging the incorrect steps, and restoring correct ones seemed too formidable to Kevin, and he decided to abandon the project.  I tried to use the situation to suggest a different approach:  plan out the project, using subprocedures for the long and short stripes, etc., Somehow, Kevin did not understand this approach.  Or he did not want to "shift gears" and start over.  He preferred to drop the project -- the only time Kevin ever gave up on anything he started.
+
+Next, Kevin began what became his major project -- lasting for six classes, over a two week period.  This time, he did a certain amount of advance planning.  First he drew a picture of what he wanted the turtle to look like (figure Ke-5), and started right in to build it, using arc and circle commands.  This time, Kevin was willing to work in terms of subprocedures:  SHELL, HEAD and FOOT (at my suggestion), but his approach to building the turtle was still sequential -- a step by step process.
+
+.block 20
+.sp 20
+.ce
+figure Ke-5
+
+While working on this project, Kevin had to absorb a lot of new techniques.  He became expert in the use of PENUP mode for explorations.  He learned to use RARC :R and LARC:R with precision, carrying out careful explorations with the turtle's PEN UP by using, for example, RARC 90, followed by RT 180, LARC 90, RT 180.  I also showed Kevin an arc procedure with a variable angle, ARCR :R :A and ARCL :R :A, so that Kevin could easily move the turtle around the circle which formed his "turtle's" outer shell.  As he had done for the flag project, Kevin invented his own coordinate system to aid him in moving around the outer shell.  The 3500 display system leaves  a dot after each individual step.  The circle procedures which I gave Kevin used angles of 10 degrees as the basic step.  Kevin discovered by experimentation, that ARCR 90 60, for example, would move the turtle exactly six dots along the outer circle.  In this way, Kevin as able to navigate the turtle around the SHELL in a precise manner, to locate the four feet, and the tail, in precise relation to the head and each other.
+
+Kevin now had another problem -- getting the turtle back on the SHELL, after each subprocedure.  After completing the HEAD, for example, Kevin had experimented with turning the turtle through different angles, to line it up with the shell again.  Then he moved on down to make the first foot.  Now he turned the turtle LT 90, and made a FOOT, at which point he had the problem of getting the turtle back on the shell again.  
+
+.epage 1
+
+At this point I showed Kevin that if he changed his FOOT procedure, so that it finished exactly where it started, he could just turn the turtle 90 degrees, and it would be precisely back on the circle again.  I also explained that the simplest way to get the turtle back to its starting place was to reverse the steps of FOOT.  Kevin understood the usefulness of my idea, and used it in his own way.  Rather than add the extra steps to FOOT, Kevin created a new procedure, BKFOOT:
+
+.nofill
+TO FOOT		TO BKFOOT
+10 RARC 20	20 LARC 20
+15 RARC 20	30 LARC 20
+20 FD 11	40 FD 8
+END		END
+
+.epage 1
+.adjust
+In this way, Kevin could move along the circle until he came to the point where a FOOT was wanted.  He would then use the following sequence: LT 90, FOOT, RT 180, BKFOOT, LT 90.  This would locate the turtle exactly where it had been before making the FOOT, ready to continue its journey around the SHELL. (figure Ke-7)
+
+I have discussed this example in detail, because it gives a good sense of how well Kevin absorbed new ideas, at the moment that he needed them, as long as they fit into the basic approach he was using.  He rejected the idea of making the FOOT procedure itself state transparent (my idea), but used it in his own way for exactly the same purpose.  Once he adopted the idea, he used it expertly, without hesitation.  It was then fairly easy for him to complete the turtle (figure Ke-8).  He had abandoned the idea of making lines across the shell.
+
+.block 17
+.sp 15
+.ce
+Figure Ke-8
+
+Completion of Kevin's turtle was followed by an attempt to animate it using SNAPs.  This was not as successful, partly due to my inexperience in using the 3500 for animation; partly due to display storage limitations.
+
+Kevin's last area of work involved POLY procedures and variables.  I showed Kevin a POLY :SIDE :ANGLE procedure, and after he had played with it for a while, I suggested that he keep the angle input constant, while varying the size.  He then tried a series of POLYs with an angle of 45 degrees.  POLY 50 45; POLY 55 45...POLY 110 45.  This made a design that Kevin called a "tunnel".  We talked through the procedure
+.block 10
+
+.block 11
+.nofill
+TO TUNNEL :SIZE
+10 POLY :SIZE 45
+20 IF :SIZE = 105 STOP
+30 TUNNEL :SIZE + 5
+END
+.sp 4
+			figure Ke-9
+
+
+.adjust
+During the next class, Kevin made a great leap in understanding the use of variables.  He experimented with varying the size of a POLY whose angle was 90.  Then, with some help from me, he wrote the procedure:
+
+.ss
+.nofill
+.block 9
+
+
+	TO LIFS :SIZE
+	10 POLY :SIZE 90
+	20 IF :SIZE =150 STOP
+	30 LIFS :SIZE + 2
+	END
+
+			figure Ke-10
+
+
+.adjust
+He then decided that the step of + 2 in LIFS was too small.  By himself, he wrote the procedure:
+
+.nofill
+.block 5
+	TO FU :SIZE
+	10 POLY :SIZE 90
+	20 IF :SIZE = 150 STOP
+	30 FU :SIZE  + 5
+	END
+
+.adjust
+At this point, I told Kevin that I could show him how to make it possible to "change the amount that the POLYs would grow each time, by making that a variable.  He picked the name "SET for the new variable, and together  we wrote the procedure:
+
+.block 6 
+.nofill
+	TO UFC :SIZE :SET
+	10 POLY :SIZE 90
+	20 IF :SIZE = 150 STOP
+	30 UFC :SIZE + :SET :SET
+	END
+
+.adjust
+At first Kevin was confused about the appearance of :SET twice in the recusion line, but I explained that the first time it was added to :SIZE to give the new :SIZE, and the second time it was telling the computer to keep track of the variable "SET.
+
+Then, before we could try out UFC, Kevin asked, "Could we make the largest size change, too?"  "Of course," I said, "What do you want to call it?  He decided to call it "LARGE, and we edited UFC.  Kevin knew that :LARGE had to be added to line 30, and that line 20 had to be changed to read IF :SIZE = :LARGE STOP.  Kevin spent the rest of the period experimenting with UFC.
+
+.block 6 
+.nofill
+	TO UFC :SIZE :SET :LARGE
+	10 POLY :SIZE 90
+	20 IF :SIZE = :LARGE STOP
+	30 UFC :SIZE + :SET :SET :LARGE
+	END
+
+.adjust
+Kevin could now vary the starting size, the ending size, and the rate of growth.  He tried a number of experiments, but none that would produce a stop rule bug (for example UFC 10 2 25) would never have its stop rule satisfied).  His favorite discovery was that UFC 100 100 100 made one square of side 100.  He was thrilled to realize that he could use this to make a variable sized square procedure.  He did not realize that his middle variable was now irrelevant although he did understand that the reason only one square was made was that the starting size and the ending size were the same.
+.block 9
+.sp 7
+.ce
+Figure Ke-11
+
+During these sessions, Kevin demonstrated the same quick learning in the use of variables, that he had shown with regard to turtle geometry.  I believed that this happened because he was using these elements, manipulating them to achieve a purpose.  Always ready to absorb an easier way of doing something, Kevin was able to make a leap in understanding that he had not achieved earlier, when I had introduced the idea of variables and stop rules as a little "lesson" for the whole group.
+
+For the next to last class, Kevin invited Frankie to be his visitor.  He began by showing Frankie some of his procedures.  He then taught Frankie some of the elements of LOGO.  First he created a model of what he was trying to show, then let Frankie try it out.  For example, to teach Frankie how to write a procedure, Kevin wrote:
+
+.block 4
+.nofill
+	TO ACE
+	10 POLY 90 45
+	END
+
+.adjust
+He then let Frankie make up his own procedures based on this idea, and try it out.  Frankie wrote:
+
+.block 4
+.nofill
+	TO KISS
+	10 POLY 7 50
+	END
+
+.adjust
+.indent 6
+Then they worked together on a little project -- to make the computer draw the "kiss" design (shown at left), a copy of the design on Frankie's T-shirt.  
+.indent 0
+They worked through the design, step by step, with Kevin doing the typing, and Frankie taking notes.  Kevin and Frankie discussed each step of the process.  The project involved forward and back, right and left, penup and pendown commands, and used rotations of 45 and 90 degrees.  The period ended before they could "teach" their design to the computer.
+
+Kevin began the series of classes with a very strong and accurate sense of how to control the turtle.  He did not originally show the same sureness in using the computer as a tool to organize and simplify his work.  Through work on his turtle project, he began to use the idea of subprocedures, and state transparent designs to simplify his work.  By the end of the series of classes he had assimilated the idea of using variables to control the size and shape of repeated POLY designs, and to control the procedure itself.  Thus he had moved in his work from using the computer to control the turtle, to learning to control the computer itself.
+

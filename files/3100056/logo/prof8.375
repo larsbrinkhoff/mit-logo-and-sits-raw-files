@@ -1,0 +1,831 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.FONT 2 25VG
+.TABFNT 2
+.he1
+Harriet
+.dummy @
+.HE2
+Working Style
+.chap 8
+.ss
+.adjust
+
+.ce
+18. Harriet0
+
+Harriet is one of the brightest, most academically successful students in our 
+experimental sample 
+(her national achievement test scores placed her in the
+99th percentile).  In her regular school work, Harriet loves reading and
+writing, but finds mathematics and science "boring".  She enjoys
+"playing with words," and prides herself on her creativity and the
+uniqueness of her ideas.
+
+While Harriet was one of the most able LOGO students, she was one of the
+least enthusiastic.  She carried out two interesting and unique turtle
+geometry projects, but announced that she was "bored with drawing
+pictures".  She rarely initiated project ideas, but responded very well
+to suggestions.  She carried out two complex advanced projects:
+programming the computer to play "tictactoe", and writing a program
+that would generate a series of madlib stories, by randomly
+substituting nouns, verbs, adjectives, etc. for those in the original story.
+
+Harriet seemed to like the idea of each of her large projects, and
+was very quick to learn the LOGO commands and programming ideas
+necessary to carry them out.  Although she found the necessary detailed
+work of planning, typing, testing and debugging to be quite tedius, she
+worked quite steadily over a number of class periods, and finished both
+projects quite satisfactorily.
+
+Harriet was always extremely responsive to the teacher's
+sugestions.  She could often understand and absorb a new idea at the
+first hearing -- resolving minor problems by experimentation.  Harriet
+was also responsive to error messages from the computer, corrected her
+mistakes when she could, and was conscientious about asking for help
+when she needed it.
+Harriet enjoyed helping others and developed a strong relationship
+with Tina, whom she regularly helped with details of her LOGO work.
+
+.block 5
+18.1 Harriet's Working Style0
+
+Harriet's way of working in the LOGO classes offered a clear
+demonstration of the skills and strategies that make her an extremely
+successful student.
+
+.block 5
+Harriet chooses interesting projects and sticks with them.
+
+She has a sense of what it means to be "creative", and has the ability
+to carry it off.  Her ideas are always a little bit different than
+those of her peers, and Harriet values this.  Harriet recognizes the value
+of completing a project, and is willing to continue with the work
+necessary to fill in the details of an idea, even after it is no longer
+"fun" or "creative".  In this way, her completed work tends to have a
+superior quality.  On the other hand, while completing a project,
+Harriet would often declare that the necessary work was "boring".
+
+.block 5
+
+Harriet is willing to explore on her own. 
+
+She attends to
+error messages, and corrects herself when she can.  When she gets stuck
+she immediately asks for help -- and is usually aware of exactly where
+the confusion is.
+
+Harriet's dribble files revealed a lot
+of exploratory activities.  She would try out new commands, and was
+able to debug spelling or syntax errors by interpreting the error
+messages she received.  If she was confused the first time a particular
+bug appeared, she would usually know exactly what to do the second time.
+
+.block 5
+Harriet follows directions explicitly. 
+
+She absorbs new
+approaches without being confused.  She applies the same approach of
+confident exploration to new ideas she has been taught, that she
+applies to her own experimentation.  Only when a bug appears does she
+question what she is doing, and ask for help.  Harriet's two large
+projects, her TICTACTOE game, and her MADLIB story generator, both
+involved her with the use of new LOGO commands, new syntax and new
+programming ideas.  She seemed to absorb most of these ideas on first
+exposure -- copying a formula, rather than analyzing.  Occasionally
+this led to a bug which she did not understand.  Usually it led to
+success in using the new idea with little difficulty.
+
+.block 5
+Harriet adds her own creative variations to other people's
+ideas.  
+
+Harriet can easily find a new "wrinkle" or a creative way to do
+something.  Her first project (SMILY -- see below), was a totally
+unique way to draw a face.  She used an extremely clever set of words,
+to make a funny set of stories, in her madlib project.  In this way,
+Harriet was able to adapt someone else's idea -- a madlib procedure, for
+example -- and make it uniquely and specially her own.
+
+There were, however, some aspects of Harriet's work that tended to
+interfere with her success as a student.
+
+.block 5
+Harriet did not show much initiative in choosing projects.
+
+Like Gary, when she finished  one piece of work, Harriet tended to feel aimless, at
+loose ends, until she had redirected her energy.  At these times she
+seemed to want direction from another person.  When offered a choice of
+alternatives, she was able to easily choose among them -- but the
+ideas themselves did not come easily to her.
+
+.block 5
+Harriet's major approach seemed to be "exploratory" rather
+than "analytical."  
+
+She was very comfortable at the "try it out, and
+debug it," approach; but much less successful with planning and using
+analytical techniques to solve problems, and avoid difficulties.  (See
+below for clear examples of this difficulty in Harriet's work with Turtle
+Geometry).
+
+.block 5
+Harriet tended to get bored with the details of a project,
+long before it was completed. 
+
+She would persevere out of a
+commitment to "completeness", rather than out of a sense of enjoyment
+of her work.  This left her with a rather anti-climatic feeling at the
+end of a project, rather than the satisfaction of a job well done.
+
+In part, this kind of feeling is a result of her lack of analysis --
+she would start a long project, intrigued with the idea, not
+realizing how much detailed work was involved.  Partly it was a result
+of the complex projects that were suggested to her, to give her a better sense of
+what she could accomplish with the computer.  
+She seems to have had some difficulty finding the proper balance between the
+originality and power of what she wanted the computer to do -- and the
+complexity of detail needed to bring it off.  (See a discussion of
+Harriet's TICTACTOE and MADLIB projects for more detailed description of
+this kind of dilemma.)
+
+.he2
+Turtle Geometry
+.block 5
+18.2  Harriet's Work with Turtle Geometry0
+
+Harriet started out with an excellent sense of how to manipulate the
+TURTLE, together with a strong desire to explore beyond what she alrady
+knew, to find new ways of using the computer.  When she was being shown
+how to use FORWARD and RIGHT commands for the first time, Harriet was already
+asking how to leave
+spaces in a drawing (she was immediately shown how to use PENUP and PENDOWN)
+As soon as she began drawing with the TURTLE she asked
+about making curved lines.  She quickly got into spinning designs,
+reversing spins, and finding the largest input she could to a
+SPIN command.
+
+Harriet's very first TURTLE drawing exploration led to a project taking
+three class periods to complete -- her unique "smily face."  (Figure 8.1)
+
+.block 23
+.sp 21
+.ce
+Figure 8.1
+
+.INDENT 6
+.BLOCK 7
+.nofill
+TO SMILY 
+1 EYE
+2 MOUTH
+3 SMILE
+4 TEETH
+END
+
+.INDENT 0
+.BLOCK 9
+TO EYE		TO SMILE
+1 FORWARD 99	1 LEFT 30
+2 PENUP		2 FORWARD 30
+3 LEFT 90	3 RIGHT 30
+4 FORWARD 20	4 FORWARD 30
+5 LEFT 90	5 FORWARD 10
+6 PENDOWN	6 RIGHT 30
+7 FORWARD 99	7 FORWARD 30
+END		END
+
+.BLOCK 18 
+TO MOUTH	TO TEETH
+1 PENUP		1 LEFT 180
+2 RIGHT 90	2 PENUP
+3 FORWARD 43	3 FORWARD 30
+4 LEFT 90	4 RIGHT 55
+5 PENDOWN	5 PENDOWN
+6 FORWARD 120	6 FORWARD 130
+7 LEFT 30	7 PENUP
+8 FORWARD 30	8 LEFT 90
+9 LEFT 45	9 FORWARD 30
+10 FORWARD 50	10 LEFT 90
+11 LEFT 50	11 PENDOWN
+12 FORWARD 30	12 FORWARD 130
+13 LEFT 60	13 LEFT 180
+14 RIGHT 12	14 FORWARD 130
+15 FORWARD 135	END
+16 LEFT 90
+END
+
+.ADJUST
+As Harriet worked on this project, her approach was to explore each part
+of the figure, writing down the correct steps -- then make each part a
+procedure.  The greatest difficulty was in making the mouth.  Although
+Harriet had a very good sense of what she wanted to do, and a plan drawn
+on paper, she had difficulty making the
+mouth symmetrical.  She worked by a process of trial and error, and did
+not do any calculations as she worked.  Once she finished the mouth,
+she made use of symmetry to make the SMILE, the
+upper part of the mouth.
+.block 18
+.figure 16
+.ce
+Figure 8.2
+
+.he2
+Spinning Designs
+It seemed that she developed a sense of how she could make use of the
+numbers she had already used, in completing her project, while
+continuing to work in an exploratory mode.
+
+.epage 1
+By the time she completed this project, Harriet had mastered the use of
+90, 30 and 180 degrees, had learned how to use symmetry, had
+mastered the basic idea of procedures, subprocedures and superprocedures, and
+had a good understanding of how to use error messages for debugging.
+
+Harriet's next project in Turtle Geometry arose out of some explorations
+she was doing with SPIN commands.  Combining SPINs with forwards and
+circles, she got the idea of making a cowboy, twirling a rope.  I
+suggested that this would make a nice, although difficult project.
+Harriet made the cowboy quite nicely, and then decided to put a hat on
+his head.  Since the TURTLE was spinning at the end of a loop of rope, 
+she had to be shown
+how to reverse the steps of SPINs, turns and forwards, to get
+the TURTLE back to where it started, so that she could add the hat.
+Harriet needed help with debugging TURTLE state problems several times
+during this project.  She was introduced to the idea of "playing
+computer," 
+going through a procedure step by
+step, and encouraged to number her steps by fives, and to use
+subprocedures.  She chose not to use subprocedures for the COWBOY,
+but did use subprocedures to draw and locate the HAT.
+(Figure 8.3)
+
+.NOFILL
+.INDENT 6
+.BLOCK 4
+TO LASSO
+1 COWBOY
+2 BLACK
+3 HAT
+END
+
+.INDENT 0
+.BLOCK 24
+TO COWBOY	TO BLACK	TO HAT
+1 PENUP		1 BACK 30	1 STRATE
+2 FORWARD 100	2 SPIN - 500	2 HALF
+3 PENDOWN	3 BACK 30	END
+4 RCIRCLE 30	4 SPIN - 100	
+5 LEFT 180	5 BACK 50	TO STRATE
+6 LARC 30	6 RIGHT 90	1 PENUP
+7 RIGHT 90	END		2 FORWARD 160
+8 FORWARD 200			3 RIGHT 90
+9 PENUP		TO HALF		4 PENDOWN
+10 RIGHT 180	1 RARC 15	5 FORWARD 30
+11 FORWARD 100	2 RARC 15	6 LEFT 180
+12 RIGHT 90	END		7 FORWARD 60
+13 PENDOWN			8 RIGHT 180
+14 FORWARD 50			9 FORWARD 20
+15 BACK 50			10 LEFT 90
+16 LEFT 180			END
+17 FORWARD 50
+18 SPIN 100
+19 FORWARD 30
+20 SPIN 500
+21 FORWARD 30
+22 RCIRCLE 30
+END
+
+.block 16
+.sp 14
+.ce
+Figure 8.3
+
+.adjust
+The rest of Harriet's Turtle Geometry work consisted of small projects:
+some spinning designs, an oval, a clock, and a TICTACTOE board that
+turned into her next major project.  In working on her TICTACTOE
+board, Harriet made use of the same kind of exploratory approach --
+combined with a lack of overall analysis -- that she used in her SMILY
+project.  Her final drawing of a TICTACTOE board, made use of
+horizontal, but not vertical symmetry, and had uneven spacing.  
+Harriet's idea of what a
+TICTACTOE board looks like seems clear from analysis of her dribble file:  two 
+lines crossing two other lines at
+right angles.  She did not have the idea of the board consisting of
+"nine squares", which would have led to a symmetrical drawing, and
+simplified the trial and error process of making the procedure.
+Similarly, in making her "X", for use in the TICTACTOE game, Harriet
+worked by a process of trial and error, to get a somewhat asymmetrical
+X, rather than use an analytical approach which could have produced a
+symmetrical X.
+.he2
+Tictactoe Project
+
+.block 34
+.sp 10
+.ce
+Harriet's TicTacToe Board@@@@@@@@@@@"Idealized" TicTacToe Board
+
+.sp 14
+.ce
+Harriet's X@@@@@@@@@@@@@@@@@@@@@@"Idealized" X
+
+.ce
+Figure 8.4
+
+In making her X, Harriet did make use of 30, 60 and 90 degree angles,
+eventually combining them into 120 degree angles, which she used at
+both top corners of the X.
+
+.block 6
+18.3  Harriet's Work on Major Interactive Projects
+
+8.3.1 Harriet's TICTACTOE Project0
+
+The TICTACTOE project lasted for seven class sessions.  Harriet had
+expressed a sense of boredom with Turtle Geometry, and a curiosity
+about what else the computer could do.  When she used the TURTLE to
+draw a tictactoe board, the teacher suggested that she develop this idea further,
+making a game which could be played by two people, in which the
+computer would draw the game, and keep track of the score.  A
+possibility of making the computer one of the players was put off until
+later.
+
+In order to carry out this project, Harriet had to learn a number of new
+ideas about LOGO:
+
+.nofill
+.indent 6
+.block 5
+the use of TYPE and PRINT commands
+the use of MAKE to name points and variables
+the use of REQUEST to get inputs from the players
+the use of SETT to place the TURTLE at the right spot to 
+	draw an X or 0
+
+.block 6
+the use of IF and =, to determine where the next move should go; as
+	well as the status of the game
+the use of lists to keep track of moves and of winning combinations
+the use of SENTENCE to add new elements to a list
+setting up a data structure to keep track of the game
+functional names for subprocedures
+
+.indent 0
+.adjust
+Since all this new material was
+difficult for Harriet to absorb, the teacher introduced new ideas
+to her in
+smallish doses, as she expressed a need for them.  
+First the procedure would be talked through, to elicit as much description
+from her as possible, of what she wanted the computer to do.  After
+talking an idea through verbally, 
+she would be shown
+how to translate it
+into LOGO,
+establishing the pattern that should be
+followed, writing down the steps and sequences in her notebook.
+Harriet then would copy them with careful attention to detail.
+
+Harriet functioned extremely well in this mode.  
+Although she did not fully understand what she was doing,
+she felt confident that she could
+get the bugs worked out.  
+Harriet was an excellent typist, and made few typing errors.
+When she did need to correct, revise or add to a line, she easily
+learned to use EDL and CTRL-N, as editing aids.
+
+Problems began to occur when Harriet started to make the program intelligent
+enough to keep track of moves and record a win by either player, or a
+tie.  Here she ran into difficulty because she was a bit confused about
+the overall structure of her programs -- not always sure where a
+particular subprocedure should be put -- into PLAY1 and PLAY2, her key
+subprocedures, or into a sub-sub-procedure.  
+In such a case, 
+Harriet usually needed help to locate the source of a bug.
+Once a bug was found by "playing computer" Harriet seemed to
+understand what had caused it and how it could
+be fixed.
+
+Considerations of one bug in detail will illustrate this process.
+Near the end of
+the project, Harriet had completed her game to the point where it would
+announce a winner, draw a line through the three Xs or 0s, and stop.
+If the game was a tie, however, the computer would just keep playing,
+asking for additional moves.  
+Harriet was asked how she thought the
+computer could keep track of whether the game was a tie.  
+She suggested having the computer count the number of moves.
+If the total number of moves was nine, the computer would declare the game a
+tie, and stop.
+
+.epage 2
+In implementing this idea, 
+Harriet was reminded how to initialize the
+variable "COUNT, by using MAKE "COUNT 0, and how to increase it 
+using MAKE "COUNT :COUNT+1.  The problem was, where to put these
+instructions, and the final game ending instruction, IF :COUNT = 9
+TOPLEVEL.  In talking it through, she realized that the initialization
+of "COUNT should go into the superprocedure, TICTACTOE, and that the
+increases should go into the PLAY1 and PLAY2 procedures.  Harriet also
+realized that the ending condition only needed to be put into PLAY1,
+because the value of "COUNT could only be 9 during the first player's
+turn. 
+
+What Harriet forgot, was to put the line MAKE "COUNT :COUNT+1, into PLAY2
+as well as PLAY1.  When the count condition did not work,  Harriet could
+not debug this by herself.  
+When it was suggested that she have the computer PRINT the value of
+COUNT, the result was 5, 
+indicating that only the odd moves had been counted.  Then
+printing out PLAY2,  Harriet realized that MAKE "COUNT :COUNT+1 was
+missing and she added it at the appropriate place with no difficulty.
+
+.nofill
+.block 13
+TO TICTACTOE
+5 MAKE "COUNT 0
+10 TAC
+12 MAKE "LS [ ]
+13 MAKE "LI [ ]
+20 PRINT [WHO IS PLAYER ONE?]
+30 MAKE "P1 REQUEST
+40 PRINT [WHO IS PLAYER TWO?]
+50 MAKE "P2 REQUEST
+60 PLAY1
+70 PLAY2
+80 GO 60
+85
+END
+
+.block 11
+TO PLAY1
+5 MAKE "COUNT :COUNT +1
+20 TYPE :P1
+30 PRINT ['S TURN TO MOVE]
+40 PRINT [WHICH BOX WOULD YOU LIKE TO PUT AN X IN?]
+50 MAKE "CHOICE REQUEST
+55 MAKE "LS ( SENTENCE :LS :CHOICE )
+60 MAKEX
+65 CHECKWINNER1
+70 IF :COUNT = 9 PRINT [IT IS A TIE] TOPLEVEL
+END
+
+.block 11
+TO PLAY2
+5 MAKE "COUNT :COUNT +1
+10 TYPE [IT IS]
+20 TYPE :P2
+30 PRINT ['S TURN TO MOVE]
+40 PRINT [WHICH BOX WOULD YOU LIKE TO PUT AN 0 IN?]
+50 MAKE "LI ( SENTENCE :LI :CHOICE )
+60 MAKE0
+65 CHECKWINNER2
+70 IF :COUNT = 9 PRINT [IT IS A TIE] TOPLEVEL
+END
+
+.block 27
+TO TAC		TO MAKEX
+5 PENUP		10 IF :CHOICE = [1] X :H1
+10 BACK 60	20 IF :CHOICE = [2] X :H2
+15 PENDOWN	30 IF :CHOICE = [3] X :H3
+20 FORWARD 200	40 IF :CHOICE = [4] X :H4
+25 PENUP	50 IF :CHOICE = [5] X :H5
+30 RIGHT 90	60 IF :CHOICE = [6] X :H6
+35 FORWARD 80	70 IF :CHOICE = [7] X :H7
+40 RIGHT 90	80 IF :CHOICE = [8] X :H8
+45 PENDOWN	90 IF :CHOICE = [9] X :H9
+50 FORWARD 200	END
+55 PENUP
+60 RIGHT 90	TO MAKE0
+65 FORWARD 200	10 IF :CHOICE = [1] 0 :H1
+70 RIGHT 90	20 IF :CHOICE = [2] 0 :H2
+75 FORWARD 150	30 IF :CHOICE = [3] 0 :H3
+80 RIGHT 90	40 IF :CHOICE = [4] 0 :H4
+85 FORWARD 30	50 IF :CHOICE = [5] 0 :H5
+90 PENDOWN	60 IF :CHOICE = [6] 0 :H6
+95 FORWARD 260	70 IF :CHOICE = [7] 0 :H7
+100 RIGHT 90	80 IF :CHOICE = [8] 0 :H8
+105 PENUP	90 IF :CHOICE = [9] 0 :H9
+110 FORWARD 60	END
+115 RIGHT 90
+120 PENDOWN
+125 FORWARD 260
+END
+
+.block 13
+TO 0 :POINT	TO EX
+10 PENUP	5 RIGHT 30
+20 SETT :POINT	10 FORWARD 30
+30 PENDOWN	15 LEFT 120
+40 RCIRCLE 20	20 PENUP
+END		25 FORWARD 20
+		30 LEFT 120
+TO X :POINT	35 PENDOWN
+10 PENUP	40 FORWARD 30
+20 SETT :POINT	END
+30 PENDOWN
+40 EX
+END
+
+.block 10
+TO CHECKWINNER1
+10 IF ALLOF :Z1 :LS LINE1 PW1
+20 IF ALLOF :Z2 :LS LINE2 PW1
+30 IF ALLOF :Z3 :LS LINE3 PW1
+40 IF ALLOF :Z4 :LS LINE4 PW1
+50 IF ALLOF :Z5 :LS LINE5 PW1
+60 IF ALLOF :Z6 :LS LINE6 PW1
+70 IF ALLOF :Z7 :LS LINE7 PW1
+80 IF ALLOF :Z8 :LS LINE8 PW1
+END
+
+.block 10
+TO CHECKWINNER2
+10 IF ALLOF :Z1 :LI LINE1 PW2
+20 IF ALLOF :Z2 :LI LINE2 PW2
+30 IF ALLOF :Z3 :LI LINE3 PW2
+40 IF ALLOF :Z4 :LI LINE4 PW2
+50 IF ALLOF :Z5 :LI LINE5 PW2
+60 IF ALLOF :Z6 :LI LINE6 PW2
+70 IF ALLOF :Z7 :LI LINE7 PW2
+80 IF ALLOF :Z8 :LI LINE8 PW2
+END
+
+.block 16
+TO LINE1	TO LINE5
+10 PENUP	10 PENUP
+20 SETT :H1	20 SETT :H1
+30 PENDOWN	22
+40 FORWARD 200	30 RIGHT 28
+END		40 PENDOWN
+		50 FORWARD 230
+TO LINE2	END
+10 PENUP	
+20 SETT :H6	TO LINE6
+30 RIGHT 180	10 PENUP
+40 RIGHT 180	20 SETT :H3
+50 FORWARD 20	30 RIGHT 90
+END		40 PENDOWN
+		50 FORWARD 170
+		END
+
+.block 17
+TO LINE3
+10 PENUP	
+20 SETT :H7	TO LINE7
+30 PENDOWN	10 PENUP
+40 FORWARD 200	20 SETT :H2
+END		30 RIGHT 90
+		50 PENDOWN
+TO LINE4	60 FORWARD 170
+10 PENUP	END
+20 SETT :H3
+30 PENDOWN	TO LINE8
+40 RIGHT 140	10 PENUP
+50 FORWARD 200	20 SETT :H1
+END		30 RIGHT 90
+		40 PENDOWN
+		50 FORWARD 170
+		END
+
+.block 4
+TO PW1
+10 PRINT ( SENTENCE :P1 [IS THE WINNER])
+20 TOPLEVEL
+END
+
+.block 5
+TO PW2
+10 PRINT ( SENTENCE :P2 [IS THE WINNER])
+20 TOPLEVEL
+65 CHECKWINNER2
+END
+
+.block 5
+TO ALLOF :LIST1 :LIST2
+10 IF BOTH PARTOF FIRST :LIST1 :LIST2 BOTH PARTOF FIRST BUTFIRST :LIST1
+ :LIST2 PARTOF LAST :LIST1 :LIST2 OUTPUT "TRUE
+20 OUTPUT "FALSE
+END
+
+.block 5
+TO PARTOF :ITEM :LIST2
+10 IF :LIST2 = [] OUTPUT "FALSE
+20 IF FIRST :ITEM = FIRST :LIST2 OUTPUT "TRUE
+30 OUTPUT PARTOF :ITEM BUTFIRST :LIST2
+END
+
+.adjust
+.he2
+Madlib Project
+.block 5
+18.3.2 Harriet's MADLIB Project
+
+0After completing her TICTACTOE
+project, Harriet was at a loss for what to do next.  She was offered
+a choice of six different projects.  The idea of doing a "madlib" story
+was the most appealing to her.  The basic idea is simple.  The
+computer prints out a simple story, substituting randomly chosen nouns,
+verbs, adjectives, etc., for specific words in the story.  This project
+offered many fewer "new learnings", for Harriet, and so was one that she
+could help her consolidate what she had already learned.
+The new ideas she had to learn were these:
+
+.indent 6
+--procedures with outputs
+
+--the use of RANDOM to choose a number which would determine
+the particular word to be OUTPUT from a preset list
+
+--the use of % to create spaces in TYPED output
+
+--the distinction between TYPE and PRINT
+
+.indent 0 
+.adjust
+Once Harriet was shown the syntax for using RANDOM and OUTPUT, she was
+able to carry through the project almost entirely on her own.  The
+structure of the project was much simpler than that of the TICTACTOE
+project, so that when bugs occured, Harriet could usually fix them
+herself.  She had a little difficulty understanding that she had to
+provide an output for each number, 0 through 9, output by RANDOM.  In
+some of her procedures she listed 10 rather than 0, and would sometimes
+get a confusing "NOUN DIDN'T OUTPUT AT LEVEL 1 LINE -- in MADLIB."
+This message was confusing to Harriet because it did not occur consistently
+(approximately once out of every ten tries).
+NOUN appeared to work perfectly some of the time and not work at all at
+other times.  
+As each of her subprocedures was debugged, Harriet
+gradually came to understand the cause of this occasional problem.
+.page
+.adjust
+Another more straightforward bug in the MADLIB procedure involved the
+length of each statement involving a PRINT or TYPE command.  Since the
+randomly chosen words had varying lengths, the typed lines would
+sometimes run over the edge of the page, causing a word to be split
+between two lines. 
+Harriet began the process of
+eliminating these over-runs, adjusting the length of each line
+by changing the location of PRINT and TYPE commands.  Of
+course, shortening the first line made the second longer, so that the
+process had to be repeated for each succeeding line.  Harriet had not
+completed this when the series of classes ended.
+
+.block 17
+.nofill
+2?MADLIB
+ONCE UPON A HULA HOOP, THERE LIVED A CREAMY GIRL NAMED
+DAN.  SHE HAD A WICKED STEPMOTHER AND 2 SMELLY STEPSISTERS WHOSE
+  NAMES WERE EGBERT AND GRISELDA.  CINDERELLA HAD TO  DO ALL THE 
+TWISTED WORK WHILE THE 2 CHEESE RAVIOLI'S WERE LAZY.  ONE DAY ALL THE
+
+PEOPLE OF THE KINGDOM WERE INVITED TO PRINCE GERTRUDE'S SMELLY BAL
+L.  CINDERELLA  COULDN'T GO.  BUT HER 2 STEPSISTERS & STEP
+CHEESE RAVIOLI
+COULD.  EGBERT THE FAIRY GODMOTHER CAME & GAVE CINDERELLA A ICE AND A
+TOILET BOWL SO SHE COULD GO TO THE PINE CONE.  THE
+CHEESE RAVIOLI FELL IN LOVE WITH HER.  SHE TICK, OUT OF THE CIGAR
+ AND LOST HER  CREAMY , TOILET BOWL.  THE PRINCE LOOKED FOR HER TO PU
+T THE
+GRANDMA BACK ON.  HE FOUND HER AND THEY LIVED
+SILENTLY EVER AFTER.
+.NOFILL
+.PAGE
+TO MADLIB
+10 TYPE [ONCE UPON A%]
+20 TYPE NOUN
+30 TYPE [, THERE LIVED A%]
+40 TYPE ADJETIVE
+50 PRINT [%GIRL NAMED]
+60 TYPE [. SHE HAD A WICKED STEPMOTHER AND 2%]
+70 TYPE ADJETIVE
+80 PRINT [% STEPSISTERS WHOSE %]
+85 PRINT [% NAMES WERE%]
+90 TYPE N
+100 TYPE [% AND GRISELDA. CINDERELLA HAD TO %]
+105 PRINT [% DO ALL THE %]
+110 TYPE ADJETIVE
+120 TYPE [% WORK WHILE THE 2%]
+130 TYPE NOUN TYPE  2%]
+140 PRINT [% WERE LAZY. ONE DAY ALL THE %] TYPE [%PEOPLE OF THE%]
+145 TYPE [% KINGDOM WERE INVITED TO PRINCE%]
+150 TYPE N TYPE ['S %] TYPE ADJETIVE
+160 TYPE [% BALL. CINDERELLA %]
+165 TYPE [% COULDN'T GO, BUT HER 2 STEPSISTERS & STEP%]
+170 PRINT NOUN
+180 TYPE [COULD %]
+190 TYPE N
+200 TYPE [% THE FAIRY GODMOTHER CAME & GAVE CINDERELLA A%]
+210 TYPE NOUN
+220 PRINT [%AND A%]
+230 TYPE NOUN
+240 TYPE [%SO SHE COULD GO TO THE%]
+250 TYPE NOUN
+260 PRINT [ %THE%]
+270 TYPE NOUN
+280 TYPE [%FELL IN LOVE WITH HER.  SHE%]
+290 TYPE VERB TYPE [,]
+300 TYPE [% OUT OF THE %]
+310 PRINT NOUN
+320 TYPE [% AND LOST HER %]
+330 TYPE ADJETIVE TYPE [% , %] TYPE NOUN
+340 PRINT [ % THE PRINCE LOOKED FOR HER TO PUT THE %]
+350 TYPE NOUN
+360 PRINT [% BACK ON.  HE FOUND HER AND THEY LIVED %]
+370 TYPE ADVERB
+380 PRINT [% EVER AFTER %]
+END
+
+.block 12
+TO N
+10 MAKE "NUMBER RANDOM
+20 IF :NUMBER = 1 OUTPUT [CONGA]
+30 IF :NUMBER = 2 OUTPUT [EGBERT]
+40 IF :NUMBER = 3 OUTPUT [ISMEENEE]
+50 IF :NUMBER = 4 OUTPUT [GERTRUDE]
+60 IF :NUMBER = 5 OUTPUT [GERSHOM]
+70 IF :NUMBER = 6 OUTPUT [DAN]
+80 IF :NUMBER = 7 OUTPUT [TWEEDLEDUM]
+90 IF :NUMBER = 8 OUTPUT [BALLYHOO]
+100 IF :NUMBER = 9 OUTPUT [DAVID]
+110 IF :NUMBER = 0 OUTPUT [WILLIMENA]
+
+.block 13
+TO NOUN
+10 MAKE "NUMBER RANDOM
+20 IF :NUMBER = 1 OUTPUT [TRASH CAN]
+30 IF :NUMBER = 2 OUTPUT [CIGAR]
+40 IF :NUMBER = 3 OUTPUT [HULA HOOP]
+50 IF :NUMBER = 4 OUTPUT [GRANDMA]
+60 IF :NUMBER = 5 OUTPUT [ICE]
+70 IF :NUMBER = 6 OUTPUT [TOOTHPASTE]
+80 IF :NUMBER = 7 OUTPUT [TOILET BOWL]
+90 IF :NUMBER = 8 OUTPUT [MUD]
+100 IF :NUMBER = 9 OUTPUT [PINE CONE]
+110 IF :NUMBER = 0 OUTPUT [CHEESE RAVIOLI]
+END
+
+.block 13
+TO ADJETIVE
+10 MAKE "NUMBER RANDOM
+20 IF :NUMBER = 1 OUTPUT [UGLY]
+30 IF :NUMBER = 2 OUTPUT [PURPLE]
+40 IF :NUMBER = 3 OUTPUT [SMELLY]
+50 IF :NUMBER = 4 OUTPUT [FLUFFY]
+60 IF :NUMBER = 5 OUTPUT [CREAMY]
+70 IF :NUMBER = 6 OUTPUT [TWISTED]
+80 IF :NUMBER = 7 OUTPUT [HARD]
+90 IF :NUMBER = 8 OUTPUT [WRINKLED]
+100 IF :NUMBER = 9 OUTPUT [BILLOWY]
+110 IF :NUMBER = 0 OUTPUT [ITCHY]
+END
+
+.block 10
+TO ADVERB
+10 MAKE "NUMBER RANDOM
+17 IF :NUMBER > 5 OUTPUT [SILLY]
+20 IF :NUMBER = 1 OUTPUT [CALMY]
+30 IF :NUMBER = 2 OUTPUT [STUPIDLY]
+40 IF :NUMBER = 3 OUTPUT [ANNOYINGLY]
+50 IF :NUMBER = 4 OUTPUT [PATHETICLY]
+60 IF :NUMBER = 5 OUTPUT [SILENTLY]
+70 IF :NUMBER = 0 OUTPUT [GENTLY]
+END
+
+.block 13
+TO VERB
+10 MAKE "NUMBER RANDOM
+20 IF :NUMBER = 1 OUTPUT [WALK]
+30 IF :NUMBER = 2 OUTPUT [YELL]
+40 IF :NUMBER = 3 OUTPUT [SING]
+50 IF :NUMBER = 4 OUTPUT [SKIP]
+60 IF :NUMBER = 5 OUTPUT [ROCK]
+70 IF :NUMBER = 6 OUTPUT [ROLL]
+80 IF :NUMBER = 7 OUTPUT [TICK]
+90 IF :NUMBER = 8 OUTPUT [GIGGLE]
+100 IF :NUMBER = 9 OUTPUT [SHIT]
+110 IF :NUMBER = 0 OUTPUT [BLEED]
+END
+
+.ADJUST
+.epage 2
+.adjust
+.block 5
+18.4  Conclusion
+
+0Harriet was one of the most competent of the children in our sample
+groups at using the computer keyboard, understanding the computer's
+possibilities, and at using diverse elements of the LOGO language
+appropriately to achieve her purposes.  At the same time, her sense of
+"creative involvement" was minimal.  The more creative her project, the
+more tedius typing and debugging were required.  She did not enjoy the
+process of finding and eliminating bugs, the way that Gary, a student
+in one of the earlier classes did.
+
+After her last class, Harriet was asked whether she would like to work with
+a computer again.  "Well," she reflected, "it would
+depend on what the other choices were."2
+

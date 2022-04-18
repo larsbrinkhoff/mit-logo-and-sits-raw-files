@@ -1,0 +1,300 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 1
+.fi b
+--DRAFT--
+
+LOGO Curriculum Materials
+
+5/19/81
+.sp 5
+1BOOKLET VIIb
+
+GAMES WITH A DYNAMIC TURTLE0
+
+(Apple Logo Version)
+
+by Daniel H. Watt
+c. MIT Logo Group, 1981
+.sp 6
+This booklet tells you how to play some games in which the turtle behaves as though it were a rocket ship in outer space.  As you play the games you can learn something about the physics of moving objects.  If you want to change the games or invent similar games of your own, read the next booklet, bold(How the Dynaturtle Games Work).
+
+.chapter "bold(What is a Dynamic turtle?)"
+
+
+A dynamic turtle or   bold(DYNATURTLE)   behaves as though it were a rocket ship in outer space. To make it move you have to give it a kick by "firing a rocket engine." It will then stay in motion in the  same  direction until you give it another kick. Everytime you "kick" the dynaturtle it is like firing a rocket briefly. The motion changes instantly with each new kick, and the dynaturtle will continue moving with its new motion until it receives an additional kick.  Its new motion will be a combination of the old motion and the motion caused by the new kick (not necessarily moving in the direction in which it is aimed).  You can re-aim the dynaturtle by turning it to the right or left. Once you change its heading, you can change its motion by giving it another kick.   
+
+Each dynaturtle game simulates a different kind of problem in physics:  moving an object from one place to another, keeping an object moving on a particular path, or controlling the behavior of a falling object.  When you describe the behavior of the dynaturtle, or your strategies for playing a dynaturtle game, you are helping yourself learn about the science of physics, as well as learning to play the game better.
+
+Procedures for all the dynaturtle games should be stored on a special
+disk. If you do not already have such a disk, you can create one by carefully
+copying the procedures given at the end of this booklet.
+
+You may need to experiment with dynamic commands for a while before you understand how the  dynaturtle works.  To help you understand the behavior of the dynaturtle, you may find it useful to describe its behavior, and the strategies you use to control it. Describing something in words can be very hard, but it can also be extremely useful in learning something new. When you describe a behavior in words, you get a better idea of exactly what you do and don't understand about it. You also have a way of talking to other people, and learning how they are thinking about it. 
+
+.chapter "bold(A dynaturtle target game.)"
+.section "bold(Playing the Target Game)"
+Before you start you will need to find the disk with the dynamics games procedures on it. If you have been playing another game, or writing your own procedures, make sure your procedures are saved on your disk. Then type  GOODBYE,  remove your disk and insert the dynamics disk. Read the target game procedures by typing:
+
+	READ   "TGAME
+
+When you type the command,
+
+	TGAME
+
+ a circular target will be displayed in the upper right hand corner of the screen, and the blinking  dynaturtle will appear in the lower left hand part of the screen.
+.keep
+.sp 20
+.end_keep
+The object of the game is to make the dynaturtle reach the target.  You can control it by typing certain keys on the keyboard:
+
+
+.nf l
+.keep
+If you type   <R>   the turtle will turn right 30 degrees.
+If you type   <L>   the turtle will turn left 30 degrees.
+.fi b
+If you type   <K>   the dynaturtle will be given a sudden kick in the direction it is heading. This will make it increase its velocity in that direction.
+
+If you type   <T>   the dynaturtle will leave a trace of its path as it moves.
+.end_keep
+
+Once you have started the dynaturtle by typing  <K>,  any additional kicks will produce a motion that is a combination of the old motion, and a new motion caused by the kick.  When you hit the target, the computer will print a message, telling you the dynaturtle's speed, and how long it took to hit the target.
+
+People often find the behavior of the dynaturtle a little confusing at first.  Although you may find it difficult the first few times you try, with a little practice you should be able to make it hit the target regularly. There are many possible strategies for hitting the target. If you are having trouble it might help to compare your strategies with those of other people. Some specific suggestions are given in the next section.
+
+If you would like some suggestions for playing the game, you can read the next section,  2.2, bold(Some Helpful Hints for Playing The Target Game.)  If you can hit the target easily, and would like some challenges, you can read section 2.3, bold(Some Challenges to Improve Your Skill and Understanding.) If you prefer to go on to another game, try the Dynatrack game, Chapter 3, or the Lunar Lander game, Chapter 4.  Eventually it might be useful to come back and read sections 2.2 and 2.3, to get a better understanding of how the dynaturtle works.
+
+
+
+How many different strategies can you find for making the dynaturtle hit the target? Describe your strategies in words.  Do you think some strategies are better than others?  Understanding the behavior of the dynaturtle when you play the target game will help you understand the behavior of a rocket in outer space, or the behavior of moving objects on Earth, in situations where outside forces such as friction, wind, or gravity, are not important factors.
+
+Do you have ideas for improving the target game?  The next booklet, bold(How Dynaturtle Procedures Work) shows some ways that an experienced LOGO programmer could change the game.
+
+.bp
+.section "bold(Some Helpful Hints for Playing the Target Game.)"
+Many people playing the target game for the first time experience the following "bug":  They start the dynaturtle moving upwards with a kick.  Then they turn it to face the right.  When the dynaturtle is even with the target, they kick it towards the target, expecting it to move as shown in the figure.
+.sp 10 
+What people bold(expect) to happen.
+
+.keep
+Instead, the dynaturtle moves at an angle:
+.sp 15
+What bold(really) happens.
+.end_keep
+
+bold(The question is: how can you make the dynaturtle go where you want it to?)
+
+.keep
+Suggestion #1:   Stop the dynaturtle and re-aim it.
+
+Start the dynaturtle moving, and then make it stop at a point where it can be aimed directly at the target. Once you have figured out how to start and stop the dynaturtle, there are several ways to use this method to hit the target, for example:
+
+Start the dynaturtle moving upward. Stop it when it is even with the target. Then aim it straight at the target.
+.sp 12
+.end_keep
+.keep
+Start the dynaturtle moving to the right. Stop it when it is even with the target.  Then aim it straight up at the target.
+.sp 12
+This is one way to force the dynaturtle to behave the way most people think it should behave before they start playing the game.
+.end_keep
+
+.keep
+Suggestion #2:   Kick to the right earlier (and harder).
+
+Since the dynaturtle moves off at an angle when you give it a kick to the right, take advantage of that fact to give it a kick to the right before it is even with the target. If you find the right place to kick it, you might be able to send it on an angle straight to the target.
+.sp 12
+.end_keep
+
+If this doesn't quite work, try kicking it earlier and harder (more than one kick).
+
+.keep
+Suggestion #3:   Turn more to the right.
+
+Since the dynaturtle moves up and to the right when you kick it to the right, try turning more to the right than you think you should have to:
+.sp 12
+To move this way...			Kick this way!
+.end_keep
+.bp
+.section "bold(Some Challenges to Improve Your Skill and Understanding.)"
+After you have played the game for a while and can hit the target regularly, you might like try these activities.
+
+Suggestion #4:  Vary the game.
+
+Try to hit the target as softly as you can.  Then hit the target as quickly as you can.  Can you hit the target both quickly and softly?
+
+Suggestion #5:  Only two additional kicks. 
+
+Start the dynaturtle, and then hit the target with only two more kicks. (There are several ways to do it.)
+
+Suggestion #6:  Only one additional kick
+
+Start the dynaturtle. Hit the target with only one more kick.
+.keep
+
+Suggestion #7:  Combining kicks.
+
+You already know that you can hit the target by moving the dynaturtle straight up, applying a reverse kick, and then aiming and kicking to the right. If you have the dynaturtle trace its path, you will see the following:
+.sp 12
+Can you combine the two kicks at the corner, using one or more kicks in a diagonal direction?
+
+.sp 12
+How many diagonal  kicks do you need?
+.end_keep
+
+ 
+.chapter "bold(A Dynaturtle Racetrack)"
+.section "bold(How to Play the Game)"
+The object of this game is to keep the dynaturtle moving on a circular track as long as possible and to cross the finish line. If you crash into the track wall the game is over, and the computer tells you how much time has passed since the game started. 
+
+If you have been playing another game, or writing your own procedures, make sure your procedures are saved on your disk. Then type  GOODBYE,  remove your disk and insert the dynamics disk. Type
+
+	READ   "DYNATRACK
+
+Start the game by typing:
+
+	DYNATRACK
+
+The computer will ask you two questions:
+
+.nf l
+HOW WIDE DO YOU WANT THE TRACK TO BE?    (type a number between 0 and 50)
+
+HOW STRONG DO YOU WANT THE KICK TO BE?   (type a number larger than 0)
+
+.fi b
+A wider track will make the game easier.  A stronger kick will make the game harder. Your score for the game will depend on how hard you have made it by choosing a large kick or a narrow track.
+
+Once you have chosen the track size and kick strength, the turtle will draw the track, and as soon as you give the dynaturtle a kick, it will start moving.  Use the same commands that you used in the target game,  <K>  for kick,  <R>  for right turn,   <L>  for left turn, and  <T>  for trace.  Remember, your objective is to keep the dynaturtle on the track as long as possible, and to drive it once around the track.  (Time is not counted when the dynaturtle is standing still -- as it is at the beginning of the game.)
+
+If you find it difficult to keep the dynaturtle on the track, make the track wider or the kick softer the next time you play. If you find it easy, make the track narrower and the kick harder.
+
+As in the target game, there are several strategies you can use to keep the dynaturtle on the track.  Describe your strategy in words. This may help you understand the physics of moving objects. A satellite orbiting the Earth, or the Earth orbiting around the Sun, moves on a path that is very similar to the path of a dynaturtle on a circular racetrack. Understanding how to keep a dynaturtle moving on a circular path can help you understand how the Earth moves around the Sun.
+
+If you are having difficulty with the game, and want some help, read the next section, 3.2 bold(Some Helpful Hints for the Dynatrack Game).  If you can play the game well, and want to be challenged, read section 3.3 bold(Some Challenges to Improve Your Skill and Understanding). If you want to make your own changes in the dynaturtle game, read Booklet 6,  bold(How Dynaturtle Procedures Work).
+.bp
+.section "bold(Some Helpful Hints for the Dynatrack Game)"
+The major difficulty that people have with the Dynatrack game is similar to the major bug in the target game: people expect the dynaturtle to move in the direction in which it is kicked.  To move the dynaturtle around the track, they aim it along the track and kick it in the direction they want it to go.
+.sp 15
+What people expect to happen.
+
+.keep
+Instead, the dynaturtle's motion is a combination of the old motions and the motion caused by the kick. Whether the kick is hard or soft, the combined motion eventually makes the dynaturtle crash into the outside of the track.
+.sp 15
+What really happens (hard kick)		What really happens (soft kick).
+.end_keep
+
+bold(The question is: how can you make the dynaturtle go where you want it to?)
+
+.keep
+Suggestion #1:   Aim more toward the inside.
+
+
+Since the dynaturtle seems to move toward the outside of the track when you kick it directly along the track, maybe if you turn the dynaturtle more than you think you should toward the inside of the track, you can keep it from crashing.
+.sp 15
+.end_keep
+Suggestion #2:   Stop the dynaturtle and re-aim it.
+
+Start the dynaturtle moving with just one kick.  Stop it before it reaches the edge. Re-aim it around the track, and start it again. Stop it before it crashes and re-aim it again. By starting and stopping you can get it to go all the way around the track in a series of short spurts.  In this way you can  force the dynaturtle to behave in the way that most people think it should behave before they start playing the game.
+.sp 15
+.end_keep
+
+.keep
+Suggestion #3:   Aim almost backwards.
+
+If you want to get almost the same effect as you can get by stopping the dynaturtle, while  keeping it moving at all times, aim it almost backwards, to slow it down and change its direction, without stopping. See if you can make it move slowly around the track this way.
+.sp 15
+.end_keep
+
+.keep
+Suggestion #4:   Combine kicks.
+
+If you followed the second suggestion, you started the dynaturtle, then stopped it with a reverse kick, then reaimed it in a new direction with a new kick.  You had to give the dynaturtle two kicks at each "corner" to do this.  Perhaps you could replace these two kicks with one "combined" kick in a different direction:
+.sp 15
+.nf l
+Changing direction with two kicks	Changing direction with one "combined" kick
+.end_keep
+.fi b
+
+.bp
+.section "bold(Some Challenges to Improve Your Skill and Understanding)"
+
+There is really only one major challenge connected with the racetrack game. Since the track is a circle, the challenge is to make the dynaturtle move in as circular a path as possible. To force the dynaturtle into a circular path, you can make the track narrower so that if the path is not circular, the dynaturtle will be very likely to crash. (You can practice moving on a circular path with a wide track, of course, but the real test of your skill will come when you make the track narrow.)
+
+When the dynaturtle moves in a circular or near-circular path, its motion is very much like that of a satellite moving in orbit around the earth, or a planet in motion around the sun.  One important thing to notice is the direction of the kicks when the dynaturtle is moving in a circle. Can you see what is the same about all the kicks (except the first one) on a circular path?
+.sp 15 
+.chapter "bold(The Lunar Lander Game)"
+.section "bold(How to Play the Game)"
+In this game the dynaturtle simulates a "lunar landing module" trying to make a soft landing on a special "platform", built on the moon's surface.  When the game starts, the landing module begins falling  (with constant gravitational acceleration) towards the lunar surface.  You have to maneuver the dynaturtle  (using  <K>,  <R>, and  <L>   commands), so that it lands on the platform, rather than crashing on the moon.  The command  <T>  will cause the dynaturtle to leave a trace of its path as it moves.
+
+Another complication has been added to the game. You have to accomplish the landing with a limited amount of fuel. Every  kick  reduces your fuel by three units. Every right or left turn uses up one unit of fuel.
+
+You can make the game easier by making the platform wider or increasing your fuel.  You can also make the game  harder by narrowing the platform and reducing the amount of fuel.
+
+To read the procedures from the disk, first type GOODBYE. Then insert the  disk with the dynamics games, and type:
+
+	READ   "LUNAR
+
+To start the game type
+
+	LUNAR
+
+The computer will give you some instructions and ask two questions:  
+
+HOW MUCH FUEL DO YOU THINK YOU NEED?  (less than 50)
+HOW WIDE SHOULD THE PLATFORM BE?  (less than 60)
+
+
+The dynaturtle will start falling towards the moon's surface when you type   <RETURN>.
+
+
+
+This game is different from the other two because there is a constant force acting on the dynaturtle -- the Moon's gravity  -- which always pulls it toward the Lunar surface.  Just as with the other dynaturtle games, you may  find it helpful to describe the dynaturtle's behavior and the strategies you invent for playing the game. In addition to helping you play the game more effectively, it may help you understand the behavior of falling objects -- airplanes, baseballs or divers -- on Earth as well as on the Moon.
+
+
+If you need some suggestions to help you play the game, or want some challenges to improve your skill and understanding, read sections 4.2 and 4.3.
+.bp
+.section "bold(Some Helpful Hints for playing the Lunar Lander Game)"
+The effect of gravity in the lunar lander game can make the task of landing on the platform quite difficult. You have to move the dynaturtle to the right, while it is being pulled downward by gravity.
+
+Suggestion #1:
+
+One good way to see the effect of gravity is to just let the dynaturtle fall. Start the game by typing  <RETURN>  and without giving it any kicks, watch it fall toward the surface. As it falls it gets faster and faster. The force of gravity is  like a small constant downward kick.  After letting the dynaturtle fall, see what happens if you try to kick it straight up.  Can you make the dynaturtle move downward slowly so that it "crashes" softly on the moon's surface?
+
+.keep
+Suggestion #2:
+
+In each of the other games it was possible to start and stop the dynaturtle  so that you could move it in straight lines.  Maybe this strategy could be used in the Lunar Lander game as well. Try to move the dynaturtle to the right so that it is directly over the target. Then stop it from moving to the right and let it fall to the target.
+.sp 15
+Actually this is quite difficult to accomplish, because gravity pulls the dynaturtle down towards the moon's surface before it reaches a point directly over the platform.
+
+.end_keep
+.keep
+Suggestion #4:
+
+Since gravity is already moving the dynaturtle downward, you concentrate only on moving it sideways. Aim it to the right, give it a kick,  and see what happens. If you make a trace of the dynaturtle's path you will see that it curves more and more sharply downward as its downward speed gets faster. With the correct number of kicks to the right, you might be able to make it land on the platform. Too few kicks will make it crash on the moon. Too many kicks to the right will send it too far and it will crash beyond the platform or be lost in space.
+.sp 15
+Too few kicks to the right.		Too many kicks to the right
+.end_keep
+.bp
+.section "bold(Some Challenges to Improve Your Skill and Understanding)"
+Once you can land on the platform regularly, you can make the game more difficult by making the platform narrower, and reducing the amount of fuel. 
+
+Suggestion #5:
+
+Make the dynaturtle land slowly on the platform. To do this you will need to give it kicks in the direction opposite to its motion.  The real trick is to land the dynaturtle slowly and facing upward. This might correspond to the way you would really want to land a rocket on the surface of a planet.
+.sp 15
+
+Suggestion #6:
+
+Once you can land the dynaturtle slowly and safely (facing upward), reduce your fuel supply and find the smallest fuel allotment that will allow you to accomplish a slow safe landing.
+
+Suggestion #7:
+
+Now make the task harder by narrowing the platform. You will probably need to increase the fuel supply to land safely and slowly on a narrow platform.  What is the smallest amount of fuel you can use to land on a platform that is only ten units wide?
+				

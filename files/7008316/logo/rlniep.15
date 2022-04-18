@@ -1,0 +1,338 @@
+.xgp
+.font 0 31vg			
+.font 1 31vgb
+.nofill
+.he1
+LAWLER 1/17/81
+.he2
+WORD WORLDS
+.ss
+.dummy ^
+.twinch 6
+.tlinch 8.5
+.ce
+ !^DRAFT^!
+
+.ce
+1WORD WORLDS0
+
+.ce
+A Constructive Alternative to "Getting Teached"
+.sp 21
+.ce
+1ABSTRACT0
+.ss
+
+.adjust
+^^^^^^^^^^We present an extensive and coherent vision of the development of the ability to compose natural langauge text and propose developing facilities to support such a path of learning. [**rewrite]
+.sp 5
+.nofill
+.ce
+Lawler & Papert
+.ce
+Logo Project
+.ce
+M.I.T. A.I. Lab.
+.page
+.ce
+1Contents0
+
+OVERVIEW
+^^^Microworlds and Education
+
+WHAT WE THINK
+THE UNREACHABLE WORD
+^^^Figure^1:^^Word Worlds Machine
+^^^Microworlds and Language
+^^^Pragmatics: Making the Written Word Useful
+
+USING TEXT IN  THE EARLY GRADES
+^^^Three Descriptions of Writing
+^^^Developing an Appreciation of Reader Psychology
+^^^^^^Drawing and Writing
+^^^^^^Engineering Drawings
+^^^Developing an Appreciation of Standard Forms
+^^^^^^Text Generators
+^^^^^^Versification
+^^^Computer Journals
+^^^Microcomputer Networks
+
+LEARNING TO COMMUNICATE THROUGH TEXT
+^^^Debugging
+^^^Multiple Roles
+^^^Giving Advice
+^^^Taking Advice
+^^^Composing With a Computer -- and Without One
+
+WHAT WE WILL DO
+^^^Video-disk project
+^^^^^^physical interface acquisition
+^^^^^^Logo extension for controlling and accesssing optical disk
+^^^^^^Mastering an education-research/pre-readers' video-disk
+^^^Network project
+^^^^^^Logo extension for micro-telecommunications
+^^^^^^Library documentation system
+^^^^^^Mail/ Computer Journal System
+^^^Applications project
+^^^^^^Drawing and Writing
+^^^^^^Engineering Drawing
+^^^^^^Text Generators
+^^^^^^Versification
+^^^^^^Textual criticism tools
+
+WHO WILL DO IT
+
+
+WHAT IT WILL COST
+
+.page
+.ds
+.adjust
+.ce
+1Overview0
+
+^^^^^^^^^^The central problem of humane education is how to instruct while respecting the self-constructive character of mind.  During the past decade, the M.I.T. Logo Project has made significant contributions to resolving this problem.  This is  most clearly true in domains of mathematical focus.  Advancing technology (See Miller, 1979) and theoretical clarifications (See Papert, 1980 and Lawler, 1980a, 1980b) encourage us to extend  our best results to domains now within reach.  We believe Logo ideas can be exported coherently from the "mathland" of the past to the world of language.
+
+1Microworlds and Education0
+
+^^^^^^^^^^The Logo Project has defined a new engineering task for the education industry, the design of microworlds.  These virtual  environments for the learning of domain-specific knowledge are made possible by computers  and typically involve the reconceptualization of an intellectual domain in such a way as to permit its connection with knowledge the learner can be expected to bring to the experience.  The premier example is the design of turtle geometry so that even young children can interpret mathematical experiences in terms of their own actions in moving through space (Papert, l980).  The design of such microworlds could legitimately be called "applications engineering".  The core of this proposal focusses on designs for word worlds.
+
+^^^^^^^^^We propose to develop the Logo system infra-structure for a range of word worlds.  We will produce a Logo language subset for controlling and accessing a video-disk and another for communicating with other microprocessors and a central storage processor.  Further, we will produce a series of diverse but Logo compatible subsystems.  These sub-systems will be tools for activities in word microworlds spanning a range from some worlds specifically for pre-readers to others useful to adults.
+
+^^^^^^^^^^Microworlds address the central problem of education by creating intellectual spaces wherein the learner can act, through which action he will progressively construct within his mind cognitive structures embodying the relations among elements of the microworld domain.  The exploration of these virtual worlds is a better experience than "getting teached" because, while the learner builds upon what's in his mind, the virtual world shapes his new knowledge to the powerful ideas achieved by the culture and embodied in the microworld.  It is appropriate this idea should form the core of a Logo Project attempt to address the learning of the alphabetic language.  In the following descriptions of microworlds, first pre-schoolers are our focus, then students of grammar school age.  Finally, we examine composition and its development in a computer culture of more mature students.
+.page
+.ce
+1The Unreachable Word0
+
+^^^^^^^^^^Before learning to read, the young child suffers an enormous cognitive imbalance.  She lives in a world of objects and images which she can identify and understands well.  But that world is permeated by mysterious graphic symbols, incomprehensible, unattainable sources of power which others can master but she can not control.  We want to develop a computer system to help children control the power of the word that is now beyond their grasp.  This computer system, the word worlds machine, will replicate the mixing of alphabetic and pictorial material in a single graphics display (See Figure 1) -- and the child will control it.
+
+^^^^^^^^^^The optical storage device (video-disc) operates in two modes, sequential and fixed-frame.  In the latter operating mode, the device may be thought of as "the world's largest slide tray", with a storage capacity for 54,000 individual pictures.  In sequential mode, the device can reproduce a half hour of continuous action (and is, in this sense, equivalent to a half hour video-tape).  Because currently available video-discs are read-only devices, they can only be used for pre-programmed material.  This profound limitation leads to the hybrid configuration of Figure 1 where magnetic storage and a signal mixer are introduced to produce a "writable" medium, supplementing the capabilities of the optical disc.  In the following applications, we attempt to make a virtue of this necessity.  Through "mixing" optical frames and magnetically stored information, the word worlds machine presents a systems appearance of video quality pictures with "transparent" writable/erasable overlays.  We judge this overlay capability to be a major system feature and intend to exploit it fully.
+.page
+.ce
+1FIGURE 1
+
+.ce
+Word Worlds Machine0
+.ss
+
+.spread
+/^^^^MAGNETIC DISK STORAGE^^  //^^^^OPTICAL DISK STORAGE^^
+.sp 12
+.ce
+COMPUTER
+.sp 12
+.spread
+/^^CONTROL^^ /^^SIGNAL^^ /^^VIDEO-ALPHA^^
+.spread
+/^^MONITOR^^ /^^MIXER^^^ /^^DISPLAY^^^^^^
+.sp 5
+POSSIBLE INPUT DEVICES:^^keyboard, slot-machine, camera.
+.adjust
+.ds
+.page
+1Microworlds and Language0
+
+^^^^^^^^^^In the microworlds of mathland there are many powerful ideas, ranging from the simplicity of repetition and symmetry used as generative heuristics to the analytical probing implicit in the isolation of one variable from others and its incremental variation.  (For a detailed case study of the last, see Extending a Powerful Idea, Lawler, 1980d.)  Surely in language, as in mathematics, there are certain very general understandings presupposed in the instructional process; we will examine such general understandings in our exploration for powerful ideas of word worlds.  The advent of computers is a revolution of possibilities, one which permits us to ask what we would like children to know about language.  Logo has given children an experience of number like that of the engineer or mathematician.  Would we like children's experience of the alphabetic language to be more like that of the writer or linguist^?
+
+^^^^^^^^^The reconceptualization is less of the sciences of language than it is of what you would like a child to learn about language.  If we would introduce children to the main themes of modern language study, what are they ?  Whatever the scientific paradigm in which he places himself, the modern linguist is concerned with these issues: the words of the language and their meanings (lexicology and semantics); the relationships between words and their parts (morphology) and between words in combination (syntax); and the application of words by their users to some purpose (function).  We could call these themes `content', `form', and `function', but we prefer to use the equivalent language-specific labels, "semantics", "syntactics", and "pragmatics".  We treat each of these themes as the focus of a specific application design in From a Mathland to Word Worlds (Lawler & Papert, 1981).  In this place, we will present a single application design focussed on pragmatics.
+
+.block 2
+^^^^^Who is the person for whom these applications are designed ?  She is a child, a "little kid", no longer an infant.  Whether she goes to school or not, she is a pre-reader.  She may not recognize all the letters of the alphabet and probably can not specify  their names or the phonemes which the letters typically represent.  She can "take turns" with considerable sensitivity and is quite able to use speech to specify for others what she wants them to do for her.
+
+1Pragmatics: Making the Written word Useful0
+
+^^^^^^^^^^Any parent can witness how the infant's language of the vocal mode develops gradually in a cyclic pattern, discriminations being made in what is heard then appearing in what is spoken.  This intra-modal cycle surely represents an important kind of language learning even if it is not the only kind.  If we compare speaking with writing, we can notice that from the infant's birth the sounds she makes have a profound and immediate impact on the world around her.  By contrast, the effect of any scribbles she might produce are nil.  Because speaking has a power of its own, it can enter with listening as a significant element in the intra-modal cycle of learning which characterizes the acquisition of the vocal language.
+
+^^^^^^^^^^The alphabetic language is different from the vocal language.   A child might sense reading as something important to learn, perhaps it might appear as a skill equal in value to listening as a way of making sense of the civilized world, but within the mode of the alphabetic language, writing is an expressive skill so difficult to master and so feeble in application that most people never write anything when they can avoid doing so.  This imbalance in the power of interpretation and production of alphabetic words helps explain why learning to read and write can be so hard, i.e. instruction is separated and out of phase, asynchronous.  This imbalance is an expression of a technological constraint; it exists because writing is hard and the written word has had little instrumental use for children.  The applications we propose will give pre-readers an experience of alphabetic words which expresses their potential instrumental power.  We believe computer use will enhance children's production of alphabetic words and make possible, even make "natural" the synchronous development of that alphabetic language knowledge which supports reading and writing skills. 
+
+^^^^^^^^^^The basic application we propose is a SCANNING application (in computer jargon, file search by generic key).  By this we mean that a computer should locate the relevant, stored information when a child keys an operand value.  For example, if a child keyed some letter string, the computer should present whatever information it has stored under its best match for that string.  From this point in the sequential file, the child would command "paging" forward or backward to locate some specific entry of interest.  The objective of such an application is to exhibit the power of a word as a key to something of value.  More specifically, we propose constructing a file of sparsely labelled pictures ordered alphabetically and accessed sequentially  by generic key through an index.  Keying the letter "R", for example, would point to pictures whose labels might include "rabbit", "rat", and "rooster" and show the first.  A "next" function would show "rat" and "rooster" in sequence.  Experience of such a PICTURES microworld would cut across the instruction based categories of reading and writing. The keying of individual letters, noting the symbols' appearance on the computer display, and watching the video disc frames change in response to this keying is a cluster of activities that do not fit neatly into the dichotomy of "reading and writing".  Their relation to these polar terms is more like the highly variable phases of speaking and listening that characterize the intra-modal learning of the vocal language.  This basic application is the beginning, but not the only one, of a new relationship among pictures, words, and people.  We discuss four additional applications and their relation to the language learning of the pre-reader in From a Mathland to Word Worlds.
+
+^^^^^^^^^^We should note that the word worlds machine has been discussed here as an introductory system for the alphabetic language.  One of our further concerns is designing a system that would be useful in its own right but would be "upward-compatible", i.e. have a systems appearance that would be consonant with the computers already usuable by more mature children.  We now turn to a discussion of systems for more mature children drawn from Precursors to Composition (Lawler & Papert, 1981).
+
+.page
+.ce
+1Using Text in the Early Grades0
+
+^^^^^^^^^^The roots of the Logo Project are in both the computer culture of Artificial Intelligence and the mind theory of Piaget.  (See Papert, 1980.)  We follow as a central vision Piaget's discovery that mature intellectual performances emerge from the interaction of precursors which may appear significantly different from them.  How does this discovery relate to the learning of school-taught subjects^?  The Progressive Construction of Mind (Lawler, 1980a) reports a detailed case study of how ne child learned to add.  We present that story in capsule form here as an example of how what is normally considered the outcome of long instruction can emerge in a natural way with considerably less formal instruction.
+
+^^^^^^^^^^Miriam at six knew how to count very well.  Let us name those congitive structures which embodied her knowledge of order and one-to-one correspondence the Count-world.  She also owned related but  distinct knowledge about coins and denominated counting.  This coin-related knowledge we name the Money-world.  Playing at the Logo Project, Miriam became adept at the mental calculation of large numbers needed for adding and substracting "angles" -- large numbers rounded to decade values.  Call the structure behind this ability the Decadal-world.  After long failing to relate the Count and Decadal worlds to problems were both were needed for a solution, in a specific moment of insight Miriam came to appreciate how these disparate structures could be applied serially to calculate mentally such problems as `75 plus 26'.  Later, the results she achieved with this Serial control of the Count and Decadal worlds permitted to appreciate the significance of place value in doing paper sums in the vertical form -- the kind of addition on which schools focus much attention.  Her dependable mental calculation, derived from integrating a variety of diverse bodies of arithmetic knowledge -- each in turn derived from very particular, familiar and personally meaningful activities , permitted her rapid and complete understanding of the standard-form addition instruction she received.
+
+^^^^^^^^^^We take this story as a model for how natural learning may proceed in composition as well.  Thus we propose a variety of writing microworlds, with potentially familiar and meaningful activities, from which the child will be able ultimately to construct the knowledge needed to write well anything desired.
+
+1Three Descriptions of Writing0
+
+^^^^^^^^^^There are at least three descriptions of writing relevant to our concerns.  We label them the communicative, didactic, and utilitarian descriptions.  Writing -- as a communicative act -- is the use of graphic representors or language with the intention of creating some impression in some audience.  Our educational objective for students, as it derives from the communicative description, is to enhance the student's flexibile application of written language to create efficiently any impression he can intend.  The primary limitation of a text is that although its intention is rooted in communication its creation is typically devoid of any feedback from the intended audience.  The primary inference we draw from this central limitation of text creation is that the author must imagine its effect on the audience.  In a strict sense, he must be able either to simulate (with his own reactions) his intended audience or he must own an appicable theory of audience reaction from which he can take guidance in composition.  That is, the author must have a practical theory of reader psychology.
+
+^^^^^^^^^^The didactic description of writing is a listing of those skills generally deemed essential for effective writing.  The focus of instruction is typically on language rooted standards, e.g. spelling and grammar,  and standard forms of expression, e.g. the business letter, a simple hortatory essay.  Correct usage is important because a reader interprets as significant anything he notices and gets angry if distracted for some peripheral reason.  Such skill oriented objectives of instruction embody a practical (if superficial) theory of reader psychology... and they require criticism of required work.  Such criticism also must -- if it is to rise above mechanical corrections -- embody a practical theory of how an audience will react to a text.  When criticism does not rise above mechanical corrections, the student learns that superficial form alone matters -- a disastrous lesson.
+
+^^^^^^^^^^The utilitarian description of writing is as a tool meaningful to the person using it.  Educators can offer a variety of reasons why a student should learn to write well, ranging from its potential value in a future career to the more intimate shaping of the person himself by his use of writing for expressions and self exploration.  But a child discounts the future, and few adults would care to develop a skill they might need only some ten years hence.  We should ask more generally, as in the conversation with a ten year old recorded below, of what use is writing:
+.nofill
+Lawler:^We used to describe the main things taught in school as "the three R's",
+^^^^^^^^reading, 'riting, and 'rithmetic.  How do you feel about those three
+^^^^^^^^main subjects ?
+Child:^^What do you mean ?
+Lawler:^You spend a lot of time learning how to read and write and how to solve 
+^^^^^^^^arithmetic problems.  Are they worth the trouble ?  What do you get out of it ?
+Child:^^Reading's great.  You can find out about all sorts of stuff by reading.
+^^^^^^^^Arithmetic's worth it, because sometimes you NEED it to do something you want,
+^^^^^^^^but writing's worthless.
+Lawler:^Could you explain a little more ?
+Child:^^You never have to write anything except in school.  It's just school stuff.
+^^^^^^^^It's not real.
+.adjust
+This child's judgments highlight a different perspective from ours.  Adults see reading and writing as reciprocal, as intimately related language acts.  The child saw them as quite distinct in ways important to him.  He even judged writing more alien from his most valued skills than is arithmetic.  Educators have recently begun to worry that pocket calculators will make obsolete the arithmetic curriculum with a resulting atrophy of calculation skills.  Have we ever noticed that the ubiquity of texts, copiers, pocket tape recorders, and the telephone have already made writing obsolete.
+
+^^^^^^^^^^Because we value composition for the contribution it makes to intellectual development and because electronic technology is overwhelming the everyday uses of writing, we must invent meaningfull applications of writing within the electronic medium itself.  It is a rare child who will find grammar intrinsically interesting.  We must imagine engaging uses of text with the confidence that from actual use of writing in communicating with a real audience, the child will appreciate the value of those skills in which we now offer instruction.
+
+
+1Developing an Appreciation of Reader Psychology0
+
+^^^^^^^^^^The primary requirement is getting feedback sufficiently often that an author can gradually develop a theory-in-practice of what constitutes effective communication.  We expect such will come about with increasing age through exposure to a widening circle of readers.
+
+1Drawing and Writing0^^^^^^^^^^For young children, drawing and writing can be very intimately related, especially when drawing is an inspiration for text.  It is common practice -- as early as kindergarden -- for drawing and writing to join this way: the child draws a picture of whatever she wants; some adult asks her to describe what the picture is about and then writes that description under the drawing.  The general success and value of asking a child to generate text by elaborating verbally the significance of a drawing is argued by Graves (1980).  We might expect initial verbal accompaniement of drawing to be little more than naming or simple descriptions of what is in the picture (translating the picture into a second mode).  Soon, the text would amplify and disambiguate what could be gleaned from examining the drawing; that is, it would further specify the author/artist's intention.
+
+^^^^^^^^^^Drawing in the computer environments of Logo could take various forms.  There has been a long history of children "drawing" complex figures by assembling component shapes.  (Such computer sub-systems as EEL and DRAW+, Lawler, 1975a, and 1979, grew in emulation of a variety of drawing books by Ed Emberly.)  Papert (1980) observed the effects and significance of shape assembly systems for very young children.  Games with such a character led them into the use of the alphabetic language for controlling their execution.  [**rewrite]  "Driving" the Logo turtle about with the pen down is a freer mode of drawing than component shape assembly.  Very young children have done such drawing with a single-character interface, ZOOM (Lawler, 1975b).  A third form of drawing is the procedure generation of abstract designs.  The development of such procedures has been a favorite Logo activity for many years.  (One Child's Learning, Lawler, 1979, records the engagement of some kindergarden children with a procedure -- MPOLYSPI -- for generating such complex designs.)  Making drawings with a computer is something we know a lot about.
+
+^^^^^^^^^^We have introduced drawing as an activity in which the use of text can be entrained as a useful tool, in a specific sense.  When one commands the Logo turtle to move FORWARD or to turn RIGHT, the primitive commands take a number as an input operand.  The numbers function to FURTHER SPECIFY the meaning of the command.  We expect to see text used with drawings in a similar functional way, specifying further what the child intended, alternately perhaps recording the process through which the drawing was created in its specific form.  Through the responses the child receives -- both to the drawing and textual elements -- concrete experience of the success and failure of communication through the written word will inspire to re-examine what's been written to understand why it failed to communicate what was intended.
+
+^^^^^^^^^^Technical issues to be considered with very young children would be questions such as: keyboard organization; how directive and elaborate should be the text manipulative portion of a drawing subsystem; whether or not computer display of drawings would be adequate or hard copy output should be made available.  The latter should be favored because it permits a significant broadening of the potential audience for the child's drawings with text.  That is, if a child could mail her grandmother a printed drawing, the grandmother would not need a home computer to appreciate it.  More importantly, a multitude of such designs could be displayed about the child's school and home.  Alternatively, if no hard copy device were available, the computer itself could be used as an unattended display device, cycling through a file of stored and displayable drawings.
+
+"Engineering Drawings"^^^^^^^^^^As children become masters of part assembly drawing sub-systems, some will realize that their drawings can have a functional value.  In planning a simple construction, a child may want to create design drawings.  The first use of a specialized computer sub-system would be as a design tool for child originated projects.  The value of a computer-resident set of design drawings would be the child's engagement in a feedback cycle.  As his design grows in specificity (as he gets advice and settles actual design issue) his drawings will increase in clarity.  This will require significant text insertion.  The most primitive textual element would be part labelling.  Next would come dimension data.  More complete annotation would include explanations of functions and would specify the relation of parts to other parts and to other drawings.  Sets of drawings would typically be related through a quasi-standard "identification-block" in each drawing.
+
+^^^^^^^^^^To the extent that they could write computer procedures in the Logo langauge, children could create their own specifial facilities as extensions to such a system.  This is the point at which the issue of language compatibility is essential.  If a child can "look inside" already existing programs which he has used and whose functions he knows well, he will be able to "read" those programs with some comprehension -- and thus be able to appropriate ideas and techniques at the horizon of his immediate capability.  In contrast with the "black box", which is the common name for any device whose internals one can't examine, Howard Peele introduced the ideal that programs in the education community should be more like a "glass box" -- whose text one would not alter but whose structure and elements would be open to inspection. The value to a reader of clear documentation of procedures would be both as example and standard for his own documentation. [**rewrite]
+
+^^^^^^^^^^Not every child wants to do engineering drawings, but such a facility could be extended in application to  a variety of other child-favorite applications.  Examples might be the construction of word mazes or cross-word puzzles, of mazes (with labelled traps, etc.), and even the construction of elaborate plans of dungeons and cities for use with the currently popular game, "Dungeons and Dragons".  The audience for products of such a system would depend on what the child made and so the feedback cycle would be various.  In general, the audience for products of an "engineering drawing" system would not be computer-culture-limited.
+
+^^^^^^^^^^Notice that we have emphasized writing which has potential for engaging an audience.  We have not mentioned anywhere the role of teacher as assignment-giver and paper-corrector.  We believe that the child will profit more from a more frequent and casual interaction with people who care about the content of his work than he would from scholastic assignments and corrections.
+
+1Developing an Appreciation of Standard Forms0
+
+^^^^^^^^^^In what specific sense is it useful to know the standard forms of text as taught in schools, such as the business letter ?  Future use on the job is one justification.  More importantly, the standard forms of written communication can become well known objects for thinking about.  The educational experience is less one of developing a repertoire of commonly useful forms (though such is itself a valuable accomplishment) than it is of developing examples of various forms from whose contrast one may form his personal theory of written communication.  We will focus on mechanized tools of text productions because their use will provide examples of standard forms the significance of whose parts can be gradually appreciated.  For example, Miriam used a letter interface which did little more than set up the heading and insert a salutation.  She used the interface without comprehension, responding to the simple queries about the date with little attention.  One day, her mother's birthday, she wrote a letter to her grandmother wherein she said "Mommy had a birthday yesterday" then justified this incorrect statement by noting that it would get "there" (where her grandmother lived) the next day. At this point she was sensitive to the issue of relative dating in a letter and thus perfectly capable of understanding that the reason for inserting a heading date in a letter is to resolve just such problems as the one the meaning of her text raised.
+
+1Text Generators0^^^^^^^^^^Writing letters is not something young children do often or easily... but they might write letters if the production were easier and if their output could be personalized.  For example, I have required my children to write "Thank you" notes for gifts received, but should they do that when a telephone calll can convey the same message in a more personal way ?   If the cliches of the form could be mechanically generated and appended to some recently created design of which the child was proud and which he wanted to show off, why shouldn't the letter become the preferred option ?   A "thank-you" form letter generator -- permitting flexibility through multiple choice of appropriate sentences and text insertion in the body or post script could be useful to a child.
+
+^^^^^^^^^^If we are willing to help children write "Thank-you" letters, why not help with other writing tasks we impose on them ?  As long as there are schools, children will be required to write simple compositions, short stories, essays, news articles.  Can we not ask "Who, what, where, when, why, and how^?"  Can we not ask which is most important and generate a skeleton text with markers for where connections are needed^?  If such helping programs define what the units of organization are in standard forms, they also will define implicitly a theory of what readers attend to in standard forms.  The author reading "his own" content as structured by an extrinsic theory of the reader's psychology will gradually infer what that theory is from his own experience.  If his text is on-line and if non-offensive criticisms may be appended to "his own" text, the child and the critic will both work together toward an object of which they may be proud.
+
+1Versification0^^^^^^^^^^There is more to versification that writing limericks.  Children enjoy singing songs and can enjoy producing text for songs.  A child who was not yet able to write was once delighted to dictate to me her favorite song, "Little Rabbit Foofoo".  She printed twenty copies from the computer display as gifts for her kindergarden classmates.  Though most of them could not read, they were, in turn, delighted to take them home so their parents could follow and sing along with them this favorite kindergarden song.
+
+^^^^^^^^^Older children may also take delight reproducing favorite songs on a computer -- but they could do more themselves and do more complex things.  For example, it would be possible to produce a subsystem for simply representing the melodic line of a song.  With versification,  a child could produce mini-librettos.  Even should they begin with limericks, some might become interested in the variety of verse forms in the English poetic tradition, the varieties of sonnets, even the complexities of the "french forms".  The computer could be a generative aid in rhyming.  Beyond exhibiting alternate spellings of vowels in syllables to be rhymed-with, the computer could display the spelling of a vowel with all the initial phoneme clusters possible in English.  The would be poet could scan such a meaningless list as a prompter for aural connection with words that might be significant to him.
+
+1Computer Journals0^^^^^^^^^^Journals have long been advocated as significant tools of intellectual growth, recovery and self control.  Teachers often lead children -- as young as third graders -- to journal keeping.  A few, a very few, take up the habit and it becomes a central organizing force of their lives.  Most do not.
+
+^^^^^^^^^^In computer cultures, journalling offers a new route to the construction of a personal history (which is then accessible as an object of reflection).  The first, most natural artifact of computer work is saving what's done today for tomorrow.  Saving procedures has long been a fundamental capability of computer systems. It is a small extension to save textual productions.  Computer systems and networks of small computers usually make available to their users a personal message switching service, a "computer mail" system.  When such a system permits the insertion of mail in a file for future delivery, a "personal scheduling system" becomes easily available by date-triggered reminders sent to oneself.  As the date horizon moves through the current mail file, the schedule, the plan for the future becomes the history of that schedule.  Augumented by a notation of procedures written and modified and text files accessed, this reflexive mail system becomes, incrementally, a computer journal.
+
+1Procedures Library Documentation0^^^^^^^^^^Other computer research centers are developping microcomputer networks.  We look forward to the near future when thoise with computers in school and home microcomputer users will form a network through telephone links.  We believe there will be either in the schools or the public libraries a central computer library -- of free access -- to which the microcomputer users will contribute the contents.  One of the discoveries coming out of the Plato project is the extent to which children have been engaged by producing materials for a commonly accessible library of computer procedures.  The specific relevance of this observation to writing is to emphasize the role of "verbal" explication of procedures.  A common computer library could be well served by a query-based documentation generator which would ask questions such as these:
+.nofill
+.in 2
+-^what type of thing are you inserting in the library ?  Game, display,
+^^^^^sub-routine, system ?
+-^What is its function ?  Please explain in a single sentence.  You can explain
+^^^^^in more detail in subsequent sentences.
+-^what's really special about your insertion ?
+-^what inputs are required for execution ?
+-^what further information is available ? [references to paper descriptions]
+-^who did it ?
+-^who will fix any bugs found ?
+-^who will clarify the documentation ?
+.in 0
+.adjust
+With respect to the development of writing ability, the significance of procedure documentation for a local computer library is the engagement of the user in a feedback cycle.  If the documentation is unclear, it will produce as much trouble as a program bug and should be treated as equally serious a flaw in the published system.  In contrast with the various exercises children are compelled to write, such documentation should have much more reality for an author because it will support something he hopes others will use.  The audience may be, initially, a strictly local computer circle.  For successful procedures of potential use in a large commuinity, the child will have available the regular publication channels of the growing computer culture.  That is, such local libraries are not a dead end.
+
+
+^^^^^^^^^^Dare we predict that from such experiences, and others like them,  children will learn more about writing than they do now ?  That is an empirical question which can not be tested until and unless such facilities exist.  As a supplement to the standard curriculum, such facilities would  not be harmful.  They deserve to be examined as an alternative because they strive to make writing useful and meaningful to the child, justifying today's work by today's satisfactions.
+
+Criticisms^^^^^^^^^^We may seem to be assuming that children will learn to write almost by magic.  In one sense that is true.  We do believe that the child's self-construction of mind from the encountered flotsam of culture is one of the most powerful and under-rated phenomena in the world of education.  But let's suppose that at least some children never "catch on" to writing even though they live in a culture where composition of text is useful to children.  How then should this "remedial" problem be dealt with^?  That this is a very real and central problem of the current school situation is manifest.  We now turn to addressing this issue with a perspective drawn from the more extensive treatment in Composing Text in a Computer Culture.
+.page
+.ce
+1Learning to Communicate Through Text0
+
+
+Debugging^^^^^^^^^^Central to the vision of a Logo `mathland' has been the explicit focus on debugging as an intellectual skill.  Papert's description of debugging as a major component of problem solving -- and one not marked in either the vocabulary or concepts of pre-computer cultures -- was a theoretical ground for appreciating the computer's potential impact on intellectual development.  Debugging was more than a technique one learned to enhance arithmetic skills; we saw and introduced it as a meta-language for the more precise description of processes as diverse as juggling and the generation of concrete poetry.  Although its best successes have been in areas traditionally labelled "mathematical", Logo has always been more than a `mathland' in any narrow sense --  and this is so because of the centrality of debugging to developing thought.
+
+Multiple Roles^^^^^^^^^^Our objective is to design computer facilities and applications to enable people to compose more effective text.  Effective communication requires the interaction between the minds of the author and audience.  How can the author know how his audience will react to his text ?  Our analysis of the problem behind this deceptively simple question will take guidance from The Articulation of Complementary Roles (Lawler, 1980b), a very detailed case study of how a child learned to play Tic tac toe.  When introduced to Tic tac toe at the age of four, the child, Miriam, learned to play as a TACTICIAN.  With two of her counters in line, she would complete a winning row.  Similarly, she would block an opponent's victory by executing `forced moves'.  Otherwise, she would move preferentially to the center cell and then to any empty corner.  Two years later Miriam began to play as a STRATEGIST, regularly attempting to achieve a specific fork from a corner opening move.  When temporarily deprived of an opponent, she p[layed a game against herself, alternating roles of Strategist and Tactician; she continued playing alone this way.  Near eight years, in repsponse to requests that she predict the outcome of games, Miriam worked out games in her mind prefering the proof of victory to recalling results of earlier play.  Miriam's initial play was ego-centric in Piaget's sense (1926) of not attending to others at all.  Her final play was socialized, in the sense that she was able to simulate an opponent and thus work out the result of mutual engagement.  The development was achieved through developing internal control over two disparate modes of play.  We describe her socialized play by saying she developed a cognitive structure, MASTER, to control her own structures of Tactician and Strategist.
+
+^^^^^^^^^^We propose that a person becomes an author through development in a similar pattern.  We describe three roles for a person composing text as follows: the WRITER is that cluster of experience-based knowledge which generates text; the CRITIC is cluster that which analyses and judges text; the EDITOR is those structures which control the subordinate Writer and Critic clusters of knowledge.  (We will refer to the person composing text as the AUTHOR.  We propose to view development of an author's skills within such a scenario.  The path we will follow and conclusions we achieve are novel but not bizarre.  In practical terms, our proposals have much in common with those of a well known and respected text. Writing Without Teachers (Elbow, 1973), but they are different in emphasis because of our epistemological stance and our instrumental commitment to computers.
+
+^^^^^^^^^^The typical complaint in composition is of writing block, i.e. a state on undiscriminated inability to write anything at all.   Elbow's description of writing block is that the Critic is too demanding of the Writer and his advice is for the Editor to disable the Critic until the Writer has a chance to generate a mass of text, some of which should later be found worth polishing.  We will turn to these issues after taking a different stance: the primary problem is with the Critical facility.  We describe the improvement of text as a process of transforming the Critic's bug descriptions (communication failure diagnoses) into the Editor's controlled rewriting.  The separation of roles permits us to analyse the process as both giving advice and taking advice.
+
+1Giving Advice0
+
+^^^^^^^^^^Why is criticism hard ?  The first problem is interest.  If the work is your own, you may be too interested, too defensive to assimilate negative reactions.  It is very hard to accept the first scribblings of your Writer.  You are immediately confronted with what garbage is in your head [*** bad tone]  This is not pleasant.  If the text is another's, the Critic has the problem of paying sympathetic attention to someone else's garbage.  This is not pleasant.  In contrast with Tic tac toe, the function of the Critic, the second player, in the game of composition is not fun.  Before she could play as Strategist, Miriam enjoyed playing as Tactician.  She was engaged in a social situation where her limited ability at playing all the roles of the game did not limit her engagement with the activity.  Further, she did not appreciate at first how the roles of Strategist and Tactician needed to be intergrated to achieve mature skill in the game.  The task of composition is intrinsically more difficult than Tic tac toe because the task of criticism is not fun.  Consequently, the critic is underexercised precisely in the sense that its judgments remain undifferentiated, evaluative rather than analytic.  How should differentiation of the critic proceed ?
+
+^^^^^^^^^^We have see in programming skill a critical development is the crisp articulation of bug descriptions within the failure situation.  The key observation is that when a bug description is sufficiently precise, its fix is obvious as a controvening of some features of the bug description.  The progressive refinement of programming skill is witnessed as the development of a taxonomy of bugs  -  descriptions of how, precisely, a specific command of a procedure subverts the objective of the procedure.  We believe it is possible to develop a taxonomy of bugs for simple composition and propose such as a critical apparatus suited to the task of composition and to the progressive refinement of an Author's skills.  This is the profound similarity of procedure debugging and copy editing.  Believing that something is possible does not mean that it is easy.  A further discussion of the constraints and our proposals for such a development may be found in Composing Text in a Computer Culture.
+
+[**nota bene: what is need is less a text "editor" than a text "critic" - or tools for human critic
+
+1Taking Advice0
+
+^^^^^^^^^^If rendering criticism is hard, how much harder is taking criticism.  Since a text is supposed to express a person's thoughts and feelings and since the Author understands what he intended, how easy it is to over-interpret criticism of a text as criticism of the person himself.  The Author's dilemma in the general case is essential to the task: he has chosen to attempt communication in a medium which does not permit feedback.  This ultimately requires simulating an audience with some part of his mind and setting aside -- or limiting the influence of -- what he does in fact know.  Simulating a thoughtful reader while pretending ignorance of essential information is most unnatural, may even be impossible, and requires an unusual degree of reflexive control.  It is in default of such ability that an Author -- when he does manage to get some feedback -- inclines to see the external critic as an insensitive, malevolent oaf instead of as his best source of information.  Elbow advises any Author to extract from criticism only the reactions of critics to the text and to neglect or ignore the critic's specific suggestions, in effect he says, "Don't take the criticisms seriously; do take seriously the critici's specific reactions to particular aspects of your text."  The first, defensive element of this advice is to insulate the Author from criticism in order that he not take it too personally -- and thus either disregard the criticism entirely or quit writing in despair.
+
+^^^^^^^^^^The basic advance computer resident text provides is that the ease of copying text makes every draft a rough draft.  The Author does not have to feel his self-esteem or long labor is committed to a specific text version as a final form.  Within the scenario of a writer's seminar --  which could meet weekly with interim writing and peer text criticism -- computer resident text permits this ultimate defense: the Author's showing the penultimate version of his work in this response to criticisms: "You've criticised a text my latest revisions have made obsolete, but your criticism was very valuable; let's discuss it in detail to make certain I appreciated it fully."  Going beyond offsetting fear of commitment, the ease of text manipulation may provide in composition what we witness as the most compelling factor of engagement that programming permits -- the incremental elaboration of one's thoughts, the immediacy of perfection as one small step away.  This factor even may lead to a new vision of text and a new criterion of completion: a text is finally complete when perfect, when susceptible of no more improvement at all.  If partial or imperfect versions of such a text must be given to others, they can be seen for what what they are, special versions of a work in process.
+
+^^^^^^^^^^A second aspect of computer embodied textual criticism further insulates an Author from the interpersonal stress of criticism.  With a mechanical intermediary, the Author's immediate response to any reaction is irrelevant -- he is given a chance to absorb and appreciate criticism without having to respond or fearing to respond to it as he would in a personal encounter.  An Author need not use the computer this way, but if he needs such distancing from criticism, the computer intermediary let's him have it.  Finally, low level criticisms, e.g. typographical errors, can be relegated to their deserved level of unimportance.  Matters of spelling, grammar and so forth can be handled in computer notes.  More complex criticisms or involved reactions can be addressed in personal encounters where the writer can prepare himself beforehand for dealing with the congenial or antipathetic critic.
+
+.block 3
+.ce
+1Composing With a Computer -- and Without One0
+
+^^^^^^^^^^The primary benefit of using computers for composition aides is a cluster  of ideas the experience can create.  First is the naturalness of bugs.  In computer cultures, it is recognized that bugs are an outcome of doing something complex enough to be worthwhile.  Debugging is a recognized phase of the creative process.  It is expected that changes in a procedure may generate bugs and that major revisions of systems of procedures need be followed by more extensive testing.  The coding and testing cycle of program production should be reflected in cycles of writing and criticism.  This perspective on the process of coding and testing programs supports Elbow's suggestions that one should inhibit self-criticism while writing but later criticse sharply to focus and purge already  generated text.
+
+^^^^^^^^^^The facility computers add to text editing basically apply directly to low-level problems.  That is, many of the easy changes are "superficial", i.e. typographical and spelling corrections, automatic line length adjustment and so forth.  Their impact is, however, qualitative because they free the author's mind for more serious concerns.  They permit the author to focus on the coherence of interacting ideas and the effectiveness of rhetoric at a high level of organization.
+
+Genetic Intent^^^^^^^^^^Since the primary effect of computer experience on composition is to establish a set of ideas about the process of composition, once those ideas are achieved, the actual use of a computer becomes of secondary importance.  The intention in the use of a computer in composition is primarily genetic, i.e. although continued use may be a convenience, its primary importance is educational, shaping the way one thinks about the process of composition and the product.  Similarly, the experience of a writing class is genetic with respect to developing communication ability: its purpose is to sharpen the author's ability to imagine how others might react to his composition -- to permit his developing a theory in action of communication through text.  Once the writer becomes capable of playing both roles in a controllable and flexible way -- as Miriam became capable of "forward play in the game tree"  of tic tac toe -- he has learned one essential lesson of composition as we understand it.  The other great lesson, having fun, delighting in the performance itself, is not something we pretend to give instruction in  -- but we do note that the widely-witnessed " holding power" of computers for programmers suggests that computer-based composition may promise much more engagement for future authors than most students today find in the lessons they must surmount to reach the threshhold of presentable writing.
+.page
+.ce
+1WHAT WE WILL DO0
+.page
+.ce
+1WHO WILL DO IT0
+.page
+.ce
+1HOW MUCH IT WILL COST0
+.page
+.ce
+1References0
+.nofill
+.ss
+Elbow, Peter.  Writing Without Teachers.  London: Oxford University Press, 1973.
+
+Emberly, Ed.  Make a World. [**r perfect entry]
+
+Fox, M., Bebel,D., & Parker, A.  The Automated Dictionary.  In Computer,
+^^^vol. 13, no. 7, July, 1980.
+
+Graves, D.  Let Children Show Us How to Help Them Write.  In Visible
+^^^Language, vol.13, no. 1, 1979.
+
+Lawler, R.  EEL (Ed Emberly's Language).  Logo working paper 36.  1975a.
+
+Lawler, R.  ZOOM (A Logo interface for pre-schoolers).
+^^^Logo working paper NN.  1975b.
+
+Lawler, R.  Pre-readers' Concepts of the English Word.   M.I.T. S.M.
+^^^dissertation.   Logo Memo 40, 1976.
+
+Lawler, R.  One Child's Learning.  Unpublished M.I.T. doctoral 
+^^^dissertation.  1979.
+
+Lawler, R.  The Progressive Construction of Mind.  Logo Memo 57, 1980a.
+
+Lawler, R.  The Articulation of Complementary Roles.  Logo Memo 59, 1980b.
+
+Lawler, R.  Introducing Writing with a Computer. SIGCUE, July 1980c.
+
+Lawler, R.  Extending a Powerful Idea.  Logo Memo 58,  1980d.
+
+Lawler, R. & Papert, S.  From A Mathland to Word Worlds.  January, 1981.
+
+Lawler, R. & Papert, S.  Precursors to Composition.  January, 1981.
+
+Lawler, R. & Papert, S.  Composition in a Computer Culture. January, 1981.
+
+Miller, G. Automated Dictionaries, Reading and Writing.  Chairman's Report
+^^^of a Conference on Educational Uses of Word Processors with Dictionaries.
+^^^Washington, D.C.: National Institute of Education, l979.
+
+Papert, S.  Mindstorms: Children, Computers, and Powerful Ideas.  New York:
+^^^Basic Books, 1980.
+

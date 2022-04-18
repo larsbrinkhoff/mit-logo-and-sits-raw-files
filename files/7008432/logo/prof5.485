@@ -1,0 +1,685 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.dummy @
+.chap 5
+.ss
+.he1
+Dennis
+.he2
+Working Style
+.adjust
+
+.ce
+15 . Dennis
+
+5.1 Dennis' Working Style
+
+0Dennis is a bright, articulate student who makes connections easily,
+and has a strong desire to continually expand his knowledge.  He began
+by being very excited about using the computer, asking a lot of
+questions about what the computer could do, and how to accomplish
+different things.  
+Dennis had a lot of difficulty setting into a particular project.
+Although he quickly progressed through a number of
+LOGO activities, he seemed to have difficulty with syntax --
+remembering how to WRITE his file, or use a PRINT statement, or
+incorporate variables into his work.
+
+Dennis seemed to understand a concept rather quickly, but to have
+difficulty with the details involved in using the concept.  He liked to
+keep all his work "in his head," and only gradually accepted the
+idea of taking notes that might help him carry on his work. Notes, once
+taken, were often left lying around the room.  Having worked out
+a series of steps to draw a particular figure on the screen, he seemed
+to have difficulty concentrating on the task of accurately translating
+those steps into a LOGO procedure.
+
+Dennis eagerly sought new information and asked questions about new
+ideas.  On the other hand, he did not like to ask for help when he
+encountered difficulties in his work -- and often rejected "helpful
+suggestions," when they were offered.
+He seemed to prefer his own independent, ideosyncratic ways of doing things, to
+learning more efficient ways from another person.  When he was asked,
+in a pre-LOGO interview, "If you're stuck on something in school, what
+kinds of things do you do?"  Dennis answered:  "I try to control myself
+to work harder on it, and if worse comes to worse (sic) I just sit in
+the corner and sulk.  I just try to deal with it."  This approach to
+situations in which he was "stuck" was quite characteristic of his work
+in the LOGO classes.
+
+One of the areas in which Dennis often had difficulty was in taking a
+series of successful steps already worked out on the screen, and translating
+them into a LOGO procedure.  He persisted for a long time in numbering
+steps by ones, despite the fact that he understood quite well the
+justification for numbering steps by fives or tens.  Since he often
+made mistakes copying steps, he often had to make laborious
+changes in his procedures.  To compensate for the problem of forgetting
+line numbers, Dennis usually put many steps on one line.  He
+persisted in using this technique despite numerous errors which
+required that he re-type long lines of commands.  It was more important
+for Dennis to use his method (numbering by ones, and putting many
+steps on a line) than it was for him to have a method that made
+debugging easier (numbering by tens, putting one command on each line,
+and carefully keeping track of the line number).
+
+It seemed as though Dennis expected that bugs would not occur -- even
+though he continued to make small errors throughout his LOGO classes --
+and that he did not have to work in a way that made debugging
+easier.  The irony was that he understood the advantages, of the
+suggested methods, but persisted in using his own, even though they
+were less successful, and caused him more problems later.  "It's my
+funeral," he once remarked in such a situation.
+
+It is sriking to see a bright child persist in strategies known to be
+unsuccessful, when alternative strategies are available.
+
+Dennis seemed to be at loose ends during the first few weeks of
+computer classes.  He explored a lot of different ideas, without
+settling in to work in one particular area, or committing himself to a
+project.  Finally, after a great deal of coaxing, he agreed to work on
+a project which the teacher suggested 
+-- a moving car with spinning wheels.  He
+worked on this project for eight classes.  Although he had a lot of
+difficulty carrying it out (see below), and was  frustrated at
+several points, he maintained a strong commitment to the project until
+it was completed.
+
+.he2
+Work in Turtle Geometry
+.block 5
+15.2  Dennis' Work in Turtle Geometry With Triangles and Variables
+
+0Dennis' work in Turtle Geometry was characterized by an excellent
+understanding of the use of LOGO to create designs, by a good ability
+to estimate distance, and a lot of problems with orientation and
+estimating angles.
+
+Dennis worked on a series of short projects involving triangles.
+He started with drawing a triangle, and continued to make an equilateral
+triangle, variable sized triangles, designs using triangles, and a
+design consiting of nested triangles.  This work occupied five
+different sessions mostly during the early classes, but including one
+class near the end.
+
+He constructed his first triangle using a trial and
+error approach.  For his first attempt at drawing an equilateral triangle
+he used rotations of 128 and 110 degrees at the corners.
+When he copied his steps to make a procedure, TRI, he
+made an arithmetical error in combining angles, and wound up with the
+shape shown in figure 5.1.
+
+.block 13
+.nofill
+TO TRI
+1 RIGHT 140
+2 FORWARD 99
+3 LEFT 88	(erroneous step)
+4 BACK 99
+5 LEFT 140
+6 RIGHT 70
+7 FORWARD 99
+END
+
+.ce
+Figure 5.1
+
+.adjust
+Although Dennis realized that this was not what he expected, 
+he drew
+on previous experience in making a recursive design 
+to create the patterned procedure ULTRATRI:
+
+.nofill
+.indent 6
+.block 5
+TO ULTRATRI
+1 TRI
+2 RT 80
+3 ULTRATRI
+END
+
+.adjust
+.indent 0
+Returning to constructing a triangle, Dennis abandoned equal lengths,
+and produced a close approximation to a triangle.  He called his
+procedure THRI (to distinguish it from TRI).
+
+.nofill
+.block 13
+.indent 4
+TO THRI
+1 RT 140
+2 FD 99
+3 RT 130
+4 FD 110
+5 RT 120
+6 FD 93
+END
+
+.ce
+Figure 5.2
+.indent 0
+
+.adjust
+At a subsequent class, Dennis asked how to make a triangle of variable
+size, so that he could make a design of nested triangles.  
+The teacher explained that it would be
+simpler to use variables neatly if he could make an equilateral
+triangle, and that an equilateral triangle had equal
+angles at each point.  With this information, Dennis
+was able to find the correct angle, 120 degrees, in five or six tries.
+Dennis called his new procedure THRI1, and his variable, "S3.
+
+.nofill
+.indent 6
+.block 11
+TO THRI1:S3
+1 FD :S3
+2 RT 120
+3 FD :S3
+4 RT 120
+5 FD :S3
+6 RT 120
+END
+
+.ce
+Figure 5.3
+
+.adjust
+.indent 0
+Next, Dennis began to make a set of nested triangles using
+the variable-sized triangle he had already
+created.
+He wanted to make a
+design that looked like this:
+
+.block 11 
+.sp 9
+.ce
+Figure 5.4
+
+While making it, he had a lot of trouble with the state of the
+TURTLE: orientation of the TURTLE before and after making the triangle;
+re-orientation of the TURTLE to move it vertically before making the next
+triangle; whether the pen was up or down, etc.  After struggling
+through several repetitions, he wanted to give up.
+
+In the next class, he was reminded that he could make a procedure to
+repeat the group of steps that kept recurring, and he defined these procedures:
+
+.nofill
+.indent 4
+.block 10
+TO SECT:SIZE	and	TO HAL :SIZE
+1 LEFT 90		10 SECT :SIZE
+2 THRI1:SIZE		20 HAL :SIZE
+3 RIGHT 90		END
+4 PENUP
+5 BACK 30	and	TO H1 :SIZE
+6 PENDOWN		10 SECT :SIZE
+END			20 RIGHT 50
+			30 H1 :SIZE
+			END
+
+.epage 1
+.indent 0
+.adjust
+He was content to leave these procedures as they were without varying the size, 
+but enjoyed the effects of a variety of inputs.
+
+.block 30
+.sp 28
+.ce
+Figure 5.5
+
+At a later point, Dennis came back to his variable triangle procedure,
+and followed through with his original intention of making a set of
+nested triangles.  At that point he had a clearer idea of how to make
+use of variables, and a good strategy for solving the nested triangle
+problem.  He realized that if he could solve the problem of nesting a
+second triangle at the proper position inside the first triangle, that
+the complete nested design could be drawn by repeating the same process
+over and over.
+
+.block 11
+.sp 9
+.ce
+Figure 5.6
+
+Dennis realized that the essence of the process was to draw one
+triangle, move the TURTLE forward half the length of the triangle, and
+rotate the TURTLE, before repeating the same process with a second
+triangle, half the size of the first.
+
+.block 16
+.sp 14
+.ce
+Figure 5.7
+
+He had a problem determining how far to rotate the TURTLE before
+drawing the second triangle.  Resolution of this problem required a
+great deal of trial and error with careful attention to detail. 
+After about ten tries he was ready to settle on a rotation of 55
+degrees, as the correct amount to rotate the TURTLE.  When he looked
+carefully at the resulting figure, he was able to see that the
+two triangles were slightly out of alignment.  His next attempt, 60
+degrees, was the correct rotation to produce the effect he was seeking.
+
+At this point he was able to talk through the necessary steps.
+
+.nofill
+.block 3
+"THRI1 :SIZE
+move forward half of :SIZE
+turn RIGHT 60 degrees,
+repeat the whole process with a value of one half of :SIZE."
+
+His procedure became:
+ 
+.nofill
+.indent 6
+.block 6
+TO Q :SIZE
+10 THRI1 :SIZE
+20 FD :SIZE/2
+30 RT 60
+40 Q :SIZE/2
+END
+
+.indent 0
+.adjust
+Dennis wanted to make Q stop, "when :SIZE is less than 10."  After some
+additional conversation about the location of the stop rule in the
+procedure, he added line 35 to Q:
+
+35 IF :SIZE < 10 STOP
+
+which had the desired effect.
+
+Some things to notice about Dennis' work with triangles and variables:
+he consistently had difficulty with problems of TURTLE orientation,
+as in making his HAL figure or in nesting the smaller triangle inside
+the larger one.  He had no difficulty with the idea of variables --
+which he related to something he was familiar with from math class.  But he
+had difficulty with the syntax of using variables -- where to put the
+dots, in both the commands and in the procedure titles.  He seemed to
+understand the way in which his procedures functioned, and was able to
+see how his descriptions of what he wanted to do translated into LOGO.
+He never did carry through a project with variables entirely on his own.
+
+.he2
+CAR Project
+15.3  Dennis' CAR Project
+
+0In class thirteen, the teacher insisted that
+Dennis commit himself to a long
+term project.  He chose to draw a moving car, with spinning wheels.  Once
+committed to the project, he followed through on it for eight classes
+-- despite a good deal of frustration with the details.  
+
+.block 27
+.sp 25
+.ce
+Figure 5.8
+
+Rather than describe Dennis' work on this project sequentially, we
+differentiate between those
+aspects of the work that were easy for him, and
+those that were  difficult.  We offer some speculation about why so
+much of this project, which would have been simple and
+straightforward for a student like Jimmy was so difficult for Dennis.
+
+Most of Dennis' problems seemed to be in the area of "work habits" and
+attention to detail.  Lack of attention to detail, combined with
+left-right orientation problems, meant that a lot of Dennis'
+difficulties showed up as TURTLE state bugs.
+
+On the other hand, Dennis rather easily understood the important
+"concepts" of the project:  how to use positive and negative inputs to
+the SPIN command, together with a centered circle procedure, to make a
+wheel that spins around its own center; how to use MOVET to move the
+car; how to use 45 and 60 degree angles to make the fenders and body of
+his car; and how to use symmetry to make his front window a "reversed"
+version of his rear one.  During the course of the project he learned
+to make use of separate subprocedures for each part of his design, and
+began to number the steps in his procedures by fives.
+
+In illustration of both the strengths and weaknesses of Dennis' work on this
+project, consider the process by which Dennis made the windows
+for his car, which took three class periods to complete.
+
+At the end of class #15, Dennis had completed a series of procedures
+that drew the basic outline of the car as shown in figure 5.9.  He
+wanted the rear window located parallel to the body of the car.
+
+.block 20
+.sp 18
+.ce
+Figure 5.9
+
+Two suggestions were made to help him get started. First,  that he
+draw the window by itself on an empty screen first, and add it to the
+car as a separate procedure later; second, that he look at the
+BODY procedure, to find the angle to use for the windows.
+
+Looking at the BODY procedure, Dennis quickly noticed that the correct
+angle was 60 degrees.  He then cleared the screen and easily drew a
+window, starting with the TURTLE in the upright position:
+
+.nofill
+.indent 6
+.block 14
+TO WIN1
+1 RT 30 FD 60 RT 60 FD 20 RT 90 FD 50
+2 RT 90 FD 50
+END
+.INDENT 0
+.sp 7
+.ce
+Figure 5.10
+
+.adjust
+With the TURTLE in the vertical position, Dennis had no difficulty
+turning it right 30 degrees, going forward and then turning it 60
+degrees to make it horizontal.  It seemed as though he made use of the
+fact that 30 and 60 add up to a full 90 degrees in deciding to use 60 for the
+second turn, although this was never stated.
+The distance estimates
+were also fairly easy for him to make.  The WIN1 procedure left the TURTLE
+facing horizontally to the left.
+
+When Dennis attempted to place the window in the
+car, however, he did not realize that he
+had to orient the TURTLE vertically before using his WIN1 procedure.
+As a result, the window kept coming
+out in the wrong position and Dennis became very confused.  
+
+When he came back to working on the window, he was
+reminded
+that to orient his window properly he had to begin with the TURTLE
+in an upright position.  
+He had 
+decided to add another
+feature to the car, before drawing the window.  
+A curved
+antenna was added, completing the body, so that the turtle, now in
+position A, needed to move to position B (shown in figure 5.11).
+
+.block 11
+.sp 9
+.ce
+Figure 5.11
+
+After experimentation, estimation of distances, etc., Dennis wrote the
+following procedure:
+
+TO WIP (window in place)
+.br
+.NOFILL
+1 MO HUBS BUM BODY ANT PENUP RIGHT 180 FORWARD 100 RIGHT 90 FORWARD
+   80 RIGHT 180 RIGHT 20 FORWARD 10 PENDOWN
+2 WIN1
+END
+
+.adjust
+This procedure accurately placed the turtle in an upright position
+before drawing the window.  The' subprocedure MO moved the car
+over, so that the entire picture fit on the screen.  The other
+subprocedures drew parts of the car.  In typing the steps Dennis originally left
+out two commands:  ANT and PENDOWN.  He had to retype the entire procedure
+twice to replace them.  He placed all the steps on one line despite
+several discussions explaining how numbering steps by 10s and placing
+each step on a different line would make further corrections and debugging easier.
+
+At the end of the period Dennis forgot to save the procedure on his disk
+by writing a file!  He had to repeat the whole process again next
+time -- including the exploration, since he had kept no notes.  This
+time, he came out with a slightly different location for the TURTLE --
+one which left the TURTLE tilted 1 degree from the vertical.
+.nofill
+
+.BLOCK 4
+TO WIP
+10 MO HUBS BUM BODY ANT
+20 RIGHT 180 PENUP FORWARD 100 RIGHT 90 FORWARD 60 FORWARD 10 RIGHT 70
+   RIGHT 180 LEFT 45 BACK 5 LEFT 6 PENDOWN
+30 PENDOWN WIN1
+END
+.adjust
+
+Dennis' final version of WIP shows some improvement
+over what he had previously done.  The lines are numbered by tens.
+Each line of WIP has a distinct purpose.  Line 10 draws all the
+previous parts of the car; line 20 moves the TURTLE over to draw the
+window; line 30 draws the window.
+
+He had no problem figuring out how to draw the middle window as a square:
+
+.nofill
+.block 3
+TO WIN2
+10 PENUP BACK 100 RIGHT 90 PENDOWN FORWARD 55 RIGHT 90
+  FORWARD 55 RIGHT 90 FORWARD 55 RIGHT 90 FORWARD 55
+END
+
+.adjust
+He originally made WIN2 draw a square with sides of 43.  When he
+decided to change to a size of 55, he had to retype all of line 10.
+
+Before Dennis began to draw WIN3, The teacher suggested that he make
+use of symmetry by using the WIN1
+procedure as a model, and draw the new window by reversing the turns in
+WIN1, while keeping all the distances the same.  Dennis understood this
+approach and decided to use it.  
+Once again he forgot that the
+TURTLE had to be vertical before carrying out this aspect
+of the project.  Finally he recovered after being reminded to set the
+TURTLE heading up before reversing the steps of WIN1.  Finally Dennis
+produced the procedure WIN3:
+
+.nofill
+.block 3
+TO WIN3
+10 PENUP BACK 145 PENDOWN RIGHT 90 LEFT 30 FORWARD 60 LEFT 60
+   FORWARD 20 LEFT 90 FORWARD 50 LEFT 90 FORWARD 50
+END
+
+.adjust
+Once again, Dennis left out PENDOWN in copying the steps, and had to redo the
+whole line.  
+The underlined steps are the steps of WIN1
+reversed, although they are not set off as a separate sub-procedure, or
+even accorded a line of their own in WIN3.
+
+Throughout this process Dennis was constantly frustrated by his failure
+to remember where the TURTLE had to be heading at the start of a
+procedure like WIN1; by his failure to take useful notes -- leading to
+the omission of steps like PENDOWN; and by his method of including as many
+steps as possible on one line -- necessitating the retyping of an
+entire line, everytime he made a typing error or omission.  Although
+all these problems were pointed out to him by the teacher, along with
+suggestions for how to alleviate them, Dennis seemed to prefer to
+struggle along with his own methods rather than to `bother' to take
+notes or put each step on its own line in a procedure.
+
+.he2
+An Interesting Parallel
+.block 5
+15.4  A Parallel Between Two Projects, and a Question0
+
+An interesting parallel may be observed
+between details that occured in each of two projects described:
+making the window for his car, and drawing the nested triangles.
+
+In drawing the window Dennis started with the TURTLE in
+an upright position.  He turned it RIGHT 30, then moved FORWARD 60 and then
+turned the TURTLE RIGHT 60, to make the top of the window.  All this was done without
+any explanation -- following a discussion in which Dennis decided to
+make the window slant at an angle of 60 degrees, to parallel the BODY
+of his CAR (see figure 5.12a).
+
+A similar situation occurred when he was making the nested equilateral
+triangles.
+The first triangle started in an upright
+position.  After completing one triangle, Dennis moved the turtle
+forward half of its length, and once again, had to turn the turtle
+right 60 degrees.  In this case, he did not "know" that the angle to
+turn was 60 degrees, and had to establish it 
+by means of a trial and error process
+of successive approximations.  (see figure 5.12b).
+
+The question is -- why was Dennis not able to make use of the
+knowledge he had about 60 degree angles in drawing the nested
+triangles, when he was able to use it in drawing the car window?
+Possibly he used the fact that 30 + 60 = 90, when drawing the window.
+It is interesting to conjecture that he might have
+been able to find the correct angle without experimentation if the
+first triangle had been oriented at an angle of 30 degrees to the
+vertical to start with (see figure 5.12c).
+
+.block 10
+.sp 8
+.ce
+Figure 5.12a	Figure 5.12b	Figure 5.12c
+
+.he2
+Work with Dynaturtle
+.block 3
+15.5. Dennis' work With Dynaturtle0
+
+Dennis' work with Dynaturtle gave an opportunity for him to discover
+new strategies to solve problems in another domain.  The Dynaturtle is
+a simulated "Newtonian turtle" which follows Newtonian laws of motion,
+rather than regular TURTLE commands (see Part II, Chapter 6).   The 
+motion of the dynaturtle can
+be changed only by giving it a "kick" (impulse) in a given direction.
+Dennis was given two games to use with the dynaturtle: GAME1 required
+him to land the dynaturtle on a fixed target; LUNER required him to move a
+"falling" dynaturtle so that it landed on a specified "landing pad",
+rather than "crash" on the moon.  (See Part II, Chapter 6 of this
+report for more information about dynaturtle activities.) 
+
+Dennis worked on dynaturtle activities for all or part of three
+different classes.  He gradually began to show a lot more interest in
+the messages printed by the different game programs than in playing the
+games themselves.  (See section 5.6, below.)  Dennis' work with the
+LUNER game was characteristic of his approach to dynamics.  The LUNER
+game begins with the turtle situated above, and to the left of a
+platform on which it must land for a successful outcome.  The initial
+orientation of the turtle is straight up -- as shown in fig. 5.13.  If
+the dynaturtle is not kicked, it will "fall" straight down and "crash".
+(The LUNER program gives the dynaturtle a steady downward "gravitational "kick."
+
+.block 12
+.sp 10
+.ce
+Figure 5.13
+
+One fairly simple strategy for the game would be to quickly turn the
+dynaturtle until it was facing horizontally to the right, then give it three
+or four kicks.  The combination of rightward velocity and continuing
+downward acceleration would be likely to land it on the pad --
+depending on the timing and number of the rightward kicks.
+
+Dennis quickly realized that if left alone, the dynaturtle would fall to the
+bottom of the screen and crash.  He discovered that he could counteract
+this by kicking the dynaturtle straight up, temporarily counteracting the
+gravitational effect, and giving the dynaturtle an upward velocity.
+Most of the time he gave the dynaturtle so many upward
+kicks that it would rapidly rise off the screen (wrapping around and
+coming onto the screen again from the bottom.)  By the time he
+started to turn the dynaturtle to the right, it was so far above the
+landing pad that a slight rightward motion would cause it to crash far
+to the right of the pad.
+
+During his first two days of working with LUNER, Dennis and Harriet worked
+together.  She had adopted a strategy of turning the dynaturtle so
+that it was aimed at the landing pad, then kicking several times.
+This usually had the desired effect of landing in the right place,
+although at unneccessarily high speed.  Although Dennis watched Harriet
+at work he did not adopt her strategy when she was present.  When he
+worked alone, however, he did adopt a version of
+Harriet's method and was able to be reasonably successful with the LUNER
+game.
+
+Throughout his work with dynaturtle, it was not unusual for Dennis to
+type the K, R, and L keys very rapidly (kick, right and left), without
+looking at the effects of any of his actions before  typing
+new instructions.
+
+.he2
+Interactive Programming
+.block 4
+15.6  Dennis' Work with Printing, Messages and the Beginnings of 
+Interactive Programming0
+
+Dennis showed a lot of interest in using the computer in an
+"interactive" fashion.  Although he did not undertake a major
+interactive project, his continued interest indicated this as a possible future
+direction for him.  From time to time, in the early stages, he asked
+about uses of the computer other than Turtle Geometry, and was shown a
+little bit about how to use PRINT, arithmetic commands, and simple list
+processing.  He limited his initial work with PRINT to making a design
+of a face.
+
+.epage 1
+Dennis devoted one entire class to using the computer as a typewriter/editor for
+a story he was writing about Julius Caesar.  He did this by writing a
+procedure with 53 lines, each of which printed a sentence.  
+In the course of this task, which took about two hours, Dennis
+also mastered the use of Control keys for editing.  
+
+While he was working with dynaturtle, Dennis became interested in the
+messages printed by the computer at the end of the game.  These
+messages told the player whether the landing had been soft, rough or a
+crash, depending on the dynaturtle's speed at the moment of impact.  He
+complained that these messages were "dumb", and the teacher suggested that he
+change them.  He stepped through the LUNER procedure, and
+all its subprocedures, until he found the subprocedure FINISH, which
+printed the messages.  Dennis spent almost all of one period creating his
+own rather elaborate version of these messages:
+
+.nofill
+.block 11
+2TO FINISH
+10 IF SPEED < 7 PRINT [WOWEEEE!!!!YOU FINALLY DID IT MY GOD YOUR SPEED
+WAS GOOD] PRSPEED STOP
+20 IF SPEED < 25 PRINT [YOU ROTTEN LOUSY NO GOOD PLAYER YOUR SPEED WAS
+SO FAST I'M SURPRISED I'M NOT PEELING YOUR BODY OFF OF THE LANDING PAD A
+ SECOND GRADER WITH THE BRAINS OF AN AMOEBA COULD DO BETTER THAN YOU JUS
+T DID !!!!! TRY AGIAN DUMMY!!!] PRESPEED STOP
+30 PRINT [HA!HA!HA! YOU STUPID IGNORANT DUMP REALLY DUMB PLAYER!!!!
+YOU DIDN'T LISTIN TO ANYTHING I SAID YOU CRASHED!!! YES YOU CRASHED!!!
+COM'ON NOW KLUTZO TRY AGIAN HA!HA!HA!HAAAAA!!! HEH HEH HEE HO!!!!
+!!HEH HEH HEH HEH !!!!] PRSPEED STOP
+
+.adjust
+0Throughout his work on thse messages, Dennis appeared to be more deeply
+involved with his work than he did on Turtle Geometry projects.  He
+laughed, talked to himself cheerfully, and thought carefully about each
+word.  We may also speculate that the wording he chose for the
+messages indicate a lack of self-confidence in his own abilities,
+combined with a strong belief that he should be more successful
+than he is.
+
+One interesting consequence of Dennis' work on messages for the LUNER
+game was that he became much more interested in landing the dynaturtle
+on the landing pad, since this was required to activate the messages.
+He became quite successful at the LUNER game from this point on.
+
+By the time the classes ended, Dennis was ready to tackle a large interactive
+project.
+He may do so if he has a
+further opportunity to use a computer. 
+
+As his last activity, on the last day of classes, Dennis left a message
+for the MIT LOGO Group, in his procedure WERTS:
+.nofill
+
+.block 4
+2TO WERTS
+10 PRINT [WELL ITS NOW A FINAL GOODBYE TO LOGO, SO WHEN ALL THE EGGHE
+ADS AT MIT LOOK AT MY DISK I WANT THEM TO KNOW I HAD A @!#$%&%$#"!@* HE
+LL OF A TIME]0

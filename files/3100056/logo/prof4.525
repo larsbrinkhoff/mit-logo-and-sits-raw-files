@@ -1,0 +1,600 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.chap 4
+.he1
+Deborah
+.he2
+Working Style
+.dummy @
+.ss
+.adjust
+.ce
+14.  Deborah
+
+0Deborah is considered to be a below average student by her teachers.
+She has difficulty learning new topics, and is usually dependent on a
+lot of help from her teachers.  She presents a good example of a
+"slow learner."  Her most recent national achievement test scores place
+her in the 28th percentile.
+
+Deborah began by being extremely timid and dependent in interactions with the computer.  
+It was not until the eighth class that she had enough confidence
+to use the carriage return at the end of a line of instructions.
+She experienced great difficulty with simple projects.
+Starting at the 8th session, she was encouraged to "explore" with direct commands: FORWARD, BACK, RIGHT, LEFT, circles
+and arcs.  She was able to gain confidence when exploring by limiting herself to 
+very few commands and input numbers, which she repeated over and over.
+By intuitively choosing input numbers which make very nice designs (90s
+and 30s, for example), she was able to produce interesting effects.
+Gradually she learned to write procedures, to teach the computer to draw the designs she liked.
+
+By the end of the series of classes she had created some unusual designs which won praise from her classmates, had carried out (with some help) a major project requiring the use of planning and subprocedures, and had a strong confidence in her ability to use the computer.  She had invited both of her parents to visit the class, and they remarked
+to the LOGO teacher that this was the first time that Deborah had been excited about anything in school.
+Deborah's classroom teachers report that she has also become more assertive in class, has asked for extra help after school, etc.
+
+.block 5
+11.  Deborah's Working Style
+
+0The key to Deborah's success was her strategy of working with the computers.
+Deborah was able to slowly build her confidence and understanding by
+limiting her choices of LOGO commands and inputs, limiting the goals of
+her work, and by working in a way that minimized the chances of error.
+It was as if Deborah invented an unstated set of "rules" governing her
+work in LOGO which helped her to be successful.
+
+.indent 6
+--she used a severely limited number of commands:  FORWARD, RIGHT,
+LEFT, RARC, and LARC;
+
+--she limited the inputs she used with these commands to 
+multiples of 10, up to 100.  If a larger effect was needed, she would
+use additional steps, as in FD 90, FD 30.  In fact, Deborah began by using
+only inputs of 30, and gradually expanded to include other numbers,
+while continuing to use 30, 60 and 90 as her favorites.
+
+--her patience in a one-step-at-a-time mode of operation was quite
+remarkable.  Her format was quite stereotyped.  (1) carry out one
+turtle step (turn, move or penup); (2) check to see if that looks right
+on the screen; (3) if so, write down the step and continue; (4) if not,
+clear the screen, retype all the steps previously written down and try
+another choice for the questionable one.
+
+--she rejected all suggestions that she incorporate new ideas into her
+work until she had thoroughly mastered the ideas with which she was
+already familiar.
+
+.indent 0
+In short, she created a very limited "microworld" of computer
+activities in which she could function successfully.  She gradually
+expanded her microworld as she became confident of her mastery of the
+concepts that she had already used.
+
+On the other hand, the microworld which Deborah chose for herself,
+the world of FORWARD 30 RIGHT 30, is very nearly as rich as all of
+Turtle Geometry.  It includes Squares, triangles, circles, "stars", "men",
+"rabbits", and a variety of abstract designs, as well as the
+mathematical concepts of perpendicularity, inverse operations, the
+Total Turtle Trip theorem, symmetry, similarity, estimation of lengths
+and angles, planning and debugging, and procedure writing.
+By repeating rotations of RIGHT 30, it is possible to turn the TURTLE 60, 90, 120,
+180 or 360 degrees.  Thus, Deborah could make a square, make the TURTLE
+reverse direction, and make simple symmetrical designs by using only 30
+as an input to RIGHT and LEFT.  Similarly, designs based on
+lengths of 30 TURTLE steps, fit nicely into larger units of 90 or 120
+(30 + 90) turtle steps.
+
+.he2
+Dependency Phase
+By limiting her inputs to numbers such as 30, 60 and 90, Deborah
+actually enhanced the possibility that her explorations would
+produce interesting results.  We do
+not know why Deborah chose these numbers for her initial explorations,
+rather than numbers like 55, and 66, or 34, 45, and 56, that are often
+chosen
+initially by many other children.  Deborah never appeared
+to calculate consciously that "three thirties make ninety," or
+that "three sixties makes the TURTLE reverse direction".  Throughout
+her work she was unwilling to combine inputs, and never used an input
+greater than 100.
+
+Deborah's work during the LOGO classes fell into three major phases:  a
+period of severe dependence and insecurity; a period of exploration,
+creation of different designs and the gradual understanding of aspects
+of Turtle Geometry and LOGO programming; and a period of consolidating
+her learning by working on a major project which took her several class
+periods to complete.  These three phases will now be examined in some
+detail.
+
+.block 5
+12.  Dependence and Insecurity0
+
+For the first seven classes, Deborah worked on "teaching the computer"
+to draw
+her initials.  She had a strong need to have every detail of her work be
+"correct," and she seemed to be afraid of making mistakes.  As a
+result, she needed reassurance from the teacher for everything she did,
+and was unsure of even the simplest details -- such as typing a
+carriage return at the end of every line.  She was reluctant to write
+in her notebook, and easily lost track of what she had done successfully.
+
+.he2
+Exploratory Phase
+During this period she would wait patiently for the teacher's help,
+starting off silently into space for long periods of time, if he was
+busy elsewhere.  She had good insights about where
+to move the turtle to produce the initials she was drawing and she had
+difficulty understanding how to translate those insights into LOGO
+commands.  Although the project of drawing initials is an excellent
+introductory LOGO project for many children, it seemed too complex for
+Deborah.  It clearly had a "correct" result, which Deborah needed to
+achieve.  She would not allow herself to experiment or to try out
+something that might not prove to be "right".
+
+During this period, however, she did develop some knowledge that she
+could use later on.  While making the turtle draw the "M" for her last
+initial, she discovered that she could orient the turtle correctly at
+each vertex by repeating turns of RIGHT or LEFT 30.  She was exposed to
+the idea of a procedure, although she was not yet able to write one
+independently.  She began to develop some facility with the keyboard.
+When her initials were finally complete, Deborah had a feeling of pride
+and "ownership," despite the large amount of assistance she had
+required to carry out the project. (See Figure 4.1)
+
+.block 12
+.sp 10
+.ce
+Figure 4.1
+
+.block 5
+13. Exploration, and the Gradual Buildup of Skills and Confidence0
+
+Realizing that the initials project had brought out the most compulsive
+and insecure aspects of Deborah's personality, the teacher suggested a
+different approach, as soon as the project was finished.  He "assigned"
+Deborah the task of "experimenting" with FORWARD, BACK, RIGHT and LEFT
+commands and the procedures RARC, LARC, RCIRCLE and LCIRCLE.  Although
+Deborah
+was told to use a variety of inputs with these commands,  during her
+first period of exploration, she only used two inputs: 30 and 90.
+She used 90 as an input for the RARC procedure, and used 30's for all
+other TURTLE commands.
+
+Once Deborah got into "experimenting" mode, the compulsive need for success was 
+eliminated, and she began to feel successful "without really trying".  Deborah brought her copying skills into play, and developed a good way of writing procedures.  Once she had a design she liked, she would look at the terminal, to find the last
+CLEARSCREEN command on the screen.  Then she would copy into her notebook, all the 
+steps following the CLEARSCREEN.  If she had mistakenly used a LEFT 30, followed by a 
+RIGHT 30 to correct it, she copied both, choosing to exercise no judgement as she copied.  
+She was shown how to put a title at the top of the list of steps in her
+notebook, number each line, put the command END at the bottom, 
+and type the entire procedure on the terminal. 
+
+Sometimes Deborah made mistakes in copying.  When she did, she had two ways of 
+correcting them:  first she checked that the steps on the screen were copied correctly in her book;
+second, she checked that the steps in her book were copied correctly in a procedure.  
+Her most common error was leaving out line numbers when typing her procedure.
+She could correct this herself, however, by retyping as much of the procedure as necessary.  (She
+continued to increment line numbers by ones, until near the end of the classes.)  When Deborah made a mistake, she would say "I goofed," in a wistful voice, and ask for help or reassurance.
+As she gradually came to realize that she had ways of fixing "goofs" by herself, she
+began to need help less and less.
+
+Deborah also used the word "goof" in another context.  When she was exploring freely, she would say "I'm just goofing around."
+There must have been an unstated connection in her mind between the two uses of "goof".
+
+The approach used in teaching Deborah during this phase of her work was to show her 
+no more than necessary to help her accomplish her purposes.
+She was shown EDIT (ED) and PRINTOUT (PO) to help 
+with editing, and very little else for a long time.
+She needed to feel in control, and since she was carefully limiting the choices 
+available to her,
+the teacher did the same.  
+When an opportunity occured to show her something new, the teacher made
+limited suggestions, which she
+was encouraged to accept or reject.
+Deborah repeated successful activities over and over again until she was really secure with them, and ready to extend her "microworld".  
+She had control of whether to accept or reject suggestions, and
+gradually became able to accept them when she felt they were appropriate.
+
+During this exploratory phase which lasted for seven or eight class
+sessions, Deborah created a number of interesting designs.  SPYRO (see
+figure 4.2) was her first independently initiated procedure.  It grew
+out of exploratory work with the RARC subprocedure -- repeating RARC
+and increasing the input by 10.
+
+.block 25
+.NOFILL
+TO SPYRO
+1 RARC 20
+2 RARC 20
+3 RARC 30
+4 RARC 30
+5 RARC 40
+6 RARC 40
+7 RARC 50
+8 RARC 50
+9 RARC 60
+10 RARC 60
+11 RARC 70
+12 RARC 70
+13 RARC 80
+14 RARC 80
+15 RARC 90
+16 RARC 90
+17 RARC 100
+18 RARC 100
+19 RARC 100
+20 RARC 10
+END
+
+.ce
+Figure 4.2
+
+.ADJUST
+Another design became the procedure, EYES, made using RARC and LARC
+commands.  (See figure 4.3).
+
+.block 22
+.nofill
+TO EYES
+1 RARC 90
+2 RARC 90
+3 RARC 90
+4 RARC 90
+5 LARC 90
+6 LARC 90
+7 LARC 90
+8 LARC 90
+9 RARC 40
+10 RARC 40
+11 RARC 40
+12 RARC 40
+14 LARC 40
+15 LARC 40
+16 LARC 40
+17 LARC 40
+END
+
+.ce
+Figure 4.3
+
+.adjust
+Deborah's first use of a subprocedure as a "building block" came after
+she had made a CIRCLE procedure using four RARC 90s.  Deborah made a FLOWER
+procedure by repeating a circle and a rotation.  Deborah chose
+RIGHT 60 for the rotation, which led to a figure which closed after six
+repeats and made a symmetrical design (figure 4.4).
+
+.nofill
+.block 26
+TO FLOWER
+1 CIRCLE
+2 RIGHT 60
+3 CIRCLE
+4 RIGHT 60
+5 CIRCLE
+6 RIGHT 60
+7 CIRCLE
+8 RIGHT 60
+9 CIRCLE
+10 RIGHT 60
+11 CIRCLE
+END
+
+TO CIRCLE
+1 RARC 90
+2 RARC 90
+3 RARC 90
+4 RARC 90
+END
+
+
+.ce
+Figure 4.4
+
+.adjust
+.he2
+Drawing a Star
+Deborah's most spectacular design was developed after the whole class 
+watched a film which showed a number of computer designs.  Among the designs 
+shown was a six pointed star.
+When Deborah came right back to class from the film, she drew a six pointed star with the computer, without making a single mistake.  She began by turning the TURTLE 
+RIGHT 30, and proceeded to draw the star by using a combination of FORWARD 70s, and 
+RIGHT 60s.  Her choice of RIGHT 30 for the first step, and RIGHT 60 for the turns
+was critical in allowing her to carry out the project easily.  Her strategy was to 
+move the TURTLE forward 70 turtle steps, and then repeat RIGHT 60 until the 
+TURTLE was aimed in the 
+right direction.  The total rotations needed are RIGHT 120 at the
+points of the star, and RIGHT 300 (equivalent to LEFT 60) at the inner 
+vertices.  
+Deborah did not
+seem to realize that she was always repeating RIGHT 60 two times and five times.  At each point, she just kept turning the 
+TURTLE until it was pointed in the right direction.  At one point, Deborah missed the correct direction, and continued repeating RIGHT 60 for a total of 11 times until the correct orientation was
+achieved (Figure 4.5).
+
+.block 20
+.sp 18
+.ce
+Figure 4.5
+
+The teacher suggested an "easier" way for Deborah to teach the computer how to make the star.
+He suggested that Deborah teach the computer how to make one point, and then repeat that to make the star.  Deborah accepted the suggestion, and taught the computer:  
+
+.nofill
+.indent 6
+.block 7
+TO TRYANGLE
+1 RIGHT 30
+2 FORWARD 70
+3 RIGHT 60
+4 RIGHT 60
+5 FORWARD 70
+END
+
+.indent 0
+.adjust
+Since TRYANGLE included the step, RIGHT 30, it did not work when it was 
+used as a subprocedure.  Deborah noticed this when she tried to use it.
+The teacher helped her remove the extra step, and reminded her to use RIGHT
+30 as the first step in her STAR procedure.
+
+After Deborah had drawn the first TRYANGLE correctly, she was asked what command she had to give the TURTLE next.  She looked at the situation carefully and after some time, said, 
+"LEFT 60!"   She then tried it and found that it worked.  After 
+that, she was able to build the star by
+repeating TRYANGLE, LEFT 60 until 6 points were constructed.  Here is
+her procedure, STAR, and the revised subprocedure, TRYANGLE:
+
+.nofill
+.BLOCK 14
+TO STAR		TO TRYANGLE
+1 RIGHT 30	2 FORWARD 70
+2 TRYANGLE	3 RIGHT 60
+3 LEFT 60	4 RIGHT 60
+4 TRYANGLE	5 FORWARD 70
+5 LEFT 60	END
+6 TRYANGLE
+7 LEFT 60
+8 TRYANGLE
+9 LEFT 60
+10 TRYANGLE
+11 LEFT 60
+12 TRYANGLE
+END
+.adjust
+
+During this exploratory phase Deborah gained a great deal of the
+knowledge and confidence that seemed so difficult for her to obtain
+while trying to make the computer draw her initials.  She learned to
+control the TURTLE, to write procedures and to use procedures as
+subprocedures in a "building-block" fashion.  At the same time she
+learned to interpret error messages, correct her work, and to debug
+her procedures.  Most important, she developed the confidence with the
+keyboard and the computer, that would enable her to carry out a major project.
+
+.he2
+Drawing a Rabbit
+.block 5
+14. Deborah's Major Project -- Drawing a Rabbit Head0
+
+In the sixteenth class session, Deborah indicated that she was
+ready to tackle a major project.  She made a drawing of a rabbit (see
+figure 4.6a), and immediately said "It's too hard."  A modification
+was suggested by the teacher using a square head, and triangular ears,
+that might be easier for her to carry out.  (See figure 4.6b).
+.block 20
+.sp 18
+.ce
+Figure 4.6a		Figure 4.6b
+
+
+.nofill
+.block 16
+.sp 14
+.ce
+RABBIT
+.ce
+Figure 4.7
+
+
+.adjust
+Deborah began drawing on the rabbit using direct
+commands.  She built a square using turtle steps of 70 and 60 to make a side of length
+130, and repeated FORWARD 70, FORWARD 60, for each side of the square.  She then moved
+up the side of the square to make the eyes.  When she got confused, she
+cleared the screen and tried again.  When she hit a snag again, she
+cleared the screen again, and temporarily went on to another project -- rotating
+her FLOWER design and repeating it.
+
+When Deborah came back to the rabbit project a few days later, she chose FORWARD 90, 
+FORWARD 30, as the commands to make each
+side of her square.  After several more attempts to make the computer 
+draw the eyes and the nose,
+the teacher suggested breaking the problem into parts, and teaching each part to the computer separately.  Deborah agreed to
+this and
+decided to teach the computer to draw the outside of the rabbit first.  She could not think of a name for this, and finally decided to call it
+"HAT" (See figure 4.7a)
+
+In the next session, Deborah added the eyes to the head, calling her procedure 
+LITTLEEYES.  When she began to teach LITTLEEYES to the computer, she 
+intended to include, all the steps following CLEARSCREEN, as usual.  
+The teacher explained that HAT and LITTLEEYES were both part of RABBIT, but that HAT should not be part of LITTLEEYES.
+
+Her strategy of using 30 as an input helped her locate the eyes
+sucessfully in the head.
+The sides of the head were now 120 units long, and since she moved the TURTLE across the head in steps of 
+30 units, she was able to center the eyes with no difficulty.  (See figure, 4.7b)
+
+When Deborah began to work on the nose, she got really stuck.  She had two
+different problems to resolve:  How to make the nose, and where to put it.
+The teacher showed her how to separate the two problems, and make the nose all by itself -- forgetting about the rest of the rabbit for the time being.  Then, once a good nose had been made, she could work on placing the nose in the right position.
+
+.he2
+What Deborah Learned
+Deborah planned to make the nose as shown in figure 4.6.   The teacher
+showed her how
+to start with RARC, turn the TURTLE all the way around, come back to the beginning using LARC, and then reverse the
+whole process to make the other side.  Deborah understood the idea, but needed help working it out.  
+Whenever Deborah needed to turn the TURTLE around she used RIGHT 90, 
+RIGHT 90. (See figure, 4.7c)
+
+Later, when she began to make the rabbit's ear, she again demonstrated her accuracy 
+in choice of inputs.  She had moved the TURTLE to the top of the rabbit's head.  
+Deborah needed three tries to make the first ear.  The key decision was how far 
+to turn at the top.  Since she had turned the TURTLE
+RIGHT 20 at the base of the ear, a turn of RIGHT 140 was needed to make an 
+isoceles triangle.  
+In Deborah's first try, she turned RIGHT 90 four times, then RIGHT 90, RIGHT 30, 
+RIGHT 30, for a total of 150 degrees.  
+The far end of the ear did not line up easily with the top of the head.  Her second try was
+RIGHT 900 (mistake), followed by two RIGHT 90s, to straighten the TURTLE 
+out again, followed by RIGHT 70, RIGHT 20, RIGHT 20, RIGHT 20, RIGHT 20, for a 
+net rotation of 150 degrees again.  Once again, she had trouble lining up the far end.  On 
+the third try, she turned RIGHT 90, 
+RIGHT 30, RIGHT 20, for a total rotation of 140 degrees.
+This made it easy to line up the far end of the ear, which happened to come out almost exactly at the far end of the head.  At this point, Deborah wrote out all the steps, and said "I can do the same thing on the other side.  Should I give
+this a name?" (See figure 4.7d).  She then defined the procedure TO EARS.
+
+At the next session, Deborah was helped to separate the steps that made the ear, from the steps that set it in position.
+By doing so, she could use the same subprocedure, EARS, to make ears on both sides.  
+Her completed RABBIT is shown in figure 4.7.
+
+At one point, while working on the ears, Deborah rejected help from the teacher, asserting
+her independence by proclaiming loudly, "I know what I'm doing!"  
+
+.epage 1
+During the RABBIT project
+Deborah mastered some aspects of LOGO and used other concepts that she
+had not yet mastered.  Some of Deborah's learnings were:
+
+.indent 6
+--first and foremost -- the idea of using subprocedures to break a large 
+project into a group of small projects.
+
+--that a subprocedure can have two parts, drawing the object (nose, ear) and locating it, and that the same subprocedure (EARS) can be used in more than one place.
+
+--that with patience, even complicated problems can be worked out by step by
+step using a trial and error approach (location of nose, location and shape of ears)_
+
+--that 90, 30 and 20 are really good numbers to use in combinations (In her entire RABBIT procedure Deborah used a total of 75 procedural steps.
+Forty-nine out of fifty-eight TURTLE commands used inputs of 90, 30 or
+20.)
+
+--for the first time, she developed complete confidence in her ability to understand what she was doing ("I know what I'm doing!")
+while recovering from the frequent errors she made.  Perhaps this was really the most important learning for Deborah -- not just to be in control of a learning environment, but to know she was in control, to feel a sense of
+mastery.  To be able to learn from and not be daunted by her own mistakes.
+
+.he2
+Rabbit Procedures
+.indent 0
+With the completion of her rabbit project, Deborah had almost totally
+reversed her initial feelings of dependence and incompetence.  She
+invited her parents, teachers and school principal to visit the
+computer lab, and in many ways, demonstrated to her visitors and
+classmates her new found sense of confidence, satisfaction and power.
+
+
+Here is an annotated copy of the procedures that Deborah
+developed to solve the problem of drawing a "rabbit" with the computer.
+
+.nofill
+.block 21
+TO RABBIT	RABBIT is Deborah's superprocedure
+5 HAT		HAT draws the outside of the head
+10 LITTLEEYES	LITTLEEYES draws the eyes
+15 FACE		FACE moves from the eyes to the 
+20 PENUP	center of the head and draws the
+25 FORWARD 70	nose
+30 FORWARD 3	move to the top of the head to draw
+		an ear
+35 RIGHT 20	orients the TURTLE to draw an ear
+40 PENDOWN
+45 EARS		draws one ear
+50 RIGHT 90
+55 FORWARD 50			(See Figure 4.7)
+60 FORWARD 3
+65 FORWARD 60	moves over to draw the second ear
+70 FORWARD 5
+75 FOWARD 3
+80 RIGHT 90
+85 RIGHT 20	orients the turtle to draw the second ear
+90 EARS		draws the second ear
+END
+
+.block 13
+TO HAT		(draws a box to make the outside of the
+1 FORWARD 90	rabbit's head)
+2 FORWARD 30
+3 RIGHT 90			(See Figure 4.7a)
+4 FORWARD 90	HAT draws a box of size 120 by
+5 FORWARD 30	repeating FORWARD 90 FORWARD 30
+6 RIGHT 90	to make each side of the box
+7 FORWARD 90
+8 FORWARD 30
+9 RIGHT 90
+10 FORWARD 90
+11 FORWARD 30
+END
+
+.block 21
+TO LITTLEEYES	(draws eyes of rabbit)
+1 RIGHT 90
+2 FORWARD 70
+3 FORWARD 12	moves up the side of the head
+4 RIGHT 90			(See Figure 4.7b)
+5 PENUP
+6 FORWARD 30	locates the first eye
+7 PENDOWN
+8 RARC 20
+9 RARC 20	draws the first eye
+10 RARC 20
+11 RARC 20
+12 PENUP
+13 FORWARD 30	moves across the head to
+14 FORWARD 30	locate the second eye
+15 PENDOWN
+16 RARC 20
+17 RARC 20	draws the second eye
+18 RARC 20
+19 RARC 20
+END
+
+.block 12
+TO FACE		(locates and draws nose)
+1 RARC 20
+2 RARC 20	moves to bottom of eye
+3 PENUP				(See Figure 4.7c)
+4 FORWARD 20
+5 FORWARD 10	moves to center of head
+6 RIGHT 90
+7 RIGHT 90	orients TURTLE straight down
+8 RIGHT 90
+9 PENDOWN
+10 NOSE		draws nose
+END
+
+.block 12
+TO NOSE		(draws nose of rabbit)
+1 RARC 20	draws an arc
+2 RIGHT 90
+3 RIGHT 90	reverses the TURTLE
+4 LARC 20	traces back over previous arc
+5 RIGHT 90
+6 RIGHT 90	reverses the TURTLE
+7 LARC 20	draws second arc
+8 RIGHT 90
+9 RIGHT 90	reverses the TURTLE
+10 RARC 20	retraces arc, to return
+END		the TURTLE to center
+
+.block 9
+TO EARS		(draws one ear)
+1 FORWARD 90	draws the left hand side of ear
+2 RIGHT 90
+3 RIGHT 30	turns TURTLE total of 140 degrees
+4 RIGHT 20			(See Figure 4.7c)
+5 FORWARD 70
+6 FORWARD 20	draws second side of ear
+7 RIGHT 20	orients TURTLE straight down
+END
+
+
+

@@ -1,0 +1,489 @@
+
+
+An Assessment of Mesa from the Juniper Experience
+
+CSL Notebook Entry
+
+To	CSL	Date	August 30, 1979
+
+From	Jim Mitchell	Location	PARC/CSL, Palo Alto
+
+Subject	An Assessment of Mesa from the Juniper Experience
+
+File	[Ivy]<Mitchell>mesa-juniper.bravo
+
+XEROX
+
+Attributes:	technical, Juniper, Mesa, Cedar, Distributed computing, Dorado,
+Programming research
+
+References:	79CSL-XXX
+
+Abstract:	This note summarizes some of the experience gained in using Mesa
+for developing the Juniper distributed file system.  As well as discussing the
+positive aspects of using Mesa and its current programming environment, it
+points out a number of areas that were time wasters or sources of frustration.
+It also proposes remedies which could have increased programmer productivity and
+which may be worth considering for the Cedar programming environment.
+
+
+
+1.	Introduction
+
+Three years of designing, implementing, debugging, measuring, and improving
+Juniper in Mesa ought to contain some lessons about the suitability of the Mesa
+programming environment for producing multiple-person programs.  Since one of
+Cedar's main goals is to improve the current Mesa environment, the experience of
+developing Juniper may be able to shed some light on "where the shoe pinches."
+That's what I hope to do in this memo.
+
+Of course, the "results" that I will report need to be read with certain caveats
+in mind: this is my own personal view of the Juniper development and of the
+strengths and weaknesses of Mesa  it does not represent a consensus of the
+Juniper implementers; much of the developmental information is anecdotal
+(obtained largely from history logs that we kept with each module to record the
+changes to it and the reasons for them); and, finally, the history logs
+emphasize bugs and their fixes rather than good language features that avoided
+problems.  Despite these issues, however, this data base is probably better than
+many of the rationales that have been used to justify the development of new,
+"better" programming languages.
+
+Juniper spans a large part of the public use and development of Mesa.  When we
+started, there was no Binder, no process machinery, no real notion of interface,
+no LONG CARDINALs, LONG INTEGERs, etc., no performance monitoring facilities, no
+interpretive debugger interface, no XMesa, no INLINE procedures, and no
+defaultable parameters.  This span means that we have experienced working both
+with and without some features (the binder is a notable example), and may,
+therefore, be able to weigh the relative merits of having versus not having
+them.
+
+2.	Mesa features that paid off
+
+2.1.	Type checking
+
+Type checking, even Mesa's sometimes Procustean variety, has definitely
+increased my ability to produce reliable (if I may be so bold!) programs
+quickly.  The history logs are replete with entries of the form: "the compiler
+caught a bug that would have gone unnoticed in Bcpl until it occurred at run
+time."  The extra characters devoted to defining and using types are easily
+amortized by reductions in number of errors and by ongoing source-level
+"documentation" of semantic intents.
+
+2.2.	Interface type checking
+
+The extension of intra-module type checking to the inter-module case has proved
+to be at least as important in controlling the propagation of changes in a
+system of modules.  Time and again we have modified a widely used interface in
+Juniper, pushed all the modules through the compiler, and generated a new system
+that tends very strongly to work with the reliability of its predecessor (modulo
+the implementation behind the new interface, of course).  This has had a
+profound, salutary affect on our ability to modify interfaces as necessary, even
+ones that have been unaltered since early in the Juniper project.
+
+2.3.	The Mesa binder
+
+The Mesa binder is the mechanism by which separately compiled modules are linked
+together and also the means for hiding interfaces from parts of the system that
+need not or ought not to know about them.  This is important because it
+localizes the search for culprits when a bug makes its presence known.  Just as
+importantly, the binder is fast (about one second or less per module in a
+configuration) and was a major improvement over its more dynamic and incredibly
+slower predecessor; in fact, without the binder we would certainly not have been
+able to complete Juniper.  Moral: performance is most important when you don't
+have it.
+
+2.4.	Signals
+
+Mesa signals have not generally been employed in sophisticated ways in Juniper.
+Almost all uses are simply for annotating particular, programmatically
+unrecoverable errors (including those "extra" cases that can't possibly happen
+but eventually do) and getting to the debugger. They are also used
+straightforwardly in backing out of situations that cannot proceed  this is how
+a command is aborted, for instance.  In a few cases, we have used them for
+control (a Juniper Chat interface implemented by Fred Tou this summer is an
+example).  We have also recently begun to take advantage of the fact that one
+can tell the procedure that generated a signal that it should resume (and retry)
+an operation that resulted in a signal's being generated.  This was done with
+signals denoting the exhaustion of memory after recovering space by various
+means (e.g., by uncaching disk pages) in order to be able to complete an
+operation.  Used in these standardized ways, signals have proved convenient and
+have caused few difficulties.	
+
+Signals have also been misused.  When the Humus allocator needed to compact
+storage, it would generate two signals, CompationBeginning and CompactionEnding
+to allow any programs that cared to fix up sensitive data structures (we have
+only one such program).  Unfortunately, this meant that one had to be prepared
+to catch the signal in lots of places, especially in a multi-process
+environment. and the cost of a compaction was dominated by the cost of
+propagating the two aforementioned signals.  We changed this so that one could
+"register" procedures to be called directly at the beginning and end of
+compaction, a scheme with much to recommend it. (In fact, this method of
+registering procedures with some facility to be called when some exceptional
+condition arises has proved to be advantageous in a number of cases in Juniper.)
+
+2.5.	The Mesa debugger, etc.
+
+Despite the fact that the Mesa debugger has definitely suffered from lingering
+design neglect (and shows it), the ability to debug almost totally with respect
+to the source language (even when the program is playing with very low-level
+parts of the Alto such as microcode and disks) is a big win.  I'm sure that this
+is no surprise to anyone in this environment, but it seemed appropriate to
+record the fact for completeness.  Nevertheless, the current debugger should
+definitely be thrown out and replaced by facilities that are more robust, better
+human engineered, and more amenable to extension.  I have more to say about this
+in section 3.	
+
+3.	Where Mesa pinched
+
+Building Juniper in Mesa hurt in a number of ways.  Because of the programming
+environment, some operations were great and ongoing wasters of human time, some
+were error-prone with consequent debugging and/or frustration, and some required
+us to devote large efforts to subsidiary issues (cf. especially section 3.1).  I
+have ordered the following list of shortfalls and pitfalls roughly in order of
+decreasing importance.  I wish that I could give an accurate measure of every
+item's cost to me in time or frustration, but I don't know how.  Instead, I have
+weighted each with a number in the range [1..10] to indicate its relative
+"weight" and have discussed in what ways and to what extent each issue caused
+problems for us.
+
+3.1.	Space, SPACE, SPACE (weight=10)
+
+Overwhelmingly, Juniper ran into problems, delays, distractions, and frustration
+because of the constraints imposed by limited space.  The size of the Alto file
+system, the size of real memory on an Alto, and the size of virtual memory have
+all played a part.
+
+3.1.1.	FILE SPACE
+
+The Juniper sources plus the Mesa system (compiler, run time, and debugger)
+outgrew a single Diablo Model 31 disk very early in the project and caused the
+programming team to thrash.  We each lived with only a subset of the whole
+system on our working disks and "swapped" files back and forth between them and
+Ivy, first by hand and then by program.  Either way it was time-consuming and
+error-prone.  Butler suggested changing to double Model 31 disks and the problem
+diminished greatly in frequency for most of us.  However, the person designated
+as the Juniper Librarian still has the problem (currently all the sources and
+object files for the main system will fit on two disks, but only one of Bravo,
+the Mesa compiler, or the binder can fit as well  an almost intolerable
+situation when one has to do ten minutes of FTPing to swap Bravo and the
+compiler to edit a single line that has caused a compiler error).
+
+The real solution to this problem, I believe, is to have Mesa support a
+distributed file system that encompasses both the local file system and file
+systems on servers such as Juniper so that the disk space crunch is alleviated,
+and, more importantly, so that the shunting of files back and forth can be
+eliminated.  I strongly recommend that Cedar provide an extended file system as
+one of its highest priority tasks (the basic functionality is needed for data
+base work anyway, and it would prove a boon for almost all applications written
+in Cedar).  I want to stop being an expert in using FTP; I want to stop spending
+so much time watching that little cursor flip back and forth in front of me; I
+want to stop having to manage in fine detail the data base that is my source
+programs.
+
+3.1.1.	Real Memory Space
+
+When the first, demonstrated Juniper system was put together in November, 1978,
+it behaved like a good Model 31 disk exerciser by thrashing continuously  there
+simply was not enough memory on a 64K Alto for all the programs and data needed
+(ask Ed Taft and David Boggs how like a finely tuned Swiss watch the IFS has had
+to be made so that it can live in one).  We tried everything: Since memory on
+one Alto was too small, we used multiple Altos; the directory code lived in the
+client machine, the FTP code was on a second, intermediary Alto, and the server
+was on a third machine. We used the binder's code packing facilities. We split
+modules into hot, warm, and cold code to reduce the working set size.
+
+Again Butler proposed a solution, and Roy Levin, Chuck Geschke, and I produced
+XMesa so that an extended-memory Alto could be used to hold and execute code in
+the extra three banks of memory.  That solved the problem: without XMesa, it
+would not have been possible to complete Juniper.  Luckily, the D machines have
+enough memory to overwhelm this problem (for Juniper, at least) for a long time
+to come, so Cedar seems in good shape on this issue.
+
+3.1.1.	Virtual Memory Space
+
+Now that Juniper is a reality, it has become clear that the size of virtual
+memory is also an important issue (as anyone could have predicted).  It is not
+enough to move all the code out of the first 64K of an XM Alto, we must have
+access to lots of memory for data too.  I include this item for completeness,
+since it also appears that Cedar has plans for dealing with it.
+
+3.2.	The compile-edit-debug cycle (weight=9)
+
+To create and run even the simplest Mesa program, one "executes" the following
+paradigm:
+
+DO				-- modify-debug loop
+
+make (or edit if not a new program) a source file using some text editor (we
+used Bravo exclusively);
+
+DO			-- compile-edit loop
+
+compile the program;
+
+IF no errors THEN EXIT this loop -- (see below for an analysis of how many
+iterations of this loop are normal)
+
+(assuming that the compiler finds errors - a very safe assumption), enter bravo
+using the M.INIT macro to get the program and its associated error log into
+separate Bravo windows;
+
+edit the program to fix the errors and go back to compile it again
+
+ENDLOOP;		-- end of compile-edit loop
+
+type "ProgramName <CR>" to the Alto executive to run the program.
+
+In the unlikely event that it works correctly, we are done and can exit this
+paradigm.
+
+If the program runs into an error, we will probably find ourselves in the
+debugger with some signal having been generated by the program itself or by the
+Mesa system (e.g., as the result of attempting to call a non-existent (or
+non-loaded) procedure).
+
+Use the debugger's facilities (often augmented by programmer-supplied routines
+for printing interesting structures) to locate the error.
+
+When the error has been located, go back to beginning of the paradigm to change
+the source program and try again.
+
+ENDLOOP;			-- end of modify-debug loop
+
+With a new or substantially altered program, the compile-edit loop takes an
+average of five iterations, each one of which costs about nine minutes (7
+minutes editing, 1 minute compiling, 2 minutes in the overhead of leaving and
+entering Bravo and the Mesa compiler, looking up file names in the Alto
+directory, etc.).  The five compilations are required because one tends to get a
+large number of errors the first time that a module is compiled (e.g., 140
+indicated errors on a 4 page program is a characteristic number), which number
+is usually reduced by a factor of two to three on each subsequent compilation
+until they are all eliminated.
+
+Clearly, the compile-edit loop overhead is a MAJOR time waster.  In fact, I
+estimate that the overhead of switching between Bravo and the compiler alone
+(not counting the actual time spent editing and compiling) has cost me 50 work
+hours over the span of the Juniper effort.  I calculated this by counting all
+the history log entries that I made in Juniper (there were about 300).  If each
+of those entries corresponded to an average of five compilations at two wasted
+minutes each, that totals 50 hours.  This figure is probably quite conservative
+because I know that I didn't make entries in the log for all changes (especially
+not for trivial errors found while debugging some new feature).
+
+Integrating an editor and the compiler into Cedar should help this situation
+considerably.  However, more can be done to save time and reduce programmer
+frustration by altering the compile-edit loop as follows:
+
+When the compiler detects an error, it should give the programmer control with
+the suspect region of the program displayed in an editing window. The programmer
+can then edit the program and restart the compiler until the next error is
+encountered.  In this way, one would have the feeling of making forward progress
+at each error and would finish after one "extended" compilation.  Both the real
+time consumed and the frustration level would be lowered by such an altered
+paradigm.  I am not proposing that the compiler be made sophisticated enough to
+continue from the error point after a user's edit; it would suffice if it simply
+started over (which might be required if he inserted a declaration in the
+program anyway).
+
+I find it harder to estimate the time taken in switching between the debugger,
+the running program, and the compile-edit cycle, but there are certainly major
+overheads there also (as anyone who has waited while entering and leaving the
+debugger or any Mesa program can attest).  Also, I have ignored the binder in
+this discussion because it is generally used much less frequently (by a factor
+of five or so), and Mesa configurations, the source programs for the binder, are
+generally very short and simple and require little ongoing alteration.
+
+Finally, Bravo has been responsible for some wasted time.  Firstly, it is a
+general-purpose editor and not a program editor: I can think of numerous ways in
+which a specialized editor, especially in concert with a good pretty printing
+facility would help me greatly (this is not a criticism of Bravo, as it was
+never intended as a special-purpose editor).  Secondly, it crashes and has
+constraining file-size limits  these are really time wasters and frustration
+manufacturers.  Lastly, it is v-e-r-y slow: I could edit at least twice as fast
+if Bravo would go faster and if it supported the chord keyset as an input
+device.  Let's make sure its Cedar replacement doesn't suffer from the same
+ills.
+
+3.3.	Modifying collections of modules (weight=8)
+
+In building even a moderately sized system, one often has to change a set of
+modules instead of a single one as described in the previous section.  Thus one
+may be "simultaneously" altering several DEFINITIONS and PROGRAM modules, after
+which the compilation errors need to be removed from each of them.  In addition,
+one may have to recompile other modules that include some of those altered in
+order to have a consistently compiled set and then rebind still further sets of
+modules to arrive at a consistently bound system that can be loaded and run.
+This is a lot of bookkeeping.
+
+Fortunately, much of the bookkeeping necessary to maintain a system of modules
+can be helped by the structuring of the modules that Mesa imposes anyway.
+Unfortunately, no automatic system for doing this has been developed (except for
+the now defunct DeSoto system).  I cannot easily estimate the overhead this
+caused me in the context of Juniper; I can only report that I spent a lot of
+attention to it and made command files for the Alto executive to invoke the
+compiler (usually compiling much more than actually necessary) to alleviate the
+problem as much as I could.  Cedar desperately needs such a facility and as
+early as possible.
+
+When this situation is extended to a multiple-person project in which one
+person's changes to some modules can affect the consistency of the system as
+seen by other programmers, the problem becomes enormous.  The next section
+discusses this issue.
+
+3.4.	Managing multiple-person programming projects (weight=7)
+
+Multiple-person projects exist for two primary reasons:
+
+(1)	The project would take too long if only one person worked on it, so we
+use a group of people and as much parallel development as possible to shorten
+the development time of the project.
+
+(2)	Given our human capacities for self-deception and blind spots, having a
+number of people contribute to a project increases the quality of the final
+result because they can spot each others' blind spots and can act as foils for
+each others' ideas to ferret out their weaknesses.
+
+Now, as computer scientists we all know that the price for lots of parallelism
+is lots of synchronization.  This synchronization for the Juniper development
+has gradually taken the form of a relatively formal procedure for checking out
+modules and for checking them all back in to produce a new (consistent) version
+of the system.  The only real technology that has been employed to manage this
+checking out and in is a listing of the component modules with pins to indicate
+which are checked out and by whom.
+
+Much of the burden for managing this synchronization falls on the Juniper
+librarian, one of our members, who must spend approximately 2.5 days to make a
+new version of the system (much of which involves FTPing files hither and yon 
+the actual compilation and binding can be orchestrated by large command files
+and can run unattended, assuming no compilation errors  which is sometimes the
+way it actually works).
+
+The Cedar proposals for "system modelling" aim to solve this problem, but they
+are not a high-priority item.  I would like to see the easy and highly
+profitable parts of that proposal implemented rather early to relieve us of this
+burden.  Notice that an underlying, distributed file system could provide
+substantial support for a set of program library management facilities.
+
+Closely associated with the librarian tasks for a project is coordinating the
+development itself.  Which facilities should be implemented and in what order?
+What outstanding tasks remain to be done for a given release?  If we delay the
+implementation of some part, what other parts will be delayed and by how much?
+To answer these questions requires some database support and applications
+programs.  I hope Cedar can help.
+
+3.5.	Memory management (weight=7)
+
+In a service system such as Juniper, storage use is an important concern.  If it
+is used sparingly, more clients can use the service simultaneously, and more
+values can be cached in main memory to increase performance.  Unfortunately, the
+current Mesa system requires the programmer to explicitly allocate and
+deallocate all storage whose length is not fixed at compile-time or whose
+lifetime is longer than the procedure activation which creates it.  Thus,
+allocation and deallocation are an ever-present concern for the Juniper
+implementors.
+
+Since allocated storage is usually shared over its lifetime among several parts
+of the system, we had to adopt a reference-counting regime for controlling it.
+As Peter Deutsch has noted, "[programmer maintained] reference counts are always
+off by one."  Oh, the pain that these off-by-one bugs have caused!
+
+If an object's reference count is too large, then it will never go away and is
+said to have "leaked" from the pool of useful storage.  Storage leaks have been
+a persistent source of bugs.  If an object's reference count is too small, it
+will go away too soon, and a program that accesses that storage later is
+probably going to clobber some other, perfectly valid object.  In my experience
+these were the most persistent, most exasperating bugs to find (although once
+the bug was found, the fix was usually trivial).  Moreover, they are real
+show-stoppers - they blow coherent systems into a rubble of bits, and turn
+programmers into pseudo-archeologists searching the ruins for clues to the cause
+of the disaster.  I was responsible for only three or four such bugs, but they
+have provided me with nightmare material for years to come.
+
+Lispers, I have seen the error of my ways.  Please, oh, please, let's make the
+Cedar garbage collector work!  But, remember, it is very important that it not
+contribute too much overhead to my programs.
+
+3.6.	Programs as dynamic data bases (weight=4)
+
+Much of the late part of the Juniper system development was devoted to
+performance tuning: we wanted it to run faster, and we wanted it to use less
+memory.  Unfortunately, the tools available to watch a program as it executes
+are very primitive in the current Mesa environment and require great patience to
+use.  Also, the tools make almost no use of the Alto's display capabilities,
+which could be a great aid for dynamically monitoring programs, for moving
+around among the various contexts of a running program, or for displaying values
+of interest to the programmer as the program executes.
+
+We learned that using separately developed packages (such as the Mesa Pup and
+FTP packages) can lead to real performance bugs, especially if the programs are
+written to be robust in the face of occasional problems.  In the golden future
+perhaps such subsystems will be so well specified that one will not be able to
+use an interface in such a way as to cause a performance problem, but I am not
+holding my breath; in the meantime, just being able to watch the programs
+operate together would be a tremendous help.  Since part of the rationale for
+Cedar is that it will increase our ability to build systems by combining
+separately developed programs, it needs to address this problem.
+
+Even when the program is temporarily static (e.g., when it comes to a
+breakpoint), there are not very good facilities for looking at it (although the
+addition of an interpreter for simple Mesa statements has helped immensely), for
+moving around in the sea of contexts and processes, or for looking at program
+data in flexible ways or formatted to help the programmer comprehend them.
+
+Lastly, there are no facilities in the current Mesa debugger for controlling a
+program: One cannot even tell the debugger to do a GOTO within the context of
+the currently active procedure; nor can one give advice to a procedure on entry
+or exit, which would be much more useful than the restricted set of conditional
+breakpoints currently provided.  Without such facilities, one often has to throw
+away the state created during a lengthy session to alter the program and then
+restart from scratch to search for a bug (all the while praying that the state
+that provoked the bug will be reestablished so that one can find it).
+
+3.7.	Object-oriented programming (weight=3)
+
+We adopted an object-oriented style for the components of Juniper, primarily in
+the Humus style.  That has worked out reasonably well, especially in light of
+the fact that every procedure that represents an operation on a certain class of
+object begins with a Mesa LOOPHOLE to "map" the abstract object, a pointer of
+one kind, into its concrete representation, the same pointer, but of a different
+type.
+
+This strategy for objects caused us a number of difficulties in the early phases
+of the project, almost all of which had to do with LOOPHOLEs, and some of which
+had to do with storage management and objects' lifetimes.  Any reasonable Cedar
+facility to provide object-oriented programming would be beneficial, especially
+if it allowed one to design rather general "library routines" that could be used
+in a lot of systems (the current Mesa type-checking system can make it difficult
+to provide such packages).
+
+Finally, if the Mesa run-time system had been written in an object-oriented
+style (rather than using the standard Mesa interface mechanisms), we would have
+been able to slip a new implementation under the object interface to provide
+remote file access for all Mesa programs.  Since that is not the case, adding an
+extended file system to Mesa requires modifying Mesa itself in ways that are not
+cleanly separable from the rest of the system.
+
+4.	Summary
+
+What are the main morals to be taken from Juniper's Mesa experience?
+
+(1)	Cedar and Cedar-supported applications would benefit greatly from an
+extended, distributed file system to free us from our own, private disks.
+
+(2)	The basic time for going around the compile-edit-debug loop needs to be
+dramatically reduced.
+
+(3)	The bookkeeping associated with changing sets of modules and
+reconstructing a consistenly compiled and bound system should be eliminated as
+soon as we can.
+
+(4)	Garbage collection will be a great help to me by eliminating most of the
+attention that I must pay to memory management issues.
+
+(5)	Developing a system without good tools for looking at it as a dynamic
+object is extremely difficult, especially if one is using software developed by
+others as part of it.
+
+(6)	The programmer needs facilities for controlling his programs, for
+viewing data, and for debugging without having to start from scratch so often.
+

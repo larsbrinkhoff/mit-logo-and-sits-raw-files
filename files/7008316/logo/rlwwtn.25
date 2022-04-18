@@ -1,0 +1,222 @@
+.xgp
+.font 0 31vg			
+.font 1 31vgb
+.nofill
+.he1
+LAWLER 10/29/80
+.he2
+Word Worlds Now
+.ss
+.dummy ^
+.twinch 6
+.tlinch 8.5
+.ce
+0very rough draft0
+
+.ce
+1Word Worlds -- Then and Now0
+.sp 23
+.ce
+1ABSTRACT0
+.ss
+
+.adjust
+We examine past language oriented applications of Logo systems and education perspectives and analyze how they may be extended to word worlds focussed on developing skills of composition.
+.sp 5
+.nofill
+.ce
+Lawler & Papert
+.ce
+Logo Project
+.ce
+M.I.T. A.I. Lab.
+.ds
+.adjust
+.page
+.ce
+1Word Worlds -- Then and Now0
+
+1.1^Debugging^^^^^^^^^^Central to the vision of a Logo `mathland' has been the explicit focus on debugging as an intellectual skill.  Papert's description of debugging as a major component of problem solving -- and one not marked in either the vocabulary or concepts of pre-computer cultures -- was a theoretical ground for appreciating the computer's potential impact on intellectual development.  Debugging was more than a technique one learned to enhance arithmetic skills; we saw and introduced it as a meta-language for the more precise description of processes as diverse as juggling and the generation of concrete poetry.  Although its best successes have been in areas traditionally labelled "mathematical", Logo has always been more than a `mathland' in any narrow sense --  and this is so because of the centrality of debugging to developing thought.
+
+1.2^Multiple Roles^^^^^^^^^^Debugging procedures involves the revision of text; editing copy also involves the revision of text.  We will avoid the temptation -- based on such superficial similarities -- of seeing these processes as the same.  (The profound sense in which debugging and editing are related is an issue to which we will return subsequently.)  Our epistemological atomism prevents our over-valuing such simple analogies.  Seeing the worlds of experience as domain limited microworlds (Papert, ***) and the cognitive structures of the mind mirroring them (Lawler, l980a) as equally disparate, a new primary question raised from this stance is how the interaction of such structures produces behavior.  In The Articulation of Complementary Roles, (Lalwer, 1980b), we trace in detail the development of a microworld cluster from a pre-adolescent's initial stage of ego-centric thought to behavior exhibiting socialized thought.  Here, based on our observations of an infant, is a crisp example and description of this process we have come to see as central to learning within the context of experience-rooted microworlds.
+
+.ce
+1An Infant's Introduction to Knock-knock Jokes0
+.ce
+**descriptive overkill; we go spelunking and lose the reader; simplify !
+
+1.3^Compact example^^^^^^^^^^Miriam has a long history of joke telling and invention.  She plays with her infant sister, Peggy, often because she enjoys the play and often because she is "stuck" with her while we parents are otherwise occupied.  (The point is that their relation is basically amicable but also more than that.)  Peggy imitates us and her siblings and has begun imitating Miriam's knock-knock jokes. This was her first form of imitation (at age--;--;--):
+.nofill
+.ss
+.indent 5
+Peggy: Knock-knock.
+Bob:   Who's there ?
+Peggy: (Broad laughter).
+
+.adjust
+.ds
+.indent 0
+Peggy plied her jokes upon me time and again.  It was amusing enough because of her imperfect command. We both enjoyed it.  Eventually, the joke became wearing.  I tried to initiate the joke with her.  When I began "Knock-knock", she did not reply; I would say she could not reply.  I tried many times.  Even though she sensed something was expected of her, she did not reply.
+     I rise earlier than the others in my family.  The next morning I heard Peggy talking to herself in her crib: "Knock-knock.  Who's there ?  (Laughter)."  Later, when she was brought down to breakfast, I cooked Peggy a muddled egg and we sat down to eat.  Her first words were "Knock-knock".  In my turn, I tried again:
+.nofill
+.ss
+.indent 5
+Bob:   Knock-knock.
+Peggy: Who's there ?  (Laughter).
+
+.adjust
+.ds
+.indent 0
+That same afternoon, Miriam reported to me with great excitement, "Dad, Peggy can say 'Who's there'."  This is a very simple and lucid example of the processes of the articulation of complementary roles.
+
+1.4^The example described^^^^^^^^^Someone, a learner with (most probably) a relatively inferior comprehension, is engaged socially with more comprehending people -- in this case focussed around what is literally a script for a joke's telling.  The reasons for their common engagement may be of any sort, friendly, helpful, even antagonistic. During the engagement, social demands push at the boundaries of comprehension of the person with an undeveloped perspective.  That is, Peggy was regularly asked "who's there ?" at first, but later she was expected to respond that way herself and could not.   Subsequently, in a time when deprived of that social engagement, the  learner recalls and recreates that kind of engagement, compensating for the solitude by simulating  the role of the other actor.  The first process I call "HOMELY BINDING" ("homely" is a contracted form of "home-like"): the learner attaches herself to uncomprehended routines of engagement (in both the theatrical and programming senses of the term "routine").  The process may be friendly or not so -- but it is more aptly and generally described by that wide ranging class of intimate relationships that characterizes the interactions of a small society, the home.  The second process, "LONELY DISCOVERY", occurs when the learner is deprived of social engagement -- left to her own devices -- and she uses those devices to re-enact the uncomprehended experiences.  This simulation of the other actors imposes a real demand for the distinction between roles and their relations which was lacking in the initial engagement.  My name for this pervasive and oft repeated sequence of homely binding and lonely discovery is "THE ARTICULATION OF COMPLEMENTARY ROLES".
+
+1.5^Elevation of control^^^^^^^^^^The relation of individual construction to social experience is that more integrated discriminations are required for controlling multi-role enactment of scripts than are required for acting in them.  On the stage, an actor may memorize his lines and take cueing from the tag end of a fellow actor's preceding speech.  An actor, or a learner, in taking on two roles must do more, must not only cast herself in the second role but must also function as director of the entire scenario.  It is the director's function ( a global control of the script's progression as distinct from serial cueing) which requires the articulation of roles; it is this which leads to a refined comprehension of the script.  It is true that our example of Peggy's learning Knock-knock jokes does not, of itself, distinguish between a better articulation of a serial process and the creation of a control element which functionally has subordinated pre-existing structures.  We do so now.  Two days after her better articulation of the Knock-knock joke script, Peggy began to use directed speech.  We were in the same room, had played for a while, and she decided to leave.  At the door, she turned to me and said, "Say `Goodbye Peggy'."  "Goodbye, Peggy", I repeated.  "See you later", she responded as she left the room.  The relations she worked out for controlling more precisely what is said when playing a role in the joke affected her ability or inclination to the more precise control of speech in exchanges which might not seem to us as strictly conventional as the more elaborate joke script.
+
+1.6^Bridge^^^^^^^^^^We propose to view development of an author's skills within such a scenario.  The path we will follow and conclusions we achieve are novel but not bizarre.  In practical terms, our proposals have much in common with those of a well known and respected text. Writing Without Teachers (Elbow, 1973), but they are different in emphasis because of our epistemological stance and our instrumental commitment to computers.
+.page
+.ce
+1Early Word Worlds -- A Sketch in Review0
+
+2.1^One reason for selecting "Logo" for the logo of the MIT project was to reinforce the notion of the computer as a general purpose symbol processor -- embodied in the list manipulation facilities of the Logo language -- as distinct from a mere number cruncher.  Early language oriented applications, precursors to the better known turtle geometry, preserved this orientation in manipulation of lists of words.  Not well documented, these early efforts typically created "sentences" by random selection of members from child-specified word lists.  They are well represented by this rather more complex example (Rowe, 1976):
+.ss
+.indent 2
+"...when I first introduced this [REPLACE] system to [a ninth grade student], I had him write a grammar of simple sentences.  He was studying English and German at his school, so he had a fair exposure to what is referred to in the schools as "grammar".  So Isaid, we need some kind of sentence pattern.  How about noun-verb-noun^?".  It sounded familiar to him.  He wrote:
+
+.nofill
+.indent 5
+TO SENTENCE
+10^^REPLACE [SENTENCE] [NOUN VERB NOUN]
+20^^REPLACE [NOUN] [(PEN BOOK CAT DOG)]
+
+.adjust
+.INDENT 2
+Then he asked, "What's a verb^?"  "An action word," I replied, assuming that a hint would be sufficient.  He looked a little mystified, but I prompted him to go ahead and try something out, since he could easily change it later.  He continued with his SENTENCE procedure:
+
+.nofill
+.indent 5
+30^^REPLACE [VERB] [(IS DULL HARD HOT ANGRY)]
+40^^PRINT :SENTENCE
+END
+
+.indent 2
+Upon execution, he received output of this sort:
+.indent 5
+BOOK HARD CAT
+DOG ANGRY PEN
+CAT HOT BOOK
+^-^^^-^^^-^^^-^^^-^^^
+.adjust
+.INDENT 2
+Sentences generated by his own rules stared up at him from the page.  He was surprised, and a little amused.  And he began to think about what a verb really was, something which, despite his survival of many years of formal education, he hadn't really come to grips with...."
+
+.indent 0
+.ds
+
+The computer generation of concrete instances from child-specified rules and content lists has been extended and refined otherwheres (^?^Goldenberg, BBN # ? ; Sharples, 1980-, --).  The derived concrete instance serves as an object of analysis and the generation-rules as objects for reflection and discussion.
+
+2.2^An Undocumented Word World^^^^^^^^^Contrasting with the implicit structural focus of such early word worlds was Lawler's morphology oriented work.  The more general research reported in Pre-Readers' Concepts of the English Word (Lawler, 1976) does not reflect his computer based speech generation work with kindergarden children.  Lawler created a system by which pre-readers could manipulate words, transforming them step-wise into their pig-latin equivalents.  This application foundered because of inflexibility which the children would not accept -- an inflexibility deriving from the still unsolved problem of generating recognizable speech from the standard lexical representation.
+
+2.3^-----^^^^^^^^^^A third cluster of microworlds were designed around the use of the computer as a text editor.  This sort of application is well represented by Introducing Writing With a Computer (Lawler, 1980, reporting work done in l977).  These applications exhibit the use of a pre-established script which was to be extended and modified by the child as she pleased.  The idea was that through using a standardized form, the child would stumble into circumstances which would illuminate the raison d'etre for its elements.
+
+2.4^Critque^^^^^^^^^^The three microworllds described above were beginning which led to little achievement directly engaged with composition.  Only the last of the three dealt directl;y with `writing' as such.  Without cries of "mea culpa", we must admit these early attempts as sterile expressions of interesting ideas.  Specifically lacking was a sense of precisely what sorts of coherence could be sought in the diversity of disparate domains.  We see the scenario, The Articulation of Complementary Roles, as a vision of such coherence and will use it as a lodestone in the following analysis.
+.page
+.ce
+1Word Worlds Now -- A Preliminary Analysis0
+
+3.1 ^ --- ^^^^^^^^^^Our objective is to design computer facilities and applications to enable people to compose more effective text.  Since our analysis will take guidance from The Articulation of Complementary Roles, let us go beyond the example introduced earlier with this story of a six year old's developing game-length prediction in Tic tac toe. [***insert summary which focusse on two roles, mutual engagamenet and emergence of progressive play.]  When first introduced to Tic tac toe, the child, Miriam, learned to play as a TACTICIAN.  With two of her counters in line, she would complete a winning row.  Similarly, she would block an opponent's victory by executing `forced moves'.  Otherwise, she would move preferentially to the center cell and then to any empty corner.  Later Miriam began to play as a STRATEGIST, regularly attempting to achieve a specific fork from a corner opening move.  When temporarily deprived of an opponent, she p[layed a game against herself, alternating roles of Strategist and Tactician; she continued playing alone this way.  Much later, in repsponsento requests that she predict the outcome of games, Miriam worked out games in her mind prefering the prrof of victory to recalling results of earlier play.  Miriam's initial play was ego-centric in Piaget's sense (1926) of not attending to others at all.  Her final playt was socialized, in the sense that she was able to simulate an opponent and thus work out the result of mutual engagement.  The development was achieved through developing internal control over two disparate modes of play.  We describe her socialized play by saying she developed a cognitive structure, MASTER, to control her own structures of Tactician and Strategist.
+
+3.2^---^^^^^^^^^^We propose that a person becomes an author through development in a similar pattern.  We describe three roles for a person composing text as follows: the WRITER is that cluster of experience-based knowledge which generates text; the CRITIC is cluster that which analyses and judges text; the EDITOR is those structures which control the subordinate Writer and Critic clusters of knowledge.  (We will refer to the person composing text as the AUTHOR.          The typical complaint in composition is of writing block, i.e. a state on undiscriminated inability to write anything at all.  Much attention is focussed on this in Elbow (***) and otherwheres(---,---;---,---).  In general, Elbow's description of writing block is that the Critic is too demanding of the Writer and his advice is for the Editor to disable the Critic until the Writer has a chance to generate a mass of text, some of which should later be found worth polishing.  We will turn to these issues after taking a different stance: the primary problem is with the Critical facility.  We describe the improvement of text as a process of transforming the Critic's bug descriptions in to the Editor's controlled rewriting.  The separation of roles permits us to analyse the process as both giving advice and taking advice.
+.page
+.ce
+1Giving Advice0
+
+4.1^---^^^^^^^^^^Why is criticism hard ?  The first problem is interest.  If the work is your own, you may be too interested, too defensive to assimilate negative reactions.  It is very hard to accept the first scribblings of your writer.  You are immediately confronted with what garbage is in your head [*** bad tone]  This is not pleasant.  If the text is another's, the Critic has the problem of paying sympathetic attention to someone else's garbage.  This is not pleasant.  In contrast with Tic tac toe, the function of the Critic, the second player, in the game of composition is not fun.  [*** contrast with Tic tac toe is significant here; awkward writing]  Before she could play as Strategist, Miriam enjoyed playing as Tactician.  She was engaged in a social situation where her limited ability at playing all the roles of the game did not limit her engagement with the activity.  Further, she did not appreciate at first how the roles of Strategist and Tactician needed to be intergrated to achieve mature skill in the game.  The task of composition is intrinsically more difficult than Tic tac toe because the task of ciriticism is not fun.  Consequently, the critic is underexercised precisely in the sense that its judgments remain undifferentiated, evaluative rather than analytic.  How should differentiation of the critic proceed ?
+
+4.2^---^^^^^^^^^^We have see in programming skill a critical development is the crisp articulation of bug descriptions within the analysand [*** change word].  The key observation is that when a bug description is sufficiently precise, its fix is obvious as a controvening of some features of the bug description.  The progressive refinement of programming skill is witnessed as the development of a taxonomy of bugs  -  descriptions of how, precisely, a specific command of a procedure subverts the objective of the procedure.  We believe it is possible to develop a taxonomy of bugs for simple composition and propose such as a critical apparatus suited to the task of composition and to the progressive refinement of an Author's skills.  This is the profound similarity of procedure debugging and copy editing.  Believing that something is possible does not mean that it is easy.
+
+4.3^---^^^^^^^^^^Four reasons, at least, make difficult developing a taxonomy of composition bugs.  First is the typical complexity of text compared to simple procedures in terms of depth of structure.  [***this needs elaborations, perhaps an example].  Second is the underspecificity of common text's objectives [***argument needed here].  Next is the difficulty of tracing reactions to a text to the level at which a crucial failure occcurs. (Elbow, focussing on how to take criticism, advises people to attend only to reactions, not to judgments or advice.)  The final problem is that very seriality of text which makes it a fugitive medium, one whose effects are achieved by the integration of the latest element with the sum of all that has gone before.  This obliteration of prior elements in the present effect blurs the relation of elements and the whole they arrive at.  This fugitive quality, an essential characteristic of the genre, makes analysis inherently difficult.
+
+4.4^---^^^^^^^^^^The sine qua non for giving advice is fixing reactions experienced as a reader.  Elbow suggests "pointing" to words in reporting one's reactions to another person, indicating which specific words marked moments particularly salient in one's developing appreciation of a text.  If a reader could simply express his momentary reactions through attaching/inserting commentary at salient sites in the text, a new level of specificity in criticism could be achieved.  Such "marginalia" in the reader's text could be returned to a different person, the author, as "raw reaction data" or could be used by the critic to construct a more reasoned criticism.  (The former would probably be the more valuable.)  With computer resident texts,various hardware elements could be suited to this use.  For example, a "light pen" or touch sensitive display screen could specify a point for inseretion of comments and a matrix keyboard or touch-display with rows specifying the dimension of reactions (e.g. trust in the writer, interest in the text) and the columns a scale of intensity (e.g. suspicion to trust, rejection to interest).  The signification of keys would have to be user-specifiable to permit expression of the individual critic's response.  The assigned meaning of the keyed code could be directly inserted into the text copy being annotated.
+
+4.5^---^^^^^^^^^^The first two difficulties (the complexity of text and the underspecificity of its objectives) could be addressed by presenting material in a style characteristic of Logo debugging exercises.  A simple example will suffice to exhibit the style.  (For further examples, see One Child's Learning, section 14 (Lawler,  1979)).  Introducing debugging to children, we have shown them some imperfect procedures "other children" had written, asking the former to identify the bugs and explain how to fix them.  The objective in such exercises is to create opportunities for presenting examples of bugs and labelling their categories.  The interface bug shown below developed during a child's attempt to assemble a house from a square STOREY and a triangular ROOF.  When executed separately on a cleared screen (which operation orients the turtle at heading zero), the STOREY and ROOF procedures make the figures below but -- when assembled in order -- together they produce the unexpected, ill-formed house below.
+.nofill
+.ss
+.indent 2
+TO^^STOREY^^^^^^^^^^^^^^^^^TO^^ROOF^^^^^^^^^^^^^^^^^^^TO^^HOUSE
+1^^^RT^^90^^^FD^^100^^^^^^^1^^^RT^^90^^^FD^^100^^^^^^^1^^^ROOF
+2^^^RT^^90^^^FD^^100^^^^^^^2^^^LT^120^^^FD^^100^^^^^^^2^^^STOREY
+3^^^RT^^90^^^FD^^100^^^^^^^3^^^LT^120^^^FD^^100
+4^^^RT^^90^^^FD^^100
+.SP 10
+
+.DS
+.ADJUST
+.INDENT 0
+In the microworlds of language, comparable introductory criticism might take the form of exercises in varying elements of over-familiar texts to appreciate how changing the elements of a text affect its impact.  The simplest example might be perverting jingles from TV commercials, (e.g. "Tab, Tab, what a horrible drink./  Tab, Tab, it makes your breath stink).  In a more sophisticated context, this could involce varying the text and phrasing of verse, as in this bathetic parady:
+.nofill
+.ss
+.indent 12
+Life is real and Life is Earnest,
+^^^And the Grave is not its Goal.
+Keep your eye upon the donut,
+^^^Not upon the donut hole.
+
+.indent 0
+.ds
+.adjust
+4.6^---^^^^^^^^^^A more general taxonomy of bugs could take form as a more precise specification, filled out with lucid examples, of varieties of faults of these four general classifications:
+.nofill
+.ss
+.indent 2
+-- violations of the author-reader compact, e.g. purposefully deceiving
+^^^^the reader
+-- insuperable complexity, faults rising from the writer's insufficient
+^^^^understanding of how the reader's comprehension grows.
+-- dialect/idiolect faults, e.g. jargon in popular writing.
+-- technical faults such as spelling or grammatical errors or the inclusion of
+^^^^unintended rhythmic, phonological or metaphorical effects.
+
+.adjust
+.ds
+.indent 0
+A taxonomy of composition bugs would be an extended, refined, and exemplified classification such as this.  (The established literature of criticism can offer case book examples -- although typically positive examples for emulation are offered instead of examples of faulty text.)  The value of such a catalogue would be in giving confidence to the Author that on a second pass his Critic will not leave him vulnerable to ridicule.  The purpose served by such a conviction would be to free the Writer from the crippling interruptions of self-consciousness.
+.page
+.ce
+1Taking Advice0
+
+5.1^---^^^^^^^^^^If rendering criticism is hard, how much harder is taking criticism.  Since a text is supposed to express a person's thoughts and feelings and since the Author understands what he intended, how easy it is to over-interpret criticism of a text as criticism of the person himself.  The Author's dilemma in the general case is essential to the task: he has chosen to attempt communication in a medium which does not permit feedback.  This ultimately requires simulating an audience with some part of his mind and setting aside -- orlimiting the influence of -- what he does in fact know.  Simulating a thoughtful reader while pretending ignorance of essential information is most unnatural, may even be impossible, and requires an unusual degree of reflexive control.  It is in default of such ability that a Author -- when he does manage to get some feedback -- inclines to see the external critic as an insensitive, malevolent oaf instead of as his best source of information.  Elbow advises any Author to extract from criticism only the reactions of critics to the text and to neglect or ignore the critic's specific suggestions, in effect hs says, "Don't take the criticisms seriously; do take seriously the critici's specific reactions to particular aspects of your text."  The first, defensive element of this advice is to insulate the Authro from criticism in order that he not take it too personally -- and thus either disregard the criticism entirely or quit writing in despair.
+
+5.2^---^^^^^^^^^^The basic advance computer resident text provides is that the ease of copying text makes every draft a rough draft.  The Author does not have to feel his self-esteem or long labor is committed to a specific text version as a final form.  Within the scenario of a writer's seminar --  which could meet weekly with interim writing and peer text criticism -- computer resident text permits this ultimate defense: the Author's showing the penultimate version of his work in this response to criticisms: "You've criticised a text my latest revisions have made obsolete, but your criticism was very valuable; let's discuss it in detail to make certain I appreciated it fully."  Going beyond offsetting fear of commitment, the ease of text manipulation may provide in composition what we witness as the most compelling factor of engagement that programming permits -- the incremental elaboration of one's thoughts, the immediacy of perfection as one small step away.  This factor even may lead to a new vision of text and a new criterion of completion: a text is finally complete when perfect, when susceptible of no more improvement at all.  If partial or imperfect versions of such a text in process must be given to others, they can be seen for what what they are, special versions of a work in process.
+
+5.3^---^^^^^^^^^^A second aspect of computer embodied textual criticism further insulates an Author from the interpersonal stress of criticism.  With a mechanical intermediary, the Author's immediate response to any reaction is irrelevant -- he is given a chance to absorb and appreciate criticism without having to respond or fearing to respond to it as he would in a personal encounter.  An Author need not use the computer this way, but if he needs such distancing from criticism, the computer-based criticism let's him have it.  Finally, low level criticisms, e.g. typographical errors, can be relegated to their deserved level of unimportance.  Matters of spelling, grammar and so forth can be handled in computer notes.  More complex criticisms or involved reactions can be addressed in personal encounters where the writer can prepare himself beforehand for dealing with the congenial or antipathetic critic.
+.page
+.ce
+1Composing With a Computer -- and Without One0
+
+6.1^---^^^^^^^^^^The primary benefit of using computers for composition aides is a cluster  of ideas the experience can create.  First is the naturalness of bugs.  In computer cultures, it is recognized that bugs are an outcome of doing something complex enough to be worthwhile.  Debugging is a recognized phase of the creative process.  It is expected that changes in a procedure may generate bugs and that major revisions of systems of procedures need be followed by more extensive testing.  The coding and testing cycle of program production should be reflected in cycles of writing and criticism.  This perspective on the process of coding and testing programs supports Elbow's suggestions that one should inhibit self-criticism while writing but later criticse sharply to focus and purge already  generated text.
+
+6.2^---^^^^^^^^^^The facility computers add to text editing basically apply directly to low-level problems.  That is, many of the easy changes are "superficial", i.e. typographical and spelling corrections, automatic line length adjustment and so forth.  Their impact is, however, qualitative because they free the author for more serious concerns.  They permit the author to focus on the coherence of interacting ideas and the effectiveness of rhetoric at a high level of organization.
+
+6.3^Genetic Intent^^^^^^^^^^Since the primary effect of computer experience on composition is to establish a set of ideas about the process of composition, once those ideas are achieved, the actual use of a computer becomes of secondary importance.  The intention in the use of a computer in composition is primarily genetic, i.e. although continued use may be a convenience, its primary importance is educational, shaping the way one thinks about the process of composition and the product.  Similarly, the experience of a writing class is genetic with respect to developing communication ability: its purpose is to sharpen the author's ability to imagine how others might react to his composition -- to permit his developing a theory in action of communication through text.  Once the writer becomes capable of playing both roles in a controllable and flexible way -- as Miriam became capable of "forward play in the game tree"  of tic tac toe -- he has learned one essential lesson of composition as we understand it.  The other great lesson, having fun, delighting in the performance itself, is not something we pretend to give instruction in  -- but we do note that the widely-witnessed " holding power" of computers for programmers suggests that computer-based composition may promise much more engagement for future authors than most students today find in the lessons they must surmount to reach the threshhold of presentable writing.
+
+.page
+.ce
+1References0
+.nofill
+.ss
+
+Elbow, Peter.  Writing Without Teachers.  London: Oxford University Press, 1973.
+
+Lawler, Robert.  Introducing Writing with a Computer. SIGCUE, July 1980c.
+
+Lawler, Robert.  The Progressive Construction of Mind.  Logo Memo 57, 1980a.
+
+Lawler, Robert.  The Articulation of Complementary Roles.  Logo Memo 59, 1980b.
+
+Papert, Seymour.  Mindstorm.  New York: Basic Books, 1980.
+
+Rowe, Neil.  Grammar as a Programming Language. Logo Memo 39, 1976.
+
+Sharples, Mike.  *** select appropriate article and deepen references to it.
+Rosenberg, Paul. *** Has he written anything exhibit his past work ?

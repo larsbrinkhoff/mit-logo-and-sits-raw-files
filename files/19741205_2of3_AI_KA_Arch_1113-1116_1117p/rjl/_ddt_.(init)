@@ -1,0 +1,13 @@
+:ddtsym tygtyp/
+:if n q&10000 > (:RJL;pict
+:tctype tv,sail,wholine 1
+)
+:if n q&20000 > (:tctyp exec
+)
+ltv;* plt,lwd;* plt
+ltv;* plx,lwd;* plx
+ltv;* wd,lwd;* wd
+:11logo;hacks
+:intest 
+:admail
+

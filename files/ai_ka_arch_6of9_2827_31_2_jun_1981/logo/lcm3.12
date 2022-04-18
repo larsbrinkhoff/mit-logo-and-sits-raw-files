@@ -1,0 +1,374 @@
+.dv press
+.fo 0 timesRoman12
+.fo 1 timesRoman12b
+.fo 2 Helvetica10b
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 2
+--DRAFT--
+
+LOGO Curriculum Materials
+
+11/12/80
+.sp 5
+
+Booklet III
+
+SYSTEM MECHANICS
+
+TI Logo Version
+
+.fi b
+This booklet provides information you will need for using
+the keyboard, editing LOGO procedures, saving procedures and shapes on
+cassette and recalling them from a cassette.
+.bp
+.chapter "bold(Using the Keyboard)"
+The computer keyboard is like an electric typewriter which allows you to communicate
+with the computer.  Like a typewriter it prints each character you type 
+but it prints on the TV screen.  
+The blinking cursor shows you where the next character will appear.  Some keys have
+other special functions.
+
+To send a command to the computer
+.br
+
+press the   <ENTER>   key.
+
+To erase one character, or move the cursor back one space
+.br
+
+type  <SHIFT> - U
+.br
+
+(When using the  <SHIFT>   key, hold it down first, then type the other
+key.)
+
+bold(WARNING!!  DO NOT TYPE)  <SHIFT> - Q
+
+.br				
+This will restart the computer, erasing all your procedures.
+
+Other special keys are used to edit procedures or create sprite and
+tile shapes.  These will be described in the appropriate section.
+
+The LOGO comand,  CS  or  CLEARSCREEN  will  clear
+all text from the screen.
+
+.chapter "bold(LOGO Typing Hints)"
+Every computer language has its own special rules which can be confusing when you
+are learning to use it.  When you type something the computer does not understand
+it will complain by sending you an error message.  A few simple practices can help
+avoid some typing difficulties.
+
+1.  Always leave a space after a LOGO command or input (except at the
+end of a line.)  (The computer needs a space after every word to avoid confusion,
+just as we leave a space after a word in English.)
+
+Examples
+.br
+Type	TELL	0	not	TELL0
+
+Type	SETCOLOR    :RED	not	 SETCOLOR:RED
+
+2.  When using an input name such as   :RED,  think of the : as the first "letter"
+of the name.  The color or "dots" tells the computer to find the number associated
+with the name.  (Never leave a space after the   :   .)
+
+Type	SETCOLOR    :RED	not	SETCOLOR:   RED
+				or	SETCOLOR   :   RED
+
+.keep
+3.  Don't use  :  when typing numbers.
+
+Type 	SETCOLOR   6	 not	 SETCOLOR   :6
+.end_keep
+
+4.  Explore what happens when you make a typing mistake by
+trying to type some buggy commands. Each of these commands will result in an error message:
+
+
+.nf l
+.keep
+Examples:
+TELL0   <ENTER>
+
+SETC:   RED    <ENTER>
+
+CARRY   :   PLANE    <ENTER>
+
+SETS   :10    <ENTER>
+
+.end_keep
+
+.fi b
+.chapter "bold(Using the LOGO Editor)"
+The LOGO procedure editor makes it easy to change or define a procedure.
+In addition to normal typing, you can use special editing keys to:
+
+- add something to a line
+.br
+- rub out and change part of a line
+.br
+- erase an entire line
+.br
+- add a new line
+
+
+To change an existing procedure type ED, or EDIT followed by the procedure
+name.  To start writing a new procedure using the editor, just type ED or
+EDIT, without a procedure name.  To stop using the editor, and return to
+the LOGO interpreter, type  <SHIFT> - G.	
+
+.fi b
+Once you type EDIT, you will be communicating directly with the editor.
+You can either type in text, or change text that is already there.
+The red object in the upper lefthand corner of the screen is
+called the edit cursor.  By moving the edit cursor and
+using editing commands, you can make changes in what has been typed.
+
+bold(Commands to Move the Cursor)
+ 
+You can move the edit cursor using the  <SHIFT>  key, and the arrow keys.
+
+.nf L
+
+	<SHIFT> -			s(m)moves cursor up one line
+
+	<SHIFT> -			t(m)moves cursor down one line
+
+	<SHIFT> -			t(m)moves cursor left one space
+
+	<SHIFT> -			t(m)moves the cursor right one space
+
+	<SHIFT> - A			t(m)moves the cursor back to the beginning 
+				t(m)of a line
+
+	<SHIFT> - F			t(m)moves the cursor to the end of a line.
+
+	<SHIFT> - V			t(m)moves down to the next screen of 
+				t(m)text, when there is more text than will
+				t(m)fit on the screen.
+
+	<SHIFT> - W			t(m)moves up to the previous screen of
+				t(m)text when there is more text than will fit
+				t(m)on one screen.
+
+	<ENTER>                     t(m)creates a new line and moves the cursor 
+                                        t(m)down to the beginning of the new line.
+				t(m)If there is any text to the right
+				t(m)of the cursor it will be moved too.
+
+  <SHIFT> - R     <ENTER>			t(m)this combination can be used to create a
+				t(m)blank line.
+
+.keep
+bold(Editing Commands)
+
+	<SHIFT> - T			t(m)erases the character above the cursor.
+
+	<SHIFT> - U			t(m)rubs out the character behind the cursor,
+				t(m)just as it does when you are typing
+				t(m)normal LOGO commands.
+
+	<SHIFT> - C			t(m)erases everything on a line to the right
+			     t(m)of the cursor.
+	
+	<SHIFT> - G			t(m)This tells the interpreter that you are 
+				t(m)finished editing and ready to return
+           			t(m)to using normal Logo commands.
+.end_keep
+
+
+bold(Learning to Use the Logo Editor)
+
+.fi b
+The best way to learn to use the Logo editor is to try editing a procedure.
+If you already have a procedure, you can edit it by typing:
+
+EDIT	(name of your procedure)	<ENTER>
+
+Then experiment with the different editing commands to see what to do.
+When you are finished editing type
+.nf L
+
+<SHIFT> - G
+
+.fi b
+
+To show you a little about how to use the editor, here is a simple example
+that you can follow by reading along.  If you prefer, you you can type
+each command and follow along using your computer.
+
+First, you'll need a simple procedure to practice on.  Type in a
+procedure like this:
+
+.nf l
+.keep
+TO   HI    <ENTER>
+PRINT   [HELLO  FRIEND]  <ENTER>
+END   <ENTER>
+.end_keep
+
+.keep
+To try out the procedure, just type
+
+HI  <ENTER>
+
+.end_keep
+
+Now you can use the editor to change the procedure.  Type:
+
+EDIT   HI   <ENTER>
+
+.fi b
+and the entire procedure will appear on the editing screen, with the edit
+cursor under the T in the upper left-hand corner.
+
+.nf l
+.keep
+TO   HI
+PRINT  [HELLO   FRIEND]
+END
+.end_keep
+
+.fi b
+.keep
+Here's how you could add the word "MY" between "HELLO" and "FRIEND".
+
+1.  Move the edit cursor down one space using 
+
+.nf l
+<SHIFT> -     		t(m)TO   HI
+				t(m)PRINT   [HELLO   FRIEND]
+				t(m)END
+.end_keep
+.keep
+2.  Move the cursor over several spaces using
+
+<SHIFT> -			t(m)TO   HI
+				t(m)PRINT   [HELLO__FRIEND]
+				t(m)END
+.end_keep
+.keep
+
+3.  Type in the new word.
+
+<SPACE>  MY			t(m)TO   HI
+				t(m)PRINT   [HELLO   MY__FRIEND]
+				t(m)END
+.end_keep
+
+.fi b
+4.  If this was all you wanted to do, you could just type <SHIFT> - G   to
+return to the Interpreter.
+
+Suppose you wanted to add another line before doing that.  To add a new
+line, you have to first move the cursor out to the end of the line it is
+already on, by typing
+
+.keep
+.nf l
+<SHIFT> - F			t(m)TO   HI
+				t(m)PRINT   [HELLO   MY   FRIEND] __
+				t(m)END
+.end_keep
+
+.keep
+To move the cursor down and open up a new line, type
+
+<ENTER>				t(m)TO   HI
+				t(m)PRINT   [HELLO   MY   FRIEND]
+				t(m)__
+				t(m)END
+.end_keep
+
+.keep
+Now, type in a new line.  For example,
+
+TO   HI
+PRINT   [HELLO   MY   FRIEND]
+PRINT   [HOW ARE YOU TODAY?]__
+EMD
+.end_keep
+
+.fi b
+The procedure has now been changed, and if you are satisfied, type
+
+<SHIFT> - G
+
+This will return you to the LOGO interpreter which will be ready to
+accept regular LOGO commands.
+
+Try out the new command by typing
+
+HI    <ENTER>
+
+.keep
+Further Information About the Editor
+.br
+0It is possible to start writing a procedure with the editor, by typing
+EDIT.  The computer will then display a blank screen, on which you can
+define a procedure in the usual way by typing  TO   FOO, etc.
+.end_keep
+
+You can define more than one procedure at a time, using the editor.  After
+typing END, go on to define another procedure in the usual way.
+.fi b
+
+.chapter "bold(Saving and Recalling Information)"
+.section "bold(Saving Your Procedures and Shapes on Cassette)"
+Once you have taught the computer some new procedures or created some
+new
+shapes you may want to save them, so that you can use the procedures
+and shapes at a later date.
+
+First, make sure the cassette recorder is properly connected to the
+computer, as
+shown in the figure:
+.bp
+Second, Make sure the tone and volume controls of the cassette
+recorder are set properly.  Set the tone to 9 and set the volume to 7.
+These settings work for a panasonic RQ-2309A cassette recorder.  If you
+have a different kind of recorder you will have to experiment to find the
+proper setting.
+
+Third, insert a tape in the recorder.  If you use an old tape, be sure
+that it does not contain procedures that you want to keep.  When you
+save
+your current procedures, any other information stored on the tape will
+be lost.
+
+To save procedures type   SAVE   <ENTER>
+
+To save sprite shapes or title shapes type   SS   <ENTER>
+
+Once you type SAVE or SS, the computer will give you some instructions:
+
+REWIND CASSETTE TAPE CS1.
+
+THEN PRESS ENTER.
+
+PRESS CASSETTE RECORD CS1.
+
+THEN PRESS ENTER.
+
+.fi b
+After the tape has been running for a few minutes, the computer will print,
+
+.nf L
+PRESS CASSETTE STOP  CS1
+
+THEN PRESS ENTER.
+
+.fi b
+It will then ask you if you want to check the information.  It's a good
+idea to type Y (for yes), so that you can make sure the process worked.
+After you type Y, folow the printed directions again.
+
+.section "bold(Loading Information From Cassettes)"
+After inserting a cassette in the recorder type LOAD (to load procedures) or
+LS (to load shapes).  Follow the directions printed by the computer.
+
+

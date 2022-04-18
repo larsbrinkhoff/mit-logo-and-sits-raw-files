@@ -1,0 +1,55 @@
+(declare
+  (special char-list))
+
+(defun start ()
+  (setq base 10. ibase 10.)
+  (setq char-list '(strength intelligence wisdom constitution dexterity charisma gold-pieces hit-points spoken-langs written-langs class race age sex alignment level title experience exp-bonus armor-class special-abilities weapons-armor equipment magic spells encumberance))
+    (next.step))
+
+(defun next.step ()
+  (print 'option?)			
+  (setq respon (read))
+  (selectq respon
+    ('options (opto) (next.step))
+    ('end 'bye)
+    ('create (create.charach) (next.step))
+    ('bye 'bye)
+    ('begin (princ "adventure not as yet implemented.please
+be patient") (next.step))
+    (otherwise (princ "type OPTIONS for list of options!") (next.step))))
+
+(defun opto ()
+	(princ "OPTIONS will list all the options")
+	(princ "CREATE will create a new charchter")
+	(princ "BEGIN will start the adventure(not yet implemented)")
+	(princ "END or BYE stops this program"))
+
+(defun  ran18 ()
+       (+ (random 5) (random 5) (random 5) 3))	
+
+(defun assi (placeloc lenloc multip)
+  (do ((count placeloc (1+ count)))
+      ((eq count (+ placeloc lenloc)))
+    (putprop ch-name (* (ran18) multip ) (nth count char-list))
+    (llp)
+    (print (list (nth count char-list ) 'of ch-name 'is (get ch-name (nth count char-list))))))
+
+(defun queery (ite poslis)
+  (llp)
+  (princ (string-append "what is your " ite "?"))
+  (putprop ch-name (read) ite)
+  (cond ((not (memq (get ch-name ite) poslis)) (llp) (princ (string-append "not legal " ite)) (llp) (princ (string-append "legal " ite "'s are: " ))(princ poslis) (queery ite poslis))
+	(t )))
+
+(defun llp ()
+  (print '- ))
+
+(defun create.charach ()
+  (princ "what is your name?")
+  (setq ch-name (read))
+  (intern ch-name)
+  (setplist ch-name nil)
+  (assi 0. 6. 1.)
+  (assi 6. 1. 10.)
+  (queery 'class '(mu fm cl th))
+  (queery 'race '(human dwarf elf hobbit )))

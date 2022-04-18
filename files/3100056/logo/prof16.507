@@ -1,0 +1,736 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 30fg
+.ss
+.chap 16
+.he1
+Tina
+.HE2
+Relationship With Computer
+.adjust
+.ce
+116.  Tina0
+
+Tina is a student who has great difficulty with academic work.
+In mathematics and language she is considered to be several
+years behind her classmates (her national achievement test scores place
+her in the 3nd percentile).  Although she receives several hours of
+special tutoring in the school's Learning Center each week, the staff 
+is concerned about her rate of
+progress, and are struggling to find an
+appropriate educational program for her as she enters seventh grade.
+
+From the beginning of her LOGO classes, Tina's work
+provided an exception to most of the patterns we have observed among
+the rest of the students in our study.  Although Tina did very
+little Turtle Geometry, she was more "involved" with the computer than
+any other student.  She developed an almost personal relationship
+with the computer she used, giving it a name, and treating it in the
+way some chidren treat a doll or a pet.
+
+Tina's major use of the computer was as a typewriter and editor.
+Using a text-editing program designed to allow her to use the printing
+capability of the computer without writing procedures or using PRINT
+commands, Tina wrote a series of nine "stories", which she distributed
+to her family, friends and teachers.  These stories constituted the
+most significant work of Tina's entire school year.
+
+Tina's success in writing and completing work with the computer has
+led to success in other areas as well.
+Near the end of sixth grade
+Tina began turning in assignments on a
+regular basis -- something she had not been able to do before taking
+the computer classes.  In addition, a friendship established with
+Harriet, another girl in her LOGO class, has led to Tina's being
+included socially with Harriet and her friends in the classroom, ending
+her previous isolation.
+
+.block 5
+116.1 Tina's "Personal Relationship" with the Computer
+
+0Tina had a very special relationship with one of the computers, which
+she called "Peter".  While this was most noticeable in the earlier
+classes, it persisted throughout Tina's computer experience.  
+In the first class, Tina expressed an interest in communicating
+with the computer:  "I thought it would talk to you.  Hello."  When it
+responded to a missing space in an FD445 command by printing "You
+haven't told me how to FD445," Tina responded with genuine anger:  "I
+did, you fool!"  "Oh, this isn't doing what I told it to do," she said
+at another point.
+
+In the next class she again asked about communication:  "I want to ask
+it questions.  Oh you know, What's your name?  Things like that."  
+The teacher explained that all the computer's answers would have to come
+from her, and showed her how to use a PRINT command.  Her first
+procedure gave the computer an answer to her first question:
+.nofill
+
+	2TO WHO
+	1 PRINT [MY NAME IS PETER]
+	END
+
+.adjust
+0Tina was extremely possessive about the particular machine she
+regularly used. She felt that this machine, her "Peter", was hers,
+and she would say things like "Take good care of Peter,"  when she left
+for the day.  When she came late to the fourth class, "Peter" was
+already being used by another student.  Tina stormed and fussed. "I
+want to use my computer.  That's the one I use every day."  When 
+the teacher
+insisted they were all the same, Tina responded; "I hate you...I think
+I'm going to cry..." 
+Finally she was persuaded to use another computer and was somewhat
+reassured by the fact that it responded correctly to WHO, once she had
+logged in.  Although she actually worked quite successfully
+the other students all left "Tina's computer" to
+her in succeeding classes.
+
+As the classes went on, Tina's relationship with "Peter" tempered
+somewhat.  The teacher continued to stress that the computer was a machine,
+controlled by her and other programmers.  
+Gradually she reduced her expression of anger at the computer,
+as she realized how error messages were related to what
+she had done, although she continued to share credit for her
+work with "Peter". "Do you want to see the stories me and Peter have
+written?"  she would ask a visitor.  And she would often introduce
+visitors to "Peter", using her WHO procedure.
+
+.he2
+Working Style
+By the time the classes ended, Tina had progressed to a more
+balanced understanding of her role in relation to the computer.  
+Her behavior with the computer had become much more matter-of-fact
+and she had begun to interact very extensively with the other children
+in the class.  As she came to understand the mechanical predictability
+with which the computer responded to her, and as she began to take
+pride in her accomplishments in story writing, "Peter" came more and
+more to take on the status of a personal fantasy -- one which a child
+knows is a fantasy, but persists in "playing" sometimes because
+it's fun.
+
+.block 5
+116.2  Tina's way of working with the Computer
+
+0The strongest characteristic of Tina's approach to working with the
+computer was her need to clear the text display screen.  While many
+children have a desire to clear the screen between projects, or when
+bored or frustrated, Tina exhibited this desire in an extreme way.
+One of Tina's first questions was about "how to get the words off the
+screen," and learning how to accomplish this using the carriage return
+was a major discovery of hers during the first class.  Once she figured
+out how to do it she cleared the text display after almost every line
+-- especially after error messages.
+In later classes Tina developed the habit of clearing the
+text display before logging in, after logging in, after almost every
+instruction that was not part of an ongoing task, and before and after
+saying GOODBYE.
+
+Tina's habit of clearing the text display in this way interferred
+significantly with her learning.  It effectively prevented her from
+maintaining continuity in what she was doing, and eliminated the
+possibility of her responding to the computer's error messages.  Even
+after completing a piece of work Tina would hardly look at it:  after
+she had 
+edited her first letter, DORIS, she swept it
+off the screen without reading it.
+
+In per pre-LOGO interview, Tina used a similar strategy when strying to
+arrange a series of permutations of a set of colored blocks.  The task
+was to create as many different arrangements of the blocks as possible.
+ After having done a few, Tina swept the old ones away, clearing the
+table -- thus making it impossible for her to know whether the next one
+was different or not.  When the interviewer re-established all Tina's
+old arrangements, she made one more, and then compulsively swept them
+all away again.
+
+Tina eventually learned to leave several sequential lines on the screen, while
+working on a specific project -- although it required a definite effort
+on her part not to endulge her carriage return habit.  When working on
+a drawing project, she would carefully copy all the necessary steps
+into her notebook, then quickly clear the screen.
+
+Tina had a strong desire for completion and correctness in all her
+work.  
+Although she was quite a perfectionist by her own standards,
+sometimes working a whole hour on one story,
+Tina never proofread, edited or added to a story once
+she had declared it finished.  Unless she noticed an error in
+a particular line while typing it, or immediately after typing a
+carriage return, she never went back to find an error.  Once a story
+was done, it was done!  She might show it to other people, but she
+rarely read it over to herself, and certainly not with a view to
+analyze or correct it.  Incidents like the following were observed
+several times.  Tina was proofreading a sentence which began "ONCE
+UPON TIME..."  but she read aloud, "Once upon a time..." and
+continued, satisfied that her work was correct.
+
+Tina did develop one way of editing stories.  If she made a mistake
+early in a story she could start the entire process again by typing
+END, and clearing the screen.  Typing LET LETTER again would clear out
+her workspace and allow her to begin her story again.  
+When she did this, she almost always typed an identical sentence to the
+one she had typed before -- without any printed reference -- sometimes
+complete with the error that had forced her to start over in the first
+place.  In such case she would stop and go through the whole process
+again until she got it right.
+
+(Tina's attitude towards errors and towards completion of "correct"
+work is also shown by her behavior in other situations.  One of her
+learning disability tutors related that she would repeatedly throw out
+whole pages once she had made one error -- a tactic that frustrated her
+in working with a standard typewriter.  Hence in her written work she
+had developed a style of writing only short pieces of one or two
+"perfect" sentences.)
+
+Tina also had a great desire for neatness in the classroom.  She took
+it upon herself to collect and put away pens, notebooks, and other
+items which had been left out by the other children, and to
+remind them to put their things away.
+
+In her work with the computer, Tina established a set of
+conditions about what she would and wouldn't do, and adhered to these
+with little change throughout the classes.  Tina would do the
+following:  LOGIN "TINA; LET LETTER (to get her letter writing
+procedure); start, write and end a letter; run a letter or a drawing
+procedure by typing its name; and type the word GOODBYE.  Things she
+wouldn't do on her own included:  writing a procedure;
+editing a procedure or a story; saving a procedure, by writing a file;
+reading a file; and using the lineprinter.  These parts of her daily routine
+were done for her by her teacher.
+
+.he2
+Turtle Geometry
+It was very important for Tina to keep a firm boundary
+between what she would and wouldn't do.  Towards the end of
+the classes, an effort was made to get her to use the lineprinter on her
+own, showing her the PRINTON command, and showing her how to make
+multiple copies of a story by using REPEAT.  At first Tina objected to this
+strongly, but eventually agreed to do some of it.
+With stronger insistence and more time, Tina might
+have learned these
+commands, and attained a greater measure of independence in her
+computer use.
+
+Tina took a large part of each class
+to settle down to productive work.  She usually came to class
+later than the other students, and wandered around a bit before
+deciding what to do.  Once started on a story, she often made a lot of
+mistakes on the first line -- requiring her to start the whole story
+over again.  Once past the first line, however, she typically finished
+a story without any more false starts.  Her problem with starting was
+reflected in a rush at the end of the class.  Since Tina placed a
+premium on completed work, she often found it necessary to stay after
+class to finish up.
+
+.block 4
+116.3. Tina's Use of the Turtle
+
+0Tina used the TURTLE in only nine of the twenty-four class sessions.  Most of
+her use of the TURTLE required active help from the teacher or one of the other
+students.
+
+From the beginning, Tina had great difficulty concentrating on what
+the TURTLE was doing in response to the commands she typed.  In the
+first class she literally "dozed off" while the rest of the
+class was figuring out how to draw a box, and how to write a procedure.
+When she began to work on her own, she worked randomly,
+copying commands from an instruction sheet without looking at their
+effect, and clearing the actual commands from the text display almost
+as quickly as she typed them.  For numerical inputs she chose double
+numbers like 55, sequences like 34, or combinations like 445.  At the
+end of the period she wrote a few steps and a comment in her notebook:
+
+.block 7
+.sp 5
+.ce
+Figure 16.1
+
+.adjust
+0Although Tina seemed to have difficulty throughout the first class in
+focussing on what the turtle was doing in response to her typing,
+she did notice when the command HT 78 made the TURTLE disappear, and
+asked for help saying "I want my TURTLE back."  She had a much stronger
+response to the computer's text responses -- angrily commenting about
+error messages and sweeping them off the screen with a stream of
+carriage returns.
+
+In the second class she was more thoughtful about what she was doing,
+eventually noticing that she had caused the computer to draw a
+"seven", and carefully copying down the steps in her notebook:
+
+.nofill
+.block 8
+.sp 6
+.ce
+Figure 16.2
+
+.adjust
+0With much help, this was made into the 
+procedure SEVEN, copying the
+steps from her notebook, (fig. 16.3).
+
+.nofill
+.block 12
+	2TO SEVEN
+	1 FORWARD 66
+	2 FORWARD 34
+	3 FORWARD 45
+	4 LEFT 66
+	5 LEFT 34
+	6 FORWARD 66
+	33 FORWARD 45
+	333
+	END
+.ce
+Figure 16.3	
+.adjust
+
+0In another class Tina decided in advance that she wanted the computer to
+draw a "zero".  When asked to draw a zero by hand, she drew it
+as a rectangle, possibly indicating that she understood that it was easier for
+the TURTLE to draw straight lines than to draw curves.  She required a
+great deal of help in building her
+rectangle with the TURTLE.
+Tina could not
+determine the angle to use at each corner of the rectangle, although
+she did know that opposite sides had to have the same length.  She
+decided to call her rectangle TINA and carefully copied the steps into
+her notebook.
+
+When she taught her procedure to the computer, Tina had difficulty
+copying the steps.  When she typed 66 as a line number
+instead of 6, Tina insisted on redoing the entire procedure
+instead of
+editing.  When the same thing happened again, she allowed the teacher to
+fix it, by
+erasing the line for her.
+
+.nofill
+.block 14
+	2TO TINA
+	1 FORWARD 66
+	2 FORWARD 45
+	3 RIGHT 90
+	4 FORWARD 23
+	5 FORWARD 45
+	6 RIGHT 90
+	7 FORWARD 66
+	8 FORWARD 45
+	9 RIGHT 90
+	10 FORWARD 23
+	11 FORWARD 45
+
+.ce
+Figure 16.4
+
+.adjust
+0With Harriet's help, Tina then spent some time repeating her design,
+and making it spin.  She never returned to Turtle Geometry activities
+on her own.
+
+.he2
+Writing Stories
+0If Tina had not had the possibility of using
+the computer to write stories, she might have persevered with drawing a
+lot more.  Her experience with the "zero" drawing shows that she
+was capable of seeing the connection between the commands she was
+giving and what the TURTLE was drawing.  On the other hand, Tina was
+delighted with using the computer to write stories.  This was a unique
+and special use of the computer, and she did not have to compare her
+work with anyone else's.   Drawing with the computer may have seemed to
+be just another activity at which she was "not as good" as her classmates.
+
+.block 4
+116.4 Tina's Stories
+
+0Most of Tina's time and effort with the computer was devoted to
+writing.  A special program, LETTER was created for her use, allowing
+her to type a story directly into the computer without having to write a
+procedure, or use line numbers or PRINT commands.  Tina used the LETTER
+procedure to write two "letters" and seven "stories" over a period
+spanning twenty classes.  She also started at least three more stories
+that were discarded before she finished them.
+
+In her stories, Tina had a product of which she could be proud.  She
+could easily share copies with her classmates, teachers and family and
+with visitors to the LOGO classes.  It was a unique product which could not 
+be compared with the work of other students.  This was very important
+to Tina, who was used to having her work evaluated as being of lower
+quality than that of her fellow students.  Most importantly, Tina was
+able to use the computer to express her ideas in writing and to improve
+her writing skills in a way that she had not been able to do in regular
+classes or in her special tutorial programs.
+
+Here are Tina's nine "stories" (as she called them), beginning with
+DORIS (class 4) and continuing to MISS.HIRSH (class 21).  They show
+considerable development in style, sophistication and in proficiency in
+grammar and punctuation.  They are presented here exactly as Tina
+wrote them.
+
+.nofill
+.BLOCK 5
+	2DORIS
+
+DEAR DORIS HOW ARE YOU DOING UP IN NEW YORK.  I HOPE I WILL SEE YOU IN
+THE SUMMER
+LOVE TINA AND PETER
+
+.BLOCK 5
+	HELEN
+
+DEAR HELEN HOW ARE YOU IN YOUR NEW HOME. I AM GOING TO GET YOU SOMETHING
+ FOR YOUR NEW HOME .AS SOON AS GET MY MONEY
+LOVE TINA
+
+.BLOCK 9
+	TOMMY
+
+TOMMY IS LITTLE BOY HE LIVE' IN JAMES TOWN FOR 3 YEARS HIS MOTHER
+DIE WHEN HIS FATHER CAME BAKE ARMY 2 YEARS AFTER THAT THEY MOVE
+TO NEW YORK AND HIS FATHER GOT MARRIED THEY HAD A LITTLE GIRL
+NAME LIZ.14 YEARS AFTER THAT TOMMY GOT MARRIED TO A TEACHER
+ENGLISH HIGH AFTER THEY GOT MARRIED TH HAD TO BABY'
+LITTLE BOY TOMMY JR AND LITTLE GIRL NAME LISA AFTER
+THE CHILD WERE 3 AND 2 THEY MOVE TO HOLLY WOOD
+
+.BLOCK 9
+	ANN
+
+ANN IS A OLD WOMAN SHE IS 81 YEAS OLD
+.SHE LIVE WITH HER HUSBAND IN FLORIDA HE IS 92 YEARS OLD
+THEY H BUSTER THAT IS MARRIED TO
+A NURSE AND THEY HA TRIPLETS.  THEY BE MARRIED FOR
+3 YEARS AFTER THEY GOT SETTLED DOWN THAN THEY
+MOVE TO NEW YORK WERE DORIS LIVES. ABOUT 5 YEARS AFTER
+ABOUT 5 YEARS THEY HAD A LITTLE GIRL SUE AND WAS PRETTIEST
+
+.BLOCK 11
+	SONNY
+
+SONNY IS A LITTLE BOY HE LIVES WITH HIS AUNT HELEN IN CALIFORNIA
+HE HAS BEEN LIVE WITH HER FOR 9 YEARS.  HE IS GOING TO A HOME FOR
+LITTLE WONDERS 4 WEEKS AFTER THAT TO
+COUPLE A ADOPTED SONNY HE WAS THE HAPPIEST BOY THAT YOU EVERY
+SEEN. I GUESS IF THAT WAS ME I WOULD BE HAPPY IF SOME ONE WOULD
+ADOPT. BUT SEE I AM NOT ADOPT I HAVE MY ON MOTHER AND I AM
+GLAD THAT I HAVE MY ON MOTHER.BECAUSE THE KIDS THAT HAVE FEELS
+REALLY BAD. THAT'S WHY ALL THE KIDS IN THE WORLD SHOULD BE
+GRATEFUL TO THEIR PARENTS. THE END.
+
+.BLOCK 9
+	DONELL
+
+DONELL IS A GROWN MAN HE LIVES WITH HIS
+FRIEND IN NEWYORK HE BE LIVE THERE FOR 3WEEK'S
+THEY BOTH BEING LIVE THERE FOR 4 WEEKS. THEY BOTH
+HELP PAY THE RENT THEY PAY 200 DOLLAR A WEEK FOR RENT
+JIM GUESS WHAT ?WHAT I GOT FIRE TODAY WHAT DID YOU SAY
+I GOT FIRE TODAY.WHAT ARE WE GOING TO TELL MR. SMITH
+I DO NOT KNOW WHAT TO TELL MR. SMITH ABOUT THE RENT.
+
+.BLOCK 8
+	HARRIET
+
+HARRIET IS A LITTLE GIRL SHE LIVES OUT IN BROOKLINE WITH
+HER MOTHERABIGAIL AND HER FATHER EGBERT.SHE BEING OUT
+IN BROOKLINE FOR 11 YEARS.SHE GOSE TO A SCHOOL CALL
+WILLIAM H. LINCOLN.SHE BEING GOING THERE FOR 6 YEARS
+AFTER 6 YEARS SHE START GOING WITH A BOY NAME DENNIS 
+COOPER FOR 3 MONTHS.
+
+.BLOCK 15
+	MR. LEWIS
+
+ONCE UPON A TIME THERE WAS A MAN NAMED BOB .HE LIVED
+OUT IN BROOKLINE HE LIVED OUT THERE FOR 10 YEARS.
+2 YEARS LATER HE FOUND A JOB OUT IN NEWTON .NEWTON
+WASNT PAYING ENOUGH MONEY TO SUPORT HIM .HIS FRIEND
+HAD TOLD HIM TO GO SEE DAN WILSON. THE NEXT DAY BOB WENT OUT TO SEE MR.
+WILSON. MR. WILSON SAID BOB WHAT KIND OF WORK CAN YOU DO. I CAN TEACH
+,I CAN DO PAINTINGS DRAWING AND ALL KINDS OF THINGS.WHAT WOULD YOU LIKE
+TO DO MOST. I WOULD LIKE TO TEACH. I THINK KIDS NEED MY HELP. WHAT
+KINDS OF THINGS WOUULD YOU LIKE TO TEACH. IF I MAY I WOULD LIKE TO TEACH
+ MATH, AND SCIANCE, AND ENGLISH. ONE WEEK AFTER
+HE START WORK FOR LINCOLN
+BY TINA DEBORAH AND PETTER
+
+.BLOCK 9
+	MISS.HIRSH
+
+ONCE UPON TIME THERE WAS A LITTLE GIRL NAME LISA SHE LIVED IN
+BROOKLINE. SHE LIVE THERE FOR 16 YEARS WITH HER MOTHER HELEN
+WAS THE BEST WOMAN IN THE WORLD .  THAT IS WHAT HER LITTLE 
+LISA THOUGHT OR HER MOTHER HELEN .SEE HELEN WAS NOTHING BUT
+A NASTY OLD 42 YEAR WOMAN.SHE DIDN'T CARE ABOUT LISA WENT TO
+SCHOOL VERY NASTY.SHE LOOK LIKE SHE HAVEN'T TOOK A BATH IN
+6 MONTHS.AND ROLL THROUGH THE MUD.
+BY TINA TO LISA HIRSH
+
+.adjust
+0Tina's first two stories, DORIS and HELEN, were really letters, written
+to her godmother and mother respectively.  The next four were all "made
+up stories about real people."  Tommy, Ann, Sonny and Donell are all
+Tina's relatives.  
+The last
+three stories, HARRIET, MR.LEWIS and MISS.HIRSH were about a classmate,
+and about Tina's regular sixth grade teachers.
+
+In the first few classes, Tina had shown an interest in
+"communicating" with the computer, and had been shown
+how to write procedures using PRINT commands.
+
+Starting with the fourth class a
+special program was created for her to allow her to
+type whatever she wanted
+directly into the computer.  The procedure, LETTER, required that Tina
+choose a name for a story, and then it interpreted each of
+her typed lines as a separate "REQUEST".
+If Tina wanted to change a
+line she could use the rubout key, before she typed a carriage
+return.  Other than that, LETTER had no special editing capability.  When
+Tina finished a story, she typed END, which caused the LETTER
+procedure to finish defining the procedure she had named.  It then typed out, "HERE
+IS YOUR LETTER, DORIS" (for example), and ran the procedure, printing
+the letter exactly as Tina typed it.  
+
+Tina was quickly able to use the LETTER procedure on her own.
+She would type LETTER, choose a name for her
+story, and begin.
+If she wanted to change a line after typing a carriage return 
+she had to be helped by the teacher.
+Sometimes she accidentally typed a carriage return intending to type a
+rubout.  After typing a string of carriage returns, she would often
+type END and start all over.  This was Tina's only way of independently
+editing a story procedure.
+
+Tina was introduced to LETTER in class four -- the same class in which
+she made such a fuss about having to use a "different" computer.  Her
+letter, DORIS, was first written out by hand, and
+then copied on the computer.   At the end of the class  several copies
+were printed out
+for her, as she carefully estimated how many she would
+need:  "One for me, one for my mother, one for Doris (her godmother),"
+etc.  In her notebook, Tina wrote. "Today me and Peter did a letter".
+
+Tina's next letter was HELEN, written during class six.  This letter,
+accomplished in a much shorter time, was written to her mother.  It
+followed the same format as DORIS:  greeting, question, statement, signature.
+Punctuation consisted of two periods.  
+
+0In class eight, Tina wrote
+a "story" she called TOMMY.  After several false starts she settled down to
+complete a seven line story, which ended rather abruptly.
+She had trouble typing the first line and used 
+a lot of extra carriage returns between lines.
+Twice she was helped to erase the story and start again.  Once she completed the first line
+successfully, she went on to write seven lines, before deciding she was
+finished.
+
+The story TOMMY represented a big change from Tina's previous computer
+writing, and set the tone for the rest of the writing she was to do.
+In TOMMY, her concern was not for a grammatically correct careful
+statement, following a prearranged format.  Rather she was concerned
+with the details of the story:  the names of the characters, the places
+they lived, the sequence and timing of events.  
+She was reminded not to type a carriage return until she was
+satisfied with an entire line, and she often rubbed out all or most of
+a line to correct a spacing or spelling error.  Once a line was
+finished, however, she did not ask for corrections.
+
+0Tina's next story, ANN, ended even more
+abruptly.  In this case, time ran out before she completed
+it, and Tina
+showed no
+interest in adding to it at a later class.  
+She worked very carefully on her first seven
+sentences, rubbing out and rewriting as often as necessary, carefully
+checking each sentence before going on.  She finally got frustrated in
+starting the eighth line, typed a lot of carriage returns and called for
+help.  After her mistakes had been corrected  
+Tina declared the story
+finished, and printed out about 10 copies, offering them to classmates
+as well as to two visitors.  She appeared to have a great deal of pride
+in her work.
+
+0Tina's next story, SONNY
+was her longest to date -- nine lines. 
+In writing the story Tina was interested in punctuation, checking with
+the teacher
+to see if each period was located correctly.
+At one point Tina asked whether she should use "adopt" or "adopted"
+as a spelling.
+The difference in meaning was explained by using each in a sentence.  
+Tina seemed to be unable to hear the difference in the
+way the words sounded, so that the choice was completely arbitrary
+to her.  She decided to use "adopt" at that point, and throughout the
+rest of the story.
+
+Tina was clearly
+using this story to express some very deep feelings and values -- as well as
+some appreciation for her own parents.
+
+.adjust
+0After Tina had completed SONNY, she was asked for
+some samples of the writing she was doing in class.  "I don't have time to
+write stories in class," was her reply.  "I've got too much work to
+do."   Tina's English teacher and her learning
+disabilities teacher
+both confirmed the fact that Tina had done virtually no creative writing
+this year.  Her English teacher explained that Tina rarely completed
+any work -- pointing out that Tina's computer stories were among
+her first finished pieces of work.
+
+Tina's next story, DONELL seemed to have the making of a real story
+with a definite plot line, and realistic dialogue.
+Once again, Tina had difficulty settling down to start her
+story, and ran out of time before finishing it.  
+
+After a lot of disruptive fooling around with the other kids, she
+settled down to write her story,
+HARRIET, which was well constructed and carefully
+written.  She paid careful attention to spelling and punctuation --
+asking for assurances on the placing of periods at the ends of
+sentences. 
+
+In class 20, Tina dictated a story to her friend, Deborah, who had come
+as a visitor. 
+The resulting
+story, MR.LEWIS was Tina's longest and clearest story, and had a
+more direct flow than usual in Tina's stories.  Deborah typed
+the story exactly as Tina dictated -- Tina dictated the puncutation
+as well.  Her verbal dictation seems to have been closer to
+standard english grammar than her own typing.  The story had a clear
+plot, with a definite beginning and ending.  Tina ended the story by
+writing "BY TINA DEBORAH AND PETER," after thinking for a few minutes
+about how to share the credit.  
+
+.he2
+Reasons for Success
+0Tina's last story, MISS.HIRSH, was written in only 20
+minutes.  She typed without any significant errors or
+false starts.  She was particularlly concerned about the location of
+periods, and the use of apostrophes in DIDN'T and HAVEN'T.  (She knew
+where the apostropes went, but wanted to have that confirmed by the teacher.)
+After finishing the story, Tina said with
+a gleam in her eye "Miss Hirsh can take a joke."
+
+.block 5
+116.5  Some Possible Reasons for Tina's Success in Writing
+
+0In a meeting held after the end of computer classes, Tina's English
+teacher said that Tina had begun making a significant effort to
+complete assignments and turn in work.  She said that Tina's computer
+stories were the first completed work that Tina had turned in this year.
+
+After consulting with Tina's teachers, some tentative insights can
+be offered about
+why Tina was able to
+accomplish so much writing in the LOGO classes, while
+she has been unable to accomplish much writing in either her regular
+classes or with her language tutors.  
+
+Tina is a fanatic about completing work without errors.  When an error
+occurs in Tina's normal work, she tears up the paper and throws it
+away.  Since she never examines her errors, or tries to learn from
+them, errors are seen by her as a total disaster.  Using the computer,
+she was able to rubout many errors as they occurred without destroying
+all her work up to that point.  In this way she could be satisfied with
+her finished product.  Once she declared herself "finished" she never
+looked back to see if there were any other errors.
+
+.he2
+Social Behavior
+The printed computer output had a "professional" quality that
+looked more polished than other children's writing.  In addition, she could
+have as many copies as she wanted at no extra effort -- which could
+bring her positive attention from friends, family, and several
+different teachers, all in the same day.
+
+Tina seems to feel extremely
+sensitive to any "correction" of her work whether direct or implied.  
+This is confirmed by her abhorance of "errors".  She was not corrected
+or criticised while writing, and the teacher's
+assistance was confined to answering her questions about spelling and
+punctuation.  
+Therefore, since  Tina had worked hard to make her work "correct" and
+since it looked "professional," Tina assumed that
+it was correct, and was very proud of it.
+
+Tina knew that her work was unique among the kids in the computer
+classes.  Just as only Tina used the computer she called "PETER",
+only Tina could use the LETTER procedure to write stories.  Thus Tina
+could feel that her work was at least as good as the other students'
+work.  Tina has rarely had the opportunity to feel that way about her
+work.
+
+.block 3
+116.6. Tina's Social Behavior During LOGO Classes
+
+0Just as Tina's "relationship" with the computer was of the utmost
+importance to her, she also placed a high premium on her personal
+relationships with the people around her.  At first Tina 
+had a great deal of sensitivity about being observed by adults in the
+classroom.
+She was
+particularly concerned about observers who took notes, and she would
+occasionally ask them what they were writing about.  Tina made a
+point of introducing herself to all the visitors who came at different
+times to observe the classes, and of establishing a definite
+relationship with any who came more than once.
+
+Tina insisted that she be noticed.  When she came to class late, she
+would often sing or shout loudly in a powerful voice as she walked in
+the door.  If a visitor was present, however, she would quiet down
+suddenly in embarrassment.  During any class she might call loudly
+across the room to a teacher, visitor or a classmate.
+
+At times, Tina could be quite manipulative -- especially when she
+wanted help.  She could be loud and insistent calling across the room
+for assistance, and a few minutes later rebuke another child for
+"interrupting".  She often corrected other people's behavior, saying
+that some action, or omission was "rude", or "sloppy".  This was
+usually done in a somewhat cheerful, "motherly" tone that had only a
+slight undercurrent of hostility.
+
+In her relations with her classmates, Tina adopted a "breezy,"
+somewhat teasing style, characterized by a cheerful good humor.
+Occasionally this "breeziness" got out of control, and became
+disruptive and rowdy, including chases around the room, hitting and
+hair-pulling.  At such times, Tina had a very difficult time settling
+back into appropriate class behavior.
+
+At other times -- especially with visitors present -- Tina would be
+extremely quiet, polite and demure.  It was as if she had two sets of
+rules -- one for serious behavior in public -- the other for playful
+behavior in private.  As the classes went on, it was clear that Tina
+considered the LOGO classroom as a "private" place, where she was among
+friends and could be her playful self.
+
+At first Tina was tolerated, somewhat uneasily
+by the other kids.
+Gradually, Harriet and Dennis became quite involved with her playfulness,
+and cheerful bantering.  Most of the time they seemed to enjoy the
+distraction she provided, and allowed her to provide an excuse for
+letting their own playfulness emerge on occasion.  
+
+Harriet became quite protective of Tina, sticking up for her on
+occasion, as well as helping her with her work from time to time.
+Tina consulted Harriet frequently about spelling and
+punctuation.  Harriet spent a lot of one class period helping Tina type
+a TURTLE procedure, and showing her how to use the SPIN command.
+
+Tina took a lot of interest in Harriet and Dennis as a "couple", teasing
+them regularly about their friendship.  She wrote their "relationship"
+into her story, HARRIET, and spent a good deal of one class period
+watching them play Dynaturtle games together -- commenting regularly,
+not on their dynamic strategies, but on their personal interchanges.
+
+Harriet's interest in Tina was evidenced outside of LOGO classes as
+well.  One of Tina's classroom teachers reported that she had moved
+her seat in class to be near Harriet and her group of friends.  In
+becoming accepted by them, she had moved from virtual "isolation into
+the core of the class, socially."  Her teacher attributed this to the
+relationship Tina developed during the LOGO classes and to the feeling
+of success she has had with her computer work.
+

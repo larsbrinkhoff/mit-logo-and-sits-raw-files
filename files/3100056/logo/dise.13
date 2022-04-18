@@ -1,0 +1,68 @@
+.xgp
+.font 0 31vg
+.ds
+.adjust
+.ri
+In LOGO;DISE >
+ 
+Procedure:
+
+MATERIAL TO BE PRODUCED
+
+The primary outcomes of our project will be a set of documents which will facilitate widespread use of LOGO in schools and other educational settings. The documents fall into three categories:
+.indent 6
+     I - Curriculum materials for teachers and students
+     II- Background information for teachers and educational decision makers
+     III-Technical information to allow the implementation of subsets of LOGO on a number of publicly availible home computers
+
+.indent 0
+     I - Curriculum materials will consist of teachers' guides and student booklets for LOGO activities based on the use of dynamic TV graphics, including introductory activities for students of a vraiety of ages, and activities in the areas of physics and biology for students who
+have already had some exposure to LOGO.
+     These materials will be in sufficiently polished form to be submitted for commercial publication and distribution to potential LOGO users. Further information about the content of these materials can be found in Appendix ###.
+     II- Background information will include a monograph written in a style accessible to teachers on the intellectual foundations of the use of computation to enhance traditional school subjects.
+     A report will also be prepared summarizing the testing of the above teachinbg materials at a number of grade levels in a public school. This will include a set of empirically based milestones of expected student achievement. It will also include a summary of the results of other LOGO teaching experiments including the l977-78 Brookline LOGO Project, and the first year of the Lamplighter School Project.
+     These items will be submitted fior publication along with the curriculum materials, and will also be publicly availible as LOGO memos from our Laboratory.
+
+     III- A nuts and bolts handbook will be published as a LOGO memo, detailing the implementation of subsets of LOGO on a number of currently availible low-cost home computers. In order to make this memo widely availible it will be advertised in the most popular magazines and journals directed towards educational users of low cost computers.
+STAFFING OF THE PROJECT
+     In order to produce the documents described we will assemble a project team including the following kinds of individuals:
+     - a theoretical design team made up of MIT faculty members associated with the LOGO Group.
+     - a teacher/observer who is  experienced as a LOGO teacher and researcher, a  curriculum developer and teacher trainer, and classroom practicioner.
+     - a graduate student in MIT's Division for Study and Research in Education who will assist in the classroom observations.
+     - a professional writer who will have responsibility for translating the  ideas involved in our project into material accessible to  a wide public audience.
+     - a programming staff including a part-time programmer and a computer science graduate student who will have responsibility for implementing subsets of LOGO on one or more currently availible low cost computer system.
+     - evaluation consultants who will aid in the establishment of assessment techniques and who will provide outside confirmation progress of the  of the students and teachers involved in our trial classes.
+      
+     In addition we will be collaborating with the students and staff of two schools in which the activities to be developed will be tested. These are the Lamplighter School in Dallas, Texas, who will be collaborating with us in the extensive computer education project described above, where we will be working with teachers and students in grades 2, 3 and 4, and the Lincoln School in Brookline,  Massachusetts, where we will be working with students and teachers in grades 4 through 8. The majority of the curriculum development and classroom testing for this project will be carried out at the Lincoln School. Additional feedback will be obtained by the use of the same materials at trhe Lamplighter School.
+
+         PLAN:
+phase 1 - September 15-December, l979:
+     By September of l979 we expect to have preliminary drafts of introductory LOGO activities for based on dynmaic TV graphics. We will begin testing these activities by working with students in grades 4 - 6 who have not had prior LOGO experience. Our primary aim during this phase will be to find out which activities and teaching strategies are most successful with students of various ages. Revised versions of the activities and teaching strategies will then be used to introduce LOGO to new students, so that  they can be debugged further. At the same time, we will select a small number of students for long term exposure to LOGO, continuing to work with these students once or twice a week for the entire school year, so that we can obtain additiuonal documentation of the  effects of a longer exposure to LOGO.	
+     At the same time we will be monitoring the work of teachers of younger students (primarily in grade 3) at the Lamplighter school. Information from the Lamplighter school, where many of the same activities will be used, will also be incorporated into our revisions as we go along.
+     We will also be conducting workshops for teachers at the Lincoln School, who have already ben trained in LOGO, to help them become comfortable with the new dynamimic LOGO activities, so that they will also be able to make use of our revised curriculum materials in the spring.
+     We will also be introducing LOGO activities which stress physics and biology to students in grades seven and eight at Lincoln School, who have already had an introduction to LOGO programming. These activities and the asssociated teaching strategies will also be revised for further tesing in the Spring of l980.
+     In parallel with these activities, our programming staff will begin to implement a subset of LOGO on one low-cost computer system which we will have selected as being the most promising for the initial attempt.
+phase 2 - January-February l980:
+     The months of January and February will be primarily spent in preparing  drafts  of teachers guides and student materials to be used both by our own staff and by teachers at the Lincoln and Lamplighter Schools during the Spring of l980.
+     Technical implementation work will continue, as will a small amount of teaching with those students who will be participating in our long term studies.
+phase 3 - March - June l980:
+     We will test the revised introductory activities and teraching methods with students at Lincoln School who have not yet been introduced to LOGO. In this phase we will be particularly interested in monitoring the progress made by these students so that we can adequately describe the milestones of student progress in the  background information to be provided for future teachers. We will also be tersting revised versions of the physics and biology activities with older students, who had previously been introduced to LOGO.
+     At the same time we will monitor the use of our draft teacher and student materials by teachers at the Lincoln  and Lamplighter Schools. Although the main task of our project is the development activities themselves and the writing of the associated documents, we expect to be greatly assisted in these tasks by the concurrent use of these materials by other teachers from whom we can obtain direct feedback about their usefulness in their various classroom settings.	
+     We will be assisted in our assessment of student progress by outside evaluators, consultants who will visit our trial classes from time to time and share their observations with us.
+     We will continue to develop and test our implementation of subsets of LOGO on other low-cost systems	; at this point we will also seek out users of additional systems who may wish to implement LOGO on their systems with our guidance and assistance. In this way we can magnify the effect of a relatively small effort. our final published document can magnify the effect of a relatively small effort, by incorporating some of the work of others who are interested in the same task. If feasible, we will test some LOGO activities with children in our Children's Learning Laboratory at MIT; this will however, be on an informal basis, and will not be a major thrust of this project.
+
+phase 4 - June l980 - June l981:
+     Work during this part of the project will be less intense, and will be primarily devoted to writing the final versions of our teacher and student material, our background information and our technical reports. We will continue to informally monitor use of our materials by teachers for the purpose of aiding in our revisions. During this year we expect to be in communication with potential publishers of the material for the purpose of making firm arrangements to have the material published by the time the writing is completed in June of 1981. Our prior experience has shown that while the work of writing up the results of a project can be carried out in a less intense manner, that it takes a fair amount of time for this sort of writing to come to fruition. During this period our entire staff will be participating in the writing opf our teaching materials and reports. by allowing a year of substantially reduced effort, we feel that we will be providing for the best possible, highest quality dissemination of our materials and findings.	
+     
+(we need a paragraph here about mechanisms for distributing the materials to users after final versions are availible)
+				
+
+
+
+
+
+
+
+
+
+

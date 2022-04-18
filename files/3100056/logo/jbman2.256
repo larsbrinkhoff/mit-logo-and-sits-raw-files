@@ -1,0 +1,1443 @@
+.xgp				
+.font 0 31vg
+.font 1 40vg
+.adjust
+
+
+INTRODUCTION TO TURTLE GRAPHICS AND PROCEDURE WRITING
+
+These terminal sessions* will introduce you to the basics of
+Turtle* graphics and procedure* writing.
+
+.nofill
+Session 1:  Some basic graphics commands
+Session 2:  Getting more control
+Session 3:  Writing a procedure
+Session 4:  Editing a procedure
+
+.adjust
+Session 1:  Some basic graphics commands
+
+TERMINAL SESSION 1.
+
+Give the command TURTLE by typing it in at your terminal. Try
+
+.ce
+1TURTLE <cr>
+
+0The arrow-figure in the middle of the screen is called a
+"computer turtle" or just "Turtle" for short.
+
+The Turtle will move if you give it commands in the LOGO
+language.  
+
+.ce
+1FORWARD 50 <cr>
+
+0Notice that the Turtle draws a line.
+
+Now try typing
+
+.ce
+1WIPE <cr>
+
+0Notice that the line disappears and the Turtle comes back to
+its home position.
+
+Try drawing lines of different lengths.  Use numbers as big
+and as small as you want and see what happens.  Refer to the
+ERROR MESSAGES* below if one happens to appear on your screen.
+
+You can abbreviate FORWARD as FD if you like.
+
+Notice that if you leave out the space between FD and the
+number, for example FD100, the computer will give you the
+error message, "YOU HAVEN'T TOLD ME HOW TO FD100."
+
+What has happend is that the computer has read 1FD1000 as a single
+word.  Unlike us, the computer is not smart enough to realize that what
+was really meant was 1FD 1000.  Leaving out the space is called a
+syntax error.
+
+Now try the command 
+
+.ce
+1RIGHT.TURN 90 <cr>
+
+0which you can abbreviate
+1RT 900.
+
+Notice that the Turtle changes its heading while remaining
+in the same position, that is to say, it turns in place.
+Try RT followed by other numbers.
+
+Now try turning the Turtle with RT and then giving a new FD
+command.  Notice that it goes off in the direction it is
+facing, drawing a line as it goes.
+
+With some experimentation, you should now be able to make
+the Turtle draw a square.
+
+REVIEW
+
+We have learned four words in the LOGO language:  TURTLE,
+FORWARD, RIGHT.TURN and WIPE.  We have also learned
+something about the grammar of the language. All of these
+words are called commands.  Some commands, like FORWARD and
+RIGHT.TURN are followed by numbers.  These numbers are
+called inputs.  When we say FD 100, we call 100 the input to
+FD.  Other commands, like TURTLE and WIPE do not take
+inputs.
+
+We have also learned about error messages.  These are
+messages the computer sends us when iut is unable to carry
+out our instructions.  So far we have encountered the
+following error messages:
+
+     I DON'T KNOW HOW TO ...
+     ...NEEDS AN INPUT.
+     OUT OF BOUNDS
+
+ERROR MESSAGE REVIEW
+
+The following is a list of commands.  Some of them contain syntax
+errors and will generate error messages.  You can gain a better sense
+of error messages by seeing what happens in these different cases:
+
+.nofill
+TYPE THESE COMMANDS:	If you like, note the error 
+			if any and the error message generated.
+
+FD100
+FORWARD 50
+FD -100
+RT 90
+RT 900
+FD
+WIPE 360
+WIPE
+RT -90
+RITE 90
+FD RT
+
+ERASER UP 100
+PENUP "RED
+PENUP
+SETGROUND RED
+SETGROUND "RED
+SETGROUND "RED
+SETGROUND "RED
+RT 90
+FD 100
+RT 90
+FD 100
+RT 90
+FD 100
+RT 90
+FD 100
+SOME RELATED COMMANDS
+
+.adjust
+You can also get the Turtle to move in the opposite direction from the
+way it is facing. Type 
+.br
+BACK 100
+.br
+This can be abbreviated 
+.br
+BK 100.
+
+BACK requires the same inputs as FORWARD does, that is to say, it
+accepts only numbers.  These numbers must be separated from the word
+BACK by a space.
+
+LEFT, abbreviated LT, operates exactly the same as RIGHT, but of
+course, turns the Turtle left the specified number of degrees
+relative to the direction in which it was facing (its heading).
+If you have tried to make any complicated figures, you will have seen
+the usefulness of this command.
+
+If you have drawn a figure and want the Turtle to return to its
+original position, type HOME.  Notice that HOME does not take any inputs.
+
+<Try using these new commands so that you can become
+comfortable with them>
+
+PROJECT SUGGESTIONS:
+
+1.  Use the commands you have already learned to draw other
+geometric figures.  For example, try to draw a triangle.
+(Hint:  If you decide to draw an equilateral triangle, you
+may be surprised by the input you need to give to RT or LT.)
+Remember, the input is the number of degrees the Turtle must turn, not
+the number of degrees in the angle.
+
+2.  Use these commands to draw any more complicated picture.
+
+
+GLOSSARY OF COMMANDS
+
+FORWARD (abbrev. FD).  This command requires an input* of a
+number, e.g. FD 100 and will cause the Turtle to move the
+specified number of turtle units in the direction of its
+heading*.
+
+RIGHT.TURN (abbrev. RT).  This command requires an input of a
+number, e.g. RT 90.  The input corresponds to the degree
+measure of the angle the Turtle is to turn.  Remember that
+RT means that the Turtle will turn right the specified
+number of degrees relative to a given heading.
+
+TURTLE.  This command causes the Turtle* to appear on the
+screen.
+
+WIPE.  This command causes what the Turtle has drawn to be
+erased from the screen. The Turtle will return to its home position.
+
+CLOSELY-RELATED COMMANDS
+
+BACK (abbrev. BK).  This command is the opposite of FORWARD.
+Like FORWARD, it requires an input of a number, e.g. BK 100,
+and causes the Turtle to move the specified number of turtle
+units away from the direction of its heading.
+
+LEFT-TURN (abbrev. LT).  This command is the opposite of RIGHT.
+Like RIGHT, it requires an input of a number, e.g. LT 90.
+This command causes the Turtle to turn left the specified
+number of degrees relative to its heading.
+
+HOME.  This command causes the Turtle to return to its
+original position and heading.
+
+ERROR MESSAGE SUMMARY
+
+1.  If you forget to specify an input to FD, BK, RT or LT,
+or if you give as an input something that is not a number,
+the Turtle will not move and the computer will give an error
+message*.  If you have given no input, the error message
+will read, for example, "FORWARD NEEDS MORE INPUTS."  If you
+have given the wrong kind of input,as for example the word
+"red", the error message will read, "FORWARD  DOESN'T LIKE
+RED AS INPUT."
+
+2.  If you forget to leave a space between any of the above
+commands that require an input and the input itself,for
+example, FD100, the computer will give the error message,
+"YOU HAVEN'T TOLD ME HOW TO FD100."
+
+3.  If you give FD or BK an input that would take the Turtle
+off the screen, the computer will give the error message,
+"OUT OF BOUNDS."
+
+NOTE:  IF THE COMPUTER RESPONDS WITH AN ERROR MESSAGE TO 
+SOMETHING YOU HAVE TYPED
+YOU MUST CORRECTLY RETYPE YOUR ENTIRE MESSAGE.
+
+.nofill
+###########################################################
+.adjust
+
+Terminal Session 2:  Getting more control.
+
+It is possible to make the Turtle move without leaving a
+trace.  To do this, type 
+
+.ce
+1PENUP <cr>
+
+0To get the Turtle to start
+drawing again, type 
+
+.ce
+1PENDOWN <cr>
+
+0With the Turtle in its PENDOWN state* use the commands
+you have learned in Terminal Session 1 to draw a square or
+some other figure.
+
+Now, type
+
+.ce
+1PENUP <cr>
+
+0move the Turtle to another part of the
+screen, type 
+
+.ce
+1PENDOWN <cr>
+
+0and draw another figure.
+
+Notice that PENUP and PENDOWN are commands that do not take
+any input.
+
+It is possible to make the Turtle erase the line it has
+drawn.  To do this, type ERASERDOWN and retrace the lines
+you want to erase.  To get the Turtle to stop erasing, type
+ERASERUP.  
+
+Use ERASERDOWN and ERASERUP to erase part of a figure you
+have made.
+
+Notice that these commands give you more control than the
+command WIPE which you encountered in Terminal Session 1.
+If there is only a part of a drawing that you don't like,
+you can erase only that part.  If you used WIPE, you would
+lose the whole drawing.
+
+In Terminal Session 1 we discovered that if FD or BK are
+given inputs that take the Turtle trip off the screen, the
+computer gives the error message, "OUT OF BOUNDS".  If you
+use the command WRAP and then follow it by FD or BK commands
+with large inputs, the out of bounds portion of the trip
+will be wrapped back onto the screen.  Type
+
+.ce
+1WRAP <cr>
+
+0Now type
+
+.ce
+1FD 1000 <cr>
+
+0and see what happens.
+
+
+To get the Turtle to stop wrapping, type
+
+.ce
+1NOWRAP
+
+0Another way of dealing with OUT OF BOUNDS Turtle trips is to type
+
+.ce
+1CLIP <cr>
+
+0If you now type
+
+.ce
+1FD 1000 <cr>
+
+0the Turtle will not wrap, but will not stop and generate an error
+message when it goes out of bounds.  Instead, it will draw only that
+part of the trip that can appear on the screen.  If you want the Turtle
+to stop clipping, type
+
+.ce
+1NOCLIP
+
+0You can choose the color for the background of your drawing
+and also for the lines.  See the Color Glossary on p. __ of
+this manual to see what colors are available. 
+
+To choose the background color, use the command SETGROUND...
+Type
+
+.ce
+1SETGROUND "RED <cr> 
+
+0Notice that this is SETGROUND followed by a space, a quotation mark, no
+space, and the name of a color.   
+This is pronounced "setground quote red."
+Remember that as yet there are no computers that are as smart as
+persons.  Even though you would realize that, for example, 
+
+.ce
+1SETGROUND"RED <cr>
+
+0meant
+
+.ce
+1SETGROUND_"RED <cr>
+
+0the computer does not.
+You must use the proper spacing and
+punctuation for the computer to understand your commands.
+This is called using proper syntax.  If you type a syntax
+error the computer will give you an error message.
+
+The command SETLINE followed by a space, a quotation mark,
+no space, and the name of a color will enable you to draw
+lines in the color of your choice.  As an example, type
+
+.ce
+1SETLINE "MAUVE <cr>
+
+0You must also use this command to change the
+color of lines already drawn.  Be careful to use proper
+syntax! <something needed here on limits, i.e. how many
+colors can be used at one time;  are they set yet?>
+
+REVIEW
+
+You have learned the new commands,PENUP and PENDOWN,
+ERASERDOWN and ERASERUP, WRAP and NOWRAP, CLIP and NOCLIP, SETGROUND and SETLINE.  
+
+Some of these commands--SETGROUND and SETLINE-- have inputs
+that are not numbers.
+
+Some of these commands -- PENUP and PENDOWN, ERASERDOWN and
+ERASERUP, and WRAP  and NOWRAP, CLIP and NOCLIP -- do not take any input.
+
+If you give an input to a command that does not take an
+input, the computer will generate an error message. You will
+also get an error message if you don't give an input to a	
+command that takes an input or if you give the wrong kind of
+input to a command that takes an input. 
+
+ERROR MESSAGE REVIEW
+
+.nofill
+TYPE THESE COMMANDS
+
+SUGGESTED PROJECTS		If you like, note the
+				error, if any, and the error
+				message generated.
+
+ERASERUP 100
+PENUP "RED
+PENUP
+SETGROUND RED
+SETGROUND "RED
+SETGROUND"RED
+SETGROUND " RED
+
+.adjust
+GLOSSARY OF COMMANDS
+
+ERASERDOWN/ERASERUP (abbrev. <?>).  The command ERASERDOWN
+will cause the Turtle to erase lines it retraces.  To
+negative this command, type ERASERUP.	
+
+PENUP/PENDOWN (abbrev. PU/PD).  If you type the command
+PENUP, the Turtle will move according to the LOGO commands
+given without leaving any trace.  To get the Turtle to draw
+again,  type PENDOWN.
+
+SETGROUND "<COLOR> (abbrev. <?>).  This command allows you
+to choose the background color.  Type the command SETGROUND
+followed by a space, a quotation mark, no space, and the
+name of a color*, for example, SETGROUND "RED.
+
+SETLINE "<COLOR> (abbrev. <?>).  This command allows you to
+choose the color of the lines.  You can even change the
+color after the lines are drawn.  Type the command SETLINE "RED.
+Notice that this is SETLINE
+followed by a space, a quotation mark, no space, and the
+name of a color. i.e. SETLINE_ "GREEN.
+
+WRAP.  This command permits you to give large inputs to the
+FD and BK commands without generating the error message,
+"OUT OF BOUNDS."  Instead, the computer will "wrap" the out
+of bounds portion of its trip back onto the screen.
+
+The command WRAP is undone by the command NOWRAP.
+
+ERROR MESSAGE SUMMARY
+
+1.  Notice that if you give a command the wrong kind of
+input, for example, FD "PURPLE or SETGROUND 100, the
+computer will give you the error message, "<command name>
+DOESN'T LIKE ... AS INPUT."
+
+############################################################
+
+TERMINAL SESSION 3:  Writing a procedure <or "Defining New
+Words" or "Defining New Commands"?> <DEFINING NEW VERBS>
+
+LOGO is extensible; that is to say, you can add your own commands --
+once you define them, they operate like other LOGO commands.  
+
+A user-defined LOGO command is called a procedure.
+
+If you want to draw a square it would be nice if we could
+teach the computer that the word SQUARE means "draw a
+square."  To do this we need to write a procedure*.
+
+Type the word TO followed by a word of your choice.  Let's
+use SQUARE.  Notice that the text changes color to yellow.  Yellow
+commands don't do anything visible.  Yellow means "listen and
+remember".  In technical jargon we say that the computer has switched to
+editing and
+procedure-writing mode.
+
+Type in some commands you have already learned.  Notice that
+the Turtle does not execute* them.  This is because you are
+now in procedure-writing mode.
+
+Now type in the steps you discovered are needed to draw a
+square.  In case you've forgotten, the following approach
+will work:
+
+.nofill
+RT 90
+FD 100
+RT 90
+FD 100
+RT 90
+FD 100
+RT 90
+FD 100
+
+.ADJUST
+
+Now type the word SQUARE.  Notice that the Turtle draws a
+square.
+
+Type the word END.  Notice that the message, "SQUARE
+DEFINED"<?> now appears on your screen and the color of your typing
+changes back to green.  It will now be
+possible again to give the Turtle direct commands.
+
+The Turtle will now draw a square each time you type in
+SQUARE.
+				
+Notice the difference between typing SQUARE and TO SQUARE.
+When you type SQUARE, the computer executes the procedure
+called SQUARE and the Turtle draws the figure on the screen.
+When you type TO SQUARE, the Turtle will remain stationary.
+If SQUARE has previously been defined, the computer will
+give you the error message, "YOU HAVE ALREADY TOLD ME HOW TO
+SQUARE." If SQUARE has not previously been defined, the
+computer will switch to procedure-writing mode.
+
+REVIEW
+
+We have learned two words in the LOGO language, TO and END.
+These words are used to write procedures.  By typing TO
+followed by a space and some undefined word* you can teach
+the computer a new word.  While you are teaching the
+computer, the Turtle will remain stationary unless you type
+in the procedure name.  You can do this to check your steps
+along the way.  When you type END, the new word will be
+defined and you can go back to giving the Turtle direct
+commands.
+
+GLOSSARY OF COMMANDS
+
+TO.  This word followed by a space and a procedure* name
+will put the computer in procedure-writing mode*.  A
+procedure name can be any combination of letters, numbers
+and punctuation symbols that do not already have some
+special meaning to the computer, for example, TO SQUARE, TO
+.FLOWER, or TO BOX4.  While the computer is in this mode,
+the Turtle will not respond to the commands we have learned
+in Terminal Sessions 1 and 2.  However, if you type in the new
+procedure name itself, the Turtle will execute the steps you
+have written.
+
+
+END. Typing this word takes you out of procedure-writing
+mode and back to <?> mode
+ 
+Session 4:  Labelling and Editing Your Procedure
+
+<label>: While you are in procedure-writing mode you can insert a
+label* by typing a LOGO word* followed by a colon.
+
+Session 5:  Some short cuts.
+.br
+<DO THIS SESSION LAST>
+
+.NOFILL
+COMMANDS
+
+GO
+IF HEADING 
+STOP 
+G 
+=
+MAKE
+
+.adjust
+First, for the sake of convenience, let's label the steps of the
+procedure with numbers.
+
+To do this we <fill in section when editing commands are clear>
+
+Now, type 
+.nofill
+10:
+20:
+30:
+40:
+50:
+60:
+70:
+80:
+.adjust
+
+in front of each step of the TO SQUARE procedure.
+If we type
+
+.ce
+1PRINTOUT <cr>
+
+0We see that we now have
+
+.nofill
+TO SQUARE
+10: RT 10
+20: FD 100
+30: RT 90
+40: FD 100
+50: RT 90
+60: FD 100
+70: RT 90
+80: FD 100
+
+.ADJUST
+We know that for a larger or smaller square the angles will stay the
+same, but the length of the sides will vary.
+
+Thus, we know right that we need to change lines 2, 4, 6 and 8 and that
+lines 1, 3, 5 and 7 will remain the same.
+
+Let's do this by replacing the input to FD with a variable.
+
+Type 
+
+.CE
+1:SIDE <CR>
+
+0In the LOGO language this is the way variables are written.  :SIDE is
+pronounced "dots side," and means "the thing of side".  Notice that
+there are no spaces between the color and the word "side."
+
+Now, replace all the inputs to FD in lines 2, 4, 6 and 8 with :SIDE.
+
+Before typing END, try the program by typing
+
+.ce
+1SQUARE <cr>
+
+<Describe what happens>
+
+0In order to write a procedure with variables, the procedure name
+must indicate to the computer that it contains a variable.
+
+Edit the title to 
+
+.ce
+1SQUARE :SIDE <cr>
+
+0Now type
+
+.ce
+1SQUARE <cr>
+
+0Now, run this program by typing SQUARE.  If the Turtle was in its home
+position when you started (facing straight up), this stop-rule should
+have worked.
+
+Notice that the HEADING of a Turtle in its home position is 0.
+If you want to learn more about HEADING, move the Turtle to various
+orientations and then type
+
+.ce
+1HEADING <cr>
+
+0(Hint: a complete rotation is 360 degrees)
+.br
+Now, type
+
+.ce
+1RT 30 <cr>
+
+0and then run the SQUARE program by typing
+
+.ce
+1SQUARE <cr>
+
+0Notice that the Turtle Doesn't stop until the computer runs out of
+space.  This is because the Turtle never returns to its home orientation.
+
+We can remedy this situation by writing a different kind of stop rule.
+
+Add a line before 10:  You can label it 5: if you want.
+
+.ce
+15:  MAKE "OLDHEADING HEADING <cr>
+
+0OLDHEADING is a variable.  It is preceded by a quotation mark to show
+that it is not the name of a procedure.  (Remember what happened when
+we forget to precede the name of a color with a quotation mark with the
+commands SETGROUND and SETLINE?  See pg. ___)
+
+We use the command MAKE to initially set OLDHEADING at the present
+orientation of the Turtle.
+
+Now edit SQUARE further by adding a final line, which you can label 40
+if you want.
+
+.ce
+140 IF :OLDHEADING = HEADING STOP <cr>
+
+0Here, the expression 
+:OLDHEADING
+means 
+"thing of OLDHEADING".
+
+We should notice that HEADING gives us the heading of the turtle at any
+particular point.  Experiment with it by moving the turtle around and
+than typing heading.
+
+In step 5:  we get OLDHEADING at whatever the orientation of the turtle
+was at that moment.
+
+And in step 40:  we told the computer to STOP whenever the turtle
+returned to its initial orientation.
+
+It takes some time to get used to the different expressions
+.nofill
+"OLDHEADING
+:OLDHEADING
+HEADING
+.nofill
+
+We should remember that HEADING is a LOGO command that gives us the
+orientation of the Turtle at given moment.
+
+We used the expression 
+
+.ce
+1MAKE "OLDHEADING HEADING <cr>
+
+0to set "OLDHEADING at the particular orientation of the Turtle at what
+it was before the rest of the SQUARE program began to run.
+
+Remember that it was necessary to precede the word OLDHEADING with a
+quotation mark to make the word "OLDHEADING so as not to confuse the
+computer.  Without the quotation mark, the Computer would have read
+OLDHEADING to be a command to execute the nonexis ....procedure TO
+OLDHEADING in the same way that the computer reads SQUARE as a command
+to execute the procedure TO SQUARE.
+
+In line 40:  we use the expression :OLDHEADING to denote the value
+of "OLDHEADING, which, as we remember, was whatever the HEADING of the
+Turtle was initially.  At this point in the procedure, we are no longer
+interested in how the meaning of "OLDHEADING was set, which is what
+line 5: told us, but in what it was set at; that is to say, its value.
+
+REVIEW
+
+We have learned the LOGO commands GO, STOP, MAKE, HEADING and =.  We
+have learned to distinguish between words like SQUARE and HEADING,
+which are respectively a command to execute a user-defined procedure
+and a LOGO command, a word like "OLDHEADINg, which is the name of a
+variable, and a word like :OLDHEADING, which is the value of a variable.
+
+We have learned how to introduce a variable to stand for the HEADING of
+the turtle at a particular time, by using the LOGO command MAKE.  And
+we have learned how to use a stop rule.
+
+We have used these new words and concepts to edit our procedure, TO
+SQUARE, which now reads:
+
+.nofill
+TO SQUARE
+5:  MAKE "OLDHEADING HEADING
+10: RT 90
+20: FD 100
+30: GO 10
+40: IF HEADING = "OLDHEADING STOP
+END
+
+.adjust
+GLOSSARY OF COMMANDS
+
+GO
+.BR
+This command is used within a procedure.  It identifies the point in a
+procedure that the computer executes next.
+
+HEADING
+.br
+This command identifies the orientation of the Turtle.  A Turtle in its
+home position, pointing straight up has a HEADING of 0.
+
+IF
+.br
+This command is a conditional.  It identifies a proposition which, if
+true, causes the computer to execute the next command.
+
+MAKE
+.br
+This command is used to name a variable.  The variable must be preceded
+by a quotation mark.
+
+STOP
+.br
+This command is used within a procedure.  It tells the computer to stop
+executing the procedure.
+
+=
+.br
+This command <?> describes a relation <?>
+
+SESSION 6:  INPUT VARIABLES
+
+It would be nice if we could write one program to draw squares of
+different sizes.  This must certainly have occurred to you, especially
+if you have tried drawing pictures and wanted to use a larger or
+smaller square than in our TO SQUARE program.
+
+We can do this by using one input variable.
+
+In order to have a successful program with input variables, the
+variable must appear both in the title of the procedure and within the
+procedure itself.
+
+Say we want to write a program to draw a square with a side of length
+:SIDE.  Remember that :SIDE means "the value of side."
+
+Edit the title of the program TO SQUARE to read TO SQUARE :SIDE.  This
+tells the computer that the procedure TO SQUARE accepts an input variable.
+
+Let's look at line 20:  of TO SQUARE.
+
+.ce
+120:  RT 90 <cr>
+
+0We know that the Turtle will have to turn 90 degrees to make a square,
+whatever the size of the square.  So we leave line 20: as it is.
+
+Now, we look at line 30:
+
+.ce
+130:  FD 100 <cr>
+
+0It is the input to FD that we want to replace by a variable.  We denote
+the value of the variable justas we did in the title of the
+procedure.  Edit line 30:  to read
+
+30: FD :SIDE
+
+So what happens now if you type SQUARE?
+
+.ce
+1SQUARE <cr>	0???
+
+0Notice that the error message which appears, "SQUARE needs an input" is
+the same as appeared when, in Session 1, we typed FD without an input.
+
+One way to think about the way in which we have changed our procedure
+to draw a square is that we have made it more like the LOGO commands.
+FD, BK, RT< LT, SETGROUND, SETLINE -- which require inputs -- and less
+like the LOGO commands WIPE, ERASER DOWN, ERASERUP, PENDOWN, PENUP, and
+HEADING -- which do not take inputs.
+
+If we now want the Turtle to draw a square with sides 50 turtle steps
+long we type
+
+SQUARE 50
+
+Notice that 50 is not preceded by a color.  That is because 50 is
+the value of side (which, as we remember, is written in the LOGO
+language :SIDE)
+
+See what happens if you type
+
+SQUARE :50
+
+The error message <........>
+tells us that the computer <......,>
+
+REVIEW
+
+We now know how to write a generalized procedure to draw square of any
+length we choose.  We do this by writing a procedure that accepts an
+input variable.
+
+Just as we have already encountered LOGO commands that accept inputs
+and those that do not, we now know how to write procedures of both types.
+
+SESSION 7:  More than one input variable
+
+Suppose we want to write a single procedure with which we could get the
+Turtle to draw an equilateral triangle of variable size, color and
+background color.  Is such a thing possible?
+
+First, let's write a procedure for equilateral triangles which will
+have this flexibility.
+
+Thinking back on how we developed our generalized TO SQUARE :SIDE
+program, we first note the steps the Turtle will have to take:
+
+.indent 8
+.nofill
+RT 120
+FD :SIDE
+RT 120
+FD :SIDE
+RT 120
+FD :SIDE
+
+.indent 0
+.ADJUST
+Does the input to RT surprise you?  Remember that the command RT tells
+the Turtle how many degrees it should turn.  In the context of writing
+a procedure to draw a triangle, this means that we need to think of the
+exterior angles, not the interior angles.
+
+Notice that the sum of the exterior angles is 360.  Of course, the sum
+of four 90o angles was also 360.  From this we can formulate a
+general rule:  that the sum of the inputs to RT rquired for the Turtle
+to make a single, uninterrupted trip back to its original position is
+360.  We call this the TOTAL TURTLE TRIP THEOREM.
+
+Now, if we want, we could shorten the steps to get the turtle to draw
+an equilateral triangle using the stop-rule we developed in session 5:
+
+.nofill
+TO EQUITRIANGLE :SIDE
+10 MAKE "OLDHEADING HEADING
+20 RT 120
+30 FD :SIDE
+40 GO 10
+50 IF HEADING = :OLDHEADING STOP
+END
+
+.ADJUST
+We remember from Session 2 that the command SETGROUND "<colorname> sets
+the color of the background and the command SETGROUND "<colorname> will
+change the color of lines the Turtle has drawn.
+
+If we now add two steps:
+
+.nofill
+60 SETLINE :LINECOLOR
+70 SETGROUND :GROUNDCOLOR
+
+.adjust
+and edit the title to read
+.br
+TO EQUITRIANGLE :SIDE :LINECOLOR 
+.br
+gradually we will have a procedure that will permit us to type
+.br
+EQUITRIANGLE 100 "ORANGE "GREEN
+
+to get the Turtle to draw an organe equilateral triangle with sides of
+100 Turtle works against an orange background.
+
+Remember that SETLINE and SETGROUND are commands that take names of colors.
+And names of colors begin with a quotation mark.
+
+See what happens if you type:
+.br
+EQUITRIANGLE 100 ORANGE GREEN.
+
+The error message <????> appears <???????>
+
+REVIEW
+
+We have now taught the computer a procedure, EQUITRIANGLE :SIDE
+:LINECOLOR :GROUNDCOLOR.  This is a procedure that takes three inputs.
+  
+SESSION <>:  Using Subprocedures and Some LOGO Animation
+
+With commands we have already learned some new commands, and the
+important concept of using subprocedures*, we will teach the computer
+to show us a stick figure doing jumping jacks.
+
+Let's start by drawing two figures
+
+.spread
+/Figure 1/and/Figure 2
+
+Looking at Figure 1, we see that the diamond head can be drawn by
+modifying our TO SQUARE program:
+.br
+Starting with the Turtle in its home position:
+
+.nofill
+.indent 8
+TO DIAMOND
+10: LT 45
+20: FD 25
+30: RT 90
+40: FD 25
+60: RT 90
+70: FD 25
+80: RT 90
+90: FD 25
+100: RT 135
+END
+
+.adjust
+.indent 0
+Do you see where we got the input to RT in step 100:?  When the turtle
+finished drawing the diamond, RT 90 would have set the Turtle on a path
+of retracing the diamond.  And we started out by turning the Turtle LT
+45.  So to get the Turtle back to its original orientation, we added 90
+to 45 and got 135.
+
+Our idea in returning the Turtle to its original orientation at the end
+of a procedure was to achieve what is called state transparency*.  The
+reason we do this is so that if a bug* appears somewhere along the way
+(as it does more often than not) it will be easy to trace it to its source.
+
+Now, let's write a procedure to draw the body of Figure 1.  We'll call
+it TO BODY1.
+
+.nofill
+.indent 8
+TO BODY1
+10: RT 180
+20: FD 50
+30: LIMBS
+40: RT 180
+50: FD 25
+60: LIMBS
+END
+
+.adjust
+.indent 0
+Are you wondering what steps 30: and 60: are all about?  Those are
+steps telling the computer to execute the procedure TO LIMBS, which we
+have not written yet.  Here, TO LIMBS is a subprocedure*.  You may
+think it odd to include a subprocedure not yet written in a procedure
+we are currently writing.  It may seem a little odd, but it is
+sometimes a very helplful approach.  What happened here was that after
+we started writing TO BODY1, it seemed that it would be a good idea to
+have a subprocedure to draw the arms and the legs.  So all we did was
+to insert those steps and put off writing TO LIMBS until after.
+
+Now, let's define TO LIMBS.  First let's change its name.  By looking
+at Figure 1 and Figure 2, we can see taht the arms and legs are the
+most significant difference between the two figures.  So let's call our
+current procedure TO LIMBS1
+
+.nofill
+.indent 8
+TO LIMBS1
+RIGHT LIMBS:
+10: RT 120
+20: FD 25
+30: BK 25
+40: LT 120
+
+LEFTLIMBS2:
+50: LT 120
+60: FD 25
+70: BK 25
+80: RT 120
+END
+
+.adjust
+.indent 0
+Now that we have all the consituent elements of Figure 1, let's write a
+superprocedure* to draw the whole thing.  We'll call it TO FIGURE1.
+
+.indent 8
+.nofill
+TO FIGURE1
+10: DIAMOND
+20: BODY1
+END
+
+.adjust
+.indent 0
+Our next step is to write a procedure to draw Figure 2.  If we look at
+Figures 1 and 2, we should see that this is now a relatively simple
+matter.  We see first of all that the limits will have to be different
+so we know that we will want to write a subprocedure we'll call TO LIMBS2.
+We also know that to give the impression of jumping, we will want the
+head and body to be higher than in Figure 1.
+
+First, let's write
+
+.nofill
+.indent 8
+TO LIMBS2
+RIGHTLIMBS:
+10: RT 30
+20: FD 25
+30: BK 25
+40: LT 30
+
+LEFTLIMBS2:
+50: LT 120
+60: FD 25
+70: BK 25
+80: RT 120
+END
+
+.adjust
+.indent 0
+Let's incorporate TO LIMBS2 into a new procedure we'll call TO BODY2.
+
+.NOFILL
+.INDENT 8
+TO BODY2
+10: RT 180
+20: FD 50
+30: LIMBS2
+40: RT 180
+50: FD 25
+60: LIMBS2
+END
+
+.adjust
+.indent 0
+If we now decide that we want our jumping jacks stick-figure to jump 15
+Turtle steps we can do this in a few easy steps.  Modelling ourselves
+on the procedure TO FIGURE1, we write
+
+.nofill
+.indent 8
+TO FIGURE 2
+10: PU
+20: FD 15
+30: PD
+40: DIAMOND
+50: BODY2
+END
+
+.adjust
+.indent 0
+In order to animate these figures, we introduce several new LOGO
+commands: MAKE, SNAP, DISPLAY and WAIT.
+
+We will first write a preparatory procedure to our final procedure,
+which will animate a jumping stick figure.  The goal will be to have
+the computer "take a snapshot of Figure 1 and Figure 2".  We want to do
+this so they can be flashed fully drawn alternately on the screen.
+
+To do this, we use the new LOGO commands MAKE and SNAP.
+
+The command...
+
+SESSION < >: WORDS and LISTS
+
+Throughout this manual we have used the metaphor of "teaching the
+computer" new commands and occasionally of "talking to the computer".
+Here we carry the metaphor one step further by designing a program for
+conversing with the computer 
+
+Let's write a procedure to engage us in a polite greeting ritual.
+We'll call the procedure TO HELLO.  That way if we type in the
+procedure command
+
+.ce
+1HELLO
+
+0it would be well to have the computer respond, "Oh, hello.  How are
+you today?"  To do this, we write the first line of TO HELLO.
+
+PRINT [OH, HELLO.  HOW ARE YOU TODAY?]
+
+The LOGO command PRINT takes an input of a word* or a list*, prints the
+input on the screen, and executes a carriage return.
+
+Here, we have given PRINT an input of a list*.  Notice that when the
+input is a list, PRINT prints the list without square brackets.
+
+We would now like to be able to type in a response to the computer's question.
+Later, we'll set things up so if, for example, we answer, "Not so well
+really," the computer will make an appropriate response.  We will also
+be able to set things up so that the whole "conversation" can be more
+idiocratic.  For the moment, however, let's keep things simpler and
+socially a bit more distant.
+
+Assume then that we intend to give the laconic answer: "Fine".
+
+What we want is for the computer to acknowledge our response and keep
+the small talk going.  More precisely, we want the computer 
+.br
+(1) to accept a line we type in as a response
+.br
+(2) to store that response
+
+To do this, we use the LOGO primitive REQUESTLINE (abbrev. RL).  RL,
+when executed, waits for a line to be typed in and outputs the line as
+a list.  We'll give the output a name to help us remember it, using the
+LOGO primitive and
+
+(3) to use the response in continuing so as to maintain the illusion of
+a real conversation.
+
+MAKE, and then get the computer to print a sentence that includes our
+response using the LOGO primitives PRINT and SENTENCE.
+
+Let's take this step-by-step.
+
+First, let's get the computer to wait for us to type in a response,
+output this response and give it a name.  To do this we type our next
+step: 
+
+.ce
+1MAKE "ANSWER1 REQUEST
+
+0When the computer evaluates this line, it first "sees" REQUEST and
+prints the prompt < to show it is ready for a response.  Next, it
+assigns the name ANSWER1 to REQUEST's output.  In LOGO, we remember,
+the name of ANSWER1 is written "ANSWER1 and the command MAKE is used to
+assign the name.
+
+Does it surprise you that in LOGO we say
+
+.ce
+1MAKE "ANSWER1 REQUEST
+
+0to assign the name ANSWER1 to the output of REQUEST?
+
+<SECTION HERE TO EXPLAIN; perhaps cf. to distinction
+procedure-name/procedure-command>
+
+<note from Greg:  I don't recall a description of the concept 
+"evaluate".  May this help one appreciate what is happening?>
+
+Notice that our second line, then, does three things:
+.br
+(1) it alerts the computer that we are going to type in a line and has
+the computer give us a prompt character;
+.br
+(2) it outputs the line we have typed in, and
+.br
+(3) assigns the name ANSWER1 to that output.  
+
+None of these steps is
+visible.  But our next step will be.
+
+If we want the computer to respond to us by saying "Glad to hear you're
+fine.  By the way, I'm afraid I've forgotten your name," we make the
+next step.
+
+.nofill
+PRINT ([SENTENCE [GLAD TO HEAR YOU'RE] :ANSWER
+...[BY THE WAY, I'M AFRAID IU'VE FORGOTTEN YOUR NAME.])
+
+.adjust
+The LOGO primitive SENTENCE (abbrev SE) takes words or lists as inputs
+and outputs them as a list.  If we want SENTENCE to take more than two
+inputs we must surround the command SENTENCE and inputs with
+parentheses.  Again, we should remember the distinction between a
+primitive like SENTENCE that outputs and a command like PRINT that
+actually sets the computer to print its input on the 
+screen.
+
+In order to be able to tell the computer our name I have it remember it
+for further use.  We now go through the kind of step we did before.  We
+write
+
+.ce
+1MAKE "ANSWER2 REQUEST
+
+0The computer sees REQUEST, and types a prompt character, waiting for
+our response, which it will store as output under the name ANSWER2.
+
+If our name is Johnny Lamplighter, we type
+
+.ce
+1JOHNNY LAMPLIGHTER
+
+0and if we write another 2 steps to our procedure
+
+.nofill
+PRINT (SENTENCE :ANSWER2 [,OF COURSE.
+WELL, HAVE A GOOD DAY])
+END
+
+.adjust
+Then we will have taught the computer a simple bit of etiquette.
+
+To review, our procedure now reads as follows.
+
+.nofill
+TO HELLO
+10: PRINT [OH, HELLO. HOW ARE YOU TODAY?]
+20: MAKE "ANSWER1 REQUEST
+30: PRINT (SENTENCE [GLAD TO HEAR YOU'RE] :ANSWER1
+[--BY THE WAY, I'M AFRAID I'VE FORGOTTEN YOUR NAME...])
+40: MAKE "ANSWER2 REQUEST
+50: PRINT (SENTENCE :ANSWER2 [,OF COURSE.  WELL, HAVE A GOOD DAY])
+END
+
+.adjust
+GLOSSARY OF LOGO COMMANDS AND TERMS
+
+LIST
+.BR
+A list is a series of at least two LOGO words or lists enclosed by
+square brackets.
+
+The command LIST accpets as inputs such a series as described above and
+outputs them as a list.  In order that the list appear as a list on the
+screen, it is necessary to use the command FPRINT.
+
+For example, if we want to print
+
+.ce
+1[WINE [CRACKERS AND CHEESE]]
+
+0we type
+
+.ce
+1FPRINT (LIST "WINE (LIST "CRACKERS "AND "CHEESE))
+
+FPRINT
+.BR
+The comand FPRINT takes a list as its input and prints it on the screen
+as a list.
+
+PRINT
+.BR
+The command PRINT takes a list as its input and prints it on the screen
+without square brackets, followed by a carriage return.
+
+WORD
+.BR
+A LOGO words is a set of one or more numbers or letters.  In order to
+distinguish a word from a procedure-command*, it is preceded with a
+quotation mark.
+
+The LOGO command WORD takes two such LOGO words and outputs a single word.
+
+ERROR MESSAGES
+.BR
+The LOGO commands LIST, WORD and SENTENCE take only two inputs unless
+parentheses are used.  If you want to give them more than two inputs,
+the command and the inputs must be enclosed by parentheses
+
+If we type
+
+.ce
+1FPRINT LIST "ALL "RIGHT
+
+0the list...
+
+SESSION < >: SOME MORE WORD PROCESSING (and a little recursion)
+
+Although one might never consider shoplifting in real life, some of us
+around here have found it surprisingly amusing to play with the
+following procedure
+
+.nofill
+TO SHOPLIFT :LIST
+10: IF :LIST = [] PRINT [YOU DARN SHOPLIFTERS HAVE
+PUT US OUT OF BUSINESS!] STOP
+20: PRINT SENTENCE [THIS IS WHAT WE HAVE TO SELL--] :LIST
+30: PRINT SENTENCE [HELP, POLICE! SOMEBODY STOLE THE] LAST :LIST
+40: PAUSE
+50: SHOPLIFT BUTLAST :LIST
+END
+
+.ADJUST
+To play SHOPLIFT, type for example
+
+.ce
+1SHOPLIFT [STEAK CRABMEAT LOBSTER CAVIAR]
+
+0Each time the procedure pauses, type
+
+.ce
+1CONTINUE
+
+0which can be abbreviated CO to continue.
+
+Let's go through this procedure step by step to understand why it works.
+
+We call the procedure TO SHOPLIFT :LIST because we want the procedure
+to accept any list we give it as an input variable*.  The LOGO
+expression :LIST denotes such a variable.  We could also have called
+the procedure TO SHOPLIFT :X, but called it TO SHOPLIFT :LIST to remind
+ourselves that we want to give it a list as input.
+
+Let's skip discussion of line 10: for the moment.  We'll return to it
+when we discuss line 50:
+
+We see that in line 20: we have given two inputs to the LOGO command
+SENTENCE, the list [THIS IS WHAT WE HAVE TO SELL-] and the variable
+:LIST.  We use the LOGO command PRINT so that the computer will print
+the combined list without square brackets.
+
+Line 30: is similar, but it makes use of the LOGO primitive LAST.  LAST
+(abbrev. L) takes a word or a list as input and outputs the last
+character of an input word or the last element of an input list.
+Remember that if we type only
+
+.ce
+1L [THIS IS A LIST]
+
+0the computer will give us the error message
+
+YOU HAVEN'T TOLD ME WHAT TO DO WITH LIST.
+
+If we want the computer to print the last element of the list [THIS IS
+A LIST] we use the LOGO command FPRINT if we want the computer to print
+.br
+[LIST]
+.br
+and PRINT, if we want the computer to print
+.br
+LIST.
+
+Line 40: makes use of the LOGO primitive PAUSE, which takes no inputs.
+When PAUSE is includd in a procedure, the computer pauses when it
+reades this command.  During the pause, you may execute any commands
+you wish.  To get the computer to resume execution of the procedure,
+type 
+
+.ce
+1CONTINUE 0(abbrev. CO)
+
+0In line 50: we make use of a principle called recursion.  By calling
+a procedure within itself, we get the computer to cycle through the
+steps that have come before.  Notice that in line 50: we have given the
+input
+.br
+BUTLAST :LIST 	BUTLAST (abbrev. BL)
+
+takes a word or a list as input and outputs all characters but the last
+character of a word and all elements but the last elelment of a list.
+
+Notice that on each cyle, then, line 50: will be SHOPLIFTing on
+increasingly diminishing lists.  SHOPLIFT will continue until the list
+has been completely emptied to
+.br
+[  ]
+.br
+This is called the empty list.
+
+Without line 10: the computer would eventually get to line 30:, where
+:LIST was the empty list.  The empty list would then be an input to
+LAST and the computer would give us the error message
+
+LAST DOESN'T LIKE [  ] AS INPUT.
+
+To avoid this, we could use the simple stop rule
+
+.ce
+1IF :LIST  =  [ ] STOP
+
+0but instead we've inserted another PRINT command before STOP.
+
+SOME RELATED LOGO COMMANDS
+
+BUTFIRST (abbrev. BF)
+.br
+This command works like BUTFLAST.  It accepts a word or a list as
+inputs but instead of outputting all characters but the last character
+of a word or all elements but the last element of a list, it outputs
+all but the first character of a word and all but the first
+element of a list.
+
+FIRST (abbrev. F)
+.br
+This command works like LAST. It accepts a word or a list as inputs.
+Instead of outputting the last character of a word or the last element
+of a list, FIRST outputs the first character of a word or the
+first element of a list.
+
+FPUT
+.br
+The LOGO command FPUT takes a word or a list and another list as inputs
+and outputs a new list whose first element is the first word or list
+given as an input.
+
+LPUT
+.br
+This command works like FPUT.  It takes a word or list and another list
+as inpu

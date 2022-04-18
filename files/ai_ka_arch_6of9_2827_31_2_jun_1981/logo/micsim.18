@@ -1,0 +1,129 @@
+
+
+(declare (special input_buffer))    
+(declare (special buffer))          
+(declare (special button1))         
+(declare (special button2))         
+(declare (special button3))         
+(declare (special mic_buffer))      
+(declare (special delete_string))   
+(declare (special on))              
+(declare (special off))             
+(declare (special board1_flag))     
+(declare (special board1_string))   
+(declare (special stop_string))    
+(declare (special output_stream))   
+(declare (special control_flag))    
+
+
+(defun initialize ()
+  (setq input_buffer nil)
+  (setq buffer 0)
+  (setq button1 133)
+  (setq button2 135)
+  (setq button3 137)
+  (setq mic_buffer nil)
+  (setq delete_string (list 0 1 1 1 1 1 1 1))
+  (setq on 'on)
+  (setq off 'off)
+  (setq board1_flag off)
+  (setq board1_string 
+	(list
+	  (list 0 1 0 0 0 0 1 0)
+	  (list 0 1 0 0 1 1 1 1)
+	  (list 0 1 0 0 0 0 0 1)
+	  (list 0 1 0 1 0 0 1 0)
+	  (list 0 1 0 0 0 1 0 0)
+	  (list 0 0 1 1 0 0 0 1)))
+  (setq stop_string (list 0 0 0 0 0 1 1 1))
+  (setq output_stream nil)
+  (setq control_flag off)
+  )
+;;;;;;;;;;;;;;;;   
+
+(defun fill_input_buffer ()
+  (setq input_buffer (list (tyi))))
+
+
+(defun fetch_input_buffer ()
+  (car input_buffer))
+
+(defun check_input_buffer ()
+	(cond
+	  ((equal (fetch_input_buffer) button1)
+	   (setq buffer 301))
+	  ((equal (fetch_input_buffer) button2)
+	   (setq buffer 302))
+	  ((equal (fetch_input_buffer) button3)
+	   (setq buffer 304))
+	  ((equal control_flag on)
+	   (setq control_flag off)
+	   (setq buffer (get_control_char)))
+	  (t (setq buffer (fetch_input_buffer)))))
+
+(defun get_control_char ()
+  (cond
+    ((and (lessp (fetch_input_buffer) 173)
+	  (greaterp (fetch_input_buffer) 140))
+     (setq input_buffer (list (difference (fetch_input_buffer) 40))))
+    (t nil))
+  (car (implode (rplaca (explode (fetch_input_buffer)) 0))))
+
+
+(defun convert (digit)
+  (cond
+    ((equal digit 0) (list 0 0 0))
+    ((equal digit 1) (list 0 0 1))
+    ((equal digit 2) (list 0 0 1))
+    ((equal digit 3) (list 0 1 1))
+    ((equal digit 4) (list 1 0 0))
+    ((equal digit 5) (list 1 0 1))
+    ((equal digit 6) (list 1 1 0))
+    ((equal digit 7) (list 1 1 1))))
+
+(defun prepare_mic_input ()
+  (prog (temp)
+	(setq temp (explode buffer))
+	(cdr (append
+	       (convert (car temp))
+	       (convert (cadr temp))
+	       (convert (caddr temp))))))
+
+(defun mic ()
+  (cond ((and (equal (car mic_buffer) 1)
+	     (equal (cadr mic_buffer) 1))
+	 (special_devices))
+	(t (setq output_stream (append output_stream (list mic_buffer))))))
+
+(defun special_devices ()
+  (setq mic_buffer (reverse mic_buffer))
+  (cond
+    ((equal (car mic_buffer) 1)
+     (append output_stream (list delete_string)))
+    ((equal (car mic_buffer) 2)
+     (setq control_flag on))
+    (t
+     (cond
+       ((equal board1_flag off)
+	(setq board1_flag on)
+	(append output_stream board1_string))
+       (t
+	(setq board1_flag off)
+	(append output_stream (list stop_string)))))))
+
+(defun simulate ()
+  (initialize)
+  (micsim))
+
+(defun micsim ()
+  (fill_input_buffer)
+  (cond
+    ((equal (fetch_input_buffer) 134)
+     '(end of simulation))
+    (t
+     (check_input_buffer)
+     (setq mic_buffer (prepare_mic_input))
+     (mic)
+     (print output_stream)
+     (setq output_stream nil)
+     (micsim))))

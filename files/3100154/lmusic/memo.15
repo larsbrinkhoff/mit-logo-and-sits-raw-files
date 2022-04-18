@@ -1,0 +1,448 @@
+.fi
+
+.he LOGO music -
+.ce
+LOGO Music System
+     This is a preliminary draft of a memo describing the LOGO
+commands for playing music on the music box.  It is preliminary
+because the system is preliminary.  It seems unlikely that a
+first pass at defining a system could really fit the needs
+of the variety of users who will play music in LOGO, so
+we have tried to leave everything as flexible as possible.  Only
+a minimum of basic facilities were put into the LOGO interpreter,
+leaving everything else in the form of programs written in LOGO
+and accessible (to be read or changed) to anyone who uses the system.
+This entails some inefficiency in running, but
+it seems bearable, and at a later date when people have some
+experience using the system, more of it could be coded into
+the interpreter for efficiency.
+     Whenever it seemed there were two different ways of looking at
+a problem or defining a convention, every effort was made to
+write the programs so that both views could coexist.  The 
+description may seem
+very complicated, but that is because it
+includes all of the options.  Any single user would choose a subset
+of the possibilities, leaving him with a simple notation suited to
+his uses.  It is important to think of the great flexibility
+in this way, rather than trying to teach some potpourri
+of all the different musical viewpoints.
+     Anyone who has suggestions for
+the system or writeup, or who finds bugs should report them to terry winograd
+(Rm. 819).
+.br
+Logo Music Commands
+.br
+     The basic unit of music is the note, which can specify pitch,
+duration, or both.  If either is omitted, it assumes that the value will
+be the same as for the previous note.  Thus, we can play a whole tune in
+which every duration is equal by specifying the duration only on the
+first note.
+     In interpreting a note, the system looks for the character "/"
+(slash) to divide the pitch specification (given first) from the
+duration.  If no slash is present, and the note is just a number, it
+assumes this number is a duration.  Therefore a line for the drum can be
+written "6 6 3 3 3 3 6".  If the note is not a number, it assumes it is
+just a pitch, so a line might be "A B C#" or ":1 :2 :3" (see below).
+     Note that a note ending with slash, specifies just a pitch, while
+one beginning with slash specifies just a duration, and the note
+consisting of only a slash indicates that the previous note should be
+repeated exactly.
+.br
+Specifying the Pitch
+.br
+     There are a number of different formats for pitch specification,
+each suited to a different way of looking at music.  The interpeter looks
+at a pitch specification, and by its form decides which one is being
+used.  Thus, they can be mixed and used in any combination as each note
+is analyzed separately. 
+     First, we can use a numbering system within the chromatic scale.  A
+pitch of 0 represents the tuning note (which can be set by changing the
+value of the LOGO variable :TUNEBASE).  A pitch of 7 would be a perfect
+fifth above this note, and 12 would be the tuning note an octave higher.
+Negative numbers are allowed to go below the tuning note.  If no duration
+is specified, it is necessary to follow the number by a slash to indicate
+it is not a duration.  In order to make it easier to see the octave
+relationships, a note can be preceded by one or more stars ("*")
+indicating it is to be dropped as many octaves as there are stars.  If it
+is followed by stars, it is raised.  For example, the note 1* is the same
+as 13, while **0 is the same as -24.  Using stars, it is not necessary to
+use the notes 0-11 to represent the scale.  Any subset of 12 notes (for
+example 1-12) can be used, and notes outside the primary octave are
+represented with the star notation.
+     A second notation uses the idea that we may want to choose a subset
+of the possible notes and specify them as a "scale" which we can order
+and choose from.  The LOGO variable :SCALE is the list of pitches (listed
+chromatically) in the scale.  It is initially set to the major scale ("0
+2 4 5 7 9 11"), but can be changed at any time with the function MAKE.
+Pitches are specified by a dots (":") followed by a number.  The note :3
+indicates the third note in the scale.  The star notation can be used for
+octaves, so :3* is the same note an octave higher, and *:3 an octave
+lower.   However, numbers can be used directly, so :10 would give the same
+pitch as :3* (since there are seven notes in this scale - the
+interpreter actually counts the number of notes in the current
+scale).  Since the
+piece of music is written separately from specifying the scale, it is
+easy to write a piece and then see how it sounds in a different scale, by
+
+
+changing the scale between repetitions of the piece.
+	  The third pitch notation involves using intervals rather than
+absolute pitches.  It thinks of each note in a line of music as
+indicating its interval from the previous note.  This is indicated by
+using one of the first two notations, then following the number
+immediately by + or - (indicating up and down respectively).  Thus, the
+note 5+ indicates a pitch 5 semitones higher than the previous one, while
+:5+ indicates a pitch five scale notes higher, in whatever the current
+scale is.  For example, the scale can be played by the sequence ":1 :1+
+:1+ :1+ etc." This is particularly useful when writing music as
+procedures (see below). 
+     The fourth notation is a version of standard music notation, using
+the letters C, D, E, etc., sharps and flats, and key signatures.  The
+pitch is specified by a letter name, followed possibly by one or more
+sharps ("#") each of which raise it a semitone, one or more flats ("$")
+which lower it a semitone, or a natural ("%") which overrides the key
+signature as usual.  The key signature is set by placing a list of all
+the sharped notes in the variable :SHARPS, and the flatted ones in
+:FLATS.  For example, to specify a key signature of A, we would say to
+LOGO
+.ss
+.sp
+ MAKE "SHARPS" "F C G"
+ MAKE "FLATS" ""
+.SP
+.ds
+     When using this notation, stars are used to indicate octaves, just
+as with the others.
+.br
+Duration Notations
+  There are two basic ways of thinking about
+duration.  The first thinks in terms of a basic "clock" unit, and
+specifies durations as multiples of that unit.  These durations are
+simply numbers, and a number twice as big plays for twice as long. The
+basic unit is as fast as the music box can play, and depends on the
+number of voices being used.  In 1 voice mode, it is 1/30 of a second,
+while in 4 voice mode it is 2/15 of a second.
+     The second duration notation is more designed for traditional music,
+and allows one of the letters S, E, Q, H, W (representing sixteenth,
+eigth, etc.) followed by one or more dots.  Thus a note of the form H.
+would represent a dotted half note.  There is currently no mechanism for
+hndling things like triplets, but this could be added (see section on
+changes).
+.br
+Articulation
+     The basic articulations the box uses are stacatto, legato, and slur.
+Stacatto plays the note for one time pulse, followed by silence
+through the rest of the duration. Legato plays it for all but the last
+time pulse, (unless the length is only one) while slur holds it
+throughout the duration.  Notice that for a note of length 1, these are
+all the same.
+     Ordinarily the articulation is determined by the LOGO variable
+:INSTRUMENT.  It is set to one of the three articulations, or to DRUM
+
+
+(see section on the drum), and each note is played with this
+articulation.   However, articulation can be specified separately for any
+note by following the duration with a comma followed by one of the
+articulation names.  Thus, the note A/Q,SLUR would indicate a quarter
+note played on A, and held the full duration up to the next note even if
+the current instrument were stacatto or legato.  Note that ommission of
+the articulation for a note does not mean "same as the last one", as with
+pitch and duration.  It means "use the articulation specified by
+:INSTRUMENT".   
+.br
+Special Notes
+     In addition to the normal range of pitches, the music box can also
+remain silent, or use the drum.  These are indicated by replacing the
+normal pitch specification with one of the three words "REST", "BOOM", or
+"GRITCH", indicating silence and the two drum sounds respectively.  These
+can be combined in the normal way with duration specifications.
+Articulation does not apply.  In order to make it possible to take a
+voice written for an instrument, and play just the rhythmic patterns, you
+can set the :INSTRUMENT to "DRUM", and in place of each note there will
+be a "BOOM" at the appropriate time.  Articulation is ignored, but the
+symbols REST and GRITCH have their usual effect.
+.br
+Music as Strings or Procedures
+     We can look at music as a set of strings of symbols to be written
+into LOGO, perhaps named using the dots notation, and handed off to a
+music player.  On the other hand, we can think of it as a set of
+procedures to be followed, which involve playing notes, and would be
+defined using procedure definition functions like TO.
+     The notation is designed to allow either.  The basic function PLAY
+is neutral to the distinction.  It accepts either a single note, or a
+sentence, each word of which is a note (space is a divider
+between notes in a sentence, and cannot appear within a note.).  To play
+the first phrase of FrereJacques, we might use strings, saying: 
+.ss
+.nf
+MAKE "FR1" ":1 :2 :3 :1"
+MAKE "FRERE" SENTENCE OF :FR1 :FR1
+PLAY :FRERE
+
+or procedures:
+
+TO FR1
+1 PLAY ":1"
+2 PLAY ":2"
+3 PLAY ":3"
+4 PLAY ":1"
+END
+
+TO FRERE
+1 FR1
+2 FR1
+END
+
+FRERE
+
+or we might use a mixture, replacing the definition of FR1 with:
+
+TO FR1
+1 PLAY ":1 :2 :3 :1"
+END
+
+The idea of using procedures is more obviously necessary for
+things like:
+
+TO SCALE
+1 PLAY ":1"
+2 PLAY ":1+"
+3 GO 2
+END
+.ds
+.fi
+     This would play the scale until it reached the top of the music box
+range.  
+     At times, we may want to specify a line of pitches and a line of
+durations separately.  This is done by using PLAYT.  the following two
+lines have the same effect.
+ PLAY ":1/4 :2/6,SLUR :3/4 :1/6"
+ PLAYT ":1 :2 :3 :1" "4 /6,SLUR 4 6"
+     PLAYT works by using the ordinary note interpreter on both lists,
+then using the pitches from the first and durations from the second.
+The only difference is that numbers given in
+the first argument (the pitch list) are interpreted directly
+as chromatic pitch numbers rather than durations.
+.br
+Multiple Voices 
+     We would like to be able to specify different voices as procedures,
+then play them at the same time.  Since LOGO has no capabilities for
+parallel processing, this must be done by running the voices one at a
+time, saving the results in a buffer, then outputting them to the 4
+voices simultaneously.  The system is organized around this buffer, and
+all music is played from it (see section below on using the system).
+     If we are thinking of music as strings, we can use the command
+PLAY4, which takes 4 sentences, each of which specifed a music line for a
+single voice (if there are fewer than 4 voices, some of these can be the
+empty sentence).  A typical call might be 
+ PLAY4 :PART1 :PART2 "A B C D E" ""
+     Where :PART1 and :PART2 have already been specified by MAKE
+commands, and we want to play them along with the string "A B C D E" and
+no fourth voice.
+     Instead of thinking of separate voices, we may want to bring out the
+vertical structure of the music, by specifying it as a sequence of chords.
+This can be done using the ordinary PLAY command, and using
+angle-brackets ("<" and ">") to specify the beginning and end of the
+chord.   A "I IV V I" chord progression could be played by telling LOGO:
+ PLAY "<:1/H :3 :5 :1*> <:1 :4 :6 :1*> <:2 :4 :5 :7> <:1 :3 :5 :1*>"
+     If we are specifying chords, it is sometimes useful to think of a
+voice moving within a chord, rather than having to make it into two
+chords with all of the other voices repeated.  To do this, single voices
+
+
+within a chord are bracketed by parentheses. For example, in order to add
+some passing tones to the progression above, we might ask:
+ PLAY "<:1/H :3 (:5/Q :5#) :1*/H> <:1 :4 (:6/Q :6#) :1*/H> <etc..." Note
+that moving voices specified with parentheses can be included
+along with single
+chord notes, just as bracketed chord descriptions can be mixed into a
+sequence of single voice notes.  If the notes or voices in a chord are
+not of the same duration, silence is inserted in all voices after they
+finish until the longest one is done.  The conventions for intepretting
+ommitted pitch or duration specifications are as above, where if no pitch or duration is
+given, it assumes the one from the previous note in the string (whether
+it be in the same voice, line, chord, or not).  
+     If we look at the different voice parts as procedures, there are two
+basic ways to combine them.  The command CHORUS takes as an argument a
+sentence of procedure names (where each procedure takes no inputs).  The
+result is as if those procedures were executed simultaneously in separate
+voices beginning at the point in the music where CHORUS appears.  Thus we
+defined a procedure FRERE above, and if we had also defined procedures
+FRERE2 and FRERE3, we could have the three sound simultaneously by
+saying: 
+ CHORUS "FRERE FRERE2 FRERE3"
+     Several things are of note.  First, CHORUS does not (unlike PLAY4)
+expect a certain number of parts.  If there are more than the current
+number of voices, it simply ignores some, and if there are fewer it
+leaves the others silent.  If the parts are of different lengths, it
+inserts silence in all voices which have finished, until the last one is
+done.   Second, each procedure can do things like changing the
+instrument, changing the scale, the tuning note etc., something which can
+not be done using strings in PLAY4, or chords with PLAY.
+     Finally, we can think of each voice as being specified by a series
+of procedures, and use the VOICE command to specify which voice is being
+filled.  typing VOICE 1, for example, tells the system that all of the
+following music is to be loaded into voice 1, until another voice command
+is given.  When a new voice command is given, the interpreter starts back
+at the beginning of the piece, but in the new voice.  If each voice of a
+piece is specified by a single procedure, then typing
+ CHORUS "PROC1 PROC2 etc..." will have the same effect as using the voice
+commands.  But if each voice is to be specified interactively (i.e. the
+person typing in adds things as he goes), the VOICE command must be used.
+.br
+Global Commands 
+     There are a number of commands which have a global effect on the
+music which follows them.  The simplest involve seting a variable which
+is used by the interpreter.  We have already mentioned INSTRUMENT, SCALE,
+SHARPS, and FLATS.  Whenever one of these is set by a MAKE command, the
+new one is used until it is set again.  another variable set this way is
+TUNEBASE, the tuning note.  If we have written a procedure to play
+something, and want to hear it a perfect fifth higher, we can say:
+ MAKE "TUNEBASE" :TUNEBASE+7
+ and then run the tuneplaying procedure.  Note that this could be done
+within a single voice of CHORUS, so we could play a "harmony" by matching
+
+
+a tune against itself raised by an interval, or it could be used in the
+middle of a procedure to play sequences.
+     A similar variable is SCALEBASE.  Whenever a scale note is specified
+using the dots notation, it is added to SCALEBASE before being
+interpreted.  Thus, we can raise something by a specified diatonic
+interval (e.g. a third) rather than a chormatic interval (e.g. a major
+third). 
+     The command NVOICES specifies the number of voices used by the music
+player.  This must be in the range 1 to 4, and actualy changes the way
+signals are sent out.  It should be used carefully, and for normal use
+should always remain at 1 or 4 (most commands allow some voices to be
+omitted).   The reason is that the speed of output depends on the number
+of voices, and as NVOICES is used, the speed of music already written
+will be changed.
+.br
+Using the System
+     To use the music playing system, first start up the program MLOGO (a
+special music LOGO).  When it responds, type:
+.ss
+.nf
+USE LMUSIC
+READ MUSIC PLAYER
+STARTMUSIC
+CONTROLLER
+
+.fi
+.ds
+This gets it ready to take commands, and sets variables to reasonable
+initial values (e.g. SCALE is the major scale).  To play music, use the
+different PLAY commands explained above, and end the music with the
+command EM (end music).  Nothing will sound on the music box until this
+command is executed.  You may have to wait a while for the program to
+digest the music.  Make sure the controller, music box, and drums are all
+plugged in properly, turned on, etc.
+     If an error is encountered in the music program, the player will
+play out everything which has been processed so far before the error
+ocurred.   Typing control G at any time shuts up the music box and clears
+the music buffer.
+.br
+Changing the system
+     The philosophy in writing all of this was that it should provide a
+way to do all sorts of things with the music box.  It is very likely that
+we will soon discover lots of other interesting things it should do.  In
+order to leave it as flexible as possible, only a bare minimum was
+written into the LOGO system.  The rest is all a set of LOGO programs
+which are loaded in when you read MUSIC PLAYER.  A version of these with
+comments is stored in the file LOGMUS > LMUSIC;.  Anyone can edit them
+and change them in his LOGO program while it is running, in order to
+experiment with new things (please don't change the official version
+without asking).
+     The programs all use a small set of primitives involving the music
+buffer.   These are:
+ MBUFCLEAR
+     A function of no argument, which clears the buffer and restarts it to load music from the beginning in voice 1.
+ 
+ MBUFSTART
+
+
+     sets the buffer position to the beginning (1), leaving whatever is
+already in it
+ MBUFPUT :N
+     takes a number (0 to 63) and puts that number into the current
+buffer position 
+ MBUFNEXT :N
+     moves the current position in the buffer forward N spaces
+ MBUFCOUNT
+     outputs the current buffer position as a number
+ MBUFOUT
+     outputs the buffer to the music box, but does not clear it. (If you
+execute it more than once, it will keep playing the same thing until the
+buffer is cleared by doing MBUFCLEAR or typing control G).
+     The buffer contains the string of numbers
+to be sent to the music box in the exact order they
+will be sent.  That is, if there are four voices, the notes
+for any particular voice will appear in every fourth position
+in the buffer, with the other voices (or silence) interspersed
+in the three intervening spaces.
+.br
+Recursive Programs
+     In order to make a program keep repeating, we may make it recursive
+or use a loop.  This causes troubles since no music is actually played
+until the entire thing has been put into the buffer, and the recursive
+program has no end.  If nothing special is done, an error will occur when
+the buffer is full, causing everything up to that point to be played out.
+This is ok unless we want multiple voices, in which case it will never
+get to any voices past the recursive one.  This can be avoided by putting
+a test in the recursion of the form:
+ IF MBUFCOUNT > 1500 STOP
+     The buffer currently can hold about 1800 characters (a minute of
+music). 
+.br
+Summary of the Functions defined in MUSIC PLAYER
+.br
+1.  Auxilliary functions:  MEMBERP POSITION NTH 
+.br
+ MEMBERP :ITEM :LIST returns TRUE if the item is a member, FALSE
+otherwise.
+ POSITION :ITEM :LIST returns a number indicating the position of the
+item in the list.  If it is not in the list, it returns 0.
+ NTH :NUMBER :LIST returns the nth member of a list.  If the list is too
+short, an error happens.
+.br
+2. Playing functions: PLAY PLAY4 PLAYT CHORUS
+  Described above.
+.br
+3.  Parameter setting functions: NVOICES STARTMUSIC EM VOICE
+ NVOICES :N sets the number of voices to N.
+ VOICE :N starts music loading into the buffer from the beginning in
+voice number N. 
+ STARTMUSIC creates the buffer and sets the variables to initial value.
+This can be used to reset variables to useful values if they have been
+changed.
+
+
+ EM causes the contents of the buffer to be played on the music box and
+the buffer to be cleared and reset to the begninning of the first voice.
+.br
+4. Variables: TUNEBASE SCALEBASE INSTRUMENT FLATS SHARPS SCALE
+  see section above.
+ PIANOC LASTPITCH LASTDURATION
+ PIANOC is the actual music box pitch for middle C on the piano.
+LASTPITCH is the last pitch interpreted (for use in the next note if
+nothing is specified) and similarly with LASTDURATION.  
+.br
+5.  Internal functions: INTERPRET PLAYNOTE SCALE TEMPO PLNEXT
+ INTERPRET :NOTE takes as input a note in any of the notations given
+above, and outputs the actual note to be played as a sentence of two
+numbers, the absolute pitch and the numerical duration.  If there is a
+special articulation, it is attached as a third word in the sentence.
+PLAYNOTE :NOTE does the actual playing.  Its input must be a note in the
+form output by INTERPRET.
+ SCALE :NOTE takes as input the scalenote part of the note specification,
+and outputs a pitch
+ TEMPO :NOTE takes the duration part of the note specification (if it is
+not a number) and returns a numerical duration. 
+ PLNEXT plays the next voice in a chord, once it has been set up in a
+special way by the program PLAY.
+.br
+6.  Primitive functions: MBUFCLEAR MBUFSTART MBUFCOUNT MBUFPUT MBUFOUT
+  See above
+.end
+
+

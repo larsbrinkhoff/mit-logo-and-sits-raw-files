@@ -1,0 +1,244 @@
+.xgp
+.font 0 30FG 
+.font 1 30VRI
+.font 2 31VG
+
+
+.ds
+.he1
+LOGO Teaching Notes
+.ce
+Introductory LOGO Activities
+.nofill
+.in 0
+
+Introductory LOGO activities include
+.in 5
+
+Learning to control the turtle
+Computer mechanics: LOGIN/LOGOUT, using the keyboard
+Teaching the computer a new command
+Extending LOGO knowledge, including:
+.in 10
+Using suprocedures
+Procedures that repeat
+Designs with circles and arcs
+Spinning designs
+Other graphics commands
+
+.in 0
+.ce
+I- Learning to Control the Turtle
+.ad
+
+Controlling the turtle involves a large number of related skills and understandings which are learned by a student as she works on Turtle Geometry projects. These include learning to type the basic turtle commands, which in turn requires some knowledge of the use of the keyboard. Other learnings involved are estimating distances in "turtle steps" and angles in degrees; being able to move the turtle to any point on the screen; being able to "play turtle" and understand how what the turtle will do next depends on the turtle's current state. They also include the ability to draw simple designs such as squares and rectangles and to build more elaborate designs from simple ones. Mathematical knowledge that can be acquired while learning to control the turtle includes understanding the significance of angles such as 90, 180 and 360 degrees, as well as other special angles such as 45, 60, 120 degrees, etc; understanding the relationship of certain rotations to the shapes they produce; the knowledge of the inverse relationship between FORWARD and BACK and between RIGHT and LEFT; and the ability to combine a series of steps into one, e.g. replacing FD 50 FD 20 by FD 70, or RT 45 LT 15 by RT 30.
+
+This type of knowledge is best aquired as a student works on projects, rather than taught as a series of abstract lessons. As the student engages in LOGO activities, she gains and makes use of these understandings in the context of trying to solve a particular problem or carry out a particular project. An ideal teaching situation would allow a teacher to make suggestions or introduce new ideas at the exact moment when it would best facilitate understanding. In classroom situations this is rarely possible, as children use the computer independently and the teacher may not be present to offer assistance at the moment it is most needed. Class meetings, small groups, or individual consultations can be used to assess students' knowledge, and to offer suggestions or introduce new ideas.
+
+.ce 
+A - Using the keyboard
+.ad
+
+To use the keyboard, a student must be able to find the letter and number keys needed for LOGO commands, and must make use of certain special keys that are part of the keyboard. The student must be aware of the cursor - a blinking rectangle which shows where the next letter will be typed on the text display screen.
+
+1. Space Bar
+.in 3
+This is the long bar at the bottom of the keyboard. If you tap it once it will make the cursor move over one space. If you hold it down, it may make several spaces. Extra spaces can usually be ignored.
+.in 0
+
+2. RETURN
+.in 3
+This key tells the computer you are finished typing a line. Typing RETURN "sends" the line you just typed to the computer as a command to be carried out, or information to be stored.
+.in 0
+
+3. BACKSPACE or RUBOUT
+.in 3
+Either of these keys rubs out one character at a time. You can use it if you have made a mistake, and need to retype all or part of a line before typing RETURN.
+.in 0
+
+4. SHIFT
+.in 3
+This key allows you to type the charcter at the top of the key. Students usually need it first when typing a " symbol as part of logging in (LOGIN "SAM). To use the SHIFT key, hold it down first, and then type the key that you want.
+.in 0
+
+5. "
+.in 3
+The " symbol itself is located in different places on different keyboards. It is often located above the number 2. (On the Lincoln School keyboards there is a " attached to one of the blue keys - the key marked F14. If you use this key, you won't have to use SHIFT. Some sixth  or seventh graders discovered this recently by experimenting with the keyboard.)
+.in 0
+
+6. CONTROL (CTRL)
+.in 3
+This key is used with G to stop whatever the computer is doing. The student probably won't need this until a bit later. There are some advanced uses of CTRL also. To use CTRL-G, hold down the control key first, before typing G. Then release both.
+
+.in 0
+.ce
+II - Introducing Turtle Commands
+.ad
+
+Many students need a lot of time to explore the use of the basic turtle commands,
+.nofill
+.in 3
+
+FD (space) (number)
+BK (space) (number)
+RT (space) (number)
+LT (space) (number)
+CS
+.ad
+
+.in 0
+There are two kinds of bugs encountered by students in the beginning stages: bugs in understanding the turtle or the computer's behavior and technical (spelling, typing or syntax) bugs. In any case, the student will need time to explore the computer, make errors and learn how to correct them. A teacher's best atribute in many cases is a large "patience quotient" while the student becomes familiar with the keyboard and the behavior of the turtle. 
+
+Technical Problems:
+.nofill
+
+.in 3
+a) forgetting to type RETURN after typing a command;
+b) forgetting to type a space (FD50)
+c) typing FD,BK, RT or LT without an input number
+d) losing track of what's already been typed, not understanding the function of the cursor (FD FD 50 or FDCS, etc).
+e) not knowing how to use the rubout
+f) accidentally typing L for 1 or O for 0 - this problem is more common for adults who have used typewriters that don't have a 1 or a 0 key.
+.ad
+
+.in 0
+In helping learners to resolve typing bugs, it is important to call a student's attention to what she has actually typed, and to the meaning of the error message sent by the computer. The beginning student is apt to be somewhat mystified after typing FD50, when the turtle doesn't move, and the computer returns the cryptic message:
+.in 3 
+
+YOU HAVEN'T TOLD ME HOW TO    FD50
+.in 0
+				
+First of all, the student needs to realize that there is a message, and that the message means that the computer has been unable to carry out the command given. Second the student needs to interpret the specific message, to see what was wrong with the command. Third, the student needs to be able to retype the command correctly. This type of error can be frustrating to a student working alone, without access to help. Since these frustrations occur for so many beginners, it might be useful to deal with them in a group situation after the students have had an initial encounter with the computer. Some student might give examples of typing bugs, and let other students who have already had a little experience attempt to interpret the error messages and debug the typing.
+
+This might be a good place to introduce the concept of a "bug" as any type of error made in giving instructions to the computer. Learning that  teachers, and even the most experienced computer users encounter bugs all the time, can help a beginning computer user gain a sense of power over a situation that might otherwise be discouraging.
+
+.ce
+II - Computer Mechanics: LOGIN/LOGOUT; Using Disks and Keyboard
+
+(To be filled in later)
+
+III - Teaching The Computer a New Command
+
+.ad
+The ability to define and use procedures is probably the most important thing for a beginning LOGO user to learn. When a student knows how to write, edit, debug and save procedures, and understands how to use a procedure as a sub-procedure, she has reached the first stage of mastery of the computer.
+
+Understanding how to define and use procedures has both conceptual and technical aspects. The conceptual aspects are:
+
+.nofill
+.in 10
+- understanding what a procedure is;
+- understanding how to run a procedure by typing its name;
+- understanding how to use a procedure as a subprocedure;
+- understanding how to use a procedure name recursively within a
+  procedure;
+- understanding how to debug a procedure;
+- understanding how to choose a procedure name that helps one
+  remember what the procedure does;
+- understanding how to distinguish the effect of the procedure (what it 
+  does when run) from the process of the procedure (its list of 
+  commands).
+.in 0
+
+The Technical aspects are:
+.in 10
+
+- understanding the syntax for writing a procedure;
+- understanding  how to change any line of a procedure;
+- understanding how to edit an existing procedure;
+- understanding how to print out a procedure and how to print out titles;
+- understanding how to save the procedure on a disk
+  (or cassette) and retrieve it when needed.
+.in 0
+.ad
+
+In practice these are learned by most students in a way that combines the conceptual and the technical. Often the technical aspects are learned first, and the conceptual aspects are learned as a teacher and student talk about what is happening, or as the student herself gains experience. The conceptual aspects make good topics for whole class lessons, and often can be brought out in the context of discussing a particular student's project. In what follows, suggestions for teaching syntax and technical information will be in normal print, while suggestions for talking about the concepts involved will be in italics.
+
+
+.ce 
+Writing a New Procedure
+.ad
+
+1To write a procedure in LOGO it is first necessary to choose a name which will become a new LOGO command. Any single word which is not already a LOGO command will do. Eventually most students learn to choose names that help them to remember what the effect of a procedure is, or its role in a particular project. At first, however, it is important that the student understand that she can choose any name she wants. Later she should be encouraged to think more carefully about the names she chooses.
+
+0In teaching the syntax of procedure writing there are a few things to point out, and a few bugs to watch for. To teach the computer a new command, type TO, followed by a space and a one word procedure name:
+
+.in 10
+.nofill 
+?TO DESIGN
+>1 FD 100
+>2 RT 100
+>3 BK 50
+>4 RT 45
+>5 FD 80
+>END
+DESIGN DEFINED
+?
+.in 0
+.ad
+
+The name following TO must be a single "word" that is not already a LOGO command or procedure. FOO99, R2D2, HI.THERE, and 77K are legal names. 4455 (all numbers) or HI THERE (words with a space between them are not.
+
+The steps must be numbered in the current version of LOGO. Many students do something like this when they are first learning:
+.nofill
+.in 10
+
+?TO DESIGN
+>FD 100
+>RT 100
+>BK 50
+>RT 45
+>FD 50
+>END
+DESIGN DEFINED
+?
+
+.ad
+.in 0
+When a beginner types the commands without line numbers, he thinks he has taught the procedure to the computer. He sees the computer actually carry out the commands on the display screen. He can see the commands that he has typed. Satisfied he types SAVE, and goes on to other activities. When he  returns to the computer, or tries the procedure again, nothing happens. There is no error message, but the procedure doesn't work.
+
+What has actually happened is that because no line numbers were typed, the computer has not stored any of the commands in the procedure. If you print out the procedure, the computer will print:
+.in 10
+.nofill
+
+?PO DESIGN
+TO DESIGN
+END
+?
+.in 0
+.ad
+
+This type of problem can be avoided by teaching the student to make use of some precautionary "people procedures" whenever they teach something new to the computer:
+.nofill
+
+1. List the steps of whatever they are planning to teach the computer on paper.
+2. Write TO and the procedure name at the top of the list.
+3. Number each step (by ones or tens).
+4. Write END at the bottom of the list.
+5. NOW teach the new command to the computer.
+6. After teaching the command, clear the screen and try it out before typing SAVE.
+7. If the design doesn't work as expected, print out the procedure and compare it with the version written on paper.
+8. If the printout is different from what is on the paper, edit the procedure and change the necessary lines. Then try the procedure again. If it works correctly now, type SAVE.
+9. If the printout is the same as what was on the paper, the steps should be tried one by one, to see which one does not produce the desired effect. Then change the steps that are wrong and try the procedure again.
+
+.ad
+ 
+1This "people procedure" is probably the best way for a beginning user to learn to catch her bugs at exactly the moment they occur. Other bugs can be caught this way. For example, typing FD100 instead of FD 100. The thing to stress with a beginner is that the computer has its own particular rules for learning something new and that it  "learns" exactly what you tell it when you follow the rules, which may not be what you intended.
+
+0Another common bug that plagues beginners is using more than one word in the procedure title. For example, the procedure TO HI THERE. The computer interprets this as a procedure TO HI, with an input, THERE. It won't complain, but after you type END it will respond with HI DEFINED. If you were watching alertly, you would have been expecting HI THERE DEFINED, and will recognize that there has been a bug. Most beginners do not notice this.
+
+When you type the buggy "command" HI THERE, the computer will respond by typing YOU HAVEN'T TOLD ME HOW TO THERE. If you type HI, the computer will respond HI NEEDS MORE INPUTS. If you type HI with an "input", HI 7 for example, the procedure will run as you intended, because the computer is satisfied that 7 is an appropriate input, even though it doesn't use it for anything in the procedure.
+
+To fix this bug, edit the procedure and then edit the title:
+.in 10
+.nofill
+
+?ED HI
+>EDT
+>TO HI.THERE
+>END
+HI.THERE DEFINED
+?
+.in 0
+.ad
+
+The computer interprets HI.THERE as a single "word". Of course the name could have been changed to any single word such as HI, HITHERE, etc.

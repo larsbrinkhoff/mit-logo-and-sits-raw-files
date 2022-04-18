@@ -1,0 +1,90 @@
+This tries to be a summary of
+	a) what we know we want and how much it costs
+	b) what the cost ranges are on things we don't know about yet
+	c) what critical paths exist
+	d) what choices we have
+
+1. Vidieo generation
+	We plan on coping Knight's systemm almost exactly, except that
+the Superbus which connects all the memories to the processor(s) will
+be 32 bits wide instead of 16, so that if we decide to build a fast
+bit-map generator sometime in the future, we will have reasonable
+bandwidth to the merory. I believe that the current plan is to produce
+4 channels, which costs:
+
+Intel memory, 4*16k*16			$10,800
+Augat board, wired			$600
+Dec rack				$200
+Relay rack				$400
+Chips					$250
+PDP11 interface				$400
+Misc					$200
+					_______
+					$12,850
+Probably the longest order time on this stuff is for the Intel
+memory, which is 60-75 days, but I don't know about the Augat board.
+Wiring all this stuff together will take on the order of 5 days
+of Carl Waldrop's time, if we can negotiate with whoever to get him
+to do it.
+	Generating color video (RGB) from the black and white
+video will be accomplished fairly straightforwardly by means of a
+color map. This is composed of 3 64 by 8 bit memories whose
+address bits are driven by up to 6 black and white channels
+and whose outputs drive 3 DACs, one for each color.
+The memories are loadable from the computer. Tom Knight and I are
+currently investigating suitable DACs, which have to be
+damn fast to do the job. Aproximate cost:
+
+Chips					$100
+DACs					$450
+Misc					$100
+					____
+					$650
+2) Monitors and keyboards
+	There are some descions which have to be made here, and
+in the case of keyboards they better be made fast. If we order
+custom keyboards from Microswitch, we will have to wait about
+5-6 months for them to get here. Also, custom keyboards cost
+more (Knight's cost 211 each plus a 955 setup charge, standard
+ascii keyboards cost about $120). The setup charge is largely
+dependent on how many keytops you want that they don't have in
+stock. I will try to find out what is available from stock.
+	As for monitors, I think it is fairly clear that we want
+to get the same ones Knight got. The phosphor is a win because
+it doesn't flicker, and also there are about 5 cabinets left over
+from Knight's system for them. We also should get the Advent Videobeam,
+and we might want to consider a gray scale monitor, since the color
+map could easily produce gray scales.
+	One other thing that has to be decided about consoles
+is how many we want to get. Probably if we can afford it we should
+get about 10, since there is usually a price break at that quantity,
+and we will probably want that many anyway. About my best estimate
+of cost per console is $550.
+	We can interface the keyboards using the (ugh) old DM11 or
+the DH11. If we plan on having lots (>5 for DH11, >16 for DM11)
+of consoles connected, we may want to get a Freeman keyboard interface.
+I am assuming that won't be nessesary.
+
+
+10 Consoles @$550				$5500
+Advent Videobeam				$2500
+Cables, etc.					$300
+						_____
+						$7800
+
+3) Switching
+	We probably want to make a video switch like Knight's.
+This is pretty easy to do since all that is involved is
+getting the proper PC cards made (comercially) and wiring
+it up.
+
+Video switch					$1000
+4) Total
+Video						$12,850
+Consoles					$7800
+Switching					$1000
+						______
+						$21,650
+This figure does not include any labor, and should probably
+be considered the lower limit for the cost of the hardware we want.
+

@@ -1,0 +1,600 @@
+.HEADER 2-
+.QUOTE #
+.adjust
+.line 65
+.fill
+.double
+.ce
+Chapter 2
+.br
+.sect
+2 Memory Management
+.br
+.sect
+2.1 Introduction
+	Perhaps the most  crucial and complicated  part of  any
+modern  general  purpose  time-sharing  system  is  its  memory
+management  section.   If  this  functions  inefficiently,  the
+system's  performance  will  suffer  greatly;  if  it  is   not
+flexible, the full benefit of the hardware is not obtained.  On
+the  other hand, if it is not sufficiently simple, it may never
+be debugged.  Hopefully, we have designed a system which is both
+simple, flexible and  can perform  efficiently, exploiting  the
+features of the machine it is designed for.
+	A  question which is intimately related to this area is
+the question of  what is to  be core resident  and what may  be
+swapped  out.   The two extremes of  thought on this matter are
+represented by the ITS  system and the Multics  system.   Until
+about  1971  ITS did  no  swapping at  all;  all  user storage,
+system code and tables were always resident.   Since the system
+has  a large core memory (256k), as long as the number of users
+was fairly small and these users  did not use large amounts  of
+core this method was both simple and extremely efficient.  When
+swapping  was finally introduced, only user pages were swapped;
+system code  and tables  are  always resident.   At  the  other
+extreme,  Multics was designed so that almost everything can be
+swapped.   The system is able to swap out all information about
+a  dormant  process.   Thus the  number  of processes  that the
+
+
+system can support is  limited only by  disk space and  compute
+power.   However,  it  should  be noted  that  Multics  took an
+extremely long  time  to   develop  while  ITS  was  usable
+relatively  shortly after development  was started.   Also, the
+overhead of creating a  process in Multics is  so bad that  one
+user  using  more than  one  process is  virtually  unheard of;
+thus, one of the main design objectives was self-defeating.  On
+ITS,   although it admittedly has a smaller number of users  than
+Multics, each user usually has at least two processes, and four
+is not uncommon.   Taking the example of Multics as warning, we
+have decided that  it is best  to have all  system tables  core
+resident.  Also taken into consideration in making this decision
+was  the fact that core  for the PDP11 is  now available for 22
+cents a word from several  sources.   Thus a small increase  in
+hardware  cost will result in a huge saving in development time
+and efficiency of system operation.
+	The most  insurmountable consideration  is, of  course,
+what  the  hardware  is capable  of  doing.   The  11/45 memory
+management hardware is  certainly not the  most elegant  paging
+device  ever designed.   However, despite  its faults, which we
+will not list here, it is adequate for the basic protection and
+relocation tasks necessary for timesharing.   It is obviously desirable
+to provide the user with all of the power that can possibly  be
+
+
+obtained  from  this hardware,  therefore  we provide  him with
+fairly free usage of the user mode map, with the possiblity  of
+giving him some control of the supervisor map in the future.
+	The  system provides the user with  a 16 page map which
+could theoretically map up to 64k of real core.   The user  may
+combine instruction and data space for any or all of his pages.
+The pages are divided into blocks of 512 words each;  each page
+may include up to 8 blocks.  The pages expand either up or down
+as  the  user  specifies;  both  hardware  and  software access
+protection is  provided.   The system  dynamically swaps  pages
+transparently  to   the  user;  if   the  user   references a
+non-existent  page or causes a  segment length error, either he
+or his immediate superior  is given an interrupt.   The  system
+also  provides  buffers  for various  input/output  devices and
+provides for the  transfer of  data from these  buffers to  the
+user.
+.br
+.sect
+2.2 Implementation
+.br
+.sect
+2.2.1 The User Page Table
+	Each  job has, as part of  its user variables, 18 words
+which describe its  user and hack  kernal memory  maps.   These
+words  are called user page table  entries (figure 2-1), and each
+is either part of a circular list which describes a page  which
+is  in the job's  map, or the  word is zero,  in which case the
+page does not exist.   Which page is  described by a word in a
+UPT  is  indicated by  the word's  position in  the table;  the
+first eight words describe the user instruction space, the next
+eight words  are  user  data  space, and  the  last  two  words
+
+
+describe  the hack kernal pages.   If  a word describing a data
+page equals minus one,  this indicates that it  is the same  as
+the corresponding instruction page.
+	The  purpose of the circular  lists which are formed by
+UPT entries is  to keep track  of shared usage  of a page,  and
+also  to point to other information about the page.   There are
+two ways  in which  a  page may  be shared;  the  most  common,
+called  true or automatic sharing, is the sharing of pure parts
+of certain system programs which is defined by the way in which
+these programs are  dumped out, and  occurs automatically  when
+they are loaded.   Thus, for example, two jobs which are loaded
+with the system  version of  the assembler  will share  certain
+instruction  pages.   The second sense  in which a  page may be
+shared is the case  where, for some reason,  one job wishes  to
+examine  and/or modify a page of another job.   The most common
+occurrence of this type of sharing  is when the first job is a
+debugging  program and  the second job  is being debugged.   In
+either case, each  circular list  consists of one  or more  UPT
+entries,  one or two system page table entries and possibly one
+core page table entry.   The UPT  entry contains one bit  which
+indicates which type of entry (UPT or SPT) is next on the list,
+and  two bits indicating what access  to the page is allowed to
+this user (none, read only  or read/write).   If the UPT  entry
+points  to a SPT entry, the remaining 13 bits are the number of
+the SPT entry which is pointed to.   If the UPT entry points to
+
+
+another  UPT entry, the remaining bits are divided into 7 which
+specify the user and 6 which specify which page in that  user's
+UPT.
+.br
+.sect
+2.2.2 The System Page Table
+	The  SPT  entry contains  detailed information  about a
+page that must be available whether  or not the page itself  is
+in core.  Word 0 of the entry contains various flags describing
+the page.  One bit indicates whether the SPT entry is used.  Of
+course, if this bit is a zero, and a UPT or SPT entry points to
+it, the system has committed some grave error.   Unused entries
+are linked in the first word with relative core  address.   Two
+bits  are related to the "load SPT".   The normal use of a load
+SPT is to allow a job to be easily loaded from a file.  In this
+case, the load SPT contains the  disk address to load the  page
+from  and points  to the normal  SPT entry,  which contains the
+real swapping addresses for the page.   When a page with a load
+SPT is first referenced, the page is loaded into core according
+to  the load  SPT, which  is then  spliced out  of the circular
+list.  The other, "hack", use of the SPT is the case where, for
+some reason, the system wishes to change the disk location of a
+page which is swapped  out.   In this case a  hack load SPT  is
+spliced  in front  of the normal  SPT, the old  disk address is
+moved from the normal SPT to  the hack, the new address is  put
+into  the normal SPT, and the  page is swapped into core.   The
+hack SPT is spliced out as  usual, but also the disk  addresses
+it  refers  to are  freed up.   One  bit  in the  SPT indicates
+
+
+whether the page expands up or down;  another indicates whether
+the page is absolute or  normal.   If the page is absolute,  in
+place  of the  disk address,  two words  give the  values to be
+loaded into the segmentation  registers.   An absolute page  is
+never  swapped.   The last flag in word 0 indicates whether the
+page is  automatically  shared or  not.   If  the page  is  not
+automatically  shareable, when  its owning  UPT entry  (the one
+which points directly to the SPT entry) is deleted from a job's
+page map,  all  traces of  the  page disappear,  including  any
+pointers to it from other jobs.   If the page is shareable, the
+page stays  around  until  there  are no  UPT  entries  in  the
+circular list, at which time it disappears.   The lower byte of
+word 0 contains 3 bits which give the length of the page in 512
+word blocks (000=  1 block, 111=  8 blocks), and  5 bits  which
+give  the  type of  the  page.   The type  field  indicates any
+special significance which the page has, such as being a window
+page of a file, being a disk directory, etc.
+	Word 1 is  the protection  word for  the page:  it  has
+four fields of four bits each.  When a job requests access to a
+page,  the  system uses  this  word to  determine  whether that
+access should  be  allowed.   The  field used  depends  on  the
+relationship  of the requesting job to the owner of the page on
+the job tree.  The four classes of jobs are:  1) the owning job
+itself, 2) a job which is an  inferior of the owning job, 3) a
+job  which is the  immediate superior of the  owning job and 4)
+
+
+all others.   Once the field has been determined, the four bits
+indicate  the  type  of access  allowed:  allow  reading, allow
+reading and writing  (implies allow  reading), allow  executing
+(that is, allow page to be loaded into the instruction map) and
+allow expansion, contraction or deletion of the page.
+	The next word of the SPT entry is the circular pointer.
+Two  bits of this word  indicate what type of  entry is next on
+the list.  If this is a load SPT, the pointer will point to the
+real SPT entry;  if  not, and the  page is not  in core, a  UPT
+entry  will be pointed to;  if the page is in core, a CPT entry
+will be spliced  in between  the SPT  entry and  the first  UPT
+entry in the list.
+	The fourth word of a SPT entry contains four bits which
+identify  the disk which this page  is swapped onto, and 8 bits
+of information which may  be used by  certain special types  of
+pages.   The disk number is an index into certain system tables
+which have an entry  for each unique  active disk file  device.
+	******prepage bits!!
+The  next four words are the  disk descriptor which locates the
+page on  the disk.   This  is in  the same  format as  used  in
+describing  files;  note that this  allows us to  split a page,
+i.e. blocks of a page need not be contiguous on disk.  Although
+this is an  undesirable situation,  it is  more expedient  than
+shuffling  free blocks on the disk to make room for a new page.
+Note also that every swappable page has disk space reserved for
+it;  thus when the system decides it needs to swap out a  page,
+
+
+it  doesn't have to find a place  to put it (which could result
+in panic if no place could be found).
+.br
+.sect
+2.2.3 The Core Page Table
+	A CPT entry is only part of a circular list if the page
+is actually in core.   The first  word of a CPT entry  contains
+one  byte which is the  age of the page.   This  is set to zero
+when the  page is  referenced, and  incremented every  n  clock
+ticks  until it is about to  overflow, at which time it becomes
+static unless reset to zero.   This  byte is used to  determine
+which page(s) to swap out when core is needed.   The other byte
+of this word contains the high order 8 bits of the core address
+of the page;  the bottom ten  bits are always zero.   The  next
+word  contains one bit which indicates whether the CPT entry is
+in use or not;  as with the SPT entry, a bug is indicated if a
+pointer  to an unused entry is  found;  also, the first word of
+an unused CPT  entry is  a pointer  to the  next unused  entry.
+Another  bit indicates that the page  is actually loaded into a
+user's map currently  (i.e. into  the segmentation  registers).
+The  rest of this word is used as a back pointer to the related
+SPT entry.   The next word  is a forward  pointer to the  first
+user  in the circular  list, or minus one  if the CPT-SPT entry
+pair is  "floating".   One  of  the spare  bits  in  this  word
+indicates  that  the page  is actually  being swapped;  another
+indicates to  the swap  routines that  the page  should not  be
+swapped  just  now.   These  are used  to  help  prevent timing
+errors. 
+	The remaining two words are the values to be
+loaded into the segmentation registers for this page. When
+the page map for a job is loaded, the values of these words
+are loaded into the segmentation registers except that
+the A bit is cleared and the access field is set according
+to the UPT entry. When the page is later removed from the
+map, the W bit is copied back from the segmentation unit into
+the second word. The remaining two
+words are the values to be loaded into the segmentation registers
+to describe the page. When the page map for a job is loaded
+the access bits are set acording to the access bits in the UPT
+entry, and the A bit is cleared. The rest of the two
+words are copied directly.
+.br
+.sect
+2.2.4 The Page Status Table
+	In order to easily keep track of available storage
+we have a table organized according to the sizes of used and
+free pages. This table (figure 2-1) is divided into 3 parts.
+The first two parts are each 8 word blocks, one word for each
+page size. The first block has one byte which
+is a count of used  pages of the appropriate
+size; the other byte of each word is a count of free
+pages of the same size. The second block has one pointer for
+each page size; these pointers point at lists of page status words.
+The page status words contain one bit that indicates if the page
+is used or free and one bit that indicates that the word is the last
+in the list for this page size. The bottom byte of the status
+words is the top 8 bits of the core address
+of the first block of the page. This also serves as
+a pointer to the first CST entry associated with
+the page. The status word also contains 3 bits which
+give the page length; these might be used for a consistency
+check.
+
+
+
+.br
+.sect
+2.2.5 The Core Status Table
+	The remaining important table is the core status table.
+This table contains a one word  entry for every 512 word  block
+of physcial core that exists on the machine.  This table, along
+with the PST, is the
+base of all global memory management;  any change in core usage
+is reflected in these tables.  One bit in each entry indicates if
+the  block is  free;  in fact, if  the block is  free the whole
+word will be zero.   The next bit indicates if the block may be
+shuffled;  this bit is set for all system blocks and for direct
+to  memory  device  buffers   which  are  actively   performing
+transfers, indicating that
+they may not be moved.   The  third bit indicates if a page may be swapped;
+the system and interrupt level  device buffer blocks have  this
+bit set, indicating that they may not be swapped out.  The last
+signifcant  bit in the  high byte indicates  whether or not the
+block is associated with a CPT  entry;  if it is, the low  byte
+points  to the appropriate entry.   Note that more than one CST
+entry may point at the same CPT entry.  
+.br
+.sect
+2.3 Using the Tables
+	Now that we have outlined  the data structure which  we
+have  defined  to  keep  things straight,  we  will  attempt to
+discuss how  this structure  is manipulated,  and some  of  the
+non-obvious hacks which are employed for the benefit of special
+cases.  
+	The  primary use of this data structure is, of course,
+to allow  creation,  deletion,  sharing and  swapping  of  user
+pages.   Much  of how  this is  done can  be inferred  from the
+descriptions of the  tables, but  we will  briefly outline  the
+
+
+more or less simple cases.
+.br
+.sect
+2.3.1 Creating a Page
+	User  pages are created  either by loading  from a disk
+file, or at the explicit request of a user.   The format of the
+load  file is shown  in figure 2-5.   The system  loads a file by
+sequentially reading the  page table  entries in  the file  and
+creating  the appropriate UPT  and SPT entries.   If  a page is
+shared, the  SPT  is searched  for  an entry  whose  descriptor
+matches that of the page being loaded.  If one is found, a link
+into the appropriate circular list is  created.
+An unshared page is loaded by finding enough free disk space to
+accomodate it  and creating  appropriate hack  and regular  SPT
+entries.   If  the page  is to  be loaded  with zeros,  this is
+indicated in  the  regular SPT  entry,  and no  hack  entry  is
+created.   The  disk routines will clear the page to zeros when
+it is  first  referenced.   A user  explicitly  requesting  the
+creation  of a page (with a #.UMAP call)  is very similar  to loading a  page from a
+file.   The user may  request that the  page be initialized  to
+zero or that it be loaded from a part of a file.  Expand access
+is required to do this. 
+.br
+.sect
+2.3.2 Loading a User's Page Map
+	When a user is started, all of his pages which have CPT
+entries  and do not have pages  being swapped bit on are loaded
+into the segmentation registers and this page in user's map bit
+set in the CPT entry.   During  this process, the "do not  swap
+this  page now" bit is set;  at the  end of this the "this page
+being swapped bit" is examined;  if it  is set the page is  not
+
+
+loaded.   The  job is then run until it's quanta runs out or it
+encounters some blocking condition such as a segment length  or
+non-resident  page  error.   If  this blocking  condition  is a
+request for  a swapped  out page,  the aborted  instruction  is
+undone,  and the scheduler decides if the page is to be swapped
+in now or not.   If the page is  to be swapped in and there  is
+not  sufficient free space  to swap it  in, the system requests
+the disk routines to swap out an appropriate size  page.   When
+enough  space is available a CPT entry is created with the page
+being swapped bit set, and  the disk routines are requested  to
+swap  in the page.   When the swap is complete, the "page being
+swapped" bit is cleared and the job may continue.   In order to
+facilitate  finding free  core for  swapping in  pages, core is
+divided up into fixed size blocks;  the PST
+makes it easy to find a  free page of appropriate size if one
+exists, or find one to swap out if not.   If a page of  exactly
+the right size cannot be found, a larger one will be used if it
+exists.
+.br
+.sect
+2.3.3 Swapping and Pre-pageing
+	*********not written yet!
+.br
+.sect
+2.3.4 Page Types
+	While  the most  common type of  page is  the user page
+which is handled as we have described, it is also necessary  to
+provide  for  certain  special page  types,  which  are handled
+diffently from normal pages in some situations.   These special
+types are:  file windows, disk directories, disk bit tables and
+device  buffers.   Each type has an identifying number which is
+stored in the first word of the SPT entry.   The fourth word of
+the  SPT entry provides a  byte of additional information about
+the page.   In the case of a  user page, this is the number  of
+the  user  who owns  the page,  i.e. the  user whose  UPT entry
+points directly at the SPT entry.  The file window page is very
+similar to  a  normal user  page  except for  a  few  important
+differences.   When  a user deletes a normal unshared page from
+his map, the core and disk  space the page used is  immediately
+freed;  in  the  case of  a file  window page,  if it  has been
+modified it  is written  out  before the  core it  occupies  is
+freed,  and the disk blocks are not deleted.   A user obtains a
+file page by specifying a  length and protection for the  page,
+its  relative position in a file, and  a channel which he has a
+disk file open on.   If his request is legal, i.e. the  desired
+access  is allowed and the page exits in the file, an SPT entry
+is generated from  the file  descriptor and  parameters of  his
+request.   If  the  request is  for  read/write access  and the
+
+
+position is just beyond the end of the existing file, the  file
+is  lengthened.   More  about  this will  be  explained  in the
+section on file interfacing.
+.br
+.sect
+2.3.4.1 Disk Directory Pages
+	Disk directories may not  be mapped directly into  user
+space;  a  hack SPT is used to give the user a copy of it.   He
+may request write  permit on  this copy,  but he  will have  no
+effect on the actual directory.   In kernal mode, any number of
+users may request read access to a directory, but write  access
+may  only be  obtained when  no one  is reading  the directory.
+Other aspects of the  directory are similar  to the file  page;
+it  is written out  if modified and  it is created  from a disk
+channel.   Kernal mode never uses the page (for read or  write)
+for  very  long, in  order to  allow  write accesses  to happen
+quickly.   This is  no hardship  due to  the structure  of  the
+directory,  as will be seen in the section on file interfacing.
+The information in the type dependent byte is the disk  channel
+number. 
+.br
+.sect
+2.3.4.2 Bit Table Pages
+	Many  systems  require  disk  bit  tables  to  be  core
+resident,  at  all  times.    Since  it  is  not  necessary  to
+dynamically allocate  blocks whenever  we wish  to swap  out a
+page,  we do not have  to have the bit  table(s) in core except
+when we are actually accessing  them.   Thus bit tables can  be
+included  in the swapping scheme  just as disk directories can.
+Restrictions   on  bit  tables   are  the  same   as  those  on
+directories, except that there is no  need to allow a user  any
+
+
+type of user mode access.   In the case of bit tables, the type
+dependent information is the disk number.
+.br
+.sect
+2.3.4.3 Display Pages
+	It is intended that this system be able to support  the
+Knight  display  processor, a  multi-console  refreshed display
+system.   It was not originally intended  for use in a  general
+timesharing  environment,   but   it  is   hoped   that   small
+modifications  will  allow  it  to  be  used  with   reasonable
+efficiency.   Assuming  these modifications, the processor will
+still require that all  display lists do not  span more than a
+total  of 32k words, that display  programs are not careless in
+their use  of stacks,  and of  course, that  display lists  are
+always  resident.   For  simplicity, we  will require  that all
+display pages are  in contiguous  physical memory.   Since  the
+pages  are always resident, the absolute page bit in the SPT is
+set.   If the system wishes to  shuffle the display blocks,  it
+must  first  turn off  the  display and  then  move all  of the
+display blocks  and modify  all  associated SPT  entries,  then
+inform the display of the new location of the lists and restart
+all  displays.   Hopefully this will only happen when a display
+list is expanded or contracted.  The type dependent information
+in the SPT is the number of the user who owns the display.
+.br
+.sect
+2.3.4.4 Device Buffer Pages
+	The final type of page is the device buffer.  This page
+type is absolute and may or may not be shuffleable.  The device
+dependent information is the device number;  a table reveals if
+the buffer is shuffleable and, if  it is, who to inform of  its
+
+
+new  location.   If there is more than one unit of a particular
+device type on the system, each unit has a device number.  Some
+buffers are dynamically allocated and  some exist even if  they
+are  not in use.   The dynamically  allocated ones have SPT and
+CPT entries when they are extant.   Often these entries will be
+left  "floating" in the manner described earlier;  a pointer to
+them will be saved  in the device open  block and they will  be
+linked  into the  kernal hack  pages when  a transfer  is to be
+performed.
+.br
+.sect
+2.4 The Kernel Map
+	In order  to  better understand  how  all of  this  can
+possibly  proceed fairly  smoothly, it is  necessary to examine
+how  the  kernal  mode  map  is  set  up.   One  of  the  prime
+requirements  for the kernal map is that it have available most
+of the variables that the  interrupt routines must have  access
+to,  so  that  map  switching does  not  usually  occur  on the
+interrupt level.   In  particular,  the trap  vectors,  device
+registers, user variables and resident portion of the debugging
+
+
+program  must always  be in the  map, as well  as the interrupt
+routines themselves.   Also, there must  be at least two  pages
+available for performing various hacks, such as reading and
+writing device buffers, reading out of disk  buffers, etc.   With all of these
+constraints, the kernal map is pretty well fixed to be as shown
+in figure 2-7.   Note  that what is  meant by pure  code is  code
+which  not only does  not write itself, but  also does not read
+itself.    This second restriction  eliminates the use of  some
+handy  programming  techniques,  especially  in  the  case   of
+subroutine calling.   Any code which is not pure must be placed
+in the low two pages of the map.
+.br
+.sect
+2.4.1 The Hack Kernel Pages
+	The hack  pages  are  used in  several  ways.   On  the
+interrupt  level, their current contents are simply pushed onto
+the stack, they are  set to the desired  values, used and  then
+popped before the interrupt exits.   Of course, page faults are
+illegal in  interrupt routines.   On  the main  program  level,
+there  are two UPT entries which are part of the circular lists
+which describe  the current  contents of  the page.   This  UPT
+entry  may  be  pushed provided  the  SPT and  CPT  entries are
+modified to  reflect the  fact  that the  circular list  is  no
+longer  complete.   This  is accomplished  by setting  the high
+order two bits in the SPT UPT pointer and the high order bit in
+the CPT UPT pointer to ones.  This leaves them "floating" until
+the UPT entry is popped;  note that this cannot be done with a
+shared  page.   While the entry is  pushed, another page may be
+
+
+created in its place.
+.br
+.sect
+2.5 Kernal to User Communication
+	In order to communicate  between address spaces, it  is
+desirable  to have  some hardware  feature which  allows simple
+fetching and  storing from  one space  to another.   The  11/45
+attempts  to  provide  this  feature  with  the  move  to/from,
+previous instruction/data space  instructions.   The move  from
+instructions functions entirely as expected:  if a segmentation
+trap  occurs when  it is  executed, the  segementation recovery
+registers indicate the  previous mode, i.e.  the mode in  which
+the fault really occurred.  Thus a user page will be swapped in
+without any special checking.  However, "Instructions that have
+autoincremented  (popped)  the kernal  stack pointer  cannot be
+restarted, if they abort." (Page 2-23,KT11-C manual).   This is
+because  the  stack  pointer is  incremented  before  the abort
+occurs and then PC and PS are pushed onto the stack, clobbering
+the item which was to  be popped.   In particular, the move  to
+previous  instructions cannot  be restarted.   This unfortunate
+situation could have been avoided if the hardware backed up the
+instruction before the abort, but the current machine fails  to
+do  this.   The straight forward but  painful way to get around
+this is to check for  possible illegal references before  doing
+any  instruction which cannot be  restarted if an abort occurs.
+The second
+	******stuff it here
+.br
+.sect
+2.6 The Mounted Disk Table
+	As mentioned earlier every  disk type device which  the
+system  considers to  be an  independent file  structure and is
+aware of,  has  a number  assigned  to it.   This  number  when
+multiplied  by a constant gives an  index into the mounted disk
+tables.   A disk is said to be  mounted if the system has  read
+its  root directory  and descriptor  file and  has recorded the
+location of its bit table and how much space is available on it
+for file  storage  and for  swapping.   When  a disk  is  first
+mounted  all used  blocks are  considered to  be used  for file
+storage.   When the disk is first mounted or anytime thereafter
+the  system may  be told  to use  the disk  as a  core swapping
+device.   The system normally swaps into the areas reserved for
+this  purpose, but if there is  no available swap area space on
+disks designated  for swapping  use, the  system may  use  file
+space.   The  swapping areas  are never used  for file storage.
+Even if a disk is not mounted for swapping, if a file with read
+
+
+only shareable pages  is loaded,  the pages will  be read  from
+that disk when needed;  of course, no page is ever written back
+there.   When  a user wishes  to remove either  a swapping or a
+non-swapping disk from  the system, he  must first unmount  it.
+If  there are files currently  open on the disk,  it may not be
+unmounted.  If there are pages swapped on the disk, these pages
+must be moved to some other disk.   Figure 2-8 illustrates the 16
+words for each mounted disk.   The first word is the address of
+the status  register  of  the  controller  which  the  disk  is
+attached  to.   The second  word contains  various flags.   One
+indicates that the disk is fully mounted;  the next is a one if
+the disk  is in  the process  of being  mounted and  the  third
+indicates that the disk is being unmounted.   Only one of these
+bits can be on at any given time.   Another bit indicates  that
+the  disk may be  used as a swapping  device;  this may only be
+true if the disk is fully mounted.   Another bit indicates that
+someone  has write permit on the bit table;  no other bit table
+accesses are  allowed  while this  bit  is a  one.   Four  bits
+specify  the  type  of  disk  (e.g.  RF11,RK05  etc.)  which is
+mounted.   The third word contains a  count of files which  are
+open on this disk;  this is only a double check, since the disk
+channels should always reveal this information.  The next eight
+words  are self- explanatory.   The twelfth  word points to the
+SPT entry which describes the  bit table.   This may either  be
+linked into a circular list or "floating".  The last four words
+
+
+are  the disk name;  the last character of the name has its 200
+bit  set.   This  is  the  name  used  to  reference  the  disk
+symbolically.  
+.br
+.sect
+2.7 Conclusion
+	The  whole  structure  of memory  management  tables is
+intended to provide  both generality  and easy  implementation.
+The  user is given access to many of the features of the memory
+segmentation unit in such a way that the hardware does much  of
+the work.  Keeping all of the tables in core at all times means
+that  much  complication is  avoided  and system  efficiency is
+increased.
+.end
+

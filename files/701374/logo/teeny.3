@@ -1,0 +1,23 @@
+;;; -*- Mode: LISP; Package: USER -*-
+
+;;;The hot licks section
+
+(load "pgs;mars qfasl")
+(fset 'si:tv-beep #'(lambda () (melodize marscore 1 .4)))
+
+(SI:TV-BEEP)
+
+;;; GOBBLED FROM DOYLES FILE
+;;; I like to see the time in the wholine.
+
+(DEFUN WATCH () (CHAOS:NWATCH-ON))
+(DEFUN UNWATCH () (CHAOS:NWATCH-OFF))
+(UNWATCH)
+(WATCH)
+(PUSH '(UNWATCH) LOGOUT-LIST)
+
+
+(SETQ SYSTEM:WARM-INITIALIZATION-LIST
+      (APPEND SYSTEM:WARM-INITIALIZATION-LIST '(
+						("WATCH" (PROG2 (UNWATCH) (WATCH)) T))))
+

@@ -1,0 +1,117 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.ds
+.adjust
+.he1
+Brookline Report
+.he2
+Acknowledgments
+
+This project has been a collaboration between a Public School system in
+Brookline, Massachusetts and a University Research Team, the MIT LOGO
+Group.  Without the full participation of a large number of people from
+both institutions, the Lincoln School LOGO Project could never have
+occurred.  From the Superintendent of Schools, Dr. Robert I. Sperber,
+to the principal of Lincoln School, Gerry Cote, to the sixth grade
+teachers, Lisa Hirsh, Bob Lewis and Florence Regolino who
+enthusiastically supported the project and attended to the sixth grade
+students who were its most immediate beneficiaries, the involvement of
+students and staff of the Brookline school system was an essential
+ingredient of the project.
+
+Trial classes at Lincoln School were taught by Dr. Dan Watt, a
+Brookline teacher whose services were subcontracted to the project on a
+full-time basis.  Dan Watt also had primary responsibility for
+collecting data about each child's progress and coordinating all the
+activities at the school.
+
+The trial classes were planned and materials for them were developed by
+members of the LOGO Group, Professors Seymour Papert, Harold Abelson,
+Andy diSessa and Jeanne Bamberger.  The data collection and analysis
+activities of the LOGO Group were coordinated by Dr. Sylvia Weir.
+These members of the LOGO Group also participated in the ongoing
+observation of the trial classes, revision of activities and in an
+ongoing series of project meetings which monitored the progress of the
+classes.  MIT students Ellen Hildreth and Ursula Wolz also observed
+trial classes and collected data and participated in project meetings.
+
+Our approach to data collection and analysis was developed over many
+years as an integral part of the research work of the  Laboratory.
+The use of dribble files was initiated by Cynthia Solomon. The tradition
+of detailed class commentaries was developed by Solomon,Gerianne Goldstein
+and Kiyoko Okumura.  The plan for this study was developed
+by the project staff in  
+consultation with Professor George E. Hein and Ms. Stephanie (Penny)
+Dunning of the Program Evaluation and Research Group of Lesley College,
+who also assisted us in developing the pre/post interviews used with
+our experimental subjects.  Penny Dunning also conducted the pre/post
+interviews, and observed the classes at regular intervals.  George Hein
+conducted classroom observations, interviewed the students' classroom
+teachers after each round of experimental classes, and participated in
+several project meetings.
+
+An important aspect of the project was the way in which the computer
+culture was able to spread within the school.  In addition to the
+experimental classes for our sixteen subjects LOGO classes were also
+provided for the rest of the sixth graders in the school.  These
+classes were taught by volunteers, mostly MIT students, who were
+supervised by Dan Watt, and Professors Abelson, diSessa and Bamberger.
+The volunteer teachers who contributed greatly to the overall success
+of the project were: Harvey Alcabes, Enno Becker, Kou-Mei Chuang, John
+Hengeveld, Danny Hillis, Rene Margulies, Margaret Minsky, Brian
+Schwartz, and Ursula Wolz.  An after school computer club, led by MIT
+graduate student Jose Valente provided an opportunity for seventh and
+eighth grade students to learn LOGO, and for certain sixth graders to
+extend and deepen their LOGO knowledge.In addition to teaching, these students
+contributed beyond measure to the intellectual atmosphere surrounding
+the project. Since it was in the nature of this project to be
+"conservative" in developing a version of LOGO that could be integrated into
+schools in an immediate horizon and in the nature of these students to be
+be "revolutionary" in looking beyond such immediate horizons, many
+of the student generated ideas have not found a place in this report.They
+will make themselves increasingly felt in future research directions.
+
+The project's technical components including hardware and
+software support were carried out  by Ron Lebel and Brian Silverman.
+
+Data analysis was carried out by the entire project staff.  Our 
+analysis owes a great deal to discussions with Professors
+Hermine Sinclair-de Zwaart of the University of Geneva and Guy
+Groen of McGill University, both of whom visited classes, attended
+project meetings, and commented critically on our first attempts at analysis.
+
+We had a number of visitors to our experimental classes, many of
+whom made important comments.  Two visitors whose
+insights were especially pertinent were Cynthia Solomon and Kyoko Okumura-
+Montpetit, both highly experienced LOGO teachers and innovators.
+Cynthia Solomon conducted a follow-up study in the school during
+the subsequent (i.e. the current) school year whose results 
+will be published in due course. Another kind of insight was
+contributed by Susan Hartnett who attended a number of classes and
+filmed one as part of an experiment in the use of film to capture
+aspects of the children's work.  Perhaps the most disappointing aspect of the
+project was its inability, imposed by lack of resources, to follow
+up on new insights contributed by visitors. However, many of them have
+been absorbed into future oriented thinking.
+
+Behind the scenes at all times was Gregory Gargarian who is listed in
+official papers as "secretary" but who in fact did enormously more than
+can properly be described by that (or perhaps any other)) term.
+In addition to orchestrating a complex, movement of machines, people and texts
+so that the right ones would be in the right places at the right times he
+was the person who was most in touch with the day to day needs of the
+project and of the people in it.
+
+An Interim Report,
+describing the work of the first eight students, and containing our
+first attempt at data analysis, was written by the entire project
+staff, and coordinated by Sylvia Weir.  This report was published  as
+LOGO Memo #49 in the spring of l978.
+
+This final project report was written by Prof. Seymour Papert, Dan Watt,
+Andy diSessa and Sylvia Weir, under the overall direction of Prof. Papert.
+The appendix containing individual student profiles was written by
+Dan Watt.
+
+

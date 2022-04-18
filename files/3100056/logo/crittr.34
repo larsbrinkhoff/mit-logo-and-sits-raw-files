@@ -1,0 +1,410 @@
+(comment
+
+Basic Setup for critterworld
+
+    Critterworld consists of a bunch of objects called critters, which are instances of
+OBJECT-CLASS.  There can be many species of critters, each of which is distinguished by
+its RULES, which are a series of conditional forms that determine how a member of that
+species interacts with the rest of the world.  These rules are read and acted upon each
+time a critter updates itself.  This happens each time a critter gets an :UPDATE
+message from the Ticktockman, a critter who acts as a continual, rotating wakeup
+service for all of critterworld.  There can be can be sub-species, sub-sub- species,
+and subn-species, of critters. (I suppose we could broaden our taxonomic scheme, if it
+looks necessary.  Perhaps we could leave this to the kids.)  A sub-species has all of
+the rules of its parent species, with perhaps some more, and possibly also some new
+capabilities. One very important family (there--a new taxon!) of critters is that of sprites.
+Sprites are critters with a picture, which can move about on the screen. Sprites can of
+course have the null picture.
+
+Conditionals--WHILE is while something is happening, WHEN is when something happens--"do
+              action once when so and so occurs."  (WHILE near cat, scurry the other
+              direction)  (WHEN near mouse, eat him)
+
+WHILE       (WHILE condition action1 action2 ..)
+WHEN         ditto				
+
+
+Events--Most or all can be WHILE or WHEN.
+:AGE= n
+:MOVE-HEADING= n
+:MOUSE-BUTTONS clicked
+:TOUCHING                                 Is fast--"Do picture arrays (rectangles) overlap?"
+:SPECIES-TOUCHING species-name            Sends :TOUCHING to each member of the relevant
+                                          species-list, which is documented below.
+					  
+:DISTANCE critter1 critter2 <n            This takes more time than :TOUCHING.
+:SPECIES-DISTANCE species 
+					   If we want to have areas, distinct from critters,
+					  (I think so--they'll have almost no moving parts)
+					  then we need an--
+:OVERAREA area					  
+
+
+Actions--
+:MOVE heading speed				;note the assymetry between args to
+:JUMP-TO x y &opt speed				;:MOVE and to :TURN . The analogous format 
+:TURN  angle &opt omega				;would be :MOVE heading distance &opt speed.
+:TURN-TO heading 
+:SPIN omega
+:DISAPPEAR
+:REAPPEAR
+:CREATE-INSTANCE species-name &opt etc.
+:CHANGE-TO other-species &opt etc.
+:MAKE-SOUND note-list
+:GO-AWAY  (for good)                                                   
+:SCORE-POINTS etc.
+:PAINT etc.
+:BOUNCE &opt (rules Newtonian) (elasticity 1)
+:WAIT-THEN-DO time action			end comment)
+
+
+;Some basics--
+
+(defclass CRITTER-CLASS OBJECT-CLASS   (name rules dt age parent))
+
+(defclass SPRITE-CLASS CRITTER-CLASS (picture-array left top height width mask background
+					   picture-heading move-heading omega speed dx dy))
+
+
+
+
+;;;All the critters we use will be sub-classes of CRITTER-CLASS (or sub-sub-classes, etc.),
+;;;called species.  When we create a new species, say "krazy", using MAKE-NEW-SPECIES (right
+;;;below),1) KRAZY-CLASS is defclass'd,2) an empty list, KRAZY-LIST, is
+;;;created, and 3) a :BORN message for KRAZY-CLASS is defmethod'd. When a new instance
+;;;of KRAZY-CLASS is brought into the world, using CREATE-INSTANCE, her :BORN message
+;;;gives her the picture-array and rules which we gave to  MAKE-NEW-SPECIES, and adds her
+;;;name to  KRAZY-LIST.
+
+
+(defmacro MAKE-NEW-SPECIES
+  (species-name species-rules species-picture-array
+		&optional (superclass-name 'CRITTER-CLASS)	)
+  (let ((class-name (glom species-name "-CLASS"))
+	(species-list (glom species-name "-LIST"))
+	(pname-list (glom species-name "-NAME-LIST")))    
+    (set species-list nil)
+    (set pname-list nil)
+    `(progn
+       (defclass ,class-name ,superclass-name  nil)
+       (defmethod (,class-name :BORN) ()	
+		  (<-as ,superclass-name ':BORN)
+		  ,(if (subclass-of-classp (symeval superclass-name) SPRITE-CLASS)
+		       `(setq picture-array  ,species-picture-array
+			      rules  ,species-rules)
+		       `(setq rules ,species-rules))
+		  (push self ,species-list)
+		  (push name ,pname-list)
+		  (<- ticktockman ':NEWCRITTER self)
+		  )
+       )
+    )
+  )
+
+(defmethod (CRITTER-CLASS :BORN) () (setq dt 0	             ;Look at :MAKE-NEW-CRITTER, below
+					  age 0))	     ;for a discussion of defaulting 
+							     ;attributes.
+
+(defmethod (SPRITE-CLASS :BORN) () (<-as CRITTER-CLASS ':born)
+                                   (setq left (or left 0)	      ;if :NEW sends :BORN any
+					 top (or top 0)		      ;defaults, use them,else
+					 picture-heading (or picture-heading 0)	;zero all 
+					 move-heading (or move-heading 0)	;numerical
+					 speed (or speed 0)	                ;attributes.
+					 omega (or omega 0)	      ;angular velocity
+					 dx 0
+					 dy 0))
+
+
+(defun glom ( &rest vars&strings)		;This is for the macro-hacking above. 
+  (intern (apply 'string-append vars&strings)))	 
+
+(defun glomeval (&rest vars&strings)
+  (symeval (apply 'glom  vars&strings)))
+
+
+
+;Conditionals--
+
+
+(defmacro WHILE (event . messages)		;(WHILE ( :HEADING= n)(:MOVE heading)
+    `(if (<- self ,event )                         ;                    (:PAINT color)
+               	(<<-- self ,messages)))	        	;                    (:BEEP))
+
+
+(comment  WHEN is still in the works.  No stupid questions, please.  )
+
+
+
+;Events--
+
+
+
+(defmethod (SPRITE-CLASS :TOUCHING) (crit)
+  (let ((crit-left (<- crit ':LEFT))
+	(crit-top  (<- crit ':TOP))
+	(crit-width (<- crit ':WIDTH))
+	(crit-height (<- crit ':HEIGHT)))
+    (let ((x-dif (- left crit-left))
+	  (y-dif (- top crit-top)))
+      (or (< (abs x-dif) width)
+	  (< (abs x-dif) crit-width)
+	  (< (abs y-dif) height)
+	  (< (abs y-dif) crit-height))
+      )
+    )
+  )
+
+(defmethod (SPRITE-CLASS :DISTANCE) (crit)	;Note--Box metric.
+  (let ((x1 (<- crit ':LEFT))
+	(y1 (<- crit ':TOP)))
+    (let ((dist (+ (abs (- left x1))(abs (- top y1)))))
+;      (<- crit ':NEW-DIST-INFO self dist)
+      dist)
+    )						
+  )
+
+;Check-list is used to extend the above to action on a species-list.
+
+(defun check-list (species-name method )
+  (dolist (crit (glomeval species-name "-LIST"))
+    (if (<- crit method)
+	(return T))
+    )
+  )
+
+    
+(defmethod (SPRITE-CLASS :SPECIES-TOUCHING) (species-name)
+  (check-list species-name ':TOUCHING)) 
+
+(defmethod (SPRITE-CLASS :SPECIES-DISTANCE) (species-name)
+  (check-list species-name ':DISTANCE))
+
+;There are also the already extant :AGE :HEADING :LEFT, etc.
+
+
+
+;Actions--
+
+(defmethod (SPRITE-CLASS :JUMP-TO) (x y)
+  (setq left x top y))
+
+(defmethod (SPRITE-CLASS :MOVE) ()		
+  (setq dx (* (cos move-heading) (* speed dt))	
+	dy (* (sin move-heading) (* speed dt))
+	left (+ left dx)
+	top (+ top dy)))
+
+(defmethod (SPRITE-CLASS :PICTURE-SPIN) ()
+   (setq picture-heading (+ picture-heading (* omega dt))))
+
+(defmethod (SPRITE-CLASS :SPIN)()
+  (setq picture-heading (+ picture-heading (* omega dt))
+ 	move-heading (+ move-heading (* omega dt))))
+ 
+(defmethod (SPRITE-CLASS :JUMP-TURN) (angle)
+  (setq picture-heading (+ picture-heading  angle)
+	move-heading (+ move-heading angle)))
+
+(defmethod (SPRITE-CLASS :JUMP-TURN-TO) (heading)
+    (setq picture-heading (+ picture-heading (- heading move-heading))
+	  move-heading heading))
+
+(defmethod (SPRITE-CLASS :TURN) (angle &optional omega)
+  (setq move-heading (+ move-heading angle)
+	picture-heading (+ picture-heading angle)))
+
+;;;For now, if if :MAKE-NEW-CRITTER doesn't have a value for a positional sprite attribute
+;;;(i.e. the rules and picture-array are determined by the new critter's species,and its
+;;;age is zero),and both creator and createe are sprites, it defaults it to that of the	
+;;;parent. Otherwise, it just tells her who her parent is.  Any other attributes must be
+;;;set independently, using a :FOO<-. 
+
+						
+
+(defmethod (CRITTER-CLASS :MAKE-NEW-CRITTER)
+  (species-name &optional (name (gensym)) new-left new-top new-heading new-speed)
+  (let ((new-class (glomeval species-name "-CLASS"))
+	(creator self))    
+    (cond ((and (setq sprite-test			       ;if they're both sprites,
+		      (subclass-of-classp new-class SPRITE-CLASS))
+		(subinstance-of-classp creator SPRITE-CLASS))  ;arguments to :M-N-C take
+	   (let ((new-left (or new-left left))		       ;precedence as defaults.If
+		 (new-top  (or new-top  top))		       ;an attribute isn't set by
+		 (new-heading (or new-heading move-heading))   ;:M-N-C, the parent's values
+		 (new-speed (or new-speed speed)))	       ;are used.
+	     (let ((creature (<- new-class ':NEW
+				 'pname name
+				 'left new-left
+				 'top new-top
+				 'move-heading new-heading
+				 'picture-heading new-heading
+				 'speed new-speed
+				 'parent self)))
+	       (set name creature))))
+	  (sprite-test					       ;if just the youngun is a 
+	    (let ((creature (<- new-class ':NEW
+				'pname name		       ;sprite, use arguments
+				'left new-left		       ;(if any) specified in MAKE-
+				'top new-top		       ;NEW-CRITTER, and  zero the 
+				'move-heading new-heading      ;rest
+				'picture-heading new-heading
+				'speed new-speed
+				'parent self)))
+	      (set name creature)))
+	  (t (let ((creature (<- new-class ':NEW
+				 'pname name
+				 'parent self)))	       ;else :BORN zeros them all
+	       (set name creature)))
+	  )
+    )
+  )
+
+
+
+
+
+;The Scheduler--alias "The TICKTOCKMAN"--
+
+(defclass TICKTOCKMAN-CLASS CRITTER-CLASS (critterlist cycletime ))
+
+(defmethod (TICKTOCKMAN-CLASS :FIAT-CRITTERMUNDI)(critlist)
+  (<- self ':CRITTERLIST<- critlist)		
+  (do () ((kbd-tyi-no-hang))			;Comment  What for an end test--g?
+    (let ((timer (time)))			;this is only every 1/60 sec
+      (dolist (crit critterlist)		
+	(<- crit ':UPDATE dt))
+      (print "FLASH!!!!")
+      (<- self ':COMMUNE-WITH-HEAVEN)		;this will allow for divine intervention. Is
+      (let (( dt (- (time) timer)))		;a no-op for now. see below
+	(if ( dt cycletime)
+	    (progn (process-sleep dt)(<- self ':dt<- cycletime))
+	    (<- self ':dt<- (+ cycletime dt)))
+	)
+      )
+    )
+  )
+
+;;;About COMMUNE-WITH-HEAVEN.  This is to give us gods a chance to throw in new critters,
+;;;or fiddle around with those we've already made.  None of this Prime Mover, "give things 
+;;;a shove and go away" stuff. I have yet to figure out how to do this, so for now:						
+
+(defmethod (TICKTOCKMAN-CLASS :COMMUNE-WITH-HEAVEN)()
+  ()      )
+						
+(defmethod (TICKTOCKMAN-CLASS :NEWCRITTER) (newby)
+  (push newby critterlist))
+
+(setq ticktockman (<- TICKTOCKMAN-CLASS ':NEW 'cycletime 4))
+
+;The classes' update stuff--
+
+(defmethod (SPRITE-CLASS :UPDATE)(newdt)	;alternatively, each critter could check the
+  (setq age (+ age 1)				;time hisself.This would be more accurate,
+    	dt newdt  )				;and more "local", but also more time 
+						;consuming (no pun intended, but now that
+						;that it's there...).
+  (<- self ':DO-RULES)
+ ;(<- self ':REDRAW)
+  )
+
+(defmethod (CRITTER-CLASS :DO-RULES) ()
+  (mapc 'eval rules))
+
+
+
+
+
+
+
+
+                                                                      (comment
+	Who  Done?	     Actions--
+	T       T            :MOVE heading speed
+	T       T            :MOVE-TO x y &opt speed			
+	T	T	     :TURN  angle &opt omega			
+	T	T	     :TURN-TO heading &opt omega
+	P	?	     :DISAPPEAR
+	P	?	     :REAPPEAR
+	T	T	     :CREATE-INSTANCE species-name &opt etc.
+	T	N	     :CHANGE-TO other-species &opt etc.
+	T	N	     :MAKE-SOUND note-list
+	T	N	     :GO-AWAY  (for good)  
+	T	N	     :SCORE-POINTS etc.
+	P?	?	     :PAINT etc.
+	T	N	     :BOUNCE &opt (rules Newtonian) (elasticity 1)
+	T       N            :WAIT-THEN-DO time action			end comment)
+
+(comment
+
+(defmethod (SPRITE-CLASS :CREATE-INSTANCE)
+  (species-name &optional
+		(name (gensym))
+		(new-left left)			;default is creator's left
+		(new-top top)	        	;etc.
+		(new-heading  heading)
+		(new-speed speed))
+  (let ((creature (<- (symeval (intern (string-append  species-name "-CRITTER-CLASS")))
+		      ':NEW 'left new-left
+		            'top new-top
+			    'heading new-heading
+			    'speed new-speed
+			    'parent self)))
+    (set name creature))
+  (<- ticktockman ':NEWCRITTER name)   )
+
+
+(defmacro MAKE-NEW-SPECIES
+        (species-name species-rules species-picture-array
+		      &optional (super-class-name 'CRITTER-CLASS)	)
+	(let ((class-name (glom species-name "-CLASS"))
+	      (list-name (glom species-name "-LIST")))	
+	  (set list-name nil)
+	  `(progn
+	     (defclass ,class-name ,super-class-name  nil)
+	     (defmethod (,class-name :BORN) ()	
+			(<-as ,super-class-name ':BORN)
+			(setq picture-array  ,species-picture-array
+			      rules  ,species-rules)
+			(push self ,list-name)
+			(<- ticktockman ':NEWCRITTER self)
+			)
+	     )
+	  )
+	)
+
+
+(defmethod (CRITTER-CLASS :MAKE-NEW-CRITTER)
+  (species-name &optional (name (gensym)) new-left new-top new-heading new-speed)
+  (let ((new-class (glomeval species-name "-CLASS"))
+	(creator self))
+    (if (and (subinstance-of-classp creator SPRITE-CLASS)
+	     (subclass-of-classp new-class SPRITE-CLASS))
+	(let ((new-left (or new-left left))
+	      (new-top  (or new-top  top))
+	      (new-heading (or new-heading move-heading))
+	      (new-speed (or new-speed speed)))
+	     (let ((creature (<- new-class ':NEW
+				 'left new-left	
+				 'top new-top
+				 'move-heading new-heading
+				 'picture-heading new-heading	
+				 'speed new-speed	
+				 'parent self)))		
+	       (set name creature)))			
+	(let ((creature (<- new-class ':NEW 'parent self)))	
+		  (set name creature))
+	)
+    )
+  )
+
+
+
+
+
+
+
+
+end comment)
+
+

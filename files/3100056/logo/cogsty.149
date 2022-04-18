@@ -1,0 +1,1415 @@
+.xgp
+.dummy @
+.font 0 30vr
+.font 1 37vrb
+.font 2 30vri
+.he1
+Theoretical Inter.
+.he2
+COGSTY
+.adjust
+.he1
+4. Theo. Inter.
+.he2
+Science Skills
+14. Theoretical Interpretations
+.br
+
+14.1 Science Skills and Concepts Involved in LOGO
+
+0What we talk about in this section is usually called "scientific method" rather than domain-specific.  The main "science concept" involved in LOGO involves the unstated analogy between the concept of hypothesis formation and testing creation of a revised hypothesis, on the one hand; and the process of writing a LOGO procedure, trying it out, and debugging it.  Development of a sense of this type of process is a major goal of all elementary school science curricula, and it is a major component of LOGO as well.
+
+To talk about "acquisition" of the kind of skills and concepts involved here would be misleading.  But we can provide some evidence for an implicit or an explicit exposure to some of them in some of the children's activities.
+
+A working scientist is accustomed to using multiple representations
+to achieve greater certainty and efficiency.  Let us take an example, a
+simple physics collision problem:
+
+.indent 5
+1) A scientist abstracts the problem.  Important conceptual
+structures (like conservation of energy) guide a translation into a
+formalism  (perhaps an equation).
+.br
+
+2) The formalism is manipulated in its own terms (the equation is solved).
+.br
+
+3) The formalism is interpreted (v = 0 means the collision causes an
+object to stop).
+.br
+.indent 0
+
+Now consider a child drawing a picture in Logo.  On the one hand there
+is his perception and interpretation of the picture and on the other
+there is the formalism of turtle drawing. The latter involves a few
+simple operators, some important larger-scaled structures (iteration,
+recursion, inputs etc.), and a collection of things it can do well and
+simply with these structures.  The child's problem is to abstract into
+the formalism -- an eye becomes a circle, a nose becomes two arcs.  In a
+more complex case the hairs in Donald's face's beard become iterated
+pieces of a spoke pattern.
+
+
+
+
+
+
+Notice how different a conception of a series of simple line strokes is
+needed to make this transformation.
+
+Now the child must execute the pieces of his reinterpreted picture
+within the formalism; a program must be created with the proper syntax
+and sequencing.  All along and particularly if the program does
+something other than expected, the formalism must be interpreted.
+"What will that program do?"  In the turtle environment Dan encouraged
+"playing turtle" as a syntonic mechanism for this interpretation.
+
+There is another important large scale process involved in the Logo
+experience, the art of design.  Every engineer experiences and
+learns to appreciate the complex interaction between ends and means,
+goals -- both aesthetic and pragmatic -- and materials.  Logo graphics
+particularly invites elaborate and clear goals, and then the necessary
+compromise to achieve them.  The reader is invited to consider, for
+example, Kevin's turtle detailed in section II.
+
+This kind of learning is very large scaled, hard to pindown and
+measure.  Though we are only at an early stage in being able to
+describe and objectify what is involved, that does not lessen our
+conviction that it is an important kind of learning.   We can, however,
+point to some exemplary explicit encounters with various subparts and
+related ideas:
+
+Heuristics - Students are given suggestions for organizing a
+problem for solving.  "Divide a problem into parts -- do the parts
+separately." Certain students can be seen to have mastered this advide,
+Gary, Donald, Kenny.  It is important that the procedure-subprocedure
+model reinforces in a very concrete way the idea.  Donald's
+construction of his face was guided by the top-down structure which he
+wrote into his program when he started it, as much as it is by his
+having learned in the abstract to "subdivide."
+
+"Divide and conquer" ties to another explicit heuristic -- plan.
+First approximations are useful, worry about details later.  Dan
+explicitly said these things to the students of many occasions, and one
+has at least the surface evidence of the plans some students
+spontaneously made to support "acquisition."
+
+Systematic Processes - One sees in Ray's "playing" with POLY an
+important development.  In the beginning he changes both numbers
+rather indiscriminantly, focusing on number patterns, e.g. 123 321,
+rather than "meaning."  Later one sees a very different pattern,
+changing one variable at a time, systematically.  POLY 100 88, POLY
+100 89, POLY 100 90 . . .  He has learned some very important things
+about systematic enquiry.  Another striking example of an appreciation
+for a systematic process is Deborah's entire mode of design, step by
+step, almost formalized procedure.
+
+Ideas we intend to look at more carefully in the upcoming round of
+experiments include:
+
+	Value of explicit description
+	Local-Global analysis
+	Setting Contexts
+	Type-Token distinction
+	Debugging through cause and effect
+	Naming as a part of analisis and abstraction
+.he2
+Math Behavior
+
+14.2 Mathematical Behavior in the LOGO/TURTLE Classes
+
+0To decide what counts as mathematical behavior is as complex a question
+as the definition of mathhematics itself.  As a first approach to the
+subject we could list specific mathematical skills or concepts which
+the students might have learned or exercised in the course of their
+work at the LOGO computer.
+
+Before beginning the experiment we constructed a checklist of such
+items to look for in observing the behavior of the students.  See
+section 3 for findings.  The checklist includes
+some entries which were not directly observed and excludes some
+interesting ones which we did not think to look for.  This fact itself
+is of some interest for the design of future experiments (including the
+second round of this one) and for teaching.  It shows that we are
+inclined to recognize certain mathematical behaviors and others not.
+
+Consider an example.  When Donald was putting the hat on his face he
+had considerable trouble deciding how far the turtle should move along 
+the brim of the hat before doing a left turn to draw the vertical
+line.  Notice that there is a little problem in algebra: suppose the
+diameter of the brim is B and the diameter of the vertical cylinder is 
+H.  Then the turtle has to do 
+
+.nofill
+.indent 6
+.block 9
+FD (B-H)/2
+LT 90 
+FD HEIGHT 
+LT 90 
+FD H
+LT 90 
+FD HEIGHT 
+LT 90 
+FD (B-H)/2.
+
+.indent 0
+.adjust
+But how do you do this if you
+have not yet encountered algebra and even if you have, but feel
+uncomfortble.  Donald tried some trial and error but had trouble keeping track 
+until he had the excellent idea of using the hairs as markers, so he could
+count how far he had moved the turtle.  Thus the algebra was, so to speak, digitized and 
+the problem became more tractable.  
+
+Kevin was seen to do almost
+exactly the same manouver in a similar problem situation: this time
+he used the fact that when the particular turtle used in the experiment
+drew a circle by repeating FD 10 RT 10 one could see a visibly brighter point
+at the vertex of the 36-gon which is being drawn in place of a true circle.
+So using internal markers should be called a mathematical behavior in the
+same right as estimating angles. 
+
+Another very subtle example is seen by watching carefully how
+Kevin moves into the intrinsic point of view when he is working
+on his "BIG TURTLE". By intrinsic point of view we mean a way
+of thinking from inside the curve..as if one could never go out of it
+or measure or even see anything on the outside.  From a geometric
+point of view there is a tremendous difference and we are used to thinking
+of turtle geometry as an accessible, elementary school example of 
+intinsic geometry.  But of course one is not forced to use turtle
+concepts intrinsically..in the extreme case one can use them to set
+up an extrinsic cartesian (or other) coordinate system. This is something
+that young students often do and then make the wonderful discovery that
+many problems are more easily solved intrinsically.  For example
+Kevin's turtle was made of a circle for the outline of a shell and
+various objects along its circumference: feet, tail, neck.  An
+extrinsic way to do this might be to move from feature to feature in a
+straight line, a chord of the circle.  But doing so has real problems.
+How long is the chord?  A much better approach is to stay inside the line
+being drawn. This means going from feature point to feature point
+by moving on the circumference (this is intrinsic i.e. inside the
+line..which must not be confused with inside the whole disc).
+
+Another example concerns the problem Kevin encountered in drawing extruberances 
+like the foot.
+How does it pick up its place again?  A truly intrinsic method
+is to write a second procedure called BACKFOOT whose steps are inverses
+of the steps of FOOT and carried out in reverse order according to
+the theorem of group theory.
+.nofill
+
+         (a b c)-1  =  c-1  b-1     a-1
+
+.adjust
+Then FOOT BACKFOOT brings the turtle back to where it started i.e. the
+two procedures compounded form a state transparent procedure.
+
+Kevin did not actually invent this idea.  But he adopted it from the
+suggestion of the teacher in an interesting way. The suggestion made to him
+was not that of writing two procedures which would act as inverses for
+displacement but rather to make the procedure FOOT state transparent.
+Kevin refused the suggestion..but internalized the idea and 
+used it in a form which is superficially rather different even if
+mathematically only subtly so.
+
+It is clear from the discussion that we see in the mathematical behavior of
+these subjects a greater variety of "advanced" mathematical behaviors
+than  there is any chance to experience in the ususl sixth grade class.
+If exercising implies developing there must be development happening.  If development
+must show on an objective test we are still shaky in designing the
+tests.  But the fact that we see the behavior at all contains the germ
+of the design of a test for it.  Carrying through on this thought  will
+be a theme of the second semester.
+.he1
+Cognitive Styles
+.he2
+COGSTY
+.PAGE
+.block 5
+14.3 Cognitive Styles and Strategies0
+
+Cognitive styles is a particular abstraction of the observations of students having to do with large scaled and persistent patterns of perceiving, accumulating, and using knowledge.  This category explicitly excludes social and interpersonal styles and strategies, which, while they may play an important, perhaps even 
+dominant role in some students educational activities, are a different
+class of discussion.
+
+The aims of this part of the study are several:
+
+01. To bring to the fore some of the possibilities of LOGO as an instrument for investigating individual
+learning styles in a natural setting.  Particularly in its artifacts of planning and programming.  LOGO leaves a great many more clues to what really is going on in the child than seems typical of intellectual activities in general.  These can be of great use to teacher as well as researcher.
+
+02. To provide partial information on the learning styles of the students involved in the project, particularly in so far as it is distinct from measured school performance, "general intelligence" specific knowledge, and other measures.
+
+
+03. To begin to sort out certain parameters of individual differences particularly relevant to determining the kind of Logo experience a child is likely to have.  What features of Logo are particularly appropriate or inappropriate to certain students?  What possible evolutions in style and strategies can we expect?  What special arrangements can and should be made to accomodate individual needs?
+
+1Categories of Analysis
+
+0The analysis on cognitive styles is directed toward four
+categories.  All the students exhibited a great number of references
+back to previous work and showed patterns of carryover from old to new
+work.  These, of course, are very important in determining the
+intellectual development of the child and how he can be best helped to
+progress.  The first two categories are aimed at describing these patterns.
+
+.block 3
+11. Extent and Grain of Connectivity0 - Some students were a
+blurr of references backward and starts and stops of forward pointing
+threads.  Others exhibited a much sparser pattern.  Some students seemed
+to concentrate on large scale structures like the sort of project they
+would select.  In contrast others had a habit of returning again and
+again to, for example, little techniques they had learned like a way of
+making pretty patterns with REPEAT.
+
+.block 3
+12. Nature of Connections0 - Some students references were
+explicitly or apparently mediated by theories, conjectures and
+abstractions of various sorts.  Others were much more literal.  An
+example of the former is returning to an old procedure to "look
+inside," see again how it worked, try variations.  More literal
+students seemed just to want to see their old procedures work again.
+
+The two other categories concern meta-knowledge, knowing about
+knowing and thinking about learning.
+
+13. Epistemology0 - What do the students think or appear to
+think knowing is about?  Do they show signs of thinking about the
+learning process?  What are the primary resources for learning;
+contemplation, experimentation, asking the teacher?
+
+14. Assertiveness0 - What is their attitude toward what they
+know?  Are they confident and agressive in their ideas, using them
+quickly in foreign situations.   Or are they hesitant, uncertain,
+insistant on thoroughly exploring an idea in its original context,
+refusing to think, or just not thinking of that idea as applying in a
+new context until much later.
+
+We elaborate these ideas by discussing two of the children in depth, and giving summaries of the cognitive styles of all the children.
+
+11. Gary, an articulate learner
+
+0A.  Theoretical - Gary manifested a penchant for theoretical and abstract thinking in a number of ways.
+
+1.  Perceiving, inventing and naming structures - Even on the first day in the midst of learning the basics, this was evident.  In the course of repeating a simple 3 step procedure with Dan and Laura present, Gary observed, "Hey, its going to make a pattern!"  Patterns are very important
+.finch .5
+to him.  The pattern developed and Gary was elated - "It made a circle!"  Laura was a bit uneasy at giving this somewhat unorthodox circle that name, but for Gary this even established a prototype for round figures.  A short time later Laura suggested elaborating the design by putting "a little ball" inside the figure.  Gary was off and running using the prototype structure but varying the inputs to all turtle commands, making them smaller to make a smaller circle.  He quickly wrote down the procedure plan and wanted to define it without trying it out.
+
+This episode exemplifies Gary's facility for dealing with procedural entities.  He had no trouble aggregating a sequence of commands and thinking of them as "a chunk" to produce some large scale effect.  As a consequence he frequently and early on made chunks into procedures and later used them as subprocedures.  In one instance at the very start of a session Gary created a nice pattern  with two commands, seemingly by accident.  Later, after a sequence of other commands, Gary defined this as a procedure without even trying it out again.
+
+Procedural Structures caused Gary no trouble either.  He essentially asked if there were a Logo command for repeating (though this in particular may be due to his experience with BASIC.)  Even on the first day in invented conventions, and annotational markings for his written plans to show sequence, turtle state and other things he did or didn't know (eg. undetermined input values).  Later he seemed to have invented the idea of state transparency, consistently writing state transparent procedures.  He established a convention of hiding the turtle at the end of
+procedures, as well. This led to problems:  he had to show the
+turtle before continuing his work.  He didn't distinguish betweeen
+"working product" and "finished product". 
+
+2.  Connections via Abstraction and Conjecture - Connections between segments of Gary's work were very often mediated by conjectures and other abstracted formulation.  For example the process aggregating turtle commands e.g. RT 30 RT 30 becomes RT 60, took hold immediately and extended beyond the initial domain of experience.  At one point when defining a procedure Gary
+aggregated two RARC 10 commands () into a RARC 20 () without trying it out first.  Needless to say this kind of thing frequently resulted in bugs.  Similarly, in debugging Gary frequently relied on operations performed in his head.  A mistaken FORWARD command would be debugged by repositioning the turtle.  Gary would then change the old command by calculating the new one in his head and wrote it into the procedure without trying it out.  This contrasted markedly to most other students who would clearscreen at such a point and start again - they needed to see the correct command to believe it.
+
+This kind of abstract mediation suggests concise summary statements of phenomena or conjecture.  Gary often made these out loud.  On observing the important special character of 90 angles which were discovered by another student, Gary said roughly, "A quarter of the way around... all the way around is 360, half of that is 180 and half of that is 90."
+
+B.  Assertive - As should be clear already, Gary exhibited confidence in his knowledge and conjectures.  He did not hesitate to "correct" Dan when he used only a leading quotation mark, as is convention in our Logo.  We have already mentioned some of the many instances of defining something without trying it out.
+
+The circle episode on day one gave good evidence of Gary's assertive style.  He voiced great confidence that his theory of producing a small circle would work.  In another part of the session while counting repetitions of a basic figure in making a "circle," a typing mistake caused the insertion of an unrelated command.  Rather than clearing and starting again or even pausing to think of corrective action Gary simply continued the repetition and, when counting, carefully left out the mistaken step.  Thus he assumed that one error did not affect the "correct" part of the work.  That kind of assumption of independence of parts is sometimes mistaken in detail, as it is here, but is often a very helpful approximation, a good heuristic which more careful and less aggressive intellects need to learn.  It followed naturally from Gary's style.  In many other instances Gary used this particular heuristic, assuming independence of effect of parts.  In debugging he would always pursue and correct bugs one at a time.
+
+Gary's planning and working style was assertive to the point, occasionally, of being impetuous.  One would expect he would need a good way of dealing with the inevitable bugs in his plans and theories.   Indeed, Gary liked bugs when he could handle them with his one at a time style.  When his "smaller" circle turned out to be larger, he clapped his hands with glee... what a nice surprise!  In many ways he even sought out bugs, as one can see in his playing with larger and larger inputs until something went wrong.  He also spent time playing with Logo's peculiar large number arithmetic (exponential notation).  Again, one can see this as a good heuristic - to search out extreme (failing) cases.
+
+C.  Diffuse, non-local style of work - Gary's is punctuated with many references back and ahead in time.  One can often see in a small stretch a return to old ideas or procedures right along side
+of and interleaved with new ideas and pieces of future work which will eventually be put together.  This kind of phenomenan is common, but in most students, reference to old work appears to be mostly consolidation.  In Gary it was often used to integrate and elaborate, seeking to make connections where there were none, and pushing old ideas into new contexts.  (One hardly ever saw other students printing out and examining the structure of old procedures as Gary did.)  We mention a few examples:
+
+Gary stated exploring the PRINT command on a non-graphics terminal.  Without encouragement he tried to import the REPEAT command from previous work in turtle geometry.
+
+Gary was playing with SPIN which he had just discovered.  Dan wanted Gary
+to start using recursion and showed him a (non-spinning) example.  Gary
+right away wrote a recursive spinning program.
+
+Gary knew about using RT to counteract a mistaken LT.  He also knew how
+to consolidate commands and knew LOGO could do arithmetic.  These bits
+of knowledge might have gone unconnected in many children, but to
+correct a LT 99 Gary had LOGO add 99 + 99 and then used RT l98 to correct
+the error!
+
+This relatively small grained, fluid and multiply connected style of
+work is not particularly conducive to structured programming.  While
+Gary early on collected sequences of commands into procedures and used
+those in other procedures, he did not spontaneously plan out and
+execute independent parts of a single conception.  His starship, a
+rather late creation, started as a long string of single turtle
+commands.  Gary would experiment, EDIT, add, END, experiment, edit,
+END,... but wrote a structured program only on Dan's insistance.
+
+Finally we return to Gary's small circle conjecture and subsequent bug.
+As might have been expected, he did not let the incident rest, but
+returned later to try exactly half inputs (rather than just `smaller
+ones') to the turtle commands.  This produced a same-size circle and
+was then immediatly used with the old circle to make a fancy design.
+(But he never achieved the smaller circle.)
+
+D. Rich and Fluid Epistemology -
+Gary exhibited quite a bit of sophistication in knowing about knowing
+and learning, especially in recognizing and using his own resources.
+In trying to aim the turtle directly vertical, he shifted his focus
+from the point of the turtle to the turtle's back end, aligning it
+horizontally.  He even articulated this `easier' strategy.
+
+In deciding on left or right turns while planning on paper, he
+sponaneously put the paper in a position so that the turtle faced
+directly upward, and right and left would be more easily determined.
+
+Gary exhibited a lot of flexibility in interpreting error messages.  If
+the message was uninterpretable, for example, `SPIN doesn't like EMPTY
+as input' in response to SPIN 5000 he was not stymied.  After all, 5000
+is a big number and that was likely the problem, even if the message
+didn't say that.  His next command, SPIN 2000, worked.
+
+In a teaching role Gary operated on a typically high level.  On day 2 in
+response to questions about how one knows how to get the turtle the
+correct input, he did not say, e.g., `try 90' which he was capable of
+doing, but `you have to experiment'.  When Gary taught his friend J.
+about writing a procedure, he was explicit about his teaching goals.
+We quote roughly, `I don't want to remind you to put a line number at
+the beginning  of each line.'  In response to his friend's guess of 200
+to follow line 100, Gary said, `look at the pattern!'
+
+Special Strength's of LOGO for this style:
+Gary's teachers freely admitted that they had difficulty challenging him in the
+standard classroom.  But he had no difficulty challenging himself and
+the limits of his own ideas in LOGO.  One can easily take advantage of his ability to work things out for himself by simply giving him little models or ideas, leaving the rest to him.
+
+In many other ways a LOGO environment is extremely well suited to this
+particular style even when it is not executed in such an expert way as
+Gary did.  There are few intellectual domains available to elementary
+school students in which trying to put things together in a new way is
+as frequently successful and richly rewarded as in a computational environment.
+
+Special Needs for this Style:
+A student like Gary needs little aside from being fed a few seed ideas
+and appropriate tools to do a lot and well in LOGO.  Perhaps the
+greatest weakness in his style as regards LOGO is his less than natural
+affinity to structured planning and programming.  With a little
+encouragement at this and in selecting and staying with a project, a lot
+of success is in prospect.
+
+.block 5
+12. Deborah -- from Inarticulate Dependency to Proficient
+	Self Confidence
+
+0A. Literal -- Deborah showed essentially no interest in abstract
+patterns or for any level of concern much above "what to do next."  In
+drawing a six pointed star, , she never seemed to notice the
+repeating pattern, even in the literally repeating sequences of
+commands she was writing down.  Even when Dan prompted her to use a
+subprocedure she needed much help to understand how to use it -- this
+in lesson l7.
+
+Earlier Deborah drew a spiral:
+.nofill
+.ss
+.indent 6
+
+RARC 20
+RARC 20
+RARC 30
+RARC 30
+RARC 40
+RARC 40
+ .
+ .
+ .
+RARC 90
+RARC 90
+RARC 100
+RARC 100
+RARC 100
+RARC 10
+
+.indent 0
+.adjust
+Notice the break in the pattern at the end.  Certainly a pattern driven
+mind like Gary would have completed it intact.  One suspects she really
+meant to break the pattern, feeling at that moment that the design
+needed something different.  When she wrote a program of this, she
+copied each step literally from her work paper, and even checked after
+each word to see what came next.
+
+In contrast to Gary who always had a clear expectation of what would
+happen, Deborah seemed always to just let things happen.  When writing
+programs for her initials, Dan asked her to predict what would happen
+if she did both a D and M on the same line.  She said she guessed they
+would draw on top of one another.  The result was  to which she
+replied, "see I told you".
+
+Hypotheticals seemed to elude her.  Dan suggested one day she should
+number her program steps by 5.  He explained carefully that if she
+wanted to put another step between ones it would be much easier.
+Though she had done a good deal of editing, her synopsis of Dan's
+explanation was, "Count by 5's...because its easier."
+
+B. Non-assertive -- Deborah was always very timid about getting into
+things she did not feel she could dominate.  Even her choice of number
+inputs demonstrated this.  From her first day she was very
+conservative.  In response to a slightly impatient classmate who said
+she should use a bigger number than 10, Deborah offered 12.  She was
+coerced into using 20.  In all of her sessions Deborah never once
+spontaneously used an input greater than 100!  In most segments of work
+she selected a single angle and one or two sidelengths in terms of
+which she did all her explorations and drawing.  When she needed
+longer lines Deborah used chunks; FD 60 FD 70, for example.
+
+C. Local, step-by-step style of work
+
+Once Deborah settled comfortably into a mode of work in LOGO her patience
+in a one step at a time design and programming seemed boundless.  The
+format was so stereotyped as to seem quite formal.  1) Do some standard
+chunk of the appropriate action (eg. turn or move) 2) Check to see if
+that's right on the screen 3) write down command and continue.
+
+The only decision seemed to be what's the appropriate action (turn or
+move or maybe penup).  Her only global concern was if the last action
+fit properly into the picture.  Mistakes almost always resulted in
+Clearscreen and start again.
+
+We have already noted the lack of pattern perception tied up with this
+style.  Her basic operations in the six pointed star were a forward
+command and a RT 60.  Consistent with her mode of operation a LT 60
+appeared as 5 RT 60's, and if she happened to miss a correct heading
+the first time around she would continue, right in step, 6 more RT
+60's!  Again it appears Deborah is dominated by the question "is that
+right? -- if not continue."
+
+.block 4
+D. Deliberately restricted epistemology
+
+Deborah seemed quite deliberately to restrict options, limit possibilities
+of operations, reduce her horizons so that she could dominate whatever
+territory she tried.  One needn't look hard at her dribble file to see
+that it was Deborah's.  A string of 30 turtle commands, Fd's Rt's BK's (no
+LT's) all with the same input surely marked Deborah's style.  
+
+But once she found her ground she did indeed dominate it.  She meant
+her remark, "I know what I'm doing,"  in a sense which a student like
+Gary, for all his flair, could not.
+
+There was a good deal of evidence outside her style of work that Deborah
+worked with and needed a restricted but very definite world view.  What
+other kind of student would announce spontaneously with pride near the
+end of 25 session LOGO experience, "I know all about squares".  
+
+Her language for describing her own activities was also revealing.  A
+mistake is a "goof".  Experimenting is "goofing around."  Actions are
+classified either as correct, goal directed etc. or "a goof".  With
+such a view it's no wonder she limited her play -- one wouldn't want to
+"goof up".
+
+Strengths of LOGO for this style
+.br
+We firmly believe that the way to help a student like Deborah is not to
+force her to "expand her horizons," but to let her dominate a small
+world.  She has no shortage of ideas or initiative, and experience will
+in a very natural way lead to her widening her own horizons.
+
+The most important characteristic of LOGO for supporting a student like
+Deborah is that it can provide an almost empoverished domain in terms of
+operations and decisions in working out a plan, but a domain in which
+original products of endless variety can be turned out.  The world of
+FD 30 and RT 30 is very nearly as rich as all of turtle geometry and
+certainly contains triangles, squares, "circles", stars, men, rabbits,
+abstract designs, ...perpendicular, inverse operations, the total
+turtle trip theorem, symmetry, estimation, ...planning, debugging, ...
+A secondary factor may well have been the openness of talk about bugs
+and debugging.  Deborah could easily see that everyone, especially some
+of the `brightest' students are beset by bugs which need to be worked
+out.  There are many kinds of "goofs" to be looked at without embarassment. 
+
+Special Needs
+
+Deborah needs help and encouragement in doing what she does best by
+herself.  She needs to see that she knows and can do things.  What
+follows is a list of possible particulars.
+
+.ss
+.indent 6
+1. Writing down her plans and successes was instrumental in engaging
+Deborah's strengths in literal and local activities.  This didn't come
+easily; Dan had to continually remind her until it took hold.
+
+2. Leave her alone.  One explicit part of Dan's objectives in dealing
+with Deborah was to make her rely on her self.  Her notebook was
+instrumental for this.
+
+3. Deborah had a phenomenal ability to find the right fundamental operators
+for what she was doing.  Though she tried 20's 40's and 70's as inputs,
+these seemed just to fade out leaving 30's 60's and 90's.  Particular
+circumstances mysteriously brought out just the right units.  For her
+star Deborah used exactly one 30 degree angle to orient the first segment
+(without experimentation!) then proceeded with all 60 degree angles
+(again without experimentation) which happens to be exactly the
+fundamental unit appropriate to the star.  In her rabbit Deborah started
+with a face size of 130 (60 + 70), which caused problems symmetrically
+placing eyes.  Her next try, without experiment, was 120, in the form
+of 90 and 30.  We have no reason to suspect students of Deborah's
+intellectual style will generally have this skill (or luck) and may need help
+selecting fundamental operators.
+.indent 0
+
+.block 4
+13.  Ray0  
+
+Ray is a particularly difficult student to discuss from the
+viewpoint of cognitive styles because of the elaborate veneer of social
+and interpersonal strategies he has built up and maintains to keep
+people (perhaps himself included) from his intellectual world.
+Penetrating this veneer is the most formidable barrier to overcome in
+helping him to have a satisfactory scholastic experience.  But again
+the great placticity of Logo in offering a range of experiences for the
+teacher to select from in individual cases pays benefits.  Dan's
+strategy of arranging Ray's minimal committment to a very simple activity
+(playing with POLYs and SPIRALs) with maximal payoff (his own
+beautiful designs) seems to begin to penetrate the veneer, both in Logo
+class and outside of it.
+
+.block 4
+14. Laura0
+
+Laura's epistemology seemed to emphasize knowing and minimize
+learning.  She was anxious to demonstrate and talk about what she know
+(in contrast to Deborah), but had a great deal of difficulty articulating
+her processes of working, often seeming to indicate that they were
+not appropriate targets for discussion.  This same attitude was evident
+in both her references to old work and her style of planning and
+executing projects.  With the former she was typical of the students
+who would run old programs over without any attempt at analysis or at
+retracing the process of creation.  In approaching new projects she did
+very little planning as if one should just know what to do.  Debugging
+was the same; she avoided theorizing and experimenting.  In contrast to
+Gary where the chase was the thing, for Laura the end product was the thing.
+
+Not surprisingly her programs tended to be just strings of
+commands aimed at some particular concrete result, without intermediate
+constructs of ideas evident in either the way she wrote or talked about
+the program.  Mediating ideas have little value.
+
+One of Laura's real strengths was her willingness to try new
+things, get into new situations and make suggestions when requested.
+But she needed to appreciate the effort needed to attain the goals she
+would entertain.
+
+Strengths of Logo:  Logo teching generally involves a lot of
+discussion of the process of coming to know, the scaffolds of planning
+and debugging, analysis for accomplishing ends.  In Laura's case it is
+very important that she come to feel the usefulness and value of
+thinking about these things in themselves.  Think of Logo's rich
+cognizance of these intermediate processes, planning, using
+facilitating subgoals like subprocedures, learning about techniques
+with broad application value (like recursion).
+
+With Laura's willingness
+to push to new things, she did engage in some formidable projects.  But
+we cannot
+claim that the potential helps cited above were fully realized.  We would be
+very hopeful with more time.
+
+Needs of this style: Emphasis on planning, on the value of
+understaning how to make something work, of an appreciation of the
+technicalities and details of program structure.
+
+.block 4
+15. Kathy0
+
+Kathy exhibited a cognitive style less extreme
+than many of the other students.  She was theoretical in many ways,
+like Gary, often posing for herself problems of analysis and questions
+to solve, rather than just "drawing a picture."   She would
+occasionally drop an enquiry after answering her own questions without
+actually completing a program.  She enjoyed the process of naming and
+describing structures, programs and activities for its own sake.  She expected her ideas
+to work, but showed dissapointment rather easily when they didn't.  In
+those cases she was capable of proceding with "exterminating" (as she
+called debugging) on her own, but did ask for help as well.
+
+The grain of her reference to old work was not nearly as fine
+as Gary's; she often used procedures intact as building blocks and
+did not show his near compulsion to use every little thing he learned.
+As a consequence, she worked coherently toward her goal.  When she did
+look back to old procedures, she occasionally modified them, again
+showing a concern for structure rather than just effect.
+
+Kathy showed an awareness in many instances that she knew what
+she was learning and what she was having difficulty with.  She avoided
+a troublesome area, estimating angles, and once she was told something,
+seldom had to be reminded about it.
+
+Strengths of Logo: Logo allows a student like Kathy to pick and
+choose, as she is capable herself, what sort of project and activity
+she will engage in.  It allows her to push her (theoretical) ideas
+without forcing her to go beyond her zone of comfort.
+
+Needs:  One would like to see Kathy a bit more assertive in
+terms of digging into things she obviously thinks of as problematical
+-- a little more concern for what she really would like to do and less
+timidity toward working on personally difficult areas (angles).  It is
+quite likely that helping her to face up to some of these is all that
+she would need to succeed and get more confidence.
+
+.block 4
+16.  Monica0
+
+Monica, though quite similar to Kathy in many ways,
+exhibited a distinct style.  In particular, she was much more literal
+than Kathy.  The abstraction involved in appropriately naming a
+procedure (which is mostly identifying some centrally important
+structure and describing it succinctly) was not the pleasure for her
+that it was for Kathy.  The connections one could see from program to
+program were for the most part limited to a literal simple structure --
+design, turn, repeat.  She did not exhibit either the urge to dig in
+and elaborate and change that pattern or the pulls to get into
+something completely new.  (Contrast Kathy and even more so, Gary.)
+Like the even more literal Deborah, Monica took careful notes, and showed
+she could engage in extended and detailed work, given a good model
+of what she was to do.
+
+Monica was certainly not assertive about her ideas; she seldom
+proposed her own and easily abandoned them when she did.  Like Laura,
+exactly what made them work or not work was of little concern.  More
+often she just followed others' simple models.
+
+Strengths of Logo: Logo is quite capable of maintaining the
+interest of a student like Monica with simple and literal strategies
+for doing new things.  Even design, spin, repeat is a quite rich world.
+
+Needs:  Like Deborah, Monica should probably work her way out of
+her own simple view of things.  Luckily in Logo she can be given simple
+stategies which will succeed in letting her "dig in" to her own ideas
+(planning and debugging and systematic analysis, e.g. of POLY) as well
+as a few simple design heuristics (she seemed to have only one) to help
+her "dig out" and reach for new areas of exploration.
+
+.block 4
+17.  Donald0
+
+Donald's interest and ability at naming, structured
+planning, and analysis of problems he encountered showed him to be a
+theoretical worker.  Though the evidence is less compelling, one seems
+to see a comparative lack of personal strategies for dealing with
+situations where analysis is awkward and experimentation is more appropriate.
+
+In contrast to the other paradigm of theory driven students,
+Gary, the grain of Donald's work was not nearly as fine.  In fact most of
+his time was spent working directly on his one project, with very few
+forays of into other topics, even those arising from his project,
+except in so far as they related instrumentally to it.
+
+Strengths of Logo:  Donald's real strength, establishing a
+(theoretical) frame and working within it meshed wonderfully with
+structured programming, allowing him to spend a huge amout of time on a
+single organized and eventually successful project.  The freedom given
+him in the Logo environment to pursue such a project and elaborate and
+improve his large scale organizational abilities can't be usually be
+matched in an ordinary classroom with its fragmented tasks.  Still, in
+this context he encountered and used a great deal of specific
+knowledge, Logo programming structures, and mathematics alike.  For
+examples of the latter we mention coordinatization, geometry of arcs
+and angles, the total turtle trip theorem.  (See  the section on mathematics learning.)
+
+Incidentally, nearly all the students (Ray the exception)
+displayed "attention spans" in working with their own projects if not
+as phenomenal as Donald's, nonetheless quite respectible.  (The typical
+hour class session is a good reference for steady, continuous work.)
+
+Needs of this style:  Donald's strength was also occasionally a
+liability.  In taking a triangle and making of it a house,
+.finch .5
+Donald established a problem frame in the context
+of the initial orientation of the triangle.  The tilted house had great
+difficulties associated with it which were eventually solved only with
+help in dropping that plan and replacing it in toto (rather than
+working out its parts).  He needs to learn to occasionally subordinate
+plans to pragmatics.
+
+.block 4
+18. Kevin0
+
+Kevin early on showed signs of a theoretical disposition,
+realizing special significance of certain angles, collapsing command
+sequences in his head (RIGHT 45 RIGHT 40 RIGHT 50  RIGHT 45 RIGHT 90  RIGHT
+135) etc.  One example more will sharply set him off from literal
+students: In experimenting with a procedure to draw a sequence of
+polygons of increasing size, Kevin discovered that he could draw a
+single square by setting the upper limit equal to the lower limit.
+ He was delighted, certainly not by a startling new effect, but by
+realizing and understanding an important simplification potential in a
+more complex structrue.  (Importantly, one which satisfied a need for
+him, a vairable sized square.)
+
+Context was very important for Kevin.  He learned and
+elaborated ideas in a context and floundered somewhat when outside of
+one.  This caused a certain large scale coherence to his work, for long
+periods maintaining the same context, which others, e.g. Gary, who would create
+a new context in which to examine the most minute detail, did not have.
+Unlike some (e.g. Donald) kevin did not enjoy the act of organizing a
+frame for his work, but capitalized on what was given to him or the
+necessities of th project he selected.  He did not take well to
+structured programming.
+
+Strengths of Logo:  One of the main ideas of a Logo experience
+is exploring ideas in a functional context, where mathematics serves to
+accomplish a task which is meaningful in the student's own world view.  It is clear
+that Kevin, more than many, needs that kind of context.  Perhaps that
+need was met more in LOGO than in other school activities and accounted for the difference
+between his "below average" school work and excellent progress in Logo.
+
+Needs: On the other hand, Kevin will need to learn the skill of
+organizing an intellectual frame for himself.  If he can do so one
+would expect a great carryover to other school work.
+
+.block 4
+1Summary of findings0
+
+1) Logo and students' experiences - All students regardless of
+knowledge or style were to some extent engaged by Logo activities.
+Most actively and regularly contributed to setting the style of work
+which they did (Ray the notable exception).  Some had exceptional
+experience in meshing their styles and strengths with Logo (Deborah, Gary,
+Donald) going quite clearly beyond what they had had in their other
+classrooms.
+
+2) Meshing with cognitive styles - We think the Logo environment created at Brookline showed
+extraordinary versatility in dealing with such a diversity on its own terms.
+The process of selecting and merging facets of the known Logo
+possibilities and developing new ones so as to engage strengths and
+overcome weaknesses in students' individual cognitive styles is rewarding
+and seems to us an immensely important area for future research. 
+
+3) Logo as an instrument of study - We think Logo has two real
+strengths in coming to understand individual students and their
+learning.  First, most school activities are so fragmented and out of a
+student's control that the students never have an opportunity for
+displaying the coherence and true strengths of their own style.
+Secondly few school situations compare to Logo in concretizing the
+students processes of learning and accomplishment.  The artifacts of a
+partially completed design, a particular program structure, a pattern
+of play or experimentation on the display or on the teletype turned out to
+be vitally important parts of our observations.  Perhaps only an art
+class could match the "manifesting of process" and then in a domain
+quite far from school's "academic" subjects.  The annotated dribble
+files of all of the students' typing (in conjunction with in class
+observations) played an important role.
+.he1
+Affective Aspects
+.he2
+COGSTY
+.page
+.block 4
+14.4 Affective Aspects
+
+0An integral part of the learning environment being discussed here is our stance towards
+the affective aspects of learning.  We do not simply hope that our teachers will be nice, kind supportive people and
+that, therefore, this aspect will take care of itself.  We build into the design of the environment, we think, tools for a teacher to use to achieve progress in these areas as an explicit aim of the teaching/learning encounter.
+
+To list some aspects whose emergence is favored by our system:
+.ss
+.nofill
+
+.indent 4
+1-0a student can feel in control; have agency.
+1-0a student can see how learning does not have to be something  apart from oneself,
+  and uninteresting:  SYNTONIC learning.
+1-0a student can realize a personal style.
+1-0a student can admit not knowing because he will know out to find out.
+1-0a teacher can admit not knowing for the same reason.
+1-0"playing around" does not mean "stealing time out" from learning.
+1-0Getting something right is not only to be translated into a high score:
+  what you have achieved is happening out there for you to see and feel
+  good about and to be seen by others and admired.
+
+.indent 0
+.adjust
+In practice effects of this sort will not necessarily emerge, and
+whether they do or not has to do with the goals, personality and skills of the
+teacher involved (see question 7 in the introduction).
+
+.block 5
+.adjust
+14.4.1 Comments and Questions Ensuing:0
+
+1. Working with a computer will be seen both as a prestigious activity and a potentially fearful activity.  So we can expect contrasting effects which pull in opposite directions; and these will underlie all of our findings.
+
+2. We have an unusually favorable teacher/pupil ratio, which must have a strong effect on our findings.
+
+3. There are likely to be some strong and relatively unexplored components of the relationship between child and various elements in this new learning environment:
+.indent 6
+
+--explicit and implicit anthropomorphising of the "turtle" and its behavior
+
+--an effect flowering from the degree of control over the mechanical device
+
+--the effect of being in the teacher/adult role in relation to it
+
+--identification with the turtle on the basis of its movement in space
+
+--even more striking motivational attribution: procedures "needing" inputs; the turtle "wanting" to go up there now.
+
+.indent 0
+There is a powerful potential for evil as well as for good in this whole computer presence and we need to be alerted to it, and to look closely at what it can mean.
+
+4. Motivation in this learning environment can be complex.  We can think of the child as developing a rather complex goal structure which at its best will include rewards inherent in the task; the fun and joy of making lovely and interesting pictures and of solving non-trival problems; the admiration of peers and "significant" adults.
+
+Examples:
+.indent 6
+
+(i) Ray: "this thing is going to get me"
+
+(ii) Deborah's voice as she tells visiting professor "I taught the computer..."
+
+(iii) Dan-Deborah situation -- as reported at project meeting, which had the quality of a clinical case discussion.  Dan felt he was locked into a situation where her fear of not succeeding was manifested in an extremely dependent attitude in which she checked with him before making any move, even the simplest, leading him to spend a greater proportion of his time than he felt was appropriate.  His strategy for dealing with that (out of the discussion) worked, in that she "learned to play", to "goof around" as she called it.  She was "given permission to play".
+.he1
+Interviews
+.he2
+COGSTY
+.page
+.block 7
+.indent 0
+14.4.2 Extract from Interview with Classroom Teachers at Lincoln School (George Hein)
+.br
+0Present:  Lisa, Bob and Florence (teachers)
+
+2Did you notice anything particular, special with children as a result of the program?0
+
+B. -- Ray is again working with other kids.  It's the first time he has this year.  Wasn't at beginning of year, but is now.
+
+They don't talk much in class about the LOGO
+
+2Did they talk at all about the LOGO project?
+
+0F. They did the first two days.
+.br
+B. They have a positive attitude, it was a positive experience.  Gary misses it painfully.
+.br
+F. They all liked to go, the only one who missed sometimes was Jack.
+(Not one of our experimental subjects.)
+
+L. - I listened for it, but there was little or no conversation.  I wanted to have Gary work on a computer story, but he didn't want to.  We did go down and see the work.
+
+2Were you surprized at the work anyone did?  Did they perform as you might have expected?
+
+0B. I wasn't surprized.  If I had seen the four sets of work I could have picked which was which.  School work correlated closely with LOGO work, Gary became intense with it.
+
+L. as he does in everything.  I didn't learn much about learning styles.  There was a breakthrough with Ray.  It was very helpful...  He hasn't connected all year, been floating, not that there is any resistance or hostility, built just no connection.  He was well liked (by teachers) last year, but probably was swamped by the reading required this year.  There was no initiative in his work the first two months.
+
+The breakthrough for him in LOGO, the success he has had, is powerful information for me.  I haven't really used it yet, but we have talked about it (Ray and Lisa) and he has produced the best piece of writing I've seen from him, including his work last year.
+
+F. - Yes, something has happened for him this last week, he's smiling 
+
+B. - something since Christmas, that's for sure.  Maybe he had a good Christmas.
+
+L. - His physical arrangement has changed, he was isolated in the room before, now he sits with others.
+
+L. - I was astonished at Deborah.  Last year she was out of it, reclusive.  Now she's taken off, is doing stuff, stays after school wants help.  Maybe the breakthrough with the monogram on LOGO was what did it. we went skating, she showed stuff to her parents, had pride in it, wanted to share it.  I'm not used to that.
+
+F. - Their LOGO work was accurate (i.e. it matched school work) Monica for example, sticks to what she can do, does not try new stuff.
+
+(2I asked about Monica and Kathy)
+
+0They are not close friends in class.  Each is willing to help others.
+
+B. - It was good to see that Gary, given the lead, could show what he can do.  The LOGO was a challenge to him, he could take it where he could go, not where the teacher wanted it to go.
+
+L. - there is not enough room in school for him (2some talk about what would they do with Gary now, back in class)
+
+0F. - We were disappointed that the kids didn't come up and share more.  I can't get over it.
+
+B. - I didn't build- in time for it
+
+L. - there's not enough space in the day
+
+F. - but if somebody is really excited about something they make time for it, we would have heard about it
+
+L. - it would have helped if we had the print out sheets.
+
+F. - we asked that stuff be brought up, we got nothing, it would have been nice to have even the notebooks.
+
+F. - but the next group of kids are really anxious to go down
+
+2how do they know about it?
+
+0B. - true they must have talked about it
+
+L. - we need visual stuff, but they are excited to leave the room.  There's the freedom, they are sprung from the regimented program, it's cool stuff.
+
+F. - how come we didn't hear about it?
+
+B. - not public discussion, but they may have talked among themselves.  The kids are eager to go.
+
+.ce
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+
+
+14.4.3 Comment on Deborah Based on Interview Material (Penny Dunning)
+.br
+
+0Deborah's presence in the pre-interview in November was one of a
+tentativeness, speaking softly, occasionally inaudibly, and looking
+downward, making no eye contact during the interview except to ask
+tentatively "is that right?"  In the post-interviews of January there
+was some reduction in tentativeness and considerably greater eye
+contact.
+
+What emerged predominantly in Deborah's pre-interview, compared with those in
+the post-interview, was a sense of defeatism when she was not able to
+determine the answer or do something right away.  It is possible that a
+self consciousness with respect to mistakes increases the probability
+of mistakes and reduced her incentive to try harder or again.  She was
+not challenged by difficulties and would not often yield to my
+encouragement to try, other than in a compliant manner, seeming not to
+connect with the content of the item or problem but providing only
+some form of response -- as in the exchange on my asking her if she
+could make a number pattern of her own to which she replied "no".  She
+gave it a try on my request, writing numbers with no discernable
+pattern, although she had successfully completed some number patterns
+on the same exercise.  She replied "no" to my question of whether she
+could fill in her own patterns.  Scattered throughout the pre-interview
+are her statements "I can't", "I can't do it", and "I don't know".  Is
+it that saying "I don't know" removes from any further responsibility
+to the question or problem?  It is also interesting to note that she
+sees herself as one who "usually [has] help on things".  Also in the
+pre-interview she seemed to be easily satisfied with guessing, as if a
+guess at least met the requirements, although she did not seem to
+concern herself with whether an answer had some relationship to the
+components of the item or problem.
+
+With respect to the post-interview, there appeared to be less of a
+tendency to guess.  It also is important to note that she hardly used
+the statement "I don't know" in the non-personal sections of the
+interview.  Instead one finds statements "I have trouble with this" and
+"I don't get it".  She was more responsive to my suggestions to try and
+seemed to engage herself with the challenge at hand rather than making
+a perfunctory and compliant effort.
+
+There emerges a question as to how much and what kind of criteria does
+Deborah have for knowing when she knows.  She seemed not to have any
+sense of what she would like to do better or of what she finds
+difficult to do.  Does her guessing indicate that she doesn't know from
+where her knowing comes -- that is, from within her through her efforts
+to comprehend what is unknown -- or is it something that seems to fall
+in place, or already be known for some persons.  She indicated that
+really paying attention and trying "my hardest" are the means to
+expanding her knowing.  Yet these efforts seem to reflect her sense of
+outward expectations rather than an inner contact with her own powers
+for knowing.  Likewise when she is stuck on something she seems unclear
+as to what she can do to get unstuck while still being connected to the
+matter she is stuck on.  Certainly, if she has not become acquainted
+with her own inner criteria, there may be uncertainty, tentativeness,
+and self-consciousness, contributing to a greater awareness of one's
+mistakes that of one's accomplishments.  She is not unable to
+appreciate when she has done something as in the geoboard exercises ("I
+did it") "Yup, I knew it was the other way", November interview) but
+the criteria was developed through the checks of what she had done with
+respect to the model given.  It seems Deborah would be helped by having
+exercises structured where the criteria for correctness or satisfactory
+performance is developed within her through her powers of recognition
+rather than based on an adults' or fellow student's say-so.
+
+A very important element that emerges from the post-interview is a
+change in Deborah's attitude toward "fun".  Frequently Deborah speaks
+of things being "fun" or "funny" or "wierdest".  She speaks of this
+most eloquently with respect to school: "sometimes its fun -- when I
+understand something and I like it" and as well as her LOGO experience,
+"everything was fun".  Is she now developing an attitude of expecting
+more from her contact with her environment and her experience, that is,
+looking for what is fun?  Her responses to the Tin Can question seemed
+to reflect more personal placement of herself with respect to the
+question, including a laugh when she suggested "you can step on them and
+walk on them" as if she were imagining herself doing just that.
+
+It is this emerging sense of fun, of laughter of personal engagement
+that greatly alters my earlier impression of Deborah as a person
+passively and helplessly impacted by her experiences and by its demands
+on her.
+.he2
+Interviews
+
+15. Interviews0
+
+This presentation of the results on our interviews will be very brief.
+Our use of
+interviews has been exploratory.  All interviews were carried out by Penny Dunning;
+their content was the outcome of many project meetings.  We were interested in knowing
+more about our subjects, and many of the questions asked serve this function.  We felt
+that it would be extremely unlikely that we would find changes in standardized I.Q.
+tests over such a short period, and considered that our best chance of success lay in
+exploring measures whose elements resembled, as much as possible, aspects of LOGO
+activity.  An interview schedule excerpt is given in the Appendix.  It includes number
+sequences; an embedded triangle task; creature cards; geoboard tasks; and 3 and 4
+color permutations.
+
+We decided to administer the interview schedule to all 16 subjects at the start of
+the experiment so that, should the post-LOGO interviews show any changes, we would
+have some chance of looking at "repeat testing" and "passage of time" factors.  In
+actuality this tuned out to be the case.  We found some interesting changes which
+appeared to represent more than just a regression effect, and so we re-administered
+some of the items to the second eight subjects who had not yet done any LOGO.  In
+addition, we added some new items involving estimation of lengths and angle size, and
+map transversing instructions, which had not occurred to us to include in the initial
+interview design.
+
+We have not yet had time to process this set of schedules, and so we cannot present
+our results as we would have liked to. Instead, we give the flavor of some of the
+findings.
+
+1. A striking example of the overall tone and qualitiative aspects of the interview
+has already been quoted under "Affective Aspects" in Section 4.4.
+
+2. In her pre-LOGO interview, Marilyn showed no obvious strategy in dealing with the
+permutation task; she found 5 out of the 6 possible 3-color
+permutations and 16 out of the 24 possible 4-color permutations.  At
+the post-interview, she systematically found all 6 of the 3-color ones.
+In the 4-color task, she used definite but incomplete strategy and
+found only 12 of the possible permutations.
+
+Kevin, who was classified by his teachers as below average in ability
+(his overall national percentile ranking was 31 on his most recently
+recorded achievement test) showed a great flair for LOGO.  In
+particular, he was very comfortable handling angles from the start,
+estimating accurately, and learning to aggregate successive turns
+earlier than most other children.  At the pre-LOGO interview, he
+performed poorly on number sequences, very poorly on both permutation
+tasks; in contrast he was very good at the geoboard exercise, involving
+as they do copying rotating and forming mirror images of shapes.  After
+his LOGO experience, he improves considerably on all these tasks,
+including the Geoboard ones.  The question of what to make of this
+finding is a somewhat knotty one.  Perhaps it is all a result of his
+improved self-image?
+.he1
+Observers
+.he2
+COGSTY
+.page
+16. Observer Activities
+
+6.1. Use of Observers
+
+0At least one observer was present for two-thirds of the total number of
+LOGO sessions held.  We used three types of observer-patterns:
+
+1. Regular observations by consultant (Penny):  14 observation
+sessions, 6 during first fortnight, 4 during next three weeks, and 4
+during last fortnight.  Very detailed account of what went on, which
+includes comments on teacher pupil relations; on classroom dynamics and
+captures the occasional "moment of insight" --
+.indent 6
+
+"When you want to make a right turn, you do 90"
+
+.indent 0 
+A summary of these observations, made from Penny's notes by George
+Hein, is included below. (6.3)
+
+2. Ocasional observations by consultant (George Hein):  4 observation
+events, a report on which is included below (6.2).
+
+3. Observations by members of the LOGO group:  one on an individual,
+regular basis, others as isolated visits (15 observation events in
+all).  These contributed a familiarity with the subjects, necessary for
+writing this report.
+
+16.2 Comments on Observing Dan Watt's LOGO classes at Lincoln
+School, Brookline November 30, 1977.
+
+0The following are impressions from the observation, not a record of
+events.
+
+11.0 The power of the physical motion of "turtle" to understand the
+commands.  In an early morning discussion between Dan and the two girls
+(Monica and Kathy) Dan asks what continual command of RT 15 would be.
+Monica only understands it after Dan has her get up and "play turtle".
+
+12. 0 The power of having the hcildren's work displayed both on the
+display tube and the display print out.  As Dan goes from child to
+child he always has available both what they are doing now and what
+they have done in the immediate past.  This is one of the few pedagogic
+situations where that is possible.  (Perhaps it works in drawing class
+or some kinds of building activity) but usually you only have the
+students latest result and have to guess how the student arrived there.
+ But frequently, Dan can keep track of what a student is doing with
+whom he is not working, by glancing over or he can know what to ask, to
+correct, or to teach, by looking at what is displayed when he goes over
+to a student.
+
+The same principle applies when a student asks a question.  The
+questions are like all student questions, they refer to what the
+student thinks he/she wants to know.  Dan can look over and say,
+"that's not the problem, the trouble is that you spelled X wrong in a
+command farther back."  Or he can say, "It still won't work because of
+XYZ."
+
+(My own classic model of the bizzare student question is always the
+model from chemistry lab, where the kid comes with the bent glass
+tubing and you have to resist the impulse to grab it because it is
+still hot enough to burn you.  Even though it is held out to you, the
+student really wants to know where the rubber stoppers are, or
+something like that.)
+
+In this lab, Dan automatically looks at the whole picture, or as much
+as is available on the screen and answers in terms of that.
+
+13. 0The material that the children do provides the basis for tasks
+set the next day.  The first class started with problems Dan had
+devised based on the girls' problems the day before.  He gave them
+various routines which resulted in errors, first had them predict what
+would happen if they gave commands like
+
+.nofill
+TO SLIP		TO BLOOP
+SLIP		5 RT 15
+END		10 BLOOP
+		END
+
+.ADJUST
+asked them to predict what would happen and then try it.  It was a nice
+classroom exercise based on previous work.  The analysis of previous
+work suggested appropriate problems for the students.
+
+Note:  Although Monica and Kathy were beginners, and had trouble
+predicting, etc.  they already knew a lot.  For example, Dan didn't
+tell them, but they know that to test out procedures like the above,
+they had to type in not only what was given, but then also to give the
+next command, SLIP or BLOOP to see what would happen.  They already
+share a vocabulary and have some level of knowledge of how the computer
+works.
+
+14. 0The children, especially the two above, use Dan's memory a
+lot.  They must have somewhere a list of procedures (how do you edit,
+how do you modify, etc.)  But they ask Dan.  How necessary is this?
+Obviously, if they had to resort to looking up every item it would be
+like the child who "knows" mathematical operations, but doesn't
+remember any number "facts" and has to ask all the time what simple
+problems are.  You can't get very much done that way.  At the same
+time, should Dan always answer?  He doesn't, and makes a decision in
+each case.  Sometimes he will tell them to look it up, or to try
+things, etc.  It takes a combination of expert knowledge on his part
+and decision on what to pass on.  How much LOGO experience is necessary
+for the former and how much teaching experience for the latter?  This
+is probably one of those open questions.  The more of each you have,
+the better it is, but beginning teachers and relatively beginning LOGO
+folk could also do it.  They would just not be as good until they got
+more experience.
+
+15. 0There is a lot of activity which I would classify as
+"horizontal" learning.  That is, the kids do a lot of repetitive stuff.
+Just as young children repeatedly pour the water in the funnel or
+sieve the sand over and over.  Each time is a little different from the
+last, but they represent a family of very similar activities.  Thus,
+the children draw similar circles, shapes, punch in similar commands, etc.
+
+But on observation their work has very much the character of repetitive
+purposeful activity.  They are attending, repeating with interest
+and presumably, storing up the necessary experiences to internalize the
+stuff they are doing.
+
+Several times in my observation notes I comment that the concentration
+is intense.  In the two classes I watched there was very little idle
+talk, seldom did a child get up or move around, except in the course of
+the work, no one left the room, they didn't even look at each others
+work.  They were all concentrated.  Monica tried to get Donald to do
+the BLOOP routine which leads to a "weird" result.  "Donald, do BLOOP"
+"I can't I've got to do this."  (He is trying to position the mouth in
+the face he is drawing.)
+
+16. 0Dan's preparation (as well as his teaching technique) is
+impressive.  He has prepared special activities for almost each child.
+ He gives the girls RCIRCLE, he has prepared an ARC command, he is
+already with a set of commands that will get to animation, etc.
+
+17. 0There are a lot of "meta" questions from Dan.  He forces the
+children to think about what they are doing, in a way that does not
+appear natural to these 11 year olds.  "Why do you think I gave you
+these problems?" he asks the girls from the first group.  "How will you
+know when it is there?"  he asks Donald who is trying to position the
+turtle to draw the mouth.  The teacher in the LOGO lab must know, not
+only, routines, but the reasons behind them in order to ask these sorts
+of questions.  And his questions are more than the superficial, "what
+do you think will happen if..."  that many teachers ask, they
+demonstarte that he has a purpose in mind in many of the tasks that he
+assigns, or he understands a purpose behind the actions of the children.
+
+18. 0There is a nice mix of school tasks with the LOGO tasks.  The
+children are obviously getting lots of exercise in writing and spelling
+(after all, correct spelling is crucial in talking to the computer, in
+a way that it is not in any other school task.)  All these children can
+do this, which would not necessarily be true for all sixth graders.
+They have all mastered basic reading skills and writing skills.
+
+Dan stresses to Monica that she must read carefully what the computer
+says.  Another example of a typical school request from the teacher,
+but with a very specific reason.  Often teachers correct minor reading
+errors from children, when the error does not change comprehension and
+therefore the child doesn't understand why he/she is corrected.
+
+19. 0 Whose values/interests predominate?  Dan has a discussion
+with S------ in which he indicates to her that the designs she made
+previously are "slow" that they take a long time to draw out, and if she switched from circles to other geometric shapes they could be drawn much faster.  I get the impression that the slowness bothers him, but not her.  I don't think she even understood what he meant.  In fact, she proceeds to draw one of her designs, contentedly watching the computer trace out a few circles.  It is clear to me what Dan has in mind, but it is his, adult and computer-wize concern; not hers.
+
+110.0 In the two classes that I watched, there was almost no interaction between (among) the students.  Each worked separately on their own console.  The only exception was the two girls, Monica and Kathy in the first class, who did problems together, but they, too, printed them out separately, and did not always check with each other.  Perhaps the availability of all the terminals has something to do with it, but cooperative activity was not evident.  Have they learned from each other's successes?  I did not notice it during the one set of observations.
+
+111.0 A wonderful computer geometry lesson.  Ray wants to draw a triangle and has arrived at an angle of 117o to turn the line.  Dan works with him and first the turn is made 115o.  When Ray suggests that they try 119o next, Dan can't help but suggest that they try a "round number" and so they get to 120o.  There is a lot of intervention from Dan in this whole episode, he introduced the idea of equal length of sides, etc. but that may be related to Ray's lack of general enthusiasm.  But the final drawing of a perfect triangle by approximation, although not Platonic, does have classic qualities.
+
+112.0 There is a wonderful opportunity for future teaching in S@@@@'s last creation, a series of nested squares which she develops by instructing the computer to draw SQ1, SQ2...all the way to SQ...40.  The next lesson is obvious.
+
+.block 4
+1December 21, 19770
+
+I seem to have some problems with names.  In second class, one girl is Laura, I call her Suzanne.
+
+11. 0The children have priorities and interests, they simply don't always fit with our ideas.  An old bit of knowledge from watching and working with children but it came up today.  Kathy puts both Dan and me in our place.  She tells Dan that "I don't want a lot of Birdmen" when he is trying to sell the idea of writing an iterative procedure, and she tells me "there won't be a fourth one", when I expect her to repeat something again to make a symmetrical figure on the screen.
+
+12. 0The children as teachers are fantastic.  Not that they are good teachers, but what comes out.
+
+.indent 6
+a. The children who come in are not totally naive; they clearly know some turtle commands, some ideas about LOGO.
+
+b. John's questions, especially, show a surprising knowledge of what the computer might do.  He generalizes, sees problems and verbalizes issues.  He sees what is wrong, and how to fix it, in principle, even though he doesn't know the specific commands.
+
+c. The session gives a good example of how much the regular kids have learned and how well they have learned it.  General keyboard routine, basic commands, etc. are all clearly natural to them now.  They are even impatient to teach these things, and simply correct the newcomers when they forget to leave out a space, or push the wrong key.
+
+.indent 0
+13. 0The pulling power of LOGO shows up again today.  Even though the first class spent most of the time writing on the table, the second stayed and worked with a lot of people around.  Laura dod not go to the play, etc.  One also sees it with the new kids, the visitors.  They literally said "Wow", "Gee" and other comic strip type words as they watched the things happen.
+
+.block 4
+16.3 Notes on Penny Dunning's LOGO Observations -- 
+.br
+@@@@@@George E. Hein, Lesley College
+
+0The observation notes do not provide a continuous record, but they do give some suggestive insights into what the children do and don't do in the class.  The following are a collection of comments, not a sequential analysis.  Any of them could be expanded or followed up through looking at the rest of the data.
+
+1Class I: Laura, Gary, Deborah, Ray0 
+.br
+(numbers refer to page number for reference) 
+
+.block 4
+1A. Vocabulary0
+
+The use of LOGO involves a complex, technical vocabulary.  We may underestimate it, and underestimate just how much the children learn.  "Log In" "It's reading the files" (2) and lots of other terms come up and, although they may have been explained, it takes time and experience to learn them.  Ray asks why it is called "turtle" early on.
+
+Later the children use words, but it is not clear that they always know what they mean.
+
+.block 4
+1B. What do 6th Graders Know?0
+
+11. 0Experiment vs. "messing about":  Dan tells them to `experiment' but it seems to me that they don't know what that means.  This is not surprising from Piagetian work.  When Dan suggests this; they often don't, then systematically try changing variables under controlled conditions.  They do what Hawkins calls `messing about'.  The difference is important, and we can't expect the kids to get the kind of certainty from the latter activity that they would get from the former.  Dan says, "experiment" and goes away.  When he comes back Deborah or Ray may have tried some things, but they have not conceptualized the different results because they didn't consciously do experiments. (3/4)
+
+12. 0Related to this is the problem of scale. This has com up in several previous comments.  If a line is 10 long, how much do you add if you want to make it a lot bigger?  The kids obviously go at this problem in a messing about way, not an experimental way and without a clear sense of scale.
+
+13. 0They have to do the "obvious".  Laura does R50.  After doing it she has no idea what L50 will look like (22).  This happens repeatedly.  What appears obvious to Dan, or other adult observers (or readers) is not obvious to the children.
+
+14. 0Parts or procedures:  What the children can do on the computer exceeds what they understand.  In the various POLY procedures, they can generate designs, but they don't know what will happen if they change one number or the other, nor do they know the effect of each number on the pattern.  Will it make the pattern bigger or smaller, wider or taller, generate faster or slower?  They can only try it and then see, not comment on it a priori (964).
+
+15. 0Output vs. procedure:  There appears to be some confusion between instructing the computer to do something (Print or display a design) and teaching the computer (as the local lingo has it) a procedure.  This is related to the vocabulary issue of how well the children understand the words they use.  Laura uses the words, but does she understand?  The same issue comes up again several times.
+
+.block 4
+1C. What do they do?
+
+0Related to the above are some issues about what the children actually do, in the context of their knowledge.
+
+11. 0"Review" procedures.  They spend a lot of time calling up procedures that they have done previously on the computer.  This is graciously called "reviewing" procedures.  Is it wasting time?  Is it purposeful activity?  Is it related to developing a working knowledge of the difference between generating a design and teaching the computer?
+
+12. 0Deliberate erasure.  Laura (25) and Ray (58) act in such a way that a design is not converted into a procedure.  (I'm sure others do it also.) There are three possible explanations.
+
+.indent 6
+a. They don't realize what they are doing, i.e. don't understand.
+.br
+b. They simply forgot in this case.
+.br
+c. It's deliberate
+
+.indent 0
+I favor the last explanation, especially in Laura's instance.  We should not underestimate the aesthetic element and just the element of will.  The particular design was not what they wanted; there is a class notion that designs should be recorded; to avoid that the student does something "stupid" which will erase the procedure.
+
+13. 0Check each other out:  The kids regularly go over to watch what the others are doing.  This activity follows a pattern through the observations.  Of course when someone calls out or wants attention, they all look.  But at other times, they just happen to look over at the other screens and just keep in touch with each other.  There is probably a lot of learning that goes on this way.
+
+.block 4
+1D. The Value of LOGO0
+
+The items under B and C suggest to me certain particular values of LOGO as concurrent with the issues that have been raised.
+
+11. 0"Messing about" Presumably kids need this experience., no matter what the medium in which they are working.  LOGO provides a wonderful opportunity for this.  It is very easy to mess about without making a mess!  The infinity of numbers provides chances for variation, etc.
+
+12. 0Repetition.  The same applies here.  Kids have to repeat to learn.  (So do adults, that is why we often don't learn new skills, because we are not willing to put in the practice time.)  LOGO offers a practical way to get this kind of experience.  The observations clearly demonstrate that the kids do practice and repeat.
+
+13. 0Trying the "obvious" The issue is mentioned above.   The kids seem to have to try it, the other side of the coin is that LOGO provides the opportunity to try it and to see the results clearly.
+
+14. 0Higher numbers:  related is the topic of how much bigger, etc.  gain, LOGO provides clear practice so that they can begin to realize that if 2 is small, 3 won't be much bigger and they should venture on to 20 or 200, etc.
+
+15. 0The permanent record:  Another example of the value of the trace which is left by LOGO Deborah bothers Dan a lot, and constantly asks for help.  At one point she is stuck, he won't help and she goes off.  (31) This time it really isn't something she could figure out herself, and Dan realizes this when he looks at what is on the screen.  He can correct his behavior to meet the situation.
+
+1E. Ray:0
+
+He sure doesn't do much, but I am not clear why.  There are some interesting aspects to Ray which come out from the observations.  For instance, he can conceptualize; he suggests that if "x" is too hard to make for a tic-tac-toe game, other, simple markers can be used (44) and he can visulaize how an animation would work (44).  He starts early with an idea of what he could do (in the first observation), and he spends a lot of time scheming how he could spend less time in the room than he has to.  I don't know why he isn't more interested.
+
+1F. Finally, a nice quote (54)
+
+0Laura says, "My mother doesn't like computers.  She thinks they're boring."  Dan asks her, "Are they boring?"  Laura responds, "Not when I'm doing it."
+.page
+1Bibliography
+.ss
+.br
+.nofill
+0Bronfenbrenner, U., 1976, "The Experimental Ecology of Education,"
+	Teachers' College Record, 78, 157-204.
+
+Campbell, D.T. and V.C. Stanley, 1963.  Experimental and Quasi-
+	experimental Design, Rand McNally, Chicago.
+
+Campbell, D.T., 1974, "Qualitative Knowing in Action Research,"
+	Kurt Lewin Award Address, American Psychological Association.
+	Mimeograph.
+
+Carini, P., 1972, "Evaluation of an Innovative School," D.D., J. Burdin
+	and L. Katz, ed. Current Research and Perspectives on Open
+	Education, ERIC Clearing House on Early Childhood Education,
+	Urbana, Illinois.
+
+Carini, P., 1973, "Taking Account of Progress," Childhood Education,
+	49, 50.
+
+Engel, B.S., 1977 a, "One Way It Can Be," Todays Education, 66
+	No. 2, 50-52.
+
+Engel, B.S., 1977, b, Informal Evaluation, North Dakota Study Group
+	on Evaluation, Grand Forks, North Dakota.
+
+Engel, B.S. and Hein, G.E., 1976, "Proposal for Evaluation of Magnet
+	636 Programs".  Lesley College.  Mimeograph.
+
+Feurzeig W. et al, 1971 "Programming Languages as a Conceptual Framework
+	for Teaching Mathematics."  Final Report to N.S.F. NTIS 
+	No. PB-206919.
+
+Filstead, W. J., ed. 1970.  Qualitative Methodology:  First-hand
+	Involvements With the Social World, Markham, Chicago.
+
+Goldberg, A. and Kay, A. 1977, "Teaching Smalltalk.  SSL 77-2. Xerox PARC
+
+Olson, R.A., 1973, "A Value Perspective on Evaluation," mimeograph.
+
+Olson, R.A., 1974, Marcy Open School, 1973-74 Goal Evaluation,
+	SEA International Evaluation Team, Minneapolis, Minnesota.
+
+.page
+O'Shea, T. 1977 in "Current Work and Plans with LOGO."  A.C.M.
+	SIQCUE Bulletin V.11 No. 4.
+
+Parlett, M. and D. Hamilton, 1976, "Evaluation as Illumination:  A New
+	Approach to the Study of Innovative Programs," in G. V. Glass,
+	ed. Evaluation Studies Review Annual 1, Sage Publications,
+	Beverly Hillis, California.
+
+Stake, R.E., 1967, "The Countenance of Educational Evaluation," Teachers'
+	College Record, 68 523-540.
+
+State, J. 1973 "The Development of Computer Programming Concepts and
+	Problem Solving Abilities among Ten-year-olds learning LOGO
+	Ph.D dissertation.  Syracuse University.
+
+Tinbergen, N., 1974. "Etiology and Stress Disease," Science 128: 20-27.
+
+Wilson, S., 1977, "The Use of Ethnographic Techniques in Educational
+	Research," Review of Educational Research, 47, 245-266.
+ 

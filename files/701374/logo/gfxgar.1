@@ -1,0 +1,63 @@
+THOTS ON LOGO GFIX  (RESPONDING HAL MEMO AND JB OUTLINES.)
+CAN BE CLEAR ABOUT HDW RESTRIXNS.
+
+one word for all bit type objects: tiles, 8x8 and 16x16 tortoiseshells
+not one word, but same way of designing/editing.
+so the patern is the same but the objects are different.
+
+it shd be ez to go from one to another; for a tile to be designed from a shell,
+.
+
+major good capability of this machine is to read the screen.  unlike logo-as-we-know
+the turtles can respond to whats on the screen.  
+needs further clarification.
+
+should tilespace go away ?
+    software as written provides fn's for mapping 'tween both dotspot & tile
+    coord's.  seems that 
+1.  only 256 chars/768 char positions requires some redundancy of pictures.
+    you really can't mask this, so try & take advantage of it instead.
+
+2.  use of tiles, stamps, turtle trails is a way.  notabluy, if you have
+    a picture (design ?) it must be located one/one with tilespaces on the screen.
+    no way around this w/o re writing the pattern definitions.
+ 
+hal's color default ideas are good.  
+
+original gary suggestion was 2 modes- one in which walking over screen caused 
+tile definitions to change, and one whicch uses already designed tiles.
+bad to illuse that you can draw indiscriminately allover screen becuse to
+take full advantage you've got to re use tiles.
+
+so: add to logo stuff to work at dotspot level: shiftpicture, copypicture,
+
+you say:
+CALL [TILE 4] "LEFTCORNER
+PICTURE [TILE 5][FLIP LEFTCORNER]
+
+TO FLIP :TILENAME               flip takes a tile as arg, returns tile.
+new logo objects graphics-
+
+tiles, turtleshells, colors, turtles, stamps.
+
+screen isn't a logo obj but has characteristics anyway.
+
+TO MERGE :TILE1 :TILE2
+ CALL 1 "N
+ CALL 64 "M
+ XD :TILE1 N :TILE2 :M
+END
+
+TO XD :TILE1 N :TILE2 :M
+ SDS :TILE1 N DS :TILE2 M
+ CALL "M M-1
+ CALL "N N+1
+ IF M <1 THEN RETURN
+ XD :TILE1 M TILE2 N
+END
+
+primitives that deal with pictures/designs/shapes. independent of color.
+independent of design size.  independent of design use.
+
+read/set dotspot .  *dotspot numbering ? 1,1 8,8 ? 1 - nnn ? next, rt left bk ?
+picture as list of dotspots ? picture as dotspot prims.

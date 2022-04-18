@@ -1,0 +1,177 @@
+.adjust
+.fill
+.double
+.ce
+Real Time Device Control-How to Do It?
+
+	There are certain types of interactions
+between the real world and a computer that require more or
+less constant attention on the part of the computer. A good
+example is a computer flying a airplane; the airplane
+will not stop to await a descision from the computer; the computer
+must make descisions at the rate required by the airplane or else
+disaster might result. A less abtitious project is blancing a stick:
+if the computer does not compensate for the motion of the stick
+for a period of a second or so, it will fall. We designate
+this type of problem as being a real time control problem. Others
+in the LOGO group have discussed the pedagogical merits of such
+problems. I will discuss here some possible hardware and software
+environments which might allow experimenting with such problems.
+My interest here is not in the design of effectors and sensors
+(though this problem deserves more consideration than it
+seems to have gotten so far) but rather how computational
+and input/output capabilities may be obtained for the control
+of such devices.
+.br
+Basic Requirements
+	For reasons of economy, LOGO has so far made use of
+relativly large expensive computers, offsetting their
+cost by timesharing them among many users. Since it can
+take a rather long time to switch from one user's LOGO
+environment to another, due to the large amount of
+storage required per user, it may not be possible
+to obtain sufficeiently fast response to control
+an experiment. Another problem could be that LOGO
+programs might not run as fast as required due to
+the fact that they are interperted rather than complied.
+In industry, problems of this sort have generally been
+solved by special-purpose timesharing
+systems (e.g. DEC's RSX-11) on relativly small computers.
+A new approcah being tried is to use very small computers,
+(e.g. the Intel 8 bit one chip computer) dedicating
+one to each moderately complex task. This second approach
+currently seems to have quite a following; I believe
+a modification of the first approcah is probably more
+desireable for our purposes.
+	One problem that is important to raise at this
+point is how the LOGO user specifies what actions
+he wishes to be performed in "real time". It seems
+overwhelmingly desirable to specify this in LOGO,
+rather than imposing the requirement that some
+special language be learned. However, considerations
+of time and space may rquire compiling the LOGO
+program, and this would be quite difficult unless we
+confine ourselves to a subset of LOGO. It would seem
+that arithmetic and contional functions on 16 bit
+numbers could be compiled fairly easily.
+.br
+Interfacing
+	Devices to be controlled by a LOGO program might
+be connected to the machine in several
+ways. Currently, the only type of interface we have
+is the Thorton box. This is convient for devices requiring
+a relatively low data rate, especially if they must be
+located some distance from the computer. However, as
+data rates intrease this type of connection becomes
+cumbersome. The next obvious type of interface is
+one which connects directly to the Unibus of the 11/45;
+as long as the device may be kept near the computer this
+method is quite attractive since it allows for high
+data rates and convient access by the computer.
+If we are going to use auxilary processors (e.g. Intel)
+we may want to connect devices directly to them
+and connect the auxiliary processor either directly to
+the Unibus or through a serial (i.e. teletype) connection.
+This has the disadvantage that only one auxiliary processor
+can get at that device, thus eleminating the possible
+economy of, for example, an A/D multipleor. This is
+one of the many disadvantages of using Intel processors.
+.br
+Why Intel Chips are a Bad Idea
+	It has been sugested by many (probably including
+myself) that the use of a small auxilliary processor,
+namely the Intel, might solve many of the problems of
+real time device control. I contend (now) that the idea
+is a bad one, despite it's intial attractiveness,
+at least for the majority of our applications.
+Perhaps the most overwhelming reason for this is that
+fact that the increment of compute power gained by
+adding one of these processors to an 11/45 is very
+small. The basic instruction time of the Intel is 12.5
+microseconds; many instructions take 25 to 35
+microseconds. A 16 bit multiply done by a routine
+written by Intel is said (by them) to take about
+a millisecond. Since the processor handles only
+8 bit words, it is inconvient and time consuming
+to handle the (at least) 16 bit quantities we would
+usually want. I believe it is conservative to state
+that, for the type of application we are considering,
+the 11/45 is 100 to 300 times faster than the Intel.
+The input/output capabilites of the Intel
+are rather poor and of course it is more difficult to
+program than the 11. Another major consideration is
+that a substantial hardware effort would be required to
+connect the Intel to the 11 and to connect devices to
+the Intel.
+	It should be noted that I am making certain
+assumptions about the type of experiments we wish to
+perform. I expect that periodic service by the 11/45
+(say, on the order of once every 60th of a second)
+will be sufficient to maintain the experiment. I claim
+that the additional computation load placed on the
+on the 11/45 will be slight. There are some applications
+where the Intel would be better. If relativly
+trivial descions were required on the order of once
+every 200 to 1000 microseconds,
+as for a very smart stepping motor controller, then the Intel
+would be useful since the interrupts to the 11 would
+present the larger part of the load. It is also
+possible that if the device had to be far away from the
+main computer (i.e. telephone lines) the Intel
+might be useful, but in that case I think an 11/05
+doubling as a Gt40 display controller would be more
+reasonable.
+.br
+How Much Compute Power is Needed?
+	I claim it is still an open question
+wether or not the current time-shared LOGO
+system could support most of our experiments as
+it stands (except fo the addition of device
+interfaces). It would seem that the most important
+thing to do at this point is to develop interfaces
+and try things with the software we have.
+	If uncompiled LOGO code is not fast enough,
+some sort of compiler will have to be written
+(this also would be true if we were to use Intel
+processors; the Intel would not save us any software!).
+As already mentioned, in order to keep this a reasonably
+small task we should probably confine ourselves to
+16 bit arithmetic type operations and device
+control functions. Probably the neatest way to use
+this compiled code is to run it on the clock
+(or teletype for Thorton box things) interrupt level,
+in parallel with the main program level. This will
+creat the  illusion of another processor, but will
+require some additonal hair for sharing variable
+bindings, etc. Example:
+.single
+.nofill
+?TO FOO
+>10 IF STICKANGLE > 90 MOVELEFT GO 30
+>20 IF STICKANGLE < 90 MOVERIGHT
+>30 "N _ STICKANGLE WAIT 1 GO 10
+>END
+?RUNIT"FOO
+?PR:N
+85
+?PR:N
+92
+?
+.fill
+.double
+.br
+This would cause FOO to be run every 60th
+of a second. Note that STICKANGLE, MOVELEFT and MOVERIGHT
+are user programs which would also have to be compilied.
+.br
+Conclusion
+	I am not suggesting that the complier-interupt routine
+scheme is easy to implement, only that it is probably the easiest
+scheme that offers reasonable generality if uncompiled code
+is not fast enough. In particular, I haven't really considered
+how this scheme could be kludged into the already overcrowded
+LOGO system. Perhaps a better idea would be to consider
+developing a "single-user" multi-prossesing LOGO, along
+the same lines as Greenblatt's Lisp Machine.
+.end
+

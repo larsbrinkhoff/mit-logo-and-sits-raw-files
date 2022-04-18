@@ -1,0 +1,220 @@
+XEROX PALO ALTO RESEARCH CENTER Systems Science Laboratory
+LSI Systems Area April 17, 1979
+
+
+
+To:	Icarus Users
+
+From:	Dick Lyon
+
+Subject:	NSIL II Design in Icarus -- Recommended
+Approach
+
+stored: [maxc]<Lyon>rules.memo, .press
+
+Design Rule Strategy and Summary
+
+In order to relieve the designer of the need to cope with
+geometric objects at a precision of 0.25m, and to produce
+scalable designs, we should continue to use the lambda-based
+design rules of Mead and Conway (Introduction to VLSI
+Systems).  But in order to efficiently utilize the
+capabilities of MEC's NSIL II and CCD processes, we must
+choose lambda as small as possible and choose appropriate
+mask pulling parameters to convert the designs to meet the
+MEC rules (or whatever other process is available).
+
+The MEC design rules are given in terms of final dimensions
+on the wafer.  The masks are the same dimensions except for
+the POL and MET layers (which use positive resist), and the
+DIF layer (to account for oxide encroachment), for which
+line widths are increased by 1m on the mask.  A review of
+the rules has suggested the choice of l = 2m, with stretches
+as indicated by the following table of micron dimensions:
+
+	layer	drawn	mask	final	drawn	mask	final
+	name	line	line	line	space	space	space
+
+	DIF	4	6	5	6	4	5
+	POL	4	4.5	3.5	4	3.5	4.5
+	CUT	4	4.5	4.5	4	3.5	3.5
+	MET	6	7	6	6	5	6
+
+The other layers (IMP, BUR, and PAD) are the same size as
+drawn, on mask, and final.  Using the conservative 3l DIF
+spacing rule, and modified IMP rules, designs will scale
+well into NSIL II.  Not all design rules are quite satisfied
+with these assumptions, as discussed below.
+
+The Icarus conventions suggested with these rules are: 0.5m
+per Icarus unit (to allow some freedom for fine alignment of
+45-degree lines), grid = 4 (l = 2m), tics = 16 (4l), and
+typical line and flash defaults of 8 and 16 (2l and 4l).
+
+It may be a good idea to continue to use the default Icarus
+settings (l=3m) until a new Icarus is released.  We can at
+least potentially change a design mechanically from the old
+Icarus standard of 3m, 1l grid to the new 2m conventions
+proposed above.  Accurate scaling will result if the grid is
+adhered to and 45-degree items are not used (for more on
+45-degree lines, see the last section of this memo).
+
+Policy for PARC Multi-Project Chips
+
+Future PARC MPC efforts will be run on the assumption that
+contributed designs are based on the relatively
+scale-independent lambda rules (with the Icarus scale
+specified), so designers should not pre-bias their designs
+to fit a particular set of design rules (e.g. MEC's).
+
+MEC provides three technologies: NSIL IIA, NSIL IIB, and
+CCD.  We will generally plan to run NSIL IIB, a six-mask
+process with no buried contacts, unless we have a compelling
+need for one of the other variations.  The double-poly CCD
+process is not compatible with the NSIL IIA buried contact
+process, so we will never plan to accomodate both types of
+special needs on one fab run (though we could share masks).
+
+Detailed Design Rule Discussion
+
+The following discussion is keyed to main paragraphs of the
+MEC document titled "Specification, NMOS (NSIL II) Layout
+Design Rules" dated Aug. 20, 1978.  All dimensions in
+microns are final, while dimensions in lambda are as drawn.
+
+4.3.1 First Mask (DIF).  The MEC rules are 4m lines and
+spaces.  The lambda-based rules of 2l lines and 3l spaces
+give 5m lines and spaces, both conservative.  We insist on
+the stretch to 5m lines (6m on mask) because of the
+paragraph 4.3.4.3 which says a minimum transistor width is
+5m to avoid degraded K'.  This stretch tends to decrease the
+geometric ratio k, while the POL shrink to 3.5 tends to
+increase k.
+
+4.3.2 Second Mask (IMP).  The MEC rules for IMP overlap and
+clearance have not been improved as much as the other layout
+rules, because these rules do not impact the compactness of
+gate designs.  They will, however, impact the compactness of
+function blocks and decoders that use depletion mode
+transistors.  To compromise the rules based on what we know
+of the technology, to provide more compact structures, we
+suggest modification of the Mead & Conway rules to change
+the 1.5l overlaps and clearances to 2l and 1l along the
+different dimensions, as shown is Figure 1.  This figure
+compares the MEC rules and our proposed rules for a simple
+function block.  It should be clear from this figure that an
+alignment or lithography error of 1l will cause no problem,
+while an error of up to 2l will cause increased resistance
+of depletion devices or decreased resistance of enhancement
+devices, but should not change the logical correctness of
+the function block; this is why we expect to be able to
+violate the rules as stated.  The conservative designer
+should use 2l overlap and clearances wherever possible.
+
+4.3.3 Third Mask (BUR).  Reasonable lambda-based rules for
+the BUR mask layer are shown in Figure 2, compared with the
+MEC rules (our rules are conservative, not optimal).  The
+rules are 2l by 3l POL-DIF overlap surrounded by 1l of POL
+and BUR on three sides, with no POL and 2l BUR on the DIF
+side, and 2l clearance from the BUR to anything else but
+MET.  Designers should not use the buried contact capability
+of NSIL IIA unless their designs are severely metal-limited,
+and can be improved in density by a factor large enough to
+offset the yield and cost penalties of the extra mask and
+processing steps.  Designers who anticipate moving their
+designs into CCD, CMOS, or SOS technologies should avoid
+buried contacts altogether.
+
+4.3.4 Fourth Mask (POL).  A standard POL line width of 2l
+shrinks to exactly meet the minimum 3.5m line width and
+channel length of NSIL II; a space of 2l gives 4.5m, which
+is conservative with respect to the rule of 3m.  Gate
+overlap of 2l becomes 3.25m, conservative with respect to
+the rule of 3m.  Clearance of 1l to unrelated DIF becomes
+1.75m, which slightly violates the rule of 2m.  Extension of
+DIF from a gate by 2l (source or drain length before
+narrowing) becomes 4.75m, conservative with respect to the
+rule of 4m.
+
+4.3.5 Fifth Mask (CUT).  The minimum contact size of 2l
+square exactly meets the 4.5m rule after stretching.  An
+overlap of 1l of POL gives only 1.5m, violating the rule of
+2m of POL surrounding the CUT (this is probably not a
+problem, especially since the CUT mask is aligned directly
+to the POL pattern).  A clearance of 2l to another POL or
+DIF is plenty with respect to the rule of barely 2m (this is
+better than a factor of 2 improvement from NSIL I, which
+used 5m).  Contact hole separation of 2l results in only
+3.5m, violating the rule of 4.5m (Can this matter?  MEC's
+standard design rule checks do not check this rule, though
+they easily could).  A contact hole over a channel is
+acceptable, but may affect threhold voltage, so only use it
+on the end of a pullup or in non-ratio logic such as pass
+transistors.  Paragraph 4.3.5.2 of the rules shows a new
+kind of contact to the DIF layer, self aligned to the field
+oxide; no process other than MEC's is currently known to
+support this type of contact.
+
+4.3.6 Sixth Mask (MET).  A line width of 3l gives 6m,
+conservative with respect to the rule of 5m for lines less
+than 200 mils long carrying less than 5.7 mA.  A line 4l
+wide meets the rules up to 500 mils long and up to 10 mA,
+and should be considered a good practical standard for local
+power, ground, and clocks.  A space of 3l is conservative
+with respect to the 4m space rule, but violates the rule of
+8m space between large metal areas (greater than 50mx50m).
+MET overlap around contacts cuts is not required by the MEC
+rules, but we recommend staying with 1l all around, as
+naturally occurs with 4l lines.
+
+4.3.7 Seventh Mask (PAD or OVG).  The minimum pad opening
+rule is 125mx125m (same as NSIL I), which is violated by the
+114mx114m openings in our library file pads.ic.  MET should
+surround PAD by 10m, also violated by pads.ic, which uses
+only 6m.  Clearance to unrelated circuitry should be 25m.
+Use 62l pads, 5l surround, and 12l clearance for new
+designs.  Preferred center to center spacing of pads is 200m
+or 100l.
+
+4.3.8 Eighth Mask (POL2).  It is probably not possible to
+design CCD structures well with the lambda-based rules.  If
+a double-poly design is to be run with the same mask set as
+other designs, the designer should review the rules and keep
+in mind the stretches being applied to the other layers.
+Assume zero stretch of POL2.
+
+Further mask layers may be used for special purposes, such
+as another layer of metal for a light shield for imagers.
+See the rules and talk to MEC personnel for more
+information.
+
+There is more interesting information about capacitors,
+input protection, scribe lines, alignment marks, logo,
+circuit name, etc., in the published rules.
+
+Handling 45-degree Lines
+
+Lining up the corners of lines at 45-degree corners can be
+an incredible time sink in Icarus.  To avoid this problem,
+one should restrict oneself to a simplified class of
+diagonal lines with a single simple way of fitting the
+corners together: namely, just use wires whose path points
+fall on the lambda grid, and use extensions of 1m (2 Icarus
+units) on the vertical or horizontal segments, and of 0.7m
+(1 Icarus unit in X and one in Y) on the diagonal segments
+(assuming 2l line width).  A typical corner constructed this
+way is shown in Figure 3; for clarity, different layers are
+used for the two segments.  Icarus does not provide an easy
+way to construct corners according to this rule; it is
+necessary to set the grid to 1 unit, stretch the horizontal
+and vertical segments, and draw the diagonal segments to
+fit.  If other line widths are needed, appropriate
+extensions will have to be developed.
+
+To test this idea, a ramcell was mechanically scaled from l
+= 3 to l = 4 Icarus units (3m to 2m), resulting in the
+layout shown in Figure 4.  Then the corners were fixed
+according to the above rule, with the result shown in Figure
+5.  It is apparent that the restriction causes no area
+penalty in this case, and simplifies the layout task.
+

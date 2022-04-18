@@ -1,0 +1,217 @@
+XEROX PALO ALTO RESEARCH CENTER Systems Science Laboratory
+LSI Systems Area January 19, 1979
+
+
+
+
+
+To:	LSI/DA Group
+
+From:	Dick Lyon
+
+Subject:	Sticks--Some Issues and Ideas
+
+
+stored: [Ivy]<Lyon>sticks.memo, .press
+
+I start by assuming that we agree we should build, among
+other things, a sticks editor with fully automatic
+conversion to geometry, as constrained by the layout design
+rules.  This may be a stand-alone program or a component of
+a Merlin-like integrated design system.  I propose we use
+Icarus as a concrete model of what such an editor should be
+like, rather than starting form scratch.  I have several
+ideas about what Icarus does right and what it should do
+differently, that others with less experience in LSI design
+may want to know about; hence this memo.
+
+Two issues of importance that we discussed at the Jan. 18
+meeting are:
+
+1.  Should sticks be treated as a fairly literal
+representation of the geometry, with vertical sticks
+converting to vertical lines, etc., thereby leaving the
+burden of layout decisions on the designer?  Or, should the
+sticks be treated as simply topology, with lots of smarts in
+the system to distort the geometry to fit various shapes of
+spaces?
+
+2.  Should the conversion technique be "whole chip at once"
+or should it be to convert cells from bottom up (with
+possible iteration based on the constraints)?  Or something
+else?
+
+Several other issues I have thought of are:
+
+3.  Should the user by able to combine hand-generated
+layouts with automatically generated layouts (maybe using
+Icarus after the fact, or maybe incorporating pieces of
+geometry into the design while still at the stick level)?
+If not, how will we incorporate all the special rules needed
+to design such things as output pads?
+
+4.  How can structures like snaking gates be represented in
+sticks, or how can the system figure out to convert a
+transistor to a snake configuration?
+
+5.  Will we plan to produce designs for exactly one generic
+type of technology (e.g. 6-mask NMOS)?  Is more generality
+easy or possible?
+
+6.  Can we count on the existence of color displays by
+summer or so?  If not, how will we handle sticks on Alto
+displays?  Icarus stipples?
+
+7.  Some kind of automatic generation and programming of
+PLA's and ROM's is needed.  How will we integrate this
+feature with the sticks editor?  Can we make an interface to
+a programming language that will allow programmed placement
+of symbols at least?
+
+8.  What will be the output medium?  I recommend CIF, which
+is at least nominally convertable to any output device.
+
+9.  Will the simulator program be expected to take the
+sticks file as its circuit input?  Do we need to choose a
+mutually agreeable format?
+
+10.  How much stuff should the designer have to annotate the
+sticks with (e.g. length and width of every non-default
+transistor)?
+
+11.  I assume we will have symbols.  Will symbols take
+parameters, as in the Smalltalk LSI layout system, which can
+automatically adjust pullup lengths and such to generate
+several things from the same symbol definition?
+
+Icarus is strictly an artwork system, with a user interface
+that combines the drawing style of Sil with the
+menu-oriented command style of Draw.  This works OK and is
+not a big issue (though a Smalltalk style menu would leave
+more usable screen space).
+
+A feature that Sil tries to provide that Icarus doesn't is
+the ability to move things and have connecting lines stretch
+to fit.  I believe the reason Sil doesn't do a good job of
+this in general is that it tries to guess what you intend
+from what you draw, which is hard.  I propose we adopt an
+interface that forces the user to indicate unambiguously the
+semantics of what he draws; perhaps this means that wherever
+two sticks touch, a letter or blob of some type is required
+to indicate whether he intends a contact, a crossover, a
+transistor (enhancement or depletion), etc.  Then editting
+ops, such as moving selected sticks, should be defined in
+such a way that the semantics are preserved except when
+explicitly changed.  Recognition of the circuit intended
+from the lines drawn (as in Analyze) is considered harmful.
+
+I believe the main thing missing from the Icarus user
+interface is a menu of symbol names and design files.  Just
+as Neptune gives you a menu of files, of disks, and of
+directories, and as Markup gives you a menu of press files
+with pictures on page 1, other programs we design should use
+menus to relieve the user of the task of remembering and
+typing names.  (I have the same complaint about Laurel, for
+example, since I can't always remember what .mail files I
+have created when I need to know.)  Perhaps we need a
+browser.
+
+The Icarus two-window concept is great, and should probably
+be preserved unless someone designs something better.
+Scrolling and scaling to look at any section of the canvass
+also works quite well, except that in the current
+implementation the "mark" gets messed up if you scroll, so
+it is hard to draw long lines and such.
+
+My other main concerns about Icarus have to do with symbols
+editting, and are discussed in an earlier memo which I
+include here for reference:
+
+
+
+To:	LSI Group
+
+From:	Dick Lyon
+
+Subject:	Top-Down Design System
+
+
+stored: [Lyon]<>Top-Down.memo
+
+My impression of the importance of a new design system, and
+the most important feature missing from Icarus, is the
+ability to do "top-down" design.  A programmer can write
+something like:
+
+let Icarus be [ InitializeIcarus(parms) DoIcarus(parms)
+FinishIcarus(parms) ]
+
+without even knowing what the subprograms do or what the
+parameters are.  In Icarus, on the other hand, a
+substructure must be finished and packaged into a symbol
+before it can be included in the system design; editing
+existing symbols is awkward to difficult.  We need the
+ability to represent pieces of the design that do not exist
+yet, and the ability to move quickly into and out of these
+pieces to work on filling in the missing detail.
+
+While we all agree that the ability to design at a higher
+level (like Mesa vs. assembly code) is nice, I contend that
+the ability to design top-down is very important even to the
+assembly language programmer (or Icarus level designer).
+
+I propose we do a top-down design experiment by performing
+fairly minor internal surgery on Icarus, mainly involving
+the symbol operations.  I believe the modifications I
+propose will make Icarus much more usable for real
+system-level chips, and will give us plenty of advance user
+interaction experience.  If we determine that the
+programming effort involved is not too great, we should do
+it.  If someone has to learn BCPL and the internals of
+Icarus anyway (for bug fixes and improvements), the
+additional cost of the proposed changes will be small
+compared to the return.
+
+Here is the plan.  Add the commands Enter and Exit to the
+main menu (possibly delete some commands, cram in more
+lines, or use another menu).  The action of the Enter
+command is to write out all current items into a symbol
+(TopSymbol if we are not already inside a symbol), clear the
+item space, and expand the entered symbol on the now blank
+drawing surface.  Exit reverses this, by writing all items
+back onto the symbol that was entered, clearing the item
+space, and expanding the symbol from which you had
+previously entered.  As now, a symbol will be shown as a box
+with its insides either visible or invisible, but its
+boundary might be allowed to move (it doesn't matter except
+for pictorial value how big the box is if nothing is in it,
+so we might as well let it be stretchable).  Define Symbol
+should be a relatively simple command that simply draws a
+box around the set of selected objects and makes them a new
+symbol (optionally with a name, and optionally with an
+origin other than the default of upper left corner).  The
+function of trimming things exactly to a rectangle should
+not be important, since we can trim and stretch easily by
+simply entering the symbol at any time.  If no items are
+selected, we should be allowed to create an empty box of any
+size as a representation of work yet to be done.  We still
+may want the Expand command to break up a symbol into its
+items and add them to the current drawing.
+
+If nothing else, you at least will gain the advantage that
+you won't have to click where you would like the origin,
+click a rectangle around symbol, and type name of symbol if
+you can remember it, every time you want to edit a symbol.
+
+One side-effect of my implementation suggestion: whenever
+you enter a symbol, you throw away all outside context.
+This may be good because it reduces confusion and redraw
+time, but it may be bad because it loses valuable
+information about where things connect, etc.  If it is easy
+enough to Enter and Exit, this should not be a problem,
+since you could easily move up and down your design
+heirarchy, comparing at one level, and moving down to adjust
+discrepancies.  A possible fix, if we need one, is to keep a
+pointer to the symbol from which we came, and use it to draw
+the context on command (being careful not to recurse).
+

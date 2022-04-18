@@ -1,0 +1,231 @@
+ 
+Only___n  years ago, the introduction of portable computers into
+an elementary school for student use would have been
+impossible.  The enormous expense, not to mention the bulk,
+of such machines, precluded any wide-scale use other than as
+time- and money-savers in business.  However, it has been
+clear for sometime now that technological advances,
+particularly in etching and storing memory on chips of
+silicon, have meant that prices have been dropping in a
+fairly predictable fashion and that size of computers and
+computational devices in general have become more mana-
+geable.  This process has been evident even to th casual
+observer: digital watches, pocket-size calculators are
+everywhere; toys like speak and spell and the Little
+Professor are enjoyed by many thousands of children; some
+small computers have found their way into the homes of
+hobbyists, and--to an ever-increasing extent--into the
+schools.  Despite these advances, the style  of using
+computers in the schools still retains a strong flavor of
+technological primitivity.  The most common computer
+language* there in use, BASIC, is meager in its vocabulary
+and cannot easily be put to exciting use by children.  The
+poverty of that language is largely explainable int erms of
+its efficient use of formerly quite expensive computer time;
+in addition its proponents have been attracted by its formal
+elevance, a quality children do not normally appreciate in
+such abstraction.  The prevalence of BASIC as the school
+computer lingua franca together with the extreme scarcity of
+school computers, then, largely accounts for the rather
+boring use of computers as instruments for drill and
+practice.
+
+During this period of development, some researchers have
+given thought to more creative ways in which children might
+use computers.  The LOGO language, developed at the MIT
+Artificial Intelligence Laboratories under the direction of
+Prof. Seymour Papert, a mathematician and Piagetian
+psychologist, consistently favors fluency of expression over
+technical efficienty.  The aim of the LOGO group has been
+creation of a language and learning environment, not for
+technicians, but for children and non-speacialists.  
+
+Because of the generosity of Mr. Erik Jonson, the
+farsightedness of Texas Instruments and the happy
+collaboration between Lamplighter teachers and parents and
+the MIT LOGO group, the present project has been made
+possible.  The Lamplighter Computer Project is the absolute
+first oif its kind.  There are now ___ computers available
+to Lamplighter stuydents to use in school, to take home to
+be hooked up to your television set.  There should be
+computer activities that can interest your whole family. 
+
+This, of course, must still sound quite mysterious.  What is
+this home computer?  What does it do?  How is it used?
+
+A brief description of the technical aspects of the computer
+is presented in the Appendix.  This has been written not
+only for specialists, but for anyone interested in learning
+more about the machine and the relations between its
+capabilities and user function.  For the moment, we would
+not that with the TI Machine it will be possible:
+--To draw colorful, exciting, and occasionally beautiful graphics
+designs;
+--To write and edit text, which can then be printed out on
+the ______ at the school;
+--To compose and play music;
+--To simulate physical properties of and among objects
+represented on the screen 8e.g. gravity, force, velocity);
+--To play games.
+
+This list, which is not exhaustive, includes activities that
+can now be carried out in a qualitatively different way than
+they have been in the past.  Take, or example, music
+composition.  In the past, it was generally necessary for
+someone untrained in music first to learn to read music and
+then to learn to play an instrument before trying out
+composing.
+Wihtout these skills, it was almost impossible toncompare
+phrases, jugle them up, and compose a tune.  In order to
+acquire these skills, it was often necessary to make a leap
+f faith:  that someday one would gain sufficient control
+over the instrument to make music.  Many of us refused to
+make that leap.  Moreover, people who were trained to read
+and interpret never learned to improvise.  Now it is easy to
+experiment with compositional skills right from the start.
+See, for example, the project described in _______ of this
+manual.
+
+As you leaf through this manual, you will see that LOGO's
+emphasis has been on making creative use of computers
+accessible to children.  As children have played with LOGO,
+they have developed skills in such traditionally-defined
+categories as geometryt, English composition, music theory,
+physics, arithmetic and computer programming itself.  The
+present manual has been designed to help you and ytour
+entire family to become acquainted with and to enjoy the
+capacities of the TI Machine.
+
+WHY THIS MANUAL IS NECESSARY OR HOW ADULTS CAN LEARN 
+LOGO
+
+The Lamplighter Project is the first time that a large group
+of adults with no previous computer experience will have han
+opportunity to learn LOGO.  Much can profitably be learned
+from the way children have successfully learned LOGO, but
+the situation is different in more than a few respects.
+Adults, unlike children, have already mastered large bodies
+of knowledge.  The extent to which this knowledge is
+systematized varies.  Scientists, mathematicians, and, to a
+lesser extent lawyers and doctors, tend to greater
+systematicity.  But even where these adults have ben quite
+successful in mastering their field, they often remain
+confused between process and goal.  For example, first-year
+law students, who have finally organized their year-log
+courses into outlines, have been heard to wonder why they
+didn't start the year with commercially available outlines
+and thus succeed in bypassing the hard and often tedious
+reading along the way.  Other students consciously choose to
+take this more sperficial approach in areas of less import
+and interest and to "do all the reading" in other courses.
+Others of us have not had the occasion explicitly to
+systematize our knowledge.  Even so, reflection on how we
+carry out certain complex everyday activities--whether it is
+how to close a business deal, how to balance a budget, how
+to find out what is wrong with the sprinkler system--can
+provide helpful analogies for learning new activities like,
+for example, programming computers.  Most of us are used to
+using manuals of some sort.  Although at times this can be
+an extremely frustrating experience, most of us easily refer
+to the Yellow Pages, cookbooks, automobile manuals, West
+Digests (if we are lawyers), PDR's (if we are doctors) and
+______________(if we are in business).  
+
+Children actively acquire knowledge through their
+interactions with the world.  The systems they build are
+modified to account for new experience.  Knowledge of
+language, of spacial relationships, of muvch of what we
+regard as common sense, is built up in this way.
+
+What we propose by way of this manual is to give you, the
+Lamplighter parents, an opportunity to choose your own path
+into LOGO, mixing use of the manual--its glossaries,
+terminal sessions, projects and indices--with more or less
+directed, self-conceived projects. 
+
+As a first step, it is vital that you learn to e comfortable
+at the machine.  Many of us--expecially those of us iwth an
+exclusive background in huymanities--are quite intimidated
+by anything that appears to be "technical". The best way to
+overcome this lack of confidence (just in case it exists) is
+to sit down and play around.  IT IS IMPOSSIBLE TO HURT THE
+MACHINE BY PRESSING THE WRONG KEYS!!!
+
+The Primer section of the Manual and Beginners' LOGO* are
+especially designed to make your intial contact as enjoyable
+(and painless) as possible.
+
+Next, you can turn to a section in the manual that you find
+interesting.  You will note that the most important commands
+are presented first.  The listing of commands is not meant
+to suggest that you should necessarily begin the section by
+committing these to memory.  YTou may find that trying the
+Terminal Session first is more helpful.  From there you may
+continue further in that section or turn to another.  There
+is no one way.  
+
+As you run into problems (e.g. your program* doesn't do what
+you intended it to do, you get an unexpected error message*,
+you have more to handle than you think you can in one
+procedure*) it will probably be useful to consider some of
+the "Big Ideas" that have been stressed in teaching LOGO to
+children.  "Big Ideas" are ideas about how to debug* a
+procedure* we have written or how best to debug our thinking
+about the procedure.  The first thing is to avoid the sense
+that bugs are somehow "bad" or embarrassing.  The computer
+world--and, in fact, the world at large--is filled with
+bugs.  Such bugs can often be illuminating, opening whole ew
+ways of considering the problem at hand.  It is not at all
+unusual to hear a bug described as "great".
+
+Most children have begun learning LOGO by way of turtle
+graphics* and turtle geometry.*  LOGO was especially designed
+so that it comported with a child:s intuitive sense of how
+his body moved about in space.   Thus, at as moment of
+confusion or indecision in the process of drawing a
+picture--or writing a program to draw a picture--the
+injunction to "Play Turtle", i.e. to put yourself in the
+place of the turtle, is often helpful.  Perhaps an example
+will help to illustrate what some of these big ideas are
+while at the same time showing the process by which children
+acquire LOGO knowledge. 
+
+<Use wishing well example.  Describe child first trying to
+trace the figure around.  Mention that aim will be to write
+a procedure to do this and say what this is.  Include bugs,
+say one in the angle of the triangle and second,
+misconnecting the square to the triangle.  Play turtle can
+be brought in at this point.  Then introduce "divide and
+conquer" and subprocedures.>
+
+HOW THIS MANUAL IS DESIGNED
+
+In this introduction, we have tried to provide an overview
+regardint the uses of the computer and some ideas concerning
+its educational effects.  The next section, A Guide to
+Beginner's LOGO, is recommended, especially if you have had
+no previous experience with a computer language.  The third
+section contains various short chapters which provide
+alternate routes into LOGO.  They are all self-contained.
+You can go to whichever section interests you the most.
+Each of these sections presents information in blocks.  If,
+for example, your child is interested in music but you are
+not, you might be satisfied with a knowledge of the basic
+commands so that you can better understand what he or she is
+doing.  Or, if you are most interested in experimenting with
+the music section, you might still like to learn the basic
+graphics commands in order to set up a button-box* for a
+younger child (see section ___).  The appendices provide
+descriptions of what a computer language is and tell you
+about the TI machine in some more detail.  Two glossaries
+are provided.  One is a general glossary of some 
+words, familiar and unfamiliar, that you will find
+throughout this manual.  When a word which is defined in the
+general glossary first appears in the manual, it is
+indicated with a *.  Secondly, you will find a glossary of
+"error messages"*.  Finally, an index has been provided to
+give you a quick way to etc. <is this getting carried away?
+Is it necessary to have both a general glossary AND an
+index?>
+
+<end for now>

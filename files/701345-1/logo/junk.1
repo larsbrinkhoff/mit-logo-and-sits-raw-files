@@ -1,0 +1,122 @@
+g6  7  8  9] are called lists.  You can give 
+commands to a list of sprites in the same way that you give commands to
+individual sprites.  For example:
+.end_keep
+.nf L
+.in 2i
+
+.keep
+TELL   :TEAM1    CARRY    :TURTLE    SETC    :GREEN
+TELL   :TEAM2    CARRY    :TRUCK    SETC    :BLUE
+.in
+.fi b
+.end_keep
+
+If the team members are piled up on top of each other so you can't see them, talk
+to them individually and give them a different speed or heading or move them
+using FORWARD or BACK.
+
+You can do a lot of things using teams.  Try rewriting FLY so that there are
+two teams of birds flying in different directions and flapping differently.
+(See P. xx, Making Movies)
+
+Another thing to try is to design spaceships and flying saucers and fly
+them in teams.
+
+.bp
+.chapter "bold(Changing the Background)"
+.nf L
+
+To change the background color type:
+
+	TELL    BACKGROUND              	t(m)Notice the G in BACKGROUND
+
+	SETC    :WHITE
+
+It you want to you can make yourself a tool to save typing:
+
+	TO   TB   :C	t(m)TB is an abbreviation for "TELL BACKGROUND"
+	SETC   :C
+	END
+
+The input for TB should be a color name or number.
+
+	TB    10      
+   or	TB    :YELLOW
+
+.keep
+This Procedure makes the background change continuously:
+
+TO    FLASH    C
+SETC   :C
+WAIT   100	  :T1    :T2
+END
+.end_keep
+.fi b
+
+There are many possible variations.  Instead of two sprites, there
+could be teams of sprites.  The directions of flapping could be reversed, etc.
+.bp
+.chapter "bold(Making Tools)"
+Sometimes a procedure can be a tool.  Here are some examples:
+
+This procedure makes all the sprites disappear:
+.in 2i
+.nf L
+.keep
+
+TO   CLEAR
+TELL   :ALL
+SETC   :CLEAR
+END
+.in
+.end_keep
+.fi b
+.keep
+This procedure tells each of a number of sprites to do something, one
+after another:
+
+.nf L
+.in 2i
+TO   SHOUT    N    ACTION
+IF   :N  <  0    STOP
+TELL    :N
+RUN    :ACTION
+SHOUT   :N  -  1   :ACTION
+END
+.in
+.fi b
+To use SHOUT, the action must be a list of instructions inside square
+brackets [ ].
+.end_keep
+
+.nf L
+.keep
+Try these examples:
+	SHOUT    5    [STARTUP   FD   20]
+or	SHOUT    5    [STARTUP    FD   20  *  :N]
+or	SHOUT    10   [STARTUP   SETH   36  *  :N   SETS   10]
+.end_keep
+.bp
+.chapter "bold(Teams)"
+.fi b
+You can talk to more than one sprite at a time.  You probably have given
+commands to all the sprites by typing something like:
+.in 2i
+
+TELL    :ALL    SETC    :PURPLE
+.in
+
+If you organize smaller groups of sprites into teams you can get one team
+of, say, five to be doing one thing and another team to be doing another.
+.nf L
+
+.keep
+Try this:
+.in 2i
+
+CALL    [0   1   2   3   4]    "TEAM1
+CALL    [5   6   7   8   9]    "TEAM2
+.in
+.fi b
+[0  1  2  3  4]  and  [5  

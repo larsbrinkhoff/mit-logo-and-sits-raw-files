@@ -1,0 +1,486 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.tabfnt 2
+.chap 10
+.he1
+Karl
+.he2
+Geometric Designs
+.ss
+.adjust
+.ce
+110. Karl0
+
+Karl is a boy who has severe learning difficulties in standard school
+subjects.  He is several years behind his peers in basic academic
+skills, and has been diagnosed as having a "learning disability".  He
+receives regular individual assistance in the school's Learning Center.
+Karl is large for his age and somewhat awkward in manner.  He has few
+friends among his classmates, other than a few selected "cronies".
+
+When Karl was interviewed, prior to his participation in LOGO some
+significant gaps occurred between his abilities in tasks that required
+reading, writing, arithmetic, and verbal expression, and those that
+required non-verbal problem solving.  While appearing to be virtually
+unable to read or carry out arithmetic calculations, he readily solved
+problems involving number patterns and attributes of different shapes, and
+was able to systematically generate all twenty-four permutations of a
+set of cubes of four different colors.  Questions that were designed to
+elicit Karl's feelings about school, and about himself and friends,
+were answered with statements like:  "I don't care", "Nothing", "No",
+and "I don't know".
+
+Despite extreme difficulty using the computer keyboard, Karl did very
+well in the LOGO classes.  From the beginning he enjoyed the sense of
+control he felt while participating in LOGO activities.  While Karl
+often needed help remembering the spelling of various commands, he was
+able to make use of his logical and organizational abilities in a
+variety of contexts.  Karl's accomplishments in the LOGO classes
+regularly surpassed what he was normally considered able to do in his
+regular classes and in his special tutoring sessions.  At present,
+Karl's teachers are trying to decide how to take into account the
+information learned during his successful LOGO experience, in planning
+his regular school work.
+
+In the sections that follow, we will review Karl's major
+accomplishments, as well as some of the difficulties that he experienced.
+
+.block 5
+110.1 Karl's Major Accomplishments0
+
+Karl's accomplishments in the LOGO classes fit into two categories:
+he developed a processes both for working with the computer and
+for planning and debugging his work, and he completed a number of
+successful projects in the area of Turtle Geometry, culminating in a
+keyboard controlled animation, in which he could drive the TURTLE
+around the screen.
+
+At first Karl's work alternated between carefully planned designs and
+the haphazard use of commands that he did not really understand.  As he
+began to discover consistencies in the effects produced by different
+commands, he gradually came to exercise more and more control over the
+outcomes of his work.
+
+.epage 1
+Karl's first projects, the rectangle TAM, and the set of repeated
+rectangles, CULL, were carefully planned and carried out.  (Figure 10.1)  His 
+next design, ACE (Figure 10.2) was even more carefully
+structured, making use of symmetry and the properties of circles.  
+.page
+.NOFILL
+TO TAM
+1 FORWARD 190
+2 LEFT 90
+3 FORWARD 100
+4 LEFT 90
+5 FORWARD 190
+6 LEFT 90
+7 FORWARD 100
+END
+
+TO CULL
+1 TAM
+2 TAM
+3 TAM
+4 TAM
+END
+.ce
+Figure 10.1
+.page
+TO ACE
+1 RCIRCLE 50
+2 LCIRCLE 50
+3 FORWARD 100
+4 BACK 200
+5 RCIRCLE 50
+6 LCIRCLE 50
+7 FORWARD 100
+8 FORWARD 100
+9 RCIRCLE 50
+10 LCIRCLE 50
+END
+.ce
+Figure 10.2
+.he2
+Wildly Spinning Patterns
+.PAGE
+.adjust
+Karl became fascinated by the effects of SPIN commands and began to
+add procedures together randomly to produce unexpected results.  He
+would sit for long periods of time watching the effects of rapid SPINs
+interacting with various procedures.  Each time he had a new idea for a
+project, he would add it to the others, to enjoy the wild unpredictable
+effects.  Some of the procedures he created this way were:
+.nofill
+.ss
+.block 8
+TO ACE2		TO ME		TO ACE3
+1 SPIN 1020	1 TAM		1 SPIN 1020
+2 ACE		2 CULL		2 TAM
+END		3 ACE		3 ACE
+		4 ACE2		4 ACE2
+		END		5 ME
+				6 HIDETURTLE
+				END
+
+By the ninth class, these procedures culminated in:
+
+.indent 6
+.block 12
+TO BU
+1 SPIN 200
+2 CULL
+3 ACE
+4 ACE2
+5 ME
+6 NO
+7 NO
+8 XX78055
+9 PLUS
+10 TAM
+END
+
+.adjust
+.indent 0
+The procedure NO was a sequence of slow SPINs and FORWARD commands,
+followed by HOME, while XX78055 and PLUS were carefully planned spinning
+designs created by using NO, rotating the TURTLE 10 degrees, and 
+repeating the process while increasing the angle of rotation by 10
+degrees each time.
+.page
+.NOFILL
+TO NO
+1 SPIN 100
+2 FORWARD 100
+3 SPIN 60
+4 FORWARD 50
+5 SPIN 70
+6 FORWARD 60
+7 HOME
+END
+
+.he2
+Exploring the System
+TO XX78055
+1 NO
+2 RIGHT 10
+3 NO
+4 RIGHT 20
+5 NO
+6 RIGHT 30
+7 NO		TO PLUS
+8 RIGHT 40	5 MAKE "BUR 10
+9 NO		10 NO
+10 RIGHT 50	15 RIGHT :BUR
+11 NO		20 MAKE "BUR :BUR + 10
+12 RIGHT 60	25 GO 10
+13 NO		END
+14 RIGHT 70
+15 NO
+16 RIGHT 80
+17 NO
+18 RIGHT 90
+19 NO
+20 RIGHT 100
+21 NO
+22 RIGHT 110
+23 NO
+24 RIGHT 120
+25 NO
+26 RIGHT 130
+END
+.PAGE
+.ADJUST
+A few classes after creating BU, Karl expressed the desire to
+control the effects of his procedures.  In one period he edited BU
+to produce a very elegant spinning design, by systematically removing
+all the "random effects."  Although he needed help with the mechanics
+of editing, the decisions about what to change were all his.  The final
+version of the procedure was:
+
+.nofill
+.indent 6
+.block 7
+TO BU
+1 SPIN 200
+2 CULLEN
+3 ACE
+4 HOME
+9 PLUS
+END
+
+.indent 0
+.adjust
+The HOME command was introduced at line 4 to center the TURTLE before
+drawing the symmetrical spinning design, PLUS.  
+
+The editing of BU ended the "random phase" of Karl's work.  Although
+he had periods of aimlessness, and fooling around with the keyboard,
+most of his actual work with the computer was carefully and purposefully
+planned in the classes that followed.
+
+In addition to thoughtful geometrical planning (TAM, CULLEN, ACE, PLUS,
+etc.) and careful step-by-step debugging (as in his editing of BU),
+another process that Karl used to great advantage was finding the
+limits allowed by the computer in different areas.
+
+For example, he used the process of successive approximations in
+converging to a limit, to find the largest input to SPIN.  It took him
+nine tries, using successive inputs of 1000, 2000, 1050, 1001, 1010,
+1040, 1020, 1030, 1025 before deciding that 1020 was the largest
+allowable input to SPIN.  In doing this, he made use of the error
+message generated by the computer whenever he used an input that was
+too large.
+
+.he2
+Animating the TURTLE
+In a similar fashion, he used the OUT OF BOUNDS error message and the
+method of successive approximation to find the boundaries of the
+display screen and the diagonal distance across it.
+
+Karl also experimented with other limits of the computer system.  He
+found the shortest procedure name (one letter) and the "longest" (his
+procedure QWERTYUIOPASDFGHJKLZXCVBN used every alphabetic symbol on the
+keyboard).  He also found out what happened when you type very long
+numbers.  (When he typed PR 900000000000000000000, the computer
+responded: 9.000002E31), or long strings of symbols.  In general, he
+developed an experimental approach to the system -- "asking questions
+of it," by trying things, and seeing what happened.
+
+Karl's major accomplishment was a set of procedures which he used to
+animate the TURTLE in such a way that he could "drive it around" the
+screen.  He was given the initial concepts for the procedures  and
+filled in the specific instructions himself.  The procedure ideas he
+was given were:
+
+.nofill
+.block 7
+TO CAR		TO CH
+5 PENUP		10 MAKE "LETTER KEY
+10 MAKE "D 10	20 IF :LETTER = "R RT 30
+20 CH		30 IF :LETTER = "L LT 30
+30 FD :D	END
+40 GO 20
+END
+
+.adjust
+The command KEY was given as a "primitive" which "tells the computer which
+letter you type on the keyboard."
+
+Using this basic idea,  Karl was able to define a system of commands
+that made the activity interesting to him.
+
+.he2
+Drawing a Racetrack
+First he decided what commands he wanted, and what letters he could use
+for them.  He decided to locate all the letters in one section of the
+keyboard to make them easier to locate.  He wanted to slow the TURTLE
+down, and to have it wrap around the screen without going out of
+bounds, so he added WRAP and WAIT 5 commands to his CAR procedure.  He
+wanted to be able to decide whether or not to leave a trace, so he
+added PENDOWN and PENUP commands.  After some discussion with the
+teacher, he decided that the speed of motion could be controlled by
+increasing or decreasing the size of each step, so he added steps to
+take care of that.  Over a period of three or four classes he edited his
+procedures as follows:
+
+.nofill
+.block 10
+TO CAR		TO CH
+1 WRAP		10 MAKE "LETTER KEY
+5 PENUP		20 IF :LETTER = "R RIGHT 30
+10 MAKE "D 10	30 IF :LETTER = "W LEFT 30
+20 CH		40 IF :LETTER = "F MAKE "D :D + 5
+25 WAIT 5	50 IF :LETTER = "S MAKE "D :D - 5
+30 FORWARD :D	60 IF :LETTER = "A PENUP
+40 GO 20	70 IF :LETTER = "Q PENDOWN
+END		80 IF :LETTER = "E MAKE "D 0
+		END
+
+.adjust
+Notice that the letters "R" (right turn), "F" (faster), "S" (slower),
+and "E" (emergency stop), all are abbreviations for their functions
+while the letters "W", "A" and "Q" were chosen for their position on
+the keyboard.
+
+Having created a very nice "toy" with the computer, Karl enjoyed
+playing with it a lot.  He made some nice discoveries as he moved it
+playfully around the screen.  For example, he found that repeatedly
+pressing "S" would eventually make the TURTLE go backwards at an
+accelerating rate.  Or that he could draw a dotted line by alternating
+the keys "A" and "Q".  He tried letting the car go very fast, drawing
+slanted lines wrapping around the screen, and experimented with the
+effect of many repeats of the same commands.  At one point he realized
+that he could use this device to write his name in script -- but this
+was never fully completed.
+
+.he2
+Difficulties Using Computer
+.adjust
+Between periods of playing with his "car" Karl continued to pursue the
+idea of a racetrack, around which the car could be driven.  He created
+the procedure TR to draw the racetrack using circles, and included a
+starting and finishing lines.  In the last class he was beginning to
+work  on a series of procedures that would allow the computer to keep
+track of the elapsed time for one circuit of the track.  Although the
+project was not completed, Karl was able to define the logical
+structure of the race in a way that would have allowed a relatively
+easy translation to a set of computer procedures, had there been more time.
+
+.nofill
+.block 12
+TO TR
+10 LEFT 90
+20 FORWARD 190
+30 LEFT 90
+40 LC 190
+50 LEFT 90
+60 FORWARD 100
+70 RIGHT 90
+80 LC 100
+END
+.ce
+Figure 10.3
+
+.adjust
+.he2
+Difficulties Using Computer
+.block 5
+110.2  Major Difficulties Encountered by Karl in His Work0
+
+Karl's difficulties were related to his problems in reading and
+writing, based on hearing difficulties and a very poor visual memory.
+This was reflected in his painfully slow and poorly coordinated
+approach to using the keyboard.  When Karl wanted to find a particular
+letter on the keyboard, he would scan the keyboard with his eyes,
+moving his finger back and forth, as his eyes shifted.  Often his
+finger would pass the correct key several times before hitting it.  If
+a wrong key was hit, an error message would result, and the whole
+process would begin again.  Although Karl gradually improved his
+typing, his difficulty finding familiar keys continued to be noticeable.
+
+Karl used the same random scanning strategy for finding numbers, as
+well.  Although he knew that the numbers were on the top line of the
+keyboard, he was unable to make use of their inherent order to make
+them easier to find.  This was particularly striking when he was
+numbering steps in a procedure.  Going in a sequence, 1, 2, 3, 4, ...
+he conducted an individual "search" for each number, using his scanning
+and finger moving technique.
+
+Karl also had great difficulty reading error
+messages.  Although he gradually learned to include the new terminology
+in his sight vocabulary, he was unable to sound out words, even though
+he had seen them before.  He either "knew" a word, or could not read it.
+Before long, he had become familiar with the most common error
+messages, and knew how to respond to them.  He continued to have a
+problem whenever an unfamiliar error message appeared.
+
+.he2
+Affective Aspects
+To help overcome these difficulties Karl made regular use of his notebook
+for writing the names of LOGO commands and of new procedures.  He
+referred to these when he needed to recall the spelling or syntax of an
+instruction that he had already learned.  When he had a list of commands
+on the screen that he wanted to copy into his notebook, he often asked
+either a teacher, or another student for help.
+
+Karl also helped himself by limiting the size of his procedure names.
+He quickly realized that he could make procedure names very short;
+sometimes he wrote abbreviations for LOGO primitives (RC and LC for
+RCIRCLE and LCIRCLE, for example).  Although he eventually used
+two and three letter names exclusively, he did not seem to choose his letters in a
+way that made scanning easier.  Procedure names like TAM, ACE, CULL,
+and BU, all required a fair amount of scanning.
+
+Karl named one of his procedures QWERTYUIOPASDFGHJKLZXCVBNM making
+use of every letter of the alphabet, in their keyboard sequence.  Since
+he could move his finger in order across all the letters, this name
+required no scanning, and was actually a lot easier for him to type than
+a three letter procedure name for which he had to scan.
+
+When designing his CAR procedures, he did make use of keyboard
+placement, in choosing the keys he used to control the motion of the
+TURTLE.  The letters he used- - Q, W, E, R, A, S, and F -- are all
+located in a group on the left hand end of the keyboard.  Originally
+Karl thought he would make a cardboard cover for the keyboard, with a
+hole cut in it so that only those letters could be seen.  He found this
+to be unnecessary, however, and concentrating his attention on one
+small corner of the keyboard, was able to select the correct keys
+easily, without any of the scanning or memory problems that occurred
+when he had the entire keyboard as his field.
+
+Given Karl's extreme difficulties with reading and with the keyboard,
+it seems significant that he persevered as consistently as he did in
+his LOGO work.
+
+.block 5
+110.3  Affective Aspects of Karl's LOGO Experience.0
+
+At the beginning of the LOGO classes, Karl tended to have "deadpan"
+expressions at all times.  This corresponded to his appearance when seen
+for interviews, or on random occasions throughout the school.  Even
+when he was successful in using the computer for the first few
+sessions, his expression continued to be blank and non-committal.
+
+As his success continued, Karl became more assertive and curious.  He
+asked what error messages meant, and sought to understand how to use
+new commands.  He made a point of finding out how to use the
+Plotter and Printer, so that he could make his own "hard copy" of his
+computer work.  Observing this during one class, a regular observer
+wrote:  "Karl seems more actively involved, engaged with, and using the
+computer, based on more of his own interests, curiosities, purposes,
+and playfulness.  Today he inquired about the other equipment; and was
+interested in its functioning and products...Karl many times today is
+asking `how' giving the impression of one interested in how things are
+done..."
+
+At about the same time, Karl began to express an interest in the work
+of other children in his group, and began to show them his work.  
+He invited a friend to class and swapped programs with him.
+He began to show that he was feeling good
+and enjoying himself.  His face was more expressive, his posture more
+relaxed.  He wrote his name in large block letters on a formica table
+which was used by the children as a graffiti board", and proudly began
+to show his work to visitors.
+
+Karl brought his tutor from the school's learning center to one of the
+later classes,
+and showed her his partially completed "car" project, carefully
+explaining each detail of his programs to her.  In the next class, the
+observer quoted above again noted changes in his behavior:  "Karl
+entered the room with Jimmy and Darlene.  He immediately set to logging
+in on terminal 4.  I notice that he seems to walk taller with a more
+self-assured posture and has a way of getting right to the business at
+hand."
+
+Changes in Karl's attitude toward his classroom work were also noted
+by his regular teacher.  After about twenty LOGO classes she reported that Karl was
+beginning to show that he really cared about his school work, that he
+had begun concentrating on his work in a way that she had not seen
+before, and that he seemed to have a great deal more confidence in his
+ability to carry out academic tasks.  She attributed these changes
+directly to his feeling of success in the LOGO classes.
+
+Karl's success in his LOGO classes demonstrated that with an
+appropriate educational environment, he was able to function at a
+higher level of ability than he had demonstrated in schoolwork, even
+with a great deal of one-to-one tutoring.  At the present time 
+his seventh grade teachers and his learning disability tutors are
+trying to develop an educational plan for him that will capitalize on
+the abilities he has demonstrated in the areas of reasoning, logic,
+planning and organization, in order to help him maintain the feelings
+of success that he developed while working on LOGO.
+
+In his final interview, after the end of the LOGO classes, Karl was
+significantly more articulate about intellectual activities (although
+not about his feelings).  He listed ten uses for a tin can (as opposed
+to four uses for a brick in the first interview).  Instead of carrying
+out the four color permutation task, he asked "Can I just show you how
+I do it?" and proceeded to describe a system for finding six
+permutations that started with each of four colors.  With some
+difficulty, he correctly calculated that there were twenty four
+possibilities in all, and leaning over to speak directly into the
+interviewer's tape recorder, he said: "Twenty-four.  I'm a brain!"
+

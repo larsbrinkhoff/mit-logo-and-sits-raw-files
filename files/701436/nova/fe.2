@@ -1,0 +1,150 @@
+filed on: [maxc] & [ivy]<conway>fixentropy.vlsi April 7, 1979 7:30 PM
+
+   Consider a spatially distributed structure consisting of information storage
+sites and a set of communication pathways between the sites.  An elementary
+communication event in an assemblage of data in this structure is the
+transmission of one bit of information from one storage site to another.  By
+analogy with information theory, we might define a rather mathematical kind of
+spatial entropy as the logarithm of the number of possible combinations of
+communications which can be performed in a given spatial assemblage of data.
+However, that kind of definition doesn't get us very far in characterizing the
+actual communications needs of a real computation in a real physical structure.  	
+
+    By analogy with our definition of logical entropy, we define the spatial
+entropy, SS, of a given assemblage of data in a given structure relative to a
+given computation as the number of communication events required for that
+computation, with each event weighted by its energy dissipation relative to Esw.
+At least Esw of energy dissipation is necessary for each communication event,
+since at least one switching event must occur to cause a communication event to
+occur.  Of course, the transmission of a bit of information may require some
+additional dissipation of energy, the amount depending upon the length and
+physical characteristics of the transmission pathway.  Therefore, the spatial
+entropy, SS, is just the total communication energy divided by Esw.  Each bit of
+spatial entropy requires at least Esw of energy dissipation for its removal:		
+
+	- DSS/DEDS < 1/Esw bits communicated/joule .	
+
+In other words, the increment of energy dissipated to reduce the spatial entropy
+is greater than or equal to the switching energy multiplied by the actual
+reduction of the spatial entropy in bits communicated:	
+
+	DEDS > - EswDSS joule .	
+
+    We now develop a constraint relationship between reductions in logical and
+spatial entropy during a computation, and necessary associated increases in
+thermodynamic entropy in the overall system.  In order to best do this, we first
+take a closer look at the concept of thermodynamic entropy, S.  Recall that S is
+defined as proportional to the logarithm of the number of ways of arranging the
+internal particles of a system while holding the external properties constant.
+This notion of thermodynamic entropy as a measure of disorder or uncertainty
+emerged from the work of Boltzmann and Gibbs during the development of the
+statistical mechanics.	
+
+    However, the original definition of entropy, and the introduction of the
+idea of changes in entropy being a useful measure of changes in the state of a
+system, emerged during early studies of heat engines, before the underlying
+nature of entropy as a measure of disorder had been visualized.  In these early
+studies, the incremental change in entropy of a system during reversible or
+quasi-static processes is simply defined as the ratio of heat energy input into
+a system divided by the absolute temperature at which this input occurs.  The
+difference in entropy between two states of a system is then calculated by a
+process of integration using any incrementally reversible or "quasi-static" path
+between the states.  The calculated difference in entropy between two states is
+the same for any such special paths.  This state variable was found to have very
+interesting properties.  For example, it could be used to predict whether or not
+a postulated process could actually occur.  All actual processes are
+irreversible, and it turns out that during an irreversible process between two
+states of a system a larger increase in thermodynamic entropy occurs than would
+be predicted by the integration for a reversible or quasi-static path between
+the states.  Thus, no postulated process can occur that would result in a
+decrease in thermodynamic entropy in an isolated system.	
+
+    By its original definition, thermodynamic entropy, S, has the units of an
+energy per degree absolute temperature.  This historical accident tends to
+obscure and make mysterious an otherwise straightforward, dimensionless concept
+of disorder, such as those introduced here for logical and spatial entropy.  For
+this reason, we define a dimensionless form of thermodynamic entropy, ST = S/k.
+By choosing a proportionality constant, k, having the correct value and
+dimensions, we define an ST that actually equals the logarithm of the number of
+ways of arranging the particles of a system while keeping the aggregate
+properties constant. (ST as defined is in many treatments of statistical
+mechanics referred to as the logarithm of the "thermodynamic probability", and
+written as S/k = lnW, or as S/k = ln W*).  Thus ST is an extensive but
+dimensionless quantity, having the units of "particles", which measures the
+relative disorderliness of a system of particles.  The correct constant, k, is
+none other than Boltzmann's constant.  It may be thought of as the gas constant
+per particle, or per atom, i.e., the amount of energy added per atom to a
+monatomic gas per degree K increase in temperature at constant volume.  Such a
+gaseous state is a state of maximum entropy.  In such a state, adding energy
+just increases temperature.  In lower entropy states, more interesting things
+may happen upon the input or removal of heat energy, sometimes vividly
+reflecting major changes in the relative disorder of a system of particles, as
+for example during the melting of a block of ice by adding heat energy at 273"K.  	
+
+    From thermodynamics we find that the total energy dissipated during a
+computation, DEDTOT = DEDL + DEDS , necessarily produces an increase in
+thermodynamic entropy:
+
+	DS >DEDTOT /T , and thus	
+
+	DSTkT > DEDTOT , and DSTkT > - EswDSL - EswDSS .	
+
+    This leads us to the "bottom line": In order to reduce logical and spatial
+entropy in any real physical computational process, energy must be dissipated,
+causing a corresponding increase in the dimensionless thermodynamic entropy of
+the system, as follows:	
+
+ 					DST + (Esw/kT)DSL + (Esw/kT)DSS > 0 .	
+
+    We may now view the voltage limit developed in section 9.2 in a more
+fundamental way.  Consider a CMOS inverter, such as that in Fig 9.2, having its
+output node at zero voltage, half way between the positive and negative supply
+rails.  This is the point of the maximum uncertainty in the logic state of the
+node, and is the point of maximum entropy.  The function of the inverter is to
+drive the node toward one of the rails, toward a state of lower entropy.  The
+inverter can drive the node toward the negative rail by supplying electrons
+through the n-channel transistor.  Under what conditions can these electrons
+cause the entropy of the node to decrease?  Only if each electron entering the
+node causes more entropy to be removed from the node due to energy dissipation
+than it itself carries into the node.  In the region of operation which is
+important, electrons in a transistor act as if they are particles in a monatomic
+"electron gas".  Hence each electron brings one unit of dimensionless
+thermodynamic entropy into the node.  However, each electron also causes an
+energy dissipation and flow of heat out from the node equal to qV/2, where q is
+the charge on the electron and V/2 is the voltage drop across the transistor.
+This energy dissipation can decrease the node entropy by at most (qV/2)/kT .  In
+order for the node entropy to be decreased by the inflow of electrons, qV/2kT
+must be > 1, and thus V > 2kT/q , a result similar to that found in section 9.2.
+
+    This analysis suggests an interesting physical view of computation.  First
+view a single node as an independent system.  It possesses a stored energy that
+is intended to represent information.  It communicates with the rest of the
+universe by a flow of electrons and a flow of heat.  Each of these flows carries
+with it a certain flow of energy and causes associated changes in entropy.  The
+entropy of the node can be made to decrease, under certain conditions, if the
+outflow of heat energy from the node causes a larger increase in entropy in the
+external world than the entering electrons add to the node.  Electrons bring
+with them a flow of ST into the node.  Heat flowing out of the node carries with
+it an even larger flow of ST .  A flow of heat can be viewed as a stream of
+particles, each carrying kT of energy and (at most, or at least, depending on
+which way we're looking at things?) one unit of entropy (Carver, we've got to be
+very careful here: entropy is NOT a conserved quantity, so it is very, very
+dangerous to talk about "entropy flows", unless the correct inequalities are
+always stated).  The spatial or logical entropy associated with the node may
+thereby be decreased.  Information entropy is measured in bits communicated or
+processed.  In any particular system, the number of bits that can be represented
+equals the total stored energy divided by Esw.  Thermodynamic entropy is
+measured in "particles", and is just the total thermal energy of the system
+divided by kT.  The term Esw/kT appearing in the above equations is now seen as
+the conversion factor between the two types of entropy.	
+
+    Computation in a macroscopic system can be viewed in the same terms.  With
+respect to a given computation, an assemblage of data in an information
+processing structure possesses a certain logical and spatial entropy.  Under
+proper conditions, an outflow of sufficient heat during the computation may
+remove all of the logical and spatial entropy, leaving the system in the state
+of zero logical and spatial entropy; we call this state "the right answer".
+Viewed this way, information processing engines are really seen as just heat
+engines, and information as just another physical commodity, being churned about
+by the electronic gears and wheels of our intricate computing structures.	
+

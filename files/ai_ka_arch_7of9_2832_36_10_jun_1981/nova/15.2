@@ -1,0 +1,590 @@
+<Caution, I have only just begun the editing of this>
+
+
+
+XV
+
+User Aids
+
+Aids to Program Development and Debugging
+
+[note to editor: we have to agree upon which way stacks grow, up or down, I
+learned up in school, e.g., "top of stack", as in a stack of dishes]
+
+[note to editor: I assume the following concepts are already understood by the
+reader: filtering template, window, scheduled, window title, window menu,
+"close" command, "frame" command, pane, scroll, edit, pane menu, paste,
+deleting, compile, doit, overtype, select, selection, highlight, "interrupt"
+command (ctrl c), compiler, assignment statement, temporary variables,
+arguments, method, PC, call history, context names, deallocate, reference,
+context, call stack, class Integer, class Point, applicative programming style,
+dialog window, Smalltalk user interface, current version's sluggish execution
+speed, class Player, instancewide, classwide, job shop simulation, stations,
+workers, jobs, endless loop, commentary, animation, .]
+
+[note to editor: The World Book article assumes that each player can have a
+separate script without being in a separate class.  This hasn't been done in
+regular Smalltalk, but it is a good idea.  Maybe we should implement it and then
+use the feature here.  Or I could assume that players with different scripts are
+in different subclasses.  What I am doing for now is forcing the same script on
+the whole class.]
+
+[note to editor: It should be already clear to the reader that many aspects of
+our system have known room for improvement, but our staff has insufficient time
+to accomplish everything our hearts desire, so we settle for less, but not for
+too little.]
+
+Tools for Programmers
+
+Since the advent of interactive computing, programmers have been among its prime
+beneficiaries.  Facilities devised to allow the users of computers direct access
+to their data were seized upon by programmers to directly access their programs.
+The ability interactively to edit, compile, test, and debug programs is now
+considered by many programmers to be essential to their productivity and
+satisfaction during at least certain stages of the software development process.
+
+Indeed, many programming languages that have grown up in the era of interactive
+computing have been set into interactive programming systems.  For example,
+BASIC, LISP, and APL systems almost always provide an interactive environment
+integrating editing, execution, and debugging.  There are many variations in the
+way these facilities are presented; for example, some systems execute compiled
+code while others interpret source programs or some intermediate-level language.
+But the basic idea is the same.
+
+Smalltalk is a highly interactive system emphasizing two-dimensional display of
+information.  It is natural to expect its program development aids to be
+organized the same way.  There are many ways to present these facilities, and in
+fact, several have actually been tried.  In this section, we will discuss the
+aids that are most commonly used in our current Smalltalk system (schemes), and
+then talk about aids we wished we had (dreams).  [It should be noted that the
+current Smalltalk debugger was itself a dream in many people's minds a few years
+ago.]
+
+Programming is to a certain extent a craft.  It is not difficult to create an
+analogy between programming and carpentry.  In both crafts, any structure can be
+banged together, but some structures hold up better than others.  The ideal
+craftsman with perfect materials and tools should be able to build a perfect
+structure methodically and elegantly.  In reality, imperfection is the rule, so
+parts that don't quite fit have to be adapted, shims have to be inserted here
+and there, sections have to be undone and reworked, and so forth.
+
+A craftsman places great value on having the right tools.  A carpenter building
+a shelf for his garage may be more than delighted to use simple hand tools.  To
+build a house for a contractor, he more than likely will insist upon power saws
+and nailing guns.  Similarly, a professional programmer writing a cosine routine
+for a microprocesor may joyously code it in assembly language and debug it with
+a hexadecimal debugger.  To build a sophisticated multi-user operating system he
+will probably insist upon a systems programming language and a symbolic
+debugger.
+
+The Smalltalk system provides a set of tools for the programmer that match the
+capabilities of the language and the purposes for which it is intended.  The
+language is appropriate for the construction of large systems with hundreds of
+modules (classes), thousands of data units (objects), and thousands of
+procedures (methods).  Such a large system can not be grasped by a single person
+in a single moment.  It is necessary to structure the system in an orderly
+fashion and to filter the information presented to the programmer so he can
+focus on portions of interest.
+
+Debugging Tools
+
+The debugging facilities provided to a programmer affect his style of debugging.
+Similarly, the programmer who understands the debugging facilities thoroughly
+can more effectively use them.  It is impossible to please everyone's taste and
+habits with a single facility, but it is reasonable to provide a set of
+facilities that are very general and easy to learn.
+
+One of the principal tactics employed by a programmer during debugging is the
+examination of state at a known point of program execution.  Traditionally, the
+state has been displayed as a "dump" of areas of memory or as the contents of
+individually requested cells.  In interpretive systems like BASIC, LISP, or APL,
+the programmer simply types a normal program statement for immediate execution
+that has the effect of printing values of interest onto the terminal.  This
+technique is also available in Smalltalk.  However, it is needed less often than
+in other systems, as will be shown.
+
+Notification Windows
+
+The Smalltalk debugger displays state of interest to the programmer through a
+filtering template called a "Notification window".  A notification window
+appears on the display in either of the following circumstances: (1) An error,
+warning, or breakpoint message is sent to the user by some system or application
+method; (2) the user issues an "interrupt" command.  In either case, the
+debugger gets control and severs its call stack just after the context that was
+running at the point of interruption.  A new notification window is created,
+displayed, and scheduled, in which is a reference is held to the severed stack.
+Through interactions with the notification window, the programmer can examine
+the state that is "frozen" in that stack.
+
+Because the stack held by the notification window has been severed from the main
+stack, the programmer can continue to run the Smalltalk user interface after the
+notification window appears, unless, of course, the error was caused by a
+low-level bug that also disables the user interface.  Usually, the programmer
+will proceed to investigate the bug by interacting with the notification window.
+However, such a strategy is not mandatory.  One may instead work in other
+windows on tasks related or unrelated to the cause of notification.  If another
+error occurs, another notification window will appear.  There may be many such
+windows and they can be ignored by the programmer or dealt with in any order.
+Furthermore, if an error occurs during interaction with a notification window,
+another notification window is created to hold the stack of that error.
+
+(Note.  There is an endless loop danger if the methods that create and schedule
+a notification window themselves have bugs.  This can happen if someone
+erroneously changes a low-level method that is used by the notification
+facility.  The effect would be that the first time a notification window began
+to be created, an "endless" series of incomplete notification windows would be
+created instead.  To prevent this from happening, a crude protection facility is
+employed.  A global flag is set during the installation of a new notification
+window, and any error message during the time that flag is set is sent to the
+dialog window, whereupon the user -- presumably an expert -- is forced to
+interact with a crude dialog-style debugger just strong enough to find and
+correct the low-level error and get the full user interface going again.)
+
+There is some danger in ignoring a notification, in that the held stack may
+reference objects whose internal state could change during ensuing activities.
+In practice, we have found such occurrences to be rare, and when they do happen,
+usually obvious to the programmer.  This good fortune is due largely to the
+strong tendency of Smalltalk programs to localize variable information in
+instances and especially in methods, and for global information to be
+effectively constant.  Furthermore, applicative programming style tends to
+create new instances of fast-changing objects (such as instances of class
+Integer or Point) rather than altering old instances.  Therefore, little
+information shared by many stacks is variable.
+
+When the notification window first appears, it has one pane, a "stack pane", as
+in Figure 1.  This pane shows the name of the top context in the stack, i.e.,
+the class and method that were running at the time of the error, breakpoint, or
+interruption.  The title of the window is the error message itself, hopefully a
+helpful sentence.
+
+The programmer now has several choices: (1) ignore the error for now; (2) invoke
+"close" in the window menu, which erases the window and deallocates the held
+stack -- this tactic may be appropriate if the source of the problem is already
+apparent, or if the message was a warning the programmer decides to heed; (3)
+invoke "proceed" in the stack pane menu, which closes the window, but resumes
+the held stack instead of deallocating it -- this is appropriate to proceed from
+a breakpoint or if the message was a warning the programmer decides to ignore;
+(4) invoke "stack" in the stack pane menu, which fills the pane with a
+scrollable list of stack context names, to reveal the call history; (5) invoke
+the "frame" command, which allows the window to be moved and resized, but which
+also changes it from a one-paned to a six-paned window to gain access to a
+richer variety of state information.
+
+Are all these options really necessary?  In a system with higher execution speed
+than our current one, it would not be necessary to provide the "stack" command,
+because it would take insignificantly longer to display the "whole" stack in the
+first place.  Furthermore, it would be possible to create all six panes from the
+start.  The latter possibility is not necessarily desirable.  The one-paned
+version takes less space on the screen than the six-paned version and thus
+interferes less with other windows.  In those cases that the programmer wishes
+to explore the error further, a larger window will be needed that is likely to
+interfere with other windows, so he should have control over where it appears.
+
+Now let us describe the six-paned version of the notification window.  The
+choice of panes is not sacred.  The panes are arranged in three rows of two (see
+Figure 2).  All of them can scroll.
+
+The upper left pane is the previously decribed stack pane.  The upper right pane
+is the "code pane".  The user can select any context in the stack pane by
+pointing at it, and the code pane will display the full method running in that
+context in source code form.  (Dream: we would like to indicate graphically the
+point within the method where execution was interrupted, but this would take too
+much time and/or space [why] in the current system.  By looking at the next
+level up in the stack the user can tell what message was passed, and usually it
+is obvious what statement did it.)
+
+The middle left pane is the "context variable pane".  It displays the names of
+all the arguments and temporary variables at the selected stack context, if any.
+The middle right pane is the "context value pane".  The user can select any
+variable name in the context variable pane and the value of that variable will
+print in the value pane.  (Printing is accomplished by passing a message to the
+value of the variable, and in a buggy program this can lead to another error
+message.  The programmer may investigate the new error, defer it, or close the
+window and work more on the original error.)
+
+The lower left pane is the "instance variable pane".  It displays the names of
+all the fields of the object executing the selected stack context, if any.  The
+middle right pane is the "instance value pane".  The user can select any
+variable name in the instance variable pane in an analogous fashion to the
+middle row of panes.
+
+In any of the panes in the second column, the user may type, edit, and execute
+code (doit).  Code is executed in the selected context; therefore, local
+variables may appear in the code.  In particular, any variable can be changed by
+typing an assignment statement and doing a doit.  Also, any expression or
+statement in the method can be executed on demand, in context, by selecting it
+and doing a doit.  If the selected expression has a value of interest, the user
+can paste it into one of the same panes, usually a value pane.  The power of
+these techniques is often underestimated by beginners.
+
+If the programmer decides to change a method in the code pane, he can edit it
+and compile it.  The debugger assumes that all contexts above the edited method
+are to be deallocated, and the stack is truncated until that context is on top.
+The PC is set back to the beginning of the recompiled method so that "proceed"
+will in fact restart the method; arbitrary edits can render other paths of
+action senseless (in fact, if the arguments of the method are changed,
+restarting usually becomes meaningless and will probably lead to another error).
+
+Inspection Windows
+
+There is one further feature in the debugger, the ability to trace through data
+structures.  The message "inspect" can be sent to any object, and that object
+will let the user draw out a two-paned window with an "instance variable pane"
+and an "instance value pane".  The variable pane displays the names of the
+fields of the inspected object, and selected fields display their values in the
+value pane.  This "inspection" window is like the bottom row of a notification
+window.
+
+One way to make an inspection window to inspect x is to type "x inspect" and
+then do a doit.  Of course, x may be any expression (often parenthesized because
+of the precedence of inspect).  An easier way, when appropriate, is to select a
+variable name in any value pane of a notification window or of an inspection
+window, and to invoke "inspect" in its variable pane menu.  By a succession of
+cascaded "inspects", a data structure can be traced.  [This, too, is a feature
+underutilized by beginners.]  (Sometimes many inspection windows get created and
+it would be nice to be able to manage them well -- closing batches of them for
+example.)
+
+Breakpoints
+
+There is one important feature almost completely lacking from the present
+debugger: the ability to set and clear breakpoints.  We would like to allow the
+programmer to point at any reasonable spot in the code pane and set a breakpoint
+there.  Then there would be a pane listing all breakpoints, and a menu for
+clearing them.  Instead, the crude facility we offer is that the programmer can
+edit and compile the method to insert an explicit breakpoint statement (user
+notify: 'any text') that when executed will create a notification window with
+the desired text as the title.  To clear the breakpoint, it is then necessary to
+re-edit and recompile the method.  There are no present aids to keeping track of
+all set breakpoints.
+
+Compilation Errors
+
+One class of errors does not use the notification machinery at all.  When the
+compiler detects a syntax error or certain other errors, it terminates
+compilation, inserts an error message into the displayed version of the method,
+and highlights the error message to dramatize it.  The programmer normally reads
+the message and then deletes it; since the error message is highlighted, it is
+in fact the selection, so deleting takes a single keystroke.  (In the case of a
+missing something, it is often possible to simply overtype the error message
+with the something.)  Then the correction is made and compilation restarted at
+programmer command from the beginning of the method.
+
+Debugging
+
+Given all this machinery, how may a programmer actually solve and correct a bug?
+Let us follow through some examples.
+
+Assume the following interface to class Player (see Chapter N):
+
+
+
+Instancewide.
+
+location	The current position of the player.
+
+angle	The current direction of the player.
+
+size	The current size of the player.
+
+costume	A picture of the player.
+
+Classwide.
+
+erase	Make the player's image disappear.
+
+display	Make the player's image appear.
+
+turn: angle	Turn the player and its image by angle degrees.
+
+go: dist	Move the player and its image by dist units.
+
+polygon: sides	Inscribe a polygon with sides sides 10 units long.
+
+script	A script for the player to perform.
+
+run	Perform the script.
+
+stop	Stop performing the script.
+
+Correct methods to make the player follow a pentagonal path are:
+
+
+
+script [self polygon: 5]
+
+polygon: sides | i
+
+[for i to: sides do
+
+[self go: 10. self turn: 360/sides]]
+
+Let us introduce various trivial bugs into polygon and see how a programmer
+might find and fix them.
+
+Error 1. Syntax Error: missing right bracket.
+
+
+
+polygon: sides | i
+
+[for i to: sides do
+
+[self go: 10. self turn: 360/sides]
+
+When compilation is attempted, the missing right bracket will be detected and
+reported by inserting an error message into the text, thus:
+
+
+
+polygon: sides | i
+
+[for i to: sides do
+
+[self go: 10. self turn: 360/sides]PERIOD OR RIGHT BRACKET EXPECTED
+
+The programmer can simply overtype the message with a right bracket and reinvoke
+compilation.
+
+Error 2. Semantic error: message not understood.
+
+
+
+polygon: sides | i
+
+[for i to: sides do
+
+[self go: 10. self turj: 360/sides]]
+
+When "run" is invoked, the message turj: 72 will be sent to the player.  The
+message will not be found in the message dictionary of its class or of any
+superclass, so the notification window of Figure 3 will appear.  The title is
+"Player does not understand 'turj:'".  The stack pane displays the name of the
+context that invoked the error, Player turj:.
+
+There are four possible causes of the "does not understand" error message: (1)
+the right message was sent to the wrong recipient; (2) the wrong message was
+sent to the right recipient; (3) the wrong message was sent to the wrong
+recipient; (4) the right message was sent to the right recipient, but the method
+was not defined by the recipient's class nor by any of its superclasses.
+
+In the present example, it is likely to be obvious to the programmer that the
+problem is a misspelling of the message name, i.e., case (2).  Two alternative
+courses of action would be:
+
+(A) Close the notification window.  Locate the definition of polygon in the
+Browser.  Select the letter "j" in turj: and overtype it with an "n".  Invoke
+"compile".  Invoke "run" to restart the simulation.
+
+(B) Invoke "frame" to grow the notification window to six panes.  Invoke "stack"
+to see the call history.  To see who called Player turj:, read the name of the
+second context on the stack: Player polygon:.  Select that context.  Watch the
+definition of polygon: sides appear in the code pane.  Select the letter "j" in
+turj: and overtype it with an "n".  Invoke "compile".  Watch the top context
+disappear from the stack as Player polygon: advances to the top.  Invoke
+"proceed" to re-execute the method and continue the simulation.
+
+In this example, the first method seems more efficient.  In more complex
+examples, it is possible that the simulation was running for minutes or hours
+before the error was encountered.  Method (B) allows it to resume from where it
+left off without repeating the portion that was error-free.
+
+Suppose it were not obvious to the programmer that a misspelling was the
+problem.  Circumstances likely to obscure the cause include: someone else was
+the author of the erroneous code; the message name was a sensible word (next
+misspelled as nest); the message name was the name of a message understood by
+other classes (block misspelled as black).  A course of action would be:
+
+(C) Invoke "frame" and then "stack" and select Player polygon: in the stack
+pane.  Read the definition of polygon: sides in the code pane and locate the
+call on Player turj:.  Consider the possible causes: (1) self the wrong
+recipient; (2) turj: misspelled; (3) both wrong; (4) definition of turj: omitted
+from self's class, Player.  Checking the cross-reference of messages would
+reveal that no class defines turj:, so the most likely causes are (2) turj:
+misspelled and (4) an omitted definition.  Reasoning about the algorithm and
+scanning of the methods defined in class Player expose the problem as (2) a
+misspelling of turn:.  Correct the spelling, compile, and proceed.
+
+Error 3. Algorithmic error: line instead of polygon.
+
+
+
+polygon: sides | i
+
+[for i to: sides do
+
+[self go: 10. self turn: sides/360]]
+
+Since the fraction is inverted, sides/360 will be 5/360 which will be 0.  Once
+"run" is invoked, the message turn: 0 will be sent to the player after each side
+is drawn.  Thus, the player will travel in a straight line instead of along a
+pentagonal path.  A programmer may consider the following possibilities: (1) go:
+is going too far, either because it has been invoked incorrectly or has been
+defined incorrectly; (2) turn: isn't turning far enough, or is turning 360
+degrees, due to either incorrect invocation or definition; (3) the script hasn't
+been compiled, or the wrong player has been told to run, or some other "didn't
+plug in the power cord" type of error has occurred.
+
+This example is simple enough that the programmer is likely to solve it in short
+order.  However, human beings often fail to see the obvious.  Let us assume that
+the person is very methodical, or that he trusts his own code too much and
+suspects that the fault lies elsewhere.  An approach to tracking down this bug
+is:
+
+Stop the simulation.  Set breakpoints at the beginning of Player go: and Player
+turn:.  Rerun the simulation.
+
+The breakpoint in go: will be encountered first.  A notification window will
+appear whose stack pane names the context Player go:.  By reframing the window
+to six panes and selecting that context, the code pane and the variable panes
+will be filled.  In the code pane, it can be seen that the argument of go: is
+dist.  By selecting dist in the context variable pane, its value, 10, will
+appear in the context value pane.  Since this is correct, invoke "proceed".  The
+notification window will disappear, the simulation will proceed for a moment,
+and the player will correctly travel 10 units.
+
+Next the breakpoint in turn: will be encountered.  A notification window will
+appear whose stack pane names the context Player turn:.  After reframing the
+window and selecting that context, it can be seen that the argument of turn: is
+angle.  By selecting angle in the context variable pane, its value, 0, will
+appear in the context value pane.  Since this is incorrect, the bug has been
+localized.
+
+Invoke "stack" to see the call history.  Select the second context on the stack,
+Player polygon:.  Find the call on turn:, select its argument, sides/360, and
+"doit".  Paste the result in a value pane and see that it is 0.  Now the bug has
+been traced closer to its source.
+
+Through the context panes, determine the value of sides; it is 5, which is
+correct.  Given that sides is right, but sides/360 is wrong, the bug must be in
+that division.
+
+After reasoning to the correct expression, 360/sides, note that sides/360 is
+still selected in the code pane, so simply overtype it by the correct
+expression.  To verify its correctness, "doit" and "paste" its value into a
+value pane.  The result, 72, seems more reasonable than 0, or may even be
+realized by the programmer to be correct.  Further verification can be obtained
+by selecting self turn: sides/360 and invoking "doit" a number of times.  A
+complete revolution of the player's image is accomplished by five "doits", which
+is the desired effect.  Edit out the breakpoint and "proceed".
+
+When the breakpoint in go: is reencountered, edit it out and "proceed" again.
+The player will follow a pentagonal path as intended.
+
+Manual Interruption
+
+An "interrupt" command is always available to stop all simulations from running
+and to create a notification window with the name of the interrupted context in
+the stack pane.  If a simulation seems to be in an improper endless loop, the
+"interrupt" command enables the programmer to halt it and examine the stack to
+determine what method is looping.
+
+Another use of the "interrupt" command is to learn about how a simulation
+written by someone else works.  Start running their simulation, and at a point
+that you would like to understand "how it is done", invoke the "interrupt"
+command.  By looking at the methods on the stack and reading their commentary,
+and by inspecting the values of the variables at each level, a lot of
+information about the workings of the simulation can be gleaned.
+
+Other tools for understanding the dynamics of a simulation have been tried
+experimentally in various versions of Smalltalk.  There is an animated
+illustrator that works like the job shop simulations (see chapter S).  The
+stations of the job shop are objects and the jobs are messages.  The program
+simulates the Smalltalk interpreter itself, and animates illustrates the passing
+of messages between objects by animation. [Peter write this section]
+
+Still other tools have been proposed but not yet implemented. [Examples --
+Adele?]
+
+Program Creation Tools
+
+In any large system, printed program specifications, readable program listings,
+and cross-reference listings are of great help to programmers.  The Smalltalk
+system attempts to provide many such services on-line.  The principle services
+are The Browser, The Listing Generator, Masterscope, The Cross-Reference
+Generator, and Findit.  Findit is an information retrieval system described in
+chapter F.  The other services will be described briefly here.
+
+The Browser is a filtering template used to view the classes and methods of the
+Smalltalk system.  It is a five-paned window as shown in Figure B.  The panes
+are named system pane, class pane, organization pane, selector pane, and code
+pane.
+
+In the most common situation, the class pane lists the names of some of the
+classes in the system.  One of those class names has been selected by the user
+and is highlighted.  The selector pane lists the names of some of the messages
+understood by the selected class.  One of those message names has been selected
+by the user and is highlighted.  The code pane displays the method used by the
+selected class to respond to the selected message.
+
+The system pane and the organization pane provide additional levels of
+filtering.  Rather than have the class pane list all the classes in the system
+(there are over 100 in the current basic system), the classes are grouped into
+ten to twenty categories, such as 'Graphical Objects', 'Numbers', 'Windows',
+'Documents', and 'Events'.  The system pane lists the names of the categories.
+When the user has selected one of the categories, the class pane displays the
+names of the classes in that category.
+
+Similarly, the messages of a given class are grouped into one or more
+categories, such as 'Initialization', 'Aspects', 'Showing', 'Editing', and
+'Private'.  The organization pane lists the names of the categories for the
+selected class.  When the user has selected one of the categories, the selector
+pane displays the names of the messages in that category.
+
+Each pane has a menu that operates on the selected item in that pane.  For
+example, the class pane menu includes a "print" command.  When it is invoked,
+the selected class generates a printed listing of its definition and methods.
+The system pane menu also has a "print" command that generates a printed listing
+of all the classes in the selected category.
+
+The Browser thus has several uses related to reading the system.  The user can
+browse through the system on-line by selecting filters in a four-level
+hierarchy.  The user can obtain off-line listings by menu invocations at certain
+levels of filtering.
+
+The Browser can be used not only to read the system but also to change it and to
+add to it.  For any message displayed in the code pane, the user can edit the
+pattern and/or the method.  Invoking "compile" in the code pane menu will check
+the syntax, and if correct, will install the method under the specified pattern
+in the specified class.  The pattern may represent a new method for the class,
+or an old one that is being revised.  There is also provision for changing the
+organization of classes in the system or of messages in any class, and for
+defining new classes; these facilities will be described shortly.
+
+While the Browser provides filtering views of the definers of system facilities,
+the Masterscope facility (named after an Interlisp facility that inspired it)
+provides filtering views of the clients of those facilities.  For example, the
+Browser can answer the question, "How does class Rectangle respond to the
+message has: point?" while Masterscope can answer the question "What methods
+send the message has: point?".  In other words, Masterscope is an interactive
+cross-reference facility.  Currently, Masterscope inquiries are conducted as a
+dialog rather than through a pane-and-menu facility.
+
+Just as one can browse on-line or obtain listings off-line, one can obtain
+cross-references either on-line or off-line.  The system has a message that
+prints a complete cross-reference of every message, what classes define it and
+what methods invoke it.
+
+Filtering templates based on the Browser have been constructed to view other
+hierarchical information structures [ref. Simulation Kit, ThingLab Browser].
+The concept can be extended to any multi-level information structure stored as a
+directed graph.  If the structure can be searched to a large number of levels, a
+class of paned windows would have to be defined that could vary its number of
+panes, or separate windows could be used, as in the inspection facility.
+
+Program Modification
+
+Defining new methods.  Incremental coding.  Spawn.  Alternatives.
+
+Defining new classes.
+
+Reorganizing.
+
+Changing class definitions.  Current restrictions.  Solutions.
+
+Approaches to program development.
+
+
+
+
+

@@ -1,0 +1,149 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 30fg
+.ds
+.nofill
+.twinch 6
+.ri
+1APPENDIX I
+.ce
+TWO WAYS OF LOOKING AT TIC-TAC-TOE [1]
+
+     The Boston Children's Museum offers it visitors unlimited access
+to a computer facility on which many games are encoded.  One of the games 
+is Tic-tac-toe, and visitors freely choose to play that game.  If such 
+a game were implemented on a computer at Logo how would it be different
+from what the Children's Museum offers ?
+
+     When a game starts on the Museum computer, the user is asked 
+to chose either noughts or crosses as his markers, to choose whether
+he or the computer should have first move, and to choose the location
+of his markers in turn.  The representation by which he specifies his
+moves is based on this grid:
+.ss
+.nofill
+2
+                1 | 2 | 3 
+               -----------
+                4 | 5 | 6 
+               -----------
+                7 | 8 | 9 
+.adjust
+
+
+.ds
+0When, in his turn, the user selects and specifies a number, his marker
+replaces the digit in the appropriate cell.  He is informed of which cell
+the computer has selected in its turn.  The outcome of play is usually
+a tie or computer victory, although a knowledgable user can win.  The
+computer appears to follow a procedure which specifies actions in this
+order:
+.nofill
+     1. win if possible.
+     2. make any forced moves.
+     3. avoid well known pitfalls.
+     4. select the highest valued empty cell (center first, corner next,
+          side last choice).
+.adjust
+Users play a game or two and are dismissed by the computer message that
+it's time for another child to have a turn.  
+
+     The issues around which a Logo alternate presentation would coalesce
+are representation, systematicity and the articulation of complementary roles.
+Representation is more than a coding convenience; it is how you are able
+to see what's important.  Contrast the noughts-and-crosses representation
+of the game below with an alternate representation for three different
+games which reduce to the same pattern of noughts-and-crosses:
+.nofill
+.ss
+2          X | X | X      C | D | B       A | D | C      B | D | C 
+     -----------    -----------     -----------    -----------
+      O | X |        b | A |         a | B |        a | A |  
+     -----------    -----------     -----------    -----------
+      O |   | O      a |   | c       c |   | b      c |   | b 
+.adjust
+
+.ds
+0The second (alphabetic) representation preserves the sequence of moves -
+an essential class of information for any user's analysis of how a victory
+was effected or  defeat  suffered.
+
+     A systematic description of the configuration of the first two moves
+possible in games leads to a surprising discovery.  Given rotational invariance,
+only twelve different forms of games are possible.  Of those twelve configurations
+of opening moves, seven permit an expert first player to win directly; others
+permit traps to be set for the unwary opponent.  Further, five of the twelve games
+are rarely encountered, so that what is required for practical mastery of
+Tic-tac-toe is a very compact body of knowledge.  (See Figure I-1).
+
+     An analysis of the twelve opening configurations and their relation
+to forks shows that the crucial move in expert play is the first player's
+second move.  The expert will use this move to force his opponent's subsequent
+move to a cell which will not interfere with his linkage of two "chances-to-win"
+into a fork by his third move.  The logic of the expert turns the "forced moves"
+of defensive play to offensive use by actively controlling interaction with
+the opponent.
+
+     What could a child derive from a game so formulated ?  Access to and
+comprehension of expert play can provide a vision of the power of knowledge
+in a domain of the child's own experience and his own social world.  This
+formulation focusses on the central roles of representation and systematicity
+of thought in the power of knowledge.  The expert's logic, wherein he controls
+the opponent's moves, can show how critical is direct consideration of the
+other actors to reaching goals in any activity with complementary roles. 
+
+     The general conclusion to be drawn is that these features of an intellectually
+deep game formulation derive from Logo's long engagement with the issues of
+Artificial Intelligence and Genetic Epistemology.  What Knute Rockney said
+matters of football is true of computer ames as well:
+.nofill
+.ss
+.indent 10
+1It's not whether you win or lose.
+It's how you play the game.
+.indent 0
+0
+
+[1]. This discussion presents a viewpoint developed at greater length
+    in ONE CHILD'S LEARNING: TIC-TAC-TOE (in preparation) 
+    by R. W. Lawler
+.page
+.ce
+1FIGURE I - 12
+.nofill
+.ce
+The capitals move first in all games
+
+MIDDLE OPENINGS - 
+
+   | - | B     b |   | C 
+-----------   -----------
+ - | A | -       | A |   
+-----------   -----------
+ a | - |         | a | B 
+expert trap   expert wins
+
+CORNER OPENINGS -
+
+ A | * | C     A |   | *     A |   | a     A | a | *     A |   | - 
+-----------   -----------   -----------   -----------   -----------
+ b | * |       b | C | a     b | * |       b | * |         | a |   
+-----------   -----------   -----------   -----------   -----------
+ B |   | a     B |   | *     B | * | C     B |   | *     - |   | B 
+expert wins    expert wins   expert wins   expert wins   expert trap
+
+SIDE OPENINGS - 
+
+ a |   | -     * | a | *     B |   | a       |   | -       | - |   
+-----------   -----------   -----------   -----------   -----------
+ A |   |       A | B | b     A | C | *     A | a | -     A | - | a 
+-----------   -----------   -----------   -----------   -----------
+ - | B | -     C |   |       b |   | *       |   | B       | B |   
+expert trap   expert wins   expert wins   expert trap   expert trap
+.adjust
+
+0NOTES: if the opponent move where a dash is shown, he can be forked.
+    the first player's second move (B) must prevent the opponent's
+       second move (b) from interfering with the link (C) which
+       creates the fork.

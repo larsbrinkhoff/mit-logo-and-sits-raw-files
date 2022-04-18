@@ -1,0 +1,107 @@
+-*-text-*-
+
+This file contains information on work currently being done by the
+Critter Group of the Lamplighter Project. The Critter Group is
+implementing a sprite-modelled, class-modelled world-creating system
+in LISPM for use by children (kites are for sprids!).
+
+Critters are a special case of sprites that will be suited for
+world-creation by children on the Lisp Machine. They will have just a
+bit more hair (sic) than sprites, as is appropriate on a powerful
+machine. For example, we hope to eventually make it possible for
+critters to change their shape and size as well as their color, and it
+will be possible for them to change their figure orientation
+independently of their heading. This will allow for more interesting
+rules governing their motion; for example, it would allow inertia to
+be implemented if the child desired it.
+
+Critters, like sprites, will be governed by user-specified rules.
+These rules will be specified in a format that will be easily
+understood by the user; thus, we hope to encourage children who use
+computers to play games to create their own games and thereby exercise
+a greater degree of control over the machine. We hope to help, in the
+words of Stewart Brand, computers to come to the people.
+
+We hope to build a system whose user interface is as simple as
+possible, so that worlds can be created with ease, yet as powerful as
+possible, so that, if a child can figure out rules for a game that can
+be played with the aid of a computer, s/he will be able to do it on
+the Critter system - whether the game be Spacewar or chess.
+
+
+File: ai: logo; critpc >
+
+This file contains the source code for creating sprite pictures.
+
+The top-level function will be
+
+(create-critter-picture array-name &opt filename)
+
+which, when called, will cause a cursor to be shown on the screen. The
+motion of the cursor will be controlled by the Lisp Machine mouse. The
+cursor (henceforth to be referred to as the brush) will be of variable
+width (colors and textures can be added later; as of now, you can have
+any color you want, as long as it's solid black) and will paint,
+erase, or do nothing as it moves across the screen.
+
+Once the user is satisfied with the critter-picture, an interrupt can
+be hit, at which point create-critter-picture will store the created
+critter-picture in a screen-buffer-array (an array of type
+art-tvb-pixel) called array-name and in the file specified by filename
+(if filename was null, the critter will not be stored in a file).
+
+The array is to occupy only part of the screen: space should be left
+on the bottom. Specifically, the array should occupy, on a new-type
+monitor, 796 lines by 768 points.
+
+
+File: ai: logo; critmv >
+
+This file will contain the source code for moving critter-pictures
+around on the screen. As of now, it will not include primitives for
+moving gradually, to use DIRECTOR terminology, because we do not see
+that such primitives will be useful before we reach the user interface
+level.
+
+The functions included will be:
+
+(change-figure-orientation name o)
+
+The function change-figure-orientation will change the figure
+orientation of the critter with name name to (figure-orientation + o)
+mod 360. The figure orientation can vary between 0 and 359 degrees;
+overflows wrap.
+
+Note that this does not change the critter's heading (the direction of
+its motion); it only rotates the figure.
+
+In effect, what change-figure-orientation will be doing is erasing the
+current critter-picture associated with name from the screen, rotating
+a copy of the critter-picture the proper amount, and redrawing it. It
+will also change the figure-orientation value in the structure that
+defines the critter. Note that we start from the permanent
+critter-picture array every time we rotate the critter-picture; this
+is because the rotating algorithm has a deteriorative effect on the
+array.
+
+(set-position name x y)
+
+The function set-position will erase the critter-picture associated
+with name from the screen, add x to its current x-position and y to
+its current y-position, and then redraw it in the new position. It
+will also make the corresponding changes to name's structure.
+
+(move-incrementally name x y o)
+
+The macro move-incrementally will call set-position and
+change-figure-orientation to simultaneously reset the position and
+figure orientation of the critter with name name.
+
+The macro move-incrementally exists to simplify the moving of
+critters; at this level, one call to move-incrementally will be made
+at each tick for each moving critter. The velocity (angular and
+straight-line) of a critter will be a function of the change in x and
+in y.
+
+It is to be noted that at this level we are not concerned with the
+heading of a critter; this would be redundant.

@@ -1,0 +1,40 @@
+tps=177564
+tpbrv=64
+rfcs=177460
+rfwc=177462
+rfca=177464
+rfda=177466
+rfbrv=204
+
+.=0
+clr -2
+wait
+br .-2
+.=tpbrv
+0
+0
+.=tps
+100
+.=rfbrv
+40000
+0
+0
+0
+0
+0
+;above to make time
+.=2000
+	reset
+	mov #1000,%6
+	mov #4000,rfda
+	mov #40000,rfca
+	mov #170000,rfwc
+	mov #105,rfcs
+	wait
+
+.=tpbrv
+2000
+.=tps
+100
+.end
+

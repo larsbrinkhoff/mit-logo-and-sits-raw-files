@@ -1,0 +1,795 @@
+.xgp
+.font 0 33fr
+.font 1 31vg
+.twinch 7
+.dummy 
+.he1
+In Greg;Dan >
+.he2
+Curriculum Materials
+.ds
+.adjust
+.ri
+1Dan Watt  February 14, 1980
+
+
+
+Turtle Geometry I     second draft
+
+The major element of the Turtle Geometry I will be a set of " Projects Booklets."  They will
+be supported by a set of reference materials, which might all be in one booklet, on cards,
+in separate booklets, etc.  A general preface to the reference materials will explain
+how they can be used with the Projects Booklets.  I now see the following general outline
+for user oriented materials:
+
+LOGO Projects Booklets in Different Areas
+
+Introductory Booklet
+
+.nofill
+I - LOGO Systems Parts List
+II - What Can The Turtle DO?
+III - Using the Computer Keyboard
+IV - Getting Started in Turtle Talk
+
+     A - Controlling the turtle
+     B - Teaching the computer a new command
+     C - Editing a procedure
+     D - Saving procedures on a cassette
+
+Reference Material
+
+V - More Turtle Talk
+
+     A - RCIRCLE, LCIRCLE, RARC, LARC
+     B - HT, ST, WRAP, NOWRAP
+     C - HOME. SETXY, SETHEADING, XCOR, YCOR, HEADING, HERE
+
+VI - REPEAT
+VII - Using Procedures as Subprocedures
+
+      A - Using subprocedures as building blocks
+      B - Using subprocedures in planning
+      C - The idea of a "procedure hierarchy tree"
+VII - Recursion
+IX - Procedures with Inputs
+X - Conditionals
+XI - Naming "messages" to be stored by the computer, 
+     changed or used by procedures, etc.
+
+Debugging
+Interpreting Error Messages
+Debugging Tools
+Debugging Strategies
+A Collection of Common Bugs
+
+Keyboard Reference Manual
+
+
+I - LOGO System Parts List
+                                
+.block 31
+.tabfnt 0
+.nofill
+1Part                        What it Does
+  
+the Keyboard            You type commands at the keyboard to tell the
+                       computer what to do.
+
+The TV Screen           The TV Screen shows the things you type, and many
+                       of the things you tell the computer to do.      
+
+the Computer            The computer changes the instructions you type
+                       at the keyboard into electronic signals, and carries
+                       out your commands.
+
+the Cassette            The cassette recorder stores your computer
+ recorder              programs on magnetic cassette tapes.
+
+LOGO                    LOGO is a computer language--a complicated 
+                       computer program which changes your words into
+                       electronic signals for the computer.
+
+The Turtle              The Turtle is a computer controlled electronic
+                       robot which appears on your TV screen.  It responds     
+                       to LOGO commands which you type on the Keyboard.
+                       The Turtle can move, turn and draw lines on the TV
+                       screen.
+
+The Turtle's Pen        The Turtle uses its pen to draw lines on the TV
+                       Screen.
+
+The Turtles Head        The Turtle's Head shows the direction in which
+                       the Turtle will move if you command it to go
+                       forward.*
+.tabfnt 0
+.spw 12
+.adjust
+
+Some other parts of your LOGO system have not yet been invented.
+
+.block 14
+.tabfnt 0
+.nofill
+1Procedures              Procedures are new commands that you teach the
+                       computer by giving a name to a series of LOGO
+                       commands.  When you type the procedure's name, the
+                       computer carries out the entire series of commands.
+                       In this way you can make the Turtle perform very
+                       complicated actions.
+
+
+Messages                Messages are pieces of information that you store
+                       by giving a name to a box inside the computer
+                       in which the message will be kept until you need it.
+                       When you type the box's name, the computer will
+                       send you the message, change the message, or use it in
+                       a procedure.*
+.tabfnt 0
+.spw 12
+.adjust
+.page
+II - Using the computer keyboard (Keyboard diagram here?)
+
+     A computer keyboard is someting like an electric typewriter.
+When you type on the keyboard, the characters that you type will
+appear on the TV Screen.  The small rectangle that appears on the
+screen is called a cursor.  The cursor shows you where the next
+character will be typed.  The cursor moves one position every time you
+type a character.  Special keys allow you to send a command to the
+computer; to stop the computer's action; to move the cursor around so
+that you can type in a different place on the screen;   
+or to rub out something you have already typed.  Here are some of the
+special keys on your keyboard.
+
+.block 31
+.tabfnt 0
+.nofill
+1Purpose             Key-Label     What It Does
+
+"do-it"                 enter           This key sends a command to the
+                                       computer.  Type the do-it key when 
+                                       you have finished typing a COMMAND
+                                       and you want the computer to "do it."
+                                       On some keyboards the do-it key is 
+                                       labeled "enter" or "return."
+
+space                   long bar        The space bar leaves a space when 
+                                       you type.
+
+shift                   shift           This allows you to do special
+                                       things on the keyboard, or to
+                                       type extra characters with each
+                                       key.  Hold the shift key down
+                                       while you type
+                                       another key at the same time.
+
+rubout                  shift-U         This rubs out the last character that you typed.
+
+stop                    shift-G         This makes the computer stop whatever it is
+                                       doing and wait for your next command.
+
+cursor-up               shift-XX        This moves the cursor up one line.
+
+cursor-down             shift-XX        This moves the cursor down one line.
+
+cursor-right            shift-XX        This moves the cursor to the right.
+
+cursor-left             shift-XX        This moves the cursor one space to the left.*
+.tabfnt 0
+.spw 12
+.adjust
+.page
+III - Things That The Turtle Can Do
+
+.block 9
+     The turtle is very good at drawing pictures.  By commanding the turtle to move
+forward and back, and to turn to its own right and left, you can make it draw pictures
+on the TV screen.  Here are the simplest things the Turtle can do:
+.sp 6
+.block 5
+.tabfnt 0
+.nofill
+1FORWARD 100             This commands the turtle to move forward 100 
+                       turtle steps.  With its pen down, 
+                       it draws a line as it moves.
+.sp 6
+*
+.tabfnt 0
+.spw 12
+.adjust
+.block 7
+RIGHT 100               This time the turtle turns to its own right
+                        l00 degrees.
+.sp 6
+
+.block 8
+PENUP                   This tells the turtle to lift its pen up.  The pen will 
+                        stay up until you type PENDOWN.
+                
+
+.sp 6
+
+
+.block 7
+FORWARD 100             Now the turtle moves forward 100 Turtle steps
+                        without drawing a line.
+.sp 6
+
+.adjust
+Using combinations of simple Turtle commands, you can make the Turtle draw 
+simple shapes;
+
+
+or put them together into more complicated drawings;
+
+
+or make exciting geometric designs;
+
+
+or draw stick figures and cartoons.
+.page 
+IV - Getting Started in Turtle Talk
+
+A.  Controlling the Turtle
+
+    FORWARD and BACK are commands which make the Turtle move, and RIGHT and LEFT make 
+the Turtle turn.  FORWARD, BACK, RIGHT and LEFT need inputs: numbers which tell the 
+Turtle how far to move or how many degrees to turn.  You can type like this:
+.nofill 
+
+        FD 100  
+        RT 45
+        BK 70
+        LT 45
+
+.adjust
+     Be sure to type a space between the command and its input number, or the computer
+will be confused.  When you are ready to tell the computer to carry out a command, type
+the do-it key.
+
+     These Turtle commands do not need inputs.  Just type the command and the do-it key.
+
+.nofill
+
+CS      This clears the Turtle's screen and returns the Turtle to the center
+        of its screen.
+
+PU      This lifts the Turtle's pen up, so that it won't draw when it moves
+        forward or back.
+
+PD      This puts the Turtle's pen down so that it will draw.
+
+.adjust
+Things to try:
+    Experiment with the Turtle.  Type FD, BK, RT and LT, with a lot of different
+inputs.  Here are some more suggestions of things to do with the Turtle:
+
+.ss
+Make the Turtle draw a square.  Or a rectangle.  Or a triangle.
+
+Make an unplanned drawing using a variety of Turtle commands. 
+
+Find the size of the Turtle's screen.
+
+Pick a point on the screen and move the Turtle there. 
+
+.ds
+Errors to try.  Tyype these "commands" and see what happens:
+.nofill
+FD100
+FD
+100
+FD L00
+
+Type your name, or ask the computer a question.
+
+.adjust
+Page XXX of the Introductory Turtle Geometry Project Booklet has many more ideas of 
+things you can do with the turtle.
+
+Debugging - What happens if the computer gets confused?
+
+When the computer can't understand what you want it to do,
+it sends you an error message.  This is the computer's way
+of telling you why it couldn't do what you wanted.  Many
+error messages are caused by typing errors (like forgetting
+a space and typing FD100 instead of FD 100).  Everyone who
+uses a computer makes mistakes like this.  The computer
+doesn't care if you make mistakes.  It just prints an error
+message and waits for you to type another command.  An
+error in a computer procedure or command is called a bug.
+Correcting errors is called debugging.  You will learn a lot about bugs and 
+debugging as you use the computer.  For information about the most common bugs, and for
+ideas about debugging, you can read the DEBUGGING book.  This book may help you if you
+get stuck while using the computer.
+
+.block 5
+B.  You can teach the computer to remember how to draw a particular design without
+typing in all the steps each time.  This is called defining a procedure.  The name
+of the procedure you define will become a new LOGO word that is part of your own
+private LOGO vocabulary.
+
+.block 8
+Here is an example, which you can copy if you want to:
+.nofill
+TO  FUNNYTHING
+FD 100
+RT 120
+FD 45
+LT 35
+BK 75
+END
+
+After you type END, the computer will print
+.block 5
+FUNNYTHING DEFINED
+.adjust
+Now, every time you give the command FUNNYTHING, the computer will carry out the
+procedure you have defined.
+
+Things to try:
+Copy FUNNYTHING, or make up your own procedure with a different name.  Once you have
+taught the computer a new procedure, type its name several times to see what happens.
+
+Teach the computer to draw a square or triangle. Repeat that procedure several times.
+
+There are now many different things you can teach the computer.  You will find ideas
+on pages xx to xx of the Introductory Turtle Geometry Projects Booklet.
+
+Debugging: If you have problems teaching new commands to the computer, you may find pages
+xx to xx of the DEBUGGING booklet helpful.
+        
+.block 5
+C.  Editing a LOGO Procedure
+
+There are several reasons why you might want to change a LOGO procedure:
+
+.indent 2
+.undent 2
+- You might have made a typing error, so that the computer doesn't understand
+what you typed;
+
+.undent 2
+- You might have left out a command, or typed in a wrong command, so that the 
+computer does not do what you intended;
+
+.undent 2
+- The computer might do exactly what you intended, but you would now like the 
+procedure to behave differently.
+
+.indent 0
+Suppose you want to make a change in the procedure, FUNNYTHING.
+
+Type    TO FUNNYTHING  (do-it)
+
+just as you did when you taught FUNNYTHING to the computer for the first time.  The
+computer will respond by printing:
+
+YOU HAVE ALREADY TOLD ME HOW TO FUNNYTHING. DO YOU WANT TO EDIT IT?
+
+If you type Y<do-it>  (meaning "yes") the computer will print out the procedure, and wait
+for you to make any changes you might want to make.  If you type anything else, the computer
+will simply wait for another command.
+
+If you type Y <do-it>, the computer will print out the procedure with the steps numbered:
+
+.nofill
+.block 6
+TO FUNNYTHING
+1 FORWARD 100
+2 RIGHT 120
+3 FORWARD 45
+4 LEFT 35
+5 BACK 75
+
+.adjust
+The cursor will appear at the top left of the procedure.  You can use special keys to move
+the cursor to the line you want to change.
+
+Changing a line of a procedure:
+To change line 3 from FORWARD 45 to FORWARD 35 (for example), use the cursor-down key
+(shift-xx) to move the cursor to line 3.  Then use the cursor-right key (shift-xx)
+to move the cursor to the end of the line:
+.nofill
+3 FORWARD 45
+Use the rubout key (shift-xx) twice to erase the 45:
+3 FORWARD
+You can now type 35:
+3 FORWARD 35
+If this is the last change you want to make, type (shift-xx) 
+and the computer will print
+FUNNYTHING DEFINED.
+
+(similar sections will be added when we know more about how 
+the editing keys function)
+
+Rubbing out a line of a procedure
+Adding a new line to a procedure
+Changing a procedure's name
+Etc.
+
+.block 5
+V - More Turtle Talk
+
+A. Procedures that draw circles and arcs.
+         Special procedures, RCIRCLE, LCIRCLE, RARC and LARC make the turtle draw
+circles and arcs.  Like FORWARD and RIGHT, each circle and arc command needs an input.
+
+.tabfnt 0
+.nofill
+RCIRCLE 20      Makes the Turtle draw a circle of radius 20, curving
+                to the right.
+
+LCIRCLE 20      Makes the Turtle draw a circle of radius 20, curving
+                to the left.
+
+RARC 50         Makes the Turtle draw a quarter-circle of radius 50, curving
+                to the right.
+
+LARC 50         Makes the Turtle draw a quarter-circle of radius 50, curving 
+                to the left.
+
+.adjust
+Pages ----- of the Introductory Turtle Geometry Projects Booklet show many
+ projects that can be carried out using circle and arc procedures. 
+
+.nofill
+B. Some special Turtle tricks
+     1.  Making the Turtle "invisible"
+
+.nofill
+The LOGO command HT (abbreviation for HIDETURTLE) makes the Turtle's image
+ disappear from the screen.  To see the Turtle again, type ST (SHOWTURTLE).
+
+Example:
+.block 5
+.sp 4
+.spread
+/SQUARE/HT/ST
+
+     2.  Making the Turtle "wrap around the screen."
+
+.adjust
+The LOGO command WRAP makes it possible for the Turtle to go off one edge
+of the screen, and come back in on the reverse side, just as though its path
+had been "wrapped" around the screen.  NOWRAP prevents the Turtle from
+wrapping around the screen.
+Example:
+.block 7
+.sp 4
+.spread
+/FORWARD 100/WRAP/FORWARD 100/OUT OF BOUNDS
+
+C. Moving the Turtle directly to a point:
+     l.  The command HOME sends the Turtle directly back to the center of the screen:
+.block 6
+.sp 3
+.nofill
+                HOME                    PENUP HOME
+.adjust
+.block 12
+     2.  The Turtle can be moved directly to any other point on the screen using
+the command SETXY.  SETXY needs two inputs--the x and y coordinates of the point
+to which the Turtle is to move:
+
+.spread
+/CLEARSCREEN/SETXY 100 50/SETXY 100 (-50)
+
+.spread
+/SETXY -100 0/SETXY 0 (-100)/HOME
+
+
+SETXY does not change the direction in which the Turtle is heading.  If the second input
+to SETXY is negative, it must be enclosed in parentheses.  Try typing SETXY 100 -50.
+Then type SETXY 100 (-50).  Try a lot of different inputs to SETXY.
+.nofill
+     3.  SETHEADING can set the direction in which the Turtle is heading without
+changing its position, and without using RIGHT or LEFT.  SETHEADING needs one input -
+the angle in which the Turtle is to be heading.
+Examples:
+
+
+
+CLEARSCREEN             SETHEADING 45           SETHEADING 180
+
+
+SETHEADING 300          SETHEADING 360          SETHEADING -90
+
+.adjust
+An interesting fact about SETHEADING is that the same effect can be obtained with
+different inputs.  For example, SETHEADING 0 has the same effect as SETHEADING 360;
+SETHEADING 270 has the same effect as SETHEADING-90.
+
+Try lots of Inputs to SETHEADING.
+
+     4.  XCOR, YCOR, HEADING and HERE are LOGO commands which make the computer
+output a message.
+XCOR makes the computer output the Turtle's x coordinate.  YCOR makes the computer
+output the Turtle's y coordinate.
+HEADING makes the computer output the Turtle's direction.
+HERE makes the computer output a list of all three numbers that give the Turtle's state:
+its x and y coordinates and its heading.
+
+Things to try:
+Move the Turtle somewhere on the screen.  Then type:
+
+PRINT XCOR, PRINT YCOR, PRINT HEADING, PRINT HERE
+
+Since XCOR, YCOR and HEADING output numbers are messages, they can be used as inputs
+to something else.
+FORWARD XCOR will move the Turtle forward a distance equal to its current x coordinate.
+
+.block 9
+.nofill
+Type these commands:
+
+SETXY XCOR 100
+SETXY XCOR 50
+SEXTXY XCOR+10  100
+SETXY XCOR YCOR
+SETXY XCOR +YCOR  100
+SETHEADING HEADING + 90
+etc.
+
+.adjust
+     5. Naming a point
+         You can give a name to a point on the TV screen, and use the command
+SETTURTLE (abbreviated SETT) to move the Turtle directly to the point at a later time.
+
+One way to name a point is to tell the computer a list of three numbers for the x, y
+and heading coordinates of the point:
+
+CALL [100 50 90] "Point1
+
+The command CALL makes the computer store the message  100 50 90 in a "box" named
+"POINT1. SETT :POINT1 tells the computer to use the message stored in the box 
+named "POINT1 as input to the command SETTURTLE.
+
+Another way to name a point is to move the Turtle to a particular point first.  When
+the Turtle is at the point you want to name, type:
+.nofill
+CALL HERE "POINT2
+.adjust
+This makes the computer store the list of three numbers output by the command HERE,
+in a "box" whose name is "POINT2.  If you type SETT :POINT2, the computer will use the
+message stored in the box named "POINT2 as input to the command SETTURTLE.
+
+Things to try:
+Use both methods of naming points to name a lot of points on your screen.  Use
+SETTURTLE to move the Turtle around to the different points.
+
+.block 5
+VI - Using the REPEAT command
+
+The LOGO command REPEAT tells the computer to repeat a command or a list of commands, a
+specified number of times.
+REPEAT needs two inputs.  The first is a list of commands that the computer is to 
+repeat.  The second is the number of repeats.
+Examples:
+.block 8
+.sp 4
+.nofill
+TO SQUARE                               TO STAR
+REPEAT [FD 100 RT 90]   4               REPEAT [SQUARE RT 60]   6
+END                                     END
+.adjust
+The first input to REPEAT must be enclosed in brackets   .  It may contain as many commands
+as you like.
+
+Things to Try:
+Pages xxxxx of the Introductory Turtle Geometry Projects Booklet shows some
+Turtle designs that can be drawn using REPEAT.
+
+.block 5
+VII - More About Using Procedures
+A. Using Subprocedures as "building blocks."
+
+Once you have taught the computer a new command, that command becomes part of the computer's
+vocabulary.  It can be used as a subprocedure when you teach the computer another command.
+
+For example, a girl named Kathy taught the computer to draw a box:
+.page
+.nofill
+TO BOX
+FORWARD 100
+RIGHT 90
+FORWARD 100
+RIGHT 90
+FORWARD 100
+RIGHT 90
+FORWARD 100
+END
+
+.ri 
+BOX
+
+Kathy used BOX as a subprocedure to make this design.
+
+.block 5
+TO WINDOW
+BOX
+BOX
+BOX
+BOX
+.ri
+WINDOW
+
+She also used BOX to make these designs:
+.block 18
+.sp 17
+.spread
+/CHAMP/DOUBLECHAMP
+
+
+Kathy also taught the computer to draw a triangle this way:
+
+.block 10
+TO TRIANGLE
+LEFT 90
+FORWARD 100
+RIGHT 120
+FORWARD 100
+RIGHT 120
+FORWARD 100                     
+
+.ri
+TRIANGLE
+By combining her BOX and TRIANGLE procedures she made the Turtle draw a HOUSE:
+.block 6
+.sp 4                   
+.ri
+HOUSE
+
+She then used HOUSE to create another simple design:
+
+.block 5
+TO HOUSE4
+HOUSE
+HOUSE
+HOUSE
+HOUSE
+.sp2
+.ri
+HOUSE4
+.block 14
+Two Triangles made a "butterfly" and six butterflies made a kind of "star.
+
+TO BUTTERFLY            TO 6BUTTERFLY
+TRIANGLE                BUTTERFLY
+TRIANGLE                BUTTERFLY
+                        BUTTERFLY
+                        BUTTERFLY
+                        BUTTERFLY
+                        BUTTERFLY
+                        BUTTERFLY
+
+
+.ri
+6BUTTERFLY
+
+.adjust
+Things to Try:
+Pages xxxx of the Introductory Turtle Geometry Projects Booklet will give you
+some ideas of designs that can be built using subprocedures as "building blocks."
+
+B. Using Subprocedures and Superprocedures in Planning
+     If you plan to have the computer carry out a complex project such as drawing
+a face, it is useful to make a plan for the project in advance.  Try to anticipate all the
+parts you will need, and make each part a subprocedure.  Then you can write a 
+superprocedure to draw the entire project.  After teaching the computer the superprocedure,
+you can teach it each subprocedure one by one.
+
+Examples:
+Suppose you want the computer to draw this rocket:  You might divide the project into four
+parts:
+
+.nofill
+.block 6
+TO ROCKET
+CONE
+BODY
+LEFTFIN
+RIGHTFIN
+.spread
+/CONE/BODY/LEFTFIN/RIGHTFIN
+
+.adjust
+When you teach each part to the computer separately, you might fnd that you need
+additional commands to locate each part of the rocket in the right place.  You
+might eventually change your rocket proceedure:
+
+.nofill
+.block 9
+TO ROCKET
+SETCONE
+CONE
+SETBODY
+BODY
+SETLEFTFIN
+LEFTFIN
+SETRIGHTFIN
+RIGHTFIN
+
+.adjust
+In this superproceedure, SETCONE moves the turtle to the right location to draw the
+cone. Setbody moves the turtle to the right location to draw the body, etc.
+
+Here are some other examples:
+Kevin made the computer draw a "turtle" using four subprocedures:
+.sp 5
+.nofill
+SHELL           HEAD            FOOT            TAIL
+
+
+
+                        TURTLE
+
+.adjust
+Since the "Turtle" has four feet, the subprocedure FOOT was used four times in
+Kevin's superprocedure, TURTLE.
+This CLOCK used seven subprocedures:
+OUTSIDE, MINUTEHAND, HOURHAND, TWELVE, THREE, SIX and NINE.
+.block 6
+.sp 4
+.ri
+CLOCK
+
+Donald drew a complicated HEAD, using a superprocedure and many subprocedures:
+
+.nofill
+.block 10
+TO HEAD
+BOX
+EYES
+NOSE
+MOUTH
+BEARD
+HAIR
+EARS
+HAT
+FLOWER
+
+.adjust
+Some of these subprocedures also had subprocedures of their own.  BEARD had a
+subprocedure called STRING; HAIR had a subprocedure called HAIRY; EARS had a
+subprocedure, EAR; HAT had a subprocedure LBOX; and FLOWER had a subprocedure,
+POLY.
+
+Things to try:
+Make your own plan for a complicated LOGO project.  Figure out all the parts you'll
+need and write a superprocedure.  Then write each of the subprocedures.
+
+
+Pages xxxx of the Introductory Turtle Geometry Projects Booklet have many more
+suggestions of projects you can make using subprocedures in planning.
+
+C. Using a Procedure "Tree"
+     A "procedure tree" is a list that you can make showing all the subprocedures
+in a project, and showing which procedures "control" each subprocedure.  A
+procedure tree can be a useful way to think about a project while you are working on it, or
+when you are trying to explain it to someone.
+Examples:
+Kathy's procedure HOUSE, used BOX and TRIANGLE as subprocedures.  The procedure
+tree for HOUSE looks like this:
+.nofill
+.block 4
+        HOUSE
+     BOX      TRIANGLE                  
+                                HOUSE
+
+.adjust
+Another procedure, HOUSE4, used HOUSE four times:
+
+.ce
+figure
+
+The procedure tree for Donald's HEAD looks like this:
+
+.ce
+figure
+
+
+Things to try:
+Take one of your own projects.  List all the subprocedures.  Then draw a procedure
+tree for the project.

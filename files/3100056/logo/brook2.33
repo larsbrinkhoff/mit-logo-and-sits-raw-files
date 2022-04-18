@@ -1,0 +1,111 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.dummy @
+.he1
+LOGO Description
+.he2
+BROOK2
+.ds
+.adjust
+.ce
+1LOGO Learning Laboratory -- Basis For Curriculum
+
+0To provide a context for "learning by doing", we link up various
+devices to a computer so that a child can, via computer, "command" an
+output device to carry out an action.  One device we have used is a
+mechanical "turtle" capable of moving forward or back in a particular
+direction (relative to itself) and of rotating about its central axis.
+It has a retractible pen on its underside which can be in two states
+called PENUP and PENDOWN.
+
+The mechanical turtle can be replaced by a @@@@@@@on a display screen,
+and this is made to "act" by typing commands.  At any time the turtle
+is set at a particular place and facing a particular direction.
+.block 10
+.sp 8
+.ce
+Figure 1If the pen is down, then as the turtle moves around, it leaves
+a trace, and so arbitrarily complex patterns can be drawn.  For
+example, the following commands will cause the turtle to draw figure 2.
+.indent 2
+.nofill
+.block 10
+PENDOWN
+FORWARD 100
+LEFT 120
+FORWARD 100
+LEFT 120
+FORWARD 100
+
+
+.ce
+Figure 2 
+.adjust
+.indent 0
+
+There are many paths to take from this point depending on the
+individual characteristics of the learner (and of the teacher).  For
+example, the set of instructions required to draw a triangle can be
+wrapped up into a bundle as a PROCEDURE and given a NAME.  Different
+sizes and orientation of triangle can be drawn by introducing a
+variable parameter for the procedure.  This immediately leads to the
+discovery that other polygonal shapes can be drawn by selecting
+appropriate values for the input variables.
+
+.nofill
+.BLOCK 25
+TO TRI :ANGLE :SIDE	TO POLY :ANGLE :SIDE
+10 FORARD :SIDE		10 FORWARD :SIDE
+20 LEFT :ANGLE		20 LEFT :ANGLE
+30 FORWARD :SIDE	30 POLY :ANGLE :SIDE
+40 LEFT :ANGLE		END
+50 FORWARD :SIDE
+END
+.SP 8
+.ce
+POLY 90 100	POLY 60 50
+.SP 8
+.SPREAD
+/POLY 9 5/POLY 144 100/POLY 156 100
+
+.adjust
+Notice that in addition to learning computer programming, the student
+is learning mathematical ideas -- he is exploring the notion of
+ANGLE, POLYGONS, RECURSION and so on.
+
+.block 5
+1Problem Solving
+
+0Repeated calls of the same triangle procedure were named by children
+currently doing LOGO in the Brookline public school system as:
+.block 12
+.sp 10
+.ce
+(a) butterfly		(b) flower
+
+This leads to an important idea:  use what you have learned.
+
+Complex patterns can be seen as consisting of familiar parts.  For
+example a house can be broken into:
+.block 9
+.sp 7
+.ce
+triangle	square		house
+
+This introduces a basic PROBLEM-SOLVING heuristic i.e. break up a
+complex problem into its subparts.  The HOUSE procedure can be built up
+out of a TRIANGLE sub-procedure and a SQUARE sub-procedure.  Putting
+together these procedures produces an unexpected result.
+.block 8
+.sp 8
+This is because when the triangle was completed the turtle was left
+facing in the direction of the arrow.  So this introduces the idea of a
+BUG, which can be easily fixed or DEBUGGED because it is so easy to
+follow what is happening -- the relation between the ACTION and its
+CONSEQUENCE is very EXPLICIT.
+
+A glimpse of the wide range of activity possible using this LOGO
+language is given in the document "Twenty Things to Do With A Computer"
+which is appended (@@@@@@).
+

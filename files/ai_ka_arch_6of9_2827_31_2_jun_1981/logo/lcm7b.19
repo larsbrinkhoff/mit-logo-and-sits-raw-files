@@ -1,0 +1,209 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 2
+.fi b
+--DRAFT--
+
+LOGO Curriculum Materials
+
+1/23/81
+.sp 5
+1BOOKLET VIIb
+
+DYNAMICS0
+
+(Apple Logo Version)
+.sp 6
+In this booklet you will see how to make the turtle behave as though it was a rocket ship, moving through outer space. Several games and project ideas are suggested.
+
+.chapter "bold(What is a DYNAMIC turtle?)"
+
+
+A dynamic turtle or   bold(DYNATURTLE)   behaves as though it was a rocket ship in outer space. To make it move you have to give it a kick by "firing a rocket." It will then keep moving in the  same  direction until you give it another kick.  When you change its direction, it does not move in the new direction until you give it a new kick. Its new motion will be a combination of the old motion and the motion caused by the new kick. You may need to experiment with dynamic commands for a while before you understand how the  dynaturtle works.
+
+.chapter "bold(A dynaturtle target game.)"
+
+.section "bold(Playing the target game.)"
+
+To start playing the target game, you will have to READ a disk file in which the procedures are stored. (If You do not have a disk with the procedures, they can be copied from the listings given in section 2.3. After copying them, they should be saved on a disk in a file called  "TGAME.)
+
+Before you start you will need to find the disk with dynamics procedures on it. Read the procedures into the computer's working memory by typing:
+
+	READ   "TGAME
+
+When you type the command,
+
+	TGAME
+
+ a circular target will be displayed in the upper right hand corner of the screen, and the blinking  dynaturtle will appear in the lower left hand part of the screen.
+.sp 12
+ The object of the game is to make the dynaturtle reach the target.  You can control it by typing certain keys on the keyboard:
+
+
+.nf l
+.keep
+If you type   <R>   the turtle will turn right 30 degrees.
+If you type   <L>   the turtle will turn left 30 degrees.
+.fi b
+If you type   <K>   the dynaturtle will be given a sudden kick in the direction it is heading. This will make it increase its velocity in that direction.
+
+.end_keep
+
+Once you have started the dynaturtle by typing  <K>  any additional kicks will produce a motion that is a combination of the old motion, and a new motion caused by the kick. Because of this combined motion, people sometimes find the behavior of the dynaturtle a little confusing at first. With a little practice you should be able to make it hit the target regularly.
+
+When you hit the target, a message is printed, telling you the dynaturtle's speed, and how long it took to hit the target.
+
+Once you can hit the target regularly, you might try to improve your performance.
+
+	Hit the target as softly as you can.
+	Hit the target as quickly as you can.
+	Hit the target as quickly and softly as you can.
+
+How many different strategies can you find for making the dynaturtle hit the target? Describe you strategies in words. Can you decide which are the best strategies?
+
+.section "bold(Getting the dynaturtle under control.)"
+
+You can change the procedures that control the dynaturtle, to make it react differently when you type at the keyboard.
+
+The fundamental procedure that makes the dynaturtle work is called   DT.TGAME .  This is an abbreviation for  "dynaturtle for the target game."
+
+.keep
+	TO    DT.TGAME    :T
+	CHECK.TGAME
+	DYNAMOVE
+	COMMAND
+	DT.TGAME   :T + 1
+	END
+
+.end_keep
+.keep
+The procedure that controls the effect of the keys you type is called   COMMAND:
+
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30
+	IF   :COM   =   "L   LT   30
+	IF   :COM   =   "K   KICK
+	END
+
+.end_keep
+
+You can add some commands to this to change the way the dynaturtle is controlled. One possible change would be to make the dynaturtle go faster or slower by changing the force produced by each kick. These lines, added to  COMMAND   would have that effect.
+
+	IF   :COM   =   "H   MAKE   "FORCE   :FORCE + 1
+	IF   :COM   =   "S   MAKE   "FORCE   :FORCE - 1
+
+"H  and  "S  stand for  "harder" and "softer". Typing  <H>  or  <S>  won't change the dynaturtle's speed directly, but will make it increase faster the next time you give it a kick.
+
+Here are a few other suggestions for changing  COMMAND:
+
+	Change the angle the dynaturtle turns when you type  <R>  or  <L>.
+
+	Change the names of the keys to turn right or left or to kick harder or softer, so that they will be located near each other on the keyboard.
+
+	Invent an  "antikick" command to give a kick in the direction opposite to where the turtle is heading.
+
+	Add commands to print the turtle's speed or heading when you type certain keys.
+
+.section "(The TGAME procedures.)"
+
+If you do not have the  TGAME  procedures already stored on a disk, you can copy the procedures given here.
+.keep
+
+	TO TGAME
+	STARTUP
+	DT.TGAME
+	END
+.end_keep
+.keep
+	TO STARTUP
+	MAKE   "VX   0   MAKE   "VY   0
+	MAKE   "XT   70   MAKE   "YT   70
+	MAKE   "R   10
+	MAKE   "XS   (-70)   MAKE   "YS   (-70)
+	TARGET   :XT   :YT    :R
+	PU   SETXY   :XS   :YS   SETHEADING   0
+	END
+.end_keep
+
+
+.keep
+	TO    DT.TGAME    :T
+	CHECK.TGAME
+	DYNAMOVE
+	COMMAND
+	DT.TGAME   :T + 1
+	END
+
+.end_keep
+.keep
+		TO   CHECK.TGAME
+		IF   NEAREDGE   LOST   ENDGAME
+		IF   ATTARGET   HIT   ENDGAME
+		END
+
+.end_keep
+.keep
+
+		    TO NEAREDGE
+		    IF   ANYOF   XCOR  >  135   XCOR  <  (-135)   OUTPUT   "TRUE
+		    IF   ANYOF   YCOR  >  115   YCOR  <  (-80)   OUTPUT   "TRUE
+		    OUTPUT   "FALSE
+		    END
+
+		    TO   LOST
+		    PRINT   [ YOU ARE LOST IN SPACE! ]
+		    END
+
+		    TO    ENDGAME
+		    PRINT   [ WOULD YOU LIKE TO PLAY AGAIN? ]
+		    MAKE    "RESPONSE   REQUEST
+		    IF   ANYOF   :RESPONSE   =   [YES]   :RESPONSE   =   [Y]   REPLAY 
+		    TOPLEVEL
+		    END
+
+			TO   REPLAY
+			MAKE   "VX   0   MAKE   "VY   0
+			MAKE   "FORCE   2
+			PU   SETXY   :XS   :YS   SETHEADING   0
+			DT.TGAME
+			END
+.end_keep
+.keep
+		    TO   ATTARGET
+		    IF   DISTANCE   :XT   :YT   <  (:R + 5) * (:R + 5)   OUTPUT   "TRUE
+		    OUTPUT   "FALSE
+		    END
+
+			TO   DISTANCE   :X   :Y
+			OUTPUT   (XCOR - :X) * (XCOR - :X) + (YCOR - :Y) * (YCOR - :Y)
+			END
+
+.end_keep
+.keep
+		TO   DYNAMOVE
+		SETXY   ( XCOR + :VX )   ( YCOR + :VY )
+		END
+
+		TO   COMMAND
+		MAKE   "COM   READKEY
+		IF   :COM   =   "R   RT   30
+		IF   :COM   =   "L   LT   30
+		IF   :COM   =   "K   KICK
+		IF   :COM   =   "F   MAKE   "FORCE   :FORCE  +  1
+		IF   :COM   =   "S   MAKE   "FORCE   :FORCE  -  1
+		END
+.end_keep
+
+.keep
+		   TO   KICK
+		   MAKE   "VX   :VX  +  :FORCE * ( SIN  HEADING )
+		   MAKE   "VY   :VY  +  :FORCE * ( COS  HEADING )
+		   END
+.end_keep

@@ -1,0 +1,54 @@
+Intel has given Stanford University a verbal quote for the
+construction of part of a 32 channel Yale style display
+system.  They proposed to construct two bays each containing
+16 channels of IN-10 semiconductor memories made of Intel 1103s.
+Each channel would consist of 16K x 16 bits of memory, and a
+special control card which would provide the necessary timing
+and control signals to reference the memory to refresh a crt
+display.  The 16 control cards in each bay would all be connected
+together to a common bus which is intended to connect to a device
+that is on a PDP-11s UNIBUS.  There would be another bus that
+connects to all the control cards which would be driven from one
+small stand-alone device.  This device would contain a Fairchild
+3261 TV sync generator chip, a crystal oscillator, and timing
+circuitry that would be necessary for the proper control of the
+memories.  Intel's quote is as follows:
+
+64K x 16 bits of memory (4 channels worth)		$10,800
+4 special interface pc cards				$ 2,000
+special power supply **					$ 1,500
+
+total for 4 channels					$14,300
+							   X  4
+
+total for 16 channels					$57,200
+cabinet							$   600
+blowers							$   660
+assembly and testing					$   250
+
+total per bay						$58,710
+
+** there is currently some dispute as to whether it is really necessary
+   to use this heftier power supply.  Yale currently is running three
+   terminals from the regular supply, and MIT is running at least two,
+   shortly to be all four.  Charles Minter at Yale and Tom Knight at
+   MIT will shortly be able to tell us for sure as to this point.
+   Should no special supply be necessary this item would not be
+   included in the price. (The 10,800 already includes a smaller supply.)
+
+Intel does not propose to build the small timing generator card or
+the PDP-11 interface to the control card bus.  They are, however,
+considering building the video switch, but have not, as yet, made
+a decision.
+
+JBR 01/08/74 16:50:36  1)THE DESIGN WOULD BE PERFECTLY APPLICABLE TO A 4 CONSOLE SYSTEM, BUT
+I'M SURE THE PACKAGING WOULD HAVE TO BE DIFFERENT.  THEREFORE THE PRICES
+FOR THE MEMORIES AND INTERFACE CARDS WOULD PROBABLY BE RIGHT
+BUT NOT THE BLOWERS AND CABINETS ETC.
+2)IT WILL BE AN MIT STYLE RATHER THAN YALE STYLE
+3)THEY PROMISED ME ABOUT 2 MONTHS DELIVERY
+4)I DON'T HAVE A WRITTEN QUTOTE YET ALTHOUGH THEY HAVE PROMISED ME ONE
+5/IT WILL BE INTERFACED TO AN 11/45 IN ALL PROBABILITY.
+
+JBR 01/10/74 15:42:58  YOU CAN CALL GARY WEBB AT INTEL FOR THEIR VERSION OF THE
+STORY.  HE IS THEIR SALE MGR I THINK.  (409) 246-7501

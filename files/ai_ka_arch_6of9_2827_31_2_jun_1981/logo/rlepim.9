@@ -1,0 +1,302 @@
+.xgp
+.SQUISH
+.font 0 31vg
+.font 1 31vgb
+.font 2 20vg
+.FONT 3 SUP
+.dummy ^
+.dummy %
+.tlinch 9
+.twinch 6
+.he2
+A Powerful Idea
+.ss
+.nofill
+.ce
+Massachusetts Institute of Technology
+.ce
+Artificial Intelligence Laboratory
+
+.spread
+/A.I.MEMO 590//Logo Memo 58/
+.ri
+July 1980
+
+.ce
+1EXTENDING A POWERFUL IDEA0
+.sp 10
+.ce
+---
+.sp 10
+
+.ce
+Robert W. Lawler
+
+.ce
+ABSTRACT0
+.adjust
+Mathematics is much more than the manipulation of numbers.  At its best, it involves simple, clear examples of thought so apt to the world we live in that those examples provide guidance for our thinking about problems we meet subsequently.  We call such examples, capable of heuristic use, 1POWERFUL IDEAS0, after Papert (1980).  This article documents a child's introduction to a specific powerful idea in a computer environment.  We trace his extensions of that idea to other problem areas, the first similar to his initial experience and the second more remote from it.
+
+2The work reported in this paper was supported in part by the National Science
+Foundation under grant number 77-19083SED) and conducted at the Artificial Intelligence
+Laboratory, Massachusetts Institute of Technology.  The views and conclusions contained
+in this paper are those of the authors and should not be interpreted as necessarily
+representing the official policies, either expressed or implied, of the Nationa
+Science Foundation or the United States Government.0
+.ds
+.adjust
+.page
+.ce
+1Introduction0
+
+%%%%%The computer is making its presence widely felt in the education community.  The new availability of computer power to children poses forcefully the question of the computer's role in education.  Here we present a case study of computer-based learning that goes beyond drill-and-practice and game playing to show how particular experiences carried a specific idea of general applicability into a child's mind and how this idea was effective subsequently in his freely-chosen and self-directed problem solving.  The stepping of variables -- by which we mean the development of and the decision to apply a systematic mental procedure for isolating and incrementally changing one of several variables -- is an idea of general applicability.  Genevan psychologists have noted this idea as a very important one in that configuration which leads to the systematic thought of the adolescent (Inhelder & Piaget, 1958).  The stepping of variables is the idea whose history we will trace in one child's mind.
+
+%%%%%The subject of this case was Robby, my son, eight years old at the time of the study.  With his sister, Miriam, younger by two years, he participated in an intensive six-month study at the Logo Project of the M.I.T. Artificial Intelligence Intelligence Laboratory (Lawler, 1979).  Robby had visited the lab many times in the preceding years and frequently participated in earlier studies (Lawler, 1975-1977). He brought to this work two mental predispositions which are relevant to what follows.  First, he was inclined to call upon symmetry as a generative idea (this observation will be clarified subsequently).  Secondly, his approach to problems was surprisingly systematic for one his age.310   Before we turn to the case material wherein systematicity plays its role, we must first present some folk-history on the procedures Robby encountered.
+
+.ce
+1Polyspirals and Variables0
+
+%%%%%Years ago, a child is a Logo class320 invented the "squiral".  In drawing a square maze, the logo turtle (think of this as a freely orientable cursor which may leave a line trace of its path on a graphics display) moves forward, turns a right angle then repeats the actions, with each repetition increasing the distance of the forward move.  A second child discovered, in getting the angle `wrong' while attempting a square maze, that if the turtle turns through an angle near ninety degrees but not equal to it, a four armed spiral emerges from the drawn shape (see the maze and squiral in Figure 1).
+
+%%%%%Emergent phenomena are not mere child's play.  Emergent effects in turtle geometry are very striking.  The generalized procedure developed from the squiral is the "polyspi" [short for polygonal spiral]:
+.page
+.ce
+1FIGURE 10
+.ss
+
+.spread
+/^^^^^SQUARE^MAZE^^(POLYSPI 90) // SQUIRAL^^(POLYSPI 91)^^^^^
+.sp 19
+
+.spread				
+/^^^^^POLYSPI^120 // MPOLYSPI^120^^9^^^^^
+.page
+.nofill
+.ss
+.indent 6
+.block 6
+TO^POLYSPI
+^^^FORWARD^:distance
+^^^RIGHT^^^^^^:angle
+^^^MAKE^^^^^^"distance (:distance + :delta)
+^^^POLYSPI
+^^^end
+
+.ds
+.adjust
+.indent 0
+("distance, "angle, and "delta, the global variables referenced in the procedure, must be initialized; the result of the recursive invocation of polyspi is to re-execute the procedure another time with the value of the distance variable incremented; the procedure stops when the turtle goes off the edge of the display screen.)  A number of the designs produced by the polyspi procedure from the near-regular polygonal angles are very pretty.  The emergent effects of such designs can be compounded, as by a procedure I composed, "mpolyspi" [short for multiple polyspi], to make even more complex and attractive designs (see the triangular polypsi and its nine-fold compounding in Figure 1).  Emergent effects in turtle geometry cover a range which permits mutual engagement and learning by both children and adults - and thus they became a topic of exploration in many of the research sessions Robby and I spent at the Logo lab.
+
+%%%%%Robby's introduction to variables went forward in several small steps.  Initially we played games with a set of labelled match-boxes and card-written commands for changing or examining the contents of the boxes.  We presented the image that global variables were functionally "like" little boxes with contents that one could examine and change by commands of the Logo language.  Consequently, Robby's first use of polyspi procedure involved a "setup" procedure whose functions were to clear the display screen of the previous design and to permit his keying of initial values for "distance, "angle, and "delta.  Subsequently, we explained "input variables" as a keying convenience which permit an integrated setup procedure.  The form of the "polyspi with input variables" is this:
+.ss
+.indent 5		
+.nofill
+.block 6
+TO^POLYSPI^^^:distance^^:angle^^:delta
+^^^FORWARD^^:distance
+^^^RIGHT^^^^^^^^:angle
+^^^POLYSPI^^^^^^(:distance^+^:delta)^^:angle^^:delta
+^^^end
+
+.ds
+.indent 0
+.adjust
+(Here the incrementing of distance is implicit in the recursive polyspi invocation).
+
+%%%%%A primary intellectual challenge in exploring polyspi designs is how to impose some comprehensible order on their considerable variety.  Notice, now, that the polyspi procedure with a zero value for delta will draw polygons.  For such polygons drawn with angle values dividing evenly into 360, the polygons are regular; that is, after turning through 360 degrees, the turtle retraces its original path.  In second grade, Robby had learned the names of some geometric figures and the count of their sides.  For example, he knew that a hexagon is a regular polygon of six sides.  When the input angle is that of some regular polygon, e.g. 60, the polyspi procedure with small positive values for delta draws figures we called "mazes".  We distinguished between such mazes and other shapes.  Robby and I together produced a "family of mazes", i.e. a collection of the regular polygonal spirals with three through eight sides.  We printed these designs and displayed them on the wall.  My intention was that individual members of this series of figures could serve as "anchors" for further exploration, both connecting to Robby's previous knowledge of geometric forms and serving as reference bases from which other shapes could seen as variations.
+.page
+.ss
+.ce
+1FIGURE 20
+
+.ce
+1 A SHAPE FAMILY BASED ON VARYING THE SUB-FIGURE COUNT0
+.page
+.ds
+%%%%%In the next Logo session on this theme (others intervened), I presented explicitly the objective of developing "families of shapes" and showed Robby several examples of such shape families.  The first, reproduced in Figure 2, shows six shapes made by incremental change of the MPOLYSPI 122  "folding factor" from one to six.  Thus the single sub-figure, a POLYSPI 122, is repreated an additional time in each of the five successive designs.  Similarly, a second example of a shape family (not shown) displayed changes in the six fold MPOLYSPI 122 as value of delta was reduced from seven to one.  The "lesson" I professed with these examples was that focussing on the systematic changes of a single variable was a fecund method for understanding the results from the complex interaction of several variables.  Whether or not Robby accepted my "lesson" or used what I showed him in another way is an issue we will discuss subsequently.
+.page
+.ce
+1FIGURE 3
+.ss
+.ce
+1SIX MEMBERS OF A HEXAGONAL SHAPE FAMILY0
+
+.spread
+/^^^^^POLYSPI^^10^60^3 //    POLYSPI^^10^61^3^^^^^
+.sp 13
+.spread
+/^^^^^POLYSPI^^10^62^3  //   POLYSPI^^10^63^3^^^^^
+.sp 13
+.spread
+/^^^^^POLYSPI^^10^64^3  //   POLYSPI^^10^65^3^^^^^
+0
+.page
+.ds
+%%%%%Robby had the opportunity to construct his own shape family.  (I had been careful to leave him the most interesting variable for his changing.) I proposed building a shape family around one of the mazes as an anchoring value.  Robby selected the hexagonal anchor and enthusiastically created and printed the designs of Figure 3, then hung them in order above his desk.  In subsequent sessions, he constructed a shape family anchored at ninety degrees, first increasing the angle value and later (beginning at eighty-five degrees) approaching the anchor from below.  This concluded the didactic phase of Robby's introduction to shape families.
+
+.ce
+1A Polyspiral Variation0
+
+%%%%%The increment, "delta, input to the POLYSPI procedure is applied to the first of the two other variables, "distance and "angle.  What happens if delta is applied to augment angle instead of distance ?  Few people have any intuitive answer for such a question and most become easily confused in trying to imagine what design would be created by the turtle following commands in such a procedure.  For small values of delta (with an initial angle of zero), the turtle will move off in one direction and gradually spiral into a node.  (For this reason, the procedure was named "inspi" by its originator, Marvin Minsky):
+.ss
+.indent 5
+.nofill
+.block 6
+TO^INSPI^^^^^^^:distance^^:angle^^:delta
+^^^FORWARD^^:distance
+^^^RIGHT^^^^^^^:angle
+^^^INSPI^^^^^^^^:distance^^(:angle^+^:delta)^^:delta
+^^^end
+
+.ds
+.indent 0
+.adjust
+(see several examples of basic inspi designs in Figure 4.)
+.page
+.ss
+.ce
+1FIGURE 4
+
+.nofill
+.spread
+/^^^^^INSPI 10^0^2 - stopped at node // INSPI 10^0^2^^^^^
+.sp 13
+.spread
+/^^^^^INSPI 10^90^2  // INSPI 10^0^6^^^^^
+.sp 13
+.spread
+/^^^^^INSPI 10^0^7 // INSPI 10^0^11 ^^^^^
+0
+.page
+.adjust
+.ds
+%%%%%When he was first introduced to inspi designs, Robby's inclination was to vary "angle. After trying INSPI (10,0,2) at my direction, he executed INSPI (10,90,2) (the effect of these parameters, shown in Figure 4, is to alter the center location and orientation of the design.)  When I tried to discuss changing other variables, Robby's personal agenda came forward in comments such as these: "Hold it, Dad, all I want to make it do is go the other way"; "I want it in the exact same direction, but opposite."  After a few false starts, I followed his lead:
+.indent 2
+.nofill
+Robby:^How do you get it to go the other way ?... It goes right.  I want
+^^^^^^^to make it go left.
+Bob:^^^We'd have to change the A procedure (We had renamed inspi "A"
+^^^^^^^because it changed angle values).
+Robby:^Why don't you make a B procedure, to make it go the other way ?
+Bob:^^^Why don't you ?
+Robby:^(A complaint) I don't know how !
+Bob:^^^You copy the A procedure, but where it says "right" you change it
+^^^^^^^to "left".
+.indent 0
+.adjust
+With the symmetrical procedure created, Robby still inclined to vary "angle".  I intervened to focus his attention on delta as a possibly potent variable, but he could not be interested at all.  When he refused to follow my forceful suggestion to execute INSPI (10,0,7), I executed the procedure with those inputs and had the satisfaction of hearing him admit, "I wish I had done that."
+
+%%%%%Robby now began to make the symmetrical inspi designs of FIgure 5, using his B inspi procedure with inspi procedure A.  As the complex symmetries of the two-fold INSPI (10,0,7) developed, he exclaimed, "Isn't that wild !"  I offered 11 as the next delta candidate.  After printing out the second symmetrical design, I proposed (would that I had bit my tongue) this speculation:
+.ds
+.indent 2
+.nofill
+Bob:^^^Why don't you try the next prime number ?  It turns out -
+^^^^^^^and I never would have guessed it - that prime numbers --
+Robby:^(Interrupting) Do this ? (Referring to the symmetrical INSPI (10,0,11).) 
+Bob:^^^Why don't you give 13 a try ?... I'm not quite sure, but that's my
+^^^^^^^speculation, anyway.  I'm sorry I told you that.  Maybe I should have
+^^^^^^^let you have the chance to figure that out.
+Robby:^Yeah....but I don't know the prime numbers very well.
+
+.ds
+.indent 0
+.adjust
+After executing the symmetrical INSPI 13's, Robby concluded, "Everytime we do it, they're getting super-er."  We conclude that Robby's strong confidence in the heuristic of pursuing symmetries in design was amply confirmed.  This use of a heuristic is one clearly focussed on the objective of generating interesting designs.  If there were any motive to better understand these inspi designs through symmetry it must have been relatively insignificant compared to the former.
+.page
+.ss
+.ce
+1FIGURE 5
+
+.ce
+A SELECTION OF ROBBY'S SYMMETRICAL INSPI DESIGNS
+
+.spread
+/^^^^^DELTA^^7 // DELTA^^11^^^^^
+.sp 13
+.spread
+/^^^^^DELTA^^17 // DELTA^^23^^^^^
+.sp 13
+.spread
+/^^^^^DELTA^^37 //^^^^^DELTA^^41^^^^^  
+0
+.page
+.ds
+%%%%%My uncertain speculation that "primes" had something to do with creating interesting designs330 inspired Robby to produce a complete set of symmetrical inspi designs for all the primes between seven and fifty.  One might imagine he did so because he is a suggestible boy and easily led.  The opposite is more nearly true.  Two examples stand out.  At my direction, he tried some large value deltas.  When I called his attention to the puzzle of the minimal design (a small straight line) made with the initial zero angle and delta 180, Robby continued from there with elegant symmetrical designs, based on delta values of 187 and 206, then decided, "I think I'll go back to using primes."  After producing designs for delta values of twenty-nine and thirty-one, he decided thirty-three was not a prime and rejected it as a candidate value.  Knowing that thirty-three would produce an interesting design, I pushed him to try it,  but he refused, "No.  I'm going to use only primes."  He then figured out the values of primes thirty-seven, forty-one, forty-three, and forty-seven and completed  his own creation - the family of symmetrical, prime-based inspi designs.
+
+%%%%%What do we make of this material ?  Most obvious is that the world of experience confirmed the value of Robby's heuristic, "try symmetry", as a generator of pretty designs. Second is that even though the inspi procedures led to results less intuitively accessible than those produced by the polyspi procedures, Robby explored this world of inspi designs in a systematic way that amounted to a first extension of the idea of variable stepping.  That is, Robby settled on delta as the most potent variable for these designs and followed my "prime-hypothesis" to generate the next candidate delta value for creating a design.  I believe we can infer that his experience of this inspi world confirmed the value of stepping variables as a heuristic. 
+
+%%%%%The symmetry heuristic is good for generating designs; what is stepping variables good for ?  Did Robby appreciate this as a second heuristic for generating pretty pictures or did he see it as a way of organizing the world to better understand it ?  This distinction is one that we make, one that we might call upon in judging a possible claim that Robby learned a heuristic that is good for some specific purpose.  I believe rather that Robby learned a heuristic that was specific with respect to activity but vague with respect to purpose.  Although he may have begun to apply the heuristic to generate interesting results, his ability to select and order them through the `prime hypothesis' helped define what was interesting about them.  The final outcome for him was the better comprehension of something worthwhile understanding (in terms of his judgment of what was worthwhile).  This point is illustrated in the final incident reported here.
+
+.ce
+1Beyond the Laboratory0
+
+%%%%%Because Robby lives with me, it has been my privilege to observe how these experiences at Logo were reflected in his later problem solving.   Some six months after our study at the Logo project, a parent visiting his third grade class introduced to Robby the "paper-rings puzzle".  This bit of topological magic leads the the "squaring" of two circles.  (It is a puzzle in the sense of creating a surprising result.)  I recommend you try it.  Here's how it's done:
+.indent 2
+.nofill
+.block 5
+1.^Cut two paper strips of equal length (eight inches will do).
+2.^Draw a line down the middle of each.
+3.^Bend each strip of paper into a circle and tape the juncture.
+4.^Join the circles at tangents perpendicularly and tape the juncture.
+5.^Cut around the middle line drawn on each circle.
+.indent 0
+.adjust				
+(When two strips of equal length are so connected and cut, the surprising result is that the strip-halves end up taped together as a square.)
+
+%%%%%Robby enjoyed this activity when shown it.  Several days later, I removed a pattern of strips  he had made from a paper on my clip-board. When I interrupted his reading to give him the sheet of paper, Robby recalled the game and quietly took it up on his own.  He was very happy when the procedure produced a square and showed it to his mother and me.  We neither paid much attention.  Going on to three circles, Robby cut two of the three along their mid-lines.  He judged (in error) that he had finished by finding a square with a bar (a double width strip) across the center.  It lay flat.  Still no one paid attention.  He went on to four circles.  When he cut all the mid-lines, what he got was a confusion of flopping paper strips.  I advised him to try getting it to lie flat.  He was delighted when he achieved this goal and subsequently taped the paper strips to a large piece of cardboard.  The resulting shape is this:
+.ss
+.sp 15
+.ds
+.indent 0
+.adjust
+But why stop at four ?  Robby went on to cut and connect five circles.  When cut, the five circles separated into two identical, non-planar shapes.  He taped these to another piece of cardboard.  On trying to tape the floppy figures made from cutting six rings, Robby succeeded with great effort.  He decided the problem was getting too complicated to be fun and quit.
+
+%%%%%When I recalled his attention to the figure made by cutting two of the three circles and  pointed out that the middle bar of his figure was double-thick, Robby agreed he had cut only two circles.  He saw immediately that this square would divide into two rectangles, "The five's made two too.  Hey ! I've got a new theory: the odd-numbered circles make two and the evens all stay together."  Robby could not prove his conjecture, but in the course of one discussion when I asked how he had gotten the idea of this exploration, he explained, "Dad, it's just like what we did at Logo with the shape families.  I changed one thing, a little at a time."  
+
+%%%%%Robby's explanation witnesses that he conceived of his exploration in terms of that past Logo experience.  This does not imply that the Logo shape families marked his first encounter with or use of the idea of controlled changing of a single variable.  We may infer, nonetheless, that he owned an example of this idea crisply applied to a complex but comprehensible range of interesting phenomena, and further, that it did provide him guidance for thinking about a problem met subsequently.  He appreciated his Logo shape families experience as embodying a powerful idea. Did he apply the heuristic because it might generate new results or because it might help him understand a range of puzzling phenomena ? We can not profitably make such a distinction if his purposes were mixed.     The two aspects of purpose we might choose to distinguish appear to have been inextricable for him. He used this powerful idea as a heuristic for orderly exploration to generate interesting results in a comprehensible way.
+
+%%%%%We have come to the end of this story, but the question remains "where does this powerful idea of variable stepping go from here^?"   We find a hint in the discussion of Robby's new theory.  His conjecture, that the odd-numbered chains make two separate figures, was based on the regularity he observed in five cases (with two through six rings).  When I asked him to prove this new theory, his method of choice was empirical -- he constructed a seven-ring puzzle and cut each of the rings.  (I did not suggest his doing so.  I wanted him to reflect more.)  He clearly expected the seven rings to separate into two figures and took their doing so as proof of his theory.  What is significant in this observation is the way hypothesis testing emerged as a minor variation from a preceding activity which was a theory-free but orderly exploration of an interesting domain.  Variable stepping had become for Robby a way of approaching the world, of seeing "what's what."  The power of the idea -- as witnessed by Robby's quick invention of his new theory -- is that from "what's what" "what follows" is "intuitively obvious".
+.page
+.ss
+1NOTES0
+
+[1].  For example, at age 7;8;8 on Piaget's "bead families" task (Piaget & Inhelder, 1975), after attempting to arrange combinations of five things taken two at a time by an empirical procedure, Robby spontaneously started the task a second time, grouping his bead couples in five groups by the color of one bead and joining with each base-color bead another one of a different color.  Such systematicity is not usually met until the age of ten or twelve years.
+
+[2]. "Logo" was originally founded as the education research project of M.I.T.'s Artificial Intelligence Laboratory.  More recently it has also been affiliated with M.I.T.'s Division for Study and Research in Education.  Over the past decade, Logo insatruction has been irregularly offered locally at the laboratory and at some schools in the Boston area.  "LOGO" is also the name given the interpretive language through which children have learned to program computers in classes.  The premier topic of Logo instruction has ben "turtle geometry", a mathematical domain of exploration designed for use by children.  Turtle geometry takes its name from the "turtle", originally a mechanical robot which children moved and turned by specifying computer controlling commands in the Logo language.  The turtle was equipped with a pen which, if lowered into contact position, would draw straight lines as the turtle moved forward or back.  The "light turtle", a graphics display cursor controlled by the same commands as the floor turtle, drew all the figures for this article.  N.B.: In the body of the text, we signify references to variables by preceding them with single quotes; executed procedures are referenced in capitals; and definitions of terms are enclosed in double quotes.
+
+[3]. The apparent complexity of an inspi design is determined by the sequence of values of the "angle variable.  Most significant is the remainder left when the increment value is divided into 180 and 360.  As the simplest example, consider the case where the initial value of "angle is zero and the "delta is ten.  After some iterations, the turtle will turn right through this sequence of degrees [170 180 190].  RIGHT 180 turns the turtle about completely.  RIGHT 190 is equivalent to LEFT 170.  Thus, at the first node, the turtle begins executing steps which invert, in reverse order, each preceding step.  Since ten divides into 360 with no remainder, we can see that there will be another node at an "angle value of (180 + 360) degrees after which the turtle will once more retrace its path.  The primes are merely a subset of the numbers which don't cause the turtle to retrace its path after the second node.
+.page
+.ce
+1References0
+.nofill
+
+Inhelder, B. & Piaget, J.  Flexibility and the Operations Mediating the
+^^^Separation of Variables, a chapter in  The Growth of Logical Thinking
+^^^ from Childhood to Adolescence, translated by A.  Parsons & S. Milgram,
+^^^New York: Basic Books, Inc., 1958.
+
+Lawler, R.   Zoom: a Novice's Drawing System.  Logo Working Paper 45,
+^^^Dec. 1975.
+
+Lawler, R.   Addvisor: a System for Addition Instruction.  Logo Working
+^^^Paper 53,  Feb., 1976
+
+Lawler, R.   Order Free Adding.  Logo Working Paper 59, Jan. 1977
+
+Lawler, R.   The Development of Objectives.  Logo Working Paper 60, March 1977.
+
+Lawler, R.   One Child's Learning.  Unpublished M.I.T. Doctoral Dissertation, 1979.
+
+Papert, S.   Mindstorms: Children, Computers, and Powerful Ideas.  New York:
+^^^Basic Books, 1980.
+
+Piaget, J. & Inhelder, B.  The Development of Operations of Combination, a chapter
+^^^in The Origin of the Idea of Chance in Children, New York: W. W. Norton & Co.,
+^^^1975.
+
+
+.ce
+1Acknowledgements0
+
+^^^^^A discussion of this material with Gary Drescher helped to clarify
+some issues touched upon in this paper.

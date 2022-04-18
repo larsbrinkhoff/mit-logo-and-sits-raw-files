@@ -1,0 +1,149 @@
+  0	Null (ignored)
+  1
+  2
+  3
+  4
+  5
+  6
+  7	Bell
+ 10	Backspace without eraseing
+ 11	Tab (move one space, then if cursor < 73 move to 9, 17, ... 73)
+ 12	Line feed (screen scrolls if cursor at last line)
+ 13
+ 14
+ 15	Return (puts cursor at beg of current line)
+ 16
+ 17
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 30
+ 31
+ 32
+ 33	Escape (see below)
+ 34
+ 35
+ 36
+ 37
+ 40	Printing character
+ 41	Printing character
+ 42	Printing character
+ 43	Printing character
+ 44	Printing character
+ 45	Printing character
+ 46	Printing character
+ 47	Printing character
+ 50	Printing character
+ 51	Printing character
+ 52	Printing character
+ 53	Printing character
+ 54	Printing character
+ 55	Printing character
+ 56	Printing character
+ 57	Printing character
+ 60	Printing character
+ 61	Printing character
+ 62	Printing character
+ 63	Printing character
+ 64	Printing character
+ 65	Printing character
+ 66	Printing character
+ 67	Printing character
+ 70	Printing character
+ 71	Printing character
+ 72	Printing character
+ 73	Printing character
+ 74	Printing character
+ 75	Printing character
+ 76	Printing character
+ 77	Printing character
+100	Printing character
+101	Printing character
+102	Printing character
+103	Printing character
+104	Printing character
+105	Printing character
+106	Printing character
+107	Printing character
+110	Printing character
+111	Printing character
+112	Printing character
+113	Printing character
+114	Printing character
+115	Printing character
+116	Printing character
+117	Printing character
+120	Printing character
+121	Printing character
+122	Printing character
+123	Printing character
+124	Printing character
+125	Printing character
+126	Printing character
+127	Printing character
+130	Printing character
+131	Printing character
+132	Printing character
+133	Printing character
+134	Printing character
+135	Printing character
+136	Printing character (lower case or special graphic)
+137	Printing character (lower case or special graphic)
+140	Printing character (lower case or special graphic)
+141	Printing character (lower case or special graphic)
+142	Printing character (lower case or special graphic)
+143	Printing character (lower case or special graphic)
+144	Printing character (lower case or special graphic)
+145	Printing character (lower case or special graphic)
+146	Printing character (lower case or special graphic)
+147	Printing character (lower case or special graphic)
+150	Printing character (lower case or special graphic)
+151	Printing character (lower case or special graphic)
+152	Printing character (lower case or special graphic)
+153	Printing character (lower case or special graphic)
+154	Printing character (lower case or special graphic)
+155	Printing character (lower case or special graphic)
+156	Printing character (lower case or special graphic)
+157	Printing character (lower case or special graphic)
+160	Printing character (lower case or special graphic)
+161	Printing character (lower case or special graphic)
+162	Printing character (lower case or special graphic)
+163	Printing character (lower case or special graphic)
+164	Printing character (lower case or special graphic)
+165	Printing character (lower case or special graphic)
+166	Printing character (lower case or special graphic)
+167	Printing character (lower case or special graphic)
+170	Printing character (lower case or special graphic)
+171	Printing character (lower case or special graphic)
+172	Printing character (lower case or special graphic)
+173	Printing character (lower case or special graphic)
+174	Printing character (lower case or special graphic)
+175	Printing character (lower case or special graphic)
+176	Printing character (lower case or special graphic)
+177	Null (ignored)
+
+Escape sequences
+
+033 075 Enter alternate keypad mode
+033 076 Exit alternate keypad mode
+033 101 Cursor up (like line starve but no scroll)
+033 102	Cursor down (like LF (012) but no scroll if at bottom of screen)
+033 103 Cursor right (like space but no erase)
+033 104 Cursor left (exactly same as backspace)
+033 106 Enter graphics mode
+033 107 Exit graphics mode
+033 110 Cursor home
+033 111	Line starve (does DOWNWARD SCROLL (!!) if at top of screen)
+033 112 Erase to end of screen
+033 113 Erase to end of line
+033 131 040+line 040+column	Direct cursor position
+	If line is off the screen current line stays the same
+	If column is off the screen column is set to 80
+033 132 Identify terminal type (returns 033 113)
+033 133 Enter hold screen mode
+033 134 Exit hold screen mode

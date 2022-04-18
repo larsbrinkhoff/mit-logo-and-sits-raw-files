@@ -1,0 +1,149 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.fi b
+.ls 1
+.sp 5
+bold(Printing Logo Procedures and Pictures with the Apple Silentype Printer)
+.sp 5
+
+The Apple computer company manufactures an inexpensive thermal printer called the "Silentype" which can print copies of the Apple's high resolution screen, as well as conventional text. Because of its graphics capability it can be used to make printed copies of pictures and designs drawn by the turtle. Since the printer is limited to black and white prints, it shows different colors only as shades of gray.
+
+Commands to send information to the printer are not yet implemented in Logo. In order to use the Silentype printer it is therefore necessary to switch to Applesoft BASIC (using DOS 3.3), and use the BASIC program listed at the end of these notes. Since many Logo users are not familiar with BASIC or with the Apple's Disk Operating System (DOS 3.3) these instructions are written so that they can be followed literally.
+
+bold(Creating the BASIC Program)
+
+1. Without loading Logo, insert a Logo file disk in the Apple's disk drive. Turn on the computer, or type  PR#6 <RETURN>. This will start the Apple computer in BASIC, with the DOS 3.3 system activated.
+
+2. Type in the BASIC program listed at the end of these notes. 
+
+3. Type  SAVE LOGOPRINT  <RETURN>   (Do not use " when filing in BASIC).
+
+4. The BASIC program is now saved on your Logo File disk. You may want to save the same program on each Logo file disk you are using. If so, just put each Logo file disk into the disk drive, and type SAVE LOGOPRINT. (You might want to try the program and debug it before saving it on all your disks!)
+
+
+5. The BASIC program assumes that your printer interface card is located in slot # 1 at the back of the Apple.  If your printer interface is in slot # 3 (for example) you will have to change lines  140 and 280  to read   PR#3 (for slot 3), instead of  PR#1.
+
+
+bold(Printing Logo Procedures and Pictures)
+
+The BASIC program given will print entire LOGO files and pictures. It cannot be used to print individual procedures, unless you have files with only one procedure in them.
+
+1. Save your Logo procedures in the normal way. Before printing a Logo picture, you must save it as a picture file. With the picture you want to save on the screen, type
+
+	SAVEPICT  "filename   (Where filename is any name you choose.)
+
+(Because the printer can print only in black and white, you may want to draw your picture using BACKGROUND  6.  Pencolors are inconsistent in BACKGROUND 6, and the lines are sharper than with any other background. This will produce the sharpest drawings, when you print your pictures. You must type the command  BACKGROUND  6  before drawing and saving the picture.)
+
+
+2. When you are ready to print your pictures or procedures, push the RESET key twice.  The first time starts the Apple Monitor. The second time starts Applesoft BASIC. You should see the following on your screen:
+
+.nf l
+
+	*
+	]
+ 
+3. Type  PR#6  <RETURN>  to  start DOS 3.3.
+
+4. Type  LOAD  LOGOPRINT  <RETURN>.
+
+5. Type  RUN  <RETURN>.
+
+The computer will print:
+
+	TYPE  <1>  IF YOU WANT TO PRINT
+	PROCEDURES.  TYPE  <2>  IF YOU
+	WANT TO PRINT PICTURES.
+
+6. If you type  <1>  the computer will ask:
+
+	FILE NAME?
+
+.fi b
+Type the name of your Logo file, followed by the <RETURN> key. (Do not use  "  when typing filenames in BASIC.)  Your complete file of Logo procedures will be printed by the Silentype printer.
+
+.nf l
+If you type  <2>  the computer will ask:
+
+	PICTURE NAME?
+
+.fi b
+Type the name of your picture file, followed by the <RETURN> key. (Do not use  "  when typing filenames in BASIC.)  After you type the file name, the computer will print:
+
+.nf l
+	TYPE  <Y>  TO REVERSE BLACK AND WHITE.
+	OTHERWISE TYPE  <N>.
+
+Your picture will now be printed by the Silentype Printer.
+
+7. To print other Logo or picture files, repeat steps 5 and 6.
+
+8. To return to Logo, remove your file disk, insert the Logo disk, and type 
+
+	PR#6  <RETURN>.
+
+.keep
+
+bold(The BASIC Program for Printing Logo Files and Pictures.)
+
+ 
+5 REM FILE "LOGOPRINT"
+10 REM BASIC PROGRAM TO PRINT LOGO FILES AND PICTURES
+20 PRINT "TYPE  <1>  IF YOU WANT TO PRINT"
+24 PRINT "PROCEDURES.  TYPE <2>  IF YOU"
+26 PRINT "WANT TO PRINT PICTURES."
+30 INPUT A1$
+40 IF A1$ = "1"  THEN GOTO 100 
+50 IF A1$ = "2"  THEN GOTO 200
+60 PRINT "PLEASE TYPE <1>  OR  <2>." : GOTO 30
+100 REM OUTPUT LOGO PROCEDURE FILE TO PRINTER
+120 INPUT "FILE NAME?";FILE$
+130 PRINT CHR$(4);"BLOAD";FILE$;".LOGO"
+140 PR#1
+150 FE = 8192 + PEEK(43616) + (256 * PEEK (43617))
+160 FOR I = 8192 TO FE
+170 PRINT CHR$(PEEK(I));:NEXT
+180 PR#0: REM PRINT TO SCREEN AGAIN
+190 GOTO 310
+200 REM OUTPUT LOGO PICTURE FILE TO PRINTER
+205 POKE  -12524,255:REM SET UP REVERSE VIDEO
+210 INPUT "PICTURE NAME?";P$
+220 D$ = "": REM CTRL-D
+230 Q$ = "": REM CTRL-Q
+240 C$ = "": REM CTRL-C
+250 PRINT "TYPE  <Y>  TO REVERSE BLACK AND WHITE"
+252 PRINT "OTHERWISE TYPE <N>"
+255 INPUT R$
+256 IF R$ = "Y" THEN POKE - 12524,0 : GOTO 260 
+257 IF R$ = "N" THEN GOTO 260
+258 PRINT "PLEASE TYPE <Y> OR <N>" : GOTO 255
+260 HGR
+262 PRINT D$;"BLOAD ";P$;".PICT"
+265 PRINT C$
+270 POKE - 12529,255 : REM UNIDIRECTIONAL PRINTING
+280 PR#1 : REM TURN ON PRINTER
+290 PRINT Q$: REM PRINT PICTURE
+300 PR#0: REM TURN OFF PRINTER
+304 POKE - 12524,255: REM TURN OFF REVERSE VIDEO
+305 POKE - 12529,0: REM TURN OFF UNIDIRECTIONAL PRINTING
+310 END
+.end_keep
+.keep
+
+Notes:
+
+ 
+Lines 220, 230, and 240 need special care. What you really type is:
+
+
+220 D$ = "CTRL-D" :REM CTRL-D
+230 Q$ = "CTRL-Q" :REM CTRL-Q	
+240 Q$ = "CTRL-C" :REM CTRL-C
+.fi b
+
+Since the control characters do not appear on the screen, you will see what is printed in the listing above. Be sure you use the CTRL key when you type between the "". When you type the REM statement, type the letters C, T, R, L, as you see them.
+
+.end_keep

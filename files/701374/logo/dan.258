@@ -1,0 +1,545 @@
+.xgp
+.font 0 xfont;times 12bold
+.font 1 xfont;times 12bold
+.plinch 14
+.tlinch 12
+.dummy @
+.ss
+.he1
+Daniel H. Watt
+
+
+
+
+.ce
+A Comparison of the Problem Solving Styles
+.ce
+of Two Students Learning LOGO:
+.ce
+a Computer Language for Children1
+
+.ce
+Daniel H. Watt
+
+.ce
+MIT LOGO Group
+.ce
+Brookline Public Schools
+
+
+
+
+.adjust
+.page
+.twinch 4.25
+0I. INTRODUCTION
+.BR
+1This paper is one of a series of reports resulting from an 18-month
+study of an elementary school computer laboratory.2  The study,
+funded by the National Science Foundation, and carried out by the MIT
+LOGO Group in collaboration with the Public Schools of Brookline,
+Massachusetts, provided fifty sixth-grade students with betwen 24 and
+36 hours of computer time and instruction in LOGO, a computer language
+designed for use by elementary school children.  The work of sixteen of
+these students, representing a range of interests, work styles, and
+abilities was monitored in great detail.  
+From the data collected we have prepared a series of reports outlining in detail
+the work of each child, and analyzing the learning of all sixteen
+children in the areas of computer programming, mathematics and problem
+solving. 2,3
+
+The contrasting work of Donald and Deborah, two of the sixteen students
+is presented in this paper.  The contrasts between the students give
+rise to a number of pedagogical questions and issues which will be
+considered in the concluding section.
+
+The computer language LOGO was developed approximately eleven years
+ago as a vehicle by which children could learn computer programming,
+problem solving and mathematics in a learning environment; it grew out
+of the cognitive psychology of Jean Piaget and an
+approach to the design of computer languages based on ideas arising
+from work in Artificial Intelligence.5,6,7   Children are typically
+introduced to LOGO by using the computer to control a TURTLE, an
+imaginary creature which lives on a graphics display screen, the
+movement of which is controlled by commands typed at a keyboard; for example:
+FORWARD 100, BACK 50, RIGHT 90, LEFT 45, etc.
+
+FORWARD 100 moves the TURTLE forward 100 TURTLE steps and leaves a trace on the
+display screen;  LEFT 45 causes the TURTLE to rotate 45 degrees to
+the left.  Drawing pictures with the 
+.page
+TURTLE is an initial programming
+activity with an immense resonance for most children.  Children can
+identify with the TURTLE, imagining themselves going through its
+motions as it carries out a particular task.  At the same time,
+controlling the TURTLE becomes a metaphor for controlling the computer
+itself -- like the TURTLE, the computer responds to an ordered series
+of commands and to procedures, defined as series of commands.
+
+The way in which the action of the TURTLE can lead to a geometric
+design, as well as the method used by children to define procedures is
+illustrated in the following simple examples.  Having drawn a square by
+repeating the steps, FORWARD 100, RIGHT 90 four times, a student can
+define a procedure by choosing a procedure title (BOX, for example) and
+typing a series of commands in order.
+
+.block 8
+.nofill
+.block 11
+TO BOX
+10 FORWARD 100
+20 RIGHT 90
+30 FORWARD 100
+40 RIGHT 90
+50 FORWARD 100
+60 RIGHT 90
+70 FORWARD 100
+80 RIGHT 90
+END
+
+.adjust
+1When the student types the new command BOX, the shape shown in figure 1
+will be drawn on the display screen.  (The small triangle shown in
+figure 1 represents the TURTLE.)  A similar procedure, TRI, could be
+defined as follows:
+
+.nofill
+.block 10
+TO TRI
+10 FORWARD 100
+20 RIGHT 120
+30 FORWARD 100
+40 RIGHT 120
+50 FORWARD 100
+60 RIGHT 120
+END
+.page
+.adjust
+1Having defined procedures BOX and TRI, the student can now use these as
+commands to the computer, in effect developing his own private
+language as he goes along.  In particular, they can easily be used as
+subprocedures in creating the drawing HOUSE, or the abstract design,
+FLOWER. 
+
+.nofill
+.block 16
+TO HOUSE
+10 BOX
+20 FORWARD 100
+30 RIGHT 30
+40 TRI
+END
+
+
+
+
+
+
+
+
+
+
+.ce
+Figure 3
+
+.block 16
+
+
+
+
+
+
+
+
+
+
+
+
+TO FLOWER
+10 REPEAT [TRI RIGHT 30] 12
+END
+.ce
+Figure 4
+
+.adjust
+1These TURTLE commands, when embedded in a suitable interactive,
+procedural computer language such as LOGO, provide the basis for a rich
+universe of activities called Turtle Geometry, which includes cartoon
+drawings, simple and complex geometric designs, mathematical theory
+building, and computer games and animation.  Extensions of Turtle
+Geometry have proven fruitful when used with advanced high school
+students or MIT freshmen and sophomores.8  The universe of Turtle
+Geometry provides a conceptual framework for such aspects of
+mathematics as coordinate systems, positive and negative numbers, the
+use of variables, symmetry and similarity, the significance of special
+angles (30-60-90, 180, 360, etc.).  The computer programming involved
+in beginning LOGO activities can include the notion of procedures and
+subprocedures, recursion and iteration, the naming of procedures
+and variables, the use of conditional logic in the form of simple stop
+rules for repetitive procedures, the understanding of procedural
+hierarchy, and the use of debugging strategies.
+
+Within the universe of Turtle Geometry there is room for different
+students, working individually, to create their own sub-universes or
+microworlds with their own limited but expandable set of concepts,
+and related activities and projects.  The pedagogy of a LOGO classroom
+can be seen as the task of helping each child to create, explore and
+extend his or her own microworlds.  In this paper we describe the
+microworlds of two students, Deborah and Donald, who approached a
+very similar project in very dissimilar ways.  
+We feel that by focussing on these two individuals we
+can demonstrate how the computational environment
+of LOGO fosters the learning of children with very different
+developmental levels, learning styles, and academic abilities.
+
+.block 5
+0II. A Comparison of Donald and Deborah's Work
+.br
+1Deborah and Donald each carried out one major project as part of their
+LOGO experience.  
+They each programmed the computer to draw a cartoon-like head.
+Both projects and the
+superprocedures used to draw them are shown in figure 5.
+.nofill
+.block 22
+TO RABBIT
+5 HAT
+10 LITTLEEYES
+15 FACE
+20 PENUP
+25 FORWARD 70
+30 FORWARD 3
+35 RIGHT 20
+40 PENDOWN
+50 RIGHT 90
+55 RIGHT 90
+60 FORWARD 3
+65 FORWARD 60
+70 FORWARD 5
+75 FORWARD 3
+80 RIGHT 90
+85 RIGHT 20
+90 EARS
+END
+.ce
+Figure 5a
+
+.block 13
+TO HEAD
+1 BOX
+2 EYES
+3 NOSE
+4 MOUTH
+5 BEARD
+6 HAIR
+70 EARS
+80 HAT 
+85 FLOWER
+END
+.ce
+Figure 5b
+
+.ADJUST
+1Deborah is considered by her teachers to be a slow learner.  In her
+regular classes she often appears to be withdrawn, indifferent to the
+subject matter or to her fellow students.  When she began work in LOGO,
+she was totally dependent on the teacher -- requiring his reassurance
+on matters as routine as when to type a carriage return.
+
+Deborah was able to slowly build her confidence and understanding by
+limiting her choices of LOGO commands and inputs, limiting the goals of
+her work, and by working in a way that minimized the chances of error.
+While Deborah began her LOGO experience by asking for help at 
+every turn, she had a deeply ingrained resistance to new ideas or
+concepts.  For a long time she rejected the use of subprocedures,
+which could have greatly expanded her
+possibilities.  It was as though she deliberately provided herself with
+a very definite and restricted microworld in which to operate.
+
+Deborah used as few different commands as possible in her work.  Basic
+TURTLE commands along with arc primitives RARC and LARC were almost the
+only commands she used.  For inputs to TURTLE commands, she used only
+multiples of 10, up to 100.  If a larger effect was needed, she would
+use two steps, as in FORWARD 90, FORWARD 30.  
+
+Deborah began by
+using only inputs of 30 for all TURTLE commands, and gradually expanded to include other
+numbers, although 30, 60 and 90 continued to be her favorites.
+This microworld which Deborah chose for herself
+is very nearly as rich as all of
+Turtle Geometry.  It includes squares, triangles, circles, stars,
+men, rabbits, and a variety of abstract designs, as well as the
+mathematical concepts of perpendicularity, inverse operations, the
+total turtle trip theorem, symmetry, similarity, estimation of lengths
+and angles, planning and debugging, and procedure writing.
+
+By limiting her inputs to numbers such as 30, 60 and 90, Deborah
+actually enhanced the possibility that random explorations would produce interesting
+results.  At the same time, she seemed to have a high degree of visual
+intuition, often choosing precisely the correct input to produce a
+desired effect.  Her patience in a one-step-at-a-time mode of operation
+was remarkable.  Her format was quite stereotypic.  (1) carry out
+one turtle step (turn, move or penup); (2) check to see if that looks
+right on the screen; (3) if so, write down the step and continue; (4)
+if not, clear the screen, retype all the steps previously written down
+and try another choice for the qustionable step; (5) when a design looks
+good, choose a name for it, and copy all the steps to make a procedure.
+
+As an example of Deborah's success with this approach, we examine the
+way in which she drew a six-pointed star without making a single
+mistake.  She began by turning the turtle RIGHT 30, and used a
+combination of FORWARD 70s and RIGHT 60s to complete the star.  The
+actual rotations required to construct the star were RIGHT 120 at each
+point, and LEFT 60 at each inner vertex.  The way Deborah
+accomplished these rotations was quite typical of her work.  After each
+forward step, Deborah would turn the TURTLE RIGHT 60.  She kept turning
+it RIGHT 60, until the TURTLE was headed in what seemed to her to be the 
+right direction.  This
+required two repeats of RIGHT 60 at each point, and five repeats of
+RIGHT 60 at each inner vertex.  At one inner vertex she missed the
+correct orientation, and calmly repeated RIGHT 60 a total of eleven
+times until the TURTLE was aimed in the right direction.  When she
+copied the steps in her notebook, she copied all eleven RIGHT 60s
+without any hesitation.
+.block 16
+.sp 14
+.ce
+0(figure 6)
+
+1It was not until quite late in the series of classes that Deborah was
+ready to undertake a major project.  She drew a picture of a rabbit in
+her notebook, and asked the teacher if he thought that would make a
+good project.  He suggested modifying the rabbit, to make use of
+straight rather than curved lines, and helped her redraw the picture in
+a more simplified form.
+.block 22
+.sp 20
+.ce
+0(figure 7)1
+
+Although Deborah began by trying to draw the rabbit as a long series of
+commands, she soon accepted the suggestion that she break
+the problem into parts, and make each part a separate subprocedure.
+Although her work was directed toward an overall goal and involved a
+certain amount of top-down planning, she constructed each part of the
+rabbit piece by piece in an exploratory fashion.  Once again
+her choice of inputs to FORWARD and RIGHT commands were such that it was
+relatively easy for her to make the design come out the way she wanted.
+Without any apparent planning, she chose the length for the sides of
+the rabbit's head (FORWARD 90 FORWARD 30) in a way that made it easy for
+her to locate the eyes and nose symmetrically.  To locate the eyes
+she positioned the TURTLE at one side of the head, and moved it
+FORWARD 30.  Deciding that that looked like the right spot for an
+eye, she drew a circle of radius 20.  She then moved the TURTLE twice
+more in steps of FORWARD 30, decided that that looked about right for
+the second eye.  Thus she was able to locate both eyes symmetrically.
+It was apparent that she had not decided that the rabbit's head was
+120 steps across, and that she could therefore locate the eyes
+symmetrically 30 steps in from each edge.  More simply, she 
+knew that 90 and 30 were useful numbers and that if she kept trying
+FORWARD 30 it ought to come out right.
+.block 11
+.sp 9
+.ce
+0(figure 8)
+
+1With the completion of her rabbit project, Deborah had almost totally
+reversed her initial feelings of dependence and incompetence.  She
+invited her parents, teachers, and school principal to visit the
+computer lab, and in many ways, demonstrated to her visitors and
+classmates her new found sense of confidence, satisfaction, and power.
+
+Donald's work, which provides a striking contrast to Deborah's, was
+characterized by a strong component of advance planning, and the
+creating of structures within which problems could be solved.  At the
+same time, Donald was quite ineffective at the visually-based,
+exploratory modes of problem solving which were so useful to Deborah.
+He had difficulty estimating angles, and making use of the visual
+feedback provided by his explorations to improve his next attempt.
+
+Throughout his work Donald was extremely receptive to suggestions from
+the teacher, often making use of new ideas before he fully understood
+them.  In this way, he was able to incorporate 
+strategies that would continue to prove useful as he gradually came to
+understand them through use in more than one context.  He seemed to
+have the confidence that he could make use of the teacher's suggestions
+effectively and that he would eventually understand them, even if the
+concepts were a bit hazy at first.
+
+As an example of both the effectiveness and the difficulties associated
+with Donald's structured planning approach as well as the frustration
+he experienced with visual approaches to problem solving, we consider
+his construction of a house from a square and a triangle, a common
+LOGO task, tackled by many students at an early stage of their LOGO
+experience. 
+
+At first Donald attempted an exploratory approach to solving this
+problem.  He began by having the TURTLE draw a triangle on the screen,
+making use of the TRI procedure described above.  Having started by
+drawing a triangle, Donald established a framework for solving the problem
+corresponding to the initial orientation of the triangle.  Asked to
+draw a picture of what he was trying to accomplish, he made the diagram
+shown in figure 9.
+.block 11
+.sp 9
+.ce
+0(figure 9)
+
+1Since he was now dealing with two disorientations, the gap between
+the TRI and BOX procedures, and the tilted orientation of the entire
+shape, Donald had more difficulty than he could handle, and in an
+hour of exploration, never succeeded in resolving this problem.
+
+At the next class, the teacher suggested that Donald draw the BOX first.
+This suggestion provided him with enough new insight to devise a plan
+for solving the problem.  Donald avoided the usual
+problem of finding the rotation needed to attach the triangle to the
+upper left hand corner of the box.  He moved the turtle to the
+upper right hand corner of the box, reversed its direction, and then
+drew the triangle so that its first side was along the top of the box.
+In this way he resolved the problem analytically, eliminating the need
+for visual explorations.
+.block 22
+.sp 20
+.ce
+0(figure 10)
+
+1Donald's HEAD project occupied him for more than 12 class periods --
+more time than any other student devoted to a single project.
+This project also began with a plan, a cartoon-like drawing
+of a man's head.  After one
+session of exploratory work, Donald drew a revised plan, and worked
+with his teacher to create a superprocedure designed to draw the
+entire figure.
+.block 24
+.sp 22
+.ce
+0(figure 11)
+
+1Donald's original superprocedure, TO HEAD, included the first six
+features of the head:  the outside (BOX), EYES, NOSE, MOUTH, BEARD and
+HAIR.  Once the superprocedure was written, each subprocedure became a
+mini-project, requiring one or two classes to resolve.  Each feature of
+the head required it's own construction plan, a combination of the
+analysis and exploration needed to carry it out.  While working on the
+features of his head, Donald made use of a great deal of teacher
+asistance -- especially in developing approaches to geometric analysis
+that were necessary to overcome his difficulties with visual problem
+solving. 
+
+When Donald came to his subprocedure, EYES, for example, he could not
+resolve the problem of how to locate the eyes symmetrically, by means
+of visual exploration.  After several unsuccessful attempts, he asked
+for advice from the teacher.  The teacher helped him set up a kind of
+grid with which he calculated the location of the eyes, and he was
+then able to solve this problem without any further difficulty.
+
+Other, more complex problems that Donald encountered in the course of the project
+were resolved in similar fashion -- by creating structures which
+enabled him to solve the problem analytically and avoid visual
+explorations. In the course of his work Donald encountered estimation
+of distances and angles, the geometry of arcs and circles, the total
+turtle trip theorem, and the use of both grid-based and intrinsic
+coordinate systems.  He learned to use subprocedures and
+sub-subprocedures, to use patterned procedures making use of a REPEAT
+command, to make use of variables to control the size and shape of his
+hat and flower and to use a procedure with a conditional stop
+rule.  Although Donald only learned these approaches to the extent
+necessary to solve the particular problems inherent in his project,
+each succeeding use of the same concept reinforced his exposure to it,
+deepening his sense of mastery.
+
+Donald's final figure, drawn by the superprocedure, HEAD, represents an
+almost literal mapping of his revised plan, figure 11, into a
+computer program.
+
+.block 5
+0III. Conclusion
+.br
+1In summary, we observe that Deborah's and Donald's problem solving
+styles were markedly different in several ways:
+.indent 2
+.block 4
+
+01. Planning
+.br
+1Donald was a planner.  He made an overall plan for his project
+and created separate plans for each subpart of his project. Deborah
+had an overall idea of what she was trying to accomplish, but her
+actual project was carried out in an exploratory manner, one step at a
+time.  Donald's superprocedure HEAD, was written to serve as a framework
+for his project; Deborah's superprocedure, RABBIT, was written as the
+final step in completing her project.
+
+.block 5
+02. Analysis vs. Intuition
+.br
+1Deborah relied on an accurate visual intuition and a very
+limited set of inputs to TURTLE commands; Donald's visual intuition was
+poor -- he relied on mathematical analysis to resolve each problem he faced.
+
+.block 5
+03. Comfort With New Ideas
+.br
+1Donald absorbed a great deal of new information and tried a
+number of new approaches as he carried out his project -- confident
+that he could learn the skills he needed as he went along; Deborah
+resisted new learning -- her learnings consisted largely of
+consolidating and reinforcing old skills and methods.
+
+.block 3
+04. Obtaining Assistance From a Teacher
+.br
+1Donald made regular use of assistance from his teacher, while
+Deborah insisted on doing things in her own way, and resisted
+suggestions which she did not fully understand.
+
+.indent 0
+These observed differences give rise to pedagogical questions that are
+not limited to teaching children to use computers:  How can teachers
+learn the learning styles of their students?  How can teaching
+approaches in normal classes be flexible enough to support such a wide
+variation in learning styles?  How can a teacher help Deborah acquire
+some of Donald's analytic approach?  Can Deborah's intuitive
+understanding be learned by Donald?
+
+The success of both Donald and Deborah in a LOGO environment leads us
+to believe that additional experience in such an environment may be
+productive in beginning to answer these questions. 
+
+.block 8
+FOOTNOTES
+.br
+.ss
+1. The work reported in this paper was supported in part by the
+National Science Foundation (nder grant number 77-19083SED) and
+conducted at the Artificial Intelligence Laboratory, Massachusetts
+Institute of Technology, Cambridge, Massachusetts.  The views and
+conclusions contained in this paper are those of the author and should
+not be interpreted as necessarily representing the official policies,
+either expressed or implied, of the National Science Foundation or the
+United States Government.  
+
+2. "An Assessment and Documentation of a Children's Computer 
+Laboratory, LOGO Memo 48, 1977.
+
+3. "An Interim Report of the Brookline LOGO Project", LOGO
+Memo 49, 1978.
+
+4. "Final Report of the Brookline LOGO Project, " to be published
+Spring, 1979.
+
+5. "Programming Languages as a Conceptual Framework for Teaching
+Mathematics".  Feurzeig W., Papert S.A., Bloom M., Grant R.,
+and Solomon C.  Report No. 1889.  Bolt, Beranek, and Newman.
+Cambridge, Massachusetts. 1969. 
+
+6. "Twenty Things to do With a Computer". Seymour Papert and 
+Cynthia Solomon.  LOGO Memo 3, June 1971.
+
+7. "Teaching Children to be Mathematicians vs. Teaching About
+Mathematics," Seymour Papert.  LOGO Memo 4, July 1971.
+
+8. Turtle Geometry, Abelson and diSessa, to be published by
+MIT Press in 1979.
+

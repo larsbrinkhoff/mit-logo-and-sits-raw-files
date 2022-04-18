@@ -1,0 +1,521 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+0
+.he1
+WORD WORLDS PROPOSAL
+.he2
+LAWLER 5/9/80
+.ss
+.dummy ^
+.twinch 6.5
+.tlinch 9
+.nofill
+
+
+1. PROPOSAL SUMMARY
+
+2. THEORETICAL POSITION: FROM A MATHLAND TO WORD WORLDS
+^2.1.  THREE LOGO IDEAS
+^^2.1.1. MINIWORLDS AND MICROWORLDS
+^^2.1.2. THE INSTRUMENTAL USE OF WHAT'S-TO-BE-LEARNED
+^^2.1.3. REFLECTION: THINKING ABOUT DOING
+^2.1.+ BACK TO THREE LOGO IDEAS
+2.+ BACK TO WORD WORLDS
+^2.2 THE LEXICAL INTERPRETATION OF LANGUAGE
+^^2.2.1. ON LEARNING TO READ
+^^2.2.2. WHY LEARNING TO READ IS EASY OR HARD
+^^2.2.3. DEVELOPING A "LOGO" APPLICATION
+^^2.2.4. THE VIDEO MICROWORLD - A CONCRETE PROJECT
+^2.2.+ BACK TO LEXICALIZATION
+2.+ BACK TO WORD WORLDS
+^2.3. Compositions in Lexical Language
+^^2.3.1. Sketches of Word Worlds
+^^^2.3.1.1. The Photos Microworld
+^^^2.3.1.2. The Scores Microworld
+^^^2.3.1.3. The Cartoon Microworld
+^^^2.3.1.4. The Text Microworld
+^^^2.3.1.5. The Programming Microworld
+^^2.3.2. Possible Microworld Relations
+^^2.3.3. Possible Emergent Knowledge
+^2.3.+ Back to Compositions
+2.+ Back to Word Worlds
+
+3. VIDEO-DISC PROJECT PLAN
+
+4. COMPOSITION PROJECT PLAN
+
+5. RESEARCH OBJECTIVES
+6. PERSONNEL
+7. EXPLANATION OF THE BUDGET
+
+.ds
+.adjust
+.page
+12. FROM A MATHLAND TO WORD WORLDS0
+     The central problem of humane education is how to instruct while respecting the self-constructive character of mind.  During the past decade, the M.I.T. Logo Project has made significant contributions to resolving this problem.  This is  most clearly true in domains of mathematical focus.  The advent of video-disc technology and the declining cost of significant computational power encourage us to apply our best results to domains the new technology brings within reach [1].  We believe Logo ideas can be exported coherently from the "mathland" of the past to the world of langauge.
+
+.twinch 6
+12.1. THREE LOGO IDEAS0
+     There is a difference between ideas you accept as true or likely and that smaller set of ideas which function through and inform your work.  Consider this witticism:
+.ss
+.indent 10
+.nofill
+You can lead a child to Euclid,
+But you can't  make him think.
+
+.ds
+.indent 0
+.adjust
+This reformulation of the old saw ("You can lead a horse to water, but you can't make him drink.") is accepted as true by practically everybody, but it runs contrary to the general practice of the education industry.  Who takes such a formulation seriously ?  When a child fails to learn, the imputation of stupidity is made - as if the real opinion by which schooling functions is "You can lead a horse to water, but not a horse's ass".  The student is blamed and rarely does it occur to the teacher that he's trying to put the halter on the wrong end of the animal.
+
+     If one merely categorizes the situation by admitting that "motiovation" is a problem, he prejudices the possible solutions.  A central contribution of the Logo Project is the following cluster of ideas which have epistemological depth as well as cognitive and affective components: the experience of computer-based virtual worlds can prepare a learner's mind for his private insight into the powerful ideas of our culture;  the instrumental use of what-must-be-learned solves Meno's paradox [***need some more common name and better description of what I mean here.]; the primary educational tactic is to engage the learner in thinking about what he is doing.
+
+.twinch 5.5
+12.1.1. MINIWORLDS AND MICROWORLDS0
+     The Logo Project has defined a new engineering task for the education industry, the design of miniworlds and microworlds.  1MINIWORLDS0 are designed environments for the learning of domain-specific knowledge.  They are made possible by the coming of computers and typically involve the reconceptualization of an intellectual domain in such a way as to permit its connection with knowledge the learner can be expected to bring to the experience.  The outstanding example is the design of turtle geometry so that even young children can interpret  their mathematical experience in terms of their own actions in moving through space.  Miniworlds are general, and microworlds are more particular.  When realized as systems of computer procedures, 1MICROWORLDS0 are specializations of miniworld facilities for the learning of task-rooted knowledge.  Examples of microworlds are specific games or drawing systems conceived in terms of and composed in turtle geometry commands.  The design of such microworlds could legitimately be called "applications engineering".	
+
+     Miniworlds and microworlds address the central problem of education by creating intellectual spaces wherein a learner can act, through which action he will progressively construct within his mind cognitive structures embodying the knowledge of the microworld and miniworld domains.  As compared to suffering instruction, an extrinsic inculcation of society's most valued ideas, the use  of these virtual  worlds (so long as they are well conceived) is a better things for the learner to experience because, while he shapes his learning to what's in his mind already, the  virtual world shapes his new knowledge to fit the powerful ideas achieved by the culture.
+
+12.1.2. THE INSTRUMENTAL USE OF WHAT'S-TO-BE-LEARNED0
+     1MENO'S PARADOX0 amounts to this [2]:
+.ss
+.nofill
+.indent 5
+There can be no such thing as learning because
+^^either a person knows something or he does not know it;
+^^if he knows something already, he cannot learn it;
+^^if he doesn't know something, he doesn't know
+^^^^what he doesn't know and therefore cannot learn it.
+
+.ds
+.indent 0
+.adjust
+Socrates attacks this argument, rightly so, as sophistical logic chopping.  Its relevance for us, despite its flaws, is in highlighting the issue of how one can be engaged with something he doesn't know.  A learner may study selected material because of a teacher's authority.  Competition with peers may be used to motivate students.  But as for the material itself, who cares about addition or percentages, for example, before understanding them ?  Sufficient to the day are the interests thereof.
+
+     The Logo contribution to this problem is by pervasive embedding of what's-to-be-learned in the virtual worlds, the designed environments where today's experience must be justified by its intrinsic interest.  Let this serve as an example of the strategy:
+.ss
+.indent 5
+     One six year old child, whose typical mental calculation was adding by finger counting a number under ten to some base value, through playing a Logo game, SHOOT, became familiar with mental calculations and understood well enough to add mentally such sums as seventy-five plus twenty-six and to prove that ninety-six plus ninety-six is one hundred ninety-two. [Extensive  detail of this development is presented in Appendix I.]
+
+.ds
+.indent 0
+2.1.3. REFLECTION: THINKING ABOUT DOING0
+     What's the use of having the experience and missing the  meaning^?  "None", we might say at first, but there is always the possibility that one will recall later and make sense of what he once merely suffered without comnprehension - the possibility exists as long, that is, as one has the inclination to reflect upon past experience.  Beyond highlighting the issue, two aspects of Logo work have fostered the development of reflexive thought: the crisp instantiation and formulation of powerful ideas; and the engagement with and the discussion of procedure debugging as a model of thinking.
+
+     Controlled variation of one of several variables is a powerful idea in science and is one of the cluster recognized by Piaget and Inhelder [3] as characteristic of adolescent [formal] thought.  A famous procedure of the Logo culture, the polygonal spiral - 1POLYSPI0 for short - permits the crisp presentation of that idea:
+.ss
+.indent 5
+.nofill
+TO POLYSPI^^^:SIDE^^^:ANGLE^^^:INCREMENT
+1^^FORWARD^^:SIDE
+2^^RIGHT^^^^:ANGLE
+3^^POLYSPI^^^(:SIDE^+^:INCREMENT)^^^:ANGLE^^^:INCREMENT
+END
+
+.ds
+.indent 0
+.adjust
+When the angle value is that of a regular polygon, this simple procedure draws a maze-like spiral.  With other angle values, the "sides" may overlap.  When they do so, and the polygon vertices of the next spiral ring are near, spiralling lines appear as emergent from the contiguous intersections.  Projects exploring such emergent forms lend themselves naturally to the incremental alteration of a single variable. [Appendix II documents how one child, introduced to a crisp formulation of this powerful idea with POLYSPI, first generalized it in application to INSPI designs then exported it in his private investigation of a topological puzzle.]
+     For a learner who programs a computer, debugging is an accessible and perfectly natural form of reflection. [ Its accessiblity, even to a preschooler, can be witnessed in the incidents presented in Appendix III where debugging is seen to dominate excuse-making after the former is introduced.]  The sense in which debugging is natural depends on the learner's perception of a computer procedure as embodying his ideas for the direction of the turtle.  When someone can see some of his thought embodied in a procedure, he can then imagine other ideas as existing procedures in the mind which may be as amenable to debugging as the computer procedures he can examine and execute.
+
+.twinch 6
+12.1.+ BACK TO THREE LOGO IDEAS0
+     These three central ideas, which focus on the design of virtual worlds, the instrumental use of what's-to-be-learned, and reflection, all have exhibited value in the learning of mathematical concepts.  It is appropriate they should form the core of an attempt to address the learning of language skills.	
+
+.twinch 6.5
+12.+ BACK TO WORD WORLDS0
+     What guidance can we derive from Logo ideas for the design of word worlds ?  First, of course, we will conceive of the problem in terms of virtual worlds.  We will, shortly, introduce two new microworlds and will detail plans for their development subsequently.  The first microworlds focusses on  the instrumental use of words.  The second microworld is designed around the centrality of reflection.  
+
+.twinch 6
+.ss
+.nofill
+2.2. THE LEXICALIZATION OF LANGUAGE KNOWLEDGE
+    - setting up the puzzle: why is it that children who've
+      been talking for four years and understanding for five
+      don't learn to read easily ?
+    - the problem of the relation of language knowledge to other knowledge 
+      is one we will return to.
+.adjust
+.twinch 5.5
+.ds
+12.2.1. ON LEARNING TO READ0
+     If you hope to explore the learning of some skill, a fecund beginning is to ask, "Whaty knowledge does a learner bring to the learning task ?"  In raising this question, Harris Savin goes on to characterize the prevailing theory of learning to read [5]:
+.ss
+.indent 2
+"...Practically all discussions of learning to read assume that the child already perceives speech as a sequence of phonemes and that the heart of learning to read (at least at the beginning, in the CAT-RAT-HAT stage) is quite simply learning which letters of the alphabet correspond with which phonemes.  If he masters the system of letter-phoneme associations, then a child will know everything he needs to know except for the treatment of irregular forms.... [M]any children learn to read quickly and effortlessly.  However, and perhaps surprisingly, given the apparent simplicity of the skill of reading, large numbers of apparently normal children do not learn to read, or learn only after an inordinate amount of instruction.... [T]he prevailing theory of the skill of reading fails to account satisfactorily for the observed pattern of difficulties.  This theory fails to identify a component skill that is demonstrably lacking in each child who does not learn to read...."
+
+.ds
+.indent 0
+In previous work [6], we addressed the questions raised by Savin.  Employing two different experimental paradigms, we established that pre-schoolers used two different criteria in making judgments of wordhood.  The first experiment, a checker taking task (after Karpova, [7]), asked the subjects to take a checker from a pile for each word in phrases and sentences recited to them.   The typical subject took one checker for each phrase in the utterance.  For example, three checkers were taken for  "The puppy wants to eat".  A request for judgment and justification, (after Karmiloff, [8]), the second task asked the same subjects questions such as these: "Is X a word ?... How do you know it's a word (or is not one) ? "  ("X" would be a phrase, word or syllable from the phrases and sentences of the checker taking utterances.)  The typical pre-reader gave evidence of owning an 1INCLUSIVE0 word concept.  For example, within the context of the utterance, "pup", "-py", and "puppy" would all be judged to be words.  Based on these results, we concluded that pre-readers typically owned two separate and imperfectly compatible cognitive systems by which wordhood could be judged, two different concepts-in-action of what words are.
+
+     The first concept of wordhood derives from speech used in communication and has an "inclusive" character.  The children used "word" as a common label for what adults call "syllable", "word" and "phrase".  Words were, essentially, possibly meaningful collections of sounds.  In this, their judgments were similar to adults' treatment of idiom.  For example, in the phrase, "kick the bucket", adults would judge there are three words and one idiom, arguing that "bucket" names a thing, "kick" is something one can do, and "the" is a word by convention - without concern that none of these arguments is obviously related to the meaning of the idiom.  (The curious will find a discussion of this idiom in the Oxford English Dictionary, Vol.I, p.1150, col.2 under "bucket" sub. 2.)  Similarly, children judged "puppy" and "py" both as words in the same context, unconcerned with the obliteration of meaning of the sound /pi/ in the word "puppy".
+
+     The second concept of wordhood derives from language experience as a tool of naming and topic of instruction; it has an 1ATOMIC0 character.  The language is composed of independent things, called "words", each of which means something by itself; one sound can not be a part of two different" words" at the same time.   There are also things you can say that mean nothing, e.g. "genk"; those are not words.  There are other sounds used when you put words together in speech, e.g. "of", but they are not words because they are not meaningful.
+
+     The standard word concept, the 1LEXICAL0 concept as such, is different still.  Meanings are what's important in heard or spoken language.  In written or printed language, knowing what "words" are is also important.  A word is something you know is a word (there are several ways you can tell if an item is a word or not).  If you decide something is a word, it can't be part of another word at the same time.  What you are talking about or reading helps you tell whether a sound is part of one word or another.
+
+     The incompatabilities of the inclusive and atomic word concepts is rarely a problem for children until they confront the task of learning to read. (Who but a psychologist would ask them to judge the wordhood of utterance elements ?) I speculate that it is the socially imposed task of learning to read that induces a conflict between the inclusive and atomic word concepts and thus engenders the lexicl concept as a synthesis.  
+
+1WHY LEARNING TO READ IS EASY OR HARD0
+     Let me propose learning to read requires a child to:
+.ss
+.indent 2
+.nofill
+1. discriminate between 26 different symbols, the letters of the alphabet,
+^^^their sounds and variants.
+2. use the convention that spaces between strings of symbols segment the
+^^^set of letters into elements which are individually meaningful.
+3. connect letter strings, words, read with meanings known.
+4. assemble units of meaning from groups of words.
+5. subordinate possible sound-based confusions to disambiguation
+^^^by the conventional representation of words, i.e. lexical word
+^^^definition takes priority over sequences of sounds.
+6. subordinate meaning assembly to replacement of elemental meanings
+^^^in sequences recognized as idioms.
+
+.ds
+.adjust
+.indent 
+This description of reading skillls is an advance beyond Savin's caricature because it is possible to see many different ways children could have trouble.
+
+     The main possibility for explaining in detail what is the specific difference with respect to reading in the cognitive development of children from privledged and disadvantaged homes is the solidity and extent of childrens' specifically relevant knowledge about words.  Suppose a child approaches reading with previously well developed inclusive and atomic word concepts.  Even if deriving the lexical concept is necessary to make sense of text, he will have the prerequisite knowledge that task requires.  Acquiring the six sub-skills would be no harder that it appears on the surface.  Suppose now, on the contrary, that a child approaches reading with an impoverished atomic word concept, one that is not supported by the broad command of specific naming that characterizes the knowledge of children from privledged homes, one that has not yet reached the conclusion that a sound can not simulataneously be part of two words in one context.  What can such a child depend on, in his own mind, as he attempts to isolate the significant elements of text and figure out their relations. (One child, after claiming he could read, proceded to read "MOMMY" thus, "M, O, M, M, Y", i.e. reciting the names of the letters.)  However rich his oral speech, if such a child lacks a robust, contrasting system of naming knowledge at the base of his atomic word concept, the conflict which for others is resolved by the synthesis of the lexical concept will be for him a morasss of confusion.  Of what value is instruction when the infrastructure is lacking ?  Can a bird fly on one wing ?
+
+12.2.3. DEVELOPING A "LOGO" APPLICATION0
+     Our goal is to design systems  to support development of the infrastructure of mind from which socially valued skills are engendered.  In this sense, we want to make formal instruction as unnecessary for all children as it has always been for some of the priveledged few.  How do we go about it ?
+     Consider the SHOOT game as an archetype of an application supporting the development of addition skills.  The game is very simple, enjoyable in itself, and requires dealing with the aggregation of large numbers.  The game does not require mental addition but is biased to favor it.  Enjoying the game does not depend upon calculation perfection - "nearly right" is near enough.  This forgiving character leaves room for the gradual discrimination of elements and progressive refinement of calculation procedures.  Finally, number is the salient element, in that microworld, which specifies the signification of very well known actions of common experience, e.g. turning and moving in a line.
+
+     Can we imagine any system where the "word" (the atomic word) serves the same operand function as do numbers in the Logo mathland ?  The basic application we propose is (in computer jargon) file search by key.  By this we mean that a computer sould locate the relevant, stored information when a user keys an operand value.  For example, is a user keyed "FIND PUPPY", the computer should present whatever information it has stored under the label "PUPPY".  The objective of such an application is to exhibit the power of a word as a key to something of value.  In a video-disc enviroment, stored pictures are the things of value.
+
+.ss
+.nofill
+12.2.4. THE PICTURES  MICROWORLD - A CONCRETE PROJECT0
+    - video-disc technology with computer controlled access requires lexical
+      keys for accessing non-lexical information (i.e. pictures can be valued
+      by pre-readers; accessing pictures of their choice by keyword will reveal
+      the power of words; the instrumental use of words will lead to the
+      internalization of much ad hoc knowledge which can later be integrated
+      into the descriptions of language necessary for reading.
+    - imagine such systems as ultimately located in the equivalent of 
+      a "headstart" enviroment.
+    - in the pilot phase, development would be in a much more limited environemt,
+     where an essential value would be understanding as precisely as possible
+     how such a system is received and what its impact is, in detail.
+
+12.2.+ BACK TO LEXICALIZATION0
+    - what is the miniworld corresponding to the video microworld ?
+    - THE  WORD WORLD (we need some name, what should it be ?)*:
+       our world is the world of FINDING (as will be developed 
+       later), DOING and NAMING (to a limited extent).
+    - relevance to "reading"
+      -- tell the EEL, PIGGY, COMPUTER, TYPER, READING story.
+      -- tell the DALLAS STORY of four year olds.
+    - CONCLUDE: the computer use of words is orthodonal to the standard
+      dichotomy of reading and writing; computer experience of the sort
+      we propose can be imagine to be a precursor of both.
+
+.twinch 6.5
+12.+ BACK TO WORD WORLDS0
+.adjust
+.ds
+
+     We have just argued that experiences of the pictures microworld cut across the instruction categories of "reading" and "writint".  Doing so, we do NOT intend to argue that these terms and the judgements them imply are vacuous, for surely different activities exhibit different balances of lexical interpretation and specification.  We conclude generally that reading and writing are polar terms and that most activities fall on some continuum between the extremes.  We go just as far, even further, in a different direction.
+
+     It is customary to conceive of literacy and mathematical knowledge as distinct and even remote each from the other; we see the situation differently.  We have discussed word worlds as distinct from the Logo mathland for conceptual clarity and specificity of intentions but we see underlying the surface differences of knowlkedge domains profound elements of unity of two sorts:  the first, that there is no  reason to suppose learning processes of the human mind vary with the content learned; the second, that epistemological features of the content domains define whether or not activities are of such a sort as knowledge from their experience cna be organized into a general understanding.  (We will pursuie this line of discussion in section 2.3.3. below.)  Here we will merely state our position: 1THE KNOWLEDGE OF THE MIND CAN BE DESCRIBED A DISPARATE, i.e. DISTINCT AND SEPARATE.  THE DISPARATENESS OF COGNITIVE STRUCTURES DERIVES FROM THE SURFACE DIVERSITY OF EXPERIENCES AND IS ORTOGONAL TO THE SYSTEMATIC CLASSIFICATIONS OF KNOWLEDGE CHARACTERISTIC OF MATURE UNDERSTANDINGS AND INSTRUCTIONAL PROGRAMS>  LEARNING CAN ONLY BE UNDERSTOOD IN TERMS OF THE PROGRESSIVE ORGANIZATION OF THESE EXPERIENCE-ROOTED, DISPARATE COGNITIVE STRUCTURES.0
+
+     We can easily imagine that the knowledge from which reading and writing behavior derive are integral and, even more, that in the future the composition of text and computer procedures will be intimately related.  Let us turn now to a discussion of activities (more "wrtiting" than "reading" like) through which we can confront this issue.
+
+.twinch 6
+12.3. COMPOSING IN LEXICAL LANGAUGE0
+     There is much excitmenmt among congitive scientists, hope for a synergistic engagement among the disciplines of cognitive psychology, artificial intelligence and linguistics in a common onslaught on the p[roblem of functional literacy.  How deep the foundation of that enthusiasm remains to be seen, but the enthusiasm itself brings to light new perspectives worth examing.
+
+     Bruce [n] carries forward the slogan of psycholoinguistics with his arguments that "wrtiting is a communicative act" (and so it surely can be) and that his perspective is central to the possible formulation of a new theory of writing.  It is not very hard toi think of significant counter-examples to such a formulation.  Emily Dickinson spent a lifetime writing poems, expressing but not communicating the feelings and thoughts captured in her writing.  Charles Darwin wrote and wrote and wrote - and never published his ideas until forced to.  (See the discussion of this issue in the new Chicago Press edition of DARWIN ON MAN , H. Gruber.)  Darwin wrote in his journals for nearly twenty years before communicating his thoughts. In what sense was his writing a "communicative act" ?   One could tell a story that Darwin and Dickinson were communicating with themselves, but hasving to save appearances this way raises the question of how apt is this description of the phenomenon.  Further, even though the distinction between reading and writing is natural, we have argued that this distinction confuses the analysis of those mixed activities through the experience of which learning occurs.  To the extent that a focus on writing as a communicative act reinforces that unproductive dichotomy, the perspecxtive is counter-productive.
+
+     Hayes [n+1] offers a process model of text production in the style of Newell's production systems.  This is a significant contribution to the understanding of writing in the boldness of the attempt.  TYhe inability of the model to address how learning happens raises the significant wewakness of systems designed to match the body of knowledge known before essential discoveries are made: they have no place for the new knowledge yet to be discovered.  It may well be the case that knowledge structures of the human mind are so "unnatural" in respect of what the mind is able to conceive that it is only possible to imagine an apposite description of them if that description emnbodies a theory of their development.
+
+     More congenial to our perspective is the taxonomy proposed by the developmental psychologist Bereiter.  He describes five categories of writing and chartacterizes them individually and as forming a natural, but not a necessary, order.  
+.nofill
+.ss
+.indent 5
+^^^CATEGORIES^^^^^^^^^^CHARACTERISTICS
+1. associative^^^^^^^^transcribing wehatever comes to mind
+2. performative^^^^^^^writing under guidance of conventional standards
+3. communicative^^^^^^writing for a specific, external audience
+4. unified^^^^^^^^^^^^writing for oneself as a reader
+5. epistemic^^^^^^^^^^writing as an integral part of thinking
+
+.adjust
+.indent 0
+.ds
+    These descriptions of writing are functional in the sense that they help us classify how we think some one else is going about writing.  This is useful.  But they are so remote from the specific things a particular person is doing that they provide little guidance on how writing quality can be improved.
+
+     Let us now turn to a different approach to that objective, one thoroughly speculative but rooted in particular activities and focussed on how the interactions of knowledge derived from them might lead to an improved performance in respect of how othersd judge writing quality.
+.twinch 5.5
+
+12.3.1. A RANGE OF MICROWORLDS0
+.ss
+.nofill
+
+     - we've presente word worlds as separate from computer and mathmatical
+      knowledge for its easier conceptual accessibility;  we see, nonetheless,
+      a profound unity in what is required for children to comprehend the
+      two basic representational systems of our  intellectual culture.
+     - OUR POSITION: the mind develops as disparate cognitive structures
+      based on particular experiences; the relationships  which develop in
+      that integration of such disparate  structures derive from the
+      epistemological character of the domains and not at all from the
+      functional classification by activity, i.e. reading and writing.
+    - we can easily imagine that reading and writing are integral, and
+      even more, in the future the comprehension and composition of text
+      and computer procedures will be intimately related.
+---somehow bring in the obvious reference to computer literacy as well 
+as to textual literacy.
+
+
+^^^2.3.1.1. The Photos Microworld
+^^^^^^^^^^^^- a world of camera to computer to print activities where the
+^^^^^^^^^^^^^^the use of text is justified as commentary on pictures of
+^^^^^^^^^^^^^^whatever interests the person.
+^^^^^^^^^^^^- one use of this facility might be in enriching a computer journal
+^^^^^^^^^^^^- a second use might be for a "mechanical drawing" system, for use by
+^^^^^^^^^^^^^^people is making plans and diagrams for any sort of construction.
+^^^2.3.1.2. The Scores Microworld
+^^^^^^^^^^^^- a world of facilities for producing very simple musical scores,
+^^^^^^^^^^^^^^in print. The use of words is embedded in the versification of
+^^^^^^^^^^^^^^songs - whatever ones the person can remember and chooses to
+^^^^^^^^^^^^^^to represent.
+^^^^^^^^^^^^^^of a "popular" sort whose representation the child can comprehend
+^^^^^^^^^^^^^^and use to produce the music on instruments, i.e. they must be
+^^^^^^^^^^^^^^scores the child can "read".
+^^^^^^^^^^^^- novice readable scores could be made with this representation:
+^^^^^^^^^^^^^^^1. melodic notation of key-name to tone, e.g. "row, row, row
+^^^^^^^^^^^^^^^^^^your boat" would be represented simply as "c-c-c-d-e".
+^^^^^^^^^^^^^^^2. next, that melodic representation could be generated on a
+^^^^^^^^^^^^^^^^^^staff while still preserving the key-to-tone coding.
+^^^^^^^^^^^^^^^3. later, a duration aspect could be added to the representation.
+^^^^^^^^^^^^^^^4. later, trivial harmonies could be generated for accompaniement
+^^^^^^^^^^^^^^^^^^by specifying no more than relative or absolute chord forms,
+^^^^^^^^^^^^^^^^^^e.g. D7 would be the dominant seventh in relative mode, or it
+^^^^^^^^^^^^^^^^^^a seventh in the key of D in absolute mode.
+^^^^^^^^^^^^- does this relate to "computer music" ?  It could, but it need not.
+^^^^^^^^^^^^^^that is, online music generation could be used to support and test
+^^^^^^^^^^^^^^the melodies the child tries to construct - but it need not be used.
+^^^^^^^^^^^^- what is special in a word-worlds sense about these scores is their
+^^^^^^^^^^^^^^use to support the child's memorization of complex verbal structures,
+^^^^^^^^^^^^^^i.e. the text to songs.  This sort of activity could be an engaging
+^^^^^^^^^^^^^^precursor to a subsequent versification activities.
+^^^2.3.1.3. The Cartoon Microworld
+^^^^^^^^^^^^- the word-worlds "advantage" of a cartooning facility would be the
+^^^^^^^^^^^^^^production of material from which the child could expect to get
+^^^^^^^^^^^^^^quick and easy to interpret feedback.  (Someone may dissemble in
+^^^^^^^^^^^^^^judging or "correcting" a composition; do people feign laughter
+^^^^^^^^^^^^^^when they fail to get a joke ?) This microworld should be a child-
+^^^^^^^^^^^^^^accessible activity focussed on real commincation.
+^^^^^^^^^^^^- if a photo-world facility exists (and depending on the specific
+^^^^^^^^^^^^^^facility implemented, i.e. mixed or digitized camera input) cartoon
+^^^^^^^^^^^^^^characters could be copied from existing cartoons in print,e.g.
+^^^^^^^^^^^^^^Charley Brown, thus providing familiar actors for the beginner.
+^^^^^^^^^^^^^^With a mixed video image, characters could be defined procedurally
+^^^^^^^^^^^^^^by constructing an overlay of a model by shape selection from an
+^^^^^^^^^^^^^^an EEL-like component shape selection.  This could be a significant
+^^^^^^^^^^^^^^advantage if we had an editor subsystem which would permit turtle
+^^^^^^^^^^^^^^geometry interfacing of subprocedures comprising cartoon figures
+^^^^^^^^^^^^^^(for example, change the leg point of attachment or angle with respect
+^^^^^^^^^^^^^^to the body).
+^^^^^^^^^^^^- it should be possible to permit easy generation of a balloon and tail
+^^^^^^^^^^^^^^to relate text to characters on the cartoon.
+
+^^^2.3.1.4. The Text Microworld 
+^^^^^^^^^^^^- the basic purpose of thie microworld is to ease the child's burden in
+^^^^^^^^^^^^^^coping with the writing demands imposed on him - but dpoing so in such
+^^^^^^^^^^^^^^a way that he will have good prototypes for writing off the computer
+^^^^^^^^^^^^^^as well as with it.
+^^^^^^^^^^^^- obligatory writing: thank-you notes, requests for information, orders
+^^^^^^^^^^^^^^for purchases can all be set up as form letters - with enough flexibility
+^^^^^^^^^^^^^^for personalization (by text or drawing) whenever desirted.
+^^^^^^^^^^^^- obligatory compositions: the best way to support the child's writing
+^^^^^^^^^^^^^^of this material is to introduce two facilities: a tree generator (with
+^^^^^^^^^^^^^^boxes at nodes and capability for text insetion in them) to help in
+^^^^^^^^^^^^^^in explication of the organization (existing and required) of the
+^^^^^^^^^^^^^^child's ideas; second would be a multi-window editor permitting the
+^^^^^^^^^^^^^^view and review of scratchings sans order in one window with the
+^^^^^^^^^^^^^^construction of a serial outline for the text in the second window.
+^^^^^^^^^^^^^^It might be possible to construct form-compositions as well as form
+^^^^^^^^^^^^^^letters for hackneyed themes, e.g. biographies, my home town.
+^^^^^^^^^^^^- printed-text copying would save a lot of keying and could possibly be
+^^^^^^^^^^^^^^be implemented with line by line interpretation of a digitized picture.
+^^^^^^^^^^^^^^(to do so or not might be primarily a cost-based decision; c.f. the
+^^^^^^^^^^^^^^^Kurtzweil text input device.)
+^^^^^^^^^^^^- discrete editor functions would be useful in modifiying computer encoded
+^^^^^^^^^^^^^^text to make "MADLIBS".  One might variablize the occurances of a
+^^^^^^^^^^^^^^specific word in the text.  Thus VARY, RED-RIDING-HOOD (RED="COLOR),
+^^^^^^^^^^^^^^would permit the production of a story about BLUE-RIDING-HOOD and,
+^^^^^^^^^^^^^^more interesting, the production of printed material with words to
+^^^^^^^^^^^^^^to be subsequently specified by the child in whatever way he or she
+^^^^^^^^^^^^^^might choose.
+^^^^^^^^^^^^- these facilities would, of course,be useful for "government work", 
+^^^^^^^^^^^^^^i.e. for doing whatever you want with them, but it is not clear to
+^^^^^^^^^^^^^^me many that school-age kids would ever want to write stories 
+^^^^^^^^^^^^^^spontaneously.
+
+^^^2.3.1.5. The Programming Microworld
+^^^^^^^^^^^^- the basic argument to make here is that one should see as one integral
+^^^^^^^^^^^^^^a sub-set of programming knowledge and text composition.
+^^^^^^^^^^^^- the second point is that "computer literacy" will emerge simultaneously
+^^^^^^^^^^^^^^with textual literacy from participation in the culture which will grow
+^^^^^^^^^^^^^^up around such word-world application.
+
+
+^^2.3.2. Possible Microworld Relations
+^^^^^^^^^1 AVOID any appearance of simple additivity of skills0
+^^^^^^^- here we want to emphasize our intention of having the child, like Moliere's
+^^^^^^^^^M. _________________ ,discover later to his great surprise and delight that
+^^^^^^^^^he had been writing prose and even verse all the time.
+^^^^^^^- what fundamental categories of text use do these four microworlds cover ?
+^^^^^^^^^^1. utilitarian (text annotating pictures)
+^^^^^^^^^^2. mnemonic and artistic (verses for songs known/to be learned)
+^^^^^^^^^^3. humor (cartooning where the words will carry moreof the messge than
+^^^^^^^^^^^^will the expression or articulation of the characters).
+^^^^^^^^^^4. obligatory writing/ expansible at choice to personal uses or to the
+^^^^^^^^^^^^^personalization of obligatory writing e.g. T.G. designs for letter heads.
+^^^^^^^- how do these relate ?  in all four worlds, text plays a subordinate but central
+^^^^^^^^^^role.  Text will be used in a way the child will perceive as personally
+^^^^^^^^^^meaningful .
+^^^^^^^- infection of one world by ideas from another:
+^^^^^^^^^^1. Form letters and formats for mechanical drawings
+^^^^^^^^^^2. the audience reaction to cartoons and consideration of the audience
+^^^^^^^^^^^^(as people, not as graders) in composition.
+^^^^^^^^^^3. form letters, verses to songs and the french forms of verse, e.g.
+^^^^^^^^^^^^the villanelle and rondolet.
+^^^^^^^^^^4. form letters and rigid scripts for purely verbal humor (knock-knocks).
+^^^^^^^^^^5. the copying of cartoon characters from the photo-world and the 
+^^^^^^^^^^^^imititation of exemplary verse,e.g. limericks, verse insults, etc.
+^^^^^^^^^^6. others  ?  
+
+
+^^2.3.3. Possible Emergent Knowledge
+^^^^^^^^- we don't know what will happen - but our experience leads us to believe
+^^^^^^^^^^that what will emerge from the interaction of the child own knowledges
+^^^^^^^^^^of experience with the microworlds of computer activity will be more
+^^^^^^^^^^profound than the simple instructional goals we might fabricate at this time.
+^^^^^^^^- a fair question, then, might be "how will you tell when something important
+^^^^^^^^^^has happened ?  Further, how will you be able to disentangle the actual
+^^^^^^^^^^causes of the changes from irrelevant, accidental features ?"  We believe
+^^^^^^^^^^this problem is not soluable, in general; detailed case studies do permit
+^^^^^^^^^^an inkling of how the interactions of experience and structure formation
+^^^^^^^^^^affect profoundly the function of knowledge - but we hold that not enough
+^^^^^^^^^^is now known to make honest predictions that a specific experience will
+^^^^^^^^^^affect a particular mind in a specific way.  
+^^^^^^^^- why should it be true that there can be something special about computer-based
+^^^^^^^^^^microworlds of experience ?  recall McLuhan's slogan, "the medium is the
+^^^^^^^^^^message."  Obvious hyperbole; but the medium can profoundly constrain the
+^^^^^^^^^^possible range of messages which it might communicate.  The specific
+^^^^^^^^^^aspects of computer experiences which give them power within the mind is the
+^^^^^^^^^^conjunction of specificity and schematization.  The significance of this
+^^^^^^^^^^conjunction can be appreciated by reflecting ona very famous example of
+^^^^^^^^^^thought in the history of modern science:
+^^^^^^^^^^^^^everybody knows the feeling of riding in a rising elevator; you get
+^^^^^^^^^^^^^heavier.  Children enjoy it; most people ignore it.  A physicist 
+^^^^^^^^^^^^^worried about it.  The "additional" weight comes from the increase in
+^^^^^^^^^^^^^speed as the elevator starts up; i.e. it is due to acceleration.  If
+^^^^^^^^^^^^if feels like extra weight, how can we tell that it isn't weight ?
+^^^^^^^^^^^^The physicist, Einstein, said "maybe we can't tell" and used this
+^^^^^^^^^^^^unusual conclusion from a thought experiment as a fundamental principle
+^^^^^^^^^^^^in his attempt penetrate deeper into an understanding of gravity.
+^^^^^^^^- the assertion: the joint specificity and schematiziation characteristic
+^^^^^^^^^^of the computer medium permit (with good design) the development of
+^^^^^^^^^^thought structres which are like the classical gedanken experiments
+^^^^^^^^^^of physics - this is not a single sentence argument. 1THIS IS AN
+^^^^^^^^^^IMPORTANT ARGUMENT BECAUSE IT IS THE PATH THROUGH WHICH WE
+^^^^^^^^^^RE-CONNECT THE IDEA OF REFLECTION WITH PARTICULAR EXPERIENCES.
+^^^^^^^^^^THAT IS, WE ARGUE SPECIFICTY AND SCHEMATIZIATION ARE PRECISELY
+^^^^^^^^^^THOSE CHARACTERISTICS WHICH GIVE CERTAIN COGNITIVE STRUCTURES
+^^^^^^^^^^THE POWER OF ARCHETYPES AROUND WHICH THOUGHT REORGANIZES.0 
+^^^^^^^^- the role of Einstein's persistent interest in the unification
+^^^^^^^^^^of fundamental forces is parallelled by our society's persistent
+^^^^^^^^^^interest in the enculturation of our children to those points of
+^^^^^^^^^^of view and attitudes toward knowledge wich will permit them to
+^^^^^^^^^^be fully participating members of our intellectual community.
+^^^^^^^^^^Thus we see the developing of microworlds as providing learners
+^^^^^^^^^^with tools of thought of the same sort as have been of so much
+^^^^^^^^^^value in the modern history of science.  
+^^^^^^^^- the essential point of a "thought experiment" is you do it because
+^^^^^^^^^^you are not able to execute an empirical experiment; the similar
+^^^^^^^^^^point of an archetypical mental microworld is that you can't do
+^^^^^^^^^^any new experiment before you can imagine it.  In this sense, we
+^^^^^^^^^^are much more interested in enhancing learner's imaginations than
+^^^^^^^^^^their skills.
+This may be a profound but disastrous point to make.
+
+Sorrow flies on the wings of morning,
+And out of the heart of darkness comes the light.
+
+*****
+
+
+.ss
+.nofill
+2.3.2. DARWIN AND DICKINSON:
+     - reflection is the more profound aspect of writing when contrasted with
+      communication; reflection is even more fundamental than communication because
+      all writing that is more than automatic implies reflection and analysis first
+      to express what is thought in descriptions below the threshold of words and
+      to clarify what is "said" for another.
+
+2.4.4. Extensions of such a system for case study analysis
+       ...more to come
+
+
+.adjust
+
+2.3.  (change sub headings also) WRITING: COMMUNICATION AND REFLECTION
+The importance of refllection is emphasized by our view of the interaction of experience and the development of mind^[4].  Experience is a public matter, wherein one gains ad hoc knowledge, but understanding is a private matter, a very personal construction of one's own mind.  The development of ideas comes from the integration of the ad hoc knowledges of experiences, but the ideas can not precede the experience or be a goal of experience.  The sense that the durable knowledge of ideas comes from a casual, goal-free, mulling over of previous activity recalls William Wordsworth's  observation "poetry  is passion recollected in tranquility".  We should not be surprised at the echo of this great poet and early psychologist converging with our formulation that "1UNDERSTANDING0 is a description of experience articulated through reflection."  To the extent that understanding is the future-effective residue of education, a focus on reflection, providing a taste of reflection in the hope that the learner will come to relish it, goes to the heart of humane education in the world of letters as in mathland.
+
+  Finally, the
+powerful ideas arising from experience in one virtual world or
+another will be more easily related to other virtual worlds because
+of that mixture of concreteness and schematism which characterize
+them.
+
+
+.page
+.ss
+.twinch 6.5
+.nofill
+[1]. The ripening of this new technology is clearly described in Automated
+   Dictionaries, Reading and Writing, George A. Miller, N.I.E., l979
+[2].  Meno, Plato's Dialogues (Jowett)
+[3]. The Growth of Logical Thinking from Childhood to Adolescence,
+   Piaget and Inhelder.
+[4]. See One Child's Learning: Tic Tac Toe or The Articulation of
+   Complementary Roles, R. W. Lawler (in preparation).
+[5]. What the Child Knows About Speech When He Starts to Learn
+   to Read, pp. 319-320, Harris Savin, in Kavanaugh and Mattingly (eds.),
+   Language by Ear and by Eye, Cambridge, Mass.  The M.I.T. Press, l972.
+[6]. Pre-Readers's Concepts of the English Word, (an M.I.T.  S.M. Dissertation
+   in  an Interdisciplinary Science focussed on Educational Technology)
+   R. W. Lawler, 1976.  Available from the M.I.T. Artificial Intelligence
+   Laboratory as A.I. Memo 395  (Logo Memo 40).
+[7]. The Pre-schooler's Realization of the Lexical Structure of Speech,
+   Karpova, S. N., abstracted and translated by Dan I. Slobin in Smith, F.
+   and Miller, G. A. (eds.) The Genesis of Language, Cambridge, Mass.,
+   The M.I.T. Press, 1966.  This work is described in summary in 
+   The Psychology of Reading, Gibson, E. and Levin, H., Cambridge, Mass.,
+   The M.I.T. Press, 1975.
+
+[n]. BRUCE
+
+[n+1]. Hayes
+
+[n + 2]. Bereiter
+
+
+
+
+
+APPENDIX I: Compact story of One Child's Learning: Addition
+APPENDIX II: Compact story of Exporting a Powerful Idea
+APPENDIX III: Compact story of One Child's Learning: Debugging
+
+
+

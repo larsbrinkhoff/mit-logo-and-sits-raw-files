@@ -1,0 +1,271 @@
+.mllit==1
+TITLE tv memory tester
+tyic==1
+tyoc==2
+
+A=1
+B=2
+C=3
+D=4
+E=5
+F=6
+t=7
+tt=10
+pat=16
+P=17
+
+x=pushj p,
+
+tvp==300
+tv==tvp*2000	;address of beg of tv buffer
+tvend==tvp*2000+10*2000-1
+tvcntl==tvp*2000+10*2000
+
+
+PDL:	BLOCK 20
+
+BEG:	MOVEI P,PDL
+	MOVE A,[-11,,tvp]
+	MOVEI B,0
+	.CALL [SETZ
+		SIXBIT /CORBLK/
+		1000,,600000
+		1000,,-1
+		A
+		1000,,-2
+		SETZ B]
+	.VALUE
+	.open tyic,[sixbit /   tty/]
+	.value
+	.open tyoc,[sixbit /  !tty/]
+	.value
+TYPEO:	MOVEI A,[ASCIZ /
+MEMORY TO BE CHECKED:/]
+	PUSHJ P,ATYPE
+	MOVEI C,0		;read channel number
+LOOP:	.IOT TYIC,A
+	CAIN A,15
+	JRST NUMIN
+	CAIG A,71
+	CAIGE A,60
+	JRST TYPEO
+	LSH C,3
+	ADDI C,-60(A)
+	JRST LOOP
+NUMIN:	DPB C,TVBP
+	MOVE A,TV1
+	MOVEM A,TVCNTL
+
+	movei pat,0		;check for zeros
+	movei t,5
+	x checkr
+patc1a:	skipe errcnt
+	jrst patc1
+	movei a,30.
+	.sleep a,
+	x rechk
+	sojg t,patc1a
+
+patc1:	setcmi pat,17		;check for all ones
+	movei t,5
+	x checkr
+patc2a:	skipe errcnt
+	jrst patc2
+	movei a,30.
+	.sleep a,
+	x rechk
+	sojg t,patc2a
+
+patc2:	setzm errcnt		;try random stuff
+	move pat,[-105105.69]
+	movem pat,ran'
+	move a,[-17776,,tv]
+patl3:	fmprb pat,ran
+	tsc pat,pat
+	move b,pat
+	trz b,17
+	movem b,(a)
+	move c,(a)
+	came c,b
+	 x error
+	aobjn a,patl3
+	skipe errcnt
+	jrst patl5
+	move pat,[-105105.69]
+	movem pat,ran'
+	move a,[-17776,,tv]
+patl4:	fmprb pat,ran
+	tsc pat,pat
+	move b,pat
+	trz b,17
+	move c,(a)
+	came c,b
+	 x error
+	aobjn a,patl4
+
+patl5:	movei t,1		;bit as a function of address
+	move tt,[tdne a,t]
+patl5a:	x adrfl
+	lsh t,1
+	trnn t,20000
+	jrst patl5a
+	movei t,1
+	move tt,[tdnn a,t]
+patl5b:	x adrfl
+	lsh t,1
+	trnn t,20000
+	jrst patl5b
+
+	movei pat,20		; lonesome one
+patl1:	x checkr
+	rot pat,1
+	trnn pat,1
+	jrst patl1
+	setcmi pat,37		; lonesome hole
+patl2:	x checkr
+	rot pat,1
+	tro pat,20
+	trze pat,1
+	jrst patl2
+
+	jrst typeo		;try another channel
+
+checkr:	setzm errcnt
+	move a,[-17776,,tv]
+	move b,pat
+check2:	movem b,(a)
+	move c,(a)
+	came c,b
+	 x error
+	aobjn a,check2
+	skipe errcnt
+	popj p,
+rechk:	move a,[-17776,,tv]
+	move b,pat
+check1:	move c,(a)
+	came c,b
+	x error
+	aobjn a,check1
+	popj p,
+adrfl:	setzm errcnt
+	move a,[-17776,,tv]
+adrfl2:	movei b,0
+	xct tt			; skips on selected address bit
+	 setcmi b,17
+	movem b,(a)
+	move c,(a)
+	came c,b
+	 x error
+	aobjn a,adrfl2
+	skipe errcnt
+	popj p,
+	move a,[-17776,,tv]
+adrfl1:	movei b,0
+	xct tt
+	 setcmi b,17
+	move c,(a)
+	came c,b
+	 x error
+	aobjn a,adrfl1
+	popj p,
+	
+
+;A HAS ADDRESS BEING TESTED
+;B HAS CORRECT PATTERN
+;C HAS PATTERN IN ERROR
+
+ERROR:	aos errcnt'
+	PUSH P,A
+	PUSH P,B
+	PUSH P,C
+	PUSH P,T
+	MOVEI A,[ASCIZ /
+ERROR AT: /]
+	PUSHJ P,ATYPE
+	HRRZ A,-3(P)		; A = address tested
+	SUBI A,TV
+	PUSHJ P,OTYPE
+	MOVEI A,[ASCIZ / CONTENTS: /]
+	PUSHJ P,ATYPE
+	MOVE A,-1(P)		; C = contents in error
+	LSH A,-4
+	PUSHJ P,OTYPE
+	HRRZ A,-3(P)
+	SUBI A,TV
+	LDB B,[130200,,A]
+	MOVE B,COLUMN(B)	;COLUMN OF CHIPS ON CARD
+	MOVEM B,COL'
+	MOVE B,["A,,"C]		; CARD SLOT
+	TRNE A,1
+	MOVE B,["B,,"D]
+	MOVEM B,SLOT'
+	MOVE A,-1(P)
+	XOR A,-2(P)		; XOR OUT CORRECT CONTENTS
+	JFFO A,ERR1		; FIND THE FIRST BIT (ONLY ONE WE TYPE)
+	MOVEI A,[ASCIZ / --NO ERROR??--/]
+	PUSHJ P,ATYPE
+	JRST ERRRET
+
+ERR1:	CAIGE B,16.		; IN RH WORD?
+	JRST ERR2		;NO
+	SUBI B,16.
+	MOVSS SLOT		; LH WORD, IN OTHER SLOT
+ERR2:	MOVNS B
+	ADDI B,15.		;CONVERT TO PDP-11 BIT NUMBERS
+	MOVEI T,4
+	TRNN B,10		; BITS 8-15 ARE SLOTS 1-4
+	ADDM T,COL		; BITS 0-7 ARE SLOTS 5-8
+	ANDI B,7
+	MOVE B,ROWS(B)
+	MOVEM B,ROW'
+	MOVEI A,[ASCIZ / SLOT:/]
+	PUSHJ P,ATYPE
+	HLRZ T,SLOT
+	.IOT TYOC,T
+	MOVEI A,[ASCIZ /, CHIP /]
+	PUSHJ P,ATYPE
+	.IOT TYOC,COL
+	.IOT TYOC,ROW
+ERRRET:	POP P,T
+	POP P,C
+	POP P,B
+	POP P,A
+	POPJ P,
+;Random subrs
+
+OTYPE:	MOVE T,[440300,,A]
+	ILDB C,T
+	TLNE T,770000
+	JUMPE C,.-2
+OTLOOP:	ADDI C,60
+	.IOT TYOC,C
+	TLNN T,770000
+	POPJ P,
+	ILDB C,T
+	JRST OTLOOP
+tv1:	36000,,
+tvbp:	240500,,tv1
+
+ATYPE:	HRLI A,440700
+TLOOP:	ILDB T,A
+	JUMPE T,CPOPJ
+	.IOT TYOC,T
+	JRST TLOOP
+CPOPJ:	POPJ P,
+
+ROWS:	"C
+	"D
+	"E
+	"F
+	"G
+	"H
+	"J
+	"K
+
+COLUMN:	"4	;OR 8
+	"2	; OR 6
+	"3	; OR 7
+	"1	; OR 5
+
+end beg
+

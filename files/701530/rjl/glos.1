@@ -1,0 +1,1793 @@
+.XGP
+.TL 55
+.font 0 25vr
+.font 1 25fg
+.font 2 25vri
+.font 3 sup
+.he1
+LOGO GLOSSARY
+.he2
+
+.sp 5
+.ce
+A GLOSSARY OF TI/10 LOGO PRIMITIVES
+.sp
+.CE
+
+.sp 2
+.ce
+Michael J. Sannella
+.sp
+.ce
+Adapted from memo 16 of E. Paul Goldenberg
+.ce
+which was adapted from Memo 14 of Abelson and Adams
+.sp 9
+.adjust
+This glossary was written for the purpose of providing a
+quick and concise yet accurate description of the primitives
+and special words and characters of the  TI/10
+implementation of the LOGO language.  Many entries include
+references to other related words and/or examples of the use
+of the primitive being described, but this is not intended
+to replace the function of a good manual.  For a more
+detailed and comprehensive description of the language, see
+the LOGO MANUAL, LOGO MEMO 7.
+.sp
+The description of each LOGO word includes the word, itself,
+any arguments that the word may require, the "type" of word
+it is, abbreviated and alternate forms of the word, if any,
+and a definition correct as of the date of this glossary.
+Word type is described on the first page and an example of
+the format of the entries is given below.
+.sp
+In the appendix to this glossary are sections about 1) LOGO
+words that take a VARIABLE NUMBER OF INPUTS, 2) INFIX
+OPERATORS, 3) EDITING CHARACTERS, 4) SPECIAL CHARACTERS, 5)
+SPECIAL NAMES, 6) DECIMAL ASCII CODE AND CORRESPONDING
+CHARACTERS.
+.sp 2
+.nofill
+1PRIMITIVE 2inputs (optionalinputs)	0(word type)
+	 Brief description and references to other LOGO 1PRIMITIVES.0
+.sp 2
+.adjust
+This report describes research done at the Artificial
+Intelligence Laboratory of the Massachusetts Institute of
+Technology.  Support for the laboratory's education research
+is provided in part by the National Science Foundation under
+grant #GJ1049.
+.PAGE
+.spage 1
+.sp 2
+WORD TYPE
+.adjust
+.sp
+Some LOGO words output values to other LOGO words.  We call
+these words "Operations."  LOGO words which do not output
+are generally called "Commands," but some further
+subdivision is used in this glossary.  Words whose purpose
+is to 2COMMAND0 a device to do something now (whose
+purpose is not, primarily, to switch into some mode that
+affects the behavior of future commands or to monitor the
+operation of a procedure) are called COMMANDS.  Words whose
+primary purpose is to 2SWITCH0 to another mode or device
+(e.g., making 1FORWARD0 apply to the TouchSensor-Turtle
+instead of the display, or entering 1DEBUG0 mode) are
+called SWITCHES.  Words that determine the 2FLOW0 of
+control in a procedure (e.g., 1STOP0ping, 1PAUSE0ing,
+1WAIT0ing, 1GO0ing to new lines, etc.) are called FLOW
+words.  LOGO words that cannot be used without specially
+unlocking their protection are called STATUS words.  There
+is also a series of words that serve only to clarify the
+nature of the word following them.  These words are called
+MODIFIERS in this glossary.   To help the reader, the
+COMMANDS, OPERATIONS, SWITCHES, and FLOW words, are further
+modified, where appropriate, with labels indicating which
+specific device or devices they apply to.  Words that apply
+generally are not further labeled.
+.sp 11
+.nofill
+1ALL				0(modifier)
+.adjust
+	 Used in expressions like1 PRINTOUT ALL0 or1
+ERASE ALL0 to indicate that the command applies to your
+entire workspace.
+.sp 2
+.nofill
+1BACK 2distance 			0(turtle command)
+1BK 2distance0
+	Causes the display, plotter or floor turtle to back up 2distance.
+.sp 2
+.nofill
+1BOTH 2TorF1 TorF2		0(operation)
+.adjust
+	 Outputs the logical and of both its inputs which must be either 1"TRUE0 or1 "FALSE0.  That is, it outputs 1"TRUE0 if and only if both of its inputs are (or evaluate to)1 "TRUE.  
+.sp 2
+.nofill
+1BTOUCH 				0(TS-turtle operation)
+.adjust
+	 Outputs1 "TRUE0 if the back of the touch-sensor turtle is touching something.  Outputs1 "FALSE0 otherwise.  Like1 FTOUCH, RTOUCH, 0and1 LTOUCH.
+
+.sp 2
+.nofill
+1BUTFIRST 2wordorlist 		0(operation)
+1BF 2wordorlist0
+.adjust
+	 If 2wordorlist0 is a list,1 BF0 outputs the list that contains all but the first element of the list 2wordorlist.
+.sp
+.nofill
+	1?PRINT BF [DO YOU LOVE ME]
+	YOU LOVE ME
+	?0
+.sp 
+.adjust
+If 2wordorlist0 is a word, 1BF0 outputs the word that is 2wordorlist0 with its head cut off. 
+.sp
+.nofill
+	1?PR BF "WHERE
+	HERE
+	?0
+.sp 
+.adjust
+If 2wordorlist0 is the empty list or the empty word, 1BF0 can't chop off its leading edge and complains.  See also 1FIRST, LAST0 and 1BUTLAST.
+.sp 2
+.nofill
+1BUTLAST 2wordorlist 		0(operation)
+1BL 2wordorlist0
+	The same as1 BUTFIRST0, but last.
+.sp 2
+.nofill
+1CLEARSCREEN			0(command and switch)
+1CS0
+.adjust
+	Erases all lines from a display and places the turtle in the center of the display facing up.1  CS0 does not alter the turtle's visibility or its readiness to draw. (That is, if the turtle was hiding, or if its pen was up, those states are not reset.)
+.sp 2
+.nofill
+1CONTENTS 			0(operation)
+.adjust
+	 Outputs a list of titles of all (unBURIed) procedures in the user's workspace.
+.sp 2
+.nofill
+1CONTINUE			0(flow)
+1CO0
+.adjust
+	Continues the execution of a procedure that has been1 PAUSE0d by1 PAUSE, ^Z0, or an error while in1 DEBUG0 mode. Execution starts at the next line after the1 PAUSE0 and not at the1 PAUSE0 itself. 
+
+.sp 2
+.nofill
+1COUNT 2thing	 		0(operation)
+.adjust
+	 If the input is a list, COUNT0 outputs the number of members of the list.  If the input is a word, this outputs the number of letters in the word. 
+.sp
+.nofill
+	 1?PR COUNT [HOW OLD ARE YOU TODAY?]
+	 5
+	 ?PR COUNT "YOURFINGERS
+	 11
+	 ?
+.sp 2
+.nofill
+1DEBUG 				0(switch)
+.adjust
+	 Turns debug mode on and off.  When in debug mode, errors cause a 1PAUSE0 rather than a 1BREAK0 to the top level.  During a pause (reached this way or by using1 ^Z0 or1 PAUSE0) the user may execute other instructions (e.g.,1 PO NAMES0 to find out the state of his variables including local variables if one is not at level 0) and then continue execution by using the 1CO0 command. 
+.sp 2
+.nofill
+1DELTAXY 2deltax deltay		0(vector turtle command)
+1DELXY 2deltax deltay0
+.adjust
+	Moves the turtle so that its x-coordinate increases by 2deltax0 and its y-coordinate increases by 2deltay0.  Exactly equivalent to:
+.ce
+1SETXY (XCOR + 2deltax1) (YCOR + 2deltay1)0
+E.PAG
+.sp 2
+.nofill
+1DIFFERENCE 2subtrahend minuend 	0(operation)
+.adjust
+	 Wow, it's been a long time since I've had a chance to use those words!! See section on INFIX OPERATORS in the appendix.
+.sp 2
+.nofill
+1DISPLAY 2snapname 		0(display command)
+.adjust
+	 Displays a snap (see1 SNAP0) in the same location relative to the current position of the turtle that the original drawing was to the position of the turtle at the time the snap was made.  (I know that was hard.) The turtle's position after the snap is displayed will be the position the turtle had on the snap when the snap was first made.   At present, the displayed snap always appears in the orientation in which it was originally drawn regardless of the heading of the turtle.  1DISPLAY0 is also used (without an input) as an input to 1CNTRL0 and 1ALSO0.
+.sp 2
+.nofill
+1DIZZY				0(2500 turtle command)
+.adjust
+	If you 1CLEARSCREEN0 the 2500 turtle screen and execute 'normal' turtle commands (such as 1FD, RT, 0etc..), the 2500 turtle acts much like other turtles.  In particular, you can find the 1HERE0 of the turtle.  However, if you execute any of the 'moving' 2500 turtle commands, such as 1SPIN0 or 1MOVETURTLE0, the turtle becomes 'dizzy', and can't tell you with 1HERE0 where it is.  If for some reason you want to make sure the turtle is dizzy, this command will do it.
+.sp 2
+.nofill
+1.DRIB 2filename			0(file command)
+.adjust
+	This opens a dribble file named 2filename0.  From now on, everything that is typed by you or the computer on the terminal is also printed into the dribble file.  This is useful if you want a printed record of your hacking.  The dribble file is closed by executing 1.NODRIB0.
+.sp 2
+.nofill
+1.ECHOSW2 0or1 			0(switch)
+.adjust
+	 The input 0 turns off the feature that echos characters typed at the console.  Characters typed will be heard by LOGO, but will not appear to have been typed (the console looks dead unless other characters are being outputted to the console). Except for characters being typed in, no printing is suppressed (i.e.,1 PRINT, .CTYO0, etc. will still act normally). 1 .ECHOSW 10 restores normal mode.
+.sp 2
+.nofill
+1EDIT2 someprocedure 		0(switch)
+1ED2 someproc0
+.adjust
+	 The procedure named is designated for editing and editing mode is entered.  The prompt character for editing mode, as for defining a procedure is the1 > 0rather than the1 ?0 that indicates execution mode.  To switch off editing mode (when done editing the procedure or to avoid unwanted side-effects) type1 END.  EDIT0 quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.
+.PAGE
+.nofill
+1EDL 2linenumber 			0(editing command)
+1EDIT LINE 2linenumber0
+.adjust
+	 Places line number 2linenumber0 of the procedure that is being edited in the edit buffer where it can be manipulated using the special editing control characters (see EDITING CHARACTERS in appendix).  
+.sp 2
+.nofill
+1EDT 				0(editing command)
+.adjust
+	 Enables the user to edit the title of the procedure he is defining or editing.  He may either use the special editing control characters or simply retype the title.  Using this command is the only way of editing the title of a procedure.
+.sp 2
+.nofill
+1EITHER 2TorF1 TorF2 		0(operation)
+.adjust
+	 Outputs1 "TRUE0 if1 EITHER0 of the inputs are1 "TRUE, "FALSE0 if both are1 "FALSE0.  The logical or.  Both inputs must be or evaluate to1 "TRUE0 or1 "FALSE.
+.sp 2
+.nofill
+1ELSE2 otherinstructions		0(control word)
+.adjust
+	 Can be used with1 IF0 (and1 THEN0) to allow an alternative course of action to take place if the conditional in an IF-THEN pair is1 "FALSE.
+.sp
+.nofill
+	?MAKE "WEATHER "CLOUDY
+	?IF :WEATHER = "SUNNY PRINT "GOOD ELSE PRINT "TOUGH
+	TOUGH
+	?
+.sp 2
+.nofill
+1EMPTYP 2wordorlist 		0(operation)
+.adjust
+	 Outputs1 "TRUE0 if the argument is the empty word or the empty list,1 "FALSE0 otherwise.
+.sp 2
+.nofill
+1END 				0(switch)
+.adjust
+	 Tells LOGO you are finished editing or defining a procedure.  Switches off editing mode.  
+.sp 2
+.nofill
+1EQUAL 2this that 		0(operation)
+.adjust
+	 Outputs1 "TRUE0 if 2this0 and 2that0 are equal or evaluate to the same thing. 
+.sp
+.nofill
+	1?PRINT EQUAL 2    1.5 * 2 - 1
+	TRUE
+	?IF EQUAL "BOY "GIRL PR "HMM! ELSE BELL
+	?0	! bell rings at your console
+.sp
+See section on INFIX OPERATORS in appendix.
+.PAGE
+.nofill
+1ERASE2 procedurenameormodifier 	0(command)
+1ER 2procedurenameormodifier0
+.adjust
+	 Erases the procedure from workspace.  A procedure may not be erased while it is being edited or defined.1 ERASE 0quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.1  ERASE0 can be followed by a modifier instead of a procedure name, in which case it acts accordingly.  In all cases, either 1ERASE0 or1 ER0 may be used.  Three cases (1ERF, ERI,0 and 1ERL0) may be abbreviated even further.  
+.sp 2
+.nofill
+1ER ALL 				0(command)
+.adjust
+	 Erases everything in workspace except for BURIed procedures.  This command clears the stack, that is, stops the execution of any following instructions on the same line or in the same procedure, even if the procedure is buried.   It cannot be executed in edit mode.
+.sp 2
+.nofill
+1ER ARRAY 2arrayname 		0(command)
+.sp 2
+1ER ARRAYS 			0(command)
+	 Erases all arrays.
+.sp 2
+1ER BURY2 procedurename 		0(command)
+.adjust
+	 Unburies the named procedure.  If 2procedurename0 is1 ALL,0 this unburies all procedures.  No error is produced if you try to unbury a procedure that exists but is not buried.  1ER BURY0 quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.
+.sp 2
+.nofill
+1ER FILE 2filename 		0(file command)
+1ERF 2filename0
+1DELETE2  filename 0
+.adjust
+	 Erases the file from the disk.  This does not affect your workspace.
+.sp 2
+.nofill
+1ER INDEX 2indexname 		0(file command)
+1ERI 2indexname1
+DELETEINDEX 2indexname0
+.adjust
+	 Deletes the index 2indexname 0from the branch of the filing tree you are sitting on if that index contains no files. See1 FILE0 for more details.
+.sp 2
+.nofill
+1ER LINE 2linenumber 0 		0(editing command)
+1ERL 2linenumber0
+.adjust
+	 Removes that line from the procedure you are in. 
+.sp 2
+.nofill
+1ER NAME 2name			0(command)
+.adjust
+	 Removes the global variable2 name0 from the workspace.
+.sp 2
+.nofill
+1ER NAMES 			0(command)
+.adjust
+	 Erases all global variables ("names") from the workspace.
+.PAGE
+.nofill
+1ER PROCEDURES 			0(command)
+.adjust
+	 Erases all unburied procedures from the workspace, but leaves variables and arrays untouched.
+.sp 2
+.nofill
+1ER STEP 2procedurename 		0(switch)
+.adjust
+	 Un1STEP0s the procedure (but does not erase anything else.)  If1 ALL 0is the2 procedurename0, this un1STEP0s all1 STEP0ped procedures. You cannot un1STEP0 a1 STEP0ped procedure while it is running (or during a 1PAUSE0 in its running) but no error is encountered if you try.  The1 ER STEP0 takes effect after the procedure stops.  1ER STEP0 quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.
+.sp 2
+.nofill
+1ER TRACE 2procedurename 		0(switch)
+.adjust
+	 Un1TRACE0s the procedure.  As with1 ER STEP, ER TRACE ALL0 works, but also as above a procedure cannot be un1TRACE0d while it is running.  1ER TRACE0 quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.
+.sp 2
+.nofill
+1ERASERDOWN			0(tv turtle command)
+1ERD0
+.adjust
+	Tells the raster scan tv turtle to put down a black pen which effectively 'erases' any points the turtle goes over.
+.sp 2
+.nofill
+1ERASERUP			0(tv turtle command)
+1ERU0
+.adjust
+	...and tells the tv turtle to pick up its 'eraser'.  This is equivalent to 1PENUP0.
+.sp 2
+.nofill
+1ERBRK 				0(operation)
+.adjust
+	 If used in an1 ERSET0 procedure,1 ERBRK0 outputs 1 if the running was interrupted by pressing1 ^G0, -1 if it was interrupted by pressing1 ^Z0, 0 if it was interrupted by an error condition.  
+.sp 2
+.nofill
+1ERCLR 				0(switch)
+.adjust
+	 Error clear.  Undoes the effect of1 ERSET.
+.sp 2
+.nofill
+1ERLIN				0(operation)
+.adjust
+	 Outputs the procedure line number in which the last error occurred.  This outputs 0 if the last error was a top level error or if it occurred just as a procedure was being invoked (the title line is considered line 0).
+.sp 2
+.nofill
+1ERLOC 				0(operation)
+.adjust
+	 Outputs the location in the computer's core at which the last error occurred.
+.PAGE
+.nofill
+1ERNAM 				0(operation)
+.adjust
+	 Outputs a fairly reasonable abbreviated name of the last error.  Examples: "UBL = used by logo, "FNF = file not found, "HNM = has no meaning.  The best way to find out the name of a particular error is to generate the error and then look at the1 ERNAM.  
+.sp
+.nofill
+	?TO LEARNERNAMS
+	>10 OUTPUT ERNAM
+	>END
+	LEARNERNAMS DEFINED
+	?ERSET LEARNERNAMS
+	?4
+	WTD
+	?NOTHING
+	HNM
+	?
+.sp 2
+.nofill
+1ERNUM 				0(operation)
+.adjust
+	 Outputs the number of the last error.  (But you don't really want to know that, do you?)
+.sp 2
+.nofill
+1ERPRO 				0(operation)
+.adjust
+	 Outputs the name of the procedure in which the last error occurred.1   ERPRO0 outputs the empty word if the last error was at top level.
+.sp 2
+.nofill
+1ERRET 2linenumber 		0(command)
+.adjust
+	 When used in an1 ERSET0 procedure1 ERRET0 returns execution to line 2linenumber0 of the procedure in which the last error occurred.
+.sp 2
+.nofill
+1ERSET2 procedurename 		0(switch)
+.adjust
+	 Causes the named procedure to be executed whenever an error (or break) occurs.  If the procedure does not output (see 1OUTPUT0), LOGO saves up the error message until all currently running procedures have stopped and then prints the message (the last message if more than one error is encountered).  If the 1ERSET0 procedure does output, the output is printed instead of the normal error message. System bug errors and the error "NSL (no storage left) cannot be overridden by1 ERSET.0  If an error is encountered 2within0 the procedure that has been 1ERSET, ERCLR0 is executed.
+.sp 2
+.nofill
+1ERTOK 				0(operation)
+.adjust
+	 Outputs the number of the token in the line in which the previous error occurred.  If you are versed in the mysteries of the LOGO evaluator this might be useful to you.
+.PAGE
+.nofill
+1FILE 2filename 			0(modifier)
+.adjust
+	 Used in expressions like1 PO FILE "MAIL0 or1 ER FILE "GARBAGE0 to indicate that the command applies to a file and not to something in your workspace.
+.sp
+	 GENERAL INFORMATION ABOUT THE FILING SYSTEM.
+.BR
+	There are sixteen file channels through which each user can access files, numbered 0 - 15.  This means that theoretically a user can have up to sixteen files open at once, but that limit is rarely reached.  Most of the file commands optionally take an extra argument, which specifies the channel number of the file.  For instance, 1(.OPENW "FOO 8)0 opens file 1"FOO0 in channel #8.  Now it can be written into with 1(.FILEP [FOO BAR BLETCH] 8)0, and other file commands.  If these file commands appear without the channel number, channel #0 is assumed.  File commands which optionally take a channel number are: 1.CLOSEF, .FILEO, .FILEP, .FILEPOS, .FILER, .FILET, .FILEW, .OPENA, .OPENM, .OPENR, .OPENW, 0and 1.SETFILE.  .FILER0 and 1.FILEW0 close an 2n0 line file when it tries to read line 2n+10.  Inputs for all file-referencing commands that take inputs (except 1LOGIN0) can either be words, in which case they refer to the subordinate file or index, or lists, in which case all but 1USE 0and1 MAIL0 interpret the list as a tree beginning with the next subordinate index (or with the root if the first list element is 1FIXED;, AI01;, 0or just 1;0).  1USE 0and1 MAIL0 begin with a user whose name must be the first element of the list.  See 1TREE0 for more information about the structure of the filing system.
+.sp 2
+.nofill
+1(.FILEO 2optionalchannelnumber)	0(operation)
+.adjust
+	 Outputs 1"TRUE0 if the specified file channel is currently open and 1"FALSE0 otherwise.
+.sp 2
+.nofill
+1(.FILEP2 list optionalchannelnumber)0(file command)
+.adjust
+	 Writes 2list0 into the specified file channel, which hopefully has been opened by 1.OPENW0 or 1.OPENA0 or 1.OPENM0 commands.  Like 1PRINT0ing into a file.  If the channel hasn't been opened for writing, 1.FILEP0 causes an error.
+.sp 2
+.nofill
+1(.FILEPOS 2optionalchannelnumber)0(file operation)
+.adjust
+	
+	Outputs the current file pointer position of the specified file channel.  The first character in a file is character #0.  See 1.SETFILE0.
+.sp 2
+.nofill
+1(.FILER 2optionalchannelnumber)	0(file operation)
+.adjust
+	 Drags one line out of a file that has been opened by1 .OPENR0 or 1.OPENM0 (beginning at the beginning and working sequentially through the file in each successive use while the file is open) and outputs that line as a 2list.0  (Like1 REQUEST0, but from a file.)  When the specified channel hasn't been opened for reading,1 .FILER 0 causes an error.
+.sp 2
+.nofill
+1(.FILET 2wordorlist optionalchannelnumber)0(file operation)
+.adjust
+	Types 2list0 into the specified file channel.  Like 1.FILEP0, except that it doesn't put a carradgereturn-linefeed combination into the file after 2wordorlist0.
+.sp 2
+.nofill
+1(.FILEW 2number optionalchannelnumber)	0(file operation)
+.adjust
+	Outputs the next 2number0 characters from the specified file channel, moving the file pointer ahead accordingly.
+.PAGE
+.nofill
+1FIRST 2wordorlist 		0(operation)
+1F 2wordorlist0
+.adjust
+	 If the input is a list,1 FIRST0 outputs the first element of the list, which may be a word or a list itself.  (Unlike 1BUTFIRST0 which must output a list if its input was a non-empty list.)  If the input is a word (or number),1 FIRST0 outputs the first character of the word.  See also 1LAST, BUTFIRST 0and 1BUTLAST.
+.nofill
+.sp
+	?PRINT FIRST 637
+	6
+	?PRINT FIRST "ALPHABET
+	A
+	?FPRINT F BF [[ONE 1] [TWO 2] [THREE 3]]
+	[TWO 2]
+	?
+.sp 2
+FORWARD 2distance 		0(turtle command)
+1FD2 distance0
+.adjust
+	 Tells the floor or display turtle to move ahead 2distance.
+.sp 2
+.nofill
+1FPRINT 2wordorlist1		0(command)
+.adjust
+	 Like 1PRINT0 except that it also prints the outside brackets of a list.  
+.nofill
+.sp
+	1?FPRINT [THIS LOOKS LIKE A LIST]
+	[THIS LOOKS LIKE A LIST]
+	?PRINT [BUT NOT THIS]
+	BUT NOT THIS
+	?
+.adjust
+1FPRINT0 can also take a variable number of inputs in which case it 1FPRINT0s with no spaces between inputs.
+.nofill
+.sp
+	1?( FPRINT "A "B [C] [D] [E [F G]] )
+	AB[C][D][E [F G]]
+	?( PRINT "A "B [C] [D] [E [F G]] )
+	ABCDE [F G]
+	?0
+.sp
+See 1PRINT0 also.
+.sp 2
+1FPUT 2wordorlist list1		0(operation)
+.adjust
+	 Creates and outputs a new list whose 1FIRST0 is 2wordorlist0 and whose 1BUTFIRST0 is 2list.  List 0is not destroyed.  (Compare this operation with1 LPUT, SENTENCE0 and1 LIST0.)  This operation can take a variable number of inputs in which case all but the last are 1FPUT0 onto 2list0.
+.sp
+.nofill
+	1?FPRINT FPUT "WORD [ONTO A LIST]
+	[WORD ONTO A LIST]
+	?FPRINT ( FPUT "WORD [AND LIST]  "ANDWORD [ONTO A LIST] )
+	[WORD [AND LIST] ANDWORD ONTO A LIST]
+	?FPRINT FPUT [LIST] [ONTO LIST]
+	[[LIST]  ONTO LIST]0 
+.PAGE
+.NOFILL
+1FTOUCH 				0(TS-turtle operation)
+.adjust
+	 Outputs1 "TRUE0 if the front of the touch-sensor turtle is touching something.  Outputs1 "FALSE0 otherwise.  Like1 BTOUCH, RTOUCH, 0and1 LTOUCH.
+.sp  2
+.nofill
+1.GCOLL 				0(command)
+.adjust
+	 Calls the garbage collector.  You generally don't need this since the garbage collector is rather conscientious and works whenever he (she?) sees the need anyway.
+.sp 2
+.nofill
+1GET 2arrayname index1		0(operation)
+.adjust
+	 Outputs contents of the cell specified by 2index0 in an array previously defined by 1DEFAR0.   Like 1DEFAR0, this command requires parentheses if more than one index is needed (i.e., if the array is two- or three-dimensional).
+.sp 2
+.nofill
+1GO 2linenumber1			0(flow)
+.adjust
+Used in a procedure to transfer control to that line of the procedure.
+.sp 2
+.nofill
+1GOODBYE				0(command)
+	 Prints out a sweet message and then stops talking to you.
+1GREATER2 thisnum thatnum1		0(operation)
+.adjust
+	 Ouputs 1"TRUE0 if 2thisnum 0is numerically 1GREATER 0than 2thatnum. 0Otherwise outputs 1"FALSE.0  It is an error if either input does not evaluate to a number.  See section on INFIX OPERATORS in appendix.
+.sp 2
+.nofill
+1GTLDIS				0(2500 command)
+.adjust
+	Tells LOGO that you have a 2500 display.
+.sp 2
+.nofill
+1.GTLOUT				0(2500 command)
+.adjust
+	Does something.
+.sp 2
+.nofill
+1HALCROCK 2array			0(hal command)
+.adjust
+	Rumour has it that this command does something to help simulate orbital mechanics or something.  Noone ever uses it.
+.sp 2
+.nofill
+1HEADING1				0(display operation)
+.adjust
+	 Outputs the heading of the display turtle (i.e., the direction it is facing) in degrees.  When the turtle is facing North (its state directly after the 1HOME0 or 1CS0 commands), its heading is 0.
+.sp 2
+.nofill
+HERE				0(display operation)
+.adjust
+	 Outputs a list of 3 elements, the 1XCOR, YCOR0 and 1HEADING0 of the display turtle.  Exactly equivalent to 1 ( SENTENCE XCOR YCOR HEADING ).
+.PAGE
+.nofill
+HIDETURTLE 			0(display command)
+1HT0
+.adjust
+	 This makes the triangular display turtle invisible.  It continues to behave as it did when you could see it -- in particular, it continues to leave a track.  If you don't want to see the turtle track, type 1PENUP. 
+.sp 2
+.nofill
+1HIDEWINDOW 2windowname optionaly optionalx)0(tv turtle command)
+1HW 2windowname optionaly optionalx)0
+.adjust
+	Shows the window 2windowname0, but sort of 'eraser-shows' it.  Everywhere that there are points in the window, these points are erased where the window is 'shown'.  If 2optionaly0 and 2optionalx0 are included, they are the y and x coordinates where the window should be shown.  Otherwise, the window is shown in the place where it was made.  See 1MAKEWINDOW0.
+.sp 2
+.nofill
+HISSPEED 2devicenum speed 	0(switch)
+.adjust
+	 Sets the computer line speed of 2devicenum0 to 2speed0.  See 1MYSPEED0 for details.
+.sp 2
+.nofill
+1HOME				0(display command)
+1H0
+.adjust
+	 Sets the display turtle at "home," i.e. at coordinates (0,0) and heading north.  This is equivalent to1 SETTURTLE [0 0 0].
+.sp 2
+.nofill
+IF 2TorF logoline	 	0(control word)
+.adjust
+	 1IF0 demands only the input 2TorF0 which must evaluate to 1"TRUE 0or1 "FALSE0.  If the input evaluates to 1"TRUE,0 the rest of the line (i.e., 2logoline0) is executed.  If 2TorF0 evaluates to 1"FALSE0, the rest of the line (up to an optional 1ELSE0) is  ignored. 
+.sp 
+.nofill
+	 1?IF 5 = 4 + 1 THEN PRINT "FOO ELSE PRINT "BAR
+	 FOO
+	 ?IF 5 = 4 - 1 THEN PRINT "FOO ELSE PRINT "BAR
+	 BAR
+.sp
+0See 1ELSE, EQUAL0 and 1THEN0 for examples of the use of 1IF.
+.sp 2
+IFFALSE 2logoline		0(control word)
+1IFF 2logoline
+.adjust
+	 0Executes the 2logoline0 if the result of the most recent (local) 1TEST0 was 1"FALSE0.   Since results of 1TEST0 are only stored locally within a procedure, this control word always executes its line at top level.  
+.sp 2
+.nofill
+1IFTRUE 2logoline 		0(control word)
+1IFT 2logoline0
+.adjust
+	 Executes 2logoline0 if the result of the previous (local) 1TEST0 was 1"TRUE.
+.sp 2
+.nofill
+ILINE 				0(operation)
+	 Outputs, as a list, the last line typed in at the console.
+.PAGE
+.NOFILL
+1INDEX 2(indexname)		0(modifier)
+.adjust
+	 Used in expressions such as 1ER INDEX "USELESSIDX0 or 1PO INDEX0 to indicate that it is an index and not something in your work space that you are referring to.  See 1FILE0 for more details.
+.sp 2
+.nofill
+1INTEGER 2fpointnum		0(operation)
+1INT 2fpointnum
+.adjust
+	 0Outputs the integer part of the floating point number 2fpointnum.0  The input can be in decimal or exponential form.
+.sp 2
+.nofill
+1LAMPOFF				0(turtle switch)
+	 Turns the light on the floor turtle off.
+.sp 2
+1LAMPON				0(turtle switch)
+	 ...And the floorturtle's light turns on.
+.sp 2
+1LAST 2wordorlist			0(operation)
+1L 2wordorlist
+.adjust
+	0 If the input is a list, 1LAST0 outputs the last element of the list, which may be a word or a list itself.  If the input is a word (or number), 1LAST0 outputs the last character of the word.  Analogous to 1FIRST.0  See also 1FIRST, BUTFIRST 0and 1BUTLAST.
+.sp 2
+.nofill
+LEFT 2degrees			0(turtle command)
+1LT0
+.adjust
+	 Causes the floor or display turtle to rotate 2degrees0 to the left.
+.sp 2
+.nofill
+1LESS 2thisnum thatnum		0(operation)
+.adjust
+	 Outputs 1"TRUE0 if 2thisnum 0is numerically 1LESS 0than 2thatnum. 0Otherwise outputs 1"FALSE.0  It is an error if either input does not evaluate to a number.  See section on INFIX OPERATORS in appendix.
+.sp 2
+.nofill
+1LEVEL				0(operation)
+.adjust
+	 Outputs a number which tells "how many procedures deep" the current execution is.  Since levels are thought of as depth (procedures call subprocedures) smaller level numbers are higher levels.  Top level is level 0, command level, when no procedure is running and instructions come directly from the user.  For example, 
+.sp
+	 1?PRINT LEVEL
+	 0
+	 ?TO WHAM
+	 >10 PRINT LEVEL
+	 >20 WHAM
+	 >END
+	 WHAM DEFINED
+	 ?WHAM
+	 1
+	 2
+	 3
+	 0(etc.)
+.PAGE
+.nofill
+1LINE 2linenum			0(modifier)
+.adjust
+	 Used in expressions like 1ERASE LINE 20, PO LINE 400, or 1EDIT LINE 1210, to indicate that the command applies to a line of a procedure and not something in your workspace.   Without the word "1LINE0," of course, each of the expressions above would generate an error message and an error. 
+.sp 2
+.nofill
+1LINEPRINT 2filename		0(line printer command)
+1LP 2filename0
+	 Causes the lineprinter to print out the named file.
+.sp 2
+.nofill
+1LIST 2 thing1 thing2 		0(operation)
+.adjust
+	 Outputs a two-element list whose elements are 2thing10 and2 thing20 (which may be words, numbers or lists themselves), respectively.  1LIST0 can accept one input or more than two inputs if surrounded by parentheses.  For example:
+.SP 
+.NOfill
+	 1?FPRINT ( LIST ( LIST "A [ B ] "C ) )
+	 [ [ A [ B ] C ] ]
+	 ?0
+Also compare this operation with 1FPUT, LPUT 0and 1SENTENCE.
+.sp 2
+LISTP2 thing			0(operation)
+.adjust
+	 Outputs 1"TRUE0 if 2thing0 is a list, and 1"FALSE0 otherwise.
+.sp 2
+.nofill
+1LOAD2500			0(2500 command)
+.adjust
+	I would guess this loads the 2500.  Don't use unless you know what you are doing.
+.sp 2
+.nofill
+1LOCAL 2name			0(command)
+.adjust
+	 In a procedure, this command causes the scope of 2name0 to be local to the procedure (i.e., the name is undefined outside of the procedure).
+.sp 2
+.nofill
+1LOGIN 2name			0(file command)
+.adjust
+	 This tells the system who you are (which information is used by the 1MAIL0 and 1PEEK0 commands), 1USE0s 2name0's 1INDEX0 of files (if the user has already specified the correct disk), searches for an file named 1"INIT0 in that index and perfoms all commands written into the file (if it exists), and then searches for a file named 2name0 in the mail directory, asks the user if he wishes that file to be printed out and does so if the user types 1Y.
+.sp 2
+1LPUT 2wordorlist list				0(operation)
+.adjust
+	 Creates and outputs a new list whose 1LAST0 is 2wordorlist0 and whose 1BUTLAST0 is 2list.  List 0is not destroyed.  (Compare this operation with1 FPUT, SENTENCE0 and1 LIST0.)  This operation can take a variable number of inputs in which case all but the last are 1LPUT0 onto 2list0.
+.PAGE
+.nofill
+1LTOUCH	 			0(TS-turtle operation)
+.adjust
+	 Outputs1 "TRUE0 if the left of the touch-sensor turtle is touching something.  Outputs1 "FALSE0 otherwise.  Like1 FTOUCH, RTOUCH, 0and1 BTOUCH.
+.sp 2
+.nofill
+MAIL 2name			0(file command)
+.adjust
+	 Creates (or appends to) a file called 2name0 in the mail directory.  The computer responds to this command by typing an arrow.  Anything typed at the console at this time is regarded as mail to be sent.  To end the message, the user types a line which contains only a single period (.) followed by a carriage return.
+.sp 2
+.nofill
+1MAKE 2name thing			0(command)
+.adjust
+	 Assigns the name 2name0 to the thing 2thing.0
+.nofill
+.sp
+	 1?PRINT "MY.AGE
+	 MY.AGE
+	 ?PRINT :MY.AGE
+	 "MY.AGE HAS NO VALUE
+	 ?MAKE "MY.AGE 9
+	 ?PRINT "MY.AGE
+	 MY.AGE
+	 ?PRINT :MY.AGE
+	 9
+	 ?
+.PAGE
+.nofill
+1(MAKEWINDOW 2windowname xlength ylength)0(tv turtle command)
+1(MW 2windowname xlength ylength)0
+.adjust
+	Makes a 'window', which is sort of like a 1SNAP0, of the rectangle which is 2xlength0 turtlesteps long in the x-direction and 2ylength0 turtlesteps long in the y-direction, centered around the current position of the turtle.  The window is stored in 2windowname0, and can be 'displayed' in one way or another with 1SHOWWINDOW, HIDEWINDOW,0 or 1XORWINDOW0.
+.sp 2
+.nofill
+MCLEAR 				0(music command)
+	 Clears the music buffer.
+.sp 2
+1MLEN				0(music operation)
+.adjust
+	 Outputs the length of the longest voice loaded in the music buffer in units.  See 1NOTE0 for explanation of units.
+.sp 2
+.nofill
+1MOVETURTLE 2velocity		0(2500 turtle command)
+1MOVET 2velocity0
+.adjust
+	Tells the 2500 turtle to start moving with a velocity 2velocity0 in the direction it is facing.  This is one of the commands that makes the turtle 'dizzy'.  See 1DIZZY0.
+.PAGE
+.nofill
+1MUCTRL 2voicespecs		0(switch)
+.adjust
+	 2Voicespecs 0is a two-digit number, the first digit of which specifies the voices to play from and the second of which specifies the voices to load according to the following table.
+.nofill
+.sp
+	 DIGIT	FIRSTDIGIT	SECONDDIGIT
+	   0	play none	load 0, 1, 2, 3
+	   1	play 3		load 1, 2, 3
+	   2	play 2, 3	load 2, 3
+	   3	play all	load 3
+.adjust
+Voices are loaded in cyclic order and played simultaneously beginning immediately after the last expected voice is loaded.  
+.sp 2
+.nofill
+1MUTYO 2pitch1 pitch2		0(music command)
+1MUT 2pitch1 pitch20
+.adjust
+	 Actually, 1MUTYO0 takes a variable number of inputs (requiring parentheses if the number of inputs is not exactly two) and loads the pitches sequentially into the music box according to the format specified by 1MUCTRL0.  Regardless of the format specified, four successive 1MUTYO0s with two inputs each are equivalent to eight with one input each, or one with seven inputs followed by one with one.  Legal inputs are -28 through 35 inclusive, except for -25 which is a special control character.  Pitches progress chromatically beginning two octaves below middle  C (pitch = -24) and ending three octaves above (pitch 32).  Middle C is pitch 0.  The percussion sounds BOOM and SSH are, -27 and -26 respectively, and a silence is -28.   
+.sp 2
+.nofill
+1MUWAIT 2extrawait		0(music command)
+.adjust
+	 Causes your program to wait 2extrawait0 30ths of a second after music output has stopped before continuing.
+.nofill
+.sp 2
+1MYSPEED 2linespeed		0(switch)
+.adjust
+	 Sets the line speed of your own console to 2linespeed1.  .PWRCLR0 sets everything back to the default speed, 300 BAUD (1MYSPEED 70).  DATAPOINT consoles set at 300 BAUD run well at the same linespeed as the other consoles, but can be set to 2400 BAUD if 1MYSPEED 110 is first run.
+.SP 2
+.nofill 
+1NAME 2name			0(modifier)
+.adjust
+	 Used in expressions like 1ER NAME 2name0 or 1PO NAME 2name 0 to indicate that you are referring to a name and not a procedure.
+.sp 2
+.nofill
+1NAMES				0(modifier)
+.adjust
+	 Plural of 1NAME.  PO NAMES 0or1 ER NAMES0 refers to all names in your workspace.
+.sp 2
+.nofill
+1NEWSNAP 			0(display switch)
+.adjust
+	 Causes the image currently on the screen not to be part of subsequent 1SNAP0s.  Also sets the starting location of subsequent 1SNAP0s to the current position of the turtle rather than to (0,0).  See also 1DISPLAY0 and 1SNAP.
+.PAGE
+.nofill
+1NOCLIP				0(tv turtle command)
+.adjust
+	Undoes the effects of 1CLIP0.  From now on, the turtle can't go out of bounds.  If it is out of bounds when 1NOCLIP0 is executed, then it appears where it would be if it had 1WRAP0ed.
+.sp 2
+.nofill
+1.NODES 				0(operation)
+.adjust
+	 Outputs the number of free nodes in your workspace.  If you want to know how many nodes you REALLY have, call the garbage collector first and type only one line, for example:
+.sp
+.nofill
+	1?.GCOLL PR .NODES
+	2286
+	?
+.sp 2
+.nofill
+NODISPLAY			0(switch)
+1ND0
+	 Turns off and releases the display.
+.sp 2
+.nofill
+1.NODRIB				0(file command)
+.adjust
+	Closes the current dribble file, if it is open.  See 1.DRIB0.
+.sp 2
+.nofill
+1NOGTL				0(2500 command)
+.adjust
+	Tells LOGO that you are not a 2500 display.  Opposite of 1GTLDIS0?
+.sp 2
+.nofill
+1NOMUSIC 			0(switch)
+	 Turns off and releases the music box.
+.sp 2
+1NOPLOTTER			0(switch)
+	 Turns off and releases the plotter.
+.sp 2
+1NOT 2TorF			0(operation)
+.adjust
+	 Outputs 1"TRUE0 if the input 2TorF0 is (or evaluates to) 1"FALSE0 and outputs 1"FALSE0 if the input is 1"TRUE.
+.sp 2
+.nofill
+1NOTBOX 				0(switch)
+	 Parsed "NO TBOX," this declares you are not a TBOX.  See 1TBOX.
+.PAGE
+.NOFILL
+NOTE 2pitch duration		0(music command)
+.adjust
+	 Loads one note of music into the music buffer (which may later be played by using the command 1PM0).  Pitches are numbered chromatically from -24 to 35 with 0 being middle C.  There are also three special "pitches":
+     -28 is a silence ("rest")
+     -27 is the percussion sound "boom"
+     -26 is the percussion sound "ssh"
+     -25 is not a valid pitch
+.break
+Durations must be between 0 and 127 units.  Each unit is 1/8 second long if 1NVOICES 40 was used.  (See 1NVOICES0.)  If 2duration0 is 0, 1NOTE0 generates nothing.   If it is 1, the command generates a note 1 unit long.  If 2duration0 is greater than 1, the note generated is 2duration - 1 0 units long folowed by 1 unit of rest (so that the music will not sound "slurred").  If 2pitch0 is -26 or -27, 1NOTE0 generates a 1 unit percussion sound followed by 2duration - 1 0 units of silence.
+.sp 2
+.nofill
+1NOTURTLE 			0(switch)
+	 Turns off and releases any floor turtles that you are controlling.
+.sp 2
+1NOWRAP				0(display switch)
+.adjust
+	 Tells the computer not to allow the display turtle to go out of bounds.  See 1WRAP.
+.sp 2
+.nofill
+NUMBERP 2input			0(operation)
+.adjust
+	 Outputs 1"TRUE0 if 2input0 is a number and 1"FALSE0 otherwise.
+.sp 2
+.nofill
+1NVOICES 2number			0(music switch)
+.adjust
+	 Specifies the number of voices to which music will later be sent (using 1VOICE0 to indicate "which voice now" and 1NOTE0 to generate the music).  When outputting from the music buffer to the music box, the music system normally multiplexes among four voices, but it is possible, using 1NVOICES0 to use only one or two voices.  1NVOICES 1 0 outputs only to voice 1 (and, when played, plays only from voice 1).  1NVOICES 20 outputs to voices 1 and 2.  1NVOICES 40 is the normal mode.  Since the music box is fed at a constant rate, 1NVOICES 10 causes the basic unit of duration to be 1/4 as long as normal and 1NVOICES 20 causes the duration to be 1/2 as long.  1NVOICES 30 is not a valid state.
+.sp 2
+.nofill
+1(.OPENA2 filename optionalchannelnumber)0(file command)
+.adjust
+	 Opens a file for appending with1 .FILEP0 -- whatever was in the file remains and you add new stuff at the end. (If no file by that name existed, one is created.)  Close file with1 .CLOSEF0 before leaving your console or1 GOODBYE0ing as files left open for writing are flushed when your workspace goes away.  See1 FILE0 for more details.
+.sp 2
+.nofill
+1(.OPENM 2filename optionalchannelnumber)0(file command)
+.adjust
+	Opens a file for modifying.  Using 1.SETFILE0 you can position the file pointer whereever you wish, and you can read or write anywhere in the file.
+.sp 2
+.nofill
+1(.OPENR2 filename optionalchannelnumber)0(file command)
+.adjust
+	 Opens a file for reading with1 .FILER0 operation. See1 FILE0 for more details.
+.PAGE
+.nofill
+1(.OPENW2 filename optionalchannelnumber)0(file command)
+.adjust
+	 Opens a file for writing with1 .FILEP0 -- if the file already exists you will be notified and asked if you wish the contents to be deleted as with the command1 WRITE.0 See1 FILE0 for more details.
+.sp 2
+.nofill
+1.OPTIONS			0(command)
+.adjust
+	Prints out the list of LOGO options that the current LOGO was compiled with, and gives their values.  Not too useful.
+.sp 2
+.nofill
+1OSNAP				0(2500 turtle command)
+.adjust
+	Takes some sort of snap.
+.sp 2
+.nofill
+1OUTPUT 2whatever			0(flow operation)
+1OP 2whatever0
+.adjust
+	 Used to make procedures operations instead of commands, 1OUTPUT0 tells the procedure to stop and output 2whatever.1
+.sp 1
+	?TO DOUBLE :X
+	>10 OP WORD :X :X
+	>END
+	DOUBLE DEFINED
+	?PRINT DOUBLE DOUBLE "HA
+	HAHAHAHA
+	?
+.sp
+0A use in recursive procedures.  Notice line 30 especially.1
+.sp
+	?TO MEMBERP :ITEM :LIST
+	>10 IF EMPTYP :LIST OP "FALSE
+	>20 IF :ITEM = F :LIST OP "TRUE
+	>30 OP MEMBERP :ITEM BF :LIST
+	>END
+	MEMBERP DEFINED
+	?
+.sp 2
+.nofill
+1PAUSE				0(command)
+.adjust
+	 When executed in a procedure, it causes a pause in the procedure during which the user may execute any commands he wishes.  To resume the execution of the procedure (beginning on the next line after the 1PAUSE0 regardless of the location of that command on the previous line) the user uses the 1CONTINUE0 command.  
+.sp 2
+.nofill
+1PENDOWN				0(turtle command)
+1PD0
+.adjust
+	 Allows the floor or display turtle to draw a line  when it moves next.
+.nofill
+.sp 2
+1PENP0 				0(turtle operation)
+.adjust
+	 Outputs 1"TRUE0 if the pen is down (ready to trace) and 1"FALSE0  otherwise.
+.PAGE
+.NOFILL
+1PENUP				0(turtle command)
+1PU0
+.adjust
+	 Causes the floor or display turtle not to draw a line when it moves next.
+.sp 2
+.nofill
+1PLOTTER 			0(plotter switch)
+.adjust
+	 Executed as a command, 1PLOTTER0 causes subsequent appropriate turtle commands to be sent to the plotter for execution.  (Display commands which cannot be executed by the plotter, such as 1CLEARSCREEN, WRAP, DISPLAY0, etc., will be ignored and will not cause an error.)  Plotter argument range is more restricted than the display range.  Also, the name 1"PLOTTER0 is understood in the command 1.CLOSE "PLOTTER0, which releases the plotter for use by others.  See also 1NOPLOTTER.
+.sp 2
+.nofill
+PM				0(music command)
+.adjust
+	 Causes the output of previous 1NOTE0 commands to be played on the music box.  This also clears the music buffer so that music must be recompiled before being played again.
+.sp 2
+.nofill
+1POINT 2xcoord ycoord		0(tv turtle command)
+.adjust
+	Makes a point at the point with coordinates 2xcoord0 and 2ycoord0.
+.sp 2
+.nofill
+1POINTCOLOR 2xcoord ycoord	0(color operation)
+.adjust
+	Outputs the color of the point with coordinates 2xcoord0 and 2ycoord0.
+.sp 2
+.nofill
+1POINTSTATE 2xcoord ycoord	0(tv turtle operation)
+1PS 2xcoord ycoord0
+.adjust
+	Outputs 1"TRUE0 if the point with coordinates 2xcoord0 and 2ycoord0 is currently 'on', otherwise is outputs 1"FALSE0.
+.sp 2
+.nofill
+1.PRIMITIVES			0(command)
+.adjust
+	Prints a list of all of the primitives that LOGO knows.
+.sp 2
+.nofill
+1PRINT 2wordorlist 		0(command)
+.adjust
+	 1PRINT0s its input followed by a carriage return.  If the input is (or evaluates to) a list, 1PRINT0 does not show the outside brackets.  See 1FPRINT0 for examples of 1PRINT0ing of lists and use of more than one input.  
+.sp 2
+.nofill
+1PRINTOUT 2(proc.nameormodifier)	0(command)
+1PO 2(procedurenameormodifier)0
+.adjust
+	 Prints the text of the named procedure on the console.  If no input is specified, the default is the procedure most recently (or currently being) defined or edited including procedures defined by reading in from a file.  1PRINTOUT0 quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.  1PRINTOUT 0 can be followed by a modifier instead of a procedurename in which case it acts accordingly.
+.PAGE
+.nofill
+1PO ALL				0(command)
+.adjust
+	 Prints the text of all (unburied) procedures, all names, and the specifications of all arrays in that order.
+.sp 2
+.nofill
+1PO ARRAY 2arrayname		0(command)
+	 Prints the named array's size and type.
+.sp 2
+1PO ARRAYS 			0(command)
+	 Prints the size and type of all currently defined arrays.
+.sp 2
+1PO FILE 2filename		0(file command)
+1POF 2filename0
+	 Prints the entire contents of the file.
+.sp 2
+1PO INDEX 			0(file command)
+1POI0
+	 Prints the names of all files and subindices in the local index.
+.sp 2
+1PO LINE 2linenumber		0(editing command)
+1POL 2linenumber0
+	 Prints out the specified line. 
+.sp 2
+1PO NAMES			0(command)
+.adjust
+	 Prints out all currently defined names and their values.  To print the value of one particular name, use PR.
+.sp 2
+.nofill
+1PO PROCEDURES			0(command)
+	 Prints the text of all (unburied) procedures in the workspace.
+.sp 2
+1PO TITLE			0(editing command)
+1POT0
+	 Prints the title of the procedure currently being edited or defined.
+.sp 2
+1POTS				0(command)
+	 Prints the titles of all (unburied) procedures in the workspace line by line.
+.sp 2
+1PO TREE 			0(file command)
+	 Prints the tree of the current index.  (See TREE.)
+.PAGE
+.nofill
+1PRINTSCREEN			0(line printer command)
+1PRS0
+.adjust
+	Only useful when you have a raster scan tv.  Tells the lineprinter to print out a picture of what is currently on the tv screen.
+.sp 2
+.nofill
+1PROCEDURES			0(modifier)
+	 Used with 1PO 0and1 ERASE0 to limit the commands to procedures only.
+.sp 2
+1PRODUCT 21stfactor 2ndfactor 	0(operation)
+.adjust
+	 Outputs the 1PRODUCT0 of 2firstfactor 0and 2secondfactor.0 See section on INFIX OPERATORS in the appendix.
+.sp 2
+.nofill
+1QUOTIENT 2dividend divisor	0(operation)
+.adjust
+	 Outputs 2dividend/divisor0.  If both inputs are integers, this outputs the integer part of the quotient.  See section on INFIX OPERATORS in the appendix.
+.nofill
+.sp 2
+1RANDOM				0(operation)
+	 Outputs a one-digit random integer.
+.sp 2
+1READ 2filename			0(file command)
+	 Reads the specified file into the workspace.  See1 FILE0 for more details.
+.sp 2
+.nofill
+1.READPALETTE			0(color command)
+.adjust
+	Does something.
+.sp 2
+.nofill
+1READPTR 2file 			0(command)
+1PTR 2file0
+	 Reads into 2file0 from the paper tape reader.
+.sp 2
+1REMAINDER 2dividend divisor	0(operation)
+1MOD 2dividend divisor0
+.adjust
+	 Outputs 2dividend 0(MOD 2divisor0).  See section on INFIX OPERATORS in the appendix.
+.PAGE
+.nofill
+1REQUEST 			0(operation)
+1RQ0
+.adjust
+	 When executed, this operation waits for a line to be typed in from the console.  It then outputs that line as a list.  See also 1TYPEIN.  0The prompt character for a request is 1<0 if nothing else was typed at the beginning of the current line, but is omitted altogether if the request is begun in the middle of a line.
+.sp
+.nofill
+	1?TO TAKENOTES
+	>10 .OPENA "NOTEBOOK
+	>20 TYPE "TITLE:%%
+	>30 MAKE "A REQUEST
+	>40 .FILEP SE DATE :A
+	>50 MAKE "A REQUEST
+	>60 IF REQUEST = [.] .FILEP [***] .CLOSEF STOP
+	>70 .FILEP :A
+	>80 GO 50
+	>END
+	TAKENOTES DEFINED
+	?TAKENOTES
+	TITLE:  MEMORANDUM
+	<THIS IS A WAY
+	<TO LEAVE BUG-MAIL
+	<AND OTHER NOTES TO YOURSELF
+	<.
+	?POF "NOTEBOOK
+	75 1 11 RANDOM MEMO
+	PREVIOUS MESSAGES...
+	***
+	75 1 17 MEMORANDUM
+	THIS IS A WAY
+	TO LEAVE BUG-MAIL
+	AND OTHER NOTES TO YOURSELF
+	***
+	?
+.sp 2
+RIGHT 2degrees			0(turtle command)
+1RT 2degrees0
+	 Causes the floor or display turtle to rotate 2degrees0 to the right.
+.sp 2
+1RTOUCH	 			0(TS-turtle operation)
+.adjust
+	 Outputs1 "TRUE0 if the right of the touch-sensor turtle is touching something.  Outputs1 "FALSE0 otherwise.  Like1 FTOUCH, LTOUCH, 0and1 BTOUCH.
+.sp 2
+.nofill
+1.RUG				0(status command)
+.adjust
+	 Stops LOGO by breaking out to RUG.  Don't use it unless you know what you are doing.
+.PAGE
+.nofill
+1RUBDIS 2number			0(2500 turtle command)
+.adjust
+	The way that the 2500 remembers what the turtle is showing is by accumulating a long list of all of the turtle commands given since the last 1CLEARSCREEN0.  The 2500 machine itself spends most of its time going through this list, tracing over and over the turtle lines.  What 1RUBDIS0 does is to tell the 2500 to delete the last 2number0 things added to the display list.  Therefore, you can effectively tell the turtle to forget the last 2number0 commands you gave it.
+.sp 2
+.nofill
+1RUN 2list			0(command or operation)
+.adjust
+	 Evaluates the input as if it had been typed at the console.  1RUN0 outputs when it evaluates an operation and does not when it evaluates a command, but note the following special situations (and see 1EDIT0 for more clarification).
+.sp
+.nofill
+	1?TO RUN.UNTIL :CONDITION :ACTION
+	>10 IF RUN :CONDITION STOP
+	>20 RUN :ACTION
+	>30 GO 10
+	>END
+	RUN.UNTIL DEFINED
+	?RUN.UNTIL [FTOUCH] [FD 10]   0! moves TS-turtle forward until it touches something
+.sp 
+.adjust
+1RUN0 is also necessary for the execution of 1REQUEST0s and the execution of computed 1TO, ED, ER, PO, BURY, STEP 0or 1TRACE0, that is, the commands which quote their inputs.  (See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.)  None of these will do the right thing if its input is a name or a procedure which outputs a name.  For example:
+.sp
+	1?ER :A
+	CAN'T ERASE :A
+	?BURY :A	0! BURY also takes its input literally.1
+	PROCEDURE :A NOT HERE.
+	?RUN SE "BURY :A0	! But this works!1
+	?
+.sp 2
+.nofill
+1SEETURTLE			0(tv turtle operation)
+.adjust
+	Outputs 1"TRUE0 if you can see the little triangle that is the turtle (i.e. if the turtle isn't hidden), otherwise, it outputs 1"FALSE0.
+.sp 2
+.nofill
+1SENTENCE 2thing1 thing2		0(operation)
+1SE 2thing1 thing20
+.adjust
+	 If both inputs are lists, it strings the elements of the two together to make a single list and outputs that.  If either input is not a list, it first changes that input to a one-element list and then proceeds as above.  This operation may accept other than two inputs if surrounded by parentheses.  Compare the examples below with 1FPUT0 and 1LIST0 respectively.  
+.nofill
+.sp
+	1?FPRINT ( SE "WORD [AND LIST] "ANDWORD [WITH A LIST] )
+	[WORD AND LIST ANDWORD WITH A LIST]
+	?FPRINT ( SE ( SE [A B] "C [D E] ) )
+	[A B C D E]
+	?
+.PAGE
+.nofill
+1(.SETFILE 2charpos optionalchannelnumber)0(file command)
+.adjust
+	Sets the file pointer for the specified file channel to point to character number 2charpos0.  The first character in the file is character #0.  See 1.FILEPOS0.
+.sp 2
+.nofill
+1.SETFONT 2devicenumber fontnumber0(tv command)
+.adjust
+	Sets the character font of the tv with device number 2devicenumber0 to 2fontnumber0.  Hopefully, you have 1.TVGRAB0ed that tv first.  Currently, 2fontnumber0 = 0 is bigfont and 2fontnumber0 = 1 is smallfont.
+.sp 2
+.nofill
+1SETHEADING 2degrees		0(display command)
+	 Sets the heading of the display or plotter turtle to 2degrees.1
+.sp 2
+SETINDEX 2indexname		0(file command)
+1SETI 2indexname0
+.adjust
+	 Sets the default index to 2indexname0.  See 1INDEX 0and 1FILE0 for more details.  
+.sp 2
+.nofill
+1SETLINEL 2columns		0(tv command)
+.adjust
+	Sets the line length of the tv to 2columns0.  If you type beyond that column, it automatically skips to the next line.
+.sp 2
+.nofill
+1SETTURTLE 2statelist		0(display command)
+1SETT 2statelist
+.adjust
+	 The list 2statelist0 must contain three elements in the format [2x-coord y-coord heading0] and the command sets the display or plotter turtle's whereabouts accordingly.
+.sp 2
+.nofill
+1.SETTV2 whichvar value		0(command)
+.adjust
+	 Sets the Time and date Variables for the1 TIME0 and1 DATE0 operations.2  Whichvar0 is a number from 0 through 5 and specifies seconds through years in that fashion.2  Value0 is the value you want that variable set to.  (very badly-named command)
+.sp 2
+.nofill
+1SETX 2x-coord			0(display command)
+	 Moves the display or plotter turtle horizontally to the specified coordinate.
+.sp 2
+1SETXY 2x-coord y-coord	 	0(display command)
+	 Moves the display or plotter turtle to the specified coordinates.
+.sp 2
+1SETY 2y-coord	 		0(display command)
+	 Moves the display or plotter turtle vertically to the specified coordinate.
+.sp 2
+.nofill
+1.SGCF 				0(status switch)
+.adjust
+	 Set Garbage Collect Flag so that all litter is removed the very instant it is created.  This slows you down beyond belief and has little other value except for system debugging.  Cleared by1 .CGCF
+.PAGE
+.nofill
+1SHOWTURTLE			0(display command)
+1ST0
+	 Causes the display turtle to appear.
+.sp 2
+.nofill
+1(SHOWWINDOW 2windowname optionaly optionalx)0(tv turtle command)
+1(SW 2windowname optionaly optionalx)0
+.adjust
+	Shows the window 2windowname0 at the coordinates 2optionaly0 and 2optionalx0.  If the optional coordinates are not given, the window is shown in the place where it was made.  Note: you can't show a window out of bounds.
+.sp
+.nofill
+1SIN 2degrees			0(operation)
+	 Outputs the sine of 2degrees.
+.sp 2
+.nofill
+1SMALLFONT			0(tv command)
+.adjust
+	This tells LOGO to clear the raster scan tv and from now on to print characters using the smallfont character set.  See 1SMALLFONT0.
+.sp 2
+.nofill
+1SMINUS 2a b			0(operation)
+.adjust
+	Outputs a word equal to 2a-b0.
+.sp 2
+.nofill
+1SNAP		 		0(display operation)
+.adjust 
+	 Used in expression 1MAKE "SOMENAME SNAP0 to assign the specified name to the current contents of the display screen (or to the contents since the last 1NEWSNAP0).  Once the name has been assigned, 1DISPLAY :SOMENAME0 can be used to cause another copy of the picture to appear, its location being offset from the original by the amount that the turtle is currently offset from the origin (usually (0,0), but see 1NEWSNAP0).  Similarly, 1WIPE :SOMENAME0 will remove all copies of 1:SOMENAME0 from the display without otherwise affecting the contents of the screen.  1SNAP0s cannot be written into files.
+.sp 2
+.nofill
+1SPIN 2angularvelocity		0(2500 turtle command)
+.adjust
+	Tells the 2500 turtle to start spinning with an angular velocity of 2angularvelocity0.  This is one of the commands, like 1MOVETURTLE0, that make the 2500 turtle 'dizzy'.  See 1DIZZY0.
+.sp 2
+.nofill
+1SPLUS 2a b			0(operation)
+.adjust
+	Outputs a word equal to 2a+b0.
+.sp 2
+.nofill
+1.SPNF 				0(switch)
+.adjust
+	 Set Print Nodes Flag so that you will be told how many nodes you have immediately after each spontaneous or evoked garbage collection.  Cleared by1 .CPNF
+.nofill
+.sp 2
+1SQRT 2number			0(operation)
+	 Outputs the square root of the number.
+.PAGE
+.NOFILL
+1STARTDISPLAY 20or1		0(switch)
+.adjust
+	 Grabs and initializes a vector display.  1STARTDISPLAY 00 is essentially the same as 1CS PD ST0 and 1STARTDISPLAY 10 also allocates twice the usual display space (allows more lines on the screen and more snaps to be created).   Existing snaps do not survive through 1STARTDISPLAY0 and cause an error if used afterward.
+.sp 2
+.nofill
+1.STATUS				0(status switch)
+.adjust
+	 A binary switch that unprotects all status-protected words. 
+.sp 2
+.nofill
+1STEP 2procedurename		0(switch)
+.ADJUST
+	 Allows the user to monitor the execution of the specified procedure (or all procedures if 2procedurename0 is 1ALL0) by 1) printing at the user's console the inputs to the procedure and its outputs if any; 2) allowing the user to approve, reject or postpone each line of the procedure by responding with CARriage RETurn, CTRL G or CTRL Z after the machine types the line.  Carriage return executes the line, CTRL G stops the execution entirely (but does not unSTEP the procedure for subsequent executions) and CTRL Z holds everything in its current state and allows the user to interpose other commands until he wishes to continue (see 1CONTINUE0).  To un1STEP0, use 1ER STEP 2procedurename1.  STEP0 quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.
+.sp 2
+.nofill
+1.STF				0(switch)
+.adjust
+	 Sets Trace Flag to show cruft that is incomprehensible to all but the elite.  Cleared by1 .CTF
+.nofill
+.sp 2
+STOP				0(flow)
+.adjust
+	 Inside a procedure it stops the procedure and returns control to the next higher level.  See also 1PAUSE 0and 1TOPLEVEL.
+.nofill
+.sp 2
+1STORE 2arrayname coords item 	0(command)
+.adjust
+	 As in 1DEFAR0 and 1GET0, if the array is more than one-dimensional, 1STORE 0 and its inputs must be enclosed in parentheses.  This stores 2item0 at 2coords0 in 2arrayname1.  
+.nofill
+.sp 2
+SUM 2addend1 addend2		0(operation)
+.adjust 
+	 Outputs the sum of its inputs.  It can accept a variable number of inputs if it is parenthesized.
+.sp 2
+.nofill
+1TBOX				0(switch)
+.adjust
+	 Declares to the computer that you are a Thornton Box.  The computer responds by asking you, one port at a time, what devices are connected to what Tbox ports.  You respond with the letters 1N, M, T, C, 0or1 P,0 which mean, respectively Null (no device), Music, Turtle, Console, and Plotter.  If you don't claim to have a console on any port the computer will know you are lying and will complain.
+.PAGE
+.nofill
+1TEST 2TorF			0(command)
+.adjust
+	 1TEST0 runs its input, which must evaluate to 1"TRUE 0or1 "FALSE0 and saves the result in a special place, local to the procedure in which the test was made, which can be read and used by 1IFTRUE 0and1 IFFALSE0.   The results remain unchanged until a subsequent 1TEST0 or until the locale ceases to exist.  
+.sp 2
+.nofill
+1TEXT 2procedurename		0(operation)
+.adjust
+	 Outputs a list containing the text of the named procedure.  Each element of the list is a list containing one line of the procedure, beginning with the title and not including the line 1[END]0.  The following procedures illustrate a way of using 1TEXT0 to file procedures in their proper place.   3(See example next page.)  
+.nofill
+.sp
+(continued from last page, example using TEXT)
+	1?TO FILETHEM :PLIST ! AIDS0	! the comment is a "tag"1
+	>10 IF EMPTYP :PLIST PR "***DONE*** STOP0	 ! to indicate correct file1
+	>20 MAKE "TEMP TEXT F :PLIST0	! grabs text 1
+	>30 MAKE "TOLINE F :TEMP0	! grabs title line1
+	>40 IF MEMBERP "! :TOLINE0	! is file labeled?1
+	     MAKE "PNAME F BF :TOLINE0	! procedurename1
+	     MAKE "FILEN L :TOLINE0	! file name1
+	    ELSE GO 1000		! if not labeled, skip it1
+	>50 PUTAWAY :PNAME :FILEN	
+	>100 PR SE :PNAME [NOT FILED]
+	>110 FILETHEM BF :PLIST
+	>END
+	FILETHEM DEFINED
+	?TO PUTAWAY :PNAME :FILEN ! AIDS
+	>10 .OPENA :FILEN
+	>20 IF EMPTYP :TEMP GO 1000	! remember [END] 1
+	>30 .FILEP F :TEMP
+	>40 MAKE "TEMP BF :TEMP
+	>50 GO 20
+	>100 .FILEP [END]
+	>110 .CLOSEF			0! notify user 1
+	>120 PR ( SE :PNAME [FILED IN] WORD "" :FILEN )
+	>END
+	PUTAWAY DEFINED
+	?POTS
+	TO MEMBERP :ITEM :LIST
+	TO FILETHEM :PLIST ! AIDS
+	TO PLAYSCALE ! MUSIC
+	TO PUTAWAY :PNAME :FILEN ! AIDS
+	TO SHOWSCALE ! SCREENMUS
+	?FILETHEM CONTENTS
+	MEMBERP NOT FILED
+	FILETHEM FILED IN "AIDS
+	PLAYSCALE FILED IN "MUSIC
+	PUTAWAY FILED IN "AIDS
+	SHOWSCALE FILED IN "SCREENMUS
+	***DONE***
+	?
+.PAGE
+.NOFILL
+THEN		 		0(noise word)
+.adjust
+	 Unnecessary but occasionally attractive separator between the conditional clause of an 1IF0-line and the statement to be executed conditionally.  See 1IF.
+.nofill
+.sp 2
+THING 2name			0(operation)
+	 Outputs the thing associated with 2name0, the value assigned to 2name.1
+.sp 2
+THINGP 2name			0(operation)
+.adjust
+	 Outputs 1"TRUE0 if there currently exists some thing with the name 2name0 and outputs 1"FALSE0 otherwise.  Example:
+.sp
+.nofill
+	1?TO HI
+	>10 IF THINGP "USERNAME GO 100	0! do I need to ask?1
+	>20 TYPE [WHAT IS YOUR NAME?%%%]    0! if so, ask.1
+	>30 MAKE "USERNAME REQUEST
+	>40 PRINT "HI! STOP
+	>100  PR SE "HI, WORD :USERNAME "!    0! else just greet her1
+	>END
+	?HI DEFINED
+	?HI
+	WHAT IS YOUR NAME?  BOBBIE
+	HI!
+	?HI			0! this time, it already knows the name1
+	HI, BOBBIE!
+	?
+.sp 2
+.nofill
+1(THROW 2optionalword)		0(flow)
+.adjust
+	Transferes control to a 1CATCH0 statement which envoked, at some level, this statement.  If 2optionalword0 is given, if transferes control to the 1CATCH0 statement with that specific tag.  If it can't find one, it produces an error message.  See 1CATCH0.
+.sp 2
+.nofill
+TIME	 			0(operation)
+.adjust
+	Outputs a three-element list which might contain the correct time [hr min sec] but probably will not.  Once set correctly (using 1.SETTV0 and a 24 hour clock), 1TIME 0will tell the truth as long as the system stays up.
+.sp 2
+.nofill
+.sp 2
+1TO 2title			0(switch)
+.adjust
+	 Used to define procedures.  The input, 2title0, must contain a name not already used by the user or by LOGO and may contain an indefinite number of additional words prefixed by 1:0 which name inputs to the new procedure.  Turns on editing mode (see also 1EDIT0) and is terminated by the switch 1END.0  (See throughout, but especially 1TEXT0 for examples.)  1TO0 quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.
+.nofill
+.sp 2
+1TOOT 2num			0(command)
+	 Tells the floor turtle to toot its horn 2num0 times.
+.PAGE
+.NOFILL
+1TOPLEVEL	 		0(flow)
+	 Stops the procedure which invoked it and returns control to TOP level.
+.sp 2
+1TRACE 2procedurename		0(switch)
+.adjust
+	 Causes the computer to type a message each time the named procedure is executed and indicate what if any inputs the procedure received and what it outputs when it stops.  1TRACE ALL0 traces all procedures.  1ER TRACE 2procedurename0 stops tracing that procedure.  (And, of course, 1ER TRACE ALL0 gets rid of all traces.)  1TRACE0 quotes its input.  See PRIMITIVES WHICH QUOTE THEIR INPUTS in the appendix.
+.sp 2
+.tl 57
+.nofill
+1TREE		 		0(tree)
+.adjust
+	 Used only in the context 1PO TREE0 (which see under 1PRINTOUT0).  The filing system begins with a "root directory" on each disk which simply names the disk.  The two root directories people usually use are 1FIXED;0 and 1AI01;0 .  The "root" directories are the ones you get when you say 1SETI "FIXED;0 or 1SETI "AI01;0 .  These directories contain some files and some sub-indices.  Both roots contain an index called 1USERS0 which contain indices of users which may contain files and sub-indices which may contain other files and sub-indices which may....   This branched structure is called a 1TREE0.  Whereas, the command 1PO INDEX0 prints out the current index and shows what sub-indices it may have, it does not show the 2contents0 of these sub-indices.  On the other hand, 1PO TREE0 starts at the current index and prints the complete structure of the tree from there down.  (Note that the "root" is, unlike ordinary trees, at the top).  For further clarification of the filing structure, see 1FILE0 and the specific filing commands.
+.nofill
+.sp 2
+1TTYP				0(operation)
+.adjust
+	 Outputs 1"TRUE0 if anything (including space or delete) was typed at the user's keyboard since the last 1REQUEST, TYPEIN0 or1.CTYI0.  (Those operations grab what was typed in and2 clear out0 the teletype buffer. Note that at present there is no way to know 2what0 was typed in without using one of those operations and that 1TTYP 0 does not tell you if anything 2new0 was typed since the last time you looked in the buffer.)  Outputs 1"FALSE0 otherwise.  
+.sp
+.nofill
+	1?TO LIMIT :SECONDS	0! limits typing time1
+	>10 MAKE "TIME TIME
+	>20 MAKE "ANSWER TIMEREQUEST :SECONDS
+	>30 IF NOT ( CLOCK - :PREVIOUS ) / 60 > :SECONDS OP :ANSWER
+	>40 PRINT [TOO MUCH TIME!]
+	>50 OP []
+	>END
+	LIMIT DEFINED
+	?TO TIMEREQUEST :SECONDS	0! limits response time1
+	>10 IF :SECONDS < 1 OUTPUT []
+	>20 MAKE "PREVIOUS LAST TIME 
+	>30 IF TTYP MAKE "PREVIOUS CLOCK OUTPUT REQUEST
+	>40 IF LAST TIME = :PREVIOUS GO 10
+	>50 TIMEREQUEST :SECONDS - 1
+	>END
+	TIMEREQUEST DEFINED
+	?0
+.sp
+.adjust
+Once we commit ourselves to 1REQUEST0 or 1TYPEIN0, we are stuck until a carriage-return is typed and no further interaction with the clock is possible.  With 1.CTYI0, every character is cleared from the buffer before another is checked by 1TTYP0 and so constant interaction with the procedure becomes possible, as in the following example.3 (see example on next page)
+.PAGE
+.nofill
+(continued from last page)
+	1?TO ORBIT
+	>10 INIT
+	>20 MOVESATELLITE
+	>30 IF TTYP MAKE "A .CTYI
+	>40 IF :A = 7 STOP
+	>50 IF MEMBERP CHAR :A [U D F B] THRUST :A
+	>60 GO 20
+	>END
+	ORBIT DEFINED
+	?
+.sp 2
+.nofill
+1.TTYP 2devicenumber		0(command)
+.adjust
+	Acts exactly like 1TTYP0, except that it tests whether anything has been typed at the terminal with device number 2devicenumber0.  If so, the character can be retrieved with 1.TYI0.
+.sp 2
+.nofill
+TURTLE 21or2			0(switch)
+.adjust
+	 Specifies turtle 1 or 2 as the device to which all subsequent turtle commands will be sent.   Turned off by requesting a different turtle or the plotter or display or by saying 1NOTURTLE.
+.sp 2
+.nofill
+1TURTLESIZE 2NUMBER			0(something)
+.adjust
+	SPECIFIES THE NUMBER OF TURTLESTEPS IN THE SMALLEST DIMENSION OF THE TURTLE SCREEN.
+.sp 2
+.nofill
+1.TVGRAB 2devicenumber		0(tv command)
+.adjust
+	Tells LOGO that you are 'grabbing' the raster scan display with device number 2devicenumber0.  Now, noone can log in on that terminal.  You can output to its screen with 1.TYO0 and input from its keyboard with 2.TYI0.  You can also do other interesting things with it.  See 1.SETFONT, .TVHERE, .TVOMODE, .TVP0  .
+.sp 2
+.nofill
+1TVHERE				0(tv operation)
+.adjust
+	Outputs the position of the curser on the tv.  It outputs a two-element list, in the same format as the input to 1CURSET0.  See 1CURSET0.
+.sp 2
+.nofill
+1.TVHERE 2devicenumber		0(tv operation)
+.adjust
+	Works the same as 1TVHERE0, except you are trying to find the position of the curser on the tv with device number 2devicenumber0.
+.sp 2
+.nofill
+1TVOMODE 2modenumber		0(tv command)
+.adjust
+	Sets the output mde for your raster scan tv display, the way characters are printed.
+	If 2modenumber0 = 0, you have overprinting.
+	If 2modenumber0 = 1, you have xorprinting.
+	If 2modenumber0 = 2, you have normal printing.
+.sp 2
+.nofill
+1.TVOMODE 2devicenumber modenumber0(tv command)
+.adjust
+	Works the same as 1TVOMODE0, except it sets the output mode for another tv.
+.PAGE
+.nofill
+1.TVP 2devicenumber		0(tv operation)
+.adjust
+	Outputs 1"TRUE0 if the device with device number 2devicenumber0 is a raster scan tv.
+.sp 2
+.nofill
+1(TVSIZE 2num1 optionalnum2)	0(tv command)
+.adjust
+	Tells LOGO to make the turtle screen 2num10 units by 2optionalnum20 units.  This doesn't necessarily change the fact that the screen is 400 x 400 turtlesteps.  If 2optionalnum20 isn't given, if acts like you typed 1(TVSIZE 2num1 num1)0 and you get a square screen.
+.sp
+.nofill
+1.TYI 2device	 		0(operation)
+.adjust
+	 Like1 .CTYI0 but with the device or teletype specified by 2device0.  See1 .CLOSE0for a list of device names this understands.
+.sp 2
+.nofill
+1.TYO 2device ascii		0(command)
+.adjust
+	 Like1 .CTYO0 but outputting the character whose decimal ascii code is 2ascii0 to device 2device0.  The way the device handles the character depends on the device itself.  See index for a table of characters the floorturtle understands.  To free the device for others to use it, you must do a 1.CLOSE0 (which you should see for a list of special device names this command understands).
+.sp 2
+.nofill
+1TYOWAIT 2device extrawait	0(flow)
+.adjust
+	 Causes your program to wait 2extrawait0 30ths of a second after the specified device is finished doing what it was told to do.  This recognizes the same 2device0s that 1.CLOSE0 understands.
+.nofill
+.sp 2
+1TYPE 2anything			0(command)
+	 Like 1PRINT 0except does not carriage return at the end of the line.
+.sp 2
+1TYPEIN				0(operation)
+.adjust
+	 Like 1REQUEST0, this operation waits for a line to be typed in at the console, but regardless of the nature of the typed line, this outputs only the first word as a word.  1TYPEIN0 outputs the empty word if only a carriage return is typed.
+.sp 2
+.nofill
+1UNTIL 2TorF			0(command)
+.adjust
+	This usually appears after some commands on a line.  It repeatedly executes all of the commands before it on a line until 2TorF0 evaluates to 1"TRUE0.
+.nofill
+	1?MAKE "FOO 1
+	?PRINT :FOO MAKE "FOO :FOO + 1 UNTIL :FOO > 3 PRINT "BAR
+	1
+	2
+	3
+	BAR
+	?0
+.PAGE
+.nofill
+1USE 2username			0(file command)
+.adjust
+	 Establishes the index that will apply to subsequent file commands such as 1 READ, WRITE, POF 0and1 POI.0  If the input is a single name (the usual case), that name is interpreted  as a user on the current disk.  If the input is a list, the first element is the user name and the rest is a legal tree of his index.   The last element of the list is the default index.  See 1FILE0 for more details.  
+.sp 2
+.nofill
+1USEDISPLAY			0(2500 command)
+.adjust
+	Tells the 2500 to use the screen turtle instead of the floor turtle.
+.sp 2
+.nofill
+1USING 2variablename		0(command)
+.adjust
+	Appearing in the title line of a LOGO procedure, it means that the variable 2variablename0 is local to the procedure.  See 1LOCAL0.
+.sp 2
+.nofill
+1.VERSION 			0(operation)
+.adjust
+	 Outputs the current version number of LOGO.
+.sp 2
+.nofill
+1VLEN				0(music operation)
+.adjust
+	 Outputs the total length of music compiled for the current voice. See 1NOTE0 for more details.
+.nofill
+.sp 2
+1VOICE 2voicenum			0(switch)
+.adjust
+	 Specifies the voice to which all subsequent 1NOTE0 commands apply.  If no 1VOICE0 command is given, voice 0 is assumed.   Specification persists until changed.
+.nofill
+.sp 2
+1WAIT 2num			0(command)
+	 Causes your program to wait 2num0 60ths of a second before continuing.
+.sp 2
+.nofill
+1WHERE				0(operation)
+.adjust
+	Outputs the current printhead position of a terminal.  On tvs, 1WHERE = FIRST TVHERE0.
+.sp 2
+.nofill
+1WIPE 2snapname			0(display command)
+	 Erases all appearances of the snap from the display screen.
+.sp 2
+1WIPECLEAN			0(display command)
+1WC0
+.adjust
+	 Erases everything from the screen, but leaves the turtle in its current state.
+.sp 2
+.nofill
+1WORD 2word1 word2 		0(operation)
+.adjust
+	 Outputs a word composed of the two inputs in order.  With parentheses, a variable number of inputs (see appendix) may be used.  Any input may be a number instead of a word.
+.PAGE
+.nofill
+1WORDP 2thing			0(operation)
+	 Outputs 1"TRUE0 if 2thing0 is a word and 1"FALSE0 otherwise.
+.SP 2
+.NOFILL
+1WRAP				0(display switch)
+.adjust
+	 Allows the display turtle (and images) to "wrap around" the screen to the other side.  (Gives you a toroidal screen.)
+.nofill
+.sp 2
+1WRITE 2filename	 		0(file command)
+.adjust
+	 Creates a file with the name 2filename0 in the current index.  The file will contain all names and all unburied procedures in your workspace at the time.  Neither arrays nor snaps can be written into a file.  
+.sp 2
+.nofill
+1.WRITEBLUE			0(color command)
+1.WRITEGREEN			0(color command)
+1.WRITEPALETTE			0(color command)
+1.WRITERED			0(color command)
+.sp 2
+.nofill
+1WRITEPTP 2file			0(command)
+1PTP 2file0
+.adjust
+	 Punches a paper tape of the contents of 2file0.  Occasionally useful for permanent storage of a file you want to delete from disk.  Make sure PaperT ape Punch is ready before executing.
+.sp 2
+.nofill
+1XCOR	 			0(display operation)
+	 Outputs the x-coordinate of the display turtle.
+.sp 2
+.nofill
+1XORDOWN				0(tv command)
+1XD0
+.adjust
+	Puts down the turtle's xorpen.
+.sp 2
+.nofill
+1XORUP				0(tv command)
+1XU0
+.adjust
+	Puts up the turtle's xorpen.
+.sp 2
+.nofill
+1(XORWINDOW 2windowname optionaly optionalx)0(tv command)
+1(XW 2windowname optionaly optionalx)0
+.adjust
+	Shows a window in xormode.  Its inputs are the same as 1SHOWWINDOW0's.
+.sp 2
+.nofill
+1YCOR				0(display operation)
+	 Outputs the y-coordinate of the display turtle.
+.he1
+LOGO GLOSSARY APPENDIX
+.HE2
+
+.page
+.nofill
+VARIABLE NUMBER OF INPUTS
+.adjust
+	Certain primitives can take a variable number of inputs.  To use this feature, the 2primitive and its inputs0 must be grouped together in parentheses.  For example,
+.SP
+	 1( SUM 5 6 7 8 )0 outputs 26
+.SP
+.nofill
+The primitives having this feature are:
+1 
+DEFINEARRAY	STORE		GET
+PRINT		TYPE		FPRINT
+LIST		WORD		SENTENCE
+FPUT		LPUT
+NOTE		MUTYO
+SUM		PRODUCT
+.sp 3
+0PRIMITIVES WHICH QUOTE THEIR INPUTS
+.adjust
+Certain LOGO primitives cause the following word not to be evaluated regardless of the nature of that word.  E.g., to bury or erase several items on a list, it is not possible to say 1BURY FIRST :PROCEDURELIST0 because 1BURY0 will see the word 1FIRST0, assume it is the name of a procedure, attempt to bury it, and cause an error before 1FIRST0 has a chance to get the real procedure out of the list.  Yet these primitives will accept quoted inputs; 1BURY ORBIT0 and 1BURY "ORBIT0 are equivalent.  This enables computed buries, erases, edits, etc.  All must be executed in the form:
+.NOFILL
+.sp
+	1?RUN SE [ER BURY] FIRST :PROCEDURELIST
+.SP
+0The primitives having this feature are:
+1BURY		ERASE BURY
+STEP		ERASE STEP
+TRACE		ERASE TRACE
+TO		EDIT
+PRINTOUT
+
+
+
+.sp 3
+0INFIX OPERATORS
+.SP
+*0 infix1 PRODUCT
++ 0infix1 SUM
+- 0infix1 DIFFERENCE
+/ 0infix1 QUOTIENT
+> 0infix1 GREATER
+< 0infix1 LESS
+= 0infix1 EQUAL
+\ 0infix1 MOD
+   0infix1 MAKE0, ie.,1 "A    50 is equivalent to1 MAKE "A 50
+.sp 3
+.PAGE
+.nofill
+0EDITING CHARACTERS (not restricted to edit mode)
+.sp
+1<rubout>0  Deletes the previous character.
+1^W0  Deletes the previous word.
+1^Y0  Places the previous line typed in the edit buffer
+.sp
+.adjust
+If something is in the "edit buffer" (that is, after1 ^Y0 or1 EDL0), the following may be used:
+.sp
+.nofill
+1^C0  2C0opy the next character.
+1^N0  Copy the 2N0ext word.
+1^R0  Copy the2 R0est of the edit buffer.
+1^D0  2D0elete the next character.
+1^S0  2S0kip the next word.
+1<carriage return>0 Terminates current line as it appears on console.
+.sp 3
+.adjust
+0SPECIAL CHARACTERS
+.nofill
+.SP
+1%  PRINT0s as a space.  (But 1PRINTOUT0 shows it as a1 %0).
+1! 0Used for comments.  Anything appearing between it and next 1!0 on a line is ignored.
+1#0 Takes one input which must be a word and runs it as a procedure, e.g.,
+		1# WORD "POOH 5
+0			will execute the procedure named POOH5.
+1:0 Same as1 THING0.
+1( )0 Used for grouping.
+1[ ]0 Used to indicate lists.
+1^A0  Echoes as carriage return.
+1^B0  Echoes as blank.
+1^G0  Break.  Interrupts procedure and acts immediately when typed.  (But see 1.CTYI0)
+1^H0  Echoes as backspace.
+1^I0  Echoes as tab.
+1^J0  Echoes as linefeed.
+1^M0  Echoes as carriage return.
+1^Q0  Superquotes the following character (i.e., removes its special features).
+1^X0  Clarifies line currently in edit or typein buffer.
+1^Z0  Causes a pause.  Interrupt status, like 1^G0. 
+.sp 3
+LOGO SPECIAL NAMES
+.sp 
+1";  0Refers to root index of current disk.  (Can be used with 1SETI0.)
+1"AI01;  0Refers to root of moving-head disk.
+1"FIXED;  0Refers to root of fixed-head disk.
+1"TRUE  0Output of predicates that evaluate to True.  Accepted by 1IF.
+1"FALSE  0Output of predicates that evaluate to False.  Accepted by 1IF.
+1"MUSIC  0Device name for1 .TYO, .CLOSE, TYOWAIT.
+1"TUR1  0Device name for1 .TYO, .CLOSE, TYOWAIT.
+1"TUR2  0Device name for1 .TYO, .CLOSE, TYOWAIT.
+1"PLOTTER  0Device name for1 .TYO, .CLOSE, TYOWAIT.
+1"TTY  0Device name for1 .TYO, .CLOSE, TYOWAIT.
+.page
+0DECIMAL ASCII CODE AND CORRESPONDING CHARACTERS
+.SP 
+ 0   (1^@0)	32   2space0	641   @	 0961   `0
+ 1   (1^A0)	331   !		0651   A0	 971   a0
+ 21   ^B0		341   "		0661   B0	 981   b0
+ 31   ^C0		351   #		0671   C0	 991   c0
+ 41   ^D0		361   $		0681   D0	1001   d0
+ 51   ^E0		37   (1%0)	691   E0	1011   e0
+ 61   ^F0		381   &		0701   F0	1021   f0
+ 71   ^G 2bell0	391   '		0711   G0	1031   g0
+ 8   2backspace0	401   (		0721   H0	1041   h0
+ 9   2tab0	411   )		0731   I0	1051   i0
+10   2linefeed0	421   *		0741   J0	1061   j0
+11   (1^K0)	431   +		0751   K0	1071   k0
+12   (1^L0)	441   ,		0761   L0	1081   l0
+131   2return0	451   -		0771   M0	1091   m0
+141   ^N0		461   .		0781   N0	1101   n0
+151   ^O0		471   /		0791   O0	1111   o0
+161   ^P0		481   00		801   P0	1121   p0
+171   ^Q0		491   10		811   Q0	1131   q0
+181   ^R0		501   20		821   R0	1141   r0
+191   ^S0		511   30		831   S0	1151   s0
+201   ^T0		521   40		841   T0	1161   t0
+211   ^U0		531   50		851   U0	1171   u0
+221   ^V0		541   60		861   V0	1181   v0
+231   ^W0		551   70		871   W0	1191   w0
+241   ^X0		561   80		881   X0	1201   x0
+251   ^Y0		571   90		891   Y0	1211   y0
+261   ^Z0		581   :		0901   Z0	1221   z0
+271   ^[		0591   ;		0911   [	01231   {0
+281   ^\		0601   <		0921   \	01241   |0
+291   ^]		0611   =		0931   ]	01251   }0
+301   ^^		0621   >		0941   ^	01261   ~0
+311   ^_		0631   ?		0951   _	0127   (2delete0)
+.adjust
+.sp
+Ascii 0, 1, 11, 12 and 127 do not type on the console even with 1TYPE CHAR 120 and some others do not echo normally.  The italicized words above indicate special echoing or special functions.  See section on special characters.
+
+
+
+.end

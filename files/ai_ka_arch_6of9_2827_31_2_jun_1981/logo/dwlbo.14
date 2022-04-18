@@ -1,0 +1,131 @@
+.xgp
+.ss				
+.he
+D. Watt/Logo Book/Outline  
+.ce Outline for a Proposed Logo Book
+
+.ce Daniel H. Watt   May 20, 1981
+
+
+.ad
+I propose to write an introductory Logo "how to do it" type book, intended to simultaneously serve several related audiences:
+
+.in 5
+1. People - especially children betwen the ages of 9 and 14 - who want a practical easy introduction to Logo programming and activities;
+
+2. Adults - parents and teachers - who want to help a child learn Logo effectively;
+
+3. Adults who want to learn Logo as an introductory computer language and learn some of the powerful ideas that can be acquired while learning to program a computer using a pedagogically designed computer language.
+
+.in 0
+Each chapter will be balanced between how to do it sections starting
+with extremely simple graphics programming activities, and expository
+sections indicating some of the underlying concepts embedded in the
+activities, and offering practical teaching suggestions.  For a
+beginning student the book will offer many pictures and examples, and
+as little explanatory text as possible, so as not to interfere with a
+beginner's learning experiences.  To help the student, there will be
+descriptions of commonly experienced bugs and ways to avoid them, as
+well as many project suggestions designed to extend a learner's
+experience with the particular activities being covered.  For a
+teacher or a more sophisticated learner, there will be information
+about the powerful ideas that might be learned, as well as explanations for some of the commonly experienced bugs, and suggestions for how to help someone learn from their own bugs.
+
+As the book moves from introductory to more advanced topics, teaching will be primarily by example.  Sample projects will be described in detail,  followed by suggestions for extending or improving them, and by ideas for related projects.  Most project ideas will be ones that have been  developed and carried out by students between the ages of nine and fourteen.
+
+One still unresolved issue is how to treat the differences between TI
+Logo and Apple Logo. By the time this book comes out, Sprites may be available for Apple Logo as well. This outline is written as though the book were to be written for the present version of MIT Apple Logo. All activities will be compatable with TI Logo - although in some cases there would be minor changes in syntax and keyboard use. Since TI Logo allows significantly more and different graphics possibilities, I think it might be best to bring out a different edition of the book later, with additional chapters emphasizing TI's sprite and character graphics.
+
+Other possible future publications might include more books more specifically related to school curricula:
+ 
+- a computer literacy course based primarily on Logo;
+
+- a set of math enrichment activities, based on Turtle Geometry, recursion, manipulation of variables, algebra-like activities using variables, differential geometry; I can imagine this at several levels, elementary, middle school, high school;
+
+- an introductory physics course or unit, based on dynaturtle games (8th grade or older)
+
+- a book specifically for teachers teaching Logo, developing the "shop class" approach with many examples
+
+
+.ce 
+Tentative Chapter Outline
+
+.nf
+1. Introduction - a philosophical approach to learning and teaching Logo.
+.in 5
+where Logo comes from
+kids in control of computers
+the role of the teacher as a guide to independent learning
+different learning styles
+a Logo learning environment - more like a "shop class" than a "math class"
+.in 0
+
+2. Introductory Turtle Geometry:
+.in 5
+using the keyboard
+basic turtle commands
+writing Logo procedures (teaching the computer new commands)
+saving procedures on a disk
+simple recursion 
+many introductory project ideas
+.in 0
+
+3. Simple non-graphics procedures:
+.in 5
+the print command
+words and lists
+messages that change (introduction to variables)
+question and answer programs (introduction to conditionals)
+arithmetic
+
+.in 0
+4. Further explorations with the turtle:
+.in 5
+procedures with inputs
+recursive procedures with changing inputs
+poly, polyspi and inspi procedures - exploring mathematics
+x and y coordinates and naming points.
+.in 0
+
+5. Simple interactive activities:
+.in 5
+a target game
+instant turtle drawings using keyboard control
+controlling a moving turtle from the keyboard
+making a turtle racetrack game
+a tic-tac-toe game (a project which increases in complexity)
+.in 0
+
+6. Games with words:
+.in 5
+sentence generators
+madlibs
+a word-action program
+a doctor program
+.in 0
+
+7. Using the Logo screen editor as a text editor.
+
+8. Simulating the behavior of simple animals.
+
+9. Physics games with a "newtonian turtle".
+
+10. Places where it has really happened in schools
+.in 5
+real kids and real teachers
+Brookline
+Lamplighter
+New York City
+...others...
+
+.in 0
+11. Reference Section
+.in 5
+a detailed description of the Logo editor
+understanding the Logo filing system
+a glossary of commands (organized by categories)
+special functions (using a printer, etc)
+bibliography of further references
+
+.in 0
+12. Index

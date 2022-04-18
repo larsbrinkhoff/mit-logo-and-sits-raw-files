@@ -1,0 +1,87 @@
+The LOGO command KEYTURTLE (abbrev. KT) switches the computer into
+Keyturtle mode.  In this mode, turtles can be moved directly by
+typing in commands at the keyboard.  KEYTURTLE mode is used to design
+both tile patterns and Tortoise shells.
+
+Tile patterns can appear in two colors, a background color and a
+foreground color.  If you want the pattern to appear in red against a
+black background, type
+COLORS [RED  BLACK]
+
+In the appendix on p.   , you will find a list of all possible color
+combinations for tile patterns.
+
+In the bottom left square of the grid you will find the turtle.  The
+following LOGO commands can now be used to design the tile pattern:
+
+FORWARDDOTSPOTS (abbrev. FDD)
+BACKDOTSPOTS (abbrev. BKD)
+RIGHTTURN (abbrev. RT)
+LEFTTURN (abbrev. LT)
+PENUP (abbrev. PU)
+PENDOWN (abbrev. PD)
+ERASERUP (abbrev. EU)
+ERASERDOWN (abbrev. ED) [If this abbrev. holds, EDIT will not be abbreviated] 
+
+We want to dsign a tile pattern that will look like this:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To do this, we can use the following sequence of commands:
+
+PU
+FDD 3
+PD
+RT 90
+FDD 8
+LT 90
+FDD l
+LT 90
+FDD 7
+PU
+FDD 3
+RT 90
+FDD 3
+PD
+RT 90
+FDD 8
+LT 90
+FDD l
+LT 90
+FDD 7
+
+[Seems that you have to do too much for too little.  Maybe it's better
+just to use arrow-keys...] 
+
+Notice that as you design the tile pattern, the pattern appears in
+actual size, step-by-step, alongside the grid.
+
+If you give the turtle a command that causes it to draw something you
+don't like, you can erase that portion using the command ERASERDOWN.
+
+If, for example, we had forgotten to type PU at the beginning and then
+typed FDD 3, we would get
+
+.sp 8
+
+To erase the shadded portion you could type:
+ED
+BKD 3
+EU
+ERASERDOWN replaces the foregroun
+

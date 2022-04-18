@@ -1,0 +1,766 @@
+.xgp
+.font 0 30fg
+.dummy @
+.ds
+.adjust
+.he2
+LOGO;NOVICE
+.ce
+A Novice's Guide to Using the 
+.ce
+General Turtle 3500 LOGO System
+
+This is a draft of a guide for teachers about how to use the 3500
+LOGO system.  It assumes that the reader knows nothing about computers,
+and only a little bit about LOGO.  It is intended to tell the reader
+HOW TO DO CERTAIN THINGS that occasionally have to be done, to keep the
+computer system operating, to initialize and copy disks, to create
+directories for new users, to erase unneeded files, and occasionally,
+to solve problems that occur when files get accidentally messed up.
+
+The reader is not expected to "understand" what s/he is doing in all
+cases.  S/he should simply be able to follow directions accurately.  In
+all cases, things that you are supposed to type will be indicated by an
+arrow (@@@@@).  Things that the computer might type will be indicated
+by single quotes (for example, `Welcome to LOGO').  The instruction to
+type a carriage return (green button) is given by a curved arrow (@@@@).
+
+The writer encourages feedback of all kinds.  We particularly want to
+know whether we have given the reader adequate information.  Are the
+instructions clear?  Are there situations which we have missed?  Are
+the explanations too long or too brief.  We need your help to
+make these instructions more useful to you and to other teachers, who
+may use them in the future.
+.page
+.ce
+HOW TO START THE COMPUTER
+.indent 3
+.undent 3
+1.  Connect all the wires in the appropriate places.  Each wire can
+only be plugged in where it belongs.  Be extremely careful not to
+force any connector in a place where it might not fit.  (This can be a
+problem with the flat disk connectors.)  If you are not sure about what
+to do, ask for help from someone who has done it before.
+
+.undent 3
+2. Plug in the power cords.
+
+.undent 3
+3. If your computer has an on-off switch, press the "on" button.
+
+.undent 3
+4. Place a LOGO disk in the top slot of the disk reader.
+
+.undent 3
+5. Press the reset button on the LSI-11.  The computer should respond
+by asking for the time and date.  You can ignore that request by typing
+@@@@.  `Welcome to LOGO...' should appear on the text display screen.
+.page
+.indent 0
+.ds
+.ce
+How to Handle 3500 Systems Crashes
+
+There are two types of crashes:  LSI-11 crashes and 2500 crashes.
+(The 2500 is the computer that runs the display terminal.)
+
+A) LSI-11 crashes:
+.br
+(1) The LOGO@@?@@goes away; a six digit number appears, followed by an@@@@symbol:
+.br
+`000020'
+.br
+`@@@'
+.br
+When this happens, remove the disk that is in the top slot of the disk
+reader, and replace it with a LOGO disk.  Then type: @@@@@173000G
+.br
+(The G is typed using the shift key.  Do not type carriage return.)
+.br
+After typing 173000G the disk lights should flash on and off,
+while emitting low clicking sounds.  This means that the computer is
+reading the instructions for LOGO from the disk.  When it is finished,
+the computer should present you with a message asking for the date and
+time.  You may disregard this, and type a carriage return.  `Welcome to
+LOGO' should appear.
+
+Sometimes you will have to repeat this process once or twice before it
+works.
+
+(2).  Alternatively, put a LOGO disk in the top slot, and press the
+reset button on the LSI-11.  This should bring the date and time
+message, followed by `Welcome to LOGO'.
+
+(3). Sometimes the system gets "hung up" to the point where it does not
+respond to the keyboard.  It may be possible to save the workspace in such
+a case:  push the HALT button on the LSI-11.  Then type@@@300G 
+.br
+(shift key for G -- no carriage return.)  This may bring
+back everything in your workspace.  If not, remove the disk; put a
+LOGO disk in the top slot, and use method 2 above.
+
+(4). If none of these methods works, turn off the computer for a few
+minutes.  Check to see that all the connections are secure.  Then plug
+in the computer again, turn it on and try again.  If the computer still
+does not load LOGO properly, try another LOGO disk.  If that doesn't
+work, ask for further help.
+
+(5). Once LOGO is reloaded, and the computer has printed the `Welcome
+to LOGO' message, you may remove the LOGO disk, and replace the user's
+disk in the top slot.  The user will have to LOGIN again.  Any new
+procedures that had not been saved before the crash will have been lost.
+
+.block 5
+B) 2500 Crashes -- Display Crashes:
+.br
+This sometimes happens when there is a big messy repeating design on
+the screen, or sometimes during animations.  Both screens go blank, and
+there is no reaction to the keyboard.  Push the reset button on the
+2500.  Then you should get a ? Type CS and go on from
+there.  The work-space should not be affected.
+
+.block 5
+C) LOOSE WIRES
+.br
+Sometimes the system appears to crash because one or more wires
+jiggled loose.  If the above methods fail, or if the screen suddenly
+goes dark for no apparent reason, check all connections, and try
+methods under A) or B) again.  This often works.
+
+.block 5
+D) OVERHEATING
+.br
+The system has been known to "act funny" when overheated.  One symptom
+is a repeated beeping sound.  Another is a failure to load LOGO
+properly.  The system has to be turned off for a while to cool off.
+Check the cooling fans to make sure they are working.  If the air
+filters for the fans are clogged with dust they should be cleaned. 
+.page
+.ce
+How To INITIALIZE a Brand New Disk
+.br
+.indent 3
+.undent 3
+1) Put the LOGO disk in the top slot.  Type:
+.br
+ .CHAIN "SALV> the computer will respond by typing
+.br
+`SALV #185' 
+.br
+or something, and print a *.
+
+.undent 3
+2) Remove the LOGO disk and put the disk you want to initialize into
+the top slot.
+.ss
+.nofill
+.block 8
+COMPUTER TYPES		You Type
+
+a) `*'			0I
+b) `SURE?'		Y
+c) `Format Disk?'	Y
+d) `reserved?'		
+e) `Diskname?'		(a one-word name for the disk)
+f) `*'
+
+.ds
+.adjust
+.undent 3
+03) If you have another disk to initialize, put it in the top slot and
+repeat step 2.
+
+.undent 3
+4) When you are finished initializing disks, put the LOGO disk back in
+the top slot and push the reset button on the LSI-11.
+.page
+.CE
+HOW TO CREATE A NEW USER INDEX
+
+1. In order to carry out these activities you must have a "teacher
+disk".  Place your teacher disk in the bottom slot of the disk reader,
+(slot 1) and type:
+.br
+READ [1; USERS STARTING CREATE]
+
+2. Put the disk you want to add a new user index to in the top slot of
+the diskreader (slot 0).
+
+3. If you have just initialized the disk*, and want to create several
+new user indices at once, type
+.br
+SETUP  [JOHNNY  ALICE  MARY  ...]
+.br
+where JOHNNY, ALICE, MARY, ... are the names of the children who will
+use the disk.
+
+Then wait for the computer to process all the indices.  You will see
+stuff printed out on the screen.  When the computer is finished setting
+up the indices it will print the statement:
+.br
+`FINISHED'
+.br
+You may then type GOODBYE, and LOGIN as one of the students, to make
+sure the process worked.
+
+4. If you want to add one new user to an old disk, do not use SETUP.
+Instead, you simply type:
+.br
+CREATE "SAM
+.br
+where SAM is the name of the new user.  Wait until the computer shows
+you it's done.
+
+5. If you want to see all the procedures that do all this, type @@@PO
+SETUP@@@.  Then printout all of SETUP's subprocedures.
+
+*If your new disk has not yet been initialized be sure to follow the
+process on pg. @@@@HOW TO INITIALIZE A BRAND NEW DISK.
+
+.page
+.ce
+HOW TO COPY DISKS
+.ss
+.undent 3
+1. Insert a LOGO disk into the top slot.
+
+.undent 3
+2. Type:@@@.CHAIN "SALV>
+
+.undent 3
+3. The computer will type something like
+.br
+`#SALV 174'
+
+.undent 3
+4. Remove the LOGO disk
+.br
+Put the disk you want to copy from in the top slot.  Put the
+disk you want to copy to in the bottom slot.
+
+.undent 3
+5. Type:
+.br
+CTRL -C (Push the CTRL and C keys at the same time.)
+.br
+The machine will respond with
+.br
+.nofill
+`MASS COPY FROM:'	you type  0
+`TO:'			you type  1
+.adjust
+
+.undent 3
+6. If any error messages appear, type I@@@.  The computer will
+resume copying.*
+
+.undent 3
+7. If you want to copy another disk, go back to step 4.
+
+.undent 3
+8.  If you are finished copying, put the LOGO disk back in the top
+slot, and press the reset button on the LSI-11.
+
+*NOTE:  Error messages when copying tell which disk is causing a
+problem, DISK 0  or DISK 1, as well as where on the disk a problem
+is located.  If the error is on the disk you are copying from (DISK
+0) you are alright -- at least the new disk won't have any new
+problems.  If the error is on the disk you are copying to (DISK 1),
+however, you had best stop copying (type Ctrl-Z) and use a different
+disk for DISK 1.  Start the whole process again with a new disk. 
+.page
+.ce
+HOW TO USE THE PRINTER
+
+.undent 3
+1. Make sure the printer is turned on before using any print commands.
+
+.undent 3
+2. The printer is controlled by the commands PRINTON and PRINTOFF and
+the command LINEPRINT or LP.
+Everything after PRINTON is printed out on the printer as well as on
+the terminal, until you give the command PRINTOFF.  (Warning:  PRINTON
+must be preceded by .NODRIB if you are dribbling.)
+
+.undent 3
+3. To printout a file:
+.br
+a) LOGIN in the person's name, then type:
+.br
+@@@@@LP  "filename
+
+b) put the disk in the top slot, then type:
+.br
+@@@@LP [0; USERS username filename]
+
+example:
+.indent 6
+type @@@LP [0; USERS JOHNNY DRIB ]@@@to print out Johnny's
+dribble file.
+
+or, @@@LP [0;USERS JOHNNY JOHNNY>]@@@ to print out all of
+Johnny's procedures.
+
+.indent 3
+
+.undent 3
+4. To printout a single procedure:
+.br
+LOGIN in the person's name; then type:
+.br
+@@@OFP "procedurename
+
+.indent 0
+(OFP is a LOGO procedure in the starter file, which includes PRINTON, a
+PO instruction, and PRINTOFF)
+
+example: OFP "SQUARE  will make the printer printout the procedure, TO
+SQUARE on paper.
+.page
+.ce
+HOW TO USE THE PLOTTER
+
+.indent 3
+.undent3
+1. Look at the upper row of connectors on the 2500.
+
+
+Gently remove the connector that is second from the left.  Replace it
+with the Plotter connector.
+
+.undent 3
+2.  Push the red button on the plotter to turn it on.
+.br
+Type@@@@PLOTTER
+
+.undent 3
+3. Type@@@CS@@@, then@@@PU@@@.
+.br
+Slip a piece of clean paper under the Plotter Pen.  Tape it in place
+with a small piece of tape at each corner of the paper.
+
+.undent 3
+4. Remove the plotter pen.  Take off the cap and put it somewhere safe.
+Replace the pen.
+
+.undent 3
+5. Type PD@@@.  Now use the Plotter in the same way you would use
+the screen.
+
+.undent 3
+6. When you are finished, replace the cap on the pen; turn the plotter
+power off; disconnect the plotter connector to the 2500 and replace the
+display connector.
+
+.undent 3
+7. Type @@@USEDISPLAY@@@ to use the display screen again.
+.ce
+ .  .  .  .  .  .  .  .  .  .
+
+.block 5
+.ce
+Special Comments
+
+.undent 3
+8. DO NOT USE the plotter for any procedures which use SPIN, MOVET, or
+WRAP around the screen.
+
+.undent 3
+9. To stop a procedure running on the Plotter, type CTRL-G.  Then
+type PLOTTER again.
+
+.undent 3
+10. If the PLOTTER should get "hung up" during a PU or PD instruction,
+type CTRL-Z, and GOODBYE.  Then LOGIN and type
+PLOTTER again to restart it.
+.page
+.ce
+HOW TO USE THE FLOOR TURTLE
+
+.undent 3
+1. Make sure the floor turtle is connected to the 2500.
+
+.undent 3
+2. Type @@@TURTLE
+
+.undent 3
+3. Use the turtle for any LOGO instructions.  Make sure that someone
+holds up the turtle's cord while it is moving.
+
+.undent 3
+4. When you are finished using the turtle, type @@@USEDISPLAY@@@,
+to use the display screen.
+
+.ce
+Special Note
+
+.undent 3
+5. To stop the floor turtle while executing a procedure, type
+CTRL-G and then type TURTLE@@@.
+.page
+.ce
+DISKS, FILES, and MEMORY
+
+.ss
+.indent 0
+1. The computer uses two kinds of memory:
+
+.indent 2
+"working memory" -- the things it remembers now; working memory is
+available for immediate use.  And,
+
+"stored memory" -- the things that are filed away, to be recalled
+into working memory later.  Stored memory is filed on a disk.  It must
+be read back into the workspace in order to be used.
+
+.indent 0
+The "working memory", often called the workspace, may be thought of as a
+blackboard on which we take notes, copying our solutions and
+significant ideas into a notebook which we keep and refer to later.
+(We may also have a section of our blackboard labeled "Do Not Erase;"
+which is kept longer than the rest of the notes on the blackboard.)
+The LOGO filing system, by which information which we want to save is
+stored permanently on a disk, corresponds to the "notebook".
+
+LOGO file commands are ways of getting information from the working
+memory into the stored memory, and vice-versa:
+
+READ "filename, reads information from the file you name, into the
+working memory.
+
+WRITE "filename, creates a file with the name you give, and puts
+all the PROCEDURES and NAMES in your workspace into that file.
+
+If you should happen to WRITE into a file that already exists, the
+computer will print
+.br
+`FILE ALREADY EXISTS.  DELETE IT?'
+.br
+if you type@@@Y@@(no carriage return), the computer will store all the
+material currently in the workspace in the file -- and completely
+erase the old file.
+
+If you want to use the same filename, but don't want to risk losing
+your old files, use the WRITE instruction this way:
+.br
+WRITE "filename>
+.br
+This puts the information into a new file called "filename#2," etc.
+The newest file is always labelled with the next larger number.  To
+read the information from such a file, you type:
+.br
+READ "filename>
+.br
+The procedure SAVE has been written to simplify filing for students.
+It automatically WRITEs a file called "yourname>.  When you LOGIN,
+the computer READs "yourname> automatically.
+
+II. SPECIAL FILES
+
+A. Dribble Files.
+.br
+The command .DRIB "filename causes the computer to "dribble" all
+the things typed by a user, and things the computer types, into the file
+named.  This is used when you want to store everything a student does,
+so that you can look at it later.
+.br
+.NODRIB makes the computer stop "dribbling".
+
+To STOP dribbling, simply type@@@@.NODRIB.
+This is important, because in order to use the printer, the user
+must first stop "dribbling". The computer automatically stops dribbling
+when you type GOODBYE.
+
+To examine a dribble file, LOGIN at the computer with the printer and type
+.br
+@@@@.NODRIB
+.br
+@@@@LP  "DRIB
+.br
+(or whatever name you chose for a dribble file)
+.br
+This will print out the entire dribble file.  After printing it out
+it's a good idea to erase it by typing
+.br
+@@@ERF  "DRIB
+.br
+(ERF is an abbreviation for ERASE FILE).
+.br
+This prevents the dribble file from growing indefinitely.
+
+B. INIT files.
+.br
+An INIT file is automatically READ by the computer when someone logs
+in.  It contains instructions which the computer carries out.  One
+common version of an INIT file contains these instructions:
+
+.indent 6
+1. it clears the screen and starts the turtle;
+.br
+2. it prints a personal message letting the user know the computer "knows"
+who s/he is;
+.br
+3. it READs a special file called "STARTERS
+.br
+4. it READs a file with the user's particular SAVE command.
+.br
+5. it READs each user's file of procedures;
+.br
+6. an INIT file can be programmed to start a dribble file automatically.
+
+.indent 0
+Any of these things can be eliminated or changed.
+
+INIT files can be written manually or created by the procedures CREATE
+or SETUP, when you create a new USER INDEX.
+
+C. STARTERS files.
+.br
+The STARTERS file contains a group of procedures which are to be used as
+"primitives".  That is, procedures which can be treated as though
+they were LOGO commands.  Examples of procedures in a STARTERS file are
+RARC and RCIRCLE, SETT, and REPEAT.  Other procedures can be added for
+individual kids.
+
+The procedures in the STARTERS file are buried.  This means that
+they cannot be erased from the workspace or written into a new file.
+
+To add a new procedure to a starter file, you have to clear the
+workspace first.  Suppose your new procedure is called FOO.
+
+.indent 2
+.nofill
+.ds
+type BURY FOO	(this saves FOO from being erased.)
+type ER ALL	(erases everything else from your workspace.)
+.block 2
+type ER BURY ALL("unburies" FOO and all the rest of your 
+		starter procedures, so they can be filed.)
+.block 2
+type POTS	to make sure all the old starter procedures are in
+		workspace.  If they are not, 
+type READ [0, USERS STARTS STARTERS] and ER BURY ALL
+.block 4
+type WRITE [0, USERS STARTS STARTERS]
+		the computer will type:
+FILE ALREADY EXISTS.  DELETE IT?
+type Y (no carriage return)
+.block 3
+type FIXS	to bury all the procedures in the starter file.
+then type BURY ALL and READ "yourname>, to get the rest 
+		of your procedures back.
+.indent 0
+.adjust
+.ss
+
+III. Workspace Manipulations
+.br
+.nofill
+.ss
+ER procedurename 	erases the procedure you
+			name.  (This erases a particular 
+			procedure from the "blackboard.")
+
+ER "name 		erases the name you name.
+
+ER ALL  		erases the workspace.  (This 
+			erases the entire blackboard.)
+
+BURY procedurename 	buries the procedure named.  
+			(This is like putting the procedure 
+			into the DO NOT ERASE section of 
+			your blackboard)
+
+ER BURY procedurename	unburies the procedure named.  
+			(This puts the procedure in the 
+			"erasable" part of the blackboard.
+
+BURY ALL  		buries all procedures
+
+ER BURY ALL  		unburies all procedures.
+
+.indent 0
+Example: You might use this to put some of your procedures into a
+separate file.
+
+.adjust
+Suppose you want to put the procedures FOO, HOO, and STOO into a file
+called "SUPER>.  Type:
+.nofill
+BURY FOO
+BURY HOO
+BURY STOO
+SAVE 			(to put all your other procedure 
+			into your regular file without
+			FOO, HOO, and STOO.)
+.nofill
+ER ALL
+ER BURY FOO
+ER BURY HOO
+ER BURY STOO
+POTS 			(to check which procedures are now 
+			in your workspace).
+WRITE "SUPER>@@@.
+
+.adjust
+If you want to continue working with FOO, HOO, and STOO, keep them in
+your workspace, and file all new procedures in "SUPER>@@@.
+
+If you want to work with your other procedures, type
+.br
+ER ALL
+.br
+READ "yourname>
+.br
+File new things in the usual way by typing SAVE.
+
+If you LOGIN and want to get the procedures in "SUPER> into your
+workspace, type
+.br
+ER ALL
+.br
+READ "SUPER>
+
+Save new procedures that go with these by typing
+.br
+WRITE "SUPER>
+
+IV. 
+.br
+A. How To Examine a group of files
+
+B. How to eliminate unnecessary files and keep disk memory clear.
+
+.page
+IV. LONG AND SHORT FILE NAMES
+
+Every file has a long name and a short name.  The short name is
+preceded by "  and is used when you are logged in or set to a
+particular USER index.  "STARTERS or "KENNY> are examples of
+short file names.  
+
+The long file name includes more information, and is used when you are
+not logged in or set to the index of the file.
+.br
+[0; USERS STARTS STARTERS], or 
+.BR
+[0; USERS KENNY KENNY >]
+
+are examples of long file names.
+
+0; tells the computer that the file is on disk 0.  Disk numbers are
+usually folowed by@@;@@ in LOGO.
+
+.nofill
+USERS@@@		tells the computer that 
+			it is in the index USERS.
+
+KENNY@@@		tells the computer that the 
+			name of the particular user 
+			index is KENNY.
+
+STARTERS or KENNY  >@@@	tells the computer the name 
+			of the file.
+
+.adjust
+Notice that the long name uses square brackets because it is a list.
+The short name uses@@"@@because it is a single word.
+
+You may read a file into your workspace from a disk in either slot, by
+specifying the long file name.  You may also write a file using the
+long name.
+
+Example 
+
+.nofill
+READ [1; USERS KENNY KENNY>]
+.BR
+			reads Kenny's procedures from 
+			disk 1.
+.br
+WRITE [0; USERS MARY KENNY]
+.br
+			writes a file called "KENNY, 
+			in Mary's index on disk 0.  
+			See HOW TO COPY files for more 
+			about this.
+.page
+.ce
+HOW TO COPY FILES
+
+.adjust
+1. Suppose you want to transfer a procedure or procedures from one disk
+to another.  Suppose  "Sam is logged in on disk "0; and you want to add
+some of Sally's procedures to Sam's files.
+
+a. To transfer all of Sally's file:  put Sally's disk in the lower slot.
+.br
+type READ [1; USERS SALLY SALLY>]*
+.BR
+.nofill
+			(this will read the 
+			file "Sally> from the 
+			directory "Sally on
+			disk 1, into the workspace.)
+.br
+then type SAVE
+
+.adjust
+Since Sam is already logged in, this will add all of Sally's procedures
+to Sam's.  Caution if any of Sally's procedures have the same
+name as any of Sam's, they will not be read in; the computer
+will keep the ones first in the workspace, rejecting the new version,
+and will tell you so by printing SQUARE SKIPPED, or whatever.
+
+b.  If you want only one of Sally's procedures, TO FOO, 
+.nofill
+
+i.	type ER ALL  (clearing the workspace)
+ii. 	type READ   [1; USERS SALLY SALLY>]*
+iii. 	type BURY FOO
+iv. 	type ER ALL
+v. 	type READ "SAM>  (putting Sam's stuff back in the
+		workspace.)
+vi. 	type ER BURY FOO
+vii.	type SAVE  (new "SAM> file will have all Sam's
+		old procedures + FOO)
+
+.adjust
+c. To transfer 2, 3, or n procedures, use the same process except that
+step iii. becomes:
+.br
+BURY FOO BURY FLUB  BURY GRUB, etc.
+.br
+and step vi. becomes:
+.br
+ER BURY FOO ER BURY FLUB  ER BURY GRUB, etc.
+.br
+I would suggest that these manipulations are not for kids!  They
+should be used with caution.  A mistake could result in someone's files
+being lost.
+
+*If Sally uses the same disk as Sam, just type
+.br
+READ [0; USERS SALLY SALLY>]
+
+.block 5
+2. A simpler way to copy a whole file is to use a special procedure
+called COPY to do so.
+
+.nofill
+TO COPY :FILE1  :FILE2
+10 .DRIB  :FILE2
+20 POF  :FILE1
+30 .NODRIB
+END
+
+.adjust
+COPY is included in everyone's STARTERS file, for convenience.
+.br
+Example:  To copy all of Sally's file called "SALLY> onto Sam's disk,
+in a new file called "SALLY type:
+.br
+COPY  [1; USERS SALLY SALLY>] [0; USERS SAM SALLY]
+.BR
+This assumes that Sally's disk is in slot 1 and Sam's in slot 0.
+

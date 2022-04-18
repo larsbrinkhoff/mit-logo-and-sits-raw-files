@@ -1,0 +1,111 @@
+.xgp
+.font 0 31vg
+.ds
+.adjust
+.php1
+.he1
+In LOGO;Behjos >
+.he2
+JOSHUA
+.ri
+Update 4/20/79
+
+.br
+Class #1......April 03
+
+1. He was introduced to the 6 commands on the buttonbox.  He asked
+several times "what was that for", referring to the turtle,
+buttonbox, etc.
+
+2. Back command did not work and we had to take the picture from the buttonbox.
+
+3. He started to use the buttons and in the beginning he could not make
+the relation between the action of pushing one button and the turtle
+movement.  He played with the turtle for a while and then we gave him
+some games:  eg. "kick the ball", parking the turtle between posts
+(making the turtle go through the gate).  He did all these games without
+much difficulty.
+
+4. He liked the BEEP command and when hir teacher was around, he called
+her and show what he could do with the turtle. He moved  and beeped it.
+
+5. He had several words for describing the BEEP action of the turtle:
+beep, toot and whistle.
+
+
+
+Class #2......April 06
+
+.br
+Ideas for future projects:  use the turtle to draw pictures
+
+1. We had the command BACK and he said today he could move the turtle
+back.  It was the first command he tried.  It was interesting how he
+noticed it because the picture on the keyboard was upside down (same
+position as the picture for FORWARD).
+
+2. We let him play with the turtle moving it as he would like.  He was
+trying to "understand" the inverse action of the commands.  For
+instance, he would go  forward several steps and go backward several
+steps(not necessarily the same as used in forward).
+
+3. We gave him the gate game.  In order for him to face the turtle in
+the direction of the gate he had to turn it and he asked  which way
+to turn.  We said for him to try.  He tried the wrong one but
+immediately he turned to the correct direction.
+
+4. He would place the turtle between the posts and would beep the horn,
+laughing.
+
+5.  He liked the idea of playing with the turtle and make it go out of
+his sight.
+
+6. Seems he had some difficulty in noticing where the turtle was
+facing.  We turned the lights on and that seems to help him.
+
+.page
+
+
+Class #3......April 10
+
+.br
+1. Offered choice of working with floor turtle or screen.  Chose the
+former, inspite of presence on the screen of a picture of 2 houses.
+"After I have worked with the turtle I will draw". 
+
+2. We showed him how to type FD 10.  He asked it he could have the
+overlay.  Did not notice missing "beep" lable (out of action because of
+loose wire).
+
+3. Used longer steps (unit for scFD 50) -- "I want the turtle to go faster" We
+changed the program and make it FD 10.
+
+4. Maneuvered turtle randomly at first.  Gate set up and as he started to
+maneuver the turtle through the gate he noticed missing "whistle" which
+was part of his "going through the gate" procedure.
+
+.page
+5. Problem in faulty turtle made the maneuver very tricky.
+.block 6
+.sp 3
+"I think it is the gate"
+.br
+"Oh come on" with much laughter.
+
+6. When turtle turned towards him so that he would see lamps he said:
+"Oh the lamps are on".  When he could see only one -- he said "only one
+lamp on".
+
+7. Asked for ball, "play basketball".  Used turtle to hit the ball:
+difference between use of "turn" here and in 5 above.  Here turned when
+near the goal object; in 5 backup first ? meaning?  Car model.
+
+8.  Knows back is reverse of forward.  "Turns" at first by trial and
+error. Later, prediction more accurate when the turtle was facing same
+direction as he. 
+
+9. Enjoyed pushing turtle out of sight saying "bye turtle!"
+
+10. Had to be stopped after 30 minutes to go for an evaluation.  "Will
+you come tomorrow?"
+

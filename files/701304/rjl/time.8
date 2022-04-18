@@ -1,0 +1,299 @@
+.title read/set digital pathways crock
+a=%0
+b=%1
+c=%2
+d=%3
+e=%4
+f=%5
+p=%6
+pc=%7
+
+tcudat=174770
+tcutim=tcudat+2
+tcustp=tcutim+2
+
+.macro save things
+	.irp  x,<things>
+		.ifb x
+			tst -(p)
+		.iff
+			.if idn x,#0
+				clr -(p)
+			.iff
+				mov x,-(p)
+			.endc
+		.endc
+	.endm
+.endm
+
+.macro rest things
+	.irp x,<things>
+		.if b x
+			tst (p)+
+		.iff
+			mov (p)+,x
+		.endc
+	.endm
+.endm
+
+.macro type string
+	jsr f,types
+	.asciz \string\
+	.even
+.endm
+
+tks==177560
+tkb==tks+2
+tps==tkb+2
+tpb==tps+2
+
+.=300
+	jmp start
+.=500
+pdl:
+month:	0
+day:	0
+hour:	0
+minute:	0
+second:	0
+daymon:	.byte 31.,29.,31.,30.,31.,30.,31.,31.,30.,31.,30.,31.
+pat:
+
+
+.=1000
+start:	mov #pdl,p
+loop:	type <
+>
+	jsr pc,gettim		;read and decompose the time&date
+	jsr pc,prtmdt		;print it
+loop1:	jsr pc,tyi		;read a character
+	cmpb #'?,a
+	beq expl
+	cmpb #'T,a
+	beq loop
+	cmpb #'S,a
+	bne 3$
+	jsr pc,settim
+	br loop
+3$:	cmpb #'D,a
+	bne 4$
+	jsr pc,setdat
+	br loop
+4$:	type <
+Huh?
+>
+	br loop1
+
+expl:	type <
+T   Types the time
+S   Sets the time
+D   Sets the date
+>
+	br loop1
+
+settim:	type <
+Hour: >
+	jsr pc,getnum
+	cmp #24.,b
+	blos 3$
+	mov b,hour
+	type <
+Minute: >
+	jsr pc,getnum
+	cmp #60.,b
+	blos 3$
+	mov b,minute
+	type <
+Seconds will be set to zero. Type space when ready.>
+	jsr pc,tyi
+	cmp #40,a
+	beq 1$
+3$:	type <
+Time not set.
+>
+	jmp start
+1$:	mov hour,a
+	swab a
+	bis minute,a
+	mov #tcutim,b
+5$:	mov a,(b)		;start the fast clock
+2$:	cmp a,(b)		;go there?
+	bne 2$
+	mov a,tcustp		;stop the clock
+	cmp a,(b)		;still right?
+	bne 5$
+	rts pc
+
+
+setdat:	type <
+Month: >
+	jsr pc,getnum
+	tst b
+	beq 9$
+	cmp #12.,b
+	blo 9$
+	mov b,month
+	mov b,f
+	type <
+Day: >
+	jsr pc,getnum
+	tst b
+	beq 9$
+	cmpb daymon(f),b
+	blo 9$
+	mov b,day
+1$:	mov month,a
+	swab a
+	bis day,a
+	mov #tcudat,b
+5$:	mov a,(b)		;start the fast clock
+2$:	cmp a,(b)		;go there?
+	bne 2$
+	mov a,tcustp		;stop the clock
+	cmp a,(b)		;still right?
+	bne 5$
+	rts pc
+9$:	type <
+Date not set
+>
+	rts pc
+
+getnum:	clr b
+2$:	jsr pc,tyi
+	sub #60,a
+	cmp #9.,a
+	blo 1$
+	mul #10.,b
+	add a,b
+	br 2$
+1$:	rts pc
+
+gettim:	movb tcudat,day
+	movb tcudat+1,month
+	movb tcutim,minute
+	movb tcutim+1,hour
+	movb tcutim+2,second
+	rts pc
+
+prtmdt:	type <Current clock setting: >
+	jsr pc,prtime
+	type <  >
+	jsr pc,prdate
+	type <
+>
+	rts pc
+
+prtime:	mov hour,b
+	jsr pc,pr2dn
+	type <:>
+	mov minute,b
+	jsr pc,pr2dn
+	type <:>
+	mov second,b
+	jsr pc,pr2dn
+	rts pc
+
+prdate:	mov day,b
+	jsr pc,pr2dn
+	type </>
+	mov month,b
+	jsr pc,pr2dn
+	rts pc
+
+;general print number routine
+;call with a clear, number to be printed in b
+;minimum number of digits to print in c
+;and radix to print in (=< 10.) in d
+prn:	div d,a
+	save <b,#prndig>
+	mov a,b
+	clr a
+	dec c
+	bgt prn
+	tst b
+	bne prn
+	rts pc		;return to prndig
+
+prndig:	rest d		;digit to print
+	add #60,d
+	save a
+	mov d,a
+	jsr pc,tyo
+	rest a
+	rts pc
+	
+;print a decimial number in b
+prdn:	save <a,b,c,d>
+	mov #10.,d
+	clr a
+	clr c
+	jsr pc,prn
+	rest <d,c,b,a>
+	rts pc
+
+;print a decimial number in b
+pr2dn:	save <a,b,c,d>
+	mov #10.,d
+	clr a
+	mov #2,c
+	jsr pc,prn
+	rest <d,c,b,a>
+	rts pc
+
+pronl:	save <a,b,c,d>
+	mov #8.,d
+	mov a,b
+	clr a
+	mov #6,c
+	jsr pc,prn
+	rest <d,c,b,a>
+	rts pc
+
+pronb:	save <a,b,c,d>
+	mov #8.,d
+	mov a,b
+	clr a
+	mov #3,c
+	jsr pc,prn
+	rest <d,c,b,a>
+	rts pc
+
+
+
+
+
+tyi:	save tks
+	bic #100,tks
+2$:	tstb tks
+	bpl 2$
+	mov tkb,a
+	rest tks
+	bic #177600,a
+	cmp #'a,a	;lower case?
+	bgt 1$		;nope
+	cmp #'z,a
+	blt 1$
+	sub #40,a	;make upper
+1$:
+
+tyo:	tstb tps
+	bpl tyo
+	movb a,tpb
+	rts pc		;nop this to slow down tyo
+	save a
+	mov #1000.,a
+	sob a,.
+	rest a
+	rts pc
+
+types:	save a
+1$:	movb (f)+,a
+	beq 2$
+	jsr pc,tyo
+	br 1$
+2$:	inc f
+	bic #1,f
+	rest a
+	rts f
+
+.end start

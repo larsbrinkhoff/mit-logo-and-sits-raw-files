@@ -1,0 +1,722 @@
+DRAFT	DRAFT	DRAFT
+
+The world of VLSI has forced us to face some of the most fundamental issues in
+all of science.  The basic truth that data elements are physical objects rather
+than merely mathematical ones has deep and profound implications not only in the
+implementation of data processing systems but also in the fundamental way we
+view information.  Out of these questions is emerging a discipline which
+combines computer science, information theory, and irreversible thermodynamics.
+This discipline we have chosen to call the physics of computation.  It is a
+subject which has occupied the thoughts of many famous scientists over the
+years.  We will indicate in this section some of the basic ideas in the
+discipline and review some questions which have not yet been answered.
+
+Fundamental constraints on the properties of computational elements arise from
+the requirement that information be generated, processed and sensed by machines.
+The end result of any computation is information available to people.  Any
+particular data element must be able to affect the end result.  It can cause a
+character to appear on a display or be printed on a line printer for example.
+Any such action involving communication with people requires considerable energy
+for its accomplishment.  If no energy were associated with the storage of a data
+element, the electronic circuit which sensed the element and converted it to a
+form readable by a person would have to provide infinite power gain.  Since no
+amplifier can produce infinite power gain, it follows that a finite energy must
+be associated with the storage of each data element.  Within the scope of
+ordinary electronic means, there are only two possible storage mechanisms.  Data
+may be represented by the energy contained in a magnetic field caused by the
+current in an inductor, or in an electric field caused by the charge stored on a
+capacitance.  In the FET logic described in the examples thoughout the book, the
+charge on the gate of an elementary field effect transistor causes an electric
+field between the gate and the channel.  The energy in this field represents the
+data.  The FET example will be used throughout this section as well, although a
+simple transformation maps all the comments concerning this style of logic into
+their counterparts for logic using magnetic flux as the energy storage medium.
+
+DIGITAL SYSTEMS
+
+Most modern electrical engineering curricula include an elementary course on
+digital electronic circuits.  It is often asked why a digital circuit is
+different from any other electronic circuit.  The question is a valid one.  The
+answer lies not in how the circuits are constructed, but in how they are used.
+In analog electronic circuits, a small signal such as that originating from a
+phonograph pickup or magnetic tape head is amplified until it has enough power
+for the intended output device such as a loudspeaker.  There exists a class of
+computational engines which use analog electronic information to represent
+quantities upon which computation is performed.  Analog integrators, adders,
+etc. are used to perform the computations.  It is often asked why we use an
+electronic signal to represent only one bit of information when we could use the
+same signal as an analog quantity to represent 12 or 16 bits of information.
+Suppose we pass our analog signal through a number of computational elements.
+Each such element unavoidably introduces a certain noise and distortion.  These
+deviations from ideality accumulate as errors in the output signal.  After the
+signal has passed through a very large number of such computational elements, it
+will have degraded to the point where it no longer accurately represents the
+outcome of the computation.  No matter how ideal the elements themselves, one
+can always pass the signal through enough elements to completely degrade the
+answer into a meaningless jumble.  If, for example, the computational elements
+are accurate to a tenth of one percent, we need only pass the signal through a
+thousand such elements to have an excellent chance that the results are
+meaningless.
+
+Modern computations often involve millions or even billions of steps before an
+answer is achieved.  It is clear that no analog representation of information
+will be able to tolerate such a large number of computational transformations
+without losing the content of the original information.  The digital
+representation of information is used because it may pass through an essentially
+indefinite number of computational processes without losing its integrity.  This
+then is our definition of a digital system.  As we shall see, it places severe
+limitations upon the nature of elementary devices within the system, and upon
+the energy required by all digital computations.
+
+RESTORING LOGIC DEVICES
+
+An elementary logic device must meet the requirement stated in the last
+paragraph and must also generate an output representation of data which is the
+same as that accepted by its input.  The output voltage level (and hence the
+energy) which represents a logic-one must be recognized at its input as a
+logic-one, etc.  In order to avoid the complications of multiple inputs, we will
+use a simple inverter as our generic example of a logic device.  The conclusions
+are valid for all restoring logic circuits.  The inverter is defined as a device
+which puts out a logic one when the input is a logic zero, and vice versa.  It
+follows that there must be an input voltage which results in an output voltage
+which is precisely equal to that of the input.  We have called this voltage the
+inverter threshold Vinv in earlier chapters.  In order for a logic signal to
+propagate through an indefinite number of such restoring logic elements in spite
+of the unavoidable errors and lack of ideality in the devices themselves, it is
+necessary that such errors not propagate from one element to the next.  A slight
+change in the voltage representing a logic one at the input must result in a
+smaller change in the voltage representing a logic zero at the output.  This
+condition must be true over the entire range of inputs recognizable as a valid
+logic-one and likewise for the range inputs representing a valid logic-zero.
+The transfer functions of the restoring logic device must therefore have the
+form shown in Figure 1.  Since the slope of the curve must be less than one over
+the entire range of valid logic-one, and also the entire range of valid
+logic-zero, and since the point at which the input voltage equals the output
+voltage is the dividing point between logic one and logic zero, it follows that
+the slope of the curve must be steeper than unity in the region between valid
+logic one and valid logic zero.  This requirement is often stated in the
+following form:
+
+The slope of the transfer function must be greater than one at the point where
+the input voltage is equal to the output voltage.
+
+Each restoring logic device must be able to drive the inputs of at least one
+device like itself.  Thus the energy required to change the output node from a
+logic-zero to a logic one is at least as large as that required to switch the
+input node from a logic-one to a logic-zero.  Since this switching must be
+accomplished within a finite time, it follows that in the region between a valid
+logic-one and a valid logic-zero, the restoring logic device must exhibit power
+gain.  It must be able to supply more energy to its output node than was
+supplied to its input node. It is thus not possible to derive all the energy for
+the switching event from the input signal.  In other words, restoring logic
+devices must draw power from some power supply separate from the actual signal
+path.  There are a number of profound implications of this requirement.
+
+The simplest imaginable implementation of a restoring circuit is shown in Fig.
+??.  Over the range of input voltage representing a logic zero, the upper
+(p-channel) transistor is turned on and the lower (n-channel) transistor is
+turned off.  The output is thus "connected" to V+ and hence "restored" to this
+level.  Similarly, the output is "connected" to V- by the turned on n-channel
+transistor if the input is a logic-one.  The basic scheme is to provide two
+wires which carry voltages equal to the desired signal levels.  Transistors are
+used as simple switches to connect the output to the appropriate one of these
+levels.  The result of the logic operation is stored on the capacitance of the
+output node.
+
+The energetics of switching such a device are equally simple.  A given charge Q
+on the output node results in a certain voltage V at that node.  At the logic-0
+level the charge Q0 results in a voltage V0.  Similarly, a charge Q1 is
+necessary to charge the node to a voltage V1.  A typical relationship between V
+and Q is shown in Fig. ??.  As the circuit makes a transition from the "0" level
+to the "1" level, an energy equal to the area under the curve is stored on the
+node capacitance, while the energy represented by the area above the curve is
+dissipated in the p-channel transistor.  Similarly, in charging the node to a
+logic-zero, the area above the curve is stored on the capacitor from the lower
+supply voltage V0, while the area under the curve is dissipated in the n-channel
+transistor.  From these considerations we arrive at an important invarient of
+such a logic device, independent of the details of the transistor
+characteristics, the shape of the V vs Q relation for the node, or the waveform
+of the switching event.
+
+The energy dissipated in a complete switching cycle is exactly equal to the
+difference in charge times the difference in voltage representing the two logic
+levels.
+
+LC LOGIC
+
+The logic device we have discussed appears to be a very inneficient one.  It
+loses energy irreversibly when charging a capacitor from a fixed voltage.  The
+origin of this loss is clear; the power supply is fixed at the voltage extreme.
+Whenever the capacitor voltage is less than that of the supply, any current
+through the charging transistor will dissipate energy.  Let us try to circumvent
+the lossy properties of such a logic family by storing energy in one of two
+alternate forms, and using a transistor to switch between the two.  An example
+of such a scheme is shown in Figure ??.  Here the logic signal is stored either
+as a current through the inductor L or a charge on the capacitor C.  A schematic
+of how the circuit may be used is illustrated in Fig. ??. Waveforms are shown
+for the voltage across the capacitor and the current through the inductor.
+Initially the logic signal is stored as a current in the inductor while the
+voltage across the capacitor is zero.  At time T1, the series transistor X2 is
+turned on while the parallel transistor X1 is turned off.  At T2, the voltage on
+the capacitor reaches its maximum value, the series transistor X2 is opened, and
+the charge representing the signal is stored on the capacitor C.  The current in
+the inductor is now zero.  This quiescent state can be maintained on the
+capacitor for an indefinite period.  In order to restore the circuit to its
+original configuration we need only reverse the procedure as shown in the
+Fig.??.  At time T3, the transistor X2 is turned on, thereby initiating a flow
+of current from the capacitor into the inductor.  The current will increase,
+reach a peak and then oscillate back until T4, when it reaches its maximum
+negative value once again.  At this point the parallel transistor X1 is turned
+on and the series transistor X2 is turned off.  The circuit has executed one
+complete cycle.  If the transistors X1 and X2 were perfect switches, this form
+of logic is dissipationless. We would be able to run an indefinite number of
+switching events without losing the signal energy.  However in order for the
+logic to function, the gate voltages on the transistors X1 and X2 must come from
+a signal such as the capacitor voltage Vc.
+
+Let us examine carefully the two waveforms in the neighborhood time T4, shown in
+Fig.??.  The current is nearing its maximum negative value and the voltage is
+approaching zero.  When the voltage reaches some small value (shown as -V0 in
+the diagram) the transistors X2 begins to open.  Thus, instead of traveling a
+straight trajectory as it would if the transistor were not activated, it will
+follow a shallower curve, eventually leveling out at zero voltage.  No
+transistor is able to change from a completely closed condition to a complete
+open position without a finite voltage range applied to its control electrode.
+In this case we have assumed the transistor to be a perfectly on switch for gate
+voltages greater than V0.  It changes to a completely open switch for gate
+voltages less than zero.  Intermediate in the switching process, the transistor
+will not act as either a perfect short or a perfect open circuit.  It will have
+a finite voltage across it together with a finite current through it.  The
+energy dissipated in an elementary switching event will be porportional to the
+current times the voltage, integrated across the switching transient.
+
+Esw = SV.I dt = SV.C.(dV/dt) dt = SC.V dV =(1/2). CV02
+
+Thus we see that the total switching energy is just equal to that stored on the
+capacitor with an applied voltage V0.  This irreducible dissipation is required
+by any switch which cannot sense an infiniesimal voltage difference.
+
+This energy is the same as that required by an ordinary restoring logic circuit
+powered by a power supply of voltage V0.
+
+The conclusion from this example is clear.  Storing a large quantity of energy
+in a switching circuit may have the effect that only a small fraction of that
+energy will be lost in any given switching event.  The necessary irreversible
+energy loss in any switching event does not, however, depend upon the total
+energy stored, but upon the properties of the switching elements which must
+sense another logic signal similar to the one they are generating.
+
+STEERING LOGIC
+
+Throughout the development of this text, we have shown many examples where logic
+functions have been performed by steering signals through pass transistors to
+appropriate destinations.  In this way a large number of logic functions can be
+implemented without dissipative restoring logic stages.  Let it not be thought,
+however, that steering logic can be operated without the dissipation of energy.
+In the examples given in earlier chapters, charging the input node of a
+restoring logic device through a network of steering transistors requires that
+the gate to channel capacitance of the steering transistors be charged or
+discharged to the logic signal value.  The energy involved in this charging and
+discharging must come from some restoring logic stage prior to the network of
+steering logic.  Hence, this energy is dissipated either by the driver of the
+network, the drivers of the gates of the steering logic, or both.  After passing
+through a number of steering logic stages, the signal of necessity degrades both
+in terms of its logic level and of its time performance.  Thus, periodically
+throughout the array of steering logic, restoring stages are required to
+regenerate the signal.  Although steering logic does not elimate the need for
+restoring stages, it can dramatically reduce the power requirement for any
+computing function as the examples in Chapter 5 and 6 demonstrate.
+
+PERPETUAL MOTION MACHINES
+
+We have tried two schemes for avoiding the essentially lossy nature of logic
+circuits.  In each case we have been able to discern the fatal flaw by which
+nature will get its due, whether we wish it or not.  We can continue the quest
+for lossless logic indefinately, inventing more and more cleaver schemes.
+However, even by now the search has taken on some of the flavor of the time
+honored perpetual motion machine game.  There are many similarities between the
+two enterprises.  Rather than continuing to flog a very dead horse, we will
+delve into some of the basic physical principles underlying the storage of
+information.  It is hoped that this excursion will help clarify the nature of
+the questions we have been addressing.
+
+Transitions in Quantum Mechanical Systems
+
+The laws of the Newtonian classical physics do not give us a sufficient basis to
+represent the fundamental behavior of information storage systems.  We must
+therefore investigate the simple underlying properties of quantum mechanical
+systems as they apply to bistable devices such as those we will be employing.
+
+Suppose we have a system with two states, characterized by wave functions Y1 and
+Y2 with corresponding energies E1 and E2.  The time dependence of the wave
+functions can be written explicitly as follows:
+
+	Y1=f1eiE1t/h
+	Y2=f2eiE2t/h
+
+Here f1 and f2 are functions only of the coordinates and not of time.  The time
+dependence of the expected value <x> of any coordinate x of a system in one of
+its eigenstates can be computed from the wave function;
+
+	<x>=SY*xY=f(t)
+
+The integral is taken over all space where the amplitude of the wave function is
+finite.
+
+The expected values of measurable parameters of a system in an eigenstate do not
+vary with time.
+
+Consider a system whose wave function is made up of a combination of the two
+wave functions;
+
+	Ys=AY1+BY2=Af1eiE1t/h+Bf2eiE2t/h
+
+The expected value of x for this wave function is;
+
+<x>=SY*xY=4ABSf1*xf2Cos(E1-E2)t/h +terms independent of time
+
+The expected values of measurable parameters of a state composed of two
+eigenstates oscillate with a frequency corresponding to the difference in the
+energies of the eigenstates.
+
+It follows from the above that if the energies of the two eigenstates of which
+the system is composed are at the same energy, none of its measurable parameters
+can change with time.
+
+We have been considering storage devices such as the flip flop which are
+basically symmetrical: i.e., the energy of the device is the same whether it is
+storing a 1 or a 0.  Let us contrive the system in such a way that either of
+these conditions corresponds to an eigenstate of the system.  We have in this
+way created a device which is ideal for storing data over long periods of time.
+
+The way in which such a system can make a transistion from one state to another
+is as follows:
+
+	1) Arrange the system such that the desired state has a lower energy
+than the initial state.
+	2) Perturb the system in order to mix the wave function of the initial
+state with that of the final state.
+	3) Allow the resulting oscillating charge distribution to radiate energy
+until the system has come to equilibrium in the final state.
+	4) Rearrange the system such that the two states have, once again, the
+same energy.
+
+In several contexts we have encountered the notion that storage elements can be
+driven into an intermediate state not corresponding to either a logic-one or a
+logic-zero.  The inverted pendulum behaves this way when it is precisely at its
+maximum position.  The flip-flop can be balanced by driving it to its balanced
+state.  Indeed, any bistable physical system will have a maximum in its
+potential function and therefore must of necessity have a point of unstable
+equilibrium between its two stable points.  Driving the system to precisely that
+maximum will produce a state from which it may take arbitrarily long to recover.
+We are naturally led to ask if transistions between the descrete eigenstates of
+a quantum mechanical system can be used to construct a device in which no
+mestastable behavior is possible.
+
+From the above discussion, we see immediately that this is not the case.  If we
+interrupt a quantum mechanical transition midway, we are left with a system with
+equal probability of being in either state.  Since the states now have equal
+energies, there is no preferred direction to the transition.  This situation is
+the quantum equivalent of the "hung" flip-flop.  Any system which can be forced
+into one of two stable states can exhibit this metastable property.
+
+Irreversability
+
+It is annoying that the transistion energy must be radiated away and thus lost.
+Let us arrange a second device which can absorb the radiated energy and use it
+to power a subsequent transition.  Unfortunately, this scheme will not work.
+The laws of physics are symmetrical in such situations.  The second system will
+radiate energy back to the first, not allowing the transition to run to
+completion.  All such schemes are doomed to failure.  They are the logically
+equivalent to perpetual motion machines.
+
+In order to introduce a direction into a transition between states, energy must
+be lost irreversibly.  A system which conserves energy cannot reach a definate
+state and thus connot make a decision.
+
+One might be lead to ask how any system can be constructed which will have a
+time direction when the underlying physical laws have time reversal symmetry.
+In the above example, the time direction is introduced by a large number of
+absorbers for the energy radiated by our storage device.  Energy will indeed be
+radiated back to the source from each absorber.  However, the unavoidable
+uncertainties in the locations and velocities of the individual absorbers cause
+the phase of each re-radiated wave to be different when it reaches the storage
+device.  The many contributions to the amplitude of the return radiation cancel
+out, resulting in only noise fluctuations.  The information contained in the
+phase of the outgoing wave has been irreversibly lost.  This is the fundamental
+origin of the second law of thermodynamics.
+
+While definitive proofs are badly needed in this area, we may draw some
+tentative conclusions from the above discussion.
+
+A data element is, of necessity, stored as an energy.  Switching is defined as
+changing a data element in a finite time.  Thus a definite power is associated
+with any switching event.  For a given energy, faster switching times require
+higher switching power.
+
+In order to switch into a well defined final state, a certain energy must be
+dissipated irreversibly.  This energy is just equal to the minimum energy which
+can be sensed by an active switching device.
+
+REVERSIBLE SYSTEMS
+
+Note that in our discussion of the inherent dissipative feature of restoring
+logic we have nowhere appealed to the reversibility (or lack thereof) of the
+computing process itself.  There have been a number of discussions on this topic
+and it appears possible to construct universal computing machines which are
+reversible in the sense that once they have reached a final step of computation
+they can be played backwards and retrace the steps of computation to their
+initial state.  The point here is not whether such reversible machines exist,
+but that if one were to construct such a machine it would need a control signal
+which would tell it whether to compute in the forward or reverse direction.
+Whichever direction its computation was proceeding, a positive definite
+dissipation of energy would be necessary to keep the computation proceeding in
+that direction.  Thus, far from recovering the energy spent in the original
+computation, one would spend at least as much energy retracing the steps of the
+computation.  If the control signal were not present, and each individual logic
+element were capable of computing in either direction reversibly, the system
+would simply have no direction whatsoever and no time dependence of the system
+would be possible.  The situation is made clearer with reference to Figure ??.
+
+The elementary logic device in the box accepts inputs from the left, generates
+outputs which are some logic function of the inputs on the right, and in so
+doing accepts a certain energy from the power supply which is converted into
+heat.  The device is arranged with a control signal such that it can be run
+backwards.  With the control signal in the opposite state inputs are absorbed
+from the right and outputs are generated on the left, again with an absorbtion
+of energy from the power supply converted into heat.
+
+Suppose we were to construct a truly reversible logic device as shown
+schematically in the third example.  The signals at either side of the box can
+be either inputs or outputs and energy can flow either into or out of the power
+supply depending upon the direction of signal flow (in some schemes the
+connection to the power supply is not required).  It is clear that this device
+has no perferred direction of computation, it has no way of deciding whether
+computation should proceed from left to right or from right to left.  This is
+simply a macroscopic example of the necessity of energy dissipation as a
+mechanism for providing a direction for the computation process.  This
+dissipation is a necessity stemming from the inherent time reversibility of the
+quatum mechanical laws.
+
+The only physical laws which are able to introduce a time direction are the laws
+of thermodynamics.
+
+Discussion of logically reversible computing processes, while interesting, are
+simply irrelevant to the issue of irreversibility in the energetics of
+elementary logical functions.
+
+Logically reversible operations may be a convenient formalism for viewing
+certain logic families such as magnetic bubbles, where creating or destroying a
+bubble is extremely ackward but bubbles can be steered on different paths with
+ease.  In this environment a logical scheme which does not create or destroy
+ones or zeros (represented by the presence or absence of magnetic bubbles) would
+be a useful constructive technique.  In such a logic family the direction of the
+computation is determined by the direction of rotation of the clock magnetic
+field.  It must not be thought, however, that such logic is energetically
+reversible.  Motion of the magnetic bubbles dissipates the energy stored in the
+domain walls as the bubble is moved.  If this were not so the bubble would
+expand and take on strange geometric forms.  This distortion of the geometry of
+the bubble would have to be dissipated before further bubble movement would be
+possible.  The energy for such dissipation is supplied by the clock magnetic
+field.
+
+MEMORY
+
+The requirements outlined above allow essentially indefinitely extensible
+combinatorial logical operations.  However, modern computation is normally not
+done in a strictly combinatorial manner.  One step of a computation produces an
+intermediate result.  This result then forms the input to a second step and so
+forth until the entire computation is complete.  Such a sequential mode of
+computation, no matter how concurrent in nature, requires that intermediate
+results be stored in some form of memory device.  We must ask if the
+requirements on the restoring logic we have already established allow us to
+construct memory devices of the required reliability.  Suppose we connect two
+inverters in tandem as shown in Figure 2.  Because both devices exhibit power
+gain, the resulting overall transfer characteristic will be steeper than unity
+slope as shown in the figure.  Therefore, it will of necessity exhibit a point
+where the output voltage of the second inverter is equal to the input voltage of
+the first.  With the input at this voltage, it is possible to connect the output
+of the second inverter in the input of the first.  Neither node of the resulting
+device will show any inclination to evolve with time towards either a logic-one
+or towards a logic-zero.  This situation is precisely that of the "Hung" flip
+flop described in Chapter 1 and Chapter 7.  If however, the device is displaced
+slightly from this point of metastable equilibrium, it will evolve with time as
+shown in Figure 3.  We will analyze the time evolution of this system in detail
+later in this section.  However, it is intuitively clear that in order for the
+signals to grow away from the logic threshold each inverter must exhibit power
+gain.  A small deviation from threshold at one input results in a larger
+deviation in the opposite direction at the second input, resulting in a still
+larger deviation in the first input, etc.  Hence, qualitatively, we can see that
+the requirements for restoring logic which allow it to perform indefinitely
+extensible combinatorial functions are precisely the same as those which allow
+us to implement stable, reliable flip-flop style memory.  In fact the flip-flop
+can be viewed as a precise implementation of the recursive definition of
+restoring logic.  It simply maps the spatial behavior of an indefinite string of
+restoring devices into the time domain.  This mapping is illustrated in Figure
+4.  Here, a long string of inverters have a signal very close to the logic
+threshold applied at their input.  The voltage at the output of the even stages
+and of the odd stages diverge in opposite directions from the logic threshold as
+shown in the figure.  Since each deviation from the logic threshold is larger
+than that of the stage before by the gain of the inverter, this curve is seen to
+be similar in form to that of Figure 3 where the time behavior of the even and
+odd output of the flip-flop is shown as a function of time.  The details of this
+mapping from the spatial to the time domain for any logic family will provide us
+with a fundamental measure of the time scale introduced by devices of that
+family.
+
+TIME BEHAVIOR OF THE FLIP FLOP
+
+A simple small signal model of the flip-flop with both amplifying stages in
+their gain region, similar to that given in Chapter 1, is shown in Figure ??.
+The transistors have been represented by an input capacitance and a current
+source supplying a current Gm times the gate voltage.  The pull up transistors
+have been modeled as a constant resistance of value R.  Both stages are treated
+as identical.  The differential equations describing the time evolution of the
+two node voltages are:
+
+GmV2 = V1/R + CdV1/dt
+
+GmV1 = V2/R + CdV2/dt
+
+It can be shown by direct substitution that a simple exponential form satisfies
+these two equations.
+
+V2 = -V1 = V exp(t/t)
+
+Here the value of the time constant is given by:
+
+t = Gm/C - 1/RC
+
+Let us compare this solution with that for the cascaded inverters of Figure ??.
+With a voltage V0 at the input of the cascade, the value of the voltage at the
+nth node will be equal to:
+
+Vn = V An = V exp(n ln A)
+
+Comparing this form with that of equation ?? we see that the growth of the node
+voltage in the inverter cascade is directly related to the growth in the
+flip-flop with time.
+
+n ln(A) = (Gm/C)(1 - 1/A)
+
+The factor Gm/C is precisely the inverse of the transient time t given in
+Chapter 1.  The two exponents are thus related by the factor (1 - 1/A)/ln(A),
+which is a slowly varying function of the gain A.
+
+Hence, within a factor of the order of unity, the growth in signal per stage of
+combinatorial logic is related to the time evolution of a nearly balanced
+flip-flop by the transient time t of the transistors out of which the flip-flop
+is constructed.  This is a fundamental result which maps the spatial domain of
+combinatorial logic into the storage medium of flip-flop like devices.  It is
+the basis for our use of t as the time unit throughout this text.
+
+We can thus model much of the behavior of combinatorial restoring logic by
+studying the behavior of simple cross coupled flip-flops in the time domain.  It
+is for this reason that the flip-flop occupies a central place in the theory of
+the physics of computation.  Since the flip-flop is inherently a self-contained
+device and represents all the degrees of freedom available in a logic family, we
+will use it to construct a fundamental characterization of a family of restoring
+logic devices.
+
+ENERGETICS OF THE FLIP-FLOP
+
+Our inverted pedulum is not an accurate physical model for the flip-flop.  The
+reason is that it uses a conservative field, (i.e., gravity) and therefore
+cannot be arranged in such a way to provide necessary power gain.  Another way
+of stating the problem is that there is no mechanism possible using inverted
+pendula coupled in any way to perform restoring logic operations on other
+pendula.  The results of the foregoing sections apply to all restoring logic
+elements, whether used for memory or combinatorial logic purposes.  We must ask
+then how are we to create a bistable device which requires two potential minima
+when we cannot use the ordinary potential (gravitational, electrical, etc.)?
+
+For a dissipationless system, the conservation of energy can be written; 	
+
+-d (Kinetic Energy)/dt = d (Potential Energy)/dt = d (Potential Energy)/dx .
+dx/dt
+
+The derivative of the potential energy with respect to the coordinate x is a
+force, driving the system toward the potential minimum.  However, when the
+system reaches the minimum, it has aquired a large velocity dx/dt, and hence
+cannot settle into the minimum.  The system can only exchange energy between the
+two forms, as we attempted to do with LC logic.  As we illustrated with that
+example, the extra stored energy accomplishes no net gain.  An equally effective
+logic family can always be constructed by using the same switching elements in a
+restoring circuit.  Let us therefore consider only such simplified logic
+circuits; those which store the minimum energy which can be sensed reliably by
+the elementary switching devices.  We will refer to such circuits as
+minimum-storage circuits.  In these circuits, we can deal with the total stored
+energy as the quantity which represents the data.  Let us write the most general
+form of the conservation of energy;
+
+d (Stored Energy)/dt = -(Power Dissipated)
+
+This equation provides the classical equation of motion for minimum-storage
+circuits.  Notice that the definition of stored energy is a function of both the
+voltage on the node, and the desired voltage on the node.  It is either the area
+above the VvsQ curve (see Fig. ??) or that below the curve, depending upon which
+way the node is being driven.  This ambivalence is a result of the fact that the
+system has two levels which are equally valid with regard to their information
+content.  Either level can be defined as the zero of potential.
+
+In a flip-flop constructed of the simple restoring logic shown in fig??, power
+dissipation is nearly zero at the two levels v+ and V-.  The stored energy
+cannot change with time at these levels.  However at intermediate voltages,
+power is dissipated, and by eq??, the stored energy must evolve with time.  The
+power dissipation thus acts as a potential replacing the more conventional
+potential such as gravity acting on the inverted pendulum.  It must be
+understood that many logic families dissipate much more power than that actually
+required to change the stored energy.  It is always possible to waste power.
+The simplest example is to simply connect a resister from Vdd to ground.  The
+power that is wasted will have no effect whatsoever upon the performance of the
+device.  It is even possible to waste poewr in such a way that it depends upon
+one of the voltages in the circuit.  For example, a transistor can be connected
+with its drain to Vdd and its source to ground.  The gate can be connected to
+one of the nodes of a flip-flop.  The total power dissipated by the flip-flop
+will then be the actual power dissipated by the internal circuit plus the power
+wasted in this parasitic transistor.  The power which accounts for useful work
+in keeping the bistable device in one of its stable states is that which enters
+on the right hand side of eq.??. In the thermodynamics literature this power is
+called the dissipative function.
+
+ Let us place the flip-flop in one of its two stable states and then, by
+injecting a current into one of the nodes, displace it slightly from the stable
+point.  The current which is attempting to displace the node will be absorbed by
+the circuit when the voltage in the node has been removed slightly.  We can
+think of the current absorbed by the circuit as a restoring force attempting to
+restore the voltage at the node to its steady state value.  This restoring
+current is just equal to the derivative of the dissipative function with respect
+to the node voltage.  The dissipative function can be found by integrating the
+current from the potential minimum up to any given node voltage.  The result of
+this computation for a flip-flop constructed from complimentary MOS converters
+is shown in Figure 5.  The dissipative function is minimum at the stable points
+as expected and shows a distinct maximum at the metastable equilibrium between
+the stable equilibria.  Thus, it corresponds in active circuits to the potential
+energy in passive circuits such as the inverted pendulum.  For efficient logic
+families like CMOS, the dissipative function is nearly indistinguishable from
+the actual power dissipation of the circuit.  However, for less efficient
+families, the dissipative function may represent only a small fraction of the
+total energy consumed by the circuit.  Figure 6 shows the total power
+dissipation for an NMOS flip-flop as a function of node voltage.  For
+comparison, the dissipative function is also shown.  Note that over the entire
+operating range, the actual power dissipation is much greater than that required
+for the restoring potential given by the dissipative function.
+
+In this way, we have constructed a measure of ideality of these irreversible
+restoring logic circuits.  Energy must be dissipated in order to construct a
+controllable potential function and thus allow logic decisions to be made and
+information stored.  However, it is possible to construct circuits which
+dissipate much more energy than that required to restore the bistable element
+into one of the two stable states.  The smaller the power dissipated over and
+above the dissipative function itself, the more ideal the logic circuit.  In the
+real of dissipative restoring logic this notion of ideality plays the same role
+as the notion of reversibility in classical thermodynamic theory.
+
+SWITCHING ENERGY
+
+We are now in a position to determine the minimum energy necessary for an
+elementary logic event.  We have seen that a certain minimum of power is
+necessary to provide the potential function which holds a logic device in one of
+its two stable states.  There is also a switching time T which is fundamental to
+any restoring logic family.  The product of the peak power dissipation required
+by the dissipative function and the elementary time scale T of the technology
+provide a lower limit to the energy cost of the elementary act of computation.
+This energy we shall call Esw, the switching energy of the technology.  It can
+of course be much larger than that required by an ideal technology as defined
+previously.  However, it cannot be made less than 100 kT or so, the value
+required to prevent spontaneous thermal switching and therefore loss of
+reliability of our computing system.
+
+COMPLEXITY OF COMPUTATION
+
+We have seen that elementary logic events require a minimum energy Esw.
+Therefore, the irreducable eneergy consumption of a computation is the number of
+elementary logic events required for the computation times the switching energy
+per logic event.  The number of elementary logic events is closely related to
+the computational steps used in ordinary complexity theroy.  However, as we have
+noted in Chapter 8, most of the energy in common computer architectures is
+wasted, not in supplying the unavoidable dissipative function in the elementary
+logic devices, but in driving signals on wires which are much larger than the
+gates of the lowest level transistors.  The true complexity of a computation can
+also be measured in energy units.  It must include the elementary switching
+energies mentioned above plus the energy cost of communicating information
+throughout the system.  Thus, the computation energy provides us a unified
+measure of the efficiency of the algorithm, the structure, and the mapping of
+one onto the other.  Any change which results in a lower energy cost of
+computation for a given technology implies an improvement in one or more of
+these three basic ingredients of the design of computing engines.
+
+ENTROPIC VIEW OF COMPUTATION
+
+We will now sketch a simple but physically correct overview of computation as a
+physical process.  Supposing the input data to a computation is stored in a
+memory.  The entrophy of this data can be defined, in a rough way to be refined
+later, as the logrithm of the number of possible outcomes of a computation of
+this sort starting with the amount of data we have to input.  The number of
+possible outcomes can be estimated for any given computation in a manner similar
+to that used by traditional complexity theorists.  Given this rather rough
+definition of complexity of a computation, it is clear that the purpose of the
+computation is to produce just one correct outcome.  That is, the computation
+must reduce the entropy to zero.  It is also clear that each bit of entropy
+requires Esw for its removal.  We are left then with a fundamental energy
+equation for computation 2S/2E > 1/Esw.  This equation states that the
+complexity entropy S of a computation can be reduced only by the expenditure of
+Esw per bit.  It is of course possible to spend much more energy than this in a
+computation, in particular if data communication costs much more than the
+elementary logic functions involved in the computation.  The above equation can
+be compared with a similar form found in thermodynamics dS/dE = 1/hT.  It is
+often been thought that these two equations are in fact alike, and the bottom
+equation could be used for both.  That this is not the case has been the subject
+of this section.  It is not the case for two important reasons: the most
+fundamental reason is that many kT of energy must be used to represent each bit
+of information in order that the reliability of the computation be maintained.
+The second reason is also fundamental but of a different origin.  Data
+communication is an inherent part of the computation process.  The energy
+required for communication must be counted in the total energy content.  This
+energy is of necessity much larger than kT.  The detailed scaling of the
+communication energy will be considered in the next section.  Equation
+???????????????? does, however, constitute an absolute lower bound on the energy
+cost of computation.  It is as fundamental in the information arena as its
+counterpart is in classical thermodynamics.
+
+	LOW VOLTAGE SECTION HERE FROM CHAPTER 9
+
+QUANTUM LIMITS
+
+The low voltage limit on the operation of amplifying electronic devices is a
+fundamental one which arises from the quantization of the electronic medium (the
+charge on the electron) and the energy uncertainty due to thermal fluctuations
+kT.  It is therefore a result of both quantum and thermodynamic principles.
+While we have derived the limit by a classical circuit theory approach, the
+quantum nature of the electron devices appears in the exponential relationship
+of the channel resistance to the gate voltage.  This relationship involves the
+applied voltage V and the ration of the thermal energy kT to the charge on the
+electron.  It is a result of the thermal distribution of individual electrons in
+the source of the FET and the fact that each electron must independently
+surmount a potential barrier in the semiconductor.  Hence, we may think of the
+number of electrons which do surmount the potential barrier as a collection of
+individual events whose statistics are governed by thermal fluctuations and the
+magnitude of the electronic charge.  The limit states that whatever quantum
+represents the signal, the energy of each quantum must be greater than
+approximately kT.  Hence, even in logic for a very large number of electrons are
+used to represent a logic signal, the voltage must be larger kT.  A similar
+limit applies to logic in which the quantum of information storage is the
+magnetic flux unit 0.  In this case, the current supplied into any magnetic
+inductance must be at least hT/0.  Once again, this limit is simply stated by
+the independence of flux quanta as information carrying entities; each in its
+own right must carry more than kT of energy into its environment.
+
+There is one more requirement that logic circuits must satisfy in order to allow
+indefinitely extensible computations.  The energy DE, representing the
+difference between a logic one and a logic zero, must be very large compared
+with the thermal energy kT.  The probability P of a thermal fluctuation of
+energy DE is given by the Boltzman relation
+
+	P = exp[-DE/kT]
+
+It is therefore possible to reduce the probability of error due to thermal
+fluctuations to any degree required by increasing the energy used to represent
+the information.  This then is the definition of our "essentially indefinite"
+number of computational steps.  It is possible to reduce the ultimate error rate
+to any desired extent, but not eliminate it altogether.
+

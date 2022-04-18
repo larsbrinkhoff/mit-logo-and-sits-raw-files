@@ -1,0 +1,171 @@
+program dummy;
+(* This file defines the procedures used to execute 2500 functions.
+For space efficiency, there is only one procedure that is called by the
+outside world, odo2500. The call is:
+
+ odo2500 (func, argument, return_value, error_flag, 
+        display_length, snap_pointer);
+func is one of the following:      *)
+const
+   si_forward=0;
+   si_back=1;
+   si_right=2;
+   si_left=3;
+   si_spin=4;
+   si_cs=5;
+   si_home=6;
+   si_penup=7;
+   si_pendown=8;
+   si_move=9;
+   si_snap=10;
+   si_display=11;
+   si_wipeclean=12;
+
+(* If the function takes an argument it is passed as the argument
+parameter; the argument must be an integer. If the function returns a
+value it is returned in return_value; currently only snap returns a
+value. The caller has to know that a value is being returned and gobble
+it. Error_flag is a call-by-reference variable that is set to zero
+unless an error happens, in which case it is set to the error code.
+Display_length and snap_pointer are call-by-reference parameters that
+are used for snapping. This package currently doesn't try to keep track
+of x, y, angle or penstate. *)
+
+(* Values that error_flag can take *)
+xudf=3;           (* undefined function *)
+xargtb=36;        (* Argument too big, this is also defined in PLOGO *)
+xtml=37;          (* Too many lines *)
+xtms=38;          (* Too much snapped *)
+
+(*These constants define the 2500 functions. *)
+gt_nop=0;
+gt_home=2048;
+gt_pendown=2304;
+gt_penup=2311;
+gt_showturtle=2561;
+gt_hideturtle=2560;
+gt_snap=23552;        (*snap, address in same word (10 bits)*)
+gt_display=24576;     (*display, address in same word*)
+gt_blink=3072;
+gt_wrap=3328;
+gt_reset=3584;
+gt_forward=4096;      (*forward+11 bits of distance*)
+gt_right=6144;        (*right+11 bits of angle*)
+gt_setheading=8192;   (*set heading+11 bits of heading*)
+gt_move=10240;        (*move+11 bits of speed*)
+gt_spin=12288;        (*spin+11 bits of speed*)
+gt_setxy=16384;       (*set x+11 bits, y in next word*)
+gt_deltaxy=18432;     (*delta x+11 bits, y in next word*)
+gt_clearscreen=20480;
+gt_rubdis=20480;      (*rubout+11 bits of words to rub out *)
+gt_usedisplay=21504;
+gt_useturtle=21505;
+gt_useplotter=21506;
+gt_getstatus=2052;    (*get turtle state*)
+gt_lampon=2049;       (*set turtle lamps on*)
+gt_lampoff=2050;
+gt_toot=2051;         (*toot turtle*)
+
+(* These are constants determined by the 2500 firmware *)
+display_top = 1800;    (* Lenght of the regular display area *)
+snap_top = 1024;       (* Lenght of the snap area *)
+
+(* Needed on the 990: *)
+(* procedure breakd (var f:text); external; *)
+
+(* for the pdp10 only: *)
+type text= packed file of char;
+procedure breakd (var f:text); begin break (f) end;
+
+procedure gtsend (func,argument,arg_limit: integer;
+                   var error_flag:integer; var f: text);
+begin
+  if (abs(argument)>arg_limit) then
+    begin
+     error_flag := xargtb
+    end else
+    begin
+    if (argument < 0) then argument := (arg_limit*2)+argument;
+(* this commented out part is the real thing *)
+    argument := argument + func;
+
+    write (ttyoutput,'&');
+    write (ttyoutput,chr(64 + (argument div 1024)));
+    write (ttyoutput,chr(64 + ( (argument div 32) mod 32)));
+    write (ttyoutput,chr(64 + (argument mod 32)));   
+(* Printouts for debugging 
+
+    write (ttyoutput,'func=',func);
+    write (ttyoutput,'argument=',argument);
+    argument := argument + func;
+    write (ttyoutput,'func+argument=',argument);
+    write (ttyoutput,'characters=',27,(64 + (argument div 1024)),
+        (64 + ( (argument div 32) mod 32)),(64 + (argument mod 32)));
+*)
+    breakd (ttyoutput)
+    end;
+end;
+
+procedure odo2500 (func,argument : integer;
+   var return_value,error_flag,display_length,snap_pointer : integer; 
+   var f: text);
+
+var gt_function,arg_limit:integer;
+
+begin
+   error_flag := 0;
+   gt_function := 0;
+   arg_limit := 1024;
+   case func of
+      si_forward: gt_function := gt_forward;
+      si_back:
+        begin
+        gt_function := gt_forward;
+        argument := -argument;
+        end;
+      si_right: gt_function := gt_right;
+      si_left:
+        begin
+        gt_function := gt_right;
+        argument := -argument;
+        end;
+      si_spin: gt_function := gt_spin;
+      si_home: gt_function := gt_home;
+      si_penup: gt_function := gt_penup;
+      si_pendown: gt_function := gt_pendown;
+      si_move: gt_function := gt_move;
+      si_cs:
+        begin
+        gt_function := gt_clearscreen;
+        display_length := -1;
+        end;        
+      si_snap:
+        begin
+        if ((snap_pointer+display_length+2)>snap_top)
+                 then error_flag := xtms else
+          begin
+          gt_function := gt_snap;
+	  argument := snap_pointer;
+          return_value := snap_pointer;
+          snap_pointer := snap_pointer+display_length+1;
+          display_length := 0
+          end
+        end;
+      si_display: gt_function := gt_display;
+      si_wipeclean: snap_pointer := 0;
+      otherwise error_flag := xudf;
+    end;
+   if (gt_function<>0) then begin
+     if ((display_length+10)>display_top) then error_flag := xtml else
+      begin
+       gtsend (gt_function,argument,arg_limit,error_flag,f);
+       display_length := display_length+1;
+      end
+    end
+end;
+
+
+(* Here is the main body, dummy*)
+begin
+end.
+

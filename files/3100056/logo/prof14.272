@@ -1,0 +1,374 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.tabfnt 2
+.chap 14
+.ss
+.he1
+Monica
+.HE2
+Working Style
+.adjust
+.ce
+114. Monica
+
+0Monica is considered to be an "average" student by her teachers.
+Her most recent school administered national achievement test ranking
+was in the 56th percentile.  Her teachers find that she prefers to base
+her activities solidly on things she knows, rather than to strike out
+into new areas.  
+
+11. Monica's Working Style
+
+0Monca's work in the LOGO class followed this pattern
+as well.  She learned the basics of LOGO quickly and
+started off with a burst of enthusiasm and confidence.  She had a very good sense of 
+TURTLE state, right from the beginning -- she seemed to know
+where a figure would be drawn next, she had a good sense of how far to
+turn, etc.  She was fascinated by making a figure, rotating it, and repeating the process over and over.  She easily adopted the use of simple recursion to do this, and created many 
+projects of this type.
+
+As the classes went on, Monica limited most of her work to this particular mode, and had a hard time getting beyond it.  Almost all her work was in the style of "figure, turn, figure, turn.." She learned to use variables, to make the figure turn different amounts, and had some exposure to stop rules, which she didn't quite master.  
+Monica did not get involved in long term projects of any kind, or show much initiative in breaking out of the "mold" in which she had placed herself.
+
+Monica had a very close relationship with Kathy, the other girl in her class.  (According to their teacher, they do not have a close relationship outside of the LOGO classroom.) The two girls often consulted together, borrowed ideas, worked on the same, or similar projects, and asked for and offered help to each other throughout the classes.  Their relationship was normally quite "mutual" with a lot of give and take, although leadership shifted back and forth.  
+Different observers who had come for a single visit observed:  
+"teacher-student relation between Monica and Kathy.  Monica tells Kathy what to do and Kathy always goes to Monica to make sure she has done it right..." or, another time:  "Monica was at a loss as to what to do with herself... at last Kathy arrived. Kathy found a worksheet for her...(she) got upset, panicked and ran to Kathy for a new thing to do."  Another observer: "K and M work together very constructively -- each on top of things, making suggestions".  This last observation corresponds most closely to our sense of their overall relationship throughout.  
+
+As the classes went on, Monica tended to have fewer ideas of what she wanted to do.  She would borrow ideas from Kathy, from the bulletin board, or from a booklet of projects, often copying carelessly, by rote, not thinking about what the steps were supposed to do.  Monica did not have much of an inclination to plan, to think ahead, or to debug her work.  If something didn't work out the way she wanted it to, she would often just forget about it, leaving a bunch of useless procedures in her file, along with the good ones.
+She rarely asked for help.  Although she had been shown how to use ED (EDIT)
+to change procedures at an early point, she rarely chose to use it.
+Her procedures tended to be short and simple.  If they didn't do what she wanted, she'd forget them.  During the last few classes, Monica expressed an interest in debugging a rather lengthy procedure, her HAT procedure, that drew a Christmas tree, so that the stump would be "straight". She wanted to change it from:
+
+.block 10
+.ce
+TO:
+.sp 6
+.ce
+Figure 14.1
+
+.he2
+Turtle Geometry
+This was her first real interest in any procedures longer than a few lines that did not simply repeat a few fixed steps.
+
+
+Monica's use of names was erratic.  Her "HAT" made a "Christmastree."  BOX, TRI, BUS, BUSWHEEL, BUSWHEEL2, HOUSE, HOUSE4, related to specific objects; HORSE, WOW, WISHWOW, BOODLE, HOTHOUSE, were fairly random.  She seemed to have difficulty choosing names, as she had difficulty chosing projects.
+
+Monica kept thorough notes of her work by writing down every procedure in her notebook, either before or after trying it out.
+
+.block 5
+12. Monica's Work in Turtle Geometry
+
+0During the first few classes, when the group of four children worked together, Monica demonstrated a good understanding of 
+TURTLE state.  By considering where the 
+TURTLE was, she was able to predict where the next procedure would occur.  This was especially useful, because the projects that the children were doing involved making designs with squares, using a BOX procedure.  In the sixth class, Monica and Kathy worked together, putting a BOX and a TRIANGLE together to make a HOUSE.  Monica had a very strong sense (much better than Kathy's) of how much to turn the 
+TURTLE, to get the two figures to line up.
+
+On the other hand, when Monica tried to make a triangle, she had great difficulty separating the different variables.  She worked steadily for an hour, trying to make a triangle that would close.  Her problem was, that she worked without an effective system.  She had to deal with five different variables (three lengths and two angles).  She had a hard time fixing on which one to vary, and so, kept getting close to a solution, only to have her next attempt produce something quite different.  She used two different strategies as she worked, and kept switching between them.  She got quite confused about what was happening, and never succeeded in getting the triangle to close.  
+Still, she stuck to the task doggedly and came remarkably close
+to a solution without actually getting one.
+
+In the seventh class, Monica copied a state transparent equilateral
+triangle procedure,
+and began to experiment with the effects of putting rotations between triangles.  She put a whole series of triangles rotated at different angles, on top of each other.
+
+It was suggested that she give names to
+some of her designs such as
+TRI90 for a series of repeats of TRI, LEFT 90; 
+or TRI40 for a series of repeats of TRI, LEFT 40 (both sequences 
+she had used in the previous class).  Monica understood the idea of
+making each design a separate procedure, but she had her own approach
+to naming them:  
+
+.nofill
+.block 8
+TO TRI4		TO TRI42	TO TRI442
+1 TRI		1 LEFT 40	1 TRI4
+2 LEFT 90	2 TRI4		2 TRI42
+3 TRI		END		END
+4 LEFT 90
+5 TRI
+6 LEFT 90
+7 TRI
+END
+
+.adjust
+.block 16
+.sp 14
+.ce
+Figure 14.2
+
+The rest of the period, was devoted to a lengthy series of repeats of TRI, 
+LEFT 10.  Monica's plan was to complete a circle of these with this shape, and then to teach it to the computer as a procedure.  After 13 repeats, a half circle was completed, and Monica concluded that 26 repeats would produce a full circle.  At this point,
+Monica was shown how to use
+recursion as an "easier" way to accomplish what she wanted to do:
+
+.he2
+Debugging Difficulties
+.nofill
+.indent 6
+.block 5
+TO FAN	and	TO FANBOX
+1 TRI		1 4BOX 
+2 LEFT 10	2 FAN 
+3 FAN		END
+END
+
+.indent 0
+.ADJUST
+.block 18
+.sp 16
+.ce
+Figure 14.3
+
+.block 5
+13. Difficulties with Debugging
+
+0On another occasion
+Monica mis-copied one of Gary's
+procedures from the bulletin board.  
+The title should have been FOO2 instead of FOO.  Her 
+FOO had no graphic effect, but produced a "NO STORAGE LEFT.." error message.
+
+.indent 6
+.nofill
+.block 15
+TO FOO
+10 FOO
+20 FOO
+30 FOO
+40 FOO
+50 FOO
+60 FOO
+70 FOO
+80 FOO
+90 FOO
+100 FOO
+110
+120 FOO
+130 FOO
+END
+
+.indent 0
+.ADJUST
+This was the first time that
+Monica
+had not tried each step of a procedure, before teaching
+it to the computer.  This time she had copied a procedure line by line,
+without realizing that she also needed a subprocedure, FOO.
+She did not ask for help, or try to debug FOO in any way, but ignored
+it and went back to a previous exploration.
+
+In subsequent classes Monica continued to work in ways which were becoming a definite pattern: she did more work along the line
+of shape, rotation, shape, rotation, etc.  She also avoided
+debugging procedures
+which did not do what she wanted.  During a later class she copied some more procedures from the bulletin board, and from a project book.  Most of these procedures did not work, either because of errors in copying
+(like the
+mistake she had made with FOO) or because she did not pay attention to the subprocedures needed in each case.
+
+Monica recorded some of her difficulties in her notebook, without any attempt to analyze them:  "Today I made a DOODLE... and I tried two DOODLES but it wouldn't work out too well..and I tried to make a slinky." 
+
+.nofill
+.block 6
+TO DOODLE		TO SLINKY
+10 DOODLE		10 CIRCLE
+20 DOODLE		20 FORWARD 10
+30 DOODLE		30 SLINKY
+40 DOODLE		END
+END
+
+.adjust
+In going over the dribble files for these classes, it became evident
+that Monica was not looking carefully at what she was doing; that she was not editing or debugging; that she was following certain patterns blindly without thinking about them; and that she had run out of ideas for projects.
+For the next class, the teacher prepared a collection
+of buggy procedures, discussed each procedure with Monica,
+and then had her try out the procedures to see what the computer would 
+do in each case.  
+The purposes were
+to get Monica to notice and focus on the messages sent by the computer in buggy 
+situations, and to
+help her understand some of the particular kinds of bugs that she was experiencing.
+
+Following this lesson, 
+Monica began doing some debugging, but 
+still had difficulty understanding how to use the EDIT command.
+Her teachers worked through one problem with her
+using PO (PRINTOUT) and ED (EDIT), and analyzing a procedure step by step.  In this way, 
+Monica was given a model of how she could work through other situations without help.
+
+In class 13, 
+Kathy and Monica were introduced to the idea of variables, by giving them a variable square procedure, SQ:SIZE
+together with
+a sheet of possible project ideas.  Monica and Kathy both chose to make a bus (figure
+14.4), starting with two squares:
+
+.NOFILL
+.block 8
+TO BUS
+1 SQ40
+2 LEFT 90
+3 SQ 80
+END
+
+.adjust
+Monica worked on the bus for parts of two periods.  Once again, she had problems editing, editing the line, rather than the procedure.  For example, her BUSWHEEL procedure was
+
+.indent 6
+.nofill
+.block 5
+TO BUSWHEEL
+1 BUS
+2 LEFT 90
+3 RCIRCLE
+END
+.adjust
+
+.indent 0
+When she typed BUSWHEEL, she got the error message; "RCIRCLE NEEDS MORE MORE INPUTS AT LEVEL 1 LINE 3 IN BUSWHEEL."  Her response was to type ED RCIRCLE.  Clearly she was reading and interpreting the error message, and using the information to try to debug her work, but she did not understand the proper use of EDIT.
+
+Another bug was more surprising.
+She had a problem with the TURTLE state, in aligning the wheels properly.  
+Her BUSWHEEL procedure had become:
+
+.nofill
+.indent 6
+.BLOCK 5
+TO BUSWHEEL
+1 BUS
+2 LT 90
+3 RCIRCLE 10
+END
+
+.indent 0 
+and when used to make a complete bus:  
+
+.indent 6
+TO BUSWHEEL
+1 BUSWHEEL
+2 RIGHT 90
+3 FORWARD 60
+4 RCIRCLE 10
+END
+
+.indent 0
+makes a bus with a wheel out of position, shown in Figure 14.4.
+
+.block 14
+.sp 12
+.ce
+Figure 14.4
+
+.adjust
+Either Monica did not notice that the wheels were at different levels, didn't feel it was a problem or didn't want to bother with it.  She ignored it,  deciding that the project 
+was complete.  She went on to other work, going back to her old pattern of procedure, rotation, procedure, to produce some more nice designs (see, for example, figure 14.5 for a way that Monica used her BUS procedure in a more familiar mode.)
+
+.nofill
+.block 23
+TO BUS		TO 4BUS		TO STAR
+1 SQ40		1 BUS		1 4BUS
+2 LEFT 90	2 BUS		2 RIGHT 40
+3 SQ 50		3 BUS		3 4BUS
+END		4 BUS		END
+		END
+.sp 15
+.ce
+Figure 14.5
+
+.adjust
+.he2
+Understanding Angles
+In the next few classes
+Monica continued to use the rotation idea, sometimes with recursion, to make procedures like:  
+
+.nofill
+.block 5
+TO DESIGN	TO DOG
+1 STAR		1 BOX
+2 RIGHT 40	2 RT 70
+3 DESIGN	3 DOG
+END		END
+
+.adjust
+Her projects were short, and she did not have to do any debugging.  She 
+did borrow one long procedure -- Kathy's XMASTREE, which Monica decided to 
+call HAT.  In copying this procedure she needed to do some debugging
+and asked for help with the EDIT command.
+
+.block 5
+14. Understanding the Effects of Angles
+
+0Although Monica had been using rotations to produce designs, 
+she had not discovered
+any consistent effects of using 
+particular angles.  She had used rotations of 10, 20, 40, and occasionally 70 or 90 degrees in her designs.  Although she seemed to prefer dense designs, she seemed to have no way of predicting the effect of using a particular angle, or the sense that certain special angles might produce nice designs that closed in a predictable way.
+
+To help her explore the effect of different angles
+Monica was shown some new procedures that used a variable angle:
+
+.nofill
+.indent 6
+.block 6
+TO SPINBUS : ANGLE 
+10 BUS
+20 RIGHT :ANGLE
+30 IF HEADING = 0 STOP
+40 SPINBUS :ANGLE
+END
+
+.adjust
+.indent 0
+The use of the stop rule, was another suggestion to help Monica focus 
+on when the design was "complete."  Monica used this model to define procedures that would rotate her HAT procedure, her WOW procedure (a series of nested squares) and her HOUSE procedure.
+
+In typing these procedures, Monica had some difficulties with syntax.  She usually left out the :ANGLE in the procedures
+title, and was shown to use EDT (EDIT TITLE).  Now she was using ED properly, but 
+had difficulty with EDT. She did, however, correctly interpret the error messages, and debug the procedures on her own.
+
+In the next class, Monica was asked to choose one of her procedures, and experiment with varying the input, keeping records of the results.  She chose to use the procedure 
+
+	WISHWOW :ANGLE 
+
+which rotates a bunch of nested squares. (Figure 14.5)
+.page
+.sp 40
+.ce
+Figure 14.6
+.page
+She kept meticulous notes in her notebook, describing what the shapes looked like, how they grew,  and comparing them with similar shapes.  For example:
+
+.indent 6
+"WISHWOW 160 looked the same as WISHWOW 40.  It had thin cones and there were 9 of them.
+
+WISHWOW 165 had thin webbed cones and you couldn't really see them that good.
+
+WISHWOW 190 had cones but they looked like they didn't close up.  And it was fatter than other ones.  It had more squares and cones.  The cones were thin.  And close together.
+
+WISHWOW 45, WISHWOW 90.  These 2 look almost the same but WISHWOW 45 looks like it goes twice around instead of once.  And the cone shaped things on the sides are bigger than the WISHWOW 90 ones."
+
+.indent 0
+Clearly, Monica was making some interesting "discoveries" about angles.  If she 
+had gone on, she could have 
+compared two procedures -- for example, WISHWOW and SPINBUS, with the same inputs.  
+She could also have used
+other inputs which involved simpler rotations (such as
+45 and 90).  
+A chart could have been helpful to organize the information she was gathering.  All these things would have allowed her to consolidate her discoveries about angles.
+
+.he2
+Conclusions
+.block 5
+15. Conclusions
+
+0Because each of Monica's individual "projects" had been very short and simple, Monica had not developed a sense of urgency about "finishing" any of her work before the end of the series of classes.  Although 
+some important continuations, consolidations and clarifications 
+were beginning to occur for her.
+Monica, herself,
+had no such sense of continuity.  Although she probably would have enjoyed continuing, she was also quite content to stop her work at this point.
+
+Throughout the classes, Monica seemed to be most comfortable learning by direct imitation of examples or models supplied. In this way she learned to write procedures utilizing simple recursion, variables and stop rules.  If the context was shifted, or a small mistake led to a bug, Monica was often stuck.  She usually chose not to analyze her mistakes, nor did she undertake long projects requiring advanced planning, or a large number of subprocedures.  Near the end of the series of classes Monica gradually began to be comfortable with editing, and to understand how to analyze a procedure in a step by step fashion.  
+
+Monica's investment in any particular project was slight -- she could easily discard it without debugging if a problem occurred, and go on to a new activity, which might prove succesful.  She had a large number of small procedures, which allowed her to feel successful most of the time she was working, without having to confront her confusions.  Her dribble files show numerous ideas sidetracked without debugging -- and apparently without any strong feelings of disappointment.  In this way, Monica was able to function comfortably in an environment which was more complex than her understanding of it.  When she did successfully assimilate a concept (as she was beginning to do with editing and debugging) she did not look back to old problems, to see if she could solve them now with her new tool.  Rather, she unselfconsciously applied the new idea to whatever new problems arose.  The old problems had been conveniently forgotten.
+
+It is possible that Monica would have benefitted from being able to use a carefully designed set of worksheets structured to lead her from one concept to another with many small projects along the way.
+

@@ -1,0 +1,220 @@
+
+
+.nf l
+	TO DT
+	MOVETURTLE
+	COMMAND
+	DT
+	END
+.fi b
+
+The procedure DT moves the turtle (if you have given it a thrust), checks to see if you've typed a command, and then starts doing DT all over again. It will keep running until the turtle is out of bounds, or the procedure is stopped in any other way.
+
+.keep
+Here are four other procedures you will need.
+
+.nf l
+	TO   MOVETURTLE
+	SETXY   ( XCOR   +   :VX )   ( YCOR   +   :VY )
+	END
+
+and
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30
+	IF   :COM   =   "L   LT   30
+	IF   :COM   =   "T   THRUST
+	END
+
+.end_keep
+
+.keep
+and
+
+	TO   READKEY
+	IF   CHAR?   OUTPUT   RC
+	OUTPUT   "
+	END
+
+.end_keep
+.keep
+and
+
+	TO   THRUST
+	MAKE   "VX   :VX   +   SIN   HEADING
+	MAKE   "VY   :VY   +   COS   HEADING
+	END
+.end_keep
+
+.keep
+To start the dynaturtle,  you will need a procedure to initialize all the variables:
+
+	TO   STARTUP
+	MAKE   "VX   0
+	MAKE   "VY   0
+	END
+
+.end_keep
+.fi b
+To try out the dynaturtle, first type 
+
+	STARTUP
+	DT
+
+At first the turtle will stay at the center of the screen. The  COMMAND  procedure allows for three different commands at present. These are given in the  COMMAND  procedure. Later you can change them in any way you like.
+
+.nf l
+.keep
+If you type   <R>   the turtle will turn right 30 degrees.
+If you type   <L>   the turtle will turn left 30 degrees.
+If you type   <T>   you will give the turtle a thrust in the direction it is heading.
+
+.end_keep
+.fi b
+The turtle will now keep moving in the direction it started until you give it another thrust in some direction.
+
+bold(Activities with a dynaturtle)
+
+Start the dynaturtle moving by typing
+
+	STARTUP
+	DT
+
+and then typing the  <T>  key for "thrust".
+
+Make the dynaturtle move in a different direction by typing the   <R>  or <L>  key.
+
+Make the dynaturtle move horizontally across the screen.
+
+Make the dynaturtle go faster.
+
+Make the dynaturtle go slower, without changing direction.
+
+Before you start the dynaturtle, draw a marker (a small box or  X)  somewhere on the screen. Then start the dynaturtle and see if you can move the turtle to the  marker. If the marker is easy for the dynaturtle to get to, move it over a little and try again.
+
+Start the dynaturtle from the center of the screen. Can you make it stop?
+
+Draw a circular  "racetrack" on the screen using   RCIRCLE  or  LCIRCLE, and see if you can "drive" the dynaturtle around the track.
+
+Move the dynaturtle to the marker, and make it stop there.
+
+When you try  these activities you may find that some of them are harder than you thought.
+The problems you have making the dynaturtle do what you want it to do, are similar to the problems astronauts would have  moving around in outer space, or maneuvering a rocket to connect up with a space platform or land on the moon.  Later in this booklet, you'll see how to make some of these activities into games that can help you understand more about the dynaturtle's behavior, and the science topic that is sometimes called  "dynamics".
+
+.section "bold(Changing the dynaturtle's behavior)"
+
+After some experimentation with the dynaturtle, you might want to make changes in the dynaturtle procedures. Since changes in the dynaturtle's behavior are controlled by the  COMMAND procedure, you can start by changing that procedure.
+
+.nf l
+
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30
+	IF   :COM   =   "L   LT   30
+	IF   :COM   =   "T   THRUST
+	END
+
+.fi b
+If you like you can change the angle the dynaturtle rotates when you type  <R>  or  <L>, by changing the  30  in COMMAND to another number.  You could add commands to raise or lower the dynaturtle's pen:
+
+	IF   :COM   =   "U   PENUP
+	IF   :COM   =   "D   PENDOWN
+
+Or you might want to add an instant  "halt" command:
+
+	IF   :COM   =   "H   HALT
+
+Of course you will now have to teach the computer how to HALT. The simplest way would be to set the dynaturtle's speed to zero. (This was done in the  STARTUP  procedure as well.)
+
+	TO   HALT
+	MAKE   "VX   0
+	MAKE   "VY   0
+	END
+
+HALT  will have the effect of stopping the motion of the dynaturtle, while the DT procedure is still running.  You can now  change the dynaturtle's direction and give it another thrust.
+If you added all the commands suggested, your  COMMAND  procedure would now look like:
+
+.keep
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30
+	IF   :COM   =   "L   LT   30
+	IF   :COM   =   "T   THRUST
+	IF   :COM   =   "U   PENUP
+	IF   :COM   =   "D   PENDOWN
+	IF   :COM   =   "H   HALT
+	END
+
+.end_keep
+
+Of course you can change the key names for carrying out the commands, bu changing the letters on the keyboard. Some people like to have the right and left keys next to each other on the keyboard. If you choose  <J>  for "left"  and  <K>  for "right", then the  COMMAND  procedure would become:
+
+
+.keep
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "K   RT   30
+	IF   :COM   =   "J   LT   30
+	IF   :COM   =   "T   THRUST
+	IF   :COM   =   "U   PENUP
+	IF   :COM   =   "D   PENDOWN
+	IF   :COM   =   "H   HALT
+	END
+
+.end_keep
+
+.keep
+Another change could be to make the thrust force a variable. If you did this you would have to change the  THRUST  procedure and the  STARTUP  procedure, as well as  COMMAND.
+
+	TO   THRUST   :FORCE
+	MAKE   "VX   :VX   +   :FORCE * ( SIN   HEADING )
+	MAKE   "VY   :VY   +   :FORCE * ( COS   HEADING )
+	END
+
+.end_keep
+
+.keep
+You would also have to add a line to  STARTUP  to set the starting value for the force:
+
+	TO   STARTUP
+	MAKE   "VX   0
+	MAKE   "VY   0
+	MAKE   "FORCE   1
+	END
+
+You can choose any value you want for the starting force.
+.end_keep
+
+.keep
+You would now have to change the  THRUST  line in the  COMMAND  procedure, as well as to add
+two more  lines to increase or decrease the force:
+
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30
+	IF   :COM   =   "L   LT   30
+	IF   :COM   =   "T   THRUST   :FORCE
+	IF   :COM   =   "F   MAKE   "FORCE   :FORCE   +   1
+	IF   :COM   =   "S   MAKE   "FORCE   :FORCE   -   1
+	IF   :COM   =   "U   PENUP
+	IF   :COM   =   "D   PENDOWN
+	IF   :COM   =   "H   HALT
+	END
+
+.end_keep
+
+Try  out the  dynaturtle  now, with some of these changes, and see what can happen.
+
+bold(Some other possible changes)
+
+Add a "reverse thrust" command that would slow the dynaturtle down.
+
+Add commands that would make the turtle print its speed, heading and thrust force.
+
+
+

@@ -1,0 +1,548 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.dummy @
+.adjust
+.chap 6
+.he1
+Donald
+.he2
+Working Style
+.ss
+.ce
+16. Donald
+
+0Donald, a student who was new to the school this year, is considered
+to have "above average ability" by his teachers.  His most recent
+National achievement test scores place him in the 73rd percentile as
+compared to National Norms.
+His work in the LOGO classes
+was characterized by a good understanding of formal approaches to problem
+solving, combined with some difficulty understanding details of geometry.  He was especially good at naming procedures and subprocedures, using and understanding top-down planning, making use of mathematical analysis in planning his work, and understanding the function of conditionals and stop rules.  At the same time, he tended to have difficulties working 
+"experimentally" with 
+Turtle Geometry -- often not quite sure where the TURTLE would move next.
+
+.block 5
+16.1  Donald's Working Style
+
+0Throughout his work Donald was extremely receptive to suggestions
+from the teacher, often making use of new ideas before he fully
+understood them.  In this way, he was able to incorporate into his way
+of working, strategies that would continue to prove useful, as he
+gradually came to understand them through use in more than one context.
+He seemed to have the confidence that he could make use of the
+teacher's suggestions effectively and that he would eventually
+understand them, even if the concepts were a bit hazy at first.
+
+Donald spent most of his class time on one long-term project:  making the computer draw an elaborate head, which included a beard, hair, a hat and a flower, in addition to the 
+usual features: eyes, ears, nose and mouth.  He worked for twelve class periods on this project.  He began by drawing a picture of what he wanted the head to look like, and following the teacher's suggestion, wrote out a superprocedure to draw the head, using subprocedures to add each of the features.  In the course of his work, Donald had to do a great deal of
+estimating of distances and angles, use arc and circle procedures, use procedures that repeat, use variables to control size and angles, and especially, learn to separate a problem into parts, to make it easier to solve.  In addition, he used a recursive
+POLY procedure with a step rule to make a flower for his head.
+
+Throughout his work, Donald had difficulty understanding the effect of the state of the 
+TURTLE at any given time.  He could not always predict where the next step would occur.  
+At times it seemed as if he had difficulty seeing exactly where the TURTLE was 
+headed.  The teaching strategy employed to help Donald deal with these problems, was to help him develop tools of mathematical
+analysis in order to figure out the best way to aim the 
+TURTLE, without relying totally on experimentation.  He
+was shown how to use a kind of "grid" to help him maneuver the 
+TURTLE around his HEAD,
+and how to use the total angle already turned by the 
+TURTLE in a given situation, to decide how much farther to turn it next.  In addition, he was shown how to break up even a small problem into
+parts. In placing a mouth on his face, for example,  he was able to
+separate the problem into three sub-problems: the starting point for the
+mouth, the orientation of the 
+TURTLE before drawing the mouth, and
+which size arc to use.  Thus, he was helped to overcome obstacles that might have interfered with his success while learning principles of geometry, computer programming, 
+design and planning.
+
+.he2
+Approach to Problem Solving
+.block 5
+16.2 An Early Example of Donald's Approach to Problem Solving
+
+0As an example of both the effectiveness and drawbacks associated
+with Donald's structured planning approach as well as of his
+difficulties with visual approaches to problem solving, we consider his
+construction of a "house" from a square and a triangle, a common LOGO
+task, tackled by many students at an early stage of their LOGO experience.
+
+At first Donald attempted an exploratory approach to solving this
+problem.  He began by drawing a triangle on the screen, making use of
+TRI, a state transparent equilateral triangle procedure:
+
+.block 15
+.sp 13
+.spread
+/Figure 6.1//Figure 6.2
+
+
+Donald's basic strategy was to try to get the TURTLE
+to point A of the triangle, and then use his BOX procedure.  (BOX made a square by turning right.)
+He had difficulty
+figuring out how to orient the TURTLE properly.  Although he came close
+by trial and error,
+he had not kept notes, and did not realize how close he was.  
+
+Donald's difficulty was due to the fact that he had established an awkward
+framework for the problem.  He started with the initial orientation of the
+triangle.  He then had to deal with
+two disorientations -- the problem of the "gap" between the TRI and BOX procedures, and the tilted orientation of the whole shape.  When
+it was suggested that Donald make a plan by drawing a picture of the house he was trying to construct, he drew a tilted house!
+
+.block 10
+.sp 8
+.ce
+Figure 6.3
+
+The solution that was suggested to him at the next class was to drop
+the plan which started with the triangle and to
+begin again, starting with the BOX.  Once he did this, he was able to
+analyze the problem in a way that made it unnecessary to rotate the
+TURTLE to place the triangle on the BOX.  He simply moved the TURTLE
+to the upper right hand corner of the BOX, turned it around, and used the TRI procedure, so that the first leg of the triangle was along the top of the BOX.
+
+.block 15
+.sp 13
+.ce
+Figure 6.4 
+
+.he2
+Planning a Head
+.block 5
+16.3 Donald's HEAD Project
+
+0Donald's major project, which lasted for four weeks and occupied twelve
+class periods, was to 
+make a man's face, complete with beard, hair, hat and flower.  He began
+by drawing the following picture in his notebook at the beginning of class 9.
+
+.block 26
+.sp 24
+.ce
+Figure 6.5
+
+After working on the project for a few days he
+modified his plan somewhat, and drew this picture, which simplified the ears and the hair, and added a moustache:
+
+.block 26
+.sp 24
+.ce
+Figure 6.6
+
+His completed project, shown in figure D-7, looked almost exactly like
+his second plan (with the exception of the moustache.
+
+.block 14
+.sp 12
+.ce
+Figure 6.7
+
+Donald began by spending one period trying to draw
+the entire head as a long series of direct commands.  At the next class
+he and the teacher sat down together and developed a framework for
+doing the problem by breaking it into smaller parts.  A superprocedure
+was written to serve as both an overall plan for solving the problem,
+and as a procedure for drawing the head.  Donald included in his
+initial superprocedure the most important features which he intended to
+include in the head.  Additional features, such as the ears, hat and
+flower, were left to be added later.  Donald's original superprocedure
+was:
+
+.indent 6
+.nofill
+.block 8
+TO HEAD
+1 BOX
+2 EYES
+3 NOSE
+4 MOUTH
+5 BEARD
+6 HAIR
+END
+
+.indent 0
+.adjust
+Using a superprocedure, and top-down planning was a major
+breakthrough for Donald.  It meant he could concentrate on one step at
+a time, and not worry about having to lose or erase the picture of what
+had gone before.  It allowed him to keep track of both his overall
+goal, and of exactly what he had accomplished at every stage of his
+work.  After completing the EYES and NOSE, for example, when Donald
+gave the command HEAD, the computer would draw the head, in its
+incomplete state (see figure 6.10) and print the following message:
+
+.he2
+Donald's HEAD Procedures
+.nofill
+.indent 6
+.block 2
+YOU HAVEN'T TOLD ME HOW TO MOUTH
+AT LEVEL 1 LINE 4 IN HEAD
+
+.indent 0
+.adjust
+Donald's problem of building the head was thus reduced to a series of
+separate problems, which could each be solved in turn.  For each
+feature, EYES, NOSE, MOUTH, etc., Donald had to figure out where to
+locate the TURTLE to begin drawing the feature, and the steps necessary
+to draw the feature itself.  In some cases (MOUTH, BEARD, and HAT, for
+example), these two aspects of the problem were closely interrelated.
+In others (EYES, NOSE, HAIR, EARS) the location of the feature was
+relatively independent from the steps necessary to draw it.
+
+To show how Donald solved the problem of building a head, we will first
+present
+his overall solution, including his
+superprocedure and each of his sub-procedures.  The procedures are
+annotated to show exactly how the solution was achieved.  Donald's work
+in developing a few of his key subprocedures, MOUTH, BEARD and HAT,
+will be analyzed in detail, to give a sense of how Donald worked on
+specific problems in a step by step fashion.
+
+Here are Donald's annotated HEAD procedures:
+
+.nofill
+.block 13
+TO HEAD		(HEAD is the superprocedure)
+1 BOX		The subprocedure, BOX, draws the
+2 EYES		outside of the head.  The purposes
+3 NOSE		of the other subprocedures are
+4 MOUTH		clearly indicated by their names.
+5 BEARD		Donald originally wrote the pro-
+6 HAIR		cedure up to line 6.  Lines 70,
+70 EARS		80 and 85 were added later.
+80 HAT		
+85 FLOWER	
+END
+.ri
+Figure 6.7
+
+.block 11
+TO BOX
+1 FORWARD 100	BOX draws a square with 
+2 RIGHT 90	sides of 100.
+3 FORWARD 100
+4 RIGHT 90
+5 FORWARD 100
+6 RIGHT 90
+7 FORWARD 100
+END
+.ri
+Figure 6.8
+
+.block 15
+TO EYES		(EYES begins where BOX leaves off)
+1 RIGHT 90	moves TURTLE to face up
+2 FORWARD 75	moves upward along the box
+3 RIGHT 90
+4 PENUP		
+5 FORWARD 30	moves over to draw first eye	
+6 PENDOWN
+7 RCIRCLE 10	draws first eye
+8 PENUP
+9 FORWARD 40	moves over to draw second eye
+10 PENDOWN	
+11 RCIRCLE 10	draws second eye
+END
+.ri
+Figure 6.9
+
+.block 13
+TO NOSE		(begins where BOX ends)
+1 PENUP
+2 BACK 20	moves over and down to position
+3 RIGHT 90	the TURTLE to draw the nose
+4 FORWARD 30
+5 PENDOWN
+6 RIGHT 30
+7 FORWARD 15	draws the nose
+8 LEFT 120
+9 FORWARD 15
+END
+.ri
+Figure 6.10
+
+.block 7
+TO MOUTH	(MOUTH begins where NOSE ends)
+1 PENUP		
+2 FORWARD 20	moves over to starting point
+3 RIGHT 135	sets starting angle for mouth
+4 PENDOWN
+5 RARC 40	draws arc for mouth
+END
+.ri
+Figure 6.11
+
+.block 14
+TO BEARD	(BEARD begins where MOUTH ends)
+10 PENUP
+20 RIGHT 45	rotates TURTLE straight up
+30 FORWARD 69	moves to top of head
+40 RIGHT 90	moves to center of head
+50 FORWARD 20	
+60 RIGHT 90	orients TURTLE to start
+70 RIGHT 15	drawing beard
+80 REPEAT [STRING] 15
+END		draws beard by repeating STRING 15 times
+
+.block 12
+TO STRING	(STRING is a subprocedure of BEARD)
+1 PENUP
+2 FORWARD 80	moves TURTLE forward with pen up
+3 PENDOWN	
+4 FORWARD 10	moves TURTLE forward with pen down
+5 PENUP
+6 BACK 90	moves back total distance with pen up
+7 LEFT 2	turns TURTLE LEFT 2 to set up next
+END		STRING
+
+.ri
+Figure 6.12
+
+.block 13
+TO HAIR		(HAIR begins where BEARD ends)
+10 RIGHT 15
+20 BACK 9
+30 RIGHT 90	reorients TURTLE, and moves over
+40 FORWARD 50	to upper right hand corner of
+50 LEFT 90	the head to draw the hair
+60 REPEAT [HAIRY] 25
+END		draws hair by repeating HAIRY
+		25 times
+.ri
+Figure 6.13
+
+.block 11
+TO HAIRY	(HAIRY is a subprocedure of HAIR)
+5 PENDOWN	
+10 FORWARD 10	moves forward and back to draw a hair
+20 PENUP
+30 BACK 10
+40 LEFT 90
+50 FORWARD 4	moves over and reorients TURTLE to draw
+60 RIGHT 90	the next hair
+END
+
+.block 13
+TO EARS		(EARS starts where HAIR ends)
+10 FORWARD 30	
+20 LEFT 90	moves down the side of the head
+30 PENDOWN	to draw the first ear
+40 EAR		subprocedure EAR draws the first ear
+50 PENUP
+60 FORWARD 100	moves the TURTLE across the head
+70 PENDOWN	
+80 EAR		subprocedure EAR draws second ear
+END
+.ri
+Figure 6.14
+
+.block 7
+TO EAR		(EAR is a subprocedure of EARS)
+10 FORWARD 10
+20 RIGHT 90
+30 FORWARD 10
+40 RIGHT 90	draws a three-sided box to make an "ear"
+50 FORWARD 10
+END
+
+TO HAT		(HAT begins where EARS ends)
+10 LEFT 90
+20 FORWARD 30	moves TURTLE to top of head and
+30 LEFT 90	over to right hand corner
+40 FORWARD 20
+50 BACK 140
+60 FORWARD 35	moves forward to start hat
+70 LBOX 75	subprocedure LBOX :SIZE draws
+79		a box with sides of 75
+END
+.ri
+Figure 6.15
+
+.block 9	
+TO LBOX :SIZE	(LBOX is used as a subprocedure
+1 FORWARD :SIZE	of HAT)
+2 RIGHT 90
+3 FORWARD :SIZE
+4 RIGHT 90	LBOX draws a box of variable size
+5 FORWARD :SIZE
+6 RIGHT 90
+7 FORWARD :SIZE
+END
+
+.block 9
+TO FLOWER	(FLOWER starts where HAT ends)
+10 RIGHT 90
+20 FORWARD 35	lmoves over and orients TURTLE
+30 RIGHT 90	to start drawing the flower
+40 RARC 75	draws the stem of the flower
+50 LEFT 90	centers the flower on the stem
+60 BACK 5
+70 POLY 10 100	draws the actual "flower"
+END
+.ri
+Figure 6.7
+
+.adjust
+In developing each of the subprocedures outlined above, Donald had to
+solve two related problems:  how to use TURTLE commands to draw the
+feature, and where to place the TURTLE before starting to draw the
+feature.  As he worked, Donald created each feature in the order listed
+in the superprocedure, HEAD.  The subprocedure for each new feature had
+to begin where the previous one left off.  Each new feature presented a
+new challenge, and since Donald had difficulty solving problems by
+experimentation alone, he needed to develop analytical skills in order
+to divide each of his subprocedures into its sub-parts, and to solve
+each sub part.  Donald's work in drawing three key features, the mouth,
+beard and hat, will now be discussed in order to illustrate the
+problems he encountered and the analytical skills he developed to
+resolve them.
+
+Donald decided to use an arc procedure to draw the mouth on his head
+(see figure 6.ll).  In order to place the mouth on the face in a
+symmetrical position, Donald had to coordinate four different aspects
+of the problem:
+
+.indent 6
+.nofill
+.block 4
+-- where to place the TURTLE in order to draw the mouth
+-- at which angle to orient the TURTLE to draw the mouth
+-- the size of the input to be used with the arc procedure
+-- whether to use a right or left turning arc procedure.
+
+.adjust
+.indent 0
+Donald spent most of one period experimenting unsuccessfully, varying
+these elements in an uncoordinated way.  The teacher then suggested
+working separately on the different aspects of the problem, and working on them
+separately, to facilitate a solution.  It was also suggested that
+Donald clear the screen and work on the mouth by itself, without the
+rest of the face, to simplify the process.
+
+At the beginning of the next period, Donald sat down with the teacher
+for a "lesson" on the geometry of quarter arcs.  Since Donald knew that
+four arcs made a complete circle and that the TURTLE turned through 360
+degrees in completing a circle, he realized through discussion, that
+each arc procedure turned the TURTLE 90 degrees.  Using this fact, and
+taking note of the horizontal position of the TURTLE after finishing drawing the
+nose (figure 6.10), he was able to figure out that the TURTLE had to be
+turned through an angle of 135 degrees to orient it so that it
+would draw a symmetrical curve.
+
+.block 13
+.sp 11
+.ce
+Figure 6.16
+
+Once he understood how to orient the TURTLE, it was easy for Donald to
+determine a size for the mouth that corresponded with the other
+features of his head, and to locate the starting point for the mouth by
+trial and error.  He did this by moving the TURTLE over from where the
+nose ended, until the arc was positioned symmetrically in the center of
+the head (see figure 6.11).
+
+.he2
+Drawing the Beard
+In order to draw a beard on his head, Donald also had to separate his
+problem into three different aspects:
+.nofill
+.indent 6
+.block 6
+--how to draw the beard
+
+--where to locate and orient the TURTLE to draw the beard
+
+--how to move the TURTLE to that point, from the point where the MOUTH
+subprocedure ended.
+
+.indent 0
+.adjust
+Here, the teacher provided a suggestion for drawing the beard, which
+Donald accepted.  The beard was to be drawn as a series of "lines", all
+emanating from a single point.  As the TURTLE moved, it kept its pen up
+for most of the line, putting the pen down only to draw the "hair" of
+the beard (Figure 6.17).
+
+.block 18
+.sp 16
+.ce
+Figure 6.17
+
+In writing his procedure STRING, Donald decided how long
+the PENUP and PENDOWN portions of the line would be, as well as how
+much to rotate the TURTLE each time the line was repeated.  Once STRING
+was defined, he had to figure out how many repeats he wanted, as well
+as how to orient the TURTLE to make the beard symmetrical.  After a few
+tries he figured out that if he turned the TURTLE RIGHT 15 (from a
+straight down position) and repeated STRING 15 times, he would get a
+symmetrical beard (See figure 6.17).
+
+.he2
+Drawing the Hat
+Now Donald had to center the TURTLE at the top of the head,
+in order to draw the beard on
+the face.  (The TURTLE was oriented at an angle of 45 degrees to the
+horizontal after drawing the mouth.  See figure 6.11).  At first
+Donald tried to orient it vertically by trial and error -- but had
+difficulty finding the correct angle.  A short geometry lesson helped
+him realize that the TURTLE needed an additional rotation of 45 degrees
+to be heading in the proper direction.  From that point he was able to
+easily center the circle on the top of his head.  He found that he
+still needed to move it a distance of ten TURTLE steps below the
+top of the head, in order to locate the beard properly below the mouth.
+The steps required to accomplish this are given in his procedure BEARD
+
+In placing a hat on the head, Donald once again had to coordinate
+several related factors:
+.indent 6
+.nofill
+.block 7
+--the size of the box needed to draw the hat itself
+
+--the overall width of the brim
+
+--the distance the TURTLE had to move in from the edge of the brim
+before drawing the box, in order to make it symmetrical.
+
+.indent 0
+.adjust
+This time Donald worked out the problem on his own, using a variable
+box procedure, LBOX :SIZE, that he had developed at an earlier stage of
+his work.  Once again, Donald had difficulty coordinating all the
+variables.  This time, he invented a kind of "coordinate system" to
+help him keep track of what he was doing:  after each try he counted
+the "hairs" on both sides of his hat to see if it was centered.
+Although his final result was not exactly symmetrical he was able to
+obtain a satisfactory solution using this approach (see figure 6.15).
+
+.block 5
+16.4 Conclusion
+ 
+0In summarizing Donald's work we note that his was the longest and most
+involved Turtle Geometry project undertaken by any of the children in our trial classes.  By using the top-down mode of operation, he was able to understand both the overall goal, and where he was in the process at any particular moment.  Thus he was able to meet each challenge 
+as just one small problem to be overcome, so that he did not become discouraged about the whole project.
+
+In the course of his work Donald encountered estimation of distances
+and angles, the geometry of arcs and circles, the total turtle trip
+theorem, and the use of both grid-based and intrinsic coordinate
+systems.  He learned to use subprocedures and sub-subprocedures, to use
+patterned procedures making use of a REPEAT command, to make use of
+variables to control the size and shape of his "hat" and "flower" and
+to use a POLY procedure with a conditional stop rule.  Although Donald
+only "learned" these approaches to the extent necessary to solve the
+particular problems inherent in his project, each succeeding use of the
+same concept, reinforced his exposure to it, deepening his sense of mastery.
+
+Perhaps the most striking thing about Donald's work was that he was
+not usually able to solve his problems by experimentation and visual examination of the results.  From his first HOUSE procedure, right through the HEAD, all the way to the FLOWER, 
+he made use of analysis, combined with experimentation to solve his problems.  He often needed help with the analysis, but he understood
+the analytical techniques he was shown and he was able to make use of them.
+Scattered throughout his notebook are little drawings on graph paper,
+either by Donald or the teacher, showing how he analyzed his work.
+It was his regular use of drawings like these that distinguished
+Donald's work from that of his classmates.  A few of them are presented
+here in figure D-18.
+
+

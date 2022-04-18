@@ -1,0 +1,4 @@
+(defun readbin ()(prog (ibase ^q)(setq ibase 2)(setq ^q t)
+(return (readlist (explodec (readline))))))
+
+(defun binoct() (prog (base) (return (+ (readbin)(* 256. (readbin))))))

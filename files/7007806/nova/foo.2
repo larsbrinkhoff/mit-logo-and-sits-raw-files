@@ -1,0 +1,222 @@
+EXPERIENCE WITH A MICROPROGRAMMED INTERLISP SYSTEM
+
+L. Peter Deutsch
+Xerox Palo Alto Research Center
+Xxx xx, 1978
+
+1. Introduction
+
+Background: Lisp as an AI language; personal computing & Alto
+
+Early choices: Interlisp dialect (why); microprogrammed instruction set (why)
+
+Level of compatibility problem & VM specification
+
+System architecture decisions & why
+
+Memory & address system
+
+Larger address space
+
+Tenex just isn't big enough
+
+24-bit pointers (vs. 32); quantum map (vs. type code)
+
+Wanted an 8-bit CDR code, > 32 types easily
+
+16-bit immediate data (vs. 24)
+
+Frequency of type tests vs. CAR/CDR
+
+Get from opcode freqencies
+
+Frequency of allocating large integers
+
+Get from transaction log
+
+Addressing to 16 bits (vs. 32)
+
+Machine architecture -- 16-bit processor
+
+Paging vs. object swapping
+
+Page traffic by type
+
+Analyze paging log
+
+% of words/objects on the page actually touched, by type
+
+Analyze mapping log -- fix to include refs that don't go through map
+
+% of total refs to various places
+
+Analyze mapping log
+
+VAG2, HILOC/LOLOC sequences (static)
+
+Use FIND on sources (or Masterscope?) & look by hand
+
+System data structures
+
+Implementation of stack
+
+Mesa scheme
+
+Processor/memory speed consideration
+
+Amount of stuff on stack below fn call (static)
+
+Use READSYS environment
+
+Time between push & pop (static)
+
+Ditto
+
+Max depth between push & pop (static)
+
+Ditto
+
+Deep binding
+
+Costs & advantages of shallow binding -- memory refs (intrinsic), Alto impl.
+
+Baker's re-rooting scheme
+
+Closures
+
+Relative frequency of bindings vs. free ref.s
+
+Log relevant info in free variable searcher; add log of arg counts & PROG events; analyze in concert with call/return log
+
+Distance from ref. to binding (# of frames, bindings)
+
+Log relevant info in searcher
+
+Distance from ref. to cached binding (# of frames, bindings)
+
+Ditto
+
+Compact list cells
+
+Actual goodness of encoding (static)
+
+Use READSYS environment
+
+Potential goodness after compaction (static)
+
+Ditto
+
+Relative frequency of CONS, RPLACA/D, CAR/CDR & cases for CONS & RPLACx
+
+Install counters in code
+
+Pname packing scheme
+
+Time spent decoding length nibbles
+
+Install counters in code
+
+Page faults saved
+
+Log references?
+
+Specialized instruction set
+
+Division of capability levels (xxBASE instructions)
+
+No ASSEMBLE
+
+No unboxed arithmetic -- intrinsic speed comparison to Bcpl/Mesa
+
+Opcode frequencies (static & dynamic)
+
+Static: use READSYS environment
+Dynamic: enable instruction counters
+
+Box/unbox sequences (potential gain from unboxed arith.) (static)
+
+Use READSYS environment
+
+Opcode sequence frequencies (static)
+
+Ditto (figure out what to count!)
+
+Frequency of GET/PUTBASE with fixed offsets (static & dynamic)
+
+Static: ditto
+Dynamic: look at previous instruction???
+
+Division between 3 impl. levels (& why it was changed)
+
+Control & data communication between levels
+
+Interpreter
+
+Low-level stuff
+
+Stack management (left in Bcpl)
+
+Page fault handler (ditto)
+
+Initialization
+
+File system
+
+Byte stream I/O
+
+Allocator & GC
+
+Cost of transition between Lisp and Bcpl
+
+Count Nova instructions by hand
+
+Frequency & cost of each Bcpl call
+
+Frequency: enable counters
+Cost: count instructions by hand (ugh)
+
+Relative speeds of things in Lisp & Bcpl (interpreter, file lookup, symbolic I/O, CONS/RPLACx, GC, ...)
+
+Not worth re-implementing all this in Bcpl
+Count memory refs in Lisp code & make an estimate
+
+Transaction GC
+
+Frequencies of transaction types
+
+Log each transaction in Lisp code, analyze log off-line
+
+Inter-transaction time by object (how long till abandon or nail down, then how long till another event, etc.)
+
+Ditto
+
+Depth of stack (frames & bindings) at scan time
+
+Dump entire stack onto log
+
+Size of ZCT and MRT
+
+Write on log
+
+Measurement techniques
+
+Counters (immediate results)
+
+Opcodes
+
+Others in Bcpl code
+
+Others in Lisp code
+
+Logs (delayed results)
+
+Function calls
+
+Paging
+
+Memory references
+
+Transactions
+
+Etc.
+

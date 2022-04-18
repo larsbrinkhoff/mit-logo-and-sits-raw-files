@@ -1,0 +1,609 @@
+<caution--this is simply an appending of two of Dave's papers as my beginning to
+make a chapter on implementation>
+
+
+
+VI
+
+The Implementation of Smalltalk-76
+
+
+
+
+
+Basic Data Structure
+
+A basic principle of the Smalltalk system is the uniform representation of the
+parts of the system.  We use the name object to refer to this representation.
+This chapter describes the nature of objects in the Smalltalk system.
+Everything in the system is represented as an object.  Some examples of objects
+are:
+
+9a document
+
+9an editor for the document
+
+9a window that displays the document on the screen and allows the user to
+interact with the document's editor
+
+9the rectangle that describes the position of the window on the screen
+
+9the number that represents the width of the rectangle
+
+Smalltalk has facilities for the creation of objects and the description of
+their behavior.  It also provides for the performance of described object
+behaviors.  These facilities, since they are part of Smalltalk, are represented
+as objects.  They are called the kernal objects since they are the basis for the
+whole system, including themselves.  This chapter will describe the object
+representation and the kernal objects that provide facilities for object
+creation and object behavior description.  The next chapter will describe the
+kernal objects that provide facilities for performing the behavior of objects.
+As examples in this chapter we will use two classes of objects that represent
+simple graphical entities, Point and Rectangle.  Points are used to represent
+locations or two dimensional distances on the display screen and Rectangles to
+represent rectangular areas whose sides are parallel to the edges of the screen.
+
+The nature of Smalltalk objects is related to the nature of the virtual memory
+that stores their representation and the virtual processor that carries out
+their behavior.  These are discussed in detail in Chapters 12 and 9
+respectively.  This chapter will treat both aspects of the virtual
+implementation machine as black boxes and only discuss the functions they
+perform.
+
+The Nature of Objects
+
+This section describes the nature of objects from two perspectives: external and
+internal to the object.  Externally, objects interact with other objects in the
+system.  Internally, the nature of the interaction must be described in terms of
+the structure of the object (which is hidden to the outside).  Both perspectives
+have a lot to do with the fundamental behavior of objects which is sending and
+receiving messages.  Messages will be discussed in detail in the next chapter.
+For now it is enough to say that a message is an object that evokes a certain
+behavior from the object it is sent to.  The message has a selector that is a
+word or symbol that tells what kind of behavior is desired.  A Point might
+respond to messages with the selector "x" by returning its distance from the
+left edge of the screen.  The behavior evoked by some messages is relative to
+other objects.  These objects are part of the message and called arguments.  A
+Point might respond to messages with the selector "-" by returning the
+two-dimensional distance from another Point (which will be a Point).  The other
+Point must be specified as an argument in the message. Some of the other
+messages that a Point must respond to are:
+
+9how far are you from the top of the screen
+
+9are you above and to the left of another Point (an argument)
+
+9add yourself to another Point (an argument)
+
+9make a Rectangle whose origin is you and whose opposing corner is another Point
+(an argument)
+
+A Rectangle might respond to messages like the following:
+
+9what is the Point at your upper left corner (or lower left or upper right or
+lower right)
+
+9what is the Point at your center
+
+9how wide are you
+
+9move your upper left corner to another Point (an argument)
+
+9is a Point (an argument) inside you
+
+The selectors for these messages to Rectangles might be upperLeftCorner
+(lowerLeftCorner,upperRightCorner or lowerRightCorner), center, width, moveTo
+and doYouInclude. The messages with selectors moveTo and doYouInclude must
+include another object as an argument (a Point in both cases).
+
+The external perspective on an object is its behavior.  This is the perspective
+of the other objects in the system except for the objects that are actually
+implementing the behavior.  To the rest of the system an object is simply an
+entity that can be sent certain messages and will respond in some appropriate
+way.  There are two kinds of things an object can do in response to a message,
+it can communicate and transform.  An objects communicates by sending messages
+to objects and by returning a result to the object that sent it a message.  It
+transforms by changing its state.  The state of an object is what distinguishes
+it from other instances of the same class.  The state is also that part of an
+object that can change.  For instance, a Rectangle that had been sent a message
+to move its center would afterwards respond differently to the message asking
+where its center was.  An objects behavior on receiving a message may consist of
+sending an arbitrary number of messages (including none) and transforming an
+arbitrary amount (including none) but it must include the return of a result.
+The internal structure of an object is inconsequential from the external
+perspective, anything that responds to the messages correctly will look the
+same.
+
+The internal perspective on an object is the description of its behavior.  This
+is the perspective of the person that wrote the description, the part of the
+system that implements the behavior by following the description and any person
+who reads the description.  The description is represented as a Class.  As the
+name implies, a Class describes a whole class or "kind" of object.  The objects
+described by a Class are called its instances.  A Class describes its instances
+in terms of a collection of parts and a set of methods for responding to
+messages.  The actual objects that make up the parts of an object differ from
+one instance of a Class to the next.  The set of methods for responding to
+messages is shared by all instances.  This sharing is accomplished by
+automatically making the Class of an object one of its parts.  The Class part of
+an object is consulted every time it responds to a message.  The external
+perspective on an object's state was that it could change its response to one
+message as a result of receiving another message.  From the internal
+perspective, the object's state is which other objects make up its parts.  The
+transformation part of an object's behavior is changing which object is a
+particular part.
+
+From both perspectives, the necessity to refer to objects has arisen.
+Externally, one must refer to selectors and arguments to specify a message and
+also refer to the object that is to receive the message.  Internally, the object
+must refer to its parts.  Because of the uniform object representation all
+references in the system are to objects.  Each object is associated with a
+unique reference called its pointer.  An object is represented internally by the
+pointers to the objects which are its parts.  A graphical representation of an
+object might be a box containing arrows pointing at other boxes:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-Class Class
+
+The Parts of an Object
+
+The parts of an object are other objects and are only visible from the internal
+perspective.  The only global restriction on the parts of an object is that one
+is a Class object.  Other than that, the restrictions on the parts of an object
+are purely a matter of the object's behavior (i.e. known only to its Class).  A
+Rectangle, for instance, must have parts that allow it to represent a
+rectangular area.  What the parts are only matters in how the behavior of the
+Rectangle is described.  A Rectangle should be able to respond to the messages
+mentioned in the introduction to this chapter.  One way to implement Rectangles
+would be to give them four parts that represented the minimum and maximum values
+of x and y for Points that fall within the Rectangle.  The desired behaviors
+could certainly be described in terms of those parts.  Another way to implement
+Rectangles would be to give them two parts that represented opposing corners of
+the rectangle.  The identical behaviors could be described in terms of these
+parts (i.e. the identical responses to the messages could be made).  Since it is
+only through the behavior of an object that it interacts with the other objects
+in the system (i.e. through messages), these two implementations with different
+numbers of parts would be indistinguishable.  It would only be the description
+of the behavior associated with the messages that would be different.
+
+The Description of an Object
+
+The description of an object is contained in its Class.  The Class represents
+the internal or implementation perspective on its instances.  From this
+perspective, an object is a collection of parts that knows what to do when
+messages with certain selectors are received.  A Class describes the parts of
+its instances with a list of names for them.  The list of names indicates how
+many parts will be required in each instance and it gives a convenient way to
+refer to the individual parts in descriptions of the behavior of the instance.
+For example, the first implementation of Rectangle mentioned previously might
+call its parts minX, maxX, minY and maxY.  The second implementation mentioned
+might call its parts origin and corner.
+
+A Class describes the behavior of its instances when they receive messages with
+a message dictionary.  The message dictionary is an instance of class Dictionary
+that associates message selectors with methods for responding to messages.  The
+method associated with a certain selector describes what an instance will do
+when it receives a message with that selector.  As mentioned earlier, this
+includes sending messages, changing instance parts and responding to the message
+that invoked the behavior.  The method is a sequence of descriptions of messages
+to be sent and parts to be changed.  The response to the invoking message may be
+explicitly described, but since it is mandatory, if an explicit description is
+not included, an implicit return of the object itself is assumed.
+
+Optimized Data Structures
+
+Certain Classes of objects in the system are used at such high bandwidth that
+their internal representation has been optimized to conserve either the time it
+takes to interact with them, the space it takes to store their representation or
+both.  These Classes must describe their instances in a different way from the
+standard Class description outlined above.
+
+Numbers
+
+Integer is a Class whose instances represent whole numbers between -32768 and
++32767.  The external perspective on Integers is that they respond to messages
+with selectors like +,-,/ and *.  This behavior could be implemented several
+ways by a standard Class of objects with parts and methods.  These standard ways
+of implementing Integers would be too slow for something that happens as often
+as Integer arithmetic.  Instead, we have a different internal perspective on
+Integers that supports the same external perspective.  An Integer is not made up
+of other objects as its parts.  Instead, it has a part that is a binary
+representation of its numerical value.  The methods for responding to the
+arithmetic messages to Integers are different than normal methods and will be
+discussed in the next chapter.
+
+Vectors
+
+Vector is a Class whose instances represent collections or lists of objects.  A
+Vector has room to collect a certain number of objects and associates each
+object in the collection with an Integer between one and the number of objects
+there is room for.  The external perspective on Vectors is that they respond to
+messages that associate Integers with objects and messages that return the
+objects last associated with particular Integers.  Sending a Vector the message
+" 1 _ alpha" would invoke a behavior which would replace its first part with
+the object named alpha.  Note that this message is named _ and was sent with
+arguments 1 and alpha.  The complementary message is named  and takes a single
+argument.  Sending the previously mentioned Vector the message " 1" would
+invoke a behavior which would return the first part, the object named alpha in
+this case.  Vectors also respond to a message named length by returning the
+number of objects there is room for.  As with Integers, this behavior could be
+implemented several ways by a standard Class of objects with parts and methods
+but such an implementation would be slow and large.  An instance of Vector has
+ordinary parts that are other objects.
+
+Dictionaries
+
+Dictionary is a Class whose instances provide a more flexible form of
+association than Vectors.  A Dictionary can use any object as a key and the
+range of keys need not be specified in advance.  Dictionaries are usually used
+to associate names with objects.  We will give a possible implementation for
+Class Dictionary as an example.  The actual implementation uses the subclassing
+feature of Smalltalk which we will describe in detail later.  A Dictionary has
+two parts named names and values.  Both instance parts are Vectors of the same
+length.  Dictionary uses the same messages as Vector to make and retrieve
+associations (_ and ).  When a Dictionary is sent the message " joe _ beta"
+it searches its names Vector for the name joe.  (Note that the  symbol is used
+to mean that the name joe is used as an argument and not the object named joe).
+If the Dictionary finds joe in the names Vector, it stores the object named
+beta as the part with the same index in the values Vector.  When a Dictionary is
+sent the message " joe" it searches its names Vector for the name joe.  If
+the Dictionary finds joe in the names Vector, it returns the part with the same
+index in the values Vector.
+
+Dictionaries are used by the message sending/receiving mechanism in the kernal.
+The messages understood by a class of objects are stored in a Dictionary that is
+part of the Class that represents the class.  Associated with the names of the
+messages are descriptions of the behavior that is appropriate when the messge is
+received.  The compiler uses a Dictionary that associates the names of the parts
+of fixed length objects with a part index.
+
+-uses of Dictionaries in kernal
+
+direct: messages and methods indirect: names and parts
+
+Strings
+
+String is a Class whose instances represent collections of integers between 0
+and 255.  Functionally, the only difference between a String and a Vector is
+this restriction on the objects that can be stored.  The restriction allows an
+optimized storage structure for Strings which is described in Chapter 12.
+Strings are used in various applications where efficiency is required.  For
+instance, character strings are stored as a String of indices into a set of
+characters which takes less room than a Vector of Character objects.
+
+Methods
+
+Another use of Strings is to store the descriptions of behavior in the system.
+There are two basic forms of behavior description, user descriptions and machine
+descriptions.  The kernal system is designed to execute machine descriptions and
+the basic system provides a translator from user to machine descriptions.  User
+descriptions are character strings that contain Smalltalk syntax (names of
+objects and messages; and punctuation marks).  Machine descriptions contain
+instructions for the virtual interpretation machine.  These instructions are
+primitive messages sent to the current MethodFollower.  The behavior of an
+object takes two forms, alteration of instance state and sending messages.  A
+method is a sequence of message descriptions and state alteration descriptions.
+
+Classes
+
+Class is a Class whose instances represent classes of objects.  A Class
+describes the form of its instances, i.e. whether they are all the same length
+and if so how many parts they have and what the names of the parts are.  A Class
+also describes the behavior of its instances.  The description of behavior is a
+Dictionary that associates the names of the messages the instances will respond
+to with the Methods that describe specific behavior.
+
+Class Heirarchy
+
+Smalltalk provides a mechanism to make a new Class by augmenting an existing
+Class.  The new class is called a subclass of the existing class which is called
+the superclass.  A subclass inherits the instance parts and message-method pairs
+of the superclass.  It can add instance parts and message-method pairs.  The
+added methods may be for new messages or they may redefine the behavior
+associated with an existing message in the superclass.  The subclassing
+mechanism is implemented by having one of the parts of a Class be its
+superclass.  All Classes are subclasses of Class Object at some level.  Class
+Object defines no instance parts and only those messages that all objects in the
+system are capable of responding to.  Class Object has no superclass.  When the
+system wants to find the description of the behavior an object will have when it
+receives a message, it looks in the method dictionary of the Class of the
+object.  If a method is found for the message name that is used.  If the message
+name is not in the Dictionary, the message Dictionary of the superclass is
+searched.  This process is repeated up the chain of superclasses until the
+message is found or class Object is encountered which terminates the chain.
+
+The Kernel System for Describing and Creating Objects
+
+The description of the objects in the system and the creation of new objects is
+accomplished by the Classes in the system.  The Classes rely on certain other
+objects to accomplish this task.  All of these objects are part of the kernel
+system since they are necessary for the functioning of the system.  This section
+lists the Classes of objects that make up the part of the kernel that supports
+Class Class.  The discription of each Class includes an italicized statement of
+its purpose followed by a description of its function followed by a description
+of the messages that are relevant to its behavior in the kernel.  The two
+interesting relationships between Classes are class and subclass.  These
+relationships are indicated in the following diagram, with class indicated in
+red and subclass indicated in blue.  Class Array is included in this diagram but
+not in the following descriptions because it participates in the subclass
+heirarchy but not in the kernel behavior of its two subclasses.
+
+Object
+
+Class
+
+CollectionClass
+
+Array
+
+Vector
+
+String
+
+HashSet
+
+Dictionary
+
+
+
+Object
+
+A primitive form for everything
+
+Object is the ultimate superclass of all objects.  It has no superclass.  It
+defines messages understood by all objects.
+
+ otherObject			is otherObject the same as the receiver
+
+class						return the Class object that
+describes the receiver (note: that this is the deepest subclass for the
+receiver)
+
+hash						return an Integer (this can be
+any number, but it must always be the same number for a particular object) (this
+message is used in the associative behavior of Dictionaries)
+
+Vector
+
+A primitive form of collection and a primitive form of association
+
+A Vector has a set number of slots for objects.  Each of the slots is numbered
+and the objects in the collection are placed in specific slots.
+
+length						how many objects are there room
+to collect
+
+ index _ value			include value in the collection associated with
+index (which must be an Integer between 1 and the length of the receiver)
+
+ index					return the object in the collection last
+associated with index
+
+String
+
+A primitive form of collection and association optimized for collecting Integers
+between 0 and 255
+
+A String behaves like a Vector except that the objects collected must be numbers
+between 0 and 255.  Strings are used to represent descriptions of behavior
+called methods.  The methods consist of instructions (primitive messages) for
+the interpretive machine.  The instructions are represented as numbers between 0
+and 255.  Strings are also used for optimized collection of text.  The text is
+represented as a collection of indices into a character set.
+
+length						how many objects are there room
+to collect
+
+ index _ value			include value (which must be an Integer between
+0 and 255) in the collection associated with index (which must be an Integer
+between 1 and the length of the receiver)
+
+ index					return the object in the collection last
+associated with index
+
+HashSet
+
+A non-duplicating, unbounded form of collection and a primitive form of inverted
+association
+
+A HashSet does not have a fixed number of slots for the objects it collects, it
+will accomodate as many objects as are inserted.  If an object that is already
+in the collection is inserted, it will only appear once.  Between insertions and
+deletions, the HashSet will associate each element of its contents with a unique
+Integer.  These numbers may change when an object is inserted or deleted.
+
+insert: value				include value in the collection but
+don't duplicate it if it's there already
+
+delete: value				remove value from the collection (it
+should have been previously inserted)
+
+contents					return a Vector containing the
+objects in the collection
+
+find: value				return a unique Integer associated with
+value
+
+Dictionary
+
+An unbounded form of collection of general associations
+
+A Dictionary is a subclass of HashSet that will collect an arbitrary number of
+associations of pairs of objects.
+
+ key _ value			include value in the collection associated with
+key (which may be any object)
+
+ key						return the object in the
+collection last associated with key
+
+Class
+
+A general form of object description
+
+A Class describes a set of objects called its instances.
+
+new						return a new instance of the
+receiver
+
+methodFor: selector		return the method (a String) that describes an
+instance's behavior when it receives a message whose selector is selector
+
+CollectionClass
+
+A form of description for optimized collection objects (Vector and String)
+
+A CollectionClass describes a set of instances that can be of different sizes.
+
+new: length				return a new instance of the receiver
+with length instance parts
+
+methodFor: selector		return the method (a String) that describes an
+instance's behavior when it receives a message whose selector is selector
+
+The Implementation of the Kernel Classes
+
+This section describes how the Classes listed in the last section are
+implemented.  This includes a description of the parts of the objects and the
+methods for responding to the kernel messages.  Many of the methods are what we
+call primitive methods.  These are programs for the implementation machine as
+opposed to regular Smalltalk methods.  They can directly interact with the
+virtual memory of the machine.  Some of the methods refer to pointers to
+objects.  A pointer to an object is a unique number that the virtual memory uses
+to refer to an object.  For instance, the virtual memory represents the parts of
+objects by associating the pointers to the parts with the pointers to the
+object.
+
+Object
+
+A primitive form for everything
+
+Most objects in the system are not direct instances of Object but rather
+instances of some subclass of Object.  The three instances of Object itself are
+true, false and nil.  The objects called true and false are used to represent
+logical values and nil represents the default value for a part of an object.
+Object does not contribute any instance parts so these three objects have no
+parts at all.  As a consequence, true, false and nil are identical except that
+they are separate.  The only way to distinguish them is with the  message.  Any
+messages that they respond differently to (like print) must ultimately send  to
+them.
+
+ otherObject			if the pointer of the argument and the pointer
+of the receiver are the same, returns the object true; otherwise returns false
+
+class						returns a pointer to the Class
+of which the receiver is an instance.  This is known to the virtual memory
+
+hash						returns an Integer object whose
+value is the pointer to the receiver
+
+Vector
+
+A primitive form of collection and a primitive form of association
+
+Vector and String differ from the other Classes in the system in that their
+instances do not all have the same number of parts.  The parts of the instances
+represent the objects in the collection and different collections have different
+sizes.  This is a storage and access efficiency consideration since collections
+could be represented as linked lists in the manner of Lisp cons cells.  Because
+a Vector has a fixed number of parts, this number must be specified when a new
+instance is made.  This is reflected in the fact that Vector and String are
+instances of CollectionClass instead of Class.  Instead of the new message for
+instantiation, CollectionClass uses a message called new: that takes an argument
+of the size of instance desired.
+
+length						returns the number of parts in
+the receiver which is known to the virtual memory
+
+ index _ value			requests the virtual memory to replace the
+pointer representing the indexth part of the receiver with the pointer to the
+object supplied as an argument.  Returns the argument
+
+ index					returns the pointer of the indexth part
+of the receiver
+
+String
+
+A primitive form of collection and association optimized for collecting Integers
+between 0 and 255
+
+A String is a further optimized form of Vector.  Since only Integers can be
+instance parts, the virtual memory stores the values of the parts instead of
+pointers to the parts.  This is space efficient since pointers are longer than
+the eight bits necessary to store a value between 0 and 255.
+
+length						returns the number of parts in
+the receiver which is known to the virtual memory
+
+ index _ value			requests the virtual memory to replace the value
+of the indexth part of the receiver with the value of the Integer supplied as an
+argument.  Returns the argument
+
+ index					return an Integer whose value is the
+indexth part of the receiver
+
+HashSet
+
+A non-duplicating, unbounded form of collection and a primitive form of inverted
+association
+
+A HashSet has one instance part named objects. objects is a Vector in which the
+HashSet stores the objects it collects.  The HashSet determines where to store
+objects in objects with a hashing scheme to make duplication of objects
+efficient to detect.
+
+insert: value				if the argument is not in objects,
+include it
+
+delete: value				remove the argument from objects
+
+contents					return a copy of objects with
+any nils removed
+
+find: value				return the index of the argument in
+objects
+
+Dictionary
+
+An unbounded form of collection of general associations
+
+A Dictionary is a subclass of HashSet which adds another instance part named
+values, so Dictionaries have two parts named objects and values.  values is a
+Vector of the same length as objects.  When two objects are associated, the key
+is inserted in objects using the HashSet insert: method described above.  The
+value to be associated with the key is then stored in values in the part with
+the same index.
+
+ key _ value			include value in the collection associated with
+key (which may be any object)
+
+ key						return the object in the
+collection last associated with key
+
+Class
+
+A general form of object description
+
+A Class describes a set of objects called its instances.
+
+new						return a new instance of the
+receiver
+
+methodFor: selector		return the method (a String) that describes an
+instance's behavior when it receives a message whose selector is selector
+

@@ -1,0 +1,428 @@
+.xgp
+.font 0 31vg
+.font 1 31vg
+.chap 11
+.he1
+Kathy
+.he2
+Working Style
+.ss
+.adjust
+111. Kathy
+
+0Kathy, a student who was new to the school this year, is considered
+to be an "above average" student.  (Her most recent school administered
+achievement tests place her in the 60th percentile overall.)  She is
+cheerful, confident, and enjoys "playing" with words and ideas.
+
+From the very beginning of the classes, Kathy displayed a quiet confidence, and competance in using the computer.  Although not very assertive in the early group sessions, she seemed to have an excellent understanding of basics right from the start.
+
+11. Kathy's Working Style
+
+Kathy was a student with a subtle sense of humor who derived a great
+deal of intellectual pleasure from her work.  She usually worked in an
+explorational mode, or in the context of short tasks, either self
+defined or suggested by a teacher.  When difficulties were encountered,
+she preferred to resolve them on her own, although without a great deal
+of persistence.  When she did ask for help, she was accepting of the
+teacher's suggestions, and readily learned new ideas in the context of
+the projects in which she was engaged.
+
+Kathy carried out dozens of small projects in the course of her LOGO
+experience.  She shifted back and forth between open ended explorations
+and small goal directed projects.  Her favorite activity was to repeat
+and combine existing procedures to produce new unexpected results.
+Often she would interrupt an exploration to pursue a particular idea
+which had been suggested to her by the designs she had just created.
+
+One of the ways in which Kathy structured her work was in her choice of
+procedure names.  Her procedure names often indicated the relationship
+between a new procedure, and the subprocedures from which it had been
+built.  Thus, a symmetrical design was called BARN because it was built
+by repeating a subprocedure called HORSE.   A procedure called WORMY
+was made by doubling all the sizes in a similar design called WORM.
+And, in a rare example of top-down naming, a procedure called MONSTER
+was made up of subprocedures MO, NS, and TER.
+
+Kathy was extremely comfortable, with giving and receiving help.  She often helped other children with the use of disks, particular elements of the LOGO language, ideas for projects, etc.  She was also quite willing to ask for help when she needed it, both from the teacher and from classmates, especially
+Monica with whom she worked a good deal.  
+In this way, Kathy was able to make steady progress in her understanding of LOGO, in her ability to conceive and carry out projects and in problem solving skills.
+
+Kathy enjoyed working with concepts, rather than simply with practical results. Kathy was the only student among the first eight to persevere in making the computer draw a circle.  We spent a lot of time, talking and playing turtle, until Kathy understood that she could make a circle by repeating
+FORWARD 20, RIGHT 20, over and over again.  She rejected the idea of accomplishing this with recursion (although it would have been quicker), because 
+she was trying to follow through with her own idea of repeating each step, step by step.  She did accept the idea of combining several of the steps into a subprocedure, and then repeating the subprocedure to make a circle.  When her final result, SHELL, eventually had too many steps, and went on past the closing point of the circle, she was satisfied with it.  She knew that she could have modified her circle to make it close exactly.  What she had been concerned with was whether the circle would close at all.  When it did, she was satisfied that she had solved her problem.
+
+.nofill
+.block 12
+TO ROUND		TO SHELL
+1 FORWARD 20		1 ROUND
+2 RIGHT 20		2 ROUND
+3 FORWARD 20		3 ROUND
+4 RIGHT 20		4 ROUND
+5 FORWARD 20		END
+6 RIGHT 20
+7 FORWARD 20
+8 RIGHT 20
+9 FORWARD 20
+10 RIGHT 20
+END
+
+.adjust
+This is typical of Kathy's approach.  She developed a concept of what she wanted to do.  She asked for help when she felt she needed it.  She listened to the various suggestions, and selected from them the ones she wanted to follow, in accordance with her own understanding of what the problem was about.  Whatever approaches she used in her problem solving, she learned.  While she often asked for help, she did not need to ask for help in those areas again.
+
+Kathy was comfortable initating ideas for projects, and borrowing them from others -- even copying procedures directly from a booklet or bulletin board.  She quickly learned that direct copying often led to unexpected problems, and she became more careful with her borrowing.
+
+Kathy and Monica worked together a great deal. (See profile #14, Monica.)  
+Both of them were interested in small, short-term projects, with visually pleasing results.  Both depended on their mutual sharing as a source of ideas, help and reassurance.  Although they often worked on the same tasks, they usually worked separately.  Their approaches, and results, were different.  Kathy's favorite activity was making a procedure and repeating it.  Monica's was repeating a procedure and putting a rotation after each repeat. For example, Kathy borrowed a procedure of Marilyn's called HORSE in which the computer repeated the instructions, BOX, 
+RIGHT 20, five times.  Kathy changed and elaborated it as follows:
+
+.nofill
+.indent 6
+.block 10
+TO HORSE
+1 BOX
+2 RT 70
+3 BOX
+4 RT 70
+5 BOX
+6 RT 70
+7 BOX
+8 RT 70
+END
+.indent 0
+
+and she repeated it, using:
+
+.indent 6
+.block 7
+TO BARN 
+1 HORSE
+2 HORSE
+3 HORSE
+4 HORSE
+5 HORSE
+END
+
+.indent 0
+.adjust
+Kathy made BARN, after repeating HORSE several times by direct command and deciding that she wanted to repeat HORSE exactly 5 times.  Although she could have used recursion, she chose to limit her repeats to exactly five.  She also called her new procedure BARN, introducing the mnemonic device "a barn is a group of horses."  Once again, Kathy was "in charge" of what happened, using the cliche idea, "repeat a procedure over and over," but keeping control of both the process and the end result.  
+
+.block 18
+.sp 16
+.ce
+Figure 11.1
+
+Thus when Kathy and Monica worked on similar tasks, each child brought her own specific knowledge, experience and "bag of tricks" to the project; and came out with a result that made her feel successful.  Looked at in detail, we see that the girls actually functioned quite differently, and what each of them learned from the project was probably quite different.
+There does not seem to have been
+any great significance to the choice of angle (20 degrees for Monica and 70 degrees for Kathy).  Both were simply using a number that had worked out well before.  Kathy's 70 may have been just a mis-copying of Monica's 20.
+
+.he2
+Simple Geometric Projects
+.block 5
+12. Some Examples of Kathy's Work
+
+0Kathy's approach to her work is exemplified by a series of small
+projects which made use of a BOX and a TRIANGLE procedure as
+fundamental building blocks.  The BOX and TRIANGLE procedures
+were constructed during periods of careful, goal-directed
+explorations. 
+
+.he2
+Kathy: Simple Designs
+.NOFILL
+.block 12
+TO BOX			TO TRIANGLE
+1 FORWARD 100		1 LEFT 90
+2 RIGHT 90		2 FORWARD 100
+3 FORWARD 100		3 RIGHT 120
+4 RIGHT 90		4 FORWARD 100
+5 FORWARD 100		5 RIGHT 120
+6 RIGHT 90		6 FORWARD 100
+7 FORWARD 100		END
+END
+
+.spread
+//Figure 11.2/Figure 11.3
+
+
+.adjust
+Box was the first procedure completed by Kathy and her group, and they
+immediately followed by constructing a series of figures making use of
+BOX as a subprocedure.  (See examples in Part II, Chapter 5. section 1.3.2).
+It was quite natural for her to repeat TRIANGLE as well.  She was
+pleased with the result, calling it BUTTERFLY.  She then repeated
+BUTTERFLY six times until the figure "closed".  This new design she
+called 7BUTTERFLY (reflecting an initial miscount of how many repeats
+of the BUTTERFLY procedure she had used).
+
+.NOFILL
+.block 14
+TO BUTTERFLY	TO 7BUTTERFLY
+1 TRIANGLE	1 BUTTERFLY
+2 TRIANGLE	2 BUTTERFLY
+END		3 BUTTERFLY
+		4 BUTTERFLY
+		5 BUTTERFLY
+		6 BUTTERFLY
+		END
+
+
+
+
+.spread
+/Figure 11.4//Figure 11.5
+
+
+.adjust
+Following her initial exploration with triangles, Kathy's teacher
+suggested that she put her TRIANGLE and BOX procedures together to make
+a "house".  After some goal-directed exploration, the HOUSE procedure
+resulted.  Kathy immediately repeated HOUSE four times (calling this
+new procedure HOUSE4) until the design
+closed.  Next she wanted to see how her HOUSE4 design and 7BUTTERFLY
+would go together.  She named the result HB47, indicating its
+relationship to HOUSE4 and 7BUTTERFLY.
+
+.nofill
+.block 6
+TO HOUSE	TO HOUSE4	TO HB47
+1 TRIANGLE	1 HOUSE		1 HOUSE4
+2 RIGHT 30	2 HOUSE		2 7BUTTERFLY
+3 BOX		3 HOUSE		END
+END		4 HOUSE
+		END
+
+.block 17
+.sp 15
+.ce
+Figure 11.6
+
+.he2
+Kathy: Drawing a Spider
+.adjust
+This set of projects culminated when Kathy declared that HB47 "looks
+like a spider," and returned to goal-directed activity, adding a series
+of circles to the design, to produce the procedure SPI.
+
+.nofill
+.block 14
+
+
+TO SPI
+2 RCIRCLE 30
+3 LCIRCLE 30
+4 RCIRCLE 20
+5 LCIRCLE 20
+6 BK 30
+7 RCIRCLE 10
+8 LCIRCLE 10
+END
+
+.ce
+Figure 11.7
+
+.adjust
+Although Kathy had constructed HB47 and its subprocedures by repeating
+simple shapes over and over to make a symmetrical design, she was also
+able to make explicit use of both right/left symmetry and similarity of
+shape in the process of constructing her "spider".  It was this
+combination of more or less random explorations 
+involving existing procedures, with expert use of heuristics such
+as similarity and symmetry when working in a goal-directed manner, that
+most commonly characterized Kathy's work.
+
+.epage 1
+When Kathy repeated her borrowed XMASTREE procedure, she found that many repeats made a lovely, complex design.  Here she used
+recursion, since she was not concerned about how many times the procedure was repeated in all.
+(Figure 11.8)
+
+.block 20
+.sp 18
+.ce
+Figure 11.8
+
+Later in the series of classes Kathy did a lot of 
+exploration with arcs and circles, and began to work on some longer projects.  
+One day she decided that a series of arcs "looks like a 
+worm," and wrote the procedures WORM and WORMY (in which WORMY is exactly twice the size of WORM).  (Figure 11.9)
+
+.NOFILL
+.block 17
+TO WORM
+1 RARC 30
+2 LARC 30
+3 RARC 30
+4 LARC 30
+5 RCIRCLE 10
+END
+
+TO WORMY
+1 RARC 60
+2 LARC 60
+3 RARC 60
+R LARC 60
+5 LCIRCLE 20
+END
+
+.ce
+Figure 11.9
+
+.adjust
+.he2
+Debugging a Monster
+In a later experiment, which made use of symmetry in an unusual way, Kathy 
+created an exotic looking "Monster."  (See Figure 11.10).
+
+.block 21
+.sp 19
+.ce
+Figure 11.10
+
+When she decided to teach MONSTER to the computer, the 
+teacher suggested that she break up the project into parts.  
+She isolated three parts, and decided to name them MO, NS, and TER, so that her procedure MONSTER would be:
+
+.block 6
+.nofill
+TO MONSTER
+1 MO
+2 NS
+3TER
+END
+
+and the subprocedures were:
+
+.block 8  
+TO MO		TO NS		TO TER
+1 RARC 40	1 LARC 40	1 RARC 40
+2 RARC 20	2 LARC 20	2 RARC 20
+3 LARC 40	3 RARC 40	3 LARC 40
+4 LARC 20	4 RARC 20	4 LARC 20
+5 LCIRCLE 20	5 RCIRCLE 20	5 RCIRCLE 20
+6 RCIRCLE 20	6 LCIRCLE 20	6 LCIRCLE 20
+END		END		END
+
+.adjust
+Kathy may have realized that MO and TER were identical, but 
+in any case, she wanted to have TER 
+as a distinct procedure to follow through on her naming scheme.  
+Now, when Kathy typed MONSTER, the result was.
+
+.block 18
+.sp 16
+.ce
+Figure 11.11
+
+Kathy had forgotten to include the interface steps between the three procedures, so that when she ran 
+the procedure MONSTER, the result was quite discouraging.
+When asked for help in debugging the teacher suggested running 
+MO, NS and TER separately.  When Kathy did so, she could see that the intermediate steps had been left out.  
+Her teacher helped her to work out what 
+these steps should be, and in its final incarnation, MONSTER became:
+
+.block 10
+.nofill
+.indent 6
+TO MONSTER
+1 MO
+2 BK 60
+3 NS
+4 FD 60
+5 LT 90
+6 TER
+7 LARC 40
+END
+.indent 0
+
+.adjust
+Kathy's last project, carried out during classes 21 and 22, also involved symmetrical arcs, and also required a good deal of debugging.  In this case, Kathy had tried out a long sequence of direct commands, and made a mistake or two in copying them into her notebook.  When her procedure turned out to be buggy, she had to spend a lot of time stepping through it, in order to figure out which steps were wrong, and how to fix them.  Since she had numbered all her steps by ones, she had to do a great deal of unnecessary retyping.  
+At several points in her work it had been suggested to Kathy that she number steps by fives
+or tens, but she had never felt 
+a need to adopt that suggestion.  (In the class following this one, Kathy had a visitor, Renee, who was learning to write a procedure.  When Kathy taught her, she told her to number the steps by tens.  It seems that she got the point, however belatedly.)
+
+.he2
+Exploring Angles
+.block 5
+13. Exploring the Effects of Different Angles
+
+0If Kathy's work had an area of weakness, it was in Turtle Geometry.
+ Kathy had difficulty estimating angles right from the start, and
+tended to stay away from projects that made it necessary for her to
+work precisely with angle mnaipulations.  Although she and the teacher
+had "talked through" the idea that "when the turtle goes all the way
+around, it turns 360 degrees, as part of Kathy's circle project, this
+became an idea that she "filed" away, and did not find much use for on
+her own.
+
+To help Kathy focus on the effects of using different angles, she was shown a
+POLY :ANGLE procedure.
+While she liked the designs that it made, she did not analyze the connection between the input number, and the shape that resulted.  In her first session experimenting with POLY, she used the inputs 88, 234, 12345, 300, 344, 90, 199, 125, and 888, 666, 555, and 77.  Although 
+she used POLY again on several other occasions, she continued to choose inputs fairly randomly.
+
+.block 14
+.sp 12
+.ce
+Figure 11.12
+
+During class 20, she was experimenting with her procedure WOW which drew a set of nested squares.  She was trying to rotate this to create a particular design, (figure 11.7) but 
+could not determine the correct angle
+despite several attempts.  To help her focus on the problem, she was
+shown the procedure.
+
+.block 6
+.indent 6
+.nofill
+TO SPINWOW :ANGLE
+10 WOW
+20 RIGHT :ANGLE
+30 IF HEADING = 0 STOP
+40 SPINWOW :ANGLE
+END
+
+.indent 0
+.adjust
+This was meant to serve as a vehicle for exploring angles, and for furthering her understanding of variables and STOP rules.
+
+At first she chose inputs like 900, 9999, 777 and 666.  At the beginning of the next class, 
+a discussion was held about "interesting angles," and she was reminded
+that the TURTLE turns all the way around in 360 degrees.  
+It was suggested that numbers that divided evenly into 360 degrees might be 
+"interesting numbers" and that she spent the period experimenting with SPINWOW, and taking notes on the results.
+
+.epage 1
+Initially Kathy began using inputs that were factors of 360, like 4, 12, and 18, 60 and 90.  She quickly branched out to 100, 200, 400, etc.  Since she had been specifically asked to take notes on the results, she paid careful attention to what was happening, for the first time.  For example, she counted the number of "cones" that appeared in the designs, and this showed her that certain figures (SPINWOW 200  and SPINWOW 400) looked "the same".  Her notes, entitled "Interview with SPINWOW'S" are copied from her notebook (see Figure 11.13). (compare 
+this with Monica's work with her procedure WISHWOW).
+
+Interview with SPINWOWS
+
+.indent 6
+SPINWOW 40:  it had 9 points it looked like a spiders web.
+.br
+SPINWOW 200:  looks exactly like spinwow 40.
+.br
+SPINWOW 400:  looks exactly like the two above.
+.br
+SPINWOW 600:  it has three points looks like a martian face.
+.br
+SPINWOW 120:  looks like SPINWOW 600 has that martian face look.
+.br
+SPINWOW 30:  it has 12 points looks like a combined thing of a snowflake and a spiders web.
+.br
+SPINWOW 90: it just makes a biger wow
+.br
+SPINWOW 140:  it has about 17 points looks like a snowflake.
+.br
+SPINWOW 60:  looks like a wow that was done 6 times has 6 points.
+.ce
+ .  .  .  .  .  .  .  .  .  .  .
+
+.indent 0
+Kathy liked to initiate new projects, was comfortable with new ideas, and enjoyed the challenge of working on something to which the answer was not known in advance.  She accepted the existence of bugs - even coined the phrase "exterminating" to replace "debugging" -- and was willing to work to resolve them.  On the other hand, she usually chose to work on small projects, and to carefully limit the tools required for any task that she set herself.  This was her way of remaining in control of her work, making sure that her experience was not too confusing for her.
+
+If Kathy
+continued with LOGO classes, 
+she could have worked on more projects using angles as variables, and
+on at least one long term
+project that required advanced planning and the use of subprocedures.  More work in these areas would have nicely rounded out her LOGO experience.
+
+

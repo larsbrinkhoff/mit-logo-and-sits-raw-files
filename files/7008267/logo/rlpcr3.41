@@ -1,0 +1,742 @@
+.dv press
+.fo 0 Helvetica11
+.fo 1 Helvetica12B
+.fo 2 Helvetica10
+.so r;r macros
+.ls 1
+.nf L
+.margin 1.25i 1.25i 1.25i 1.25i
+.tr ^
+1DRAFT
+
+1Powerful Ideas and Cognitive Reorganization0
+
+RLPCR3
+
+1ABSTRACT0
+.fi b
+
+See RLPCR1^^^^^^^^^^The material of this paper is Miriam's pre-programming computer experiences with Logo during THe Intimate Study.  The theme is the pattern shown in the incorporation of powerful ideas and how this pattern permits us to better envison the organization of cognitive structures.
+.sp 2
+.in 4i
+Bob Lawler ^^7/24/81
+.in
+.ls 1
+
+1CONTENTS0allocated
+
+.nf 
+III.^The Idea of Iteration in Generated Designs (rlpcr3)
+^^^^^A.^Introductory: variables, iteration, and not understanding2
+^^^^^B.^Designs are different from getting around: MPOLYF + 4
+^^^^^C.^Lack of comprehension: TIMES, Smajor
+^^^^^D.^Experiences and local learninglongish
+^^^^^E.^Evidence of Later Understanding1
+^^^^^F.^The Generative Experience3
+^^^^^G.^RODS as archetype?
+^^^^^H.^Multi-level mental integration?
+.bp
+IIIA. INRTRODUCTION
+^^^1.start with DIJKSTRA epigraph - use this for a peg to swing from
+^^^^^in historical discussion of my objectives.  Concluded with
+^^^^^citation of Elliot and discussion of issue of reorganization,
+^^^^^deepening of syntonic meaning, and exploration of powerful ideas
+^^^^^in theior relation to clustered cognitive structures.
+^^^2. Bridge via using result of Two Geometries; contrast its
+^^^^^chronological presentation pn linear development with the
+^^^^^following a-chronological presentation.
+^^^3. presentational struggle: breadth of coverage and various
+^^^^^characters:
+^^^^^^^a. engagemenet and revulsion
+^^^^^^^b. miscomprehension and striking insights.
+^^^^^^^c. concreteness vs variable separation.
+^^^^^^^d. all with material not overly familiar to audience.
+
+IIIB.  Establish differentness of DESIGN microworlds from Navigations:
+^^^1. MPOLYSPI: engagement with non-comprehension, specifically in the
+^^^^^sense of not relationg to FORWARD and RIGHT.
+
+IIIC. Lack of Comprehension: TIMES and S; POLY counting example.
+
+IIID. Experiences and Local Knowledge.
+^^^1. variables and slot.
+^^^2. variable separation and social context.
+^^^3. emergence in Pretty Flower (point to E&L); intellectual excitement.
+^^^^^Does not imply analytical understanding.
+^^^1. methodological in one variable.
+^^^2. capable of concrete variable separation.
+^^^3. focus on interest in sameness or differentness as appprx equal
+^^^^^to not suspecting the depth of possible knowledge.
+
+IIIE. Evidence of later connection: how and why ?
+
+IIIF. Centrality of RODS maze experience; its detailed story; note later
+^^^^^spontaneous appearance in play (after years, as typical reaction).
+
+IIIG. RODS as archetype: simple; general; but WHAT is connection ?
+^^^1. local coherence, but is it deep.
+^^^2. connectible to what ?
+^^^3. why is connection hard but possible ?
+^^^4. why concrete ? symbolic mediation hard, not yet automatic.
+^^^5. turtle on the bed as similar to ACR stories; lapse of time till
+^^^^^^^TOB game.
+
+IIIH. Integration of multi-level things as intellectual parallel to the
+^^^^^infants hand/eye coordination.
+^^^1. Peggy's games and multiple selves.
+^^^2. kinesthetic/intellectual parallel: no claims but various possible
+^^^^^speculations.  HIGH BRIDGE VIA LOW BRIDGE resolves Piaget/Chomsky
+^^^^^impasse.
+^^^3. Galton phenomenon and personal construction of individual modes of
+^^^^^of thouight based on experience derived integration of powerful ideas.
+
+.bp
+.fi b
+.ls 1
+"Once a person had understood the way in which variables are used in programming,
+he has understood the quintessence of programming.^^^[I]t is the repetition
+that really calls for the concept of "a variable".  (Without repetition one can
+restrict oneself to "quantites" the value of which has to be defined at most
+once but never has to be redefined as in the case of a variables.)"
+
+E. W. Dijkstra
+
+.ls 2
+IIIA.^^^^^^^^^^The focus on Miriam's understanding iteration began with this observation of Djikstra, and its influence is witnessed by my objectives in offering Miriam the sorts of experiences to be discussed here -- but what she made of those experiences is  a different issue and in fact the one we follow in this place.  The material is of general interest because it leads us to confront the problem of cognitive reorganization on the scale of local clusters of knowledge and because the interpretation results in a deeper appreciation of how articulate understanding of late experiences can be seen as related to and related through earlier structures.
+
+IIIA2.^^^^^^^^^^The material of "Navigation in Two Geometries" was essentially sequential, uni-dimensional in terms of relevant experiences and their sequence in time.  The basic pattern witnessed in this section is similar: a late-occurring experience gives rise to a cognitive structure which can help make sense of earlier experiences; the microworld the experience generated functions as an archetype and, because many such experiences could be knit together through mediation of this post-cedent ancestor,  we refer to it as the NUCLEUS of a microworld cluster.  The pattern generally represented by this material we name THE NUCLEATION OF MICROWORLD CLUSTERS and offer it as an example of a basic type of cognitive reorganization.  In contrast with "Two Geometries", the experiences reported here were more various and developed in a fragmentary, overlapping, and much entangled order.  The variety of the material and of Miriam's reception of it was considerable.  Engagement is balanced otherwheres by revulsion and rebellion.  Miscomprehension is controverted by striking insights.  The concreteness of her understanding is set off by the achievment of relatively abstract formulations of knowledge.  Furthermore, many essential elements of these experiences partook of a highly particular nature and involve details with which no reader could be familiar.  Consequently, for clarity of presentation, this material will be presented in an order more logical than chronological and descriptions of the experiences themselves will be more summary-like than thorough.  (Explanations more supplemental -- in a presentational sense -- have been excised from the body of this text and are presented in the appendix.  Further detail may be found in One Child's Learning, 1979).
+
+IIIA3.^^1Early Experiences with Iteration0^^^^^^^^^^What preceding knowledge, what UR-CONCEPTS, of iteration did Miriam own^?  At least these five.  Recall first Miriam's initial interpretation of RIGHT 90, which was, "turn right a little bit ninety times".  She began that turning and was controlling her action by incrementing a counting variable.  Second, observe that Miriam's favorite song "Foofoo",[note 2 ] witnesses decrement controlled repetition.  Next, repeating an action till stopped is pervasive.  Consider, for example, the "spinning dizzy" game Robby and Miriam enjoy: they stand with arms outstretched and spin on and on until they can do it no more, then stagger about giggling and disoriented.  Such is simple iteration finally interrupted by an extrinsic constraint.  Further, the idea of repeating a procedure until a controlling set of objects is exhausted must be very basic.  For example, one eats candy till she has no more and then stops.  Conversely, the building up of a set of objects until it is complete is represented in Miriam's composing the backward alphabet (Logo Session 13, age 6;1;16).  I cite these examples  here not to argue that any particular one served as a specific precedessor but merely to indicate how pervasive and varied are ideas of iteration which a child might typically bring to an encounter with computer procedures.  Since the issue of control structure is not endemic in the popular culture, however, we should not be surprised if children do not own any articulate descriptions of the experiences of iteration they have had.  That is, they may be able to DO iteration but not describe it.
+
+
+1MPOLY: the First Generated Designs0
+
+IIIB.^^^^^^^^^^Miriam's appreciation of angles, as turning in turtle geometry navigation, has been discussed in the preceding section.  Here we focus on a second and very different use of "angle" which much engaged Miriam early in The Intimate Study.  Let me begin by describing this application in its most developed form.  Langer (1959) recommends we take seriously this idea: :
+
+.ls 1
+.in .5i
+"all the genuine, deep delight of life is in showing people
+the mud-pies you have made; and life is at its best when we
+confidingly recommend our mud-pies to each other's sympathetic
+consideration." 
+
+.in
+The sharing of their work with others delights little girls  no less than grown men and women.  When Miriam's closest kindergarden friends joined her individually for an afternoon at the Children's Learning Lab, they most enjoyed using the computer as a tool for making gifts for others.  Thus Lizzie on one visit said she wanted pictures of a flower and explained:
+
+.in .5i
+.ls 1
+^^^Earlier in the year, Miriam had made copies of the image made by a FLOWER procedure and took one for each member of her kindergarden class; the children colored the designs and took them home.  While we waited for her FLOWER picture to come out of the printer, Lizzie saw a six-fold near-triangular polyspiral (see Figure 5-c) which Robby had printed from a different termial: "Wow^!  I want one of those.  Show me how to do it^!"  After I started the MPOLY procedure, Miriam and Lizzie worked together for over two hours creating designs for later coloring.  Both girls made some very pretty, novel designs.
+ (from Vignette 103, 6;6;7)
+.ls 2
+.in
+.fi b
+Operating under a set of controlling variables (including "angle") incremented or decremented from the keyboard, the MPOLY procedure generated designs with circularly dispersed N-fold repetitions of polygonal spirals.  Figure 6 presents four typical examples of generated designs.  This very useful procedure for a child, MPOLY, exhibits an application of "angle" which is only distantly connectible to the use of the term "angle" as an operand of a turning operation.
+.bp
+1FIGURE 50
+.sp 16
+MPOLY 6-fold 120MPOLY^6-fold 123
+.sp 16
+MPOLY 9-fold 120MPOLY^9 fold 175
+.fi b
+.bp
+IIIB2.^^^^^^^^^^Let Miriam's own words from Logo session 23 (6;2;2) describe  her appreciation of polyspiral designs.  Of one with an angle of 116, "That's a beauty one."  When asked why she was incrementing by one the angle value input to POLYSPI, "I'm trying to find the one's I love."  As the angle variable value passed through the region of 144 degrees, creating several variant stella-form designs, Miriam declared, "They're all my favorites."  These citations do not merely testify that Miriam enjoyed "playing with computers".  More importantly, they mark part of the quality of her relation to a specific body of knowledge, the MPOLY microworld.  This world contains knowledge permitting the creation of artifacts both pretty and useful -- i.e. printed patterns may be colored and given as gifts.  Further, those adults to whom Miriam (and Lizzy) gave such gifts were truly astounded with them.  The final element of Miriam's relation to this MPOLY world was that its use led to the very striking puzzles (such as the colapse of the designs into straight lines around angle values that were multiples of 180 degrees).
+
+IIIB3.^^^^^^^^^^Among the many occasions in which Miriam playerd with MPOLY, Session 27 (6;2;15) is one I value especially as being both playful and fecund.  Some of its highlights are the following.  Before the session began, I modified the MPOLY procedure to accept only a single type of input -- a number specifying an angle value.  Two immediate consequences were that Miriam had to specify angles (instead of changing them by + and -) and she could not make pictures on the printer of the contents of the video screen.  Thus we built up a list of "good numbers" for this MPOLY world.  Miriam noticed and remarked upon the symnmetry of shapes made with angles of 170 and 190 degrees but did not appreciate it.  When I argued the fact was surprising, Miriam split the difference and rediscovered the disappearance of designs at 180.  When I suggested she try an angle of 90 degrees, she keyed instead 60.  Miriam was delighted to see the regular hexagonal maze.  (Later, she was angry with Robby for using "her" angle value, 60, in a set of designs he made; each angle seemed to her the label for a new thing she invented, created or discovered.)  Miriam then began a somehwhat systematic exploration, trying in sequence the angular inputs 60, 70, 80, 90, 100.  Next she began varying the angle by one degree -- first trying out 101 and then 59 and 58.  After a break in the session, I tried to focus Miriam's attention on the cyclic symmetry, e.g. the identity of designs with angles 30, 390, and 750, instead of following her lead.  Miriam backed away from exploration then, but not before she described the design variations near "her" angle of 60 degrees:
+.ls 1
+.in .5i
+.nf L
+
+Bob:^^^^(After Miriam had keyed 58) Why don't you go up by 1 ? Try 59 ?
+Miriam:^I already did it.
+Bob:^^^^You did 59 and 60 ?
+Miriam:^Yeah. 50 and 60.
+Bob:^^^^Do you remember what 60 looks like ?
+Miriam:^ (A positive head shake)
+Bob:^^^^What ?  Can you tell me ?  Can you describe it ?
+Miriam:^It's sort of like this (she gestures to the POLYSPI 58), but
+^^^^^^^^bigger, and it's got a maze, like in it, but doesn't have
+^^^^^^^^the curly things.
+
+.in
+.ls 2
+.fi b
+IIIB4.^^INFERENCES^^^^^^^^^^Miriam's MPOLY world at this point was one of fascinating phenomena.  The central variable was "angle", but this "angle" could not have connected in any directly meaningful way with the "angle" operand of a right turn.  Further, the particularity she assigned to angles is staggering to anyone with a more general perspective.  How could one imagine "owning" an angle^?  I infer her MPOLY world viewed the miniworld of computer designs as one of disorderly but engaging objects.  Miriam explored this range of phenomena in an orderly way.  But  incrementing by tens did not suggest some sensible way of separating designs, by the numbers, into her classes of mazes, messes, pretty stars, and "ones with the curly things".  We can not consider Miriam's use of input "variables" with MPOLY as any different from her use of operands with the primitive operations of turtle geometry.  That is, these input variables were no more than numbers given to an uncomprehended primitive (and a very powerful one) to make it work its attractive but incomprehensible function.
+
+
+1TIMES: A Lack of Comprehension0
+
+IIIC1.^^^^^^^^^^Miriam was introduced to iteration as a distinct theme through the medium of a procedure generator, TIMES, which permitted her to repeat any string of turtle geometry commands.  At her first meeting the TIMES generator, in Logo Sesson 13 (6;1;16), she found it easy to use and enjoyed visual displays created by her procedures.  Throughout the sessions with TIMES, Miriam's interest was in creating images that would "grow" according to her satisfaction.  When the images did not grow, as for example the star made through a procedure repeating [FORWARD 100 RIGHT 144], Miriam declared she preferred another to it.  I believe she found the simplest, regular figures boring.  As we tried developing designs, Miriam's objective was generating the sorts of figures she had encountered using MPOLY.
+
+IIIC2.^^^^^^^^^^We came to distinguish two different kinds of growing figure, the first growth being achieved through the non-overlapping of the turtle's path when a partial sum of turns was close to but not equal to 360 degrees.  For example, (see Figure 6B) if the turtle repeats [FORWARD^100 RIGHT^122], three iterations leave a partial angle sum of 366 degrees and draw an unclosed "triangle".  Successive near-triangles appear displaced by a rotation around a center.  This is the growth of turning which first delighted Miriam but which she later complained of (as "not growing bigger") in Logo session 22.  When I first modified a simple repeating procedure to function as a POLYSPI procedure (in Logo session 21, age 6;1;31), Miriam did not understand how it worked but adopted and enjoyed the procedure (PSTAR, see Figure 6C).    Miriam wanted to make designs which grew bigger, and she cared not the least how many lines it took to make a design.  Therefore, she needed to know how to use variables.  (If she had known at procedure generation time how many repetitions would suffice for a design, she could have still used "quantities", however inelegant the resulting procedure.)  Miriam was introduced to variables in the context of iterations produced by the TIMES generator.  This use involved her with COUNT, a variable through which we specified quantity for controlling the iterations of generated procedures.
+
+
+IIIC3.^^TIMES^^^^^^^^^^The TIMES generator satisifies three objectives simultaneously.  FIrst, it ermits easy creation of procedures of the POLY class.  (A companion editor, VARY, permitted transforming POLY procedures into POLYSPI procedures.)  This gives the child access to the power of iteration and permits his engagement with and enjoyment of designs without requiring he first know how to write procedures.  Secondly, the generated procedure is an object which could be names, owned , and removed -- by its separate existence -- from the mystery of the process which generated it.  If I adopt Howard Peele's distinction (**in ?????, Peele, 197?) between a "black box" ( a device you use effectively but whose innards you do not care or dare to examine) and a "glass box" (an object whose functions are comprehensibly displayed by its internal structure), I would summarize the second objective as providing functional capability through a black box (TIMES) which creates glass boxes (such as PSTAR).  The third objective, to exhibit the COUNT of count-controlled variation first as a quantity then as a probably comprehensible application of a variable, becomes possible through generating different forms of iterative programs.  Since the complications possible went beyond Miriam's experience and achievments within The Intimate Study, let me summarily describe TIMES' capabilities then proceed to Miriam's experience.
+.bp
+FIGURE 6
+Designs from TIMES Generated Procedures
+.sp 16
+A POLY Class DesignSTAR: a non-growing POLY Class Design
+PSTAR:A POLYSPI Class Procedure???^^^^^
+.bp
+^^^^^^^^^^Three primary means of encoding iterative procedures are step-duplication, looping, and recursive invocation.  (I make no claim that there are no others.)  Step-duplication, which requires that a fixed number of iterations be specified at procedure generation, simply repeats the basic string of commands, the KERNEL I call it, as successive procedure steps for that fixed number of times.  For example, in Logo session 28, Miriam generated a procedure, called POLY, with 24 duplicated steps.  As first generated, the procedure appeared like this:
+.ls 1
+.in .5i
+.nf L
+TO^^^POLY
+1^^^^FORWARD^100^^RIGHT^90^^WAIT^30
+2^^^^FORWARD^100^^RIGHT^90^^WAIT^30
+-^^^^^^^.^^^^^.^^^^^.^^^^.^^^^.^^^.
+-^^^^^^^.^^^^^.^^^^^.^^^^.^^^^.^^^.
+-^^^^^^^.^^^^^.^^^^^.^^^^.^^^^.^^^.
+23^^^FORWARD^100^^RIGHT^90^^WAIT^30
+24^^^FORWARD^100^^RIGHT^90^^WAIT^30
+END
+
+.fi b
+.in
+.ls 2
+This procedure was generated when Miriam responded with the number "24" to TIMES' query "STOP ON COUNT OR DATA CONDITION^?"  At another time, in Logo session 14, Miriam's response to that uestion with the key word "COUNT" caused generation of a decrementing, count-controlled looping procedure, TRI:
+.ls 1
+.in .5i
+.nf L
+TO^^^TRI^^^^:COUNT^^^^^^^^^^^^^^^^^^^^^^^^^^^^^TO^^STAR
+1^^^^IF EQUAL 0^^:COUNT,^^STOP^^^^^^^^^^^^^1^^FD^^100^^^^RIGHT^^144
+2^^^^MAKE^^"COUNT^^^^(:COUNT^-^1)^^^^^^^^^2^^STAR
+3^^^^FORWARD^100^^RIGHT^120^^^^^^^^^^^^^^^END
+4^^^^GO^^1
+END
+
+.ls 2
+.in
+.fi b
+The STAR procedure above, one of unbounded tail recursion, was generated by Miriam's ignoring the query for definition of a stop rule.  The TIMES generator was complete enough to permit othert controls of iteration, but Miriam never went much beyond these three basic forms of iteration, so let us stop preliminaries and go on to how Miriam used TIMES.
+
+IIIC4^^Two Variables^^^^^^^^^^Miriam was introduced to her first use of COUNT in Logo Session 14 (6;1;17).  She had little trouble in accepting the idea that a quantity submitted to a procedure could specify the number of times subordinate actions were executed.  It was easily accessible (recall RIGHT 90 as "turn right a little 90 times") and directly inferable from the turtle's behavior.  By contrast, the role of the variable ":SIDE" input to the recursive procedure PSTAR was not comprehensible.
+
+.nf L
+.ls 1
+.in 1.5
+TO^^PSTAR^^^^:SIDE
+1^^^FORWARD^^:SIDE^^^^RIGHT^^146
+2^^^PSTAR^^^(^:SIDE^+^4^)
+END
+
+.in
+.ls 2
+.fi b
+Miriam's failing to discriminate between an iteration controlling command and one applied as a movement operand turned our focus in subsequent sessions to that task.
+
+
+^^^^^^^^^^The over-theme of Miriam's computer experience was that if you want to change or understand a procedure, you must look inside to see how it works.  This simple point is the most basic one of all.  There are two ways to determine what a procedure does.  One way is to try it; the second way is to analyze it.  This observation is central to debugging, (a major theme of the companion paper to this, Enculturation and Learning), which is most commonly the analysis of procedures that have produced unexpected results.  This task of analyzing procedures assumed its specific form in Logo Session 28 (age 6;2;26, recorded on videotape) because Miriam did not discriminate between an input used as an operand variable and one used as an iteration control.  Here I directed Miriam to create a POLY procedure using the fixed-count option of TIMES with a kernal [FORWARD 200 RIGHT 90 WAIT 30].  (The last term was to slow down the turtle so his iterations could be easily counted.)  Miriam read the lines of the procedure, one by one.  I stopped her:
+
+.in .5i
+.ls 1
+.nf L
+Bob:^^^^What your're saying is that every time the turtle does something,
+^^^^^^^^he goes forward 200, right 90 and waits a little bit.... How many
+^^^^^^^^times does it do that^?
+Miriam:^24... (pointing at the last step displayed) I just looked at that.
+
+.in
+.fi b
+.ls 2
+Despite her witness of how many times the kernel was duplicated, Miriam did not know whether POLY required an input for execution or not.  She tried POLY with no number following and witnessed it working.  I asked:
+.nf L
+.ls 1
+.in .5i
+Bob:^^^^What is it ?
+Miriam:^A square.
+Bob:^^^^And what is it the turtle's doing 24 times ?
+Miriam:^Going around.
+Bob:^^^^He goes forward, right, and waits, and he does it again
+^^^^^^^^and again and again and again until he makes a square.
+Miriam:^(A discovery) He isn't going.
+Bob:^^^^He stopped.  He must have done it 24 times.  Let's do POLY again .
+^^^^^^^^We'll count and see if he does it 24 times.
+
+.in
+.ls 2
+.fi b
+Miriam had identified the unit of the turtle's action as the making of a square.  When we counted his actions, I counted out loud to "6", that is one and one half squares.  Miriam continued counting under her breath and concluded with "ten".  (Her count was correct in its way: I had counted six for six sides; she counted four for the remaining eighteen sides by counting "six" again at eight, "seven" at twelve, "eight" at 16, "nine" at 20, and "ten" at 24.)  Confused then by her answer, I asked her if she were joking.  Miriam made a joke of it, then continued:
+.nf L
+.ls 1
+.in .5i
+Miriam:^Can I POLY 1 (i.e. invoke POLY with an input variable value 1) ?
+Bob:^^^^Do whatever you want.
+Miriam:^(Keys clear and POLY)  Need a number ?
+Bob:^^^^No.  Well, try it.  A good way to find out whether you need things
+^^^^^^^^is to try them.
+Miriam:^(Keys 1, then 0, 0, 0.)
+Bob:^^^^O.K.  Type a new line.  See what happens.
+Miriam:^(Counts.  When the turtle stops after 24 sides she is surprised
+^^^^^^^^and complains): I wanted it to do my number !
+
+.fi b
+.in
+.ls 2
+We must conclude that here the idea of iteration was vaguely but definitely connected with that of an input value and that the units Miriam deemed significant were shape-defining more than action-specified.  That is, they applied in terms of Design iteration, not of Navigation primitive actions.
+
+^^^^^^^^^^Reviving the theme of making shapes grow, we began to vary the POLY procedure.  First, we (together) made the 90 degree turn 93 degrees.  Miriam could not predict the result of this change.  She was entirely apathetic at first:
+.nf L
+.in .5i
+.ls 1
+Bob:^^^^What do you think will happen ?  Any idea at all ?
+Miriam:^(Head lolling over, hands on eyes) No.
+Bob:^^^^Would you like to make a guess ?
+Miriam:^No.
+Bob:^^^^Let's see.
+Miriam:^(Keys new line.)
+Bob:^^^^Oh...it looks like a square....Whoops, he missed.
+Miriam:^(With a delighted smile)  How many times is he doing that ? 93 ?...
+^^^^^^^^Isn't that pretty ?
+Bob:^^^^Does it grow now ?
+Miriam:^It isn't growing the way I wanted.  I wanted it to make a square
+^^^^^^^^(she gestures to show the size of the square with closed hands) and
+^^^^^^^^it would grow whooooo !  (the increased size is shown by her hands
+^^^^^^^^getting wider apart.
+
+.in
+.fi b
+.ls 2
+Can one ask for clearer evidence that Miriam had not connected comprehensibly the worlds of movement (personal geometry and Navigation) with Design^?  Is this a result to advertise ?  Why should anyone make much of a bright child's failure to understand ?  Let us continue a little further, for now Miriam made a discrimination which brought the different perspectives of these worlds into somewhat better registration -- but the path of learning was tortuous.  In this next incident, we tried to determine how many times the turtle executed the POLY kernel.
+
+.in .5i
+.nf L
+.ls 1
+Bob:^^^^We'll do POLY again and see how many times he does it.  You can count,
+^^^^^^^^or do you want me to count ?
+Miriam:^(Keys clear and POLY) You.
+Bob:^^^^(Counting by twos, once for each side.) 2, 4, 6...
+Miriam:^(Staring with a disbelieving and disgruntled look)  Count by ones.  
+^^^^^^^^I didn't say by twos.
+Bob:^^^^You didn't say how to do it.
+Miriam:^What's 48 plus 48 ?
+Bob:^^^^96.
+Miriam:^(A complaint) I said 93 !
+
+.ls 2
+.fi b
+Miriam said "93", but "93" what ?  This speculation of Miriam's (that a two had something to do with the surprising result of my count) shows a theory driving the wrong way with a wrong idea to an anticipated result, then a complaint arising because the results were not quite "perfect".  We tried again:
+
+.nf L
+.in .5i
+.ls 1
+Bob:^^^^You count this time.  (Keys clear POLY)
+Miriam:^Yeah.  1, 2, 3... (counting once for each side, she concludes her silent 
+^^^^^^^^count with a questioning look) 26 ?
+Bob:^^^^26 ?  I got 24, but you're very close.
+Miriam:^What is it ?
+Bob:^^^^Well, I think it's 24.  You know why I think that ?
+Miriam:^Why ?
+Bob:^^^^(Lists the POLY procedure on the terminal) Take a look.  He does 1, 2, 3, 
+^^^^^^^^and so forth things.  But he only does 24 of them.  He does the first,
+^^^^^^^^second, third --
+Miriam:^(Interrupting) I said 94.
+Bob:^^^^Miriam:^You said 93, and that made the angle 93.
+
+.ls 2
+.in
+.fi b
+We varied POLY to other angles.  Miriam picked out 80, 144 and 149.  She was delighted with them all, but a puzzle remained I would not let her escape (with angle operand at 149):
+
+.nf L
+.ls 1
+.in .5i
+Bob:^^^^How many times did the turtle go forward and right ?
+Miriam:^I don't know.
+Bob:^^^^What do you think he might have done, if you had to guess ?
+Miriam:^I don't know.
+Bob:^^^^You think it might a hundred and forty nine ?
+Miriam:^Yes. A hundred and forty nine.
+Bob:^^^^Let's do it again and we'll count everytime the turtle goes.
+^^^^^^^^Will you count or me ?
+Miriam:^Me !
+Bob:^^^^(Keys POLY) You keep a good count.
+Miriam:^(Counts under her breath as the procedure executes.)  24.
+Bob:^^^^24 it is.  What's the hundred forty nine ?
+Miriam:^A turn.
+
+.fi b
+.in
+.ls 2
+With this comment Miriam shows her making the discrimination between a turn (as a component operation) and the number of times it is done.  Shortly thereafter she made a similar discrimination.  We end here our reportage of iteration with minimal variablization.  What should we conclude ?
+
+IIIC?^^Speculations^^^^^^^^^^The most striking change must be in our expectations.  We originally argued how easy it would be for Miriam (or some other child of her age) to understand iteration.  Now it seems we are reduced to arguing that she could distinguish between two quantites with the evidence of both tests and analyses before her.  Though others may judge this a falling off, I find it illuminating and troubling.  My sense of this interpretation is that the process of analysis is profoundly retrograde to the primary developmental mechanisms of the human mind.  The elevation of control names the process of packaging functions for invoked executions.  The idea that such packaged functions are directed in executions by "input variables" assigns too great a degree of control to invoking processes.  Better we think of control elevation as producing specific functions which may be perturbed or modified by some qualifications.  That is, the elevation of control may be likened to closing the lid on a black box.  Once you forget about what is inside, do you deal with "input variables" (of residual lucid definition through the transparency of "glass box" enclosure") or do you cope with the imperfectly recalled correlations between a modifiable function and an input message of limited range^?  The analysis of The Progressive Construction of Mind (Lawler, 1981), focussing on relatively simple learning involved in addition, probably presented too-well-defined examples of microworld interconnection to represent the vaguer relations of one microworld to another in more complicated domains.
+
+
+1Local Knowledge0
+
+IIID.^^^^^^^^^^In the preceding we have witnessed Miriam's failure to understand how the space descriptions of navigation microworlds (and in particular the primitives of turtle geometry) related to the figures created by the TIMES generated procedures.  That her knowledge relating to various Design procedures did not connect with navigation microworlds meant that the knowledge they embodied retained a "local" flavor; it does not imply that the knowledge is insignificant.  The outstanding characteristic of the local knowledge of isolated microworlds is its particularity.  What is known is highly circumstantial.  The form of the knowledge is peculiarly specific, as the two following extreme examples testify.
+
+IIID1.^^^^^^^^^^Variables are important because of their function, because they permit the use of powerful iterative techniques.  Understanding iteration presupposes some understanding of variables.  When numbers are used, they are used in specific applications.  There are five distinct applications of numbers in the Logo language at the introductory level to turtle geometry (procedure line numbers, angles, distances, looping counts, and increments to other values).  Four of these five uses may appear as variable numbers.  Miriam encountered these uses of numbers and their uses as variables in the following Logo subsystems.  TIMES generated various forms of iterative procedures from a kernal of turtle-actions supplied by Miriam; she provided the kernal, and TIMES provided the control structure from her answers to questions.  The SLOT system was based on a device -- an input terminal which would accept pre-coded cards as commands -- designed to render explicit and tangible the sequence of control flow.  With that SLOT system, I introduced Miriam to the coding of polyspiral designs.  The SHAPES (polyspiral) programs were a procedural expression of the activities we had pursued with the SLOT system.  That is, the procedures applied the value of a quantity ("DELTA") to "DISTANCE" (operand of a forward command).  In the sessions focussed on FAMILIES of polyspiral designs, I tried to bring to salience for  Miriam the issue of the separation and stepping of variables as a powerful idea.  Finally, in her experiences with INSPI, she saw the results of applying DELTA to an ANGLE variable.
+
+
+IIID2.^^^^^^^^^^In an unhappy didactic discussioon, I tried to introduce variables generally though liking them to little boxes (representing specific variables with matchboxes) about whose contents one might inquire.  For a variety of reasons, Miriam rebelled against this instruction.  Her useful introduction to variables was with the Slot machine in Logo session 30 (age 6;2;30).  She made some interesting POLY class designs with iterative procedures and fixed quantity instructions, then abandoned the session when I mentioned the word "variables".  Robby in his turn made several POLY designs using both ANGLE and DISTANCE variables.  When he finished, Miriam located her "good number" card and decided:
+
+.in .5i
+.nf L
+.ls 1
+Miriam:^I want 1, 0, 5.
+Bob:^^^^Go ahead.
+Miriam:^How do you do it, the number ?
+Bob:^^^^First we have to type in the keyboard
+Miriam:^(Presses the button of the row containing the keyboard card.)
+Bob:^^^^Do you know how to make an angle ?... See, these words DISTANCE
+^^^^^^^^and ANGLE, are like boxes, and we're going to put a number
+^^^^^^^^in the slot...Make, space, quotes --
+Miriam:^(IUnterrupting impatiently) I know!
+Bob:^^^^You know how to speel "angle" ?  It's here if you don't.
+Miriam:^(As she keys) Space...1, 0, 5... new line ?
+Bob:^^^^Now the distance Robby used last was 100.  If that's a good one
+^^^^^^^^we don't have to change it.
+Miriam:^Let's keep 100.
+
+.ls 2
+.in 
+.fi b
+After this first success with a slot machine POLY procedure, Miriam varied the contents of the variable ANGLE.
+
+
+IIID2.4^^^^^TWO VARIABLES AT ONE TIME^^^^^Miriam had not assigned a value to the variable DISTANCE in Logo session 30.  As the next Logo session began, both ANGLE and DISTANCE were initialized at zero.  After arranging a FORWARD and RIGHT loop and directing control at the keyboard, Miriam assigned 150 as the value of ANGLE.  THe turtle circled in place when she initiated the POLY procedure.  Miriam interrupted the loop with a clearscreen and keyboard invocation:
+
+.nf L
+.in .5i
+.ls 1
+Bob:^^^^...Control is now at the keyboard.
+Miriam:^M, A...Why didn't the hundred and fifty work ?
+Bob:^^^^What was it was a hundred and fifty ?...The ANGLE box has
+^^^^^^^^a hundred fifty in it.  Remembe, there's a DISTANCE also.
+Miriam:^(Frustrated noises.)
+Bob:^^^^You have to tell the turtle how far to go forward....
+^^^^^^^^Do you know how to spell DISTANCE ?
+Miriam:^No.
+Bob:^^^^Here, I will show you....Just key "MAKE QUOTES DISTANCE
+^^^^^^^^some good number.
+Miriam:^(As she keys) MAKE QUOTES...
+Bob:^^^^(AS she keys) DISTANCE, yes.
+Miriam:^Now what ?
+Bob:^^^^What are you going to put in the slot ?
+Miriam:^What slot ?
+Bob:^^^^The slot that's associated with the name DISTANCE.
+Miriam:^I don't know how to do it.
+Bob:^^^^Sure you do.  You did it yesterday.
+Miriam:^No.  I did "MAKE ANGLE".
+Bob:^^^^Well, now doMAKE DISTANCE".  It works the same way.  The turtle turns.
+^^^^^^^^He goes right and turns a number that's in the slot of ANGLE.  When he
+^^^^^^^^goes forward, he goes a distance that's in the slot of DISTANCE.
+
+.in
+.ls 2
+.fi b
+Miriam's first two vartiable POLY was ANGLE 80, DISTANCE 190.  She was delighted with that result and her next trial as well, ANGLE assigned to 150.  Although at first she did not know what to do, with explanation and some direction, Miriam found the practice accessible of assigning variable values.  Miriam didn't know how to "MAKE 'DISTANCE".  She did not recognize that it is the "same" as "MAKE 'ANGLE" which she had done the day before.
+
+IIID2.^^^^^^^^^^During use of the SLOT machine, the angle, 60 degrees, was frequently salient.  We made one day a set of nested hexagons and, after the introduction of a CHANGER operation card (which incremented the variable operand of a forward operation), a hexagonal maze.  Her sense of a proprietary interest shows its beginning in this dialogue (Logo Session 36, age 6;2;30):
+
+.nf L
+.ls 1
+.in .5i
+Miriam:^There...MAKE...(Keys MAKE "ANGLE)
+Bob:^^^^Do you know any good maze numbers^?
+Miriam:^I think I'll try 60. (She keys 60.)
+Bob:^^^^So you made ANGLE 60.  What are you going to make DISTANCE ?
+Miriam:^(As she keys)...1, 0.
+Bob:^^^^10.  O.K.  What about DELTA ?  DELTA's 4 now.
+Miriam:^How about 4 ?
+Bob:^^^^O.K.  Let's leave it alone.
+Miriam:^New Line.  (A POLYSPI 10-60-4 appears).
+Robby:^^Oh wow !
+Bob:^^^^That's a beautiful maze.
+Robby:^^Can we get two prints of it ?
+Miriam:^Mine. (She keys PRS; this is a PRINT SCREEN command.)
+Robby:^^Daddy, when it's done, can we get another print of it ?
+Miriam:^No....Didn't I do a nice thing ?
+Bob:^^^^That's a beautiful maze, Miriam.  What angle was that ?
+Miriam:^60.
+Robby:^^It's really a hexagon.
+Miriam:^Isn't that a beautiful maze ?
+Robby:^^Why couldn't we get two pictures of it ?
+Miriam:^It was my idea.
+
+.ls 2
+.in
+.fi b
+At the end of Logo session 43 -- one wherein Robby  in his turn generated a "family of mazes", i.e. regular polygonal spirals with angles of 120, 90, 72, 60, 45, and 30 degrees -- Miriam entered my office and complained seeing his pictures displayed on the wall.  She complained vigorously that he had used "her" angle of 60 degrees.  This complaint could be dismissed as an expression of jealousy at Robby's achievment and my recognition of it except that it was repeated frequently over following weeks.  The conclusion I draw is that Miriam looked at ANGLE less as a variable capable of assuming a range of values and more as a class name for a collection of objects.  If there is no functional difference in such a distinction, there is a difference in salience: seen as a variable, the function is more forward; seen as a collection of quantites, the particular value is dominant.  In consequence, with the former view,  relations of variables to objects would focus on transformations of values to artifacts; with the latter, the mere association of quantities with artifacts is a quasi-nominal rather than transformational relation.
+
+1Evidence of later connection: how and why ?0
+
+^^^^^^^^^^Miriam did not give evidence of understanding how microworlds of the Design cluster related to those of Navigation during the core of The Intimate Study.  She could use iteration but there was no evidence she understood it as she so obviously did later in the "crawling on the bed game"
+
+.ls 1
+.in .5i
+^^^As I sat at work in the reading alcove, Miriam came to join me.  She offered to sit in my lap, but I protested to being busy and turned her down.
+
+^^^Miriam moped a little, then crawled onto my bed and into the center.  She began to move and spin in a most puzzling and distracting fashion.  "What are you doing^?  You're driving me batty^?" I complained.  My gripe inspired Miriam to explain.  Requesting a pen and a 3x5 card, she drew thereon a right rectangular polygonal spiral to show what she was doing in her "crawling on the bed" game.  Her verbal description was that she was "Making one of those maze things."
+ (from vignette 126, age 6;11;15):
+.ls 2
+.in
+Where did this connectedness (of pattern to action) in her knowledges come from^?
+
+^^^^^^^^^^Since I lived with Miriam, it was an ever present temptation to follow her continuing development.  Thus, on one of those days when the blizzard of '78 left our family snowbound for about a week, while my wife tended our newborn daughter Peggy, I entertained Robby and Miriam with a project we recorded as Home  session 24 (age 6;10;5). The children wanted to play with a set of cuisenaire rods I had brought home from the Children's Learning Lab at Logo.  I agreed, on condition that we begin with a project of my choosing.  The scenario I proposed was this: after they sorted the rods by color (and thus by length as well), I would begin to make something; their problem was to describe what I was making and what my procedure was.  I began the construct whose development is shown in the pictures of Figure 7.
+.bp
+1FIGURE 70
+ROD-MAZES
+.sp 16
+AB
+.sp 16
+CD
+.bp
+^^^^^^^^^^After I placed four rods, I asked the children what I was making.  Robby recognized immediately and described my objective as "a swirl, a maze".  Miriam then chimed in with his answer.  Subsequently, I asked Robby to hold off expressing answers until I discussed my questions thoroughly with Miriam.  Robby acceded, albeit with difficulty, to my request.  When I had placed eight rods, I asked the children if they could describe my procedure.  Miriam could not, but when I focussed her attention of the legnth of each piece, she remarked, "You're growing it bigger and bigger"; and when questioned, noted the increment was one.  When Robby added rods of length nine and ten and Miriam justified his action by arguing "it goes in order...littlest to biggest", I challenged her with the question of what followed "orange" (this color identifies the largest cuisenaire rod, of ten cm.).  Miriam volunteered that orange and white (the white is one cm.) would be next and other combinations would do as well:
+
+.ls 1
+.in .5i
+.nf L
+Miriam:^The orange is ten, so you need eleven to go next.
+Bob:^^^^You would speculate then that my procedure says something
+^^^^^^^^like "everytime I put a rod in ...what^?"
+Miriam:^It should be one bigger than the last one.
+
+.ls 2
+.in
+.fi b
+With the mentioned minimal prompting, Miriam understood well the incrementing of length.  In striking contrast, she showed considerable difficulty with the role of the turning in the construct.
+
+^^^^^^^^^^When I set down the eleven-length (the orange and white rods), I did not orient it perpendicularly to the previous length.  Miriam declared the arrangement incorrect but had considerable trouble specifying what was wrong.  When she rearranged the rods to locate them correctly, Miriam simply interchanged the placement of the orange and white rods.  From this action, I infer Miriam considered the placement incorrect because two rods of the same color were adjacent to each other -- but not incorrect because the one rod was colinear with the preceding.  Here I asked Robby to explain what I should have done:
+
+.ls 1
+.in .5i
+.nf L
+Robby:^^You should go...ah... a right 90 angle.  It could be
+^^^^^^^^orange, a right 90, white and orange.
+Bob:^^^^And what should I do after this next orange, Rob ?
+Robby:^^You could probably do an orange and red (twelve units length).
+Bob:^^^^(Placing the two rods colinear with the previous two.)
+Robby:^^Hold it ! You should do a right again.
+Bob:^^^^Oh. (Correcting placement) Miriam, what do you think
+^^^^^^^^I should do next ?
+Miriam:^A RIGHT 90, green and orange (length thirteen units).
+Bob:^^^^(Placing the rods) And what next ?
+Miriam:^A RIGHT 90, purple and then orange.
+
+.ls 2
+.in
+.fi b
+This is the point at which Miriam brought together in a comprehensible relation the steps and the result of a maze-generating procedure.  As she and Robby completed the maze by using all the rods in the set, a variation developed which was like a change of scale.  As the side lengths approached thirty centimeters and with all the long rods used up, calculating the length of a side became burdensome.  Miriam introduced a red rod (two cm.) as a measure of the length by which the currently-developing rod line should exceed the length of the next inner rod line similarly oriented.  (Notice that the outer rod line also began two cm. before the inner line.)  This "differential" measure served till the last step, when I inquired of Miriam wherther she would find in the pool of remaining rods enough lengths to complete the 32 units required.  Miriam counted the length units of the preceding rod line and determined there remained enough small rods with lengths sufficient for that requirement.  The point is that Miriam was comfortable with these alternate descriptions and easily changed from one to the other.
+
+^^^^^^^^^^If we review this rods-maze experience, several striking aspects stand out.  One is the extensive guidance Miriam received from the microculture.  The tasks she confronted focussed on the articulate description of procedures.  When she could not begin, I directed Miriam's attention: "Look at the length of each piece."  When she got sidetracked, concerned with color alteration instead of turning, Robby's description of my error definitely redirected her thought.  Specific characteristics of the task appear important: it began simply; its developing complexity, however, ultimately drove Miriam to her own differential and relative procedure.  (I refer here to her use of the red-rod spacer as a length criterion.)  We can say of Miriam's knowledge implicated in the task that she worked with a familiar objective (creating a maze), worked with familiar objects (cuisenaire rods), and applied familiar operations (adding one to a number, turning RIGHT 90, repeating a procedure step).
+
+^^^^^^^^^^I consider these experiences of the rods-maze and turtle on the bed to have integrated and thus culmninated the development of Miriam's knowledge about iteration.  We now try to summarize how these disparate knowledges finally related to each other.
+
+IIIF.^^^^^^^^^^Miriam's computer-focussed experiences.  In the latter, she often appeared to have the experience and miss the meaning.  Did she ever really come to understand variables^?  The answer is, I believe, "yes", but an affirmative highly qualified because of the particularity of her knowledge.  I will now propose that making sense of new experiences, appreciating their meaning, often involves the re-construction of that new knowledge.  In the terms I have used, I state my conclusion as follows.  The reconstruction of knowledge follows its partial forgetting and derives from a reorganization among microworlds.  That reorganization is the connection of "new" knowledge through an archetype to basic knowledge systems.  The connection follows upon the insertion of this archetype, likely a post-cedent ancestor, in the microworld cluster.  Let me now proceed to apply this scheme to the microworlds of Miriam's computer focussed experience.
+
+^^^^^^^^^^If we contrast Miriam's understanding of what she was doing when assembling the rods-maze with her penetration of using TIMES, we get the maximal contrast between well-comprehended and ill-comprehended procedures.  Well-comprehended procedures (the sort employed in building the rods-maze) appear to be nearly immediate consequences of the obective in mind and the quiddity of the entites to which they are applied.  Within the TIMES world, Miriam knew that turtle geometry primitives could be used as an iteration kernel, and that when she supplied a name, the TIMES programs would produce a procedure she could executre.  Miriam had no idea of how that happened, no idea of why the "stop" query was an essential question, and no idea of how the primitives of the kernel related to the shapes drawn by her procedures.  This latter relation is the one rendered accessible through her experience with the rods-maze.  I propose that the task of describing my procedure, then assembling the maze created a microworld wherein she could relate line creation and turning to a final design through well-comprehended procedures.  That the procedures of the world be well-comprehended is necessary for the rods-maze world to function as an archetype.
+
+[**How do I deal with this central aspect without relating the whole story ?]  But there is more required.  Applicability is one aspect.  Recall from [*  here reference to the issue of "guidance" in puzzles and its non-portability] Miriam's work with picture puzzles.  The distinction drawn through the puzzle sessisons was between the guidance provided by the picture and the constraints provided by the piece fitting.  This was a distinction that made little or no difference to Miriam.  There may wellcome a time when that distinction will prove useful to here, but it has not yet done so.  The knowledge of the PUZZLE world does not now function as an archetype.^^^^^^^^^^Contrast now the tole played by the Interlocking Strings puzzle within the interpretatins of One Child's Learning (through which it has served as asn archetype).
+
+  A second aspect is that the archetype must embody a powerful idea.  By this I mean the idea must be demonstrably useful in problem solving over the domain where it applies.  The third aspect is that an archetype must be connectible with basic knowledge systems of the mind.  By these basic systems I refer to those knowledges elaborated and completed in the eocene of personal development: the systems of body movement, vision, language comprehension, and others.  These knowledges are owned in the very intimate sense that they, in their progressive elaborations, comprise the mind one is conscious of as the self.  Knowledge connected to these systems becomes a part of the way one is in and sees the world; but knowledge not so connected is feeble because, when forgotten, when less accessible through mnemonic tricks. It will not be possible to reconstruct it as it was.  Reconstituted knowledge bears less the impression of the experience than of the mind that is struggling to recall.
+
+^^^^^^^^^^We conclude that the rods-maze world was, for Miriam at that time, able to function as an archetype.  Be clear that I make no claim that Miriam instantly undertook the reconstruction of the relevant DESIGN microworlds; not at all.  But if she later attempted to understand the working of the SHAPE procedure of the Families world or the procedures produced by TIMES, I expect the Rods-maze would be for her a salient, fecund, and effective archetype from which, by constructive analogy, she would proceed in the reconstruction of what was forgotten or never learned in those worlds.  What reason is there to accord the Rods-maze world this status ?  I interpret the Turtle of the bed game itself as the behavior through which Miriam was integrating her design worlds knowledge to her navigation worlds knowledge.  That is, the turtle on the bed game marks the connection between the world of personal geometry -- the nucleus of the navigation cluster -- and the rods-world -- which by this connection is argued to be the new nucleus of the cluster which will form around it as Miriam reflects upon the experiences she has had.
+
+^^^^^^^^^^If this interpretation I proffer of Miriam's computer focussed experiences is sound, we have as an immediate conclusion a new insight which strikes right to the heart of a major psychological puzzle: is learning centrally or peripherally driven ?  We have seen at many point the pressure, direction, and guidance the microcultures of my family and the Logo project have brought to Miriam.  The culture is pervasive, and yet it does not seem to be all that effective in a direct sense.  What Miriam took to herself as an archetype through the "turtle on the bed gasme" was the rods-maze knowledge.  The event occured a month after assembling the maze from the rods.  I consider the adoption of this knowledge as reflecting the sense that the knowledge was appropriate to her as a person.  But this statement is not to be taken as a simple answer.  We offer instead a pattern: the environment inundates a person with experience to cope with which she constructs more-or-less makeshift microworlds by analogy to whatever she knows that appears as similar; such knowledges are feeble unless connected to the basic systems of intimate knowledge comprising the mind; such connection, if it occurs, may follow the development of post-cedent ancestral microworld; such connection can only be expected to occur if the person constructs the connection to the basic systems of knowledge.  The three characteristics marked in our conclusion about the nucleation of clusters are these: first is the hallmark of the archetype, the sense that the parts of things and their relations are intuitively obvious; next is epistemological generality, that is the range of problems which  an archetype can render comprehensible -- at this point the microculture intervenes most forcefully by defining what problems are valued; the final element is the learner's sense that the knowledge is appropriate to himself.  Knowledges such as the Rods-maze world which link through themselves even more fundamental knowledges (such as movement and vision) advance the unified understanding of experience and further, in our interpretation, serve as a nexus through which clusters of diverse problem contexts can connect dependably to the fundaments of mind.
+.bp
+.nf L
+IIIH. RODS as archetype: simple; general; but WHAT is connection ?
+^^^1. local coherence, but is it deep.
+^^^2. connectible to what ?
+^^^3. why is connection hard but possible ?
+^^^4. why concrete ? symbolic mediation hard, not yet automatic.
+^^^5. turtle on the bed as similar to ACR stories; lapse of time till
+^^^^^^^TOB game.
+
+.bp
+.nf L
+IIII. Integration of multi-level things as intellectual parallel to the
+^^^^^infants hand/eye coordination.
+^^^1. Peggy's games and multiple selves.
+^^^2. kinesthetic/intellectual parallel: no claims but various possible
+^^^^^speculations.  HIGH BRIDGE VIA LOW BRIDGE resolves Piaget/Chomsky
+^^^^^impasse.
+^^^3. Galton phenomenon and personal construction of individual modes of
+^^^^^of thouight based on experience derived integration of powerful ideas.
+.bp
+* * * * *text dump* * * * *
+
+.bp
+.nf L
+IIIC. Character of Miriam's Thought:
+^^^1. methodological in one variable.
+**INSPI nice designs, but what's the point ?
+
+^^^2. capable of concrete variable separation.
+^^^^^FAMILIES
+^^1.^crisp exposition of variable separation as programmatic objective.
+^^2.^description of activity: reference and contrast with Robby.
+^^3.^Miuriam's best achievement/
+^^4.^what did  she learn.
+
+.fi b
+
+POLYSPI families
+
+^^^^^^^^^^The decision "to go easy for  while" appears in retreospect to have been a good one.  The first half of The Intimate Study had been various initially because of the interleaved work with puzzles, SHOOT, and text manipulation propcedures.  Miriam's gradual drawing backl from these activities and her rejection of the DRAW+ program ( a drawing-by-parts-assembly subsystem to Logo) narrowed too much the focus of the project after the introduction of variables.  Two weeks of vacation at our Connecticut home brought us back to a new start at Logo, where I imposed less emphasis on the generation of designs and much of our work (as reported in [*section 14]) had more the character of progressive or step-wise drawing in contrast to the controlled iteration of a kernel for generating a design.  But more influences were felt than my decision to "go easy".  We must plunge here into a short but central consideration of Miriam's health.
+
+**the story of Miriam's allergies, and impact of the project 564-566
+
+With thenupsurge of her asthma, I became considerably less aggresive in offering Miriam direction.  The focussed and idactic throust of the session faded in general to more natural, play-like, episdoes (exceptions were the introduction of "shape families" and the didactic session on debugging in [*RLDbug.].  This change in the character of the Logo session reduced our focus on the theme of understanding variables.
+
+
+^^^3. focus on interest in sameness or differentness as appprx equal
+^^^^^to not suspecting the depth of possible knowledge. part of families story.
+.bp
+.nf L
+IIID. Experiences and Local Knowledge.
+^^^1. variables and slot.
+^^^2. variable separation and social context.
+^^^3. emergence in Pretty Flower (point to E&L); intellectual excitement.
+^^^^^Does not imply analytical understanding.
+
+
+.fi b
+
+
+
+IIIA2.^^^^^^^^^^^^^^^[**terminology unclear in this paragrtaph] The mini-world clusters of Design and Navigation hitherto distinguished are related in that the former is rich with phenomena which emerge from the iterative application of operations of the latter.  Miriam did not initially understand this relation.  I can highlight precisely what she did not know by contrasting it with what I do know.  Three different quantites, three common applications of number in Logo programs are distance, angle, and an iteration limit.  Two of these quantites are passed as operands for primitives or to procedures invoked in the Navigation world.  The third quantity, call it COUNT, an iterastion limit, is used to control invocation of procedures defined in terms of subordinated microworlds of Navigation.  This distinction is important because it shows I mark the control structural implications of the quantity's application.  [**am I certain of this] Such is a very important distinction which Miriam failed to make.  Further, although distance and angle have a basic parity in Navigation microworlds, in the Design cluster, angle is the dominat quantity while distance merely changes scale.  That is, a square is a square of any size, but a "square with 93 degree corners is something else, no matter how large or small it be.  Beyond the relative salience of angle and distance, specific values of the quantites are notable in quite different senses.  For example, in the Design cluster, a POLYSPI 175 (with the turtle turning 175 degrees at each corner) is remarkable for generating a very pretty design.  I can not imagine any simple world of navigating where 175 degrees is remarkable at all.  Contrariwise, the angles for generating closed polygons are good to know if you want to navigate through space and return to an initial location.  But in the world of Design, those same angles make relatively boring designs and they are only useful to know as anchors of variation from which one may begin explorations to find interesting designs (which typically arise from the unplanned interaction of subordinate operations).  Finally, I am quite well aware of relationships between the closeure of polygons and the emergence of crisply perceptible spiraling arms in POLYSPI's.  Such knowledge, which exmeplifies the correspondence of perpsectives, does not involve direct control of subordinate microworlds, but it does offer guidance for exploring phenomena in the lesser ordered world.
+
+
+IIIA.3.^^^^^^^^^^In the following, we will present descriptions of Logo programs and subsystems which we believe lead to Miriam's developing a cluster oif related but distinct cognitive structures.  The general pattern of these descriptions has this basic organization: a statement of my intention and focus; a description of what the system did; conclusions about Miriam's grasp of the ideas embodied in the system.  These descriptions may seem sketchy because highly condensed.  Considerably more detail is available in One Child's Learning (Lawler, 1979).
+
+
+IIIC1.^^^^^^^^^^(Issue: operand to operation vs. variable value-->^^^^^match box model & bridge to iteration precursors and TIMES.) [**defer ? delete ?  I tried introducing the more general idea of a variable through the matchbox model.  I conside the following attempt an embarassing failure because of its faulty conception and specifically avoid any recommendation of its use
+** probably to be omitted -- but note use of this language]
+.nf L
+
+IIID.^^^^^Synopses of Various Systems Relating Variables and Iteration
+^^1.^TIMES:she supplies kernal; CS supplied.
+^^2.^SLOT: CS made concrete, explicit in hardware.
+^^3.^SHAPES: software trans of SLOT function --> central Logo experience.
+^^4.^FAMILIES: Piagetian contact and issue of variables separation
+^^^^^in adolescent experience.
+^^5.^SEAHORSE: systematic exploration on a single variable versus multi-
+^^^^^dimensional, constrained exploration.  (Variable not transparently
+^^^^^represented in surface appearances.)
+
+.fi b
+IIID.^^^^^Overview of Miriam's use of Computer Design Programs^^^^^The objective in general of presenting the following facilities to Miriam was to introduce her incrementally to specific powerful ideas that have long been central to Logo computer applications.  Since I follow the dictim of Papert that children learn by doing and by thinking about what they're doing, I offered Miriam for her play the following sequence of Logo sub-systems.  
+.ls 1
+.nf L
+
+.nf L
+.ls 1
+
+IIID.2.^^^^^SLOT
+^^1.^purpose: introducing multiple variables with a concretely apprehensible
+^^^^^control structure.
+^^2.^description.
+^^3.^ examples of use.
+^^4.^what did she get out of it.
+
+.fi b
+.ls 1
+.fi b
+1Variables and Designs0
+
+^^^^^^^^^^a third sense in which the concept of a programming variable is an important intellectual attainment.  The theme is this: analyzing a process in terms of the multiple factors on which it operates and controlling the variation to one factor at a time is a powerful principle for organizing exprience.  Here we examine Miriam's introduction to procedures using multiple quantities and multiple variables.  The work developed in an unusual computer environment, so we begin with a short description of an unusual terminal.
+IIID2.2^^^^^^^^^^Miriam's useful introduction to variables was through the slot machine.  Originally designed to permit children to command operations by inserting rigid cards in slots, in our use other features of this terminal proved of greater value.  The uniqe aspect of the Slot machine is its structures as an input terminal, represented in the rough diagram below:
+.sp 10
+The device is a conglomerate, comprised of three separate terminals, called "rows."  Each is a series of staged "slots.".  Into any slot may be placed a mechanically readable card (typically decorated with an icon for a basic Logo function, e.g. FORWARD is represented as  " ").  /Each slot has a small lamp which lights when the mainframe is reading the card in the slot.  The boxes are transparent plastic and each is distinquished from the others by th ecolors of the wires inside the boxes (green, yellow, and red) with the consequence that they are reffered to as "the green row", etc.  At the head of each row is a butto; pressing the button interrupts whatever workspace process is ongoing and selects that button's row for input to the controlling program.  That is the outstanding feature: the three rows comprise a basic interrupt structure.  But no less important is the salience of the individual cards in each slot.  The changable parts of a procedure assembled in a row stand out at least as much as the row itself.  Branching cards are available to transfer control from one row to the row with wires of the same color as the card.  The normal reading control sequence (i.e. where branching is excluded) is serial within row until an empty slot is encountered; at the end of one row, reading continues with th enext.  The inventor, Perlman, imagined the slot machine as a stand alone computer system for pre-school children.  I see it as permitting a bridge to be built between the manipulation of physical and symbolic objects and, consequently, took care that its appearance was compatible with the Logo language system to which it was connected.  This purpose of mine also influence our later, hybrid use of the slot machine.  Originally a pre-schooler's replacement for a QUERTY keyboard, the slot machine in our use represented operations through machine readable cards.  Operands, when specified in card form, were of a scale commensurate with the normal scale of turtle geometry.  Operands, when omitted, were defaulted by operations to global variables.  Such variables were specifiable through a keyboard invocation card which accepted and executed in the Logo workspace any commands input to the keyboard.  It was in this hybrid environment that Miriam confronted multiple variable procedures.  Assigning variable values was made possible by converting an unused command code into a request for keyboard input before returning to reading other slot machine card.  A few other changes (e.g. converting another floor turtle command to a video display screen print image command) gave us a very powerful children's terminal with these characteristics.  Operations were typically specified by the slot cards.  Variable values were assinged through keying of standard logo statements.  When a pleasing design was created, hard copy was readily available.  The material on Miriam's use of the slot machine is rich enough for anlysis in its own right, but our focus here is limited to her use of variables with that device.
+
+IIID2.3^^^^^A DIFFERENT VARIABLE^^^^^In the next paragraph, we will continue this discussion when one quantity is applied to another iteratively.  Here, we will follow Miriam's use of DISTANCE and ANGLE through slot card invocation of the keyboard.  Familiarized with the machine and varieties of cards (including branching cards) in Logo session 26, Miriam made some complicated POLY designs with iteration procedures and fixed quantity instructions (Cf. FIgure III-25).  Her antipathy to variables persisted from Logo session 29, and she refused to take direction from me in Logo session 30, finally refusing to return after a break.  Robby was interested in pursuing the use of variables with the slot machine;
+
+
+^^^^^^^^^^context needs be set here: (p.529)We located her good number card for angles and used a simple looping FORWARD and RIGHT procedure  in one row of the slot machine:
+  She enjoyed the POLY designs and chose to print the designs of Figure III - 26 (POLY's 105, 139, 146, 101).
+
+  It is beyond imagining that she comprehended any orderly relation among the designs created by different angles.  Nonetheless, it should be easy to grant that Miriam knew bigger distance made larger figures and vice versa.  
+
+CHANGING ONE VARIABLE BY ANOTHER
+
+IIID.2.4^^^^^^^^^^DELTA is the name by which we refered to a quantity used to modify the value of a varibale.  It was most frequently met as the standard label for a variable whose value was so used by iterative procedures.  I  particular, DELTA named the value by which DISTANCE and ANGLE werte changed in these two procedures:
+
+.nf l
+.ls 1
+TO^^POLYSPI^^^^:DISTANCE^^:ANGLE^^:DELTA
+1^^FORWARD^^:DISTANCE
+2^^RIGHT^^:ANGLE
+3^^POLYSPI^^^^(:DISTANCE^+^:DELTA)^^:ANGLE^^:DELTA
+END
+
+TO^^INSPI^^^^:DISTANCE^^:ANGLE^^:DELTA
+1^^FORWARD^^:DISTANCE^^^^^^^^^^
+2^^RIGHT^^:ANGLE^^^^^^^^^^
+3^^INSPI^^^^:DISTANCE^^(:ANGLE^+^:DELTA)^^:DELTA
+END
+.fi b
+.ls 1
+We noted earlier that successive modifications of one quantity by another, when of unspecified scope, requires iterative procedures.  The use of DELTA, a variable differential, so enhances the flexability of the POLYSPI and INSPI procedures that the designs they produce become engaging domains of exploration.  DELTA was introduced to Miriam in three successive Logo sessions.  (If this seems an over-intense single minded-ness, note that they occured over a six-day period and that other events of interst brightened the children's lives; they saw fireworks along the Charles; they learned their mother was pregnant, and shared that good news with every friend we met.)  The introduction of DELTA is the culmination of the earlier work in this chapter.  The matchbox model fades into the background; what remains in a way of talking about variables.  A variable is a thing of two parts, a name and a value; those parts are realted by the assignment and evaluation operations.  We still ask "What's in DISTANCE^?", but the Logo term "make" replaces the ill-chosen analog "put-in".    Both iteration in slot machine procedures and the keyboard assignment of values are central features of introducing DELTA.  THe final general observation is that Miriam enjhoyed working in the slot machine to produce designs -- in massive contrast to her condemnation of the Matchbox model introduction and Logosession 29.
+
+IIID2.5^^^^^The iterative modification of variables was introduced to Miriam in two steps: first I introduced a "CHANGER CARD" for the slot machine.  When the operation encoded on this card executed, it incremented the value of the variable DISTANCE either by some specified quantity or, in default, by the value of the global variable DELTA.  This is how Miriam was introduced to the function of incrementing:
+
+.nf L
+.ls 1
+Bob:^^^^(After initializing variable values and setting out a basic FORWARD/RIGHT
+^^^^^^^^/LOOP kernal in a row) We will not use the keyboard now.  Instead, look at
+^^^^^^^^this, Miriam.  Read what this card says.
+Miriam:^(Reading) "Make DISTANCE DISTANCE plus number."
+Bob:^^^^Get a number 10, Miriam.
+Miriam:^No.  How about a 20 ?
+Bob:^^^^No.  Number 10.  (This was the smallest increment quantity.)
+Miriam:^We don't have 15.  (She places the CHANGER card and number 10 in the first
+^^^^^^^^slot of the green row.)
+Bob:^^^^I've made the shape here (on the video display).  The number I used for
+^^^^^^^^DISTANCE was 50.  This card says "Make DISTANCE what's-in DISTANCE plus
+^^^^^^^^the number 10.  What number will be in DISTANCE next ?
+Miriam:^10.
+Bob:^^^^Will it be 10 ?  No. (Pointing to the card) It will be "What's-in DISTANCE
+^^^^^^^^plus 10.  50 plus 10.
+Miriam:^60.
+Bob:^^^^(Pressing the button for the yellow row)  Look at what's happening....Does that
+^^^^^^^^surprise you ?
+Miriam:^Yeah.  No.
+Bob:^^^^No ?  Will you press the green row button again, please.  (This is the row
+^^^^^^^^with the CHANGER card.)  What's going to happen now ?  When you press the
+^^^^^^^^button for the yellow row.
+Miriam:^It's going to be 70.
+
+.ls 1
+.fi b
+At this point, Miriam understood that the execution of the CHANGER card increased the DISTANCE value by 10.  This was confirmed when  she spontaneously pressed the button two times andcorrectly predicted the final variable value.  She was quite happy with the nested hexagons and was eager to go on to making other designs.  I directed her to move the LOOP card down one slot in the yellow row and insert the CHANGER card between the RIGHT operation and the LOOP card.  This constructed the basic, polyspi procedure.
+
+**decide whether to discuss here Miriam's possible connection at this point of design and navigation clusters.  cf.  p.538-539.
+
+***this is where my preparation stopped 6/26
+
+*** many pages of text on Logo session 33 -  introducing DELTA (541-546) -- but this is also the bridge to IIID.3; maybe it belongs in there.
+
+.bp
+IIID.3.^^^^^SHAPES
+^^1.^purpose: hardware failure backup; BRIDGE to variable sep.issue.
+^^2.^description of polyspi as Logo central thing.
+^^3.^examples.
+^^4.^what dfid she get outof it.
+
+.fi b
+
+*** many pages contrasting slot machine with symbolic termianl (546-553)
+
+*** 12.4 polyspi designs
+
+.bp
+
+*** introduction of input variables 566-568.
+
+*** shape families concept  568-577: central incidents
+
+
+
+
+
+
+NOTES
+
+[note 1].^ I hold that the idea of a vriable is important for a different reason, and one I consider more profound.  Recall the discussion [**no:do it here] of Aristotelian abstraction and reflexive abstraction, the later as Piaget's generalization of the mathematicians axiomatic method.  What I judge most profound in the concept of a variable is that it makes this process of abstraction accessible to the concrete experience of non-mathematicians in a clearly articulated form.  We will return to this observation in [*section 15].
+
+[note 2].^text of Little Rabbit Foofoo

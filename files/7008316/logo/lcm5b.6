@@ -1,0 +1,567 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi b
+--DRAFT--
+
+LOGO Curriculum Materials
+
+1/23/81
+.sp 5
+1BOOKLET Vb
+
+Talking to the Turtle0
+
+(Apple Logo Version)
+
+.ls 2
+The turtle is an object that can draw pictures on the TV screen. You can think of the turtle as a "robot" that can move forward and back and
+turn right or left. With its pen down, it can draw geometric shapes in color, as it
+moves around the screen.
+
+.chapter "bold(Basic Turtle Commands)"
+.nf L
+bold (To talk to the turtle type the command:)
+
+DRAW				s(m)This clears the TV screen and
+				t(m)places the turtle at its center.
+
+bold(Here are some commands that the Turtle understands:)
+
+.nf L
+FORWARD   20	 		t(m)Moves the turtle forward or back the number of
+BACK   15				t(m)spaces you specify.  If the turtle's pen is
+FD   20				t(m)down, it will draw a line as it moves.  
+BK   15
+.sp 4
+RIGHT   45 			t(m)Turns the turtle right or left the number of	
+LEFT   30				t(m)degrees you specify.
+RT   45
+LT   30
+.sp 4
+CLEARSCREEN 			t(m)Clears the TV screen, 
+CS 				t(m)leaving the turtle in position.
+.sp 4
+HT   or   HIDETURTLE		t(m)Hides the turtle so it can't be seen.
+ST   or   SHOWTURTLE		t(m)Shows the turtle again.
+
+bold(To stop using the turtle, and use the entire screen for text, type:)
+
+ND   or   NODRAW		t(m)Clears the whole screen for text.
+				t(m)To use the turtle again type  DRAW.
+.bp
+
+bold (Things to try:)
+
+.fi b
+Experiment with the turtle.  Type FD, BK, RT and LT, with a lot of
+different inputs.  Try very large and very small inputs.
+
+.nf L
+Make the turtle draw a square.  Or a rectangle.  Or a triangle.
+
+Make an unplanned drawing using a variety of turtle commands.
+
+Find the size of the turtle's screen.
+
+.fi b
+Find the size of the turtle's screen. (If you tell the turtle to go too far, the computer will print an error message:  OUT OF BOUNDS.)
+
+.nf l
+Pick a point on the screen and move the turtle there.
+.bp
+.chapter "bold(Teaching the Computer a New  Command Using the Logo Procedure Editor)"
+.fi b
+
+You can teach the computer to remember a particular series of steps
+by defining a procedure. When you type   TO   followed by a name that you have
+chosen, the computer changes to edit mode. While you are editing, the computer does not carry out your commands, but just stores them until you finish editing. Here's what you do:
+.nf l
+Type   TO   followed by a name.
+Then type each step in order.  
+When your procedure is complete, type  END.
+To stop using the ditor, type   <CTRL> - C.
+(Hold down the key marked   <CTRL> and type  C  at the same time.)
+
+
+.nf L
+Here are some examples you can try:
+
+	TO    FUN		t(m)TO    BOX
+	FD    30  t(m)FD    20
+	RT    120 t(m)RT    90
+	FD    10 t(m)FD    20
+	LT    90 t(m)RT    90
+	BK    20 t(m)FD    20
+	END t(m)RT    90
+		t(m)FD    20
+		t(m)RT    90
+		t(m)END
+.sp 4
+
+.fi b
+You can use any name that is not already a LOGO command or the name of a procedure
+you have already defined.   The steps of the
+procedure can be any other LOGO commands or procedures.  When you type the command, FUN or
+BOX, the computer will carry out your sequence of steps.
+
+bold(Things to try:)
+
+.nf L
+Type the command,  FUN,  or  BOX,  several times.
+.fi b
+Teach the computer to draw a smaller square, a rectangle, triangle, or any
+other shape you know how to draw.
+.br
+Invent a new shape, by choosing a number of different commands at random.
+
+
+.bp
+bold(Notes about the Logo Screen Editor)
+
+If you want to change a procedure for any reason, type   ED  followed by the procedure name. This will return the computer to edit mode, with your procedure displayed on the screen ready for you to edit. When you are finished editing your procedure type   <CTRL> - C.
+
+You can use all the special editing keys to make changes in your procedure:
+
+bold(Commands to Move the Cursor)
+ 
+.nf L
+	<CTRL> - P			s(m)moves cursor up one line
+
+	<CTRL> - N			t(m)moves cursor down one line
+
+	<     > 			t(m)moves cursor left one space
+
+	<     > 			t(m)moves the cursor right one space
+
+	<REPT>				t(m)repeats the effect of the key you
+					t(m)typed just before typing   <REPT>.
+					t(m)To repeat the effect of a key continuously,
+					t(m)first type the key you want to repeat.
+					t(m)Then hold down both that key and the   <REPT>
+					t(m)key for as long as you want.
+
+
+.keep
+bold(Editing Commands)
+
+	<CTRL> - D			t(m)erases the character at the cursor.
+
+	<ESC>				t(m)erases the character behind the cursor,	
+				t(m)just as it does when you are typing
+				t(m)normal LOGO commands.
+
+	
+	<RETURN>                     t(m)creates a new line and moves the cursor 
+                                        t(m)down to the beginning of the new line.
+				t(m)If there is any text to the right
+				t(m)of the cursor it will be moved too.
+
+	<CTRL> - O			t(m)creates a new line at the cursor
+			     t(m)and moves all the other lines down.
+
+bold(Finishing Using the Editor)
+
+
+	<CTRL> - C			t(m)This tells the interpreter that you are 
+				t(m)finished editing and ready to return
+           			t(m)to using normal Logo commands.
+
+.end_keep
+
+.bp
+.chapter "bold(How the Turtle Uses Its Pen)"
+When you first type  DRAW,  the Turtle always starts with its pen down.  This
+means that it draws lines whenever it is commanded to move forward or back.
+
+.nf L
+You can change what the turtle's pen does:
+
+PENUP    or    PU t(m)The turtle will not draw lines when it moves.
+
+PENDOWN    or    PD t(m)The turtle will draw lines whenever it moves.
+
+
+.bp
+.chapter "bold(Drawing Circles and Arcs)"
+.fi b
+
+
+Many intersting designs can be drawn using circles and arcs. The turtle can draw a circle by going forward a little and turning a little, and repeating the same steps over and over until it has returned to its starting place.
+
+
+.section "bold(Procedures for drawing circles and arcs)"
+You can teach the computer a set of procedures that draw circles and arcs.
+RCIRCLE  and  LCIRCLE draw 36-dised polygons that look enough like circles to be useful for most turtle drawings. To make designs using circles and arcs, carefully copy the following procedures. (To type square brackets   [   and   ]   type  <SHIFT> - N   and  <SHIFT> - M.)
+
+The following procedures can be used to draw circles and arcs curving to the right.
+.nf L
+.keep
+TO    RCIRCLE    :R t(m)RCIRCLE   stands for "right circle."
+REPEAT    36    [RCP    :R] t(m)Thirty-six repeats of the subprocedure RCP make
+END				t(m) a complete "circle" of radius  :R
+				t(m)curving to the QBrightQE.
+.end_keep
+
+.keep
+TO    RCP    :R  t(m)RCP draws one "circle piece" curving to the 
+RT    5       t(m)right.  :R stands for the radius of the circle.
+FD    :R * (3.14159/18)
+RT    5
+END
+.end_keep
+
+.keep
+TO    RARC   :R t(m)RARC draws a quarter circle arc
+REPEAT    9    [RCP   :R]	t(m)curving to the right.
+END
+.end_keep
+
+.fi b
+The following procedures can be used to draw circles and arcs curving to the left.
+
+.nf L
+.keep
+TO    LCIRCLE    :R t(m)This draws a circle of radius  :R, 
+REPEAT    36   [ LCP  :R ]		t(m)curving to the left.
+END
+.end_keep
+
+.keep
+TO    LCP   :R t(m)LCP draws one "circle piece" curving to the left.
+LT    5
+FD    :R * (3.14159/18)
+LT    5
+END
+.end_keep
+
+
+
+.keep
+TO    LARC    :R t(m)LARC  draws a quarter circle arc
+REPEAT    9    [ LCP    :R ]		t(m)curving to the left.
+END
+.end_keep
+
+.nf L
+RCIRCLE    20  t(m)Draws a circle of radius 20, curving to the right.
+
+LCIRCLE    10 t(m)Draws a circle of radius 10, curving to the left.
+
+RARC    20 t(m)Draws a quarter circle of radius 20, curving 
+	  t(m)to the right.
+
+LARC    10 t(m)Draws a quarter circle of radius 10, curving
+	  t(m)to the left.
+
+
+.section "bold(Some Simple Projects With Circles and Arcs)"
+.bp
+.chapter "bold(Building Complex Shapes Using Subprocedures)"
+.section "bold(Using Shapes as Building Blocks.)"   
+.fi b
+
+Turtle procedures which draw shapes can be used to build more complex 
+shapes.  Here are some examples.
+
+You might start with two procedures.  One draws a box, and the other a triangle:
+
+.nf L
+.keep
+TO    BOX t(m)TO    TRIANGLE
+FD    30 t(m)LT    90
+RT    90 t(m)FD    30
+FD    30 t(m)RT    120
+RT    90 t(m)FD    30
+FD    30 t(m)RT    120
+RT    90 t(m)FD    30
+FD    30 t(m)END
+END
+.end_keep
+
+.fi b
+You could build other designs from them, by repeating them
+and combining them in different ways.  You can make interesting designs by exploring
+in this way.
+.nf L
+.keep
+For example,
+TO    WINDOW
+BOX
+BOX
+BOX
+BOX
+END
+.end_keep
+
+and
+.keep
+TO    BUTTERFLY
+TRIANGLE
+TRIANGLE
+END
+.end_keep
+
+and
+.keep
+TO    6BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+END
+.end_keep
+
+.fi b
+Putting a box and a triangle together, you can construct a house:
+
+.nf L
+.keep
+.sp 8
+HOUSE
+.end_keep
+
+.keep
+and, repeating HOUSE four times,
+.sp 8
+HOUSE4
+.end_keep
+
+.fi b
+HOUSE4  and  6BUTTERFLY  can be put together, to make a new design,
+
+.nf L
+.keep
+TO    HB46
+HOUSE4
+6BUTTERFLY
+END
+.end_keep
+
+.fi b
+HB46 looks something like a spider. If you add some
+circles you could make a SPIDER procedure.
+
+.nf L
+.keep
+TO    SPIDER
+HB46
+RCL    16
+LCL    16
+RCL    8
+LCL    8
+BK    15
+RCL    4
+LCL    4
+END
+.end_keep
+
+.section "bold(Building a Planned Shape Using Subprocedures)"
+
+.fi b
+Here is an example of a planned project.  You might want
+the turtle to draw a "person" that looked something
+like this:
+.sp 10
+You could draw the person using a long series of turtle commands--
+FORWARDs, BACKs, RIGHTs and LEFTs. It would probably be simpler
+to solve the problem using subprocedures and a
+superprocedure  named PERSON.
+
+.nf L
+.keep
+TO    PERSON
+LEGS
+BODY
+ARMS
+NECK
+HEAD
+END
+.end_keep
+
+.fi b
+Teaching the computer five different procedures might seem to be
+complicated, but this method offers several advantages.  First, you can
+start by planning your whole project in advance, so you know exactly what
+you have to do to accomplish your goal.  Second, you can try to solve a series of
+small problems, one at a time, rather than one big problem.  Third, when you
+want to change one part of your design while leaving the rest of it the same,
+it will be easier to decide which commands to change.
+
+One subprocedure,  VEE,  can be used to draw both the arms and the legs of the person.
+.nf L
+.keep
+TO    VEE
+RT    45
+FD    10    BK    10
+LT    90
+FD    10    BK    10
+RT    45
+END
+.end_keep
+
+Now  use VEE to make procedures for the arms and the legs.
+
+.keep
+TO    ARMS t(m)ARMS uses VEE directly
+VEE
+END
+.end_keep
+
+.keep
+TO    LEGS t(m)LEGS reverses the turtle's direction before
+RT    180		t(m)using VEE, then reverses the turtle again so that
+VEE		t(m)it ends up where it started.
+RT    180
+END
+.end_keep
+
+.keep
+.fi b
+BODY and NECK are just straight lines.  After experimenting, you might
+decide to try  these sizes:
+
+.nf L
+TO    BODY t(m)TO    NECK
+FD    15 t(m)FD    5
+END t(m)END
+.end_keep
+
+To draw the head, you can use a circle procedure.
+
+.keep
+TO    HEAD
+LT    90
+RCL    5
+RT    90
+END
+.end_keep
+
+.fi b
+Now, when you type the command, PERSON, you should get this result:
+.bp
+.chapter "bold(Making a Repeating Design)"
+It is possible to make complex designs by making the computer repeat a series
+of steps over and over again.  There are several ways to carry out a project
+of this type.
+
+.section "bold(Making a Repeating Design Using Recursion)"
+The procedure FUN makes a simple turtle design:
+
+.nf l
+.keep
+TO  FUN
+FD  30
+RT  120
+FD  10
+LT  90
+BK  20
+END
+.end_keep
+.fi b
+
+If you teach the computer to FUN, and repeat FUN several times, another design
+begins to appear.  If you make the computer keep repeating these steps
+over and over without stopping a surprising design may result.
+
+.nf l
+.keep
+TO  FUNNY
+FD  30		T(M)FUNNY is the same as FUN, except
+RT 120		t(m)for the last line where FUNNY
+FD  10		t(m)calls the procedure FUNNY again
+LT  90
+BK  20
+FUNNY
+END
+.end_keep
+
+.fi b
+When you type the command FUNNY, the computer will draw a shape, then start
+the procedure FUNNY again, draw the same shape, starting from a different place, start
+FUNNY again, etc.  It will keep going, eventually retracing the same design
+unless you stop the computer by typing SHIFT-G.
+
+This way of making a procedure repeat is called recursion.
+
+Here are some other examples of recursion:
+
+.nf l
+.keep
+TO SQUARE	
+FD  20		
+RT  90		
+SQUARE		
+END		
+.end_keep
+
+.keep
+TO FLOWER	
+BOX		
+RT  30		
+FLOWER		
+END
+.end_keep
+
+.keep
+TO NEWFUN	
+FUN	
+NEWFUN
+END
+.end_keep
+
+.keep
+TO STAR
+FD  40
+RT  150
+STAR
+END
+.end_keep
+.fi b
+
+Try making some recursive procedures of your own.
+
+.section "bold(Making Repeating Designs Using the REPEAT Command)"
+The LOGO command REPEAT allows you to repeat a command or list
+of commands as many times as you want.
+
+.nf l
+Examples:
+
+.keep
+REPEAT  7	[  FD  10    BK  10    RT  20 ]
+REPEAT  3	[  FUN  ]
+REPEAT  4	[  RT  90    FD  20  ]
+.end_keep
+.fi b
+
+REPEAT needs two inputs.  The first input is a number telling how
+many times to repeat something; the second input is a list of instructions.
+The list must be enclosed within square brackets@[@@@]@(Shift-4 and Shift-5).
+
+REPEAT can also be used in procedures:
+
+Examples:
+
+.nf l
+.keep
+TO  SQUARE
+REPEAT  4    [ RT  90    FD  20 ]
+END
+.end_keep
+
+.keep
+TO FLOWER
+REPEAT  12    [ SQUARE  RT  30 ]
+END
+.end_keep
+
+.fi b
+.section "bold(Ideas for Repeating Designs)"
+Here are some designs that can be made using recursion or REPEAT.

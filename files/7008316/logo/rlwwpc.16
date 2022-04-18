@@ -1,0 +1,212 @@
+.xgp
+.font 0 31vg			
+.font 1 31vgb
+.nofill
+.he1
+LAWLER 1/13/81
+.he2
+Composition Precursors
+.ss
+.dummy ^
+.twinch 6
+.tlinch 8.5
+.ce
+0rough draft0
+
+.ce
+1Precursors to Composition0
+.sp 23
+.ce
+1ABSTRACT0
+.ss
+
+.adjust
+
+.sp 5
+.nofill
+.ce
+Lawler & Papert
+.ce
+Logo Project
+.ce
+M.I.T. A.I. Lab.
+.ds
+.adjust
+.page
+.ce
+1Introduction0
+.nofill
+-^Logo project as uniting themes of genetic epistemology and artificial intelligence
+-^Two themes: precursors to mature performance (GE); levels of description (AI).
+-^synopsis of Miriam's learning to add...can we invent microworlds which can serve
+^^as precursors to composition.
+.adjust
+.page
+.ce
+1Three Descriptions of Writing0
+
+^^^^^^^^^^There are at least three descriptions of writing relevant to our concerns.  (It would be premature to label them "levels" of description -- but we will do so, anticipating our conclusions because it would be dishonest not to do so.)  We label them the communicative, didactic, and utilitarian descriptions.  Some in the research community (e.g. Bruce, 197X) focus on the communicative description with the hope of developing a theory of writing which may inform our instructional practice.  [stance with respect to theory and practice; how we differ from them.]
+
+^^^^^^^^^^Even if one holds less hope for a breakthrough in the theory of writing than the most enthusiastic projectors, it is clearly of value to have at least a minimal theory of how to teach what we do know.  [Discussion of position of Hayes and Flower; how we differ.]
+
+  Let's say that writing -- as a communicative act -- is the use of graphic representors or language with the intention of creating some impression in some audience.  Our educational objective for students, as it derives from the communicative description, is to enhance the student's fexibile application of written language to create efficiently any impression he can intend.  The primary limitation of a text is that although its intention is rooted in communication its creation is typically devoid of any feedback from the intended audience.  The primary inference we draw from this central limitation of text creation is that the author must imagine its effect on the audience.  In a strict sense, he must be able either to simulate (with his own reactions) his intended audience or he must own an appicable theory of audience reaction from which he can take guidance in composition.  That is, the author must have a practical theory of reader psychology.
+
+^^^^^^^^^^The didactic description of writing is a listing of those skills generally deemed essential for effective writing.  Such have been, historically, the focus of schools in service of developing communicative ability (for good reasons we need not go into).  The focus is on language rooted standards, e.g. spelling and grammar,  and standard forms of expression, e.g. the business letter, a simple hortatory essay.  Correct usage is important because a reader interprets as significant anything he notices and gets angry if distracted for some peripheral reason.  These skill oriented objectives embody a practical (if superficial) theory of reader psychology... and they require criticism of required work.  The latter is often as painful to the critic as to the author -- and such criticism also must -- if it is to rise above mechanical corrections -- embody a practical theory of how an audience will react to a text.
+
+^^^^^^^^^^The utilitarian description of writing is as a tool meaningful to the person using it.  Educators can offer a variety of reasons why a student should learn to write well, ranging from its potential value in a future career to the more intimate shaping of the person himself by his use of writing for expressions and self exploration.  But a child discounts the future, and few adults would care to develop a skill they might need some ten years hence.  We should ask more generally, as I did in the conversation with a ten year old recoreded below, of what use is writing:
+.nofill
+Lawler:^We used to describe the main things taught in school as "the three R's",
+^^^^^^^^reading, 'riting, and 'rithmetic.  How do you feel about those three
+^^^^^^^^main subjects ?
+Child:^^What do you mean ?
+Lawler:^You spend a lot of time learning how to read and write and how to solve 
+^^^^^^^^arithmetic problems.  Are they worth the trouble ?  What do you get out of it ?
+Child:^^Reading's great.  You can find out about all sorts of stuff by reading.
+^^^^^^^^Arithmetic's worth it, because sometimes you NEED it to do something you want,
+^^^^^^^^but writing's worthless.
+Lawler:^Could you explain a little more ?
+Child:^^You never have to write anything except in school.  It's just school stuff.
+^^^^^^^^It's not real.
+.adjust
+This child's judgments highlight a different perspective from ours.  We see reading and writing as reciprocal, as intimately related language acts.  The child saw them as quite distinct in ways important to him.  He even judged writing more alien from his most valued skills than is arithmetic.  Educators have recently begun to worry that pocket calculators will make obsolete the arithmetic curriculum with a resulting atrophy of calculation skills.  Have we ever noticed that the ubiquity of texts, copiers, pocket tape recorders, and the telephone have already made writing obsolete.
+
+^^^^^^^^^^Because we value writing for the contribution it makes to intellectual development and because electronic technology is overwhelming the everyday uses of writing, we must invent meaningfull applications of writing within the electronic medium itself.  It is a rare child who will find grammar intrinsically interesting.  We must imagine engaging uses of text with the confidence that from actual use of writing in communicating with  real audience, the child will appreciate the value of those skills in which we now offer instruction.
+.page
+.ce
+1Designing Computer Based Writing Applications0
+
+^^^^^^^^^^Because we are discussing ideas for applications and not implemented systems, the following discussions may be somewhat sketchy.  This does not imply the ideas are vacuous, vague, or unachievable.  They grow out of long experience with computers.  Further,  none of these applications approach, in any technical sense, the frontiers of current systems capability.  Let us proceed, grouping these applications under two main headings for comprehensability: developping an appreciation of reader psychology; developing an appreciation of standard forms.
+
+1Developing an Appreciation of Reader Psychology0
+
+^^^^^^^^^^The primary requirement is getting feedback sufficiently often that an author can gradually develop a theory-in-practice of what constitutes effective communication.  We expect such will come about with increasing age through exposure to a widening circle of readers.  The three applications discussed below are ordered to suggest such a progression.
+
+1Drawing and Writing0^^^^^^^^^^For young children, drawing and writing can be very intimately related, especially when drawing is an inspiration for text.  It is common practice -- as early as kindergarden -- for drawing and writing to join this way: the child draws a picture of whatever he wants; some adult asks him to describe what the picture is about and then writes that description under the drawing.  The general success and value of asking a child to generate text by elaborating verbally the significance of a drawing is argued by Graves (1980).  We might expect initial verbal accompaniement of drawing to be little more than naming or simple descriptions of what is in the picture (translating the picture into a second mode).  Soon, the text would amplify and disambiguate what could be gleaned from examining the drawing; that is, it would further specify the author/artist's intention.
+
+^^^^^^^^^^Drawing in the computer environments of Logo could take three or four forms.  There has been a long history of children "drawing" complex figures by assembling component shapes.  (Such computer sub-systems as EEL and DRAW+, Lawler, 1975a, and 1979, grew in emulation of a variety of drawing books by Ed Emberly.[3])  Papert (1980) observed the effects and significance of shape assembly systems for very young children, as games which led them into the use of the alphabetic language for controlling their execution.[**rewrite].  "Driving" the Logo turtle about with the pen down is a freer mode of drawing than component shape assembly.  Very young children have done such drawing with a single-character interface, ZOOM (Lawler, 1975b).  A third form of drawing is the procedure generation of abstract designs.  The development of such procedures has been a favorite Logo activity for many years.  (One Child's Learning, Lawler, 1979, records the engagement of some very young children with a procedure -- MPOLYSPI -- for generating such complex designs.)  A fourth method of producing drawings, one not yet tried at our laboratory but promising a signifcant broadening of scope, would be the connection of a camera to the computer as an input device.
+
+^^^^^^^^^^Technical issues to be considered with very young children would be questions such as: keyboard organization; how directive and elaborate should be the text manipulative portion of a drawing subsystem; whether or not computer display of drawingsa would be adequate or hard copy output should be made available.  The latter should be favored because it permits a significant broadening of the potential audience for the child's drawings with text.  That is, a child could mail his grandmother a printed drawing; she would not need a home computer to appreciate it.  More importantly, a multitude of such designs could be displayed about the child's school and home.  Alternatively, if no hard copy device were available, the computer itself could be used as an unattended display device, cycling through a file of stored and displayable drawings.
+
+1Procedures Library Documentation0^^^^^^^^^^Perhaps no one should be surprised at the popularity of publication, for:
+.in 2
+"...all the genuine, deep delight of life is in showing people the mud-pies you have made; and life is at its best when we confidingly recommend our mud-pies to each other's sympathetic consideration...." [1]
+.in 0
+One of the discoveries coming out of the Plato project is the extent to which children have been engaged in producing materials for a commonly accessible library of computer procedures.  The specific relevance of this observation to writing is to emphasize the role of "verbal" explication of procedures.  A common computer library could be well served by a query-based documentation generator which would ask questions such as these:
+.nofill
+.in 2
+-^what type of thing are you inserting in the library ?  Game, display,
+^^^^^sub-routine, system ?
+-^What is its function ?  Please explain in a single sentence.  You can explain
+^^^^^in more detail in subsequent sentences.
+-^what's really special about your insertion ?
+-^what inputs are required for execution ?
+-^what further information is available ? [references to paper descriptions]
+-^who did it ?
+-^who will fix any bugs found ?
+-^who will clarify the documentation ?
+.in 0
+.adjust
+With respect to the development of writing ability, the significance of procedure documentation for a local computer library is the engagement of the user in a feedback cycle.  If the documentation is unclear, it will produce as much trouble as a program bug and should be treated as equally serious a flaw in the published system.  In contrast with the various exercises children are compelled to write, such documentation should have much more reality for an author because it will support something he hopes others will use.  The audience may be, initially, a strictly local computer circle.  For successful procedures of potential use in a large commuinity, the child will have available the regular publication channels of the growing computer culture.  That is, such local libraries are not a dead end.
+
+1Engineering Drawing0^^^^^^^^^^The first use of such a specialized computer sub-system would be as a design tool for child originated projects.  The value of a computer-resident set of design drawings would be the child's engagement in a feedback cycle.  As his design grows in specificity (as he gets advice and settles actual design issue) his drawings will increase in clarity.  This will require significant text insertion.  The most primitive textual element would be part labelling.  Next would come dimension data.  More complete annotation would include explanations of functions and would specify the relation of parts to other parts and to other drawings.  Sets of drawings would typically be related through a quasi-standard "identification-block" in each drawing.
+
+^^^^^^^^^^Not every child wants to do engineering drawings, but such a facility could be extended in application to  a variety of other child-favorite applications.  Examples might be the construction of cross-word puzzles, of mazes (with labelled traps, etc.), and even the construction of elaborate sets of dungeons and cities for use with the currently popular game, "Dungeons and Dragons".
+
+^^^^^^^^^^The audience for products of such a system would depend on what the child made and so the feedback cycle would be various.  For example, I can easily imagine a child discussing a dress design of a design for a go-cart with a teacher or parent.  Maybe other children would be more interested in mazes or "D & D" dungeons (maybe not).  In general, the audience for products of an "engineering drawing" system would be less computer-culture-limited than procedure-library documentation.
+
+1Ephemeral Uses0
+
+1Jokes0^^^^^^^^^^The contributions a computer system could make to joke writing would be of several sorts.  First, the computer can store many examples of various standard forms, e.g. "knock-knock" jokes, limericks.  Second, a few simple interface programs could reduce te burden of preparing fair-copy through a simple interaction such as the following:
+.nofill
+.in 2
+Child:^^^^(Keying)^^KK.
+Computer:^(Printing)
+^^^^^^^^^^Jokester:^Knock-knock.
+^^^^^^^^^^Victim:^^^Who's there ?
+^^^^^^^^^^Jokester:
+Child:^^^^(Keying)^^Olive.
+Computer:^(Printing)
+^^^^^^^^^^Victim:^^^Olive who ?
+^^^^^^^^^^Jokester:
+Child:^^^^^^^^^^^^^^Ah luv you.
+Computer:^(Defines a procedure "KK-OLIVE" which will print out the text
+^^^^^^^^^^^when the procedure is called.)
+.in 0
+.adjust
+Similarly, another helpful tool could be a special purpose limerick generator.  A simple program could represent the verse form and typical metric of a limerick.  A more sophisticated one might (on request) propose a list of alternate vowel spellings for masculine syllabic rhymes, such as "sea, see, si(Spanish)".  Further, computer storage would make it possible for anyone to have his own collection of jokes, a collection easily exended, purged and reproduced for others.
+
+1Madlibs0^^^^^^^^^^"Madlibs" [2] is a trade name for a language game based on assigning specific values to general word classifications in a text.  The humor of Madlibs typically derives from the incongruity of randomly chosen words inserted in a basically innocuous text.  Consider this example (of a "television listing")
+.nofill
+.in 2
+11 a.m.^^"Tarzan Goes to Pieces"^^This 1955 adventure film of Tarzan and
+ the [ANIMAL, PLURAL] stars [NAME of a person in the room] as the apeman.
+ Plot concerns rescuing [NAME, celebrity] from a [ADJECTIVE] tribe
+ of savage [NOUN, PLURAL].
+.in 0
+.adjust
+In a computer culture, such a form can easily be seen as a simple extension of the long-popular list-driven random text generators.  A computer text editor is the ideal means for playing such a game and, more importantly, for developing one's own "madlibs".  A simple function which could change any string to a variable name would permit working on any text and would require of the user naming the variables in such a way that any user of the text would understand what word-type would be appropriately incongruous.  The text above could be presented by the computer (as it was) to a child thus:
+.nofill
+TARZAN  :PLURAL-ANIMAL  :PERSON  :CELEBRITY  :ADJECTIVE  :PLURAL-NOUN
+.adjust
+would produce a "clean" and "official" looking text with ridiculous contents.
+
+1Cartooning0^^^^^^^^^^
+.nofill
+-^with character creation on line
+-^with camera input: this basically implies text variation
+^^of existing visual material
+.adjust
+
+^^^^^^^^^^Who is the audience for such ephemera ?  Whoever passes by.  Why does humour play such a role in learning about communicating to other ? Because delight in wit and its application is hard to simulate.  That is, even children may get an honest response instead of one based on condescension and according them special privelege as incomplete persons.
+
+^^^^^^^^^^Notice that we have emphasized writing which has potential for engaging an audience.  We have not mentioned anywhere the role of teacher as assignment-giver and paper-corrector.  The point is that the child will profit from more from a more frequent and casual interaction with people who care more about the content of his work that he would from scholastic assignments and corrections.
+
+
+.ce
+1Developing an Appreciation of Standard Forms0
+
+^^^^^^^^^^In what specific sense is it useful to know the standard forms of text as taught in schools, such as the business letter ?  Future use on the job is one justification.  More importantly, the standard forms of written communication can become well known objects for thinking about.  The educational experience is less one of developing a repertoire of commonly useful forms (though such is itself a valuable accomplishment) than it is of developing examples of various forms from whose contrast one may form his personal theory of written communication.  We will focus on mechanized tools of text productions because their use will provide examples of standard forms the significance of whose parts can be gradually appreciated. (Cf. OCL:Intro to Writing -- example of relative dating.  Maybe this is so important as to be cited in extenso.)
+
+1Form Letters0^^^^^^^^^^Writing letters is not something young children do often or easily... but they might write some letters if the production were easier and if their output could be personalized.  For example, I have required my children to write "Than you" notes for gifts received.  Why should they do that when a telephone calll can convey the same message in a more personal way ?   A "thank-you" form letter generator -- permitting flexibility through multiple choice of appropriate sentences and text insertion in the body or post script could be useful to a child.  If the cliches of the form could be mechanically generated and appended to some recently created design of which the child was proud and which he wanted to show off, why shouldn't the letter become the preferred option ? 
+
+1Text Generators0^^^^^^^^^^If we are willing to help children write "Thank-you" letters, why not help with other writing tasks we impose on them ?  As long as there are schools, children will be required to write simple compositions, short stories, essays, new articles.  Can we not ask "Who, what, where, when, why, and how^?"  Can we not ask which is most important and generate a skeleton text with markers for where connections are needed^?
+
+^^^^^^^^^^If such helping programs define what the units of organization are in standard forms, they also will define implicitly a theory of what readers attend to in standard forms.  The author reading "his own" work as structured by an extrinsic theory of the reader's psychology will gradually infer what that theory is from his own experience.  If his text is on-line and if non-offensive criticisms may be appended to "his own" text, the child and the critic will both work together toward an object of which they may be proud.
+
+1Versification0^^^^^^^^^^There is more to versification that writing limericks.  Children enjoy singing songs and can enjoy producing text for songs.  A child who was not yet able to write was once delighted to dictate to me her favorite song, "Little Rabbit Foofoo".  She printed twenty copies from the computer display as gift for her kindergarden classmates.  Though most of them could not read, they were, in turn, delighted to take them home so their parents could follow and sing along with them this favorite kindergarden song.
+
+^^^^^^^^^Older children may also take delight reproducing favorite songs on a computer -- but they could do more themselves and do more complex things.  For example, it would be possible to produce a subsystem for simply representing the melodic line of a song.  With versification,  a child could produce mini-librettos.  Some might become interested in the variety of verse forms in the English poetic tradition, the varieties of sonnets, even the complexities of the "french forms".  Imagine if you can, how useful a special purpose text editor would be in the composition of a villanelle.  As discussed with the example of limericks, the computer could be a generative aid in rhyming.  Beyond exhibiting alternate spellings of vowels, the computer could display the spelling of a vowel with all the initial phoneme clusters possible in English.  The would be poet could scan such a meaningless list as a prompter for aural connection with words that might be significant to him.
+
+1The Personally Significant Journal0^^^^^^^^^^Journals have long been advocated as significant tools of intellectual growth, recovery and self control.  Teachers often lead children -- as young as third graders -- to journal keeping.  A few, a very few, take up the habit and it becomes a central organizing force of their lives.  Most do not.
+
+^^^^^^^^^^In computer cultures, journalling offers a new route to the construction of a personal history (which is then accessible as an object of reflection).  The first, most natural artifact of computer work ios saving what's done today for tomorrow.  Saving procedures has long been a fundamental capability of computer systems. It is a small extension to save textual productions.  Computer systems and networks of small computers usually make available to their users a personal message switching service, a "computer mail" system.  When such a system permits the insertion of mail in a file for future delivery, a "personal scheduling system" becomes easily available by date-triggered reminders sent to oneself.  As the date horizon moves through the current mail file, the schedule, the plan for the future becomes the history of that schedule.  Augumented by a notation of procedures written and modified and text files accessed, this reflexive mail system becomes, incrementally, a computer journal.
+
+1Multiple Descriptions of Happenings0^^^^^^^^^^
+
+^^^^^^^^^^Computer systems capable of the simultaneous manipulation of multiple agents (such as the TI 99-4) introduce fascinating interaction possibilities.  It has ben typical to manipulate groups of these multiple agents as lists.  The interactions of agents is sufficiently complex that it is difficult to say in advance what will be the outcome of procedure written with actions contingent on the interaction, e.g. collisions, of the agents.  Lets us call this particular kind of procedure a HAPPENING.  Specifying the actions to be performed in a happening can be done in the fashion of earlier command languages, e.g. Agent-X performs operation XX, then Agent-Y performs operation YY.  With multiple agents, a new surface form of description can become apllicable to specifying what should occur, the form of a script in the theatrical sense.  This suggests a research effort to develop multiple forms of expression of commands to computer entities.  Once such various command forms exist in the microworlds of computer experience, it should arise as a natural question the relation of script-like command langauges to others.  This involves on a very limited scale a comparison of a narrative-like description of an action.  The point is that when multiple forms exist, their comparison becomes possible, and a better apopreciation of the functioning of both may be achieved.
+
+.page
+.ce
+1Conclusions0
+
+^^^^^^^^^^Dare we prediuct that from such experiences children will learn more about writing than they do now ?  There are three possible claims: ALL children will learn something (this is a supplement fort current curriculum); SOME children will learn more than they do now (this is supplement for some special class of students); ALL children will learn more than they do now (this is a replacement for the standard curriculum).
+
+^^^^^^^^^^We can conclude that these thre papers offer an alternative VISION to writing instruction as practised today.  As a supplement to the standard curriculum it will not be harmful.  It deserves to be examined as an alternative because it strives to make writing useful and meaningful to the child while he is learning how to do it.  
+.page
+.ce
+1Notes0
+.nofill
+
+[1].Langer, S. K., Philosophy in a New Key, preface, p.ix;
+^^^^attributed to J. M. Thornburn.
+[2]. 
+[3].
+
+.ce
+1References0
+
+Bruce
+Flower and Hayes
+Graves
+Lawler - Intro to Writing, OCL, PCM, EEL, ZOOM
+Papert - Mindstorms

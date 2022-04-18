@@ -1,0 +1,403 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.tabfnt 2
+.chap 9
+.he1
+Jimmy
+.he2
+Working Style
+.ds
+.adjust
+.ce
+19. Jimmy
+
+Jimmy is considered to be an above average student by his teachers.
+His national achievement test scores place him in the 57th percentile.
+ Although he is considered bright, Jimmy is extremely selective in
+applying himself to regular class work.  He tends to excel in areas
+which appeal to him, and offers resistance to assignments which he does
+not consider "interesting".
+
+.block 5
+11. Jimmy's Working Style
+
+0In the LOGO classes, his work was also somewhat ideosyncratic.  He
+quickly became expert at "TURTLE driving," and created one of the most
+elaborate drawings of any of our students.  His procedure, to draw a
+robot, patterned on the Starwars character, R2D2, was extremely
+detailed and intricate, and was drawn with uncommon care and patience.
+On the other hand, Jimmy had great difficulty understanding how to make
+use of subprocedures in a way that made his work easier.  He conceived
+of each projects as a long, almost endless string of commands;
+subprocedures were just a way of breaking a project into pieces that
+could be accomplished in a short time.  It was not until near the end
+of the classes that Jimmy began to make use of subprocedures for
+planning.  Debugging remained a mystery for him.
+
+.he2
+Drawing a Boat
+.block 5
+12. Jimmy's Sailboat Project
+
+0Jimmy's first project, after learning the basic LOGO commands, was
+to use the TURTLE to draw a sailboat.  He drew his boat step by step on
+the screen, and copied the entire list of commands to make the
+procedures, BODY and SAIL.  Although he copied steps literally, in a
+style similar to Deborah's, he was also able to make good use of
+geometric knowledge.  Lines 2, 3, and 4 of his BODY procedure, which
+draw the prow of his boat, offer an example of how he was able to use a
+180 degree angle to reverse the TURTLE's direction.  Line's 12 and 13
+show how he corrected a mistaken RIGHT 89, by doubling 89, and
+following it by the command LEFT 178.  It is characteristic of Jimmy's
+work that he did not replace both commands by one correct LEFT 89, but
+kept both his original commands as part of his procedure.
+
+.nofill
+.block 23
+TO BOAT		TO BODY		TO SAIL
+1 BODY		1 LEFT 90	1 RIGHT 90
+2 FORWARD 20	2 FORWARD 60	2 FORWARD 60
+3 SAIL		3 RIGHT 40	3 RIGHT 140
+4 HIDETURTLE	4 FORWARD 20	4 FORWARD 50
+END		5 RIGHT 140	5 FORWARD 20
+		6 FORWARD 70	6 RIGHT 100
+		7 FORWARD 10	7 RIGHT 23
+		8 RIGHT 96	8 RIGHT 10
+		9 FORWARD 14	9 FORWARD 50
+		10 RIGHT 180	10 RIGHT 10
+		11 FORWARD 14	11 LEFT 10
+		12 RIGHT 89	12 FORWARD 30
+		13 LEFT 178	13 RIGHT 100
+		14 FORWARD 20	14 RIGHT 20
+		15 LEFT 10	15 LEFT 10
+		END		16 RIGHT 5
+				17 FORWARD 40
+				18 FORWARD 20
+				19 RIGHT 80
+				20 FORWARD 10
+				END
+Figure 9.1
+
+.he2
+Drawing a Robot
+.adjust
+13. 0Jimmy's next major project, on which he worked for five class
+periods (approximately 6 1/2 hours), was his drawing of a robot (figure
+9.2).
+
+.block 14
+.sp 12
+.ce
+Figure 9.2
+
+Jimmy's superprocedure, ADAM, made use of ten different subprocedures,
+to draw the robot.  Jimmy worked on the project in an exploratory
+fashion.  When he had successfully drawn one part of the robot on the
+screen, he would write down all the steps on the text display screen,
+and give that part of his drawing a name.  When he began working again,
+he would include the procedure he had just defined, as the first step
+of his next procedure.  Jimmy's procedure hierarchy can be described as
+a "tree", with no "branch" containing more than two "sub-branches".
+.nofill
+
+.BLOCK 11
+		ADAM
+
+	JP		EYE1
+
+D2		L1	BOX
+
+	DOG
+
+R2D2		JOE
+
+R2	LEG1
+
+.adjust
+The role of each of the subprocedures can be traced by starting at the
+bottom of the tree, and working upward:
+
+.indent 6
+R2 draws the rectangle which made up most of the robot's body.
+
+LEG1 draws the right leg.
+
+R2D2 includes R2 and LEG1 and then adds the left leg.
+
+JOE draws one 30-by-5 rectangle on the right of the robot.
+
+DOG includes R2D2 and JOE nd adds another small rectangle.
+
+D2 includes DOG and adds the two larger rectangles.
+
+L1 draws a single line on the lower left of the robot
+
+JP includes D2 and four repeats of L1.  It draws the entire robot,
+except for the eye.
+
+BOX drwas a small square in the robot's head.
+
+EYE1 includes BOX and draws the eye in the center of the box.
+
+ADAM includes JP and EYE1.  It draws the entire robot, moves the TURTLe
+over and draws the eye.
+
+.indent 0
+The specific subprocedures are listed below:
+
+.nofill
+.block 27
+TO R2		TO LEG1
+1 FORWARD 80	1 FORWARD 10
+2 RIGHT 90	2 LEFT 90
+3 FORWARD 70	3 FORWARD 15
+4 RIGHT 90	4 RIGHT 90
+5 FORWARD 80	5 FORWARD 30
+6 RIGHT 90	6 RIGHT 90
+7 FORWARD 70	7 FORWARD 5
+8 RIGHT 90	8 LEFT 90
+9 FORWARD 80	9 FORWARD 40
+10 RARC 40	10 LEFT 40
+11 RARC 40	11 RIGHT 10
+END		12 RIGHT 5
+		13 FORWARD 30
+		14 RIGHT 100
+		15 RIGHT 20
+		16 LEFT 10
+		17 FORWARD 20
+		18 RIGHT 90
+		19 FORWARD 20
+		20 RIGHT 180
+		21 FORWARD 20
+		22 RIGHT 90
+		23 FORWARD 10
+		24 RIGHT 90
+		25 FORWARD 30
+		END 
+
+.block 29
+TO R2D2		TO JOE
+5 R2		1 PENUP
+10 LEG1		2 FORWARD 30
+15 LEFT 90	3 PENDOWN
+20 RIGHT 15	4 FORWARD 30
+22 LEFT 10	5 LEFT 90
+25 FORWARD 50	6 FORWARD 5
+30 LEFT 90	7 LEFT 90
+35 FORWARD 30	8 FORWARD 30
+40 RIGHT 90	9 LEFT 90
+45 FORWARD 10	10 FORWARD 5
+50 RIGHT 90	END
+55 FORWARD 20
+60 RIGHT 180	TO DOG
+65 FORWARD 20	1 R2D2
+70 RIGHT 90	2 JOE
+75 FORWARD 15	3 PENUP
+80 RIGHT 100	4 FORWARD 5
+85 FORWARD 30	5 PENDOWN
+90 LEFT 10	6 FORWARD 5
+95 FORWARD 40	7 LEFT 90
+100 RIGHT 90	8 FORWARD 30
+105 LEFT 180	9 LEFT 90
+110 FORWARD 5	10 FORWARD 5
+115 RIGHT 90	11 LEFT 90
+120 FORWARD 30	12 FORWARD 30
+125 RIGHT 90	END
+130 FORWARD 15
+END
+
+.BLOCK 28
+TO L1		TO D2
+5 FORWARD 15	1 DOG
+10 BACK 15	2 RIGHT 90
+15 PENUP	3 RIGHT 180
+20 RIGHT	4 PENUP
+25 FORWARD 10	5 FORWARD 15
+30 PENDOWN	6 LEFT 90
+35 LEFT 90	7 PENDOWN
+END		8 FORWARD 30
+		9 RIGHT 90
+		10 FORWARD 40
+		11 RIGHT 90
+		12 FORWARD 30
+		13 RIGHT 90
+		14 FORWARD 40
+		15 LEFT 90
+		16 PENUP
+		17 FORWARD 5
+		18 RIGHT 90
+		19 PENDOWN
+		20 FORWARD 25
+		21 LEFT 90
+		22 FORWARD 20
+		23 LEFT 90
+		24 FORWARD 25
+		25 LEFT 90
+		26 FORWARD 20
+		END
+
+.BLOCK 14
+TO JP		TO EYE1		TO BOX
+1 D2		5 BOX		5 FORWARD 20
+2 BACK 20	10 PENUP	10 LEFT 90
+3 RIGHT 90	15 LEFT 90	15 FORWARD 20
+4 PENUP		20 FORWARD 10	20 LEFT 90
+5 FORWARD 10	25 LEFT 90	25 FORWARD 20
+6 LEFT 90	30 FORWARD 4	30 LEFT 90
+7 PENDOWN	35 RIGHT 90	35 FORWARD 20
+8 L1		40 PENDOWN	END
+9 L1		45 LCIRCLE 10
+10 L1
+11 L1
+12 HIDETURTLE
+END
+	
+.adjust
+.he2
+Drawing a Rocket
+.block 5
+14. Jimmy's Rocket Project
+
+0Jimmy's next major project, although visually much simpler than the
+robot, also took five class periods to work out.  The complexity of
+this project lay in the use of angles other than ninety degrees.  This
+required Jimmy to pay careful attention to TURTLE's state at each point
+of the process, in order to draw a symmetrical design. (Figure 9.3)
+
+.block 17
+.sp 15
+.ce
+Figure 9.3
+
+Jimmy's hierarchical "tree" was a lot simpler this time:
+
+.nofill
+.block 7
+		R
+
+	RFIN	FIN2	ROCKET
+
+	J
+
+STICK	CONE
+.adjust
+
+.indent 6
+STICK draws the rocket's body.
+
+CONE draws the nose cone.
+
+J combines CONE and STICK and draws the entire rocket.
+
+RFIN includes J and adds the upper right fin.
+
+FIN2 draws the lower right fin.
+
+ROCKET draws both left fins.
+
+R includes RFIN, FIN2 and ROCKET, and draws the entire rocket.
+
+.indent 0
+In drawing the rocket, Jimmy constructed the upper right fin by trial
+and error.  He then copied it three more times, paying careful
+attention to right/left symmetry.  (The lower left fin came out a
+little too large because of a miscalculation).
+
+Jimmy developed an interesting solution to the problem of drawing the
+rocket's nose cone -- an isoceles triangle with a fixed base.  His
+strategy was to start at point A (figure 9.4), turn the TURTLe RIGHT 15
+degrees, move it forward a certain distance, and then back the same
+distance.  Making use of symmetry, Jimmy then moved the TURTLE to pint
+B, turned the TURTLE LEFT 15, and moved it forward and back the
+same distance.  His problem was that he did not know the distance
+to use.  The teacher suggested that he make that length a variable, and
+together they talked through the procedure:
+
+.nofill
+.block 15
+TO CONE :LEN
+5 FORWARD 100
+10 RIGHT 15
+15 FORWARD :LEN
+20 BACK :LEN
+25 RIGHT 75
+30 FORWARD 15
+35 LEFT 90
+40 LEFT 15
+45 FORWARD :LEN
+50 BACK :LEN
+55 RIGHT 15
+END
+.ri
+Figure 9.4
+
+.adjust
+Jimmy then used the CONE procedure several times to determine the
+correct length.
+
+There are clues in the CONE procedure to the way that Jimmy made use of
+"units" of 90 degrees in thinking about his drawing.  He turned the
+TURTLE RIGHT 15 at line 10.  Line 25 added the additional rotation,
+RIGHT 75, to make a total of 90 degrees, allowing the TURTLE to move
+from point A to point B.  Having reached point B, Jimmy turned the
+TURTLE LEFT 90, and added the step, LEFT 15.  The fact that he was
+thinking in terms of 90o units was confirmed by his failure to
+combine the two as one step, LEFT 105.
+
+.block 5
+.he2
+Racetrack Project
+15. Jimmy's Racetrack Project
+
+0During the last few classes, Jimmy concentrated on working with
+Dynaturtle activities.  Part of his work with Dynaturtle is described
+in detail in Chapter 6 of Part II of this report.  A racetrack project
+that Jimmy carried out in connection with dynamic activities gives
+another indication of the way in which he incorporated geometric ideas
+into his work in Turtle Geometry.
+
+Jimmy was drawing a "racetrack" for the Dynaturtle to move around.  He
+had decided to draw an oval track, and had completed drawing the inside
+of the track.  To draw the ends of the inside of the track, Jimmy made
+repeated use of RARC 40 commands (Figure 9.5).  To draw the outside of
+the track, he moved the TURTLe over 40 TURTLe steps, and drew the
+outside using RARC 80 commands (Figure 9.6).  When an observer asked
+Jimmy how he knew that RARC 80 would draw the correct sized arcs, Jimmy
+answered that using an RARC 80 command was "just like making a corner
+with sides of 80." This indicated that he understood how to replace the
+effect of the RARC command by an equivalent one which made it easy for
+him to calculate the necessary distance (Figure 9.7).
+
+.nofill
+.block 18
+TO TRACK	TO IN		TO OUT
+10 IN		10 RIGHT 90	10 RIGHT 90
+20 OUT		20 FORWARD 50	20 FORWARD 150
+END		30 LEFT 180	30 RARC 80
+		40 FORWARD 150	40 RARC 80
+		50 RARC 40	50 FORWARD 150
+		60 RARC 40	60 RARC 80
+		70 FORWARD 150	70 RARC 80
+		80 RARC 40	END
+		90 RARC 40
+		100 PENUP
+		110 LEFT 90
+		120 FORWARD 40
+		130 PENDOWN
+		END
+
+.ce
+Figure 9.5
+
+.block 12
+.sp 10
+.ce
+Figure 9.6
+
+.block 12
+.sp 10
+.spread
+/Figure 9.7a//Figure 9.7b
+

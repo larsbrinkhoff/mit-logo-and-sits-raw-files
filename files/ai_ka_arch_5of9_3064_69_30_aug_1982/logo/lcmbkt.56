@@ -1,0 +1,1078 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12i
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi b
+--DRAFT--
+.sp 6
+Logo Curriculum Materials
+
+Specially Adapted for the Brookline Public Schools
+
+June 1981
+.sp 3
+Introductory Turtle Geometry
+
+Teachers' Guide and Background Information
+
+by Daniel H. Watt
+.sp 10
+The development of these materials was supported in part by the National Science Foundation under grant number SED - 7919033 and conducted at the Artificial Intelligence Laboratory, Massachusetts Institute of Technology, Cambridge, Massachusetts. Activities were used extensively with students in grades  4 - 8 at Lincoln School, in Brookline, Massachusetts.  The material contained in this document represents the views of its author and should not be interpreted as necessarily representing the official policies, either expressed or implied, of the National Science Foundation or the United States Government.  
+.chapter "bold(Introduction to the Teachers' Guide)"
+
+Learning to program a computer using the Logo computer language and activities has been one of the most profound and enjoyable experiences of my life.  I'm still learning after five years, and don't expect to stop.  Teaching Logo to students between the ages of 8 and 14, and having the opportunity to observe and reflect on what they were learning has been the most profound experience in my life as an educator.  Sharing ideas about  teaching and learning Logo to make it possible for other people - teacher/learners and student/learners - to engage in this type of experience is a challenge to which I hope to devote a great deal of my time, thought and work during the next few years.
+
+Teaching is a subtle and difficult art. Capturing the essence of what a teacher does to help a student learn Logo really requires a full-length book (which I plan to write someday). Meanwhile, I have assembled some materials that should be helpful for teachers who are starting to teach Logo. In this guide, I have included the following:
+
+.in 5
+Background information about the history,  educational philosophy, and important ideas embedded in the Logo computer language and learning activities.
+
+Organizational ideas based on  the use of Logo in classrooms at Lincoln School during the past four years.
+
+Suggestions for use of the Student Activities Booklet and whole class lesson ideas.
+
+A sample checklist for assessing student progress.
+
+A glossary of Logo terminology.
+
+A minimal amount of technical information needed to use an Apple II microcomputer with Logo in your classroom.
+
+References for further background reading, teaching ideas and technical information.
+
+.in 0
+The Student Activities Booklet has  been assembled from materials developed as part of a National Science Foundation grant. They should  be looked on as a sort of "guide" for students, not necessarily as step-by-step lessons. Rather, they should be seen as a starting point, or jumping off place for student explorations. They present information needed to get started, suggest activities that will help someone learn more deeply, and  offer a number of project ideas, designed to stimulate the imagination, rather than to provide a fixed set of "homework assignments". The "proof of the Logo pudding" is in children developing their own ideas about what they want the computer to do, and solving for themselves the problem of making the computer carry out their intentions.
+
+The best preparation for teaching Logo - the most essential preparation - is to learn something about Logo programming yourself.   Use the student booklet, work through the activities presented there, and develop some projects of your own. If you find that you want to go further than the introductory level in the booklet, you may need to look at some of the reference material, particularly the Apple Logo Manual, which explains a great deal about the possibilities and potentials of more advanced Logo programming.
+.chapter "bold(What is Logo?)"
+This chapter has been adapted from an article originally published in "The 99-er" a magazine for users of the Texas Instruments TI 99/4 Personal Computer.
+.section "bold(A Computer Language as a Learning Environment)"	
+
+Logo is  a powerful, high-level computer language designed for educational purposes - especially as a programming language suitable for young children. For more than a dozen years the Logo language and related computer programming activities have been developed and tested by the Logo Group at the Massachusetts Institute of Technology. Under the leadership of MIT Professor Seymour Papert, Logo activities have been used with  nursery school children, with MIT undergraduates, and with many students of all ages in between.  For the past four years,  two Logo projects have been carried out with students and teachers at Lincoln School.  In the course of these projects, eight classroom teachers and all the students between grades 4 and 8 have had the opportunity to learn Logo and carry out their own programming projects.  An extensive research report, "Final Report of the Brookline Logo Project," describing what students have learned from using Logo, is available in the library of each Brookline elementary school.
+
+The guiding rule of Logo's developers has been:  "No threshhold, no ceiling." A beginner can make the computer do something meaningful and interesting in the very first programming session. At the other extreme, Logo is suitable for extremely advanced programming projects.  The educational philosophy associated with Logo has been derived  primarily from two sources: the developmental theories of the late Swiss psychologist, Jean Piaget, with whom Seymour Papert worked for several years before coming to MIT, and ideas from a modern scientific field called Artificial Intelligence. From Piaget comes the idea of creating learning environments in which most of what children learn can occur naturally - in the same way children learn to speak their native language, walk or run, and play ball. From Artifical Intelligence come ideas about ways to use programming languages to aid thinking and problem solving. Programming a computer in Logo is seen as the act of teaching the computer a set of new commands, based on what it already knows how to do. Each user is, in effect, creating her own computer language, to suit her own purposes. People interested in learning more about these ideas should read Mindstorms, a recent book by Seymour Papert, in which he develops and extends his vision of the relationship between computers and learning that led to the development of Logo.
+
+Logo activities are designed to allow use of the computer in a way that is personally meaningful to the user. Activities developed by the MIT Logo Group have included using a computer to control the behavior of a robot turtle, draw pictures and explore geometric environments on a TV screen, create computer animations, invent interactive computer games, compose, arrange and play music,  and produce "computer poetry". The best known Logo activity is using a simulated robot turtle on a TV screen to produce geometric designs and cartoon-like drawings. Hundreds of children have learned  computer programming and problem solving skills, and  developed mathematical expertise while writing programs for the turtle. 
+
+The Logo language includes commands to make the turtle move and draw pictures. A student drawing with the turtle can make it move around on the TV screen, by typing familiar commands such as FORWARD and BACK or RIGHT and LEFT.  The information a beginner needs to control the turtle is already present in her own body knowledge of how to move forward or back and how to turn right and left. Programming becomes an extension of something the learner already knows rather than something requiring the mastery of an elaborate technical language or a complex coordinate system. The turtle becomes for the learner, what Seymour Papert has called "an object to think with."  The student using the computer as a programming tool becomes more aware of both her own body motion and the behavior of the computer.
+
+.section "bold(The World of the Turtle)"
+
+Let's take a closer look at what actually happens when someone learns to program a computer using the Logo turtle. The turtle responds to simple commands typed at the keyboard:  FORWARD  100,  BACK  50,  RIGHT  90,  LEFT  45,  etc.  FORWARD 100 moves the turtle forward "100 turtle steps," drwaing a line on the TV screen in the process.  LEFT 45 makes the turtle rotate 45 degrees to its own left. People learning Logo find it natural to "identify" with the turtle, imagining themselves going through its motions, as it carries out a particular task. At the same time, controlling the turtle becomes a metaphor for controlling the computer itself - like the turtle, the computer responds to an ordered series of commands, and to procedures, defined as series of commands.
+.bp
+The ways in which the actions of the turtle can lead to geometric designs, as well as the method used to define procedures is illustrated in the following simple examples. The turtle can draw a square by repeating the commands  FORWARD  50  RIGHT  90  four times.  A procedure can be defined by choosing a name (BOX, for example) and typing a series of commands in order.
+
+.nf l
+	TO   BOX
+	FORWARD   50
+	RIGHT   90
+	FORWARD   50
+	RIGHT   90
+	FORWARD   50
+	RIGHT   90
+	FORWARD   50
+	RIGHT   90
+	END
+.sp 3
+.fi b
+When the new command,  BOX,  is typed, the turtle immediately draws the shape shown in the figure. (The small triangle shown in the figure represents the turtle - showing its position and heading.)  A similar procedure,  TRI,  can be defined as follows:
+.nf l
+
+	TO TRI
+	FORWARD   50
+	RIGHT   120
+	FORWARD   50
+	RIGHT   120
+	FORWARD   50
+	RIGHT   120
+	END
+.fi b
+.bp
+A student who has defined procedures such as BOX  and  TRI  is beginning to  "teach the computer" her own private language.  BOX  and TRI  can now be used in the same way as other Logo commands.  They can be used to create other drawings such as a simple "house" or an abstract geometric "flower".
+
+.nf l
+	TO   HOUSE
+	BOX
+	FORWARD   50
+	RIGHT   30
+	TRI
+	END
+.sp 10
+	TO   FLOWER
+	REPEAT   12   [ TRI  RIGHT   30 ]
+	END
+.sp 10
+.fi b
+This approach to geometry and programming provides the basis for a rich universe of activities known as Turtle Geometry, which includes cartoon drawings, simple and complex geometric designs, mathematical theory building and computer games. Extensions of Turtle Geometry have proven fruitful when used with advanced high school students or MIT undergraduates. Work with Turtle Geometry provides a conceptual framework for such aspects of mathematics as the relation between shapes and angles, coordinate systems, positive and negative numbers, the use of variables, symmetry and similarity, and even calculus and differential geometry. The computer programming involved in beginning Logo activities can include procedures and subprocedures, the naming of procedures and variables, procedural hierarchy, recursion and iteration, the use of conditional logic, and the development of problem solving strategies. 
+
+Within the universe of Turtle Geometry there is room for different students, working individually, to create their own sub-universes or microworlds, with their own limited but expandable sets of concepts and related activities and projects. Teaching Logo should be seen as the task of helping each learner create, explore, and extend her own microworld.  For more information about what has actually been done by students in this type of learning environment, look at a copy of the Final Report of the Brookline Logo Project, available in your school library. The report also includes many examples of turtle drawings, created by students learning Logo.
+
+
+.section "bold(Beyond Turtle Geometry)"
+I have used turtle geometry as an example of what can be done with Logo because it is easy for a reader to visualize the commands and to see how they lead to procedures that produce the results in the pictures - just as it is for children or any beginning programmers. Children learning Logo have actually carried out many other types of projects as well: moving turtles, finding their way around racetracks or mazes, animated cartoons, interactive computer games such as Nim and Tic-Tac-Toe, programs which generate sentences or poetry, or play mad-libs, and programs to translate English into Morse Code, or vice-versa. Logo is now  available to users of  TI 99/4 and Apple II microcomputers. Since there will soon be more Logo users than ever before, we can expect more and different Logo projects to emerge.  Perhaps each Brookline School will establish a "Logo users group" to collect interesting projects to share with other schools.  These can then be shared with other users groups that will be forming around the country.  Today's students, as Logo pioneers are in a position to serve as teachers for the larger numbers who will follow them.  In an age in which computers are omnipresent in society, and in which universal computer literacy is a pressing national need, computer-based learning environments like Logo have become essential to the process of growing up literate in the last decades of the twentieth century.
+.chapter "bold(Strategies for Teaching Logo - A Philosophical Approach)"
+There are a number of possible goals to pursue in learning and teaching Logo:
+
+.in 5
+1. Mastery of the mathematical subject matter involved in turtle geometry.
+
+2. Mastery of computer programming as an art and a science.
+
+3. Development of problem solving skills.
+
+4. Development of a sense of personal "ownership" of the computer - a sense that  "I can master it.  I can make it do what I want."
+
+.in 0
+A student engaging in Logo activities is likely to be working towards all four of these goals at once, with different emphases for different students. For beginning students, I believe that the fourth goal, developing a sense of control over the computer, is the most important goal for a teacher to concentrate on, building the achievement of the other goals into the work that a student does while accomplishing the first.
+
+I'd like to suggest thinking of a  "shop teacher" as a model for this type of teaching, rather than a "math teacher".  A shop teacher works with students of a range of abilities, interests and aptitudes. While she can define (quite precisely) the skills and understandings a student needs to develop over a period of time, she does not assume that all students will develop those skills at the same pace, or that all students will be working on any one project at any particular time. Children gain their skills, build their competence and confidence through completion of personally meaningful projects which have been selected with the teacher's guidance. The teacher anticipates and can observe each student's skill level, and helps her to choose from a variety of projects at that level. The teacher also knows the directions in which student skills and understandings should be developing, and helps guide students into new projects that will challenge them to improve their skills, when they are ready. The teacher's role is to help students make reasonable choices, to provide specific training in the skills needed for a particular project, and to create a working atmosphere in which the students can be successful.  For a student, the goal is success with an immediate project. It is the teacher's task to turn each student project into a learning experience.
+
+If you walk into a shop class in progress, you will see students working on their own, or perhaps in pairs, on a variety of projects. The teacher will be working with one or two students, demonstrating a particular technique, helping solve a particular problem, or finding a special tool. Occasionally the entire class will meet for a demonstration - but the bulk of the class time is spent on project oriented activity. A student needing help will often seek it from another student, known to be an "expert" as well as from the teacher. 
+
+Following this model of teaching,  a Logo teacher should be knowledgable about the subject matter, understand the variety of learning paths that  students can take according to their own learning styles and developmental levels, and be skillful in the organization of individualized learning.  All this knowledge and skill require a good deal of experience, which can't be acquired overnight.  
+
+Most of the subject matter knowledge required for introductory Logo is contained in the student activities material. A teacher who goes through these slowly, observing her own learning, and thinking while learning, about what students are likely to do with the same activities, will learn  a great deal about Logo programming and Turtle Geometry.  More complete discussions of these subjects can be found in the bold(MIT Logo Manual for the Apple II), and in Volume II of the bold(Final Report of the Brookline Logo Project).
+
+The learning experiences of a number of sixth grade students, complete with descriptions of their project choices and the difficulties they encountered are also described in that report.  Since the students represented a range of developmental levels, interests and abilities, reading about their learning experiences, and the teaching strategies used with them, should be helpful to teachers of younger and older students as well.
+
+As a teacher, you also bring to the task of teaching Logo your own experience and understanding of how children learn and of how to provide for individual learning in a classroom setting.  Some specific organizational ideas that have proven successful during the past few years will be offered in the next chapter.
+.chapter "bold(Strategies for Teaching Logo - Practical Classroom Organization)"
+These suggestions are based on experiences at Lincoln School during the past three years.  A major factor at Lincoln School during those years was the presence of a group of students experienced in Logo - first, the veterans of the research project described in the bold(Final Report of The Brookline Logo Project) - and eventually large numbers of upper grade students. These students were able to offer a great deal of support to teachers as tutors of beginning students, as technical assistants, and as sources of ideas for interesting projects.  Wherever computers have been used in schools, they have attracted the intense interest of certain students who become extremely successful and knowledgable.  It is almost inevitable that some students will spend a great deal more time with the computer than any teacher can afford to spend, and many successful programs in computer education have made significant use of knowledgable students as teachers. On the other hand, if these students develop into an isolated subculture of computer wizards, the consequences can be very harmful in the long run.
+
+Whether you work with fourth or fifth graders, experience has shown that such experts will quickly develop in your class. This group will probably include some students who are not normally among the most successful in other academic areas.  It is important to find ways to encourage these students in their own learning and in their potential roles as teachers and helpers.  Working creatively with this group of students is one of the major challenges of computer literacy education.
+.section "bold(Physical Organization)"
+
+There are several considerations governing the physical organization of the computer system. First, location within the classroom, so that students can use it without disturbance, and that its use will not distract other students. Second, location so that light from windows or overhead does not cause excessive glare. Third, placement on a rolling cart so that the system can easily be moved to and from a locked storage area at the beginning and end of the day.  Fourth, the convenient location of related materials, disks, reference sheets, student notebooks and activity booklets. Finally, it would be extremely useful to locate the system near a bulletin board on which reference sheets, assignments, and student project suggestions  and pictures can be prominently displayed.
+
+It is important to provide adequate storage for magnetic disks, which are the most vulnerable parts of the system. They should be kept in a box that can be closed to minimize dust, and kept away from heat sources like radiators and direct sun light.  A plastic file box, used for  5 by 8  index cards, is a good disk storage box.  Students should learn to slip each disk into its envelope and put it in the box when they finish using the computer.  Disks should be kept away from magnets (such as those found in electric motors) at all times.
+
+In some classrooms teachers have used a room divider/bulletin board to accomplish many of these objectives at once. The divider provides a separated work area, blocks glare from windows and lights, while providing a place to post reference sheets and student work.  A rolling typewriter table makes a good base for the  system - computer, monitor and disk drive. If there is a printer it will need an additional space nearby. For normal use, placing the monitor on top of the computer, with the disk drive along side, has been a good arrangement. For whole class lessons, you may want to raise the monitor so that it can be easily seen by many students at once.  A large color TV borrowed from the library is even more useful for this purpose.
+.section "bold(Scheduling of Student Access)"
+
+Scheduling the use of one computer for an entire class of students, is always a problem. To put it bluntly, with one computer per class, there simply is not enough time for each student. Decisions about scheduling can therefore be of great importance. Scheduling will vary from class to class depending on  the number of students, your assessment of the effectiveness of frequency vs. duration of student activities, and the way your classroom time is structured.  A few guidelines can be offered based on previous experience.
+
+1. Make a regular schedule for use during class time.
+
+It seems important to make a regular scheduled time for all students. Students should be required to use this time. Although most students will want their computer time, there may be a few students who shy away from computer use at first, and it is important to protect the "access rights" of these students, until they get used to the computer. At the other extreme, there will probably be several students who will do all they can to gain extra computer time - even to the point of talking other students into "giving up" their own time. While it is important to allow student enthusiasts some extra use of the computer, it is critical not to allow anyone to lose their assigned time.
+
+Scheduled time should be for a minimum of twenty minutes.  Less than that is simply not enough. The upper limit tends to vary. Certainly forty minutes would not be too much, although here you might have a trade-off between forty minutes once a week, and twenty minutes twice a week. We don't have clear data about which is better. It depends on your own classroom organization, how easily students can handle getting on and off the system by themselves, your judgement about frequency vs. duration, etc.
+
+Another scheduling issue has to do with the number of students at a time.  We have found it critical that all students have their own individual time.  Although it is often effective for two people to work together (as well as increasing each person's computer access time), we have found that assigning students to work in pairs often means that one of the two gets very little benefit.  Our experience has been that it is better assign students individually, and let them choose to bring  partners if they want to. In this way, the assigned person has control and can be sure of his/her computer access.
+
+An exception to this has been when older students have been assigned as tutors. In this case we have assigned students to regular tutor/tutee match-ups according to a weekly schedule. Since the tutor's role is supportive and limited (tutors need some training for this, of course), the learner should be the primary user of the computer during that time.  Even when tutoring is part of the program, each student should have some independent, untutored time. 
+
+2. Allow for some unscheduled time for sign-ups and free access.
+
+The other side of the coin is equally important. The computer culture that develops in your classroom will be limited by the expertise and confidence of your most advanced students.  Students should have fair opportunity to sign up for computer use during free time, before and after school, etc.  One limitation is the availability of adult supervision.  Teachers who habitually stay in their classrooms late, and have been willing to have students "hanging around the computer" while they attended to other things, have had the most successful Logo learning environments.  If a teacher can't be present,  parent volunteers might be helpful, or arrangements can be made to allow after school computer use in the library.
+
+3. Provide support for the more advanced students.
+
+Since a great deal of the learning and most of the ideas are transmitted from student to student, it would be helpful to set up some kind of "club" for some of the more active computer users.  Older students might be available as teachers for such a club. There are many Lincoln School graduates at Brookline High School who are experienced Logo users (and in some cases experienced Logo teachers), who might be recruited for this purpose.  This suggests a possible Logo teaching strategy: each week introduce an idea to a few students who  have responsibility for sharing it with the rest of the class during the week.
+
+.section "bold(Whole Class Lessons)"
+Have at least one group time or lesson for the whole class every week. The purpose of this is to introduce new ideas and to have students share their work. When students show what they have done, you can be watching for ideas that should be highlighted to help other students understand them, or problems that indicate something that needs more explanation. Specific suggestions for class lessons will be given later.
+
+.section "bold(Record Keeping)"
+
+There are three important types of record keeping. Private journals for each student, public sharing of student projects (and problems), and records of student progress.
+
+Students should keep journals as a personal records of their own Logo knowledge, ideas, progress and difficulties. If a printer is available, students can paste printouts of their procedures in their journals along with descriptions of what the programs do.  While a computer program is itself a way of expressing an idea, of making a description of a concept or action,  students can also learn a great deal by making written and oral descriptions of their programs. Students should be encouraged to write a few descriptive sentences each time they use the computer. (This should not be made so important that it interferes with their computer use, however.)
+
+Public records can be kept on a bulletin board. Projects to copy - either procedure listings or pictures, student writing about Logo, etc. Students often share ideas informally about what they are doing. Institutionalizing it by setting up a bulletin board helps this happen more easily and spreads the ideas beyond one student's particular circle of friends. If you have a computer that prints graphics,  pictures of student projects can be posted as inspiration for other students, or just as a way for students to show each other what they have accomplished.
+
+Student progress records can be kept with the checklists provided in Chapter 7. These are set up so that the students can keep them in their journals, and fill them in by writing in the dates as they go along. (Few students seem to keep these up to date spontaneously, so you should be prepared to remind students to fill them in from time to time. )
+
+.chapter "bold(Using the Student Activities Booklet and Reference Sheets)"
+If you have not already done so, please skim through the student activities booklet before reading this chapter. If you have time, it would probably be a good idea to work through as many of the activities as you can, so that you can understand the kinds of experiences your students will be having.
+.section "bold(Using the Activities Booklet)"				
+The student activities booklet can be used in several ways:
+
+.in 5
+1. As a step-by-step Logo/Turtle Geometry learning guide. Even when used as a step-by-step guide, it should be stressed that the most important part of the experience is trying out the activities. Making up projects and figuring out how to solve problems is the essence of a Logo learning experience.  Someone who simply reads the booklet and copies the printed examples will be missing the point.  For this reason, most project suggestions have been given only as pictures. They are intended to provide ideas and inspiration.  The ideal project to attempt is one that someone suggests for himself. Noone is expected to try all the projects. Everyone should try some.
+
+2. As a set of references to help students remember how to type a particular command or how to use the editor.
+
+3. As a set of student assignments, for those students who need to have their work structured for them. Each chapter is divided into sections. Each section starts with a new page (most are only one or two pages long) which can be reproduced as an individual or class assignment.  Even when used as an assignment, however, the most important outcomes are individual projects and explorations.
+.in 0
+
+One possible way to use the booklet would be to assign a different chapter each week. This might work for a fairly advanced class.  Young students having their first computer experience will vary in the amount of time needed to thoroughly explore the activities in each chapter. It would be best to allow each student to proceed at his or her own pace.
+
+bold(Flexible Use of the Activities Booklet)
+   
+The sequence of the chapters is not intended to be absolute. Chapters 1, 2 and 3 are introductory, but it might be useful to introduce writing a procedure (from Chapter 4) soon after a student draws a square in Chapter 3, section 1.  Some students could go on from Chapter 3 to Chapter 5, bold(Projects With Circles), before learning about procedures and using the editor.  Similarly, the ordering of chapters 6 and 7 is arbitrary.  Students could spend a great deal of time exploring the possibilities contained in these chapters.  Students who seem more inclined to planning projects in advance should be directed to Chapter 6, bold(Using Subprocedures). Students who seem more inclined to create geometric designs in a more exploratory mode, might find Chapter 7, bold(Making Repeating Designs), more useful. Eventually, students should be exposed to both chapters.
+
+At all times, students should be encouraged to look ahead, to see what some of the possibilities are. Even in the earliest sessions, some students derive a great deal of benefit from understanding what they are working towards.
+.section "bold(Using the Reference Sheets)"
+The reference sheets are designed to help students remember Logo commands and processes without having to look them up. In addition to the specific reference sheets provided, many of the pages off the activities booklet could be xeroxed and posted as reference sheets. The  purpose of the reference sheets is to make it easy for students to remember needed information as they work, without having to laboriously look something up.
+
+.section "bold(Chapter by Chapter Review of the Activities Booklet)"
+
+In this section we describe the key concepts of each chapter of the activities booklet, also listing new vocabulary introduced, and difficulties to be anticipated.  The new terminology introduced in this chapter is defined in the bold(Glossary of Logo Terms), in Chapter 8 of this teachers guide. The Glossary could be reproduced as a set of  student reference sheets if desired.
+
+bold(Chapter 1: Getting Started)
+
+bold(Major Objectives:)
+
+To provide a student with the background information needed to use the Logo system, including use of the keyboard; an introduction to Logo syntax - the particular way that Logo commands have to be typed; and the use of disks and files.  With this information, and the ideas contained in Chapter 4 about writing procedures and using the editor, and student can carry out all the Logo activities suggested in the booklet.
+.bp
+bold(New Terminology Introduced)
+.nf l
+
+	keyboard
+	cursor
+	character
+	computer language
+	error message
+	prompt
+	command
+	use of < > to stand for a key
+	<RETURN>
+	turtle
+	"bug" or "buggy command"
+	<CTRL> - G
+	<RESET>
+	disk
+	disk drive
+	READ and SAVE
+	files and file names
+	procedure
+	working memory
+	stored memory
+.fi b
+
+bold(Difficulties to be anticipated:)
+
+Many initial difficulties have to do with typing. Understanding how to use the <SHIFT> and <CTRL> keys. Beginners often try to press the <SHIFT> and <2> key at the same time, to type  "  for example. It is much easier to hold down <SHIFT> first, and keep it down while pressing <2>.  (This is needed fairly early, when reading files from a disk.) This approach is the best way to use the <CTRL> key as well.  
+
+Another typing problem has to do with spacing. A space must be left after each command, before an input. It can be frustrating to get an error message after typing  FD100. Students need to learn to see the spacing printed on the page as critical:  FD   100  is meant to show the space as well as the  FD  and the 100.  The same is true in reverse when using ".  A common error is to type  READ   "   JOHN, for example.  The printed reference,  
+
+	READ   "JOHN, 
+
+is meant to show that there is no space after the ".  
+.bp
+The deeper issue underlying these difficulties has to do with understanding the literalness of the computer.  Following the rules exactly is crucial.  Although a human reader can see that   FD100  and  FD   100   are meant to convey the same information, the computer does not.  "Spelling and punctuation count!"
+
+Another common difficulty in the very first session is failure to type  <RETURN>  to send a command to the computer.  Experienced computer users rarely make this mistake, but it can be extremely frustrating in a first session.
+
+bold(Chapter 2: Introducing The Turtle)
+
+bold(Major Objectives:)
+
+The primary objectives of this chapter are to learn the basic commands for controlling the turtle, to become comfortable using the turtle as a drawing device, and to explore the turtle's screen and the limits of its environment.
+
+bold(New Terminology Introduced:)
+.nf l
+
+	DRAW
+	FORWARD,  BACK,  RIGHT,  LEFT
+	input numbers
+	"boundary of the screen"
+	pen state - penup, pendown, pencolor
+	background
+	changing the background color
+	screen modes, keys for controlling screen modes
+.fi b
+
+.keep
+bold(Difficulties to be anticipated:)
+
+Some students will continue to have typing difficulties - using the  <CTRL> key for shifting screen mode, for example.  A more important conceptual difficulty is encountered with the turtle, however.  This can be summarized as failure to understand and take into account the turtle's state at a given time. It's easier to explain this by a common example. Suppose the turtle is heading downward on the screen, and you want to move it to the "x".   Which way should it be turned, to point towards the "x"?
+.sp 10
+Many people say left referring to their own left. To the turtle, the  "x" is located to its right.  In this case, the bug is easily corrected by turning right 90,   twice,  once to "undo" the wrong left turn, and once to make the correct right turn.
+.sp 10
+.nf l
+	LEFT   90		RIGHT   90		RIGHT   90
+
+.fi b
+The difficulty is symptomatic of a deeper problem, however.  In order to use the turtle effectively as "an object to think with," that is, to use it to create designs and solve problems, it is necessary for a user to "put herself in the turtle's place". Watching a good turtle problem solver work, you will see her turning her head to align it with the turtle's heading.  This can be taught by playing turtle. See suggestions for whole class lessons in the next chapter.
+.end_keep
+
+Another type of difficulty results from the fact that the Apple computer is keeping track of two screens, a text screen and a graphics screen, at the same time. When you type  DRAW,  you see the screen "split" with the bottom portion reserved for text. If you drive the turtle into the lower part of the screen, it disappears, without indicating that you have done anything wrong.  In fact, it should be thought of as being "hidden" temporarily behind the text. TO see the turtle on the entire screen, you have to use the FULLSCREEN  command, or type   <CTRL> - F.  To see only text, type   <CTRL> - T.  To see the split screen again, type  <CTRL> - S  or SPLITSCREEN. The problem arises when students who are beginning to use the turtle, "lose it behind the text" before they understand how the screen modes work.  Since screen modes are a little more complicated than basic turtle commands, they would otherwise not be introduced until later.
+
+bold(Chapter 3: Drawing Shapes)
+
+bold(Major Objectives:)
+
+There are several important ideas introduced in this chapter. The first is the use of the turtle as a drawing device - to draw anything you want, in color, etc.  The second is the idea of drawing regular shapes - squares, triangles, stars, polygons. All these shapes have a repeated process in common: repeat a fixed sequence of FORWARD, TURN, FORWARD, TURN,... without changing the amount moved or turned, until a shape "closes".  
+
+One important idea is introduced indirectly. When the turtle turns all the way around it turns 360 degrees.  When it draws a square it turns all the way around in four turns. Since each turn is equal, each turn must be 360/4, or  90 degrees.  For a triangle, just divide 360 by 3 to get the angle; for a hexagon, divide by 6, etc. These ideas are not made explicit in the chapter, but they could be introduced in a class lesson if you wish.  (Another idea that could be introduced in this context is using the computer to do arithmetic.  PRINT   360/3 and use that for the angle. Or even RIGHT 360/3. Let the computer do all the work.)
+
+Another related idea introduced here is the idea of a "random" shape. That is, drawing something with no particular visual meaning other than as a "design."  This becomes important when repeating shapes, because it reinforces the idea that every fixed sequence of turtle commands produces a shape that closes, if the sequence is repeated often enough. (The exception is a sequence which has no net rotation - the turtle ends the sequence with the same heading it had when it started.)
+
+
+After a student draws one shape, it is often a good idea to suggest they turn to Chapter 4, to learn to write and save procedures.  On the other hand, many students will enjoy exploring shapes with the turtle for a longer time before going on to define procedures.  This must be a matter of individual judgement. The choice could be left up to the student.
+
+Other students might prefer to go directly to Chapter 5, bold(Projects With Circles and Arcs) before completing Chapter 3 or going on to Chapter 4.
+
+bold(New Terminology Introduced:)
+.nf l
+
+	shape names: square, rectangle, star, triangle
+	"square corner", "star corner", "triangle corner"
+.fi b
+
+bold(Difficulties to be Anticipated:)
+
+One major difficulty that often occurs here is that students fail to differentiate between the effects of the commands to move the turtle, FORWARD and BACK, and the commands to turn the turtle, RIGHT and LEFT.  This can be seen when a square is drawn using the commands  FORWARD  90, RIGHT  90 repeatedly.  The student thinks of 90 as a "magic number" for a square, but hasn't distinguished its different functions as inputs to FORWARD and RIGHT.  To help a student make the distinction clearly, suggest that he make the turtle draw a larger or smaller square. This helps isolate the key attributes of "squareness" - the fact that all four sides must be the same length - but they can be any length, and that all four angles must be 90 degrees.  Change the angle and the shape is no longer a square!
+
+bold(Chapter 4: Teaching the Computer)
+
+bold(Major Objectives:)
+
+The idea of a procedure is introduced here, along with the techniques of using the editor. The idea of a procedure as a fixed sequence of steps with its own name, is the critical one here.  Information about editing is given in Chapter 4 for convenience. The only editing functions a student really bold(needs) to be able to use here are move-right, move-left, and rub-out.  She must also know how to use  <CTRL> - C  to leave the editor and return to Logo command mode.
+
+An important subsidiary concept is that the computer has different modes:  Logo command mode, in which it carries out commands, and edit mode, in which it stores information.
+
+Another important idea is that a procedure, once taught to the computer, becomes another command to be used just as though it were a Logo command. This introduces a very central idea of Logo: programming the computer is the activity of inventing new commands, of teaching the computer new words.
+
+Finally, two more ideas are introduced: repeating a command can produce interesting, unexpected results. And, a procedure can itself be used as a subprocedure.
+
+bold(New Terminology Introduced:)
+
+.nf l
+	procedure
+	subprocedure
+	procedure name
+	editor
+	printout and "POTS"
+	saving files
+	special keys for editing
+	edit mode and Logo command mode
+
+.fi b
+bold(Difficulties to be anticipated:)
+
+Students often have difficulty understanding the difference between command mode and edit mode. This is reflected by trying to type commands when in edit mode. One way to make this distinction clearer is to point out the role of the  ?  prompt as signifying that the computer is ready for a new command. The  ?  does not appear in edit mode.  You might describe the prompt as follows: "The ? means the computer is asking: `What do you want me to do next?' "  Stress the role of  <CTRL> - C in leaving edit mode, and the roles of TO and EDIT, in entering it.
+
+Students also can be confused while using the editor. Here, there are two things to stress: the role of the cursor, and that there are two kinds of edit functions.  The cursor shows where the next character will be printed on the screen.  The two types of editing functions are:  moving the cursor - without changing the text; and changing the text itself. Common confusions are between the move-right arrow and the space bar, or between the move-down key and the <RETURN> key.  
+
+It is usually helpful to limit the editing keys that are introduced at first.  Move-right  (<    >), move-left (<    >), and  rub-out (<ESC>) are sufficient to do all editing.  Adding the  <REPT>  key can be helpful when the cursor must be moved a long distance, or when there is a whole line to erase.  All the other editing keys are conveniences that can be introduced later, when the student has become more comfortable with the system in general.
+
+A small but crucial problem is the use of   "   (<SHIFT> - <2>)  when saving procedures, and the spacing involved. See comments under "difficulties" for  Chapter 1.
+
+bold(Chapter 5: Circles and Arcs)
+
+bold(Major Objectives:)
+
+This chapter introduces circle and arc procedures as a way of giving students additional design tools.  Procedures with variable inputs are beyond the programming ability of beginning students, but are very much within their ability to use as Logo commands. 
+
+Certain geometric concepts are introduced as students work with circles and arcs.  The input to the circle and arc procedures specifies the radius of the circle. Students should be able to use this idea to draw diameters, divide the circle into "pieces of pie," etc. They will also soon discover that four of the arcs make a full circle. They should also eventually see that the RARC and LARC procedures turn the turtle through a total of 90 degrees.  Another concept built into circle and arc activities is symmetry. Since both right and left curving circle and arc procedures, students can create a lot of symmetrical designs. This can lead to a general understanding of right/left symmetry as "drawing the same figure with all rights and lefts reversed."
+
+bold(New Terminology Introduced:)
+
+.nf l
+	arc
+	radius
+	quarter circle
+	polygon
+.fi b
+
+.keep
+bold(Difficulties to be Anticipated:)
+
+The only real difficulty encountered here is that people often expect a circle to be centered around the point at which it starts. Since Logo circles are drawn directly from their starting points, this can be confusing. An interesting challenge is to create a procedure to draw such a circle: the turtle starts from the center, moves out to the edge, turns left or right, draws the circle, and returns to the center. This helps emphasize the meaning of the radius as well.
+.sp 12
+Of course, in the final version  you probably want the turtle to move to and from the center with its pen up.
+.end_keep
+
+bold(Chapter 6:  Using Subprocedures)
+
+bold(Major Objectives:)
+
+In this chapter students really begin to use subprocedures. This is where they begin to experience some of the real power of computer programming. Not only can the computer remember things, the things it remembers can be used as part of other more complex projects.  Two approaches are introduced:  using subprocedures as building blocks, to create designs in an exploratory fashion, and the use of subprocedures in planning.  These concepts, along with the idea of choosing procedure names so that they consciously reflect what the procedure is doing, are at the heart of problem solving with the computer. In particular, the use of subprocedure names in planning a project, leads to "structured programming", an important professional programming technique which can be easily learned by many children in this way.
+
+bold(New Terminology Introduced:)
+
+.nf l
+	subprocedure
+	superprocedure
+	building block
+	breaking a problem into parts
+.fi b
+
+bold(Difficulties to be Anticipated:)
+
+Subprocedures lend themselves to solving a problem in parts. For example, to build a "house," first make a square, then a triangle, and then put them together. It is in the putting together, that many people encounter serious bugs. For example, here are some common results when people first try to combine a square and a triangle into a house.
+.sp 15
+The problems stem from the fact that a turtle drawing procedure has two effects: it draws a shape on the screen, and it moves the turtle to a new position and heading.  That is, it changes the turtle's state. Beginners often focus only on the drawing, and neglect the change in the turtle's state.  There are several ways to help a student  learn to debug this type of problem.
+
+To help students focus on the change in the turtle's state, you could  ask a series of questions while trying things out on the computer:  Where is the turtle when it starts drawing the square?  Where is it when it finishes drawing the square. Where should it be to begin drawing the triangle? How can you get it there?  Where should it be heading to draw the triangle properly?  The student may have to experiment for a while in order to answer the questions.
+
+Since so many students encounter such difficulties, it might be useful to deliberately set up a problem like this to use as a class lesson, or to present students with a deliberately buggy situation to debug.
+
+bold(Chapter 7: Recursion and REPEAT)
+
+bold(Major Objectives:)
+
+In this chapter students are introduced to another key computer programming concept - repetition, either for a fixed number of times, or "forever." Unlike people, computers can do the same thing over and over again without being bored or getting tired.  This, as well as their speed, is the primary basis for the use of computers in management, business, science, etc.  Two approaches are introduced in this chapter: recursion, or using a procedure as a subprocedure of itself, and the REPEAT command, to repeat a list of instructions a fixed number of times.
+
+Introducing these concepts in the context of turtle drawings, makes their effects particularly interesting and useful.  An important geometric concept is that all fixed turtle drawings eventually close - that is, the turtle will eventually  start retracing its original path.  (An exception is a fixed turtle drawing that leaves the turtle heading in the same direction as when it started.)
+
+These ideas lead to many possible mathematical explorations which are beyond the scope of these materials.  For more information, consult the booklet called bold(Explorations With The Turtle - Intermediate Turtle Geometry) which is part of your reference materials.
+
+bold(New Terminology Introduced:)
+
+.nf l
+	repeating something "forever"
+	recursion
+	a list of instructions
+.fi b
+
+bold(Difficulties to be Anticipated:)
+
+One common difficulty occurs when repeating a shape causes the turtle to go to be OUT OF BOUNDS. This can be resolved by making the original shape smaller, or adding a rotation at the end, adjusting the turtle's heading so that it will not go off the screen.
+.keep
+
+A more complex bug occurs when someone inadvertantly combines REPEAT with recursion, by including the procedure name in the list of instructions to be repeated. Here is an example
+.nf l
+
+	TO CIRCLE
+	FORWARD   10
+	RIGHT   10
+	REPEAT   36   [CIRCLE]
+	END
+.end_keep
+.fi b
+
+What the student expects to happen is that the turtle will repeat the steps  FORWARD  10  RIGHT  10,  36 times.  Instead, the computer starts the procedure  CIRCLE  over again each time it executes the third line of the procedure, having the same effect as an infinite recursion. There are several ways to debug this:
+
+.nf l
+	TO CIRCLE
+	REPEAT   36   [ FORWARD  10  RIGHT  10 ]
+	END
+
+or
+
+	TO CIRCLESTEP
+	FORWARD  10  RIGHT  10
+	END
+
+and
+
+	TO CIRCLE
+	REPEAT   36   [ CIRCLESTEP ]
+	END
+.fi b
+
+To help someone understand how to think about this, stress that the second input to REPEAT must be a list of exactly the commands that you want the computer to repeat. By "playing computer," that is, talking through the procedure step-by-step, trying to understand exactly what the computer does at each step, you can help a student clarify why the bug occured. In order to repeat CIRCLE, in the first example, the computer had to execute  CIRCLE  36 times. During the first attempt, it encountered the REPEAT  36  [ CIRCLE ] command again. Thus it began to execute  CIRCLE  again, etc.
+.bp
+bold(Chapter 8:  More Project Ideas)
+
+The drawings presented in Chapter 8 are intended as a stimulus for a student's creativity and imagination. All the concepts needed to carry them out have already been introduced and explored. In working with students on this chapter, it is important to stess that the ideas are only suggestions, and that they could easily invent their own variations if they prefer. Another point to stress is that however simple the projects look, it would probably be best to approach them with some planning, and certainly to use subprocedures in carrying them out.  One thing a student might do in planning a project is to name each part of a drawing, and sketch out by hand, a drawing as a plan for each individual part. The problem then becomes that of making each part, and putting them together, which can be time consuming, but which is much more manageable than trying to accomplish the whole project "at once."
+.chapter "bold(Suggested Lesson Plans for Whole Class Lessons)"
+
+In a context in which students are primarily working independently, or in pairs, whole class lessons can be extremely important. They serve as a way to introduce new commands, concepts or activities to everyone. They also serve as a way for a teacher to monitor what the students are doing, and to introduce particular suggestions to help with the types of problems that many students are having. This is best accomplished by having students take turns demonstrating their work to others in "show and tell" fashion. In this format a teacher or other students can easily suggest  extensions to what a student has shown, or offer debugging ideas. Many of the ideas in the Student Activities Booklet, or in the suggested lesson plans can be introduced quite casually as part of a "show and tell" lesson.
+
+
+1.  Playing Turtle. 
+
+Before the students use the computer at all, it helps to set the stage by involving the class in an activity  called "playing turtle". This helps the students understand the concept of commanding the computer, as well as teaching them specific commands for controlling the turtle. In playing turtle, someone physically stands up and pretends to be the turtle, literally following the commands given by someone else. (Of course, you can play turtle by yourself - just follow your own commands!)  The person playing turtle must always follow the commands given literally, never responding to the intention of the command giver, but only to the commands actually given.  For this reason, it is a good idea for the teacher to be the turtle, modeling the correct behavior, the first few times this is tried. (Children seem to enjoy giving orders to their teacher - even if they are only turtle commands.)
+
+This activity introduces an important concept:  the literal and dumb behavior of the turtle and the computer!  The command giver must be intelligent, but the turtle is dumb.  This same concept is extremely useful later when "debugging" more complex computer procedures.  It also forces the command giver to focus on the state of the turtle at any particular time, something that is also important at later stages.
+
+Playing turtle can be used as part of many later lessons, to introduce a new idea like procedures, or to help students focus on a commonly experienced bug.
+
+2. Introducing the keyboard, and basic turtle commands.	
+
+If possible, students should be introduced to the keyboard in groups of three to five.  This gives each student an opportunity to type basic turtle commands, encounter some typical typing errors, and use the  rub-out  and  do-it  keys.  Refer to the keys by their functions
+
+.bp
+(do-it  or rub-out ), rather than their labels (<ESC> or <RETURN>), if possible.
+
+Each student should have a chance to use each of the turtle commands. They should then be able to try some of the more advanced commands - such as PENCOLOR or BACKGROUND - on their own. 
+
+Point out  error messages when they occur.  You can explain each one and show how the entire command has to be retyped correctly. If error messages don't occur "naturally" as students begin to work with the keyboard, you can prompt them to type some buggy commands, to see what happens.  Introduce the expression "typing bug" to describe these occurances.  One consequence of the small group is that students will see that others make typing mistakes, too, and will be less threatened by them when they occur privately. It also encourages people to openly discuss bugs and mistakes - setting the stage for some of the discussions you hope to have later.  It is especially useful for students to see a teacher make mistakes, examine the error message, and resolve the error without trauma.  In this way the teacher has the opportunity to model useful strategies for dealing with the computer.
+
+3.  Drawing shapes.
+
+A square seems to be the simplest shape to draw. It could be developed by playing turtle, and then tried on the computer. The whole process can be worked through with the entire class. Students can be asked to draw a "different" square when they work on their own.  Another part of this lesson might be to brainstorm a list of simple shapes to draw. Post the list near the computer as a source of ideas. If some of the shapes are in fact difficult to draw, that's alright too. At this stage students can begin learning to distinguish between projects that are easy and those that are hard for them to accomplish using the computer.
+
+Many students run into their first real bugs when first attempting to draw a shape with the turtle. In fact, the concept of a  bug can be introduced very nicely by playing turtle during a class lesson.  A bug is any kind of error in a computer program or command.  Bugs are inevitable in working with computers, which makes a positive approach to debugging critical. Debugging can be thought of as both an attitude and a set of skills. The attitude is one which says: "A computer program is never perfect the first time. The more interesting the project, the more likely there are to be bugs. The more interesting the project, the more interesting the bugs. Debugging is the fun part of computer programming."
+
+Debugging skills are developed gradually, and have to do with recognizing types of bugs and developing strategies for dealing with them. For example, the turtle state bug described under "difficulties" encountered in using Chapters 3 and 6 of the Student Activities Booklet. Once you recognize a bug as a turtle state bug, playing turtle gives you a strategy for dealing with it: put yourself in the turtle's place. Turn your head to align it with the turtle's direction. Then decide what the turtle should do next.  If the situation is more complex, stand up and "play turtle".
+
+One of the most important contributions a teacher can make to a student's Logo learning is to model the debugging process. Simple turtle state bugs are excellent examples to use for starting this process.
+
+4. Defining a Procedure, Using the Editor,and saving procedures in a file.
+
+The best way to accomplish this lesson would be in small groups. If that is not possible, make sure that each student gets some sort of tutorial help from someone who understands these processes.  They are critical enabling skills for developing flexible personal use of the computer.
+
+Although the activities are conceptually different, they must all be learned at the same time. It is probably best to choose a simple shape that students already know how to draw - a square comes in handy again.  Describe a procedure as a "recipe" and tell the students that you are going to "teach it to the computer." Let someone pick a name for the shape, and type the name as if it were a command.  The computer will respond with an error message. Explain that they will now teach the computer how to _____ (whatever) and type TO, followed by the name.  
+
+At this point, it is helpful to introduce the concept of different modes - Logo command mode and edit mode.  When the computer is in command mode, a  ?  appears on the screen, and it will carry out Logo commands and procedures.  When it is edit mode, no  ?  appears, and it can only store information.
+
+Go through the entire process,  finishing with END  and  <CTRL> - C.  It is very important to stress the use of  <CTRL> - C, since forgetting it is a common error.
+
+Now the students must see how to use the SAVE command to store their information on a disk. There are two aspects to this, technical and conceptual. Technically, students must remember to use quotes,  ", and to type their own names.  From this point on, each student should read his or her own file before using the computer every day, and save all new procedures in that file.  This should become habitual, to ensure that work will not be lost.
+
+Conceptually, the idea that students should develop is that SAVEing procedures is like making a Xerox copy of everything in the working memory and putting it in a file. The working memory is not changed by SAVEing.  READing a file is like making a xerox copy of the disk memory and putting into the computer's working memory. READing does not change what is on the disk, but only what is in the working memory.
+
+bold(When the working memory is SAVEd on the disk, the content of the old file with that name is discarded and replaced by the new information. This is why it is critical to READ a file before SAVEing new procedures. Otherwise all the old procedures on the disk will be lost when you save the new ones. If you READ the file first, both old and new procedures will be saved.)
+
+5. Changing a procedure and using the special editing keys.
+
+Although this information could be presented as part of the above lesson, it is probably best to separate it, because of the amount of new information needed all at the same time.  The student has already used the  do-it  and  rub-out keys.  Now the move-right  and  move-left keys  ( <     >  and  <     > )  can be demonstrated. EDIT a procedure and let the students move the cursor around, rubbing out part of the text and making changes - changing an input to a turtle command, adding a new command, erasing one etc.  After each set of changes, return to Logo command mode by typing  <CTRL> - C  and try out the revised procedure.  The procedure with the same name, now has quite a different effect. Although it may have the name "square" it may no longer draw a square.
+
+At this lesson you can also introduce  PO  (printout) to list the commands of a procedure, and POTS, to list the titles (names) of all the procedures in  the computer's working memory.
+
+6. Circles and Arcs.
+
+Once students can READ and SAVE files, they have access to the circle and arc procedures. One of the best lesson plans might be to show the students how the commands work, and then try out different ideas, as the students suggest them.
+
+7. Subprocedures as building blocks.
+
+For this lesson it is possible to follow the ideas developed in Section 6.2 of the Student Activities Booklet.  You can either follow the sequence presented there, or start with one or two defined shapes, and let the students suggest ways of repeating or combining them.  This can then serve as a model for students of how they can construct their own complex designs by building creatively from simpler ones.
+
+8. Subprocedures for planning.
+
+Here it would be best to follow a prepared example - either the one given in Section  6.4 of the Student Activities Booklet, or another one that you have fully worked out.  The point is to provide a thoughtful model for the idea of using subprocedures in planning.  Using a spontaneously suggested project might take a great deal of time and might lead to interesting - but confusing - bugs that interfere with the idea.
+
+At the end of the lesson have each student invent a simple project, and write out the key subprocedures, as the first step of an assignment that they can carry out by themselves.  Choose two or three of these and go through them with the class, letting the students describe how they would construct each subprocedure.
+.ls 1
+.chapter "bold(Check List for Assessment of Student Progress)" 
+.nf l
+I can do the following things:				With		By
+							Help		Myself
+
+bold(Chapter 1:)
+
+use the keyboard, including  rub-out 
+	and do-it
+
+type Logo commands correctly
+
+READ my file
+
+bold(Chapter 2)
+
+use basic turtle commands, DRAW, FORWARD, BACK,
+	RIGHT and LEFT
+
+use other turtle commands, PENUP, PENDOWN, 
+	HIDETURTLE and SHOWTURTLE
+
+move the turtle to any point on the screen
+
+find the size of the turtle's screen
+
+change the pen and background colors
+
+use text, full and split screens with special keys:
+	<CTRL> - T,  <CTRL> - F, and <CTRL> - S
+
+bold(Chapter 3)
+
+draw these shapes with the turtle:
+
+	square
+	rectangle
+	stars
+	triangle
+.bp
+I can do the following things:				With		By
+							Help		Myself
+
+other shapes I can draw:
+.sp 6
+bold(Chapter 4)
+
+use the editor to create my own procedures
+
+use  TO,  END,  <     >,   <     >  and   <CTRL> - C
+
+SAVE my procedures on my disk 
+
+use many other editing keys
+
+Use  PO  (to printout procedures) and POTS
+
+bold(Chapter 5)
+
+make designs with circles
+
+make designs with arcs
+
+bold(Chapter 6)
+
+build a complicated shape using subprocedures 
+	as building blocks
+
+plan a project using subprocedures
+
+.keep
+bold(Chapter 7)
+
+make a procedure continue forever using recursion
+
+repeat a list of commands using REPEAT
+.end_keep
+
+I can do the following things:				With		By
+							Help		Myself
+
+
+bold(Other Projects I Have Worked on)
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+
+.chapter "bold(Glossary of Logo Terminology)"
+.fi b
+bold(arc)
+.br
+.in 5
+2
+Part of a circle. Logo procedures RARC and LARC draw quarter circular arcs.
+.in 0
+0
+
+bold(background color)
+.br
+.in 5
+2
+One of six background colors for turtle drawings. Controlled by the Logo command BACKGROUND.
+.in 0
+0
+
+bold(boundary)
+.br
+.in 5
+2
+Edge of the turtle's territory. The turtle cannot go beyond the boundary. If commanded to do so, an OUT OF BOUNDS error message results.
+.in 0
+0
+
+bold(bug)
+.br
+.in 5
+2
+Any mistake or error in a computer program or  typed command.
+.in 0
+0
+
+bold(character)
+.br
+.in 5
+2Any symbol which can be typed including numbers, letters, punctuation marks, space, etc.
+
+.in 0
+0bold(circle)
+.br
+.in 5
+2A shape drawn by making the turtle continue going forward a little and turning a little, until it returns to its starting position.
+
+.in 0
+0bold(command)
+.br
+.in 5
+2A word that causes the computer to carry out some action. Commands that are part of the Logo language are called primitives.  Commands that are created by users are called procedures.
+
+.in 0
+0bold(computer language)
+.br
+.in 5
+2A code for translating typed characters into electronic signals that can be "understood" by the computer.
+
+.in 0
+0bold(cursor)
+.br
+.in 5
+2The blinking square on the TV screen that shows where the next character will be printed on the screen.
+
+.keep
+.in 0
+0bold(debugging)
+.br
+.in 5
+2The process of finding, identifying, and resolving bugs in computer programs or commands.
+.end_keep
+
+.in 0
+0bold(disk or diskette)
+.br
+.in 5
+2A round magnetic storage device for long term storage of electronic information for use by a computer. Also called mini-floppy disk or mini-floppy diskette.
+
+.in 0
+0bold(disk drive)
+.br
+.in 5
+2An electro-mechanical device that receives electronic signals from the computer and stores information magnetically on a disk, and reads magnetic information from a disk and sends it electronically to the computer.
+
+.in 0
+0bold(edit mode)
+.br
+.in 5
+2The condition of the computer when it is storing procedures and text without executing them, so that procedures can be defined or changed.
+
+.in 0
+0bold(editor)
+.br
+.in 5
+2A special program used by Logo, to allow the typing and changing of Logo procedures without executing them.
+
+.in 0
+0bold(error message)
+.br
+.in 5
+2A statement printed by the computer explaining why it cannot carry out a command.
+
+.in 0
+0bold(file)
+.br
+.in 5
+2A collection of information stored on a disk under a common name.
+
+.in 0
+0bold(file name)
+.br
+.in 5
+2The name of a disk file, usually a user's name for beginning Logo users. A file name is always preceeded by  " , as in   "JOHN  or  "SUPER.
+
+.in 0
+0bold(home)
+.br
+.in 5
+2Center of the turtle's screen. Starting position of the turtle when the DRAW command is given.
+
+.in 0
+0bold(input)
+.br
+.in 5
+2Additional information needed by a command or procedure. It can be a number as in FORWARD 100, a word  as in   READ   "JOHN, or a list as in   REPEAT  20   [ SQUARE  RIGHT  18 ].  A command or procedure can have several inputs.
+
+.keep
+.in 0
+0bold(keyboard)
+.br
+.in 5
+2Device used to input commands and other information to the computer by typing individual characters.
+.end_keep
+
+.in 0
+0bold(list)
+.br
+.in 5
+2A Logo object consisting of one or more words or numbers or lists, surrounded by square brackets. For example  [ SQUARE   RIGHT   18 ], or  [ HELLO ], or  [ A  [ BC ] ].
+
+.in 0
+0bold(Logo command mode)
+.br
+.in 5
+2The condition of the computer when it is ready to carry out a Logo command. A   ?   is used as a prompt to indicate to the user that the computer is ready for a new Logo command.
+
+.in 0
+0bold(pen state)
+.br
+.in 5
+2The state of the turtle's pen includes whether it is up or down, and what color it is drawing with.
+
+.in 0
+0bold(primitive)
+.br
+.in 5
+2A command that is built in to the Logo language and cannot be changed.
+
+.in 0
+0bold(printout or PO)
+.br 
+.in 5
+2The command used to print a listing of all the commands in a procedure or all procedures. (Similar to the LIST command in BASIC but not the same as the LIST command in Logo.)
+
+.in 0
+0bold(procedure)
+.br
+.in 5
+2A Logo command defined by a user, with its own unique name, and a set of instructions made up of other Logo commands and procedures.
+
+.in 0
+0bold(prompt)
+.br
+.in 5
+2The  ?  symbol used in Logo to indicate that the computer is ready to accept a new command.
+
+.in 0
+0bold(radius)
+.br
+.in 5
+2The distance from the center of a cricle to its edge. In Logo procedures RCIRCLE, LCIRCLE, RARC and LARC, the input number specifies the radius of the resulting circle or arc.
+
+.in 0
+0bold(recursion)
+.br
+.in 5
+2A process in which a procedure calls itself as a subprocedure.
+.bp
+.in 0
+0bold(screen modes)
+.br
+.in 5
+2The condition of the screen, first, either DRAW or NODRAW. Second, in DRAW mode, either fullscreen, splitscreen or text screen. Controlled by the keys  <CTRL> - F, CTRL - S, and <CTRL> - T.
+
+.in 0
+0bold(square corner)
+.br
+.in 5
+2A 90 degree turtle turn, needed to draw a square, rectangle and many other shapes. Corresponds to the term "right angle".
+
+.in 0
+0bold(stored memory)
+.br
+.in 5
+2The contents of the computer's working memory stored semi-permanently on a disk.
+
+.in 0
+0bold(subprocedure)
+.br
+.in 5
+2A procedure which is used in the definition of another procedure. In Chapter 6 of the Student Activities Booklet, SQUARE is a subprocedure of TOWER.
+
+.in 0
+0bold(superprocedure)
+.br
+.in 5
+2A procedure which is typed at top-level to carry out a project. In Chapter 6 of the Student Activities Booklet, PERSON is a superprocedure. 
+
+.in 0
+0bold(top-level)
+.br
+.in 5
+2The condition in which the user is typing commands and is in direct control of the computer.
+
+.in 0
+0bold(turtle)
+.br
+.in 5
+2A "robot" that moves around on a TV screen and can be made to draw lines. Its position on the TV screen is indicated by a triangle. The name was derived from a round robot that moves around on the floor.
+
+.in 0
+0bold(turtle state)
+.br
+.in 5
+2The total current characteristics and position of the turtle including its x and y coordinates, heading, whether its pen is up or down, whether it is shown or hidden, the color of its pen and the color of the background.  For many purposes, only the turtle's position and heading need to be considered, the other charcateristics being constant or unimportant to the particular problem being solved.
+
+.in 0
+0bold(working memory or workspace)
+.br
+.in 5
+2The memory available to the user for his own procedures; sometimes the terms refer to the contents of the computer's working memory.
+.in 0
+0
+.chapter "bold(The Bottom Line - What You Need to Know to Manage the Computer System)"
+In this chapter we present the minimum information needed to manage the system. More detail is given in the booklet bold(Using the Logo Operating System), and more information is given in the bold(MIT Logo Manual for the Apple II).  Information that is found in conventional Apple manuals, such as how to install a language card or disk drive, will not be included here. It is assumed that you have access to all relevant Apple Manuals including the Apple DOS (Disk Operating System) Manual. Once your computer system is set up, you should not need those manuals for work with Logo.
+
+.section "bold(Loading Logo from a Disk)"
+
+One of your disks should be marked as a Logo Disk, or a Logo Release Disk. This disk is needed everytime you start Logo. You should be sure to make a copy of it, or know where a copy can be found, in case it becomes damaged.
+
+
+.nf L
+1. Turn off the Apple's power switch located at the left rear corner of the Apple.
+
+2. Insert the disk labelled "LOGO Release Disk" or "LOGO disk" into the slot of the disk 
+drive, and pull the cover down.
+
+3. Turn the power on.
+
+.fi b
+At this point the red light on the disk drive should go on, and you should hear it begin to click and whirr. After several seconds a square bracket,    ]   should appear on the screen and the disk should continue whirring softly. After about thirty seconds a   "Welcome to LOGO"   message should appear.
+
+Sometimes the disk does not make clicking noises. In such a case press the   <RESET>   key, remove the disk, and start the whole process again.
+
+bold(Note for users of Apple integer systems:)
+
+If your computer happens to be equipped with Integer Basic Roms instead of Applesoft Roms, your procedure will be a little different. Follow the first three steps as given. After the computer clicks for a while, a message saying "language not available" will appear, followed by a prompt,  > . When the  >  appears, type  BRUN  LOGO  <RETURN>. After about thirty seconds a "Welcome to LOGO" message should appear.
+.bp
+.section "bold(Initializing Logo File Disks for Students)"
+You need several blank disks for student use. The number of students who share a disk depends on how much work you think they will be doing. For fourth or fifth graders, eight to ten students should be able to share a disk comfortably.
+
+To create student disks, follow these steps:
+
+1. Divide the number of students using the computer into equal groups. Make lists of the names of all the students in each group. Groups should contain no more than 8 - 10 names. These students will be sharing a disk, but will not need to work together in any other way, since they will be using them at different times.
+
+2. You will need to initialize two disks for each group. One of these will be an optional back-up disk, onto which you periodically copy all the information on the students' regular disks so that their work will not be totally lost if a disk is lost or damaged. Write the names of the students in each group on the sticky labels that come with the disks, and place them on the disks for each group.
+
+3. Turn off the computer. Insert the Logo release disk into the disk drive and close the cover. Turn on the power.  When the  BASIC prompt,  ],   appears, press the  <RESET> key.
+
+4. Type  LOAD  HELLO   <RETURN>.
+
+5. Remove the Logo disk. Insert one of the student file disks. Type INIT   HELLO   <RETURN>. The disk drive will whirr and click for about a minute. When it stops, remove the disk. Insert the next student disk, and repeat this step until all student disks have been initialized.
+
+6. Restart Logo according to the instructions in Section 9.1.
+
+7. Each student needs a set of circle procedures to be saved in his own file. If you have a disk with those procedures on them, type READ   "CIRCLES, to load them into the workspace. If these procedures are not yet available on a disk, you must now define them by carefully copying all the procedures given in the last section of this chapter.
+
+8.  Insert one of the student disks into the disk drive. Save the circle procedures by typing:
+
+	SAVE   "CIRCLES   <RETURN>
+
+9.  Now create a personal file for each student in the group sharing the disk. You do this by SAVEing the same circle procedures in a file for each student in the group. Suppose the list of names is:  Johnny, Mary, Thomas, Anne, Amy, etc.  Type the following:
+.nf l
+
+	SAVE   "JOHNNY
+	SAVE   "MARY
+	SAVE   "THOMAS
+	SAVE   "ANNE
+	SAVE   "AMY
+	etc.
+
+.fi b
+When you have repeated this process for the first group of students, insert a disk for the second group and repeat it using their names.
+
+.bp
+.section "bold(Teaching Students How to Use Their Disks)"
+Students will not need to use their disk until they are ready to define procedures or until they want to make drawings with circles. Students should be taught to follow the following process:
+
+
+1. When you first start using the computer type   GOODBYE   to clear the computer's working memory.
+
+2. Read your file by typing  READ  "JOHN   (if your name is John). This will return all your old procedures to the computer's working memory.
+
+3. After writing a new procedure and testing it to see if it works, type  SAVE  "JOHN  (using your own name, of course).  In this way you will save all your procedures as you go along.
+
+
+bold(WARNING!!!   Be sure to  READ  your file when you start work. If you  SAVE  new procedures before READing your old ones, you will lose all your old procedures!!!)
+
+
+4. When you are all finished working, type GOODBYE. This will leave the computer's working memory clear for the next user.
+.bp
+.section "bold(Copying Procedures From One Student File to Another)"
+Students often want copies of some or all of each other's procedures. One way a student can accomplish this is to make paper and pencil copies of the procedures he wants in a notebook. Then when it is his turn to use the computer, he can simply teach the procedure to the computer himself - and make modifications along the way if he wishes. 
+
+Sometimes it is useful to transfer procedures directly to another file. Here's a process for doing this. bold(Be sure to follow these steps very carefully to make sure you don't lose any of Johnny's or Mary's procedures permanently.)
+
+Suppose Johnny wants one of Mary's nifty procedures. 
+
+1.  Type GOODBYE, and insert Mary's disk - the one with the neat procedures.
+
+2. Type  READ   "MARY. This reads all of Mary's procedures into the working memory.
+
+3. Type  POTS  to see the list of  Mary's procedures.  If you don't want to copy all of Mary's procedures, erase all the procedures you don't want by typing  ERASE  BOX,   ERASE  JC39, etc. bold(Make sure not to erase any necessary subprocedures for the procedures you are planning to copy.)
+
+4. When you have reduced the list of  procedures to only the procedures you need, remove Mary's disk, without typing GOODBYE!  
+
+5.  Insert Johnny's disk into the disk drive, and read his work file into the working memory by typing
+
+	READ   "JOHNNY.
+
+Now when you type POTS the list should show all of Johnny's procedures, plus Mary's procedures that Johnny wants. 
+
+6. Now type  SAVE   "JOHNNY. All the procedures will now be safely stored in Johnny's work file.
+.bp
+.section "bold(Protecting Student Disks by Making Back-Up Copies)"
+
+Despite all the best care in the world, disks can get damaged or wear out with a lot of use. It is important to take the time to make back-up copies of each student disk every week or two. Then if the disk is damaged, at least all student work from the previous week and before will have been saved. Students should also keep written copies of their procedures in their journals to prevent a total wipeout.  If you make an extra disk to use as back up for each student disk, you can avoid a lot of grief.
+
+1. To make a back-up disk you will need an Apple disk called  DOS 3.3 System Master. Insert this disk and start the computer. The list of files will appear, followed by a BASIC prompt,  ]:
+
+2. Type   RUN  COPYA  <RETURN>
+
+3. The computer will now ask some questions about where the disks drives are. If you have only one disk drive, type:
+
+	<RETURN>
+	<RETURN>
+	<RETURN>
+	   1       (no <RETURN> )
+
+If you have two disk drives, just type the  <RETURN> key four times.
+
+4. With one disk dive, insert the original disk - the up to date one you are copying from, and press  <RETURN>.  Now follow all the directions printed by the computer about inserting the duplicate disk, original disk, duplicate disk, etc. The computer will tell you when it is finished copying.
+
+With two disk drives, you have much less work. Just insert the original disk in drive 1, the duplicate disk in drive 2 - be sure not to mix these up - and press return. The computer will do the rest, and tell you when it is finished.
+
+5. Repeat the process for each additional student disk.
+
+6. Put the back up copies away until the next time you make copies. Hopefully, you will never have to use them.
+.bp
+.section "bold(Circle Procedures)"
+The following procedures can be used to draw circles and arcs curving to the right.
+					
+.nf L
+TO    RCIRCLE    :R			s(m)RCIRCLE   stands for "right circle."
+REPEAT    36    [RCP    :R] t(m)Thirty-six repeats of the subprocedure RCP make
+END				t(m) a complete "circle" of radius  :R
+				t(m)curving to the right.
+
+TO    RCP    :R  t(m)RCP draws one "circle piece" curving to the 
+RIGHT    5       t(m)right.  :R stands for the radius of the circle.
+FORWARD    :R * (3.14159/18)
+RIGHT    5
+END
+
+
+TO    RARC   :R t(m)RARC draws a quarter circle arc
+REPEAT    9    [RCP   :R]	t(m)curving to the right.
+END
+.end_keep
+
+.keep
+.fi b
+The following procedures can be used to draw circles and arcs curving to the left.
+.nf L
+
+TO    LCIRCLE    :R t(m)This draws a circle of radius  :R, 
+REPEAT    36   [ LCP  :R ]		t(m)curving to the left.
+END
+
+
+TO    LCP   :R t(m)LCP draws one "circle piece" curving to the left.
+LEFT    5
+FORWARD    :R * (3.14159/18)
+LEFT    5
+END
+
+
+TO    LARC    :R t(m)LARC  draws a quarter circle arc
+REPEAT    9    [ LCP    :R ]		t(m)curving to the left.
+END
+.end_keep
+.fi b
+
+.chapter "bold(References)"
+.ls 1
+(References marked with bold(*) should be found in the school library as part of the Logo reference material.)
+
+Abelson, H. and A. diSessa. Turtle Geometry, MIT Press, Cambridge, Massachusetts, 1981.
+
+Papert, S. Mindstorms: Children, Computers, and Powerful Ideas, Basic Books, New York, NY, 1980.
+
+bold(*)Papert, S. diSessa, A., Watt, D., and S. Weir. "Final Report of the Brookline Logo Project" Volumes II and III. MIT Logo Memos 53 and 54, Cambridge, Massachusetts, 1979.
+
+bold(*)Papert, S. "Teaching Children to BE Mathematicians vs. Teaching About Mathematics," MIT Logo Memo 4, Cambridge, Massachusetts, 1971.
+
+bold(*)Papert, S. and C. Solomon. "Twenty Things to do With a Computer," Logo Memo 3, Cambridge, Massachusetts, 1971.
+
+bold(*)Watt, D. "A Comparison of the Problem Solving Styles of Two Children Learning Logo," Proceedings, National Educational Computing Conference, 1979. Reprinted, Creative Computing, December, 1979.
+
+bold(*)Watt, D. "Computer Literacy: What Schools Should be Doing About It," Classroom Computer News, Volume 1, Number 2, November/December 1980.
+
+bold(*)Watt, D. and S. Weir. "Logo: A Computer Environment for Learning Disabled Students," The Computing Teacher, Volume 8, Number 5, Spring, 1981.
+
+.nf l
+bold(Logo Curriculum Materials)
+
+bold(*Using the Logo Operating System)
+bold(*Explorations With the Turtle - Intermediate Turtle Geometry)
+bold(*Games With a Dynamic Turtle)
+bold(*How Dynaturtle Procedures Work)
+.fi b

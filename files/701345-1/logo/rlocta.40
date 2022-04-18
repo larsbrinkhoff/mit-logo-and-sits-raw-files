@@ -1,0 +1,1839 @@
+.xgp
+.squish
+.font 0 31vg
+.font 1 31vgb
+.font 2 25fg
+.font 3 sup
+.tlinch 8.5
+.twinch 6.5
+.dummy ^
+.dummy }
+.he1
+Lawler 8/7/80
+.he2
+Complementary Roles
+.nofill
+.ss
+.ce
+1THE ARTICULATION OF COMPLEMENTARY ROLES0
+.sp 5
+.ce
+A
+.ce
+A^|^*^|^C
+.ce
+---------
+.ce
+b^|^*^|^^
+.ce
+---------
+.ce
+B^|^^^|^a
+.sp 5
+.ce
+(1One Child's Learning: Tic Tac Toe0)
+.sp 3
+.ce
+Robert W. Lawler
+.ce
+Massachusetts Institute of Technology
+.sp 1
+
+.ce
+Artificial Intelligence Laboratory
+.ce
+Logo Project
+.ce
+Cambridge, Massachusetts
+.sp 5
+running head: Complmentary Roles
+[*]^^^^^^^^^^rewrite
+[* *------]^^insert material ----
+{* * *-----]^think about -----
+.ds
+.adjust
+.page
+.ce
+1Abstract0
+The articulation of complementary roles is a pattern of human learning which can be seen in  behavior over a range of apparent sophistication that extends from an infant's acquiring specific protocols of speech to an author's consideration of readers' reactions to his writing.  Here  a lucid example of the process is uncovered by tracing in detail one child's learning of Tic tac toe over several years.  Significant learning did occur during this case study. The six year old subject initially knew so little of Tic Tac Toe that she couldn't continue playing when confronted by an unanticipated response to her opening move in a game.  Six months later she was  playing both sides of the game, making "smart" moves for both players.  Two years later, she was able to prove predictions of victories by detailing the offensive use of forced moves in games worked out in her mind. The corpus of observations assembled during this period is rich in detail and reasonably complete in covering the child's overt behavior.   We use Artificial Intelligence concepts to construct an interpretation of the corpus which addresses generally and in detail how [*] this child's social transactions related to the construction of her mind in the domain of tic tac toe.
+.nofill
+.ss
+
+1.0 INTRODUCTION
+2.0 THE BASIC REPRESENTATION
+3.0 FAILING INSTRUCTION
+4.0 TABLE TURNING
+5.0 NOVEL DEVELOPMENTS
+6.0 TWO YEARS LATER
+7.0 CONCLUSIONS
+.page
+.ce
+1CONTENTS0
+.nofill
+.ss
+1.0 INTRODUCTION
+^^1.1 Introduction
+^^1.2 The Intimate Study
+.spread
+/^^1.3 A Little Epistemology (1)//Figure 1: Twelve Opening Games/
+^^1.4 Epistemology (2)
+^^1.5 Cognitive Structures
+
+2.0 THE BASIC REPRESENTATION
+^^2.1 Introducing Tic Tac Toe
+^^2.11 Early Games
+^^2.12 The Basic Representation
+^^2.13 An Example of Representation Functioning
+^^2.14 The Tactical Character of Early Microworlds
+.ri
+Figure 2: Three Microworld of Tactical Play
+^^2.15 A Seminal Experience
+^^2.16 Strategic Play
+
+^^2.5 The Social Basis of Play
+.spread
+/^^2.6 Representating the Initial Structure//Figure 3: Strategic and Tactical Play
+
+
+3.0 Didactic Failures
+^^3.11 Verbal Formulations
+^^3.12 Relating Strategic and Tactical Play
+.spread
+/^^3.2 Contrasting Two Control Structures//Figure 4: Two Rejected Representations
+.ri
+Figure 5: Interactions of Tactical and Strategic Play
+
+
+4.0 TABLE TURNING: focus in method
+^^4.1 First use of Table Turning
+^^4.2 Basic Process of Instruction
+^^4.22 Typical Use
+.spread
+/^^4.3 Representing Table Turning//Figure 6: The New Choice Point
+^^4.5 What Precisely Did She Learn ?
+^^4.51 Influence of 8.3-8.5 on 8.7
+^^4.52 conclusion of 8.7: ad hoc knowledge
+^^4.53 Analysis of syngnostic perspectives.spread
+
+5.0 NOVEL DEVELOPMENTS
+5.0 On Her Own
+^^5.1 She Didn't Appreciate Opening Advantage
+^^5.2 Appreciating Opening Advantage
+^^5.4 The Relevance for Representing Knowledge
+5.5 Multi-Role Play
+^^5.6 Table Turning and Glenn's Game
+^^5.7 Defeating Robby
+^^5.8 Multi-Role Play: Two Games
+.spread
+/^^5.9 Representing Multi-Role Play//Figure 7: Playing Both Sides
+
+
+6.0 TWO YEARS LATER
+.spread
+/^^6.1 The New Tactic//Figure 8: A New Strategic Microworld
+^^6.4 Predecessors of the New Strategy
+^^6.5 Stage Change issues: existence and necessary order
+^^6.6 Classifying Observations: existence by definition
+^^6.7 Earlier Judgments: difficult decisions
+.spread
+/^^6.8 Offensive Forcing and Conclusions//Figure 9: Offensive Forcing
+
+
+7.0 Discussion: a Proto-Theory
+^^72 An Infants Introduction to Knock-KLnock Jokes
+^^73 Elements of The Example
+^^74 Articulation of Roles and Comprehension
+^^75 The Articulation of Roles and Stage Transitions
+^^751 From Fragmentary to Procedural Comprehension
+^^752 From Minimal to Fragmentary Comprehension
+^^753 From Procedural to Systematic Comprehension
+^^76 Representing Articulated Knowledge
+.ri
+Figure 10: Articulated and Functional Knowledge
+Concluding Paragraph
+
+Appendices:
+I.   The Relative Difficulty of Learning Different Games
+.ds
+.adjust
+.page
+.ce
+1Introduction0
+
+^^^^^Tic Tac Toe is a ubiquitous game of the American child's culture.  It is a significant game because its mastery requires integration of two different points of view, those of the first player and his opponent.  This conclusion, which emerges very clearly from the study, impels us to confront the interplay of micro-social experience and the personal construction of mind.  The strategy of the paper is first to discuss representations of the game and the mind, then to present and interpret observations of behavior.  Our final discussion turns to the pattern of learning and proffers a proto-theory of how experience and reflection are interleaved in a specific way to create knowledge and understanding.
+
+1The Intimate Study0
+
+12^^^One aspect of the corpus may be surprising: the observations are complete.  The materials are a thematic extract from THE INTIMATE STUDY,   a six months long naturalistic study of Miriam's mental development.  The completeness was possible because Miriam is my daughter.  For the six months of The Intimate Study, we were constant companions, and Miriam was under constant observation. [* * mechanical recordin, etc.; also genereal description of the situation of play]  Occasional observations from the following two years are cited  to capture her accession to the idea of opening advantage, her invention of a new strategic objective, and a "final" level of performance. All her publicly manifest behavior relevant to Tic Tac Toe is captured in the corpus and a significant selection is presented here.
+
+1Representing the Play0
+
+131^^Webster's Third International Dictionary describes Tic Tac Toe  ( also called "noughts and crosses".) as, "...a game in which two players alternately put crosses and ciphers in compartments of a figure formed by two vertical lines crossing two horizontal lines and try to get a row of three crosses or three ciphers before the opponent does...."   This abstract description of Tic Tac Toe, though accurate, leaves out most everything of interest, the stratagems and ploys which are its heart.  Further, the implicit representation of the game does not preserve the process of its play.  The record of game (a) stands  mute on the steps by which one player vanquished his opponent.  The technique I employ to preserve a record of sequence in the data is to have the first player (let me call him the "initiator") and opponent each use ordered series of tokens for markers in place of the more usual noughts and crosses.   Such a representation offers no means of indicating which player initiated the game and had the opening advantage.  The means I've selected to impose such information coherently on the basic representation is to note the first move (upper or lower case "a") above the grid.  Game (a), when so recoded is represented as (b).
+.nofill
+.ss
+.ce
+***
+.indent 10
+.block 9
+.ce
+1Three Representations2
+
+^^^^^^^^^^^^^^^^^^^^^A^^^^^
+^X^|^X^|^X^^^^^^^C^|^D^|^B^^^^^^^1^|^2^|^3^
+-----------^^^^^-----------^^^^^-----------
+^O^|^X^|^^^^^^^^^b^|^A^|^^^^^^^^^4^|^5^|^6^
+-----------^^^^^-----------^^^^^-----------
+^O^|^^^|^O^^^^^^^a^|^^^|^c^^^^^^^7^|^8^|^9^
+^^^^(a)^^^^^^^^^^^^^(b)^^^^^^^^^^^^^(c)
+.indent 0
+
+0
+.ds
+.adjust
+We will frequently have need to refer to specific cells within the grid or framework within which the game is played.  Let us keep in the backs of our minds an implicit representation wherein the individual cells are numbered in sequence from left to right and from top to bottom, as iun (c) above.  Individual games from the corpus will be references numerically by session and serial number; e.g. "2.3" is game number 3 from the second session played.
+
+1Epistemology (1)0
+
+132^^Miriam's early play made it clear that patterns of markers were very important to her.  Thus it is appropriate to seek a pattern-oriented way of thinking about the game.  The reason that Tic tac toe is sometimes despised by the intelligentsia -- that it is so simple as to be judged trivial -- is also a reason that it is attractive as a domain of problems to observe someone cope with.  Most people do not play the game with the skill of a master, but it is possible to develop a view of the game which could bring such mastery within the reach of nearly everyone.  Here is such a view.
+
+^^^^^The different arrangements of nine things taken nine at a time is too big a number to worry about.  Considering symmetry provides simplifications.  Invariance under rotation being granted, there can be only three initial moves: middle, corner, and side.  To each of these opening moves, only a few responses are possible: to a middle opening, two ( a side cell or a corner); to a corner cell, five; to a side cell, five.  The number of games necessary to consider is twelve.  However, as many as seven moves remain and remembering games with all those endings is a computational explosion for  the human mind (at least for one such as mine is).  ONE SURPRISING FACT makes it possible to imagine a simple but systematic view of Tic Tac Toe: of the twelve opening games defined by the placement of the first two markers, seven openings permit a direct victory by an expert initiator.  These twelve openings, with expert wins represented, are set out in Figure 1.  Four of the twelve openings are rarely encountered, i.e. since the common response to a side opening is a middle counter-move, games S1, S2, S3, and S5 are hardly ever played.  Of the five corner openings, four permit an expert win and the fifth permits setting of traps.  There is only one safe defense against a corner opening ( a middle response with the opponent's subsquent move in any side cell):2
+.nofill
+.ss
+.ce
+***
+.indent 15
+.block 6
+^^^^^A
+^A | C | c 
+-----------
+^d | a | E 
+-----------
+^D | b | B 
+
+0
+.indent 0
+.ds
+.adjust
+If you grant the casual player's view is focussed on middle openings,
+the conclusion is inescapable that an enormous advantage accrues
+to an initiator who opens in the corner.
+
+     What knowledge must one own to exhibit generally superior play ?
+.nofill
+.ss
+For offensive play:
+     1.^expert wins at games M2, C1, C2, C3, C4.
+     2.^setting traps in games M1 and C5.
+
+For defensive play:
+     1.^never respond with a mid-row move to a middle opening.
+     2.^always respond with a middle move to a side opening.
+     3.^avoid the traps of game M1.
+     4.^use the two step defense for game C5.
+
+.ds
+.adjust
+.page
+.ce
+1FIGURE 1: Twelve Opening Games2
+.nofill
+.ss
+MIDDLE OPENINGS -
+
+  A             A
+ | - | B     b |   | C
+----------   -----------
+- | A | -       | A | *  
+----------   -----------
+a | - |       * | a | B
+} M 1           M 2
+ TRAPS          WIN
+
+CORNER OPENINGS -
+
+   A              A             A             A             A    
+ A | * | C      A |   | *     A |   | a     A | a | *     A |   | -      
+-----------    -----------   -----------   -----------   -----------
+ b | * |        b | C | a     b | * |       b | C |         | a |
+----------     -----------   -----------   -----------   -----------
+ B |   | a      B |   | *     B | * | C     B |   | *     - |   | B
+ } C 1            C 2           C 3           C 4           C 5    
+  WIN            WIN           WIN           WIN          TRAPS
+
+SIDE OPENINGS -
+
+   A              A             A             A             A
+ a |   | -      * | a | *     B |   | a       |   | -       | - |  
+-----------    -----------   -----------   -----------   -----------
+ A |   |        A | B | b     A | C | *     A | a | -     A | - | a
+-----------    -----------   -----------   -----------   -----------
+ - | B | -      C |   |       b |   | *       |   | B       | B |   
+}  S 1            S 2           S 3           S 4           S 5
+  TRAPS           WIN           WIN          TRAPS         TRAPS
+
+NOTES:
+.indent 2
+"-" means a move in this cell by the opponent implies his defeat.
+"*" means this is a cell where the initiator may win after his 
+    opponent's next turn; two such imply a fork exists.
+
+.indent 0
+.adjust
+.ds
+.page
+1Epistemology (2)0
+
+133^^An alternative view, both orthogonal to and complementary to the
+opening oriented view, can be seen as necessary from this observation:
+Miriam's play, definitely pattern-oriented, focussed more on patterns
+to be achieved - forks, in fact - than on opening patterns which might permit
+a chain of forced moves to her victory.  The interplay of Miriam's appreciation of pattern and serial features of the game is a lietmotif of this study and a touchstone of her cognitive development on this area.  Let us define some terms to describe a fork-oriented view of the game.
+A WAY TO WIN is any row of three cells with two like markers in it
+(both either upper case or lower ), the third cell being empty.  A FORK
+is a marker-connected intersection of two such ways to win.  The strategic
+power derives from making that intersection by the emplacement of a LINK
+at the intersection of two rows which had been merely CHANCES TO WIN.
+(Such is a row of three cells, two empty.)  Placing the link creates two
+ways to win with one move.  The opponent can only block one, and thus the
+forking player is assured of victory.  
+
+^^^^^The specification of forks as patterns both of markers and holes
+delimits precisely the opponent's moves which frustrate a fork.  In turn,
+this emphasizes the role of the move following the opening and its response
+as crucial: this move must appear as a marker in the fork; it must force the opponent's
+second move to a non-interfering cell; finally, it must prohibit the opponent's
+next move from impeding the placement of the link.  For example,
+game (b) below fails because this crucial move (the CRUX)
+permits  the
+opponent to establish a way to win which must immediately be blocked:
+.nofill
+.ss
+2 
+.ce
+***
+.indent 13
+.block 7
+^^^^^A^^^^^^^^^^^^^^^^A
+ A | a |          A | a |    
+---------        ---------
+ b | * |            | b |  
+---------        ---------
+ B | * | C       (L)| / | B
+^^^^(a)^^^^^^^^^^^^^^(b)
+.indent 0
+
+0
+.ds
+.adjust
+The objective, being to place the link at L in cell 7 is frustrated because move C
+must now block the row a-b-/.  
+
+     The opening oriented view gains power from a surprising fact (the extent
+to which expert wins permit simplifying one's thinking about Tic Tac Toe) and
+is useful because it gives effective guidance.  For example, when an opponent
+responds to a corner opening by an opposite corner move, a crux marker placed
+in either free corner guarantees the initiator's victory.  Such a formulation
+is of a sort useful in play.  In contrast, the fork-oriented view goes a long way
+to explaining the "surprising fact" that renders its complement effective.  
+That view focusses on analysis of what is possible after an opening.  Thinking
+in its terms may be too cumbersome for everyday play, but it may be well suited
+for a person puzzling over past games or playing them against himself.
+
+     The essential complementarity is that both point to the crux, the initiator's
+second move, as the critical bridge between
+opening and fork.  Its functions are illuminated from a fork-oriented perspective.
+When an appropriate crux follows an opening move as a well-known result, the
+analysis necessary to establish a fork may be reduced to this simple formula:
+ "look for that place where your chances to win intersect; move there."
+
+
+1A VIEW OF MIND0
+
+14^^^My committment is to describe and develop information structures which could produce in performance the empirical corpus of observations on which my work is founded.  In The Progressive Construction of Mind (Lawler, 1980), I described Miriam's arithmetic learning in terms of microworlds -- information structures with which I proposed to represent her cognitive structures. Microworlds are active and competitively organized.  They do not merely recognize some situation, they act upon it.  The typical situation contemplated is one of solving some simple problem, e.g. 2 + ? = 4.  One part of a microworld, the PERSPECTIVE, parses a  problem into its elements.  The successful parsing activates the FUNCTIONS (the second major microworld component) which generate the solution to the problem.  A similar, simple problem presented to a Tic tac toe microworld might be "What move next^?", given input information about the state of the game.  The functions of a tic tac toe microworld could select the highest-valued empty cell in the input grid by referencing an experience-established PREFERENCE GRID of cell values, thus:
+.ss
+.nofill
+.block 6
+                5 | 1 | 5 
+               -----------
+                1 | 9 | 1 
+               -----------
+                5 | 1 | 5 
+
+.ds
+.adjust
+In the course of the following interpretations, we will ask and try to answer such questions as: "what microworlds should we ascribe to Miriam ?"; "How are the microworlds organized ?"; and "How do the microworlds change ?"
+     Our attempt to describe the structures of mind based on the observations of this study lead us to consider larger scale knowledge structures  reflecting aspects of the social context in which the game takes place.  These larger scale structures, which I take to be frame-like (Minsky, 1975), are assigned the function of controlling turn-taking, influencing the committment to objectives, and answering predictive questions, such as "Have you won this game already ?"  Based on her answers to such predictive questions, we will conclude that Miriam's knowledge of necessary relations between pattern and serial aspects of the game progressed from the first to the third of the four stages described below:
+.ss
+.nofill
+[*]
+.indent 2
+1. MINIMAL COMPREHENSION - witnessed by vague hopes of victory.
+
+2. FRAGMENTARY COMPREHENSION - based on well-known outcomes of
+    specific games.
+
+3. PROCEDURAL COMPREHENSION - exhibited by the stepwise working
+    out and proof of predicted victories.
+
+4. SYSTEMATIC COMPREHENSION - such as is seen in the classification
+    of openings and the analysis of how the crux relates openings 
+    and forks.
+.indent 0
+.ds
+.adjust
+
+[* * discussion frames and microworlds]  Some, like Minsky think very hard about the information processing on mental representations.  Other, like Newell who do that as well, are committed to mining the ore of academic psychology for the definition of significant phenomena to be explained.  My aspproach is Piagetian in a profound sense: I am committed to illumintation of learning by tracing the genesis of new intelligence (functioning knowledge) from its immediate predecessors.  I see here no conflict with these other approaches, more of a need for each approach to grow from its own coherent core to that meeting of minds which is a fitting rather than a forcing together.
+
+^^^^^Thus our endeavor in this paper is not to ask "how can we apply this or that idea", but rather to ask "if we take guidance from the observation of behavior, what must we represent in frames to describe cognitive structures and those interactions from which their changes come about ?"
+
+.page
+.ce
+1The Basic Representation: Early Games0
+
+
+211^^The first two sets of games permit characterization of Miriam's play before any didactic interventions.  In the first set of games, I was her opponent:
+.ss
+.nofill
+.ce
+***
+.indent 11
+1Two Games Representing Others As Well2
+
+^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^A
+^^^^^^*^|^^^|^B^^^^^^^^^^^^B^|^c^|^E^
+^^^^^-----------^^^^^^^^^^-----------
+^1.1^^^^|^A^|^*^^^^^^^1.2^^d^|^A^|^D^
+^^^^^-----------^^^^^^^^^^-----------
+^^^^^^b^|^a^|^C^^^^^^^^^^^^a^|^C^|^b^
+^^^^^^^^^M^2^^^^^^^^^^^^^^^^^^M^1
+^^^^^^^^^(a)^^^^^^^^^^^^^^^^^^(b)
+.indent 0
+0
+.ds
+.adjust
+
+^^^^^Whenever Miriam initiated a game with a middle opening and I responded with
+a side cell, as in game (a), she won.  She did not refer to these games as involving "tricks"
+of any sort. [*] I gradually altered my responses to a regular corner cell response.
+Neither of us making any mistakes, we can inevitably to a draw.
+
+212^^The representational challenge is to relate an information structure
+to the recorded play in such a way that the functioning of the structure
+explains the observed behavior.  I choose the representation set forth in
+Figure 2.  Somehow is presented QUERY, a question, "What move next^?", and information
+(the markers already in place in the grid) to those structures which determine behavior.
+Miriam did not attempt to make every move, only those of her turn.  This obvious
+fact requires some control element, represented by the issue "whose turn next^?" in the 3T frame ("Three T", short for "Tic tac toe"), which inhibits taking
+the opponent's turn.  (Since the choice of who moves first is a special case of
+whose move is next, it seems appropriate to cluster those questions together.)  Miriam's play showed numerous times that she was inclined to move out-of-turn, knew what specific move she would make if it were her turn.  She inhibited her action, not her thought.  Thus we have separated the information flow into "input" and "output" lines and assign the inhibitory effect to the output lines.
+
+     What happens when it is not the opponent's turn ?  Control passes
+to a cluster of structures I call microworlds.  Each microworld responds to
+a situation it can recognize. When a pattern is recognized, a slot in the perspective is
+filled. When the associated perspective slots are filled, the functions of a
+microworld are activated and they execute, proposing an action.  For example,
+in a microworld which blocks an opponent's winning, the recognition of the threat
+implicit in opponent's markers in cells 1 and 4  results in proposing a move to cell 7.  Such a proposed move is effected if it is uncontested.
+
+     What happens when more than one threat is recognized (as in a fork) or
+when a threat-blocking proposal confronts a proposal to win the game by a 
+different move ?  The answer to this question is a mixture of representation
+choice and empirical observation.  I choose (for reasons which will appear
+subsequently) to represent the structures which respond stepwise to developing
+games as a set of three competing microworlds. One (WIN) recognizes ways to
+to win.  A second (BLOCK) recognizes opponent's threats. The third (POSITION)
+directs the next move when neither a win is immediately possible nor a threat
+is recognized.  If three such microworlds compete with each other in responding
+to a specific QUERY ( as I assume they do), the factors which affect that
+competition and the functions within the POSITION-world are to be empirically
+determined. [* * * do I determine this empirically or by choice ?]
+
+.ce
+* * * insert figure 2 about here * *
+.page
+.ce
+1THE TACTICAL MICROWORLD CLUSTER0
+.page
+213^^Consider now, as an example of how such microworlds might interact in the
+stepwise play of the two games below:2
+.nofill
+.ss
+.ce
+***
+.indent 13
+.block 7
+^^^^^A^^^^^^^^^^^^^^^^^^^^a
+^D^|^^^|^B^^^^^^^^^^^^d^|^^^|^b^
+-----------^^^^^^^^^^-----------
+^^^|^A^|^c^^^^^^^^^^^^^^|^a^|^C^ 
+-----------^^^^^^^^^^-----------
+^b^|^a^|^C^^^^^^^^^^^^B^|^A^|^c^
+^^^^(a)^^^^^^^^^^^^^^^^^^(b)
+
+.indent 8
+.block 6
+^^^^^^^^^^0Microworlds Active in Game
+MOVE          game (a)^^^^^^^^^^^^^game (b)
+^A            POSITION^^^^^^^^^^^^^POSITION
+^B            POSITION^^^^^^^^^^^^^^BLOCK  
+^C             BLOCK^^^^^^^^^^^^^^^^BLOCK
+^D              WIN^^^^^^^^^^^^^^^game lost
+.ds
+.indent 0
+.adjust
+
+Notice that the Block-world activated in the C-move of game (a) could 
+have recognized the two threats of the fork and either proposed conflicting moves
+to block both or failed (in such a case, because it could not produce an uncontested proposal,producing nothing but a complaint that two moves would be required ).  In either case, the controlling 3T frame would resolve the conflict. [* * * do I mean that, really ?]
+
+
+214^^A further note to make worthy distinction is between the reactive worlds (WIN and BLOCK) and the proactive world POSITION.  Given the distinction, the proposed action of the POSITION world might appear to be more  than a simple response to a recognized pattern.  For example, the functions of the POSITION world could be seen as a set of serially executed conditional rules such as:
+.nofill
+.ss
+.indent 5
+1. propose a middle move if possible.
+2. propose a corner move is possible.
+3. propose a side cell move.
+
+.ds
+.adjust
+.indent 0
+We choose to represent the internal structure of the POSITION world by a preference grid because that better fits later appearing observations.
+
+^^^^^The objective associated with the Position world is not, in any sense, a strategic plan.   Its character is more tactical and answers such questions as "Given the present configuration of markers, where should I place my next marker to enhance my position ?"  These microworlds, taken together, will be refered to as the TACTICAL CLUSTER, taking their name from this characteristic of the  POSITION world.  We are not yet in a position to specify how the objectives of microworlds should be represented.  Let us remain vague on that issue until we can propose a well-motivated description.
+
+     Does this proposed structure suffice to produce the behavior exhibited by
+the representative games 1.1 and 1.2 ?  I believe it does, if we admit other
+influences controlling at the frame level.  Two extrinsic sources 
+of influence on underlying structures are social suggestion and boredom.  Even
+given that POSITION would propose a corner move before a side cell move, a social
+challenge, e.g. "Why do you always move in a corner ?" could lead to the
+TURNS frame rejecting corner move proposals with the resulting side move manifest
+in behavior.
+     The structure of Figure 2 is where we begin.  Let us now procede to elaborate
+the structure by deepening the material to better align the model with the more
+complex behavior manifest at the beginning of the study.
+
+.block 3
+1A Seminal Experience0
+
+215^^When our games of form M1 regularly ended in a draw, Miriam began a new gambit,
+the first move corner choice.  A little background information will illuminate 
+the significant role of corner openings in Miriam's play.  Several years ago I bought Miriam's brother Robby a Tic Tac Toe game.  I introduced playing to both children.  Miriam, then aged four, learned that one took turns and that winning was getting three counters in a row.  I taught Robby one element of strategy: look for "two ways to win".  Robby was able to absorb the instructiuon easily enough, but Miriam could not.  They played with different competences: Robby winning with his strategy: Miriam winning frequently enough when he made errors to be satisfied.  As Robby came to make fewer errors, they played less and the game dropped from their repertoire of favorites.
+
+     Shortly before the beginning of The Intimate Study, I visited the Boston
+Children's Museum with Miriam, Robby and his friend John.  One incident that
+occurred there made a tremendous impression on both Miriam and John and has
+markedly influenced all her subsequent play.  John and Miriam both played Tic
+tac toe against the Museum computer with openings M1 and M2.  When they fell in
+pitfall of a side response to the computer's middle opening, they were regularly
+defeated.  The computer always responded in the corner to their middle openings,
+so the children's best game was no better than a draw.  Eventually Robby got a turn
+(the others peering over his shoulder) and opened with a corner move.  The game
+unfolded as one of form C5, and Robby won.  John and Miriam were astounded.
+Robby clearly owned some powerful knowledge.  Since he was glad to share that
+knowledge with them, the three corner fork entered Miriam's repertoire and
+exerted a dominant influence in the development of her play.  Tic tac toe emerged
+a game of frequent choice as The Intimate Study began. This incident shows a case where a socially current but uncomprehended formulation ("look for two ways to win") was given a personal meaning by the close observation and imitation of another's striking performance.
+
+216^^The remaining games of session one were three where Miriam introduced corner openings:
+Game 1.3 duplicated the play by which Robby had defeated the Museum's computer.
+What became increasingly surprising as I probed her play was Miriam's rigidity 
+in this form.2
+.ss
+.nofill
+.ce
+***
+.indent  7
+^^^^^^^^^^A                A                A     
+^^^^^^A^|^c^|^C^       A |   |          A | b | C 
+^^^^^-----------      -----------      -----------
+1.3^^^^^|^a^|^D^  1.4    |   |     1.5    | c |   
+^^^^^-----------      -----------      -----------
+^^^^^^b^|^^^|^B^         |   | a          | a | B 
+^^^^^^^^^C 5              C 1              C 2    
+^^^^^^^^^(a)^^^^^^^^^^^^^^^^^^(b)^^^^^^^^^^^^^^^^^^(c)
+.indent 0
+
+0
+.ds
+.adjust
+When Miriam confronted an opposite corner response to a corner
+opening in game 1.4, she did not know how to proceed at all.  Her response was
+primarily social: she complained loud and long.  Eventually she moved with no
+coherent objective.  A simple description of Miriam's play would be this:
+.ss
+.nofill
+.indent 5
+.block 4
+objective: occupy three corners
+procedure:
+.indent 7
+1. occupy the upper left corner (cell 1)
+2. occupy the opposite corner (cell 9)
+3. occupy the upper right corner (cell 3)
+.ds
+.indent 0
+.adjust
+
+Miriam's inability to counter an opposite corner response in game 1.4 would reflect having no flexability in the steps of her procedure (and, of course, that she had no knowledge of the expert win for game C1).  Game 1.5 shows Miriam continuing with a three corner fork objective despite move "b" rendering the fork completely ineffective.  Either she did not consider the potential moves (the "holes" which help define a forking pattern) as essential parts of the fork or her objective did not regard at all the opponent's play.
+     How should games 1.3 - 1.5 lead us to alter the structure of
+Figure 2^?  Should we merely assume that boredom led the 3T frame to
+reject middle openings ?  The answer must be "no", and for at least
+two reasons.  First, the objective of the CORNERS microworld (for so
+we will declare this other structure to be) is different in kind from
+the stepwise tactical objectives which determine the functions of the
+POSITION world.  We will call the objective a strategic one because it
+aims at nothing less than winning the game through achieving a specific 
+fork.  Secondly, the CORNERS-world does not interact with the three
+competing microworlds of the stepwise cluster, i.e. the objectives of POSITION and CORNERS show alternative modes of play.  More specifically,  in game 1.5 (c), the BLOCK-world function of blocking an opponent's threat did not operate.  In game 1.4 (b), Miriam refused to continue play, i.e. she did not seek to enhance her position.  Given that Miriam won game 1.3 (a), a critic might raise this question: "Doesn't the winning of game 1.3 implicate some sort of connection with the WIN microworld ?"  Not so, for the character of the processes of winning is not uniform.  In the WIN-world, the perspective recognizes an unforced way to win among the patterns of various markers, while the victory achieved by the three corner gambit is pre-established as one of the two alternatives implicit in the fork.  It is little more than the immediate  consequence of achieving the CORNERS-world objective.    Before we consider how to represent this difference between tactical and strategic microworlds, let us examine how Miriam's play was influenced by changing opponents.
+
+25^^^In games 1.4 and 1.5 (played against me), Miriam suffered two defenses against her three
+corner objectives.  In the games of session two against Robby, she did not adapt either of
+those specific moves.  Instead of learning  her opponent's strategems 
+from her own defeat, she attemptsed victory by negotiation.2
+.ss
+.nofill
+.indent 1
+.block 8
+^^^^^^^^^^a^^^^^^^^^^^^^^^^A^^^^^^^^^^^^^^^^a^^^^^^^^^^^^^^^^A
+^^^^^^b^|^C^|^c^^^^^^^^a^|^C^|^b^^^^^^^^b^|^^^|^B^^^^^^^^A1|^^^|^a2
+^^^^^-----------^^^^^^-----------^^^^^^-----------^^^^^^-----------
+^2.1^^^^|^A^|^d^^^2.2^^^^|^A^|^d^^^2.3^^^^|^c^|^^^^^2.4^^^^|^^^|^^^
+^^^^^-----------^^^^^^-----------^^^^^^-----------^^^^^^-----------
+^^^^^^B^|^^^|^a^^^^^^^^D^|^c^|^B^^^^^^^^A^|^^^|^a^^^^^^^^A2|^^^|^a1
+^^^^^^^^^C^5^^^^^^^^^^^^^^M^1^^^^^^^^^^^^^^C^3^^^^^^^^^^^^^^C^1
+^^^^^^^^^(a)^^^^^^^^^^^^^^(b)^^^^^^^^^^^^^^(c)^^^^^^^^^^^^^^(d)
+
+.indent 0
+0
+.ds
+.adjust
+Game (a) above shows Miriam accepting the trap (move B) of opening form C5.  Either she could not defend against that opening or did not choose to do so.  In game 2.2 (b) Miriam tried to avoid going first (in her turn) because she believed Robby would block her attempt to occupy three corners: "I'm afraid he will take the place I want to go.  I won't get two ways to win."  (In that game,  the appearance of traps being set (by move B) is more likely an accident of her avoiding the frustration of her three corner objective).  Her attempt to block the three corner fork in game 2.3 (c) obviously focusses on the number of corners occupied and not on their configuratiuon as a representation of threats.  That is, while she pursues play focussed on corners, Miriam did not block her opponent's way to win.  This argues for significant separation between the play of the CORNERS world and the competing microworlds of the tactical cluster.
+
+     The social component in Miriam's play is clear from the next game (d).  Miriam's fear that her corner opening strategy will be blocked results in an attempt to negotiate a victory in game 2.4 (d):
+.ss
+.nofill
+.indent 1
+Miriam:  Are you going to block me ?
+Robby:   No.
+Miriam:  (Puts marker in upper left corner - A1).
+Robby:   (Puts marker in lower right corner - a1).
+Miriam:  (Shifts her marker to lower left corner - A2).
+Robby:   You took your hand off it ! (an outraged complaint.)
+
+.ds
+.adjust
+.indent 0
+
+Miriam's concern is that Robby not block her diagonal pattern (by foiling her use
+of cell 9 for her B marker).  Her switching to the adjacent corner is an attempt
+to avoid his blocking of her second step.  The explosive disagreement which followed
+game 2.4 ended their play for the day and up through session 14. Miriam's play against her brother shows that her three corner objective
+is focussed on the number of corners occupied, not on the positional
+significance of markers.  When her functional resources are exhausted,
+she negotiates and cheats.
+
+26^^^Two further challenges rise from the observations of this session.  How shall we think
+about the negotiating and cheating ?  How should we represent the opponent-specific	
+knowledge that is so salient in play against her brother ?  The attempt to
+negotiate alternate winning is another use of turn-taking, and the cheating of game 2.4 is a  violation of turn taking expectations.  Both these behaviors should be related to the 3T
+frame.  We can say about cheating that, when the microworld's resources are exhausted, the problem is returned to a higher level of control.  There is no place in the microworld's internal 
+structure for the kind of knowledge Miriam expressed about Robby's play, i.e.
+that he could prevent her from winning and would do so.  Miriam's knowledge of
+his knowledge could not reach beyond what she knew herself.  (Indeed, she ascribes
+to him the only strategy she owns.  This is appropriate, in fact, since what she learned 
+of the three corner fork came from observing his play at the Children's Museum.)
+Further, her fear he would prevent her getting "two-ways-to-win", i.e. block her
+three corner fork, led her to modify her play significantly,  to abandon her
+only offensive strategy for position enhancing tactics in game 2.2.  The conclusion I infer is that Miriam's anticipation of Robby's play functioned through the frame to influence which of the two modes of play she followed.
+
+^^^^^Based on these early observations it appears that microworlds of the tactical and strategic modes do not compete between themselves in the same sense as do microworlds of the tactical cluster but are distinct alternatives between which a choice is made.  Since the choice is based upon preferences more than upon contextual circumstances, it is is appropriate to represent them as in Figure 3, where a choice is represented as strongly biased to favor the output of the strategic microworld cluster.  The evidence we have seen of other influences on this bias, Miriam's avoiding strategic play while opposing Robby, is represented as an inhibition on the output of the stratyegic cluster dependent upon the identity of her opponent.  This completes the initial characterization of Miriam's Tic tac toe related structures at the beginning of The Intimate Study.  This initial model will be modified and developed based on the material of succeeding sections.
+
+.ce
+* * *insert figure 3 about here * *
+.page
+1THE BASIC REPRESENTATION0
+.page
+.ce
+1Didactic Failures0
+
+30^^^During the sessions represented by games sets three through nine,
+Miriam was under instruction.  Though didactic with respect to my intentions,
+these sessions were in no way formal.  The typical situation would place
+Miriam in my lap; we would have just finished "doing some adding" and at
+her request had taken up Tic tac toe.  Miriam provided most direction in
+these sessions.  My instruction was usually a response to and a reflection
+upon some immediately preceding action of hers.  My two general objectives
+were to help Miriam understand and fix those faux pas -- those mis-steps
+of her play -- and to develop her ablity to learn from an opponent.	
+
+311^^As we played, I  introduced a "loud thinking" style of play focussed on making forced moves and explicitly considering what the opponent would do in turn.  When Miriam failed to establish an attempted three corner fork in game 3.1 because
+she pursued that objective instead of blocking a threat, I emphasized
+verbally the role of forced moves in play, thus in game 3.3:2
+.ss
+.nofill
+.ce
+***
+.indent 5
+.block 8
+^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^A
+^^^^^^B^|^C^|^c^^^^^^^^^^^^A^|^C^|^c^^^^^^^^^^^^B^|^a^|^^^
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+3.3^^^d^|^b^|^E^^^^^^3.5^^^d^|^a^|^^^^^^^^3.8^^^C^|^A^|^D2
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+^^^^^^D^|^a^|^A^^^^^^^^^^^^D^|^b^|^B^^^^^^^^^^^^c^|^D1|^b^
+^^^^^^^^^C^4^^^^^^^^^^^^^^^^^^C^5^^^^^^^^^^^^^^^^^^M^2
+
+.indent 1
+0
+Bob:    Now you have one way to win there (A-B-/).  I am forced to move here 
+     (moves b in middle).
+Miriam: I am (i.e. forced to move; moves C, blocking a-b-/).
+Bob:    Yes. You are forced to move there.  Now you have one way to win there
+     (B-C-/).  I am forced to move here (moves c, blocking B-C threat).
+Miriam: (tooting noises).
+Bob:    Do I have one way to win ?  Yes.  You are forced to move down there.
+Miriam: (Moves D, thereby blocking c-b-/).
+Bob:    You have one way to win there (B-D-/). I am forced to move there (moves
+     d, blocking B-D).
+Miriam: X ! (moves E, blocking d-b-/).
+Bob:     So that's a tie.
+
+.ds
+.adjust
+.indent 0
+With this external verbal support, Miriam submitted her three corner fork
+objective to the tactic of making forced moves.  In the next game, I sermonized,
+"When your plans are frustrated, you shouldn't complain; you should adopt
+the best expedient you can."  As I suffered her blocking my ways to win,
+I reflected aloud on her frustrating my plans.  This "loud thinking" style
+carried over into the next game (3.5), in which I explicitly considered her
+expected responses to moves I was weighing and then based my plan on those
+expectations.
+
+312^^Miriam made forced moves C and D of game 3.5 without specific
+direction to do so. That is, as we played in this cooperative mode of talking about our reasonings, Miriam was able to subordinate her corners objective to the threat blocking requirement of standard play.  Even more interesting that her success at taking this advice, was her inability to make the next step.  Because Miriam had followed my direction in game 3.7, I^offered
+her the chance to retain the privledge of the first move in game 3.8:
+.ss
+.nofill
+.indent 1
+Bob:    Would you like to go first again, Miriam ?
+Miriam: Yeah.
+Bob:    Let's see if you can beat me a different way.  I will go there again
+     (moving a), but see if you can beat me some different way.
+Miriam: (Moves B).
+Bob:    Oh.  I have a forced move now.  I have to go there (move b).
+Miriam: (Moves C, achieving a fork).
+Bob:    I have a forced move, so I must go there (moves c).
+Miriam: (Starts to block the 3-2-/ row ).
+Bob:     No, no.
+Miriam: But I blocked you.
+Bob:    But is it better to block me or to win ?
+Miriam: Win.  Win.
+Bob:    But one of the things you have to figure, Miriam, every time you 
+     have to ask yourself: "Does the other guy have a way to win ? Can I
+     beat him first ?"  If you can beat him first, you don't have to stop
+     him from winning, 'cause you won already.
+Miriam: Right.
+.ds
+.indent 0
+.adjust
+
+Could it be that Miriam intended to achieve this fork yet failed to recognize it ?
+It's hard to imagine such a conclusion could be true.  In this particular game
+and set of games, my emphasis on making forced moves might have biased Miriam
+to look only for those and react by immediately blocking the threat.  Because she
+preferred blocking to wining directly in this game, I codified for Miriam a set
+of ordered rules for playing Tic tac toe:
+.ss
+.indent 1
+.nofill
+Bob:    The number one thing you look for (writing a list), you say "Can I win ?"
+Miriam: Can we stop for a while ?
+Bob:    Yeah.  The second thing is: forced moves.  And the third thing is what ?...
+     Two ways to win.
+Miriam: O.K.  What 's the seventeenth thing ?
+.ds
+.adjust
+.indent 0
+
+She was not able to take the advice of controlling play as a list of ordered rules.
+Even two years later, Miriam remained strongly inclined to make a forced
+move instead of winning.  Yet  [*]we have seen in this game session that she was able
+to accept the advice to subordinate her strategic objective of a three corner fork
+the tactical requirement of making  forced moves.  What of the differences between these two cases could explain the surprising difference in effect.
+
+32^^^We need some way of representing the change is interaction between the Corners-world and those of the tactical cluster.  It's time to characterize the advice given
+and to ask "Did Miriam own any sort of structure which was capable of taking that
+advice ? "  The first kind of advice was about dealing with the frustration of her strategy.
+It had an obvious social cast: "Don't complain or negotiate; do the best you can." 
+But more than that, it had structural implications: "Don't consider committment to
+the CORNERS-world irreversible; if your strategy fails, continue play with the
+tactical  cluster."  The difficulty with this first interpretation is that although
+Miriam could subordinate her strategy to blocking a threat, in a strategy-failure
+condition, the WIN-world never succeeded, only BLOCK functioned.  This argues that
+only the BLOCK-world came into competition with the CORNERS-world.  Thus the
+reorganization the advice effected might be seen as implemented not at the frame level but by
+the restructuring of microworld interconnections as in Figure 4A. (The two access
+paths to BLOCK-world imply that it competes both with the worlds of the stepwise cluster
+and CORNERS.) This ad hoc proposal gives us an effect of regulated competition. But I am not happy with it. Let's contrast it with an alternative.
+
+.ce
+* * * insert figure 4A and 4B about here * *
+.page
+1WHAT SERIAL RULES MEAN0
+.page
+
+^^^^^Would not some path of connection between the CORNERS and WIN-worlds have
+been established ?  One argument against that is that BLOCK-world knowledge was a truly functional addition to the strategic cluster, but there was no functional niche
+for the WIN-world to fill.  Winning after a fork is a much simpler consequence,
+and different in kind, from the pattern scanning which could be expected in the
+WIN-world.  But if one persists in asking, "Would not learning a simple list
+of rules be so much easier than reorganizing the structure of mind ?", one must
+answer in turn "Where could such a list of rules go ?"  One might imagine a rule-like
+list of move-values in the POSITION-world (in contrast with the preference grid of my representation),  but the rule list of my advice (Win
+first, make forced moves second and enhance position when possible) is different in
+kind; it is equivalent to advising the reorganization of mind.  This latter alternative
+to the organization of Figure 4A is diagrammed in Figure 4B.  The difference in
+structural change would be great and might require the introduction of a new frame
+with a fundamentally serial charcter to work at all.  Either we should reject this image of what rule insertion might mean or accept it and leave as a mystery why Miriam was able to only learn one of the three rules I proposed.  I believe we should reject this image becausesuch a change would ignore the existence of the CORNERS world which became increasingly a nuclear entity in the developing structure of the strategic worlds.
+
+.ce
+* * *insert figure 5 about here * *
+.page
+1TWO INTERACTING MICROWORLD CLUSTERS0
+.page
+34^^^A third representation, the one we adopt, is shown in Figure 5.  Why should it be preferred^?  First, because it avoids the two criticised structures of Figure 4.  [*]  The low-down tangle of 4A and the serial proliferation of 4B.  More positively, it can be seen as coherent with two other features of the structure already deemed valuable.  The Block world inhibits the output of the strategic worlds as did Miriam's knowledge of her brother's play.  The bias of choice between the output generally of the tacitcal and strategic worlds is preserved but is interrupted only when the Block world proposes a specific move.  This leaves us with an unimpeded flow of input through a hierarchically organized, clustered, competitive structure.
+.page
+.ce
+1Table Turning0
+
+.nofill
+.ss
+40. focus on method
+41 first use of table turning
+42 basic process opf instruction (7.2-7.3)
+422 typical use (8.3-8.5)
+43 representing table turning
+45 what precisely did she learn
+451 influence of 8.3-8.5 on 8.7 (good because wrong)
+452 characteristics: adhoc; analysis requires guidance (why? is analysis
+^^^^^attached to tactical worlds ?)  - conclusion of 8.7 story
+453 analysis of c3/c5 syngnosticism: what is important is her action, not
+^^^^^yet interaction; pointer toward new end discussion: ego-active knowledge;
+^^^^^ego-with-controlled-alter knowledge; ego-alter interactivity defining
+^^^^^nmore precisely what the situation is (which, in turn, defines the limits
+^^^^^of what is possible for the ego).
+
+.ds
+.adjust
+40^^^Miriam's apprenticeship -- defined more by my didactic intentions
+than by any action or attitude of hers -- extended over four month's time.
+I began as a casual player; no one should be surprised that my view of
+Tic tac toe changed during this period.  With respect to the instruction
+I offered Miriam, game sets three through five reflect the everyday view
+of Tic tac toe.  Beginning with game set 6, my thinking and instruction
+were dominated by the opening oriented view.  Despite this varying perspective on the content of instruction, the method of instruction continually revolved around the idea of tables on an opponent.  By TURNING THE TABLES, I mean this sequence of events:	
+.ss
+.nofill
+.indent 1
+1. Whenever Miriam lost a game or found a strategy frustrated,
+2. we replayed that game with the roles of initiator and opponent reversed
+3. so that she could copy and actively execute the winning procedure
+4. during which re-execution we could (but did not always) discuss each move
+and verify that she was copying it accurately.
+.ds
+.indent 0
+.adjust
+
+The alteration of turns at moving first, the disparaity of our skills, and
+Miriam's proclivity for a negotiated settlement all joined to favor turning 
+the tables as a technique of instruction.  Her strong distaste for permitting
+others to copy her ideas and her desire really to outwit me instead of accepting 
+my tolerance of her copying both weighed against the method.  Despite her not
+turning the tables of her own initiative and despite initial reluctance, during
+this apprenticeship Miriam came to accept the method and use it effectively.
+
+41^^^After defeating Miriam in game 3.6, I attempted getting her to turn the
+tables on me (dialogue of game 3.7):
+.ss
+.nofill
+games 3.6 and 3.7 ?
+
+.indent 1
+Bob:    You move first.  Let's see if you can beat me the same way I just
+     beat you.  You're starting with an X.  I'm going to go right where
+     you went.  Let's see if you can beat me just the same way I beat you.
+Miriam: Wish.
+Bob:    Is that the same way ?
+Miriam: Did you go here ?
+Bob:    Yes.  So you're going in the corner now.  (Miriam moves B). Now,
+     this (b) is a forced move, because you have one way to win, so I
+     have to go here.
+Miriam: (Placing C) Two ways to win !
+Bob:    Yes, you do.  And you went over here (c) so I will too, and you beat me.
+Miriam: (Cheering herself)  Yaaaaah !  I won for the first time.  Hooray !
+
+.ds
+.adjust
+.indent 0
+From Miriam's penultimate comment ("Two ways to win") it is clear she
+recognized the fork when she achieved it through table turning.  It is not 
+so obvious that she had the fork in mind as one capable of being a strategic
+objective (which is surely true of the three corner fork).
+
+42^^^After the first game of sessions 7, I offered to show Miriam a good trick.  Familiar
+with corning opening C5, she believed and asserted she already knew it.  She did know --
+from the offensive side only -- the crux of game C5 and how to link the fork when an
+opponent fell into the trap.  My objective was to split off four variants of play
+ (games C1 through C4) from the good trick she knew.  My ultimate objective was for
+Miriam to exhaust the possible variations of corner play and be aware that she had
+done so.  I am certin that these ambitious objectives were not completely achieved.
+
+421^^Games 7.2 - 7.3 exhibit the basic process of instruction through table turning.2
+.ss
+.nofill
+.ce
+***
+.indent 12
+.block 6
+^^^^^^^^^^a^^^^^^^^^^^^^^^^^^^^A
+^^^^^^a | C | c^^^^^^^^^^^^A | c | C
+^^^^^-----------^^^^^^^^^^-----------
+7.2^^^^^| B | d ^^^^^7.3^^^^^| b | D
+^^^^^-----------^^^^^^^^^^-----------
+^^^^^^A |   | b^^^^^^^^^^^^a |   | B
+^^^^^^^^^C 3^^^^^^^^^^^^^^^^^^C 3
+
+.indent 0
+0
+.ds
+.adjust
+Following my win of 7.2, by which I presented Miriam an example of a C3 expert win, Miriam took my advice to use the same clever trick.  During her role reversal in applying this
+advice, Miriam switched from using X as her marker to literally copying the
+characters I had used in game 7.2.  Such specific symbol copying occured many times in the early examples of table turning.  
+
+422^^What I imagine will be typical of more general use of table turning occurs in the sequence of games 8.3 through 8.5.2
+.ss
+.nofill
+.ce
+***
+.block 6
+^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^a^^^^^^^^^^^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^A
+^^^^^^A^|^d^|^D^^^^^^^^^^^^a^|^^^|^d^^^^^^^^^^^^A^|^^^|^D^^^^^^^^^^^^A^|^D^|^C
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+8.3^^^C^|^b^|^a^^^^^^8.4^^^B^|^a^|^A^^^^^^8.5^^^b^|^C^|^a^^^^^^8.7^^^b^|^c^|^^^
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+^^^^^^c^|^E^|^B^^^^^^^^^^^^b^|^^^|^C^^^^^^^^^^^^B^|^^^|^c^^^^^^^^^^^^B^|^^^|^a^
+^^^^^^^^^C^2^^^^^^^^^^^^^^^^^^C^2^^^^^^^^^^^^^^^^^^C^2^^^^^^^^^^^^^^^^^^C^1
+
+0
+.ds
+.adjust
+The first of these is a lost opportunity. Through her ignorance of a good  move at the crux,  a potential C2 expert win degenerated to a tie.  When she failed of the expert win after my move a in 8.3,  I informed Miriam of her oversight. She was angry and had to be cajoled to re-play game 8.3 with roles reversed.  When she moved A in game 8.4, I reviewed her move of game 8.3(B) comparable to the one I then made (b).
+.ss
+.nofill
+.indent 1
+Bob:     You went down here, where the B is, next to this a.  If you had
+        gone over here, where my b is now --
+Miriam: Yeah ?
+Bob:    You could have beat me.... You know why ?
+Miriam: Why ?
+Bob:    'Cause now you've got a forced move between the a and b.
+Miriam: Oh (Moves B).
+Bob:    Now, what chances to win do I have ?  From the b across the bottom;
+    from the a across the top; from the a down through the middle;
+    from the b up through the middle.  And I have to go in the middle
+    because you have one way to win.  Now look at this --
+Miriam: I get it.
+Bob:    I take my forced move --
+Miriam: (A little angry with me) I get it.
+Bob:    Two ways to win.
+.ds
+.adjust
+.indent 0
+
+Miriam became angry on suffering this defeat.  She even cried a little and wanted
+to quit, and generally did her best to make me feel like a bad guy.  When she was
+convinced to turn the tables on me, she played game 8.5 and beat me directly.
+With the compensatory victory achieved, she no longer wanted to quit.
+
+43^^^How should knowledge of the table turning process be represented ?  Let us address
+this issue now.  The idea of table turning was easy for Miriam to assimilate for at 
+least two reasons.  First, it was a socially approved method for alternate winning which
+could displace the criticised method of public negotiation.  In effect, we describe it as the insertion of a choice point at an old inhibition site. Secondly, the procedure
+was based on copying. Copying was of minimal confusion because our markers were
+usually written in different colors of ink and the sequence of markers was always
+preserved (I used either letters or numbers as markers).  Copying is a very primitive activity, and one unrelated to prior game knowledge. Because Miriam's table turning knowledge, as we shall discover subsequently, came to enable her later multi-role play, we should go into the character of its representation more deeply.  First we ask, is the table-turning choice point similar to or different from that engaged with the objective-rooted bias^?  The table turning choice point is different becuse it's a very simple procedure, attached to the input lines serving a turn taking issue.  It is, in fact, represented as a major, high level branch, different in quality from the alterationin the connections between of microworlds.  The major characteristics of this choice point are two: the insertion on an inpout line short-circuits knowledge application by invocation of other, primitive knowledge; it is still subject to the initiation question. (As became all too clear to her when I was able to turn the tables on her after her defeating me.)
+
+.ce
+* * * * * insert Figure 6 * * * * *
+.page
+1TABLE TURNING:INSERTION OF A NEW CHOICE POINT0
+.page
+45^^^what, precisely, did she learn for her experience of table turning.  Our analysis of the following games is directed to establish that Miriam's knowledge about corner opening play was very ad^hoc and fragmentary.  NOtice that although she may predict her victory, her grounds for expecting that victory may be mistaken.  For example, if Miriam can win a game of form C2 and knows she can do so, she may mistakenly believe she can win a game of form C1 merely because she does not distinguish between it and games of form C2.  The following detail will clarify this observatioon.
+
+451^^^The recorded dialogue attendent on game 8.7 is quite valuable in illuminating
+Miriam's grasp of the experiences she had.  After my move a, I asked:
+.ss
+.nofill
+.ce
+* *insert game 8.7 here ?  duplicate it ?* *
+.indent 1
+Bob:    Do you remember how to beat me ?
+Miriam: Unh-uh.  (Then she laughed and moved B).
+Bob:    Oh, you've got me now.
+Miriam: (Gestures to make a middle move).
+Bob:    (Stopping her) Show me your chances to win.
+Miriam: (Gestures along the top and from B up through the middle cell).
+Bob    If you want two ways to win, you have to move where the chances to win 
+        come together.
+Miriam: (Gestures to move in the middle).
+Bob:    That's wrong.
+Miriam: It is ?
+Bob:    Where do your two chances comes together ?
+Miriam: Here (along the top), here ((up through the middle).  Here (the
+        intersection corner).  If I go here, you can block here (the
+        middle cell), but I'll go here (cell 2).
+Bob:    O.K.
+.ds
+.adjust
+.indent 0
+
+Miriam made move C and linked her two ways to win.
+
+452^^My interpretation of the sequence is this.  Upon my response to her opening,
+Miriam realized she did not remember how to achieve an expert win.  Then,
+considering how similar appear the openings of C2 and C1, she adopted the crux
+of game C2 for stepwise guidance.  My argument that she now "had me" confirmed
+this choice and led her to continue using the procedure just developed for opening
+C2 in games 8.3 through 8.5.  The analysis of chances to win I asked of her was
+made but dinstinctly not applied to game 8.7 which she proposed to complete with
+the link of game 8.5  My stopping that procedure and pointing to the necessary
+analysis led her to substitute its conclusion for the next step of the imperfectly
+applied procedure.  [* * ad hoc character of C" knowledge misapplied; why did analysis need extrinsic guidance ?  could it have been a property of the tactical worlds ?]
+
+453^^^Miriam's play is games 8.1 and 8.7 requires us to admit that after table turning she owns knowledge of other games besides the three corner fork (traps of form C5).  In 8.1, Miriam defeated me by an expert win.  We just argued the influence of games 8.3-8.5 on 8.7.  Let us consider more closely what we may ascribe to Miriam from her play in the games below:2
+.ss
+.nofill
+.ce
+***
+.indent 10
+.block 8
+^^^^^^A^^^^^^^^^^^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^A
+^^A^|^*^|^C^^^^^^^^^^^^a^|^^^|^B^^^^^^^^^^^^A^|^*^|^C^
+^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+^^^^|^a^|^*^^^^^8.1^^^^^^|^b^|^*^^^^^^8.5^^^b^|^*^|^a^
+^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+^^b^|^^^|^B^^^^^^^^^^^^A^|^*^|^C^^^^^^^^^^^^B^|^^^|^^^
+^^^^^C^5^^^^^^^^^^^^^^^^^^C^3^^^^^^^^^^^^^^^^^^C^2
+typical game
+
+.indent 0
+.ds
+.adjust
+0We classify these games as forms C2 and C3.  Did Miriam see them as different from her three corner fork or as insignificant variations from it^?  In both these games, her first three moves occupy three corners.  In game 8.1, her moves do not differ at all from her moves in a typical C5 game (the prototype for her corner opening play).  In game 8.5, the diagonal corners are placed after the in-between corner.  Does this imply that Miriam owned some significant new knowledge ?  I think the answer is "yes", but the question is "What is it ?" and "How shall we represent it ?".
+
+454^^How should we represent the kind of knowledge evidenced by Miriam's plays in games 8.1 and 8.5 ?  We can see and classify the C5 and C3 games as different, but Miriam does not.  We choose to represent her ad^hoc knowedledge of these "well-known-games" by the small circles dependent from the Corners world of Figure 6.  We need to be able to specify both the competence and the confusion Miriam shows.  Thus games C5 and C3 are shown as joined together while the similarly well-known game, C2, is distinct from those two.  
+
+454^^^Contrast Miriam's certainty in this segment of dialogue (9.2, game form C1) with that of the
+preceding game:2
+.ss
+.nofill
+.ce
+***
+.indent 15
+.block 7
+^^^^^^^^^^A
+^^^^^^A^|^D^|^C^
+^^^^^-----------
+9.2^^^b^|^c^|^^^
+^^^^^-----------
+^^^^^^B^|^^^|^a^
+^^^^^^^^^C^1
+
+0
+.indent 1
+Bob:    Let's suppose I move here (cell 9). Will you beat me ?
+Miriam: I don't know. (Is she being evasive ?)
+Bob:    I'll try it.
+Miriam: (Laughs) I'll put my B here ! (cell 7).
+Bob:    Ohoh.  Do you have me beat already ?
+Miriam: Yep.  See.  I go there (cell 3) and I've got two ways tow in (Gleeful
+     laughter).
+Bob:    So as soon as I put my a in there, you knew you could beat me.
+Miriam: Uh-huh.
+.ds
+.adjust
+.indent 0
+
+This dialogue testifies that a well-known result representing a C1 form game, should be
+added to the strategic cluster of  Figure 6.  It is true, as Miriam claims, that
+after move C she has two ways to win.  But does that mean to her what it means to us?
+We see the pattern as a V-shaped fork. It shares the pattern and sequence of her C2 victory.  At   Does Miriam still see it as a three-corner fork ?  At this point, I would judge so, and append a C1 known result to that of C2 (as is done in Figure 6).
+
+     The general conclusion we can draw from this analysis is that table turning has helped to fix, at least temporarily, specific game results in Miriam's mind.  We speculate that Miriam saw these various games as different ways of achieving her earlier, once more specific three corner objective.
+
+455^^If we look at Miriam's changing behavior in playing corner opening games, we can see that the first major advance her learning showed was an increase of flexibility.  Initially, when her C5 game was frustrated, all she could do was cheat.  Now, she is able to play C5 and C3 games - but she doesn't distinguish them as different.  In this sense, it is clear that what is most important to her in the definition of her game is her own pattern of action; for Miriam, Tic tac toe at this time was an active game but not yet one she considered as an interactive game.  We shall see in subsequent sections Miriam's thinking develop from an ego-active form to one where her play is in terms of an ego-with-controlled-alter activity.  This discussion is continued in the conclusion of the paper.
+
+^^^^^Miriam's ability to predict victories with games of specific opening forms, e.g. 9.2 above, raises the issue of how her functioning knowledge is related to knowledge about the results of play.  I consider this an important question, and note that section 6 will be dedicated to it.  A preview of our conclusion there is that at this point in time, Miriam's predictions of victory were known as ad hoc properties of opening patterns and not as deductions from functioning knowledge.
+.page
+.ce
+1Novel Developments0
+
+50^^^Miriam propelled herself to independence.  She had been my captive
+antagonist at Tic tac toe for some five months when, while I was distracted
+otherwise, she engaged Glenn, a Logo colleague, in play.  I decided thereafter
+to terminate instruction as such and attempted merely to evaluate what
+Miriam had been able to learn.  Therefore my intentions as her opponent 
+(in sessions 11 through 16) was not purposefully didactic (though it's
+hard to keep the doctor down).  Miriam at six and a half held her own with 
+a brother two years her senior (no slouch himself) and with a games-knowledgeable
+colleague of ours (some mere twenty years her senior).  Beyond her increased skill in playing specific games, her oustanding achievement was an increase in flexibility which appears in game 14.5 and 15.1, where she plays both sides of the game and made "smart" moves for both players.  Contrast this performance with the paralyzing rigidity of her inability to play on in game 1.4.
+
+1A Significant Irrelevance0
+
+.ss
+.nofill
+51 she didn't appreciate opening advantage
+52 her invention of two in a row
+53 extension to three in a row
+54 discussion of relevance for her representation of knowledge
+.ds
+.adjust
+
+51^^^At the end of session 7, Miriam refused to initiate a game out-of-turn and required my going first.  With no specific objective on my part, I played out a game of form C2. (this was the same gambiut in which she received table turning instruction in games 8.4-8.5 and which she applied imperfectly in game 8.7.)  After my defeating her, Miriam confided to me that she would try to use this gambit on her brother when next they played.
+.ss
+.nofill
+.indent 1
+Miriam: I'll try to get Robby to move here (cell 6), then I'll move my
+    B here (cell 7), then I'll try this trick on 'im.
+
+.ds
+.adjust
+.indent 0
+Miriam did not play against her brother till later, but in session 10 she seized upon our Logo colleague Glenn as a likely victim.  (Glenn was unaware of our Tic tac toe research and its objectives.) Contrast these three games:2
+.ss
+.nofill
+.ce
+***
+.indent 5
+.block 7
+^^^^^^^^^^a^^^^^^^^^^^^^^^^^^^^a^^^^^^^^^^^^^^^^^^^^A
+^^^^^^a^|^^^|^C^^^^^^^^^^^^A^|^^^|^b^^^^^^^^^^^^A^|^D^|^C^
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+7.7^^^B^|^c^|^A^^^^^10.4^^^C^|^c^|^a^^^^^10.5^^^b^|^c^|^^^
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+^^^^^^b^|^D^|^d^^^^^^^^^^^^d^|^^^|^B^^^^^^^^^^^^B^|^a^|^^^
+^^^^^^^^^C^2^^^^^^^^^^^^^^^^^^S^3^^^^^^^^^^^^^^^^^^C^2
+
+.indent 0
+.ds
+.adjust
+0
+Miriam played Glenn with the obvious intention of defeating him by the C2 expert play. Most remarkable was that Miriam got it all wrong ! Glenn informed me that Miriam had asked him to open at a in 10.4 (cell 6).  Glenn moved first (the response for opening C2) then Miriam in her turn made the "opening" move.  This is side opening game S3, which Glenn had the knowledge to win.  After being defeated, Miriam and Glenn replayed the opening configuration but with her having the opening
+advantage, and she defeated him.  (His moving in a symmetrical variant of his opening
+counter's position in the prior game is an indication that the choice was his.
+(Miriam would have asked him to move in the same location as move a of game 10.4).)  This sequence of games is  striking evidence that Miriam was insensitive at that time to the significance of opening advantage.
+
+51^^^Miriam's insensitivity to opening advantage was shortly confirmed by her loud thinking.  The recorded dialogue of game 12.3 exhibits an essential difficulty of her play and the constraints which must delimit our representation of her knowledge and what table turning could have meant to her:
+.ss
+.nofill
+.ce
+***
+2
+.indent 9
+.block 7
+^^^^^^^^^^^a^^^^^^^^^^^^^^^^^^^^A
+^^^^^^^C^|^b^|^B^^^^^^^^^^^^c^|^D1|^b^
+^^^^^^-----------^^^^^^^^^^-----------
+12.2^^^a^|^A^|^e^^^^^12.3^^^a^|^A^|^^^
+^^^^^^-----------^^^^^^^^^^-----------
+^^^^^^^c^|^D^|^d^^^^^^^^^^^^B^|^D2|^C^
+^^^^^^^^^^S^4^^^^^^^^^^^^^^^^^^M^2
+
+.indent 1
+0Miriam: My turn to go first ?  (game 12.3).
+Bob:    Yeah.
+Miriam: (moves A in middle).
+Bob:    You like to go there ?
+Miriam: Yeah.
+Bob:    How come ?
+Miriam: I don't know.
+Bob:    Neither do I.  Let me ask you a question. (Placing counter at side cell) If
+    If I move here, can you beat me ?
+Miriam: It will probably be like the same game.
+Bob:    The same game as what ?
+Miriam: The last game.
+Bob:    You think it will ?
+Miriam: Yeah.
+Bob:    Let's see.  Can you beat me if I go here ?
+Miriam: I think so.
+.ds
+.adjust
+.indent 0
+
+Miriam's comment that the two games will be the same is unforced confirmation that she had not yet made a distinction which nearly every person else would see as implicit in the game.  It does matter whether one goes first or second; Miriam apparently did not appreciate that fact.  With this profoundly non-standard perspective, one which does not recognize the opening advantage of the first player, with her failure to make a distinction which adults assume, her representation was  more different from the casual player's than any casual observer would guess.
+
+.block 3
+.ce
+1Appreciating Opening Advantage0
+
+52^^^One day at the end of The Intimate Study, I visited Miriam in school for a short time.  After she had finished her school work, we played "half-a-game" of checkers because I had to leave: I folded the board in half, we both placed six checkers on our sides and commenced playing. We occasionally played another kind of reduced game, Hexapawn, and contrasted it with Tic tac toe.  Hexapawn is a game of pawn capture played on a three-by-three grid.  Each player starts the game with three pawns and an objective of either capturing  his opponent's three pawns or crossing one of his pawns to the opponent's side of the board.  Hexapawn is an important example because the second player has a significant advantage (the expert second player can't be beaten).  I^cite these activities to show the extent to which playing with variations of standard games was a common activity within the microcultures of my family.  Finally, after the six games of session 10, I interrupted Glenn as he was introducing Miriam to Tic tac toe played on a four-by-four grid.  This background helps to make comprehensible  Miriam's invention of "Tic Tac Toe - Two in a Row":
+.ss
+.indent 1
+
+     Miriam's asthmatic coughing woke me early one morning.  With some medicine she quickly returned to sleep while I confronted several sleepless hours before dawn.  After writing through those hours, I  dozed off in my chair -- then was awakened by an early telephone call.  I finally crawled back into bed, but Miriam, wakened by the telephone as well, popped into bed between my wife and me, and by her chatter and playing kept me drowsily awake.
+     She asked first if I wanted to play "Tic tac toe - Four in a Row".  I responded that the game was too complicated for me, even before I realized her mode of play was to be marking moves by gestures in the air (as she spells words by letter gestures).  When I asked how she could possibly do that, Miriam explained  she was envisioning the grid as lines through a series of nail heads visible in the wallboard of the ceiling.  "Then all you have to do is make the marks there."  (apparently she felt she could remember her own moves to her requisite level of satisfaction.)  I still refused to play, even "Tic tac toe - Three in a Row".
+
+     Miriam continued, "Hey, Daddy if you play `Tic tac toe -Two in a Row', the first guy always wins."  I asked what she meant.  Miriam explained, "If the X goes first, say in one corner, and the O goes in the opposite corner, the X still has two ways to win, every time."  I asked if she thought anything like that could be true for "Tic tac toe - Three in a Row".  "No, it couldn't", she concluded.
+
+.ds
+.indent 0
+52^^^[* *]The next day Miriam agreed to undergo a videotaped session about tic tac toe in our home.  During the following cited dialogue from this mechanically recorded session, Miriam passed from a state of believing that no such thing as opening advantage applied to the playing of Tic tac toe - Three in a Row to a crisp formulation of what opening advantage means as it applies to that standard form of the game.  After reviewing her earlier comments on tic tac toe- two in a row,  I presented to Miriam simultaneously two game openings with markers in the same cells (games of forms M2 and S4) and tried to establish their difference:2
+.nofill
+.ss
+.ce
+***
+.indent 5
+.block 6
+^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^a^^^^^^^^^^^^^^^^^^^^A
+^^^^^^^^|^^^|^^^^^^^^^^^^^^^^|^^^|^^^^^^^^^^^^^^c^|^^^|^b^
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+17.2^^a^|^A^|^^^^^^^17.3^^^a^|^A^|^^^^^^^17.2^^^a^|^A^|^^^
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+^^^^^^^^|^^^|^^^^^^^^^^^^^^^^|^^^|^^^^^^^^^^^^^^B^|^D^|^C^
+^^^^^^^^^M^2^^^^^^^^^^^^^^^^^^S^4
+
+.indent 1
+.nofill
+
+0Bob:    Now look at these two games here.  Are they the same games 
+    or are they different games.
+Miriam: Same.
+Bob:    In what ways are they the same.
+Miriam: (Tapping side and middle positions). The letters are in the same 
+    places.
+Bob:    Let's set up this same game on our board.  Where's your piece
+    gonna be, if we're playing these two games here ?
+Miriam: There. (Places A in middle cell).
+Bob:    You played A.  I'll put down a right here (cell 4).  Now let's stop
+    for a minute.  (You said these two games on the card are the same....
+    What's the difference in what I wrote on that card ?
+Miriam: You wrote "M First" and "B First".
+Bob:    What do you think that means ?
+Miriam: That means I won the first game ? (We had written initials over 
+    the grid to mark her victories in the past.)
+Bob:    How could you have won ?  There are only two markers in place.
+Miriam: I don't know.
+Bob:    O.K.  Whose turn is it now ?
+Miriam: Mine (Smile).
+Bob:    Why is it your turn ?
+Miriam: 'Cause I went, then you went, then I go.
+Bob:    (Pointing to "M First") Oh, you mean we're playing this game ?
+Miriam: (Looking at the card, biting her lip, a pause) Yeah.
+Bob:    Is that different from this game (Pointing to "B First") ?
+Miriam: Yeah. (Smiles)
+Bob:  If we were playing this game over here -
+Miriam: (interrupting) B would go first.
+Bob:    Yeah.  Does that make a difference ?
+Miriam: Yeah.
+^^^(dialogue excised during moves B-C while Miriam establishes her fork)
+Bob:    When we play this game (pointing to game "M First")  -
+Miriam: (interrupting) I win.
+Bob:    Yes.... I'll block you, but you've got me..... We've played
+    the game with Miriam first.  Let's play the game with Bob first.
+    (clears the board and replaces the first two markers).
+Miriam: Go anywhere you want.
+Bob:    Why ?
+Miriam: Dunno.  You've got all those open spaces.
+Bob:    It's also my turn.
+Miriam: Yeah.
+Bob:    'Cause Bob went first in this game.  It looks the same,
+    doesn't it.
+Miriam: Yeah.
+Bob:    How 's it different ?
+Miriam: Whoever goes first who knows a good strategy can win.
+.ds
+.indent 0
+.adjust
+
+Miriam's formulation of opening advantage was confirmed by subsequent games to mean "a strategy which leads to a fork"; she did not apparently see the good strategy as one relating an opening pattern and the fork achievment.  Attempting to represent the knowledge implicit in this crisp articulation raises a central issue about the nature of learning.  We turn to that now and will return to the issue of representing Miriam's knowledge of opening advantage afterwards.
+
+
+
+54^^^Miriam's early understanding of Tic tac toe didn't distinguish between games where she or her opponent is the initiator.  (I say she had then a SYNGNOSTIC perspective, one which recognizes without discrimination what others can see as distinct.)  As she failed to make this vital distinction, can we say she understood anything at all ?  Indeed we can.  We can say she understands precisely what is indicated in our model.  Does any feature of the model, beyond the ad hoc knowledge of known results for specific games depend upon an integration of serial and pattern features of play ?  No.  But, then, isn't our model subject to profound misapprehensions ?  Surely so, as is Miriam's knowledge itself.
+
+
+54^^^If this syngnostic perspective on a central aspect of the game is altered, should we not expect the discrimination, when made, to render obsolete whatever prior knowledge Miriam owned ? The answer appears to be "no".  I take this to be a central issue in the development of mind.  The negative answer to this question renders comprehensible the adaptivity of the child's ego-centricity noted long ago by Piaget [W].  If one's cognitive structures (and the ideas they embody) are primarily in terms of one's own actions (these can be known and controlled step wise) discriminations based on interaction (appearing to the syngnostic perspective as random) come into being as incremental refinements of already established knowledge. This seems to account for the stability of knowledge based on ignorance and its progressive refinement.[* * this needs to be well written...it is a key conclusion]
+
+^^^^^We now face the problem of representing a verbal formulation about opening advantage to which no obvious functional effects can be traced.  We would expect that an appreciation of opening advantage would incline a person to prefer going first whenever possible.  However, this preference is one Miriam owned since first she began playing the game.  Consequently, when we notice that in games played against herself subsequently, "she" always goes first, we can claim no obvious effect from the fact observed.  We choose to defer to our final discussion the question of how to relate this sort of knowledge to functioning knowledge.
+.page
+1Multi-Role Play0
+
+55^^^The sequence of games below is as good evidence as one could ask that turning the tables 
+became an intellectual property which Miriam owned and and freely used.
+In later games, Miriam took a further step and incorporated her opponent's play with her own.  Does it make sense to say one learns from an opponent when one person plays both roles ?
+Perhaps not, but that is a mere quibble.  It is precisely this skill that
+appears to be required to perform the analyses which lead to an explicit understanding
+of specific games, the transfer of knowledge from aggressive to defensive
+play, and, ultimately perhaps, to an articulate and well-organized grasp
+of the mini-world of Tic Tac Toe.
+
+56^^^Game 11.2 replayed, at Miriam's request, her defeat by our colleague Glenn.
+In game 11.3, Miriam spontaneously turned the tables on my play of game 11.2.
+Miriam used table turning first to recover a past defeat, then to turn that game
+into a procedure which she executed victoriously.2
+.ss
+.nofill
+.ce
+***
+.indent 12
+.block 7
+^^^^^^^^^^a^^^^^^^^^^^^^^^^^^^^A
+^^^^^^A^|^^^|^b^^^^^^^^^^^^a^|^^^|^B^
+^^^^^-----------^^^^^^^^^^-----------
+11.2^^C^|^c^|^a^^^^^^11.3^^c^|^C^|^A^
+^^^^^-----------^^^^^^^^^^-----------
+^^^^^^d^|^^^|^B^^^^^^^^^^^^D^|^^^|^b
+^^^^^^^^^S^3^^^^^^^^^^^^^^^^^^S^3
+
+0
+.indent 1
+Bob:    I remember when you were playing with Glenn, you did a lot of playing
+    on the side.  He started oin the side a lot.  Is that because you told
+    him to every time ?  Or just because he wanted to after the first time ?
+Miriam: Will you go over here (cell 6) ?
+Bob:    Over here ?  What were you going to do  ?
+Miriam: Here (cell 1).
+Bob:    Who do you think will win ?
+Miriam: Me ?
+Bob:    Let's see.(moves a)... Now you think you're going to beat me by going in the
+    corner ?
+Miriam: (Moves A).
+Bob:    That's a bug, Miriam.  Shall I show you why ?... Do you think you're
+    going to win, or do you think I'm going to win ?
+Miriam: I think you're going to win.
+Bob:    How come ?
+Miriam: You just told me.
+Bob:    You want to see how I do it ?
+Miriam: Yeah.
+Bob:    I put my b right here, over top of the a (i.e. in cell 3). Now you
+    have a forced move.... My good trick is that your second move (B) comes
+    right under my a.  Now tell me what I've got (move C in middle), where
+    my chances to win intersect.
+Miriam: Two ways to win.
+Bob:    How did I do that to you ?
+Miriam: I'm going to go here (moves C).
+Bob:    So you block my a-c and I go here.  One for Bob....Where do you want 
+    to start ?
+Miriam: (Moves A in cell 6).
+Bob:    You're going to go where I went last time ?
+Miriam: Yeah.
+Bob:    Oh... Is this turning the tables ?
+Miriam: (laughing) Yeah.
+Bob:    Well, that means I have to go where you went last time, right ?
+Miriam: Yeah.
+Bob:    O.K. (moves a).  So you're turning the tables on me.  You're going
+    to be able to beat me now ?
+Miriam: Yeah. (moves B)
+Bob:    I will put my b down here.
+Miriam: Here (i.e. is move C in the right location ) ?
+Bob:    Uh huh .
+Miriam: C. (moves)
+Bob:    You put it there because you've got one chance from the B through the
+    middle and one chance from the A across.
+Miriam: [unclear comment]
+Bob:    Well, I'll go here, c.  So you turned the tables on me all right.  You
+    like turning the tables on me ?  Is that a good way to play Tic tac toe ?
+Miriam: Yeah.
+
+.ds
+.adjust
+
+
+
+57 In continuing, informal play, Miriam exhibits a significant advance - playing "both sides" of a single game simultaneously.  Miriam played most games of session 14 against her brother.After an initial tie and Robby's victory in a corner opening (form C3), Miriam opened the third game in a corner.  Robby's opposite corner response led first to her noisy complaint...and then this comment, "Robby, you're gonna kill me for this."  At this juncture, she made an effective crux for game C1 and continued with a  "million dollar promise" that she would not move in cell 4.  (I interpret this promise as one drawing his attention to move b and egging him on to make it.)  After Robby made his forced move in cell 4, Miriam informed him she wasn't going there anyway.  At my question of whether she would beat him, Miriam replied, "Yeah, I think so."  and linked her two chances to win into a fork.  Miriam honestly beat Robby at a game at which he had been master in all their previous play.2
+.ss
+.nofill
+.ce
+***
+.indent 12
+^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^a
+^^^^^^A^|^D^|^C^^^^^^^^^^^^C^|^^^|^A^
+^^^^^-----------^^^^^^^^^^-----------
+14.3^^b^|^c^|^^^^^^^^14.4^^d^|^a^|^c^
+^^^^^-----------^^^^^^^^^^-----------
+^^^^^^B^|^^^|^a^^^^^^^^^^^^b^|^^^|^B^
+
+0
+.indent 0
+.ds
+.adjust
+In the next game, Miriam invited Robby to turn the tables on her.  Robby, not privy to our experiments with Tic tac toe, did not share with Miriam the specific meaning she assigned to that procedure.  Does game 14.4 show Miriam pursuing a three corner fork  despite the intrusion of Robby's c where a hole should be ?  Or was it a gift to him ?  I prefer the latter interpretation because Miriam mentioned to me her surprise that he didn't know how to turn tables.  Such a gift would be another way of alternate winning when your opponent can't turn the tables.
+
+57^^^The games were interrupted at this point.  Since I needed to go away for a few minutes, I asked the children not to play together till I returned.  Coming back, I found Miriam had been playing Tic tac toe against herself, in her words, "making smart moves for me and the other guy".  She showed me her play of game 14.5, where the first player wins after the second falls into the traps of opening C5.2
+.ss
+.nofill
+.ce
+***
+.indent 10
+^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^a
+^^^^^^A^|^D^|^C^^^^^^^^^^^^a^|^d^|^c^
+^^^^^-----------^^^^^^^^^^-----------
+14.5^^^^|^a^|^c^^^^^^15.1^^B^|^C^|^^^
+^^^^^-----------^^^^^^^^^^-----------
+^^^^^^b^|^^^|^B^^^^^^^^^^^^b^|^^^|^A^
+^^^^^^^^^C^5^^^^^^^^^^^^^^^^^^C^1
+0
+.indent 0
+.ds
+.adjust
+Attempting later to probe Miriam's ability to play defensively against a corner opening, I asked her to play as opponent a C1 game (15.1 above).  I opened with corner a.  Miriam took over once the chalk was in her hand.  After move B, she paused and wavered,"No. He wouldn't move there."  I laughed (at her attempted cheat) and said "Oh yes he would."  Miriam made the smart move (c) for her opponent and concluded, "I block him in the center and he wins".  Thus we have a second example of Miriam's playing both sides of a single game.
+
+59^^^^^How can we integrate the newly exhibited flexibility in role playing (i.e. playing both initiator and opponent) into our representation of Miriam's knowledge about Tic tac toe ?    Let us begin to represent this new capability in Figure 7 with the addition of a new player knowledge structure attached to the "Opponents".  We label it ALTER (for alter-ego) and note it's specialness as the use of one's own knowledge for the opponent's play.  (Miriam's play of game 15.1 shows Alter's vulnerability to cheating by the "Ego", the primary self. Given that the formulation of Miriam's game knowledge was ego-centric and she did not have strong opposition in vying for the first move, we should not be surprised that her knowledge developed from opponent simulation be focussed on self-initiated play.
+
+.ce
+* * *insert figure 7 about here * *
+.page
+.ce
+1PLAYING BOTH SIDES0
+.page
+59^^^Simulating an opponent is another method for alternating turns.  Table turning earlier displaced negotiation as the preferred method of alternating winning; now simulation displaces opponent-play when no opponent is available.  [* * the choice of "whose turn" must now be represented as an actual choice and not merely as the inhibition of a response.  We chose to do this as in figure 7 because it seems to minimize the amount of change from figure 6.]  The choice point inserted ("is there another player or not^?") has an obvious answer.  The subordinated decision, "how to play this turn^?" seems to result in the kind of behavior observed; that is, the ego plays strategically, the Alter tactically.  This splitting apart of two sometimes competing sub-structures under control of a new decision on annold issue is a most parsimonious example of how the elevation of control wreaks significant changes in behavior with minimal changes in structure.  This minimal change in structure is a marked advance over one sided play, for the appreciation of the interaction possibilities of two players is the basis from which a serial understanding of Tic tac toe must derive, an issue to which we now turn.
+
+^^^^^  In the sense that in self-antagonistic play, Miriam's Ego always initiates games and plays strategically, one might think that she is exhibiting a functional form of opening advantage knowledge. We are not entitled to draw that inference because she has always preferred going first, from her earliest play.   As contrasted with Miriam's non-functional but crisp formulation of opening advantage, we see in the separation of play into two internal roles a structure which permits opening advantage to be an issue for practical exploration which could result in an active comprehension of opening advantage -- as opposed to a mere verbal definition of what it might mean.  I believe that through multi-role play Miriam will come to an active appreciation of opening advantage but recent observations indicate she has not yet done so.  
+.page
+.ce
+1Two Years Later0
+
+60     In the years following the intensive period of The Intimate Study, playing Tic tac toe lost social currency with Miriam and me.  My energies were much absorbed by the analyses and composition of One Child's Learning.  Peggy, a second daughter, was born to our family.  Miriam couldn't find a tolerable partner for the game, but this was not a major concern to her for she, as well as I, had other preoccupations.
+
+     Two sorts of play occurred during this period of relative inactivity.  First were the few game sessions we did play.  Second was Miriam's solitary play and her reflection upon it.  From these two sorts play, two new developments arose: Miriam discovered a new strategic objective beyond the three corner fork; she also became capable of game length prediction.  The first development is highlighted in the discussion of A New Strategy; the second in A Stage Change.
+
+1A New Strategy0
+
+Reviewpng her play of the intervening years, Miriam stated that she played rarely (30 games in two years was her estimate) and mostly against herself.  As I introduced my objective, Miriam proposed one of her own: to apply a newly discovered tactic against me. 
+.ss
+.indent 1
+.nofill
+Bob:    What I have in mind is to ask you a couple of questions and play 
+    some Tic tac toe - but the kind of playing we're going to do is
+    we're going to talk about 'em and play as we go along.  O.K. ?
+    Are you willing ?
+Miriam: Yep.  I got a new trick - er - a new tactic.
+Bob:    Oh, good.  We can talk about that now.
+Miriam: I'm not going to tell it to you.  I'm going to keep it quiet.
+
+.ds
+.indent 0
+.adjust
+After a short discussion of the game rules, this issue surfaced again:
+.indent 1
+.ss
+.nofill
+Bob:    Are there any other rules you follow - maybe what you would
+    call tactics or strategies that you have to win ?
+Miriam: Yep.
+Bob:    Are you willing to tell me about them ?
+Miriam: No way !  Then whenever I play you'll know my tactics.
+
+.ds
+.indent 0
+.adjust
+Behind this more independent stance of hers is a stronger sense of our play as between conflicting opponents.  This "antagonism" undercut the loud thinking openness of our earlier play.  Luckily, Miriam's new strategy is clear from her play on the games below and commentary on 22.2:2
+.ss
+.nofill
+.ce
+***
+.indent 12
+^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^A
+^^^^^^A^|^a^|^*^^^^^^^^^^^^A^|^^^|^*^
+^^^^^-----------^^^^^^^^^^-----------
+22.1^^*^|^B^|^^^^^^^^22.2^^*^|^B^|^^^
+^^^^^-----------^^^^^^^^^^-----------
+^^^^^^C^|^^^|^b^^^^^^^^^^^^C^|^a^|^b^
+^^^^^^^^^C^4^^^^^^^^^^^^^^^^^^C^2
+
+0
+.indent 1
+Bob:    We don't have to play that out. (game 22.1)  You've defeated me clearly.
+    Masterful. Let's play another one here.  You go back in that corner.
+    That's where you went the first time.... And I want to try some 
+    other places and see if I can get away from you and your new
+    tactic.  I'm going to go down here (cell 8).  That's on the side away.
+Miriam: (Moves B in cell 5).
+Bob:    Arrgh !  (Moves b in cell 9). This is a different game.  See,
+    I've got  a  way to win....
+Miriam: (Moves C in cell 7)
+Bob:    Oh no !
+Miriam: Careful of your moves, Buster.
+Bob:    So you've got two ways to win now.  Let me ask you something.
+    When did you invent this trick ?
+Miriam: Oh, I was playing with myself.
+Bob:    Well.... That's another one for Miriam.... When did you do this ?
+    Was it recently or years ago ?
+Miriam: Recently.... See, what I happened to do (Here Miriam moves to her
+    desk and returns with a copy of Richard Scary's Rainy Day Book)....
+    What I did is I went X.  He went O. I went. He went O.
+
+.ds
+.indent 0
+.adjust
+In a final comment on the discovery of this new tactic, Miriam added that she had played the game and only days later realized that she had created a fork with her third move.  (This comment is born out by the appearance of the original game, where the first six markers are made in brown crayon and the last, the  winning move (D) is marked in ball pen.)
+
+     Notice that once Miriam discovered this new tactic, its pattern played a role as a strategic objective, analagous to that of the three corner fork.  Further, although it was developed originally with a game of form C4, Miriam applied it equally readily to openings of form C2.  That is, the identity of the tactic is based specifically on the pattern of the fork and the crux common to the two opening forms.  Figure 8 represents Miriam's knowledge as having now three modes of play, the original tactical mode and two strategic modes distinguished by their different objective (where that is represented in terms of the forking pattern).   Miriam made no distinction between her play of games 22.1 and 22.2.  The forking pattern ("middle and corners") is common if its definition  is made only in terms of the placed markers.  Observe that the forks would be judged different if one considered the location of "holes" as making a significant distinction between forks.  I do so consider them and thus judge Miriam's perspective on these games to be syngnostic.
+
+.ce
+* * *insert figure 8 about here * *
+.page
+1A NEW STRATEGIC MICROWORLD0
+.page
+64^^^To emphasize how important is the awareness of objectives, let us review now the games wherein Miriam first showed sensitivity to the "middle and corners" as a forking objective comparable to "three corners".  Notice this incident took place two years before Miriam was able to use the objective with power.2
+.ss
+.nofill
+.ce
+***
+.indent 10
+^^^^^^^^^^A^^^^^^^^^^^^^^^^^^^^a^^^^^^^^^^^^^^^^^^^^A
+^^^^^^C^|^E^|^b^^^^^^^^^^^^c^|^^^|^B^^^^^^^^^^^^B^|^^^|^C^
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+5.3^^^d^|^A^|^D^^^^^^5.4^^^C^|^a^|^^^^^^^^5.5^^^^^|^A^|^^^
+^^^^^-----------^^^^^^^^^^-----------^^^^^^^^^^-----------
+^^^^^^B^|^a^|^c^^^^^^^^^^^^b^|^A^|^d^^^^^^^^^^^^a^|^c^|^b^
+^^^^^^^^^M^2^^^^^^^^^^^^^^^^^^M^2^^^^^^^^^^^^^^^^^^M^1
+0
+
+.indent 0
+.ds
+.adjust
+In game 5.3, Miriam achieved a fork without realizing it.  I proceeded in the 
+next game to replay 5.3 with the tables turned.  My indirect suggestion that
+Miriam should move into the middle opening pitfall (which she did not recognize
+as such) created that opportunity.  After her first move as opponent, I asked
+if she knew I could win the game.  She did not believe me.  I proceeded to 
+demonstrate that the M2 game pitfall leads to a fork.  The counters of the fork
+form a middle plus two corners triangle.  Miriam wanted to stop but played one
+more game.
+
+^^^^^Contrast now 5.4 and 5.5.  One might infer that this is a spontaneous
+but imperfect attempt at table turning.  The counter patern (A-B-C of 5.4) is
+triangular (as is the a-b-c of game 5.3), but the triangle of 5.5 is rotated
+90 degrees from that of 5.4.  A second contra-indication is this: Miriam typically
+preferred a corner to a side move; where she was not forced to move to a particular
+cell, she could have simply chosen to move in the last free corner.  Of convincing
+support for the table turning speculation explanation, however, is that Miriam
+consistently made forced moves except where some compelling objective intervened.
+I concluded this is a failing attempt to establish a fork like those of the two
+preceding games.  The attempt fails for two reasons: the forking pattern does
+not accomodate a second "hole" (at a or b); and the opponent, having a way to win,
+escapes the fork's dilemma.
+.ds
+0
+
+1A Stage Change0
+
+.nofill
+.ss
+65  Issues: existence and necessary order
+66  existence by definition: classifying observations
+67  earlier judgments: difficult decisions
+68  final position
+
+.ds
+.adjust
+
+65^^^The idea of stages has two essential elements.  First is that different stages characterize discriminable and relatively stable behavior.  Our assumption is that the stability of patterns of behavior derives directly from stability in cognitive structures.  The second element of the stage idea is that there exists a necessary ordering between the successive cognitive structures that generate stable behavior patterns.  If clearly different behaviors deriving from different cognitive structures exist, it must still be decided whether different states are ordered and, if so, for what reason.  The judgment of the reason for apparent order is not a simple one and it does have sgnificant ramifications.  It might be possible that some domains of knowledge exhibit stage like development (and must) and other do not or need not.  In essence, the question is whether regularly observed successions of behavior derive from accidents or from the operation of law-like processes of mental construction.  This is one central question of the study of mind.  
+
+66^^^It is a straightforward task to establish the existence of two different states of Miriam's knowledge about tic tac toe.  We can do this by citing observations focussed on a central facet of her knowledge, her ability to integrate serial and pattern aspects of the game.  Let us first establish that there was a point where she did not integrate serial and pattern aspects of play. Game 4.1 forced Miriam into completing a fork (which she recognized).  
+The dialogue recorded with game 4.2 is most revealing of the relative place of
+pattern and serial features in her play.  This excerpt suggests that pattern
+is ALL she considers:
+.ss
+.indent 1
+Miriam asked if I were going to try my 'good old trick' (a corner opening); instead,
+I took the middle cell.  She replied "Not usually." to my question of whether she
+ever moved in those side places (as I had just been defeated doing).  When I asked,
+"How come ?" she said she didn't know then confided to me her plan of going on both
+sides of my center move, and also in a third corner, thereby getting two ways to win.
+Such is a terribly unrealistic plan as it does not recognize the importance of being one
+move ahead of the opponent nor makes allowances for the opponent's possible moves
+to block such a plan. I made move b, telling Miriam I would not let her complete
+such a plan.  She replied, "Then I won't do it; I'm thinking of something else."
+She made her forced moves.
+
+.ds
+.indent 0
+It is clearly the case, that with a conception of play which did not recognize the role of serial order in achieving a goal pattern, Miriam was utterly unable to predict the outcomes of games deductively.  Recall the earlier discussion of games 12.2 and 12.3 which Miriam judged to be "both probably the same" (in the first of which she was the opponent and the second the initiator). Such was earlier hinted at by her requesting Glenn to make the side
+move in game 10.4 where she lacked the opening advantage.
+
+66^^^The final review of Miriam's ability to play tic tac toe establishes her ability to work out games in her mind.  One issue explored in that session was whether or not Miriam could predict her victory from opening configurations of markers (and prove her judgment correct).  Thus the theme connecting the games of session 23 was forecasting victory.  The typical sequence was my asking Miriam, after my opening response, whether she would defeat me and, if so, how.  In game 23.4 (form C1), Miriam made a gesture to move in the middle cell before questioning began.  I knew this would cloud the issue and so moved on to the next game.  After move a of game 23.5, I raised the question of prediction:
+.ss
+.indent 1
+.nofill
+Bob:    Will you beat me ?
+Miriam: Yes, I think so.
+Bob:    How ?
+Miriam: I'll move here (cell 9), then you move here (cell 5), then
+     I move here (cell 7) and get two ways to win.
+
+.ce
+***
+.indent 0
+2
+.block 7
+^^^^^^^^^^A^^^^^^^^^^^^^^^^A^^^^^^^^^^^^^^^^A^^^^^^^^^^^^^^^^A^^^^^^^^^^^^^^^^A
+^^^^^^A^|^^^|^a^^^^^^^^A^|^a^|^*^^^^^^^^A^|^^^|^C^^^^^^^^C2|^*^|^B^^^^^^^^A^|^^^|^^^
+^^^^^-----------^^^^^^-----------^^^^^^-----------^^^^^^-----------^^^^^^-----------
+23.5^^*^|^b^|^^^^23.6^^*^|^B^|^^^^23.10^^^|^B^|^a^^23.8^^b^|^A^|^^^^23.9^^^^|^a^|^^^
+^^^^^-----------^^^^^^-----------^^^^^^-----------^^^^^^-----------^^^^^^-----------
+^^^^^^C^|^*^|^b^^^^^^^^C^|^^^|^b^^^^^^^^a^|^^^|C1/*^^^^^^a^|^^^|^C1^^^^^^^^^|^^^|^^^
+^^^^^^^^^C^3^^^^^^^^^^^^^^C^4^^^^^^^^^^^^^^C^2^^^^^^^^^^^^^^M^1^^^^^^^^^^^^^^C^5
+0
+
+.indent 0
+.ds
+.adjust
+This game joins together in Miriam's link placement a "forced move" and the three corner fork. (Notice this game is different from that game C3 in Figure I.)  In game 23.6, Miriam predicted victory also:
+.ss
+.nofill
+.indent 1
+Bob:    Will you beat me (after move a) ?
+Miriam: (a long pause - we may assume she was working out the game in her
+    mind.) Yes.  I'll move here (cell 5).  You'll move here (cell 9), and
+    I'll use my new tactic.
+.indent 0
+
+.ds
+.adjust
+In game 23.7, Miriam responded "yes" to my prediction question as she wrote move B, and continued,
+"You're forced to move here (cell 3) and I get two ways to win."  Miriam's pause before answering that she would win was common to game 23.10 as well, where she objected to my even asking her the question because she was "trying to think".  She admitted on rendering her judgment that she had the complete game worked out in her head.  In game 23.10, when she said I would move b to cell 9, I objected.  Miriam countered that I HAD to move there or she would win directly.  There can be no clearer indication that she was using with awareness the idea of offensive forced moves.	
+          In games 23.8 and 23.9, Miriam was appropriately unceratin about whether she would win.  In 23.8, I accepted the pitfall.  Miriam moved initially into the wrong corner (cell 9) in linking her middle and corners fork.  She realized the mistake herself and corrected it immediately.  In 23.9, I asked:
+.ss
+.indent 1
+.nofill
+Bob:    Where should I move ?
+Miriam: Well...
+Bob:    Suppose I'm dumb.
+Miriam: Move there (cell 7).
+Bob:    Suppose I'm not so dumb.
+Miriam: Then move up here (cell 6).
+
+.ds
+.adjust
+.indent 0
+
+68^^^What I conclude from these observations is that Miriam is now able to determine and prove whether she will win or no. When did this capability first manifest itself ?  Let us review some earlier games and predictions of victory to address that question.
+
+
+
+.ce
+[* *this may be my Waterloo* *check carefully]
+67^^^ Miriam showed herself in absolute command of game C3 (game 12.1).  Despite
+my attempt to dissuade her from her crucial move B, she would not be moved.  In
+our discussion of her rationale for choosing one move in preference to another,
+Miriam explained lucidly that (after B) I had a forced move which resulted in her
+ability to achieve two ways to win.
+
+.ce
+[* *can I argue these two are ad hoc certainties ?? * * I hope so]
+67^^^In game 17.9, Miriam executed an expert win in a C3 form.  The dialogue of that game exhibits her certainty of victory:
+.ss
+.indent 1
+.nofill
+Bob:    I'm going to get you.  I'll go down here (moves b in cell 9 after her
+    opening in cell 1).  See you don't know how to handle that.
+Miriam: (Gestures to Robby that he should watch her - she moves B in cell 7).
+Bob:    Ohoh.... Do you know what I've got ?
+Miriam: What ? (Smiling the while)...A forced move.  Then I can go there (cell 5);
+    you block me there (cell 2), but I'll win.  See, I know how to handle it.
+
+.ds
+.adjust
+.indent 0
+
+67^^^Game 9.1 shows for opening C3 Miriam would move correctly at the crux and from
+that point would probably continue to achieve an expert win.  Miriam's delayed 
+realization of her upcoming victory indicates she did not yet see that game as
+a whole.
+.ss
+.nofill
+.indent 1
+Bob:    I'll go in one of these corners here that are the same.... You think
+    you can beat me ?
+Miriam: (Moves B). I don't know.
+Bob:    You think you beat me already ?
+Miriam: Unh-uh.
+Bob:    No ?  Do I have a forced move ?
+Miriam: Yeah.... Actually, I have [beat you].  You have a forced move.
+Bob:    Then what ?
+Miriam: I'll move there (cell 3) and get two ways to win.
+Bob:    So you've beat me already.
+Miriam: I know.
+.ds
+.adjust
+.indent 0
+
+67^^^Contrast Miriam's certainty in this segment of dialogue (9.2, game form C1) with that of the
+preceding game:
+.ss
+.nofill
+.indent 1
+Bob:    Let's suppose I move here (cell 9). Will you beat me ?
+Miriam: I don't know. (Is she being evasive ?)
+Bob:    I'll try it.
+Miriam: (Laughs) I'll put my B here ! (cell 7).
+Bob:    Ohoh.  Do you have me beat already ?
+Miriam: Yep.  See.  I go there (cell 3) and I've got two ways tow in (Gleeful
+     laughter).
+Bob:    So as soon as I put my a in there, you knew you could beat me.
+Miriam: Uh-huh.
+.ds
+.adjust
+.indent 0
+
+This dialogue testifies that a well-known result representing a C1 form game, should be
+added to the strategic cluster.
+
+ Is Miriam sensistive to the role of "holes" in the structure of forks ?
+These data stand mute.  However, the dialogue of game 8.7 argues that if Miriam's
+play rises to the level of explicit analysis, she thinks about ways to win and
+blocking them; if she proceeds without analysis, her directions may be misguided
+by focussing on the counters in a pattern without attending to holes. These contrasting behaviors argue that Miriam does own analytically applicable strategic knowledge, but that this knowledge is not integrated with the control over play she exercises.
+
+
+[* *this is only conclusion so far...it is not certainly correct and more is needed;* *]
+
+68^^^Further, Miriam's syngnostic perspective goes far to explain her uncertainty about game outcomes.  For example, if C2 permits an expert win and S3 (the cognate game form) defeat by an expert, should we be surprised that, for Miriam, the outcomes of games seem globally random however much forced moves locally determine the play ?  Does not the particular nature of this confusion help explain why the path out of a syngnostic perspective is by procedural comprehension and why the systematic comprehension MUST be a subsequent stage (as distinct from a regularly occuring consequent) ?  Indeed.
+
+68[* * Discussion of Offensive forcing -- a central idea for relating crux & link (how did she discover it ? or save for conclusion ? ) and its representation in Figure 9.]
+.ce
+* * * insert figure 9 about here
+.page
+1OFFENSIVE FORCING0
+.page
+68^^^At the end of the study, she has acheived that stage of procedural comprehension presented in the introduction and exemplified most fully here.  Notice that her uncertainty in the indeterminate games is both appropriate and supported by her ad hoc comprehension (game C5).
+.page
+.ce
+1Discussion and Conclusions0
+
+* * * promise made to discuss representation of meta-level knowledge in final discussion (in section 54).
+
+70     Thus far I have presented a story, a long and very detailed one.  I have offered no theory.  Even now, all I can offer is a description of that story, not a theory.  But lest the endeavor seem insignificant, I assure you it is a description with aspirations.  Let me explain.
+     Recall the outstanding contribution of Winston's early work was his observation that a description, through processes of part and relation emphasis, could be elevated to the status of a concept.  He presented an example of an object description, of an arch, which I would say initially aspired to be a concept of that class of objects.  We could call such an aspiring description an ur-concept of an arch.  What I struggle to produce here is, similarly, an ur-theory of how social experiences generate the personal construction of the individual mind.  This ur-theory may be criticized as showing only ad hoc comprehension.  Indeed, it stays very close to the process description and is not worked out to that level of provable prediction Miriam showed in her latest games of Tic tac toe.  Let us turn now to the task at hand, developing an ur-theory of the interaction of social experiences and the mind, with a compact example of the processes I have come to see as central.
+
+1An Infant's Introduction to Knock-knock Jokes0
+
+72^^^Miriam has a long history of joke telling and invention. [R].  She plays with her infant sister, Peggy, often because she enjoys the play and often because she is "stuck" with her while we parents are otherwise occupied.  (The point is that their relation is basically amicable but also more than that.)  Peggy imitates us and her siblings and has begun imitating Miriam's knock-knock jokes [R+1]. This was her first form of imitation:
+.nofill
+.ss
+.indent 1
+Peggy: Knock-knock.
+Bob:   Who's there ?
+Peggy: (Broad laughter).
+
+.adjust
+.ds
+.indent 0
+Peggy plied her jokes upon me time and again.  It was amusing enough because of her imperfect command. We both enjoyed it.  Eventually, the joke became wearing.  I tried to begin the joke with her.  When I began "Knock-knock", she did not reply; I would say she COULD NOT reply.  I tried many times.  Even though she sensed something was expected of her, she did not reply.
+     I rise earlier than the others in my family.  The next morning I heard Peggy talking to herself in her crib: "Knock-knock.  Who's there ?  (Laughter)."  Later, when she was brought down to breakfast, I cooked Peggy a muddled egg and we sat down to eat.  Her first words were "Knock-knock".  In my turn, I tried again:
+.nofill
+.ss
+.indent 1
+Bob:   Knock-knock.
+Peggy: Who's there ?  (Laughter).
+
+.adjust
+.ds
+.indent 0
+That same afternoon, Miriam reported to me with great excitement, "Dad, Peggy can say 'Who's there'."  I consider this a very simple and lucid example of the processes of the articulation of complementary roles.
+
+.block 3
+1Elements of the Example0
+
+73^^^Someone, a learner with (most probably) a relatively inferior comprehension, is engaged socially with more comprehending people - in this case focussed around what is literally a script for a joke's telling.  The reasons for their common engagement may be of any sort, friendly, helpful, even antagonistic. During the engagement, the social demands push at the boundaries of comprehension of the person with a syngnostic perspective.  Peggy was regularly asked "who's there ?" at first, but later she was expected to respond that way herself and could not.   Subsequently, in a time when deprived of that social engagement, the  learner recalls and recreates that kind of engagement, compensating for the solitude by simulating  the role of the other actor.  The first process I call "HOMELY BINDING" ("homely" is a contracted form of "home-like"): the learner attaches herself to uncomprehended routines of engagement (in both the theatrical and programming senses of the term "routine").  The process may be friendly or not so - but it is more aptly and generally described by that wide ranging class of intimate relationships that characterizes the interactions of a small society, the home.  The second process, "LONELY DISCOVERY", occurs when the learner is deprived of social engagement - left to her own devices - and she uses those devices to re-enact the uncomprehended experiences - during which endeavor the simulation of the other actors imposes a real demand for the distinction between roles and their relations which was lacking in the initial engagement.  My name for this pervasive and oft repeated sequence of homely binding and lonely discovery is "THE ARTICULATION OF COMPLEMENTARY ROLES".
+
+73^^^The relation of individual construction to social experience is that more perspicuous discriminations are required for controlling multi-role enactment of scripts than are required for acting in them.  On the stage, an actor may memorize his lines and take cueing from the tag end of a fellow actor's preceding speech.  An actor, or a learner, in taking on two roles must do more, must not only cast herself in the second role but must also function as director of the entire scenario.  It is the director's function ( a global control of the script's progression as distinct from serial cueing) which requires the articulation of roles; it is this which leads to a refined comprehension of the script.  It is true, that our example of Peggy's learning Knock-knock jokes does not, of itself, distinguish between a better articulation of a serial process and the creation of a control element which functionally has subordinated pre-existing structures.  Two days after her better articulation of the knock-knock joke script, Peggy began to use directed speech.  We were in the same room, had played for a while and she decided to leave.  At the door, she turned to me and said, "Say `Goodbye Peggy'."  "Goodbye, Peggy", I repeated.  "See you later", she responded as she left the room.  It appears that the relations she worked out for controlling more precisely what is said when playing a role in the joke affected her ability or inclination to the more precise control of speech in exchanges which might not seem to us as strictly conventional as the more elaborate joke script.
+				
+.block 3
+.ce
+1Articulation of Roles and Comprehension0
+
+74^^^In the Introduction, we discriminated four stages of comprehension.  Of Miriam's Tic tac toe knowledge we see these applications.  MINIMAL COMPREHENSION characterizes Miriam's play at the beginning of the study, where her play was guided by  propensities or by the three corner objective - devoid of any sense of how to achieve it regularly.  FRAGMENTARY COMPREHENSION is quite clearly exemplified in Miriam's ad hoc knowledge of the two outcomes of game C5.  PROCEDURAL COMPREHENSION is exhibited by Miriam's proof of victory predictions in session 23 (and occasionally earlier).  A SYSTEMATIC COMPREHENSION is witnessed by the view of Tic tac toe presented in the Introduction. 
+
+74^^^ Miriam does not approach systematic comprehension.  Her classification of games is quite different from that, in kind.  She knows "two tactics", the elements of which are recognized opening configurations and a crux which forces the opponent to some cell so that afterwards she may achieve a fork.  The two crux-fork couples both cover several opening games and are thus the essential elements of the "tactics" as Miriam sees them.
+
+75^^^How does transition from one stage of comprehension to the next relate to the processes of homely binding and lonely discovery ?  Miriam's report of her inventing her second tactic is a case of lonely discovery.  The essence of that insight is her seeing the necessary connection between the crux and the middle and corners fork.  This occured during her reflection upon a previously played game.  The sense of a casual, goal-free, mulling-over of previous activity calls up William Wordsworth's observation that 'poetry is passion recollected in transquility'.  We should not be surprised at the echo of this great poet and early psychologist converging with my formulation that  "UNDERSTANDING is a description of  experience articulated through reflection".  We may choose to say that both systematic and procedural comprehension are forms of understanding without doing violence to the common sense of the terms - but it would stretch that use unacceptably and with little purpose to include under that term Miriam's initial propensities and her fragmentary comprehension, as of specific games.  Thus we set the watershed of understanding between fragmentary and procedural comprehension.
+
+751^^^The main question to ask, then, is how the transition from a fragmentary to a procedural comprehension occurred.  Does that transition fit with the description of the articulation of complementary roles ?  If the essential insight in Miriam's "new tactic" is the necessary relationship of the crux and the fork, what is implicated is a revision of the idea of forced moves so that they are seen as offensive tools as well as being threats to which a defensive response must be made.  What was behind this discovery ?  This transition must have come in multi-role play where Miriam could feel herself "being forced" as simulated opponent by the crux she herself placed as initiator.  This insight occured as a lonely discovery, but its social underpinnings were both pervasive and manifest (It's true that I explicitly told Miriam at one point, in discussing game --.-- that what was required was "forcing the other guy's next move out of the way so you could get your two ways to win".)  But we should distinguish between being exposed to some formulation and the internal process by which the individual makes sense of what, in terms of experience and at a prior stage, he may already have "known".  It is the internal re-appraisal of what is already known that often brings with insight the feeling of "deja vu".  Multi-role play grew out of table turning and a second practice: my permitting Miriam to specify what moves I should make. (Partly this may be seen as an artifact of my research objectives, but it was also a matter of homely binding.  If I felt she would be too unhappy at my making a move she could anticipate, I let her choose my move - because our play was more important as a social process than was my winning.)  The question of predicting victory was much a research question; but it also was more, with a significant social component: I don't like condescending in play (or otherwheres).  This salient question in our play must have sensitized Miriam to the issue of necessary connection between crux and fork.  The social concentration on these question elevated them to the status of issues.  Her prior knowledge also was relevant.  Her fragmentary but firm grasp of the C5 games must have carried with it at least the knowledge that outcomes were not random but were determined.  This ad hoc knowledge was very much the fruit of extensive social engagement - beginning with Robby's introduction of the three corner fork through that  multitude of games from which C5 emerged as one opening of well-known outcomes.
+
+752^^^We can also ask how Miriam moved from the propensities of minimal comprehension to fragmentary comprehension. With her strong commitment to the C5 opening ploy, there was no initial sense of the opponent's role at all.  The distinction between the winning and tieing outcomes was socially driven.  Without her attending to forced moves, "tolerable" mature play would have been impossible.  The idea of defensive forced moves is the socially determined sine qua non for initiation and play as an independent player.  Without command of forced moves, the game is random and unacceptable to such an opponent as I am. The squabble between Miriam and Robby in session 2 is more evidence of the social pressure behind this original transition.
+
+753^^^Since Miriam did not develop a systematic comprehension of Tic tac toe, we can't ask how such a transition happened  - unless we are willing to admit as relevant how it happened for me,  to take my introspection and reflection upon the entries of a journal I kept during The Intimate Study.  Let me sketch my conclusions from reviewing that material.  My comprehension was first, at best, procedural.  As we two played, I was uneasy with my own ignorance.  How could I understand Miriam's play without a solid grasp of the material ?  I found it too hard to comprehend  an ongoing game and its possibilities in terms of thinking of some set of simple rules.  I began tracing out "chances to win" to improve my grasp of the game - and found this a dead end.  I began playing against myself games under the capitalized heading in my journal "EXPLORING OTHER GAMES".  First I played a C3 game to a tie - then found that with the crux in cell 9 I could have an expert win. Next a C1 game followed the same pattern: first I played to a tie, then, doing something different, I discovered an expert win.  With games C2 and C4 I went immediately to expert wins.  I also found one for the S3 game (but not S2).  Now aware that there were so many expert wins, I decided it would be useful to classify them to support my recall, to suppress the confusion I often encounter.  Here I realized that a classification by the two opening moves was adequate.  A further note, supporting the arguments advanced in the discussion of session 22, is that the forms of winning games I initially developed were the same as Miriam's "new tactic".  I later abandoned the initial "hard" solution for the "harder" expert wins of Figure I because this permitted the use of a common crux for the four games C1-C4. (I still have trouble recalling where the crux should go for games S3 and S2.) My side of this social engagement with Miriam over Tic tac toe led to an abnormal concern (for me) with such a game.  Because I owned a higher standard of performance for myself than was possible with my initially syngnostic perspective on the game, I constructed a richer and more controllable perspective through a process of lonely discovery based upon working out, articulating the complementary roles of the game.
+
+76^^^[* * representing final knowledge state]
+
+.ce
+* * *insert figure 10 about here * *
+.page
+.ce
+1Final Figure: Title ?0
+.page
+.nofill
+     We come to the end of the study and what is our final formulation ?
+.ce
+"Understanding is a description of experience articulated through reflection."
+.adjust
+You may ask "Is that worth the effort ?"  I respond with the rhetorical question, "Is understanding worthwhile ?" and conclude that if we understand better what we "knew" before, that is significant learning.
+.page
+.ce
+1ACKNOWLEDGMENTS0
+.ce
+1NOTES0
+.ce
+1FIGURE LEGENDS0
+.ce
+1REFERENCES0
+[w]. Jean Piaget.  The Language and Thought of the Child.  Translated by Marjorie Gabain.  New York: The New American Library (l955 , l974).
+
+
+[r] Once Child's Learning: Inventing Jokes
+.page
+.ce
+1APPENDIX 10
+     Let us compare Miriam's command of expert play with that exhibited by Figure I.  Where Figure I sets out five corner opening games, with  expert wins for games C1-C4, Miriam claims to know two tactics (the three corners fork and the middle and corners fork) and shows flexible command of game C5.  Her new tactic will succeed with opening games C2 and C4.  She interprets her wins at C3 games as a case of the three corner fork she originally learned in the context of game C5.  Notice that the order of the opponent's marker placement is different.  Miriam may not have marked that difference, although she knows she will win a C3 game and can not be certain with a C5 game.  The conclusion is that Miriam's conception of her strategy is quite different from the systematic comprehension of possibilities presented in Figure I.
+
+     We are left with a puzzle about game C1.  Why is it Miriam has not mastered that game as she has the others ?  We could ascribe that fact to chance and suppose, with more time, she will stumble into some circumstance where she will discover another new tactic that will cover that opening game.  There is nothing wrong with such a stance.  However, given our richness of knowledge about Miriam's comprehension of Tic tac toe, we can go further and describe a sense in which the C1 game is "harder" to develop an expert win for than either the C3 or the C2 and C4 games.  Recall Kohler's description of "roundabout ways" and an animal's ability to use them as his primary criterion of intelligence [N]:
+
+.indent 5
+.ss
+"...We tend to speak of 'intelligence' when, circumstances having blocked the obvious course, the human being or animal takes a roundabout path, so meeting the situation...."
+
+.ds
+.indent 0
+If we conceive of the competition between microworld clusters as ongoing, despite the dominance of one, we can see those paths of play as easiest where the moves proposed by competing microworlds are the same.  For example, in a game of opening C2, where the opponent leaves the middle cell empty, Miriam's POSITION-world and her "new tactic" world would both propose a move to the middle cell.  In contrast, to attempt an expert win as proposed in Figure I would entail competing proposals from the POSITION-world (for cell 5) and some strategic world (for cell 7).  In this specific sense, the expert play would be harder, would even be seen as requiring a roundabout way to solve the problem of where to move in order to achieve a victory.
+
+       Let's suppose that Miriam's preference grid is general, the kind of a structure naive players operate with.  Using Kohler's criterion of roundabout ways, we can decide which games should be hardest to learn by asking which games require most detours before achieving a fork.  Consider this contrast:2
+.ss
+.nofill
+
+ PREFERENCE
+  GRID
+
+ 5 | 1 | 5    A | * | C    A |   | *    A | * | C 
+-----------  -----------  -----------  -----------
+ 1 | 9 | 1      | B | a    b | C | a    b | * |   
+-----------  -----------  -----------  -----------
+ 5 | 1 | 5    * |   | b    B |   | *    B |   | a 
+       C2M          C2E          C1E
+
+  MOVE
+   A          DETOUR       DETOUR       DETOUR    
+   B          ------       DETOUR       DETOUR   
+   C          FORCED       ------       DETOUR   
+
+.ds
+.adjust
+0Miriam's new tactic, requiring only the initial detour of all corner opening play, was hard to learn (after all, it took years to discover).  The expert win of Figure I (game C2E), requiring two detours, is harder.  By this same criterion, the expert win of game C1 is hardest of possible corner openings because it requires a vacant middle cell until the fork is linked.  (Game M2, requiring zero detours, should be easiest of all to learn, as its common prevalence testifies.)
+
+     I offer the preceding speculations, not in the attempt to convince anyone of their final correctness, but to show the kinds of questions which are surprisingly accessible at the intersection of psychology and epistemology with the class of Artifical Intelligence concepts which this analysis brings to bear.

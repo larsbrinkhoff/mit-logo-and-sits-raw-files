@@ -1,0 +1,624 @@
+.xgp
+.squish
+.font 0 31vg
+.font 1 31vgb
+.font 2 25fg
+.font 3 sup
+.tlinch 9.5
+.twinch 6.5
+.dummy ^
+.php1
+.he1
+Lawler 10/1/80
+.he2
+RLPOWI >
+.nofill
+.ss
+.ce
+ANY NEW IDEAS OR CRITICISMS ARE WELCOME
+.ce
+1POWERFUL^^IDEAS0
+.adjust
+The purpose of this material is to present a set of problem solving ideas (absorbed by and developed through the Logo project over many years) in such a way that they really can be useful to someone with a Logo-capable home computer.  The idea-presentations are expected to be made up as single pages. (It doesn't matter whether they would be bound together or not.)  I can as easily imagine a user selecting some pages to throw away as others to pin up on the wall near the computer.  The organization of each page is "vertical", by which I mean that it starts very simply and concretely, rapidly increases in complexity, and finishes with an abstract but simple summary.  The objective of such an organization is to offer something for everyone.  The novice should be able to understand the first paragraph and to imagine that he more or less understands the last.  Along the way, more sophisticated users might expect to find some elaboration of the basic ideas that would strike them as novel and useful and occasionally not be disappointed.  The following material is first draft level.  Those titles with a "-" are to be written.
+
+.ce
+CONTENTS (in no special order)
+.nofill
+^1.^Do-it-yourself^
+^2.^How should I think about variables^
+^3.^Hooray for bugs !^
+^4.^Passing the buck^
+^5.^Can I make Logo commands^?
+^6.^What good is planning^?^
+^7.^Why read one character at a time^?^
+^8.^The clever hack versus the clever tactic^
+^9.^Resolving and re-solving problems^
+10.^Getting off the garden path^
+11.^Changing Scale^
+12.^Do something a little different^
+13.^Make it your own^
+14.^What is a powerful idea^
+15.^Sometimes you need another idea^
+16.^Bricolage^-
+17.^Look for something special^-
+18.^Do it again^
+19.^Mnemonic-naming^-
+20.^The idea of a formalism^-
+21.^Advice to a teacher^
+22.^Microworlds (Dan)-
+23.^Computers and People -
+24.^
+25.^
+.adjust
+.ds
+.page
+.ce
+1
+.ce
+DO-IT-YOURSELF
+
+^^^^^^^^^^How do you make a Logo circle ?  Circles have something to do with centers and a thing called a radius, don't they ?  But the Logo turtle doesn't know anything about centers or a radius....All it knows is how to turn right and left and to move forward and back.  What would YOU do if you were the turtle ?  You might try to make a square, because that's a little bit like a circle --  after all, if you go around a circle or a square you always end up back at the same place.  Could you make a shape with more corners than a square that still puts you back where you started ?  Such a shape, with a "whole lot" of corners is the "circle" the turtle makes in this procedure:
+.ss
+.indent 15
+.nofill
+2TO^^CIRCLE
+FORWARD^^1
+RIGHT^^^^1
+CIRCLE0
+
+.ds
+.indent 0
+.adjust
+Suppose you made a picture of a bird and wanted to make it fly.  How would you do it ?  Can you put yourself in the scene and write a "people-procedure" for your own flying ?  It must have something to do with flapping your arms and going forward.  If you use the good trick of recursion, as in the circle example, your simplest people-procedure might be like this:
+.ss
+.indent 15
+.nofill
+2TO^^FLY
+RAISE^^ARMS
+LOWER^^ARMS
+FORWARD^^SOME-AMOUNT
+FLY0
+
+.ds
+.indent 0
+.adjust
+Does this seem childish ?  Grown up people never go around imitating turtles or pretending to fly, do they ?  Some really smart people do; they know that putting themselves in the scene, being a part of the action, helps them understand what's going on.  One of the most famous and productive scientists of the modern era, James Clerk Maxwell, raising a fundamental challenge to the laws of energy conservation, imagined himself a super-ordinary tiny creature (he named it a "demon") who could control the flow of molecules in a gas by opening and closing a tiny window.  He was not being childish.  He was very productive and imaginative in putting himself in the middle of the action.  Give it a try when you have a problem to solve.  Do it yourself.
+.page
+.ce
+2
+.ce
+HOW SHOULD I THINK ABOUT VARIABLES ?
+
+^^^^^^^^^^Variables are names which have values assigned to them.  A good first way to think about variables is that they are little boxes, say the kind that are used to keep wooden matches in.  Computer memory is made of of these little boxes, each of which may or may not have something in it.  Naming the boxes is a good way to keep track of specific boxes into which you put things.  When you ask what's in a specific box, for example, :BOX2, you don't change what's in the box.  When you use the MAKE command, you always CHANGE the contents of the box.  You could think of it as emptying the box before packing a new thing in it.
+
+[* extend crisply]^^^^^^^^^^A second important way to think about variables comes from their use with procedures.  You can imagine a procedure to be a little man.  The little man knows how to do what the steps of his procedure specify.  He wakes up when somebody calls his name; then he does what he knows how to do and goes back to sleep.  The little man never sees other people... but he can get mail in his mail box.  The mail in his mail box when he wakes up is the value of the input variables he needs to perform the steps of his procedure.
+
+^^^^^^^^^^A third important way to think about variables comes from their use in controlling the iteration of procedures (whether by looping or by recursion).  Here are two ways to draw a square with iteration:
+.ss
+.nofill
+.indent 5
+.block 8
+2TO^^SQUARE1^^^^^^^^^^^^^^^^^^^^^^^^^TO^^SQUARE2^^^^:SIDES-TO-GO
+1^^MAKE^^"COUNT^4^^^^^^^^^^^^^^^^^^IF^:SIDES-TO-GO^EQUAL^0,^^STOP
+2^^IF^:COUNT^EQUAL^0,^^STOP^^^^^^^^FORWARD^^100^^^^RIGHT^^90
+3^^FORWARD^^100^^^^RIGHT^^90^^^^^^^SQUARE^^^^(:SIDES-TO-GO^^-^1)
+4^^MAKE^^"COUNT^^(:COUNT^-^1)^^^^^^END
+5^^GO^2^^^^^^^^^^^^^^^^^^^^^^^^^^^^SQUARE2^^4
+END
+SQUARE10
+
+.ds
+.indent 0
+.adjust
+^^^^^^^^^^A fourth important way to think about variables depends on the idea of procedure-local variables.  "COUNT" in SQUARE1 above is a variable which is referenced only within the SQUARE1 procedure.  During the activation of the SQUARE1 procedure, no other procedure references the variable "COUNT".  Is the variable "SIDES-TO-GO" a local variable ?  Exactly so, by the conventions of the Logo language -- and it is this  convention that permits  recursion of the procedure.  Every time SQUARE2 is called, a new copy or "instantiation" is created.  Each copy of SQUARE2 references its own local variable "SIDES-TO-GO" and doesn't know about the correspondingly named local variables of the other procedure instantiations.  One of the pioneers in the development of programming, the theoretician DIJKSTRA, said that once you understood how variables are used in programming, you understand the essence of programming.
+
+^^^^^^^^^^A fifth important way to think about variables is in comparison with the things of other branches of knowledge.  Variables may be described as generalizations achieved by abstracting specific operand values referenced by procedures.  The variablized procedure may then be used to create objects not initially contemplated. Two significant parallels relate variables and procedures to the entites of mathematics and genetic epistemology.  Bourbaki describes the creation of an axiomatic system as proceding from the mathematician's working out a series of theorems with very concrete examples in mind and subsequently examining the inferences of his theorems to define precisely which characteristics of his examples were used by the theorems.  In a third step, he redefines the set of objects to which his axioms apply as that most general classof objects having all those characteristics used in the theorems.  This mathematical form of abstraction is called reflexive abstraction by Piaget, where he sees the child creating his own mind through processes of thought that are like those of Bourbaki's mathematician. [* extend]
+.page
+.ce
+3
+.ce
+HOORAY FOR BUGS !
+
+^^^^^^^^^^Making a square with the turtle is pretty easy, FORWARD 100, RIGHT 90 and do it again and again and again.  The simplest procedure uses recursion to do it again, this way:
+.ss
+.nofill
+.indent 15
+2TO^^SQUARE
+FORWARD^^100
+RIGHT^^^^^90
+SQUARE0
+
+.ds
+.indent 0
+.adjust
+A little square procedure would start with the turtle going forward some smaller distance, such a ten turtle steps.  A square maze needs just one little change to grow out of the little square.  You can figure out just what the turtle will draw with this procedure:
+.ss
+.nofill
+.indent 15
+2TO^^SQUARE-MAZE^^^^:DISTANCE
+FORWARD :DISTANCE
+RIGHT^^^90
+SQUARE-MAZE^^^^:DISTANCE^+^50
+
+.ds
+.indent 0
+.adjust
+So you know all that.  Do you know how to make a pentagonal maze ?  Or a hexagonal one ?  So the penatagon's about seventy degrees -- that may be how much to turn.  When you execute the procedure below, the turtle will draw the figure shown beside it.
+.ss
+.nofill
+.indent 5
+2TO^^PENTAMAZE^^^^:DISTANCE
+FORWARD^^:DISTANCE
+RIGHT^^^^70
+PENTAMAZE^:DISTANCE^+^50
+
+.ds
+.adjust
+.indent 0
+Would you say that using `70' is a bug because it does not make exactly what you hoped ?  If so, you have to be willing to see that bugs can be good things.  When you write a procedure and the result turns out different from what you expected, there is a bug somewhere.  But sometimes the surprising result is a better one than what you first intended.  That's a "new discovery" bug, one of the best kind.
+
+^^^^^^^^^^Any bug, something which makes your procedure do the unexpected -- if you bother to fingure it out -- leads to an increase in your knowledge.   Although any bug may frustrate your objective, the bugs of your procedures will be the best guidance you can get of what to learn to master the Logo programming environment
+
+^^^^^^^^^^If bugs can lead you into new discoveries and give good guidance on what to learn, this suggests a new way any teacher or advisor could be helpful to you.  Such an advisor could help in exploring and understanding the difference between what you expected and what the computer did.  If you, or anybody else, want to know how you're coming along with the computer, the best indication of progress in understanding is a record of the bugs you have encountered, and understood, and those you are still working on.
+.page
+.ce
+4
+.ce
+PASSING THE BUCK
+
+^^^^^^^^^^^Sometimes hard problems can be simplified by doing a small part and "passing the buck".  Suppose, for example, you want to put a list of numbers or letters in the computer's collating sequence.  If your procedure can find the lowest member of the list and put it at the head (after some other procedure has sorted the rest of the list), your procedure can quite easily become a general sorting procedure.  The one below moves the members of "LIST" to "NEWLIST" one at a time; it puts the comparatively low-valued members at the head of the list and the high-valued members at the end of "NEWLIST".  Once this is done, the buck is passed to a SORT procedure:
+.ss
+.nofill
+.indent 2
+2TO^^YOUR-PROCEDURE^^^^:LIST
+1.^MAKE "NEWLIST FIRST :LIST
+2.^IF EMPTY? :LIST, MAKE "LOWMAN FIRST :NEWLIST
+^^^^^^^^^^^^^^^^^^^^OUTPUT FIRSTPUT (SORT BUTFIRST :NEWLIST) :LOWMAN
+3.^IF NOT GREATER FIRST :NEWLIST FIRST :LIST, LASTPUT "NEWLIST FIRST :LIST
+^^^ELSE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^FIRSTPUT "NEWLIST FIRST:LIST
+4.^MAKE "LIST BUTFIRST :LIST
+5.^GO 20
+
+.DS
+.adjust
+.indent 0
+What good is passing the buck --all we've done here is extract one member of the set and invoke some as yet unwritten "SORT" procedure ?  The good trick of passing the buck is that SORT is already written -- it is just another name for YOUR-PROCEDURE !  How can that be ?  When SORT is finally passed a list with only one member, it will surely put that member at the head of its output list.  The preceding invocation of SORT guaranteed that its "LOWMAN" was less than the members of the list passed to SORT.  Since this is true of every invocation, and that "LOWMAN" is always put at the head of the list as it is successively output by each preceding instance of sort SORT, the final list output will necessarily be in collating sequence, i.e. sorted.
+
+.nofill
+SUMMARY: 1. reduce the problem, step by step, to a case where the solution is obvious.
+^^^^^^^^^2. retrace the reductions, step by step, modifying the partial problem solution
+^^^^^^^^^^^^until it is perfect for the original problem.
+^^^^^^^^^3. note that a balanced recursion control structure is a very powerful and
+^^^^^^^^^^^^simple one for this approach to solving problems.
+.ds
+.adjust
+.page
+.ce
+5
+.ce
+CAN I MAKE LOGO COMMANDS ?
+
+^^^^^^^^^^Any procedure you write is a new Logo command.  In this first sense, the answer is "yes" and obviously so.  On the other hand, if you write a procedure whose only function is to print "FOO", that would clearly be of a different stature from the Logo primitves, mainly because it won't do much for you.  Do you need more "Logo commands^?"  Do you have enough experience to know what you need^?  Hardly anybody can answer "yes" very positively to such difficult questions as these.  The way to find out if you need more Logo commands is to look at what you do  and the procedures you have encoded.  Ask yourself: are there sequences of repeated instructions in procedure after procedure^?  Are there tests of data conditions applied time after time^?  There probably are.  Here is an example of a command you might find a valuable addition to TI-LOGO:
+.ss
+.indent 5
+PURPOSE: when programming with list structures, most frequently iteration is terminated by a data condition: the list is empty, so no more processing can be applied to its members.  It would be useful to have a predicate which directly reports whether a list is empty or not.  Such a one could be encoded this way.
+.nofill
+
+2TO^^EMPTY?^^^^:LIST
+IF^^THING?^^FIRST^^:LIST,^^OUTPUT^^"TRUE
+ELSE^^^^^^^^^^^^^^^^^^^^^^^OUTPUT^^"FALSE0
+
+.DS
+.ADJUST
+.INDENT 0
+The gain in your programming from using such a new command may appear a small one, and so it is.  But small gains add up to significant advances.  Consider how much the "packaging" of the above code into a predicate simplifies the coding of the following, very useful, list manipulation command:
+.ss
+.indent 5
+.block 8
+PURPOSE:^^when programming with list structures, very often you want to know if a specific item is a member of a specific list.  The MEMBER? predicate will answer that question.
+.nofill
+
+2TO^^MEMBER?^^^^:ITEM^^^^:LIST
+IF^^EMPTY?^^:LIST,^^OUTPUT^^"FALSE
+IF^^:ITEM^^=^^FIRST^^:LIST,^^OUTPUT^^"TRUE
+OUTPUT^^MEMBER?^^^^:ITEM^^^^BUTFIRST^^:LIST0
+
+.DS
+.INDENT 0
+.ADJUST
+
+^^^^^^^^^^The easy extensibility is a key feature of the Logo language.  Use it; enjoy it.  Make Logo your own by making your own Logo.
+.page
+.ce
+6
+.ce
+WHAT GOOD IS PLANNING ?
+
+^^^^^^^^^^The first view is that planning breaks a problem up into parts, each of which can be more simply solved than can the whole.  For example, if you wanted the turtle to draw a picture of a house, you probably would find it easier first to write a triangle procedure for the roof and a square for the storey then put the two together than you would composing a procedure for drawing the whole thing at once.
+
+^^^^^^^^^^A richer view of planning is that the breaking up of a problem is very fruitful -- because you will create partial solutions which can be used in different ways to make other things.  Let's extend the "HOUSE" example.  The simplest extension of a HOUSE would be to separate the parts from each other and reconnect them a different way.  Doing so you could make a "WISHINGWELL", such as the one drawn by this procedure:
+.ss
+.nofill
+.indent 15
+2TO^^WISHING-WELL
+RIGHT^^180^^^^STOREY
+RIGHT^^180^^^^FORWARD^^100
+ROOF
+END0
+
+.DS
+.ADJUST
+.INDENT 0
+
+^^^^^^^^^^This attempt to use the parts of a HOUSE as parts of a WISHING-WELL runs into an immediate problem:  the WISHING-WELL is bigger than the house.  If you want both of them in the same picture, it would be necessary to make another triangle and square procedure for a small wishing-well.  At such point, it makes sense to generalize the ROOF and STOREY sub-procedures, specifying their size by the use of input variables, as in the procedure below:
+.ss
+.nofill
+.indent 2
+.block 9
+2TO^^STOREY^^^^:SIDE^^^^^^^^^^^^^^^^^^^^TO^^ROOF^^^^:SIDE
+LEFT^^90^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^LEFT^^90
+FORWARD^^:SIDE/2^^^^^^^^^^^^^^^^^^^^^^^FORWARD^^:SIDE/2
+RIGHT^^90^^^^FORWARD^^:SIDE^^^^^^^^^^^^RIGHT^^120^^^^FORWARD^^:SIDE
+RIGHT^^90^^^^FORWARD^^:SIDE^^^^^^^^^^^^RIGHT^^120^^^^FORWARD^^:SIDE
+RIGHT^^90^^^^FORWARD^^:SIDE^^^^^^^^^^^^RIGHT^^120^^^^FORWARD^^:SIDE/2
+RIGHT^^90^^^^FORWARD^^:SIDE/2^^^^^^^^^^RIGHT^^90
+RIGHT^^90^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^END
+END
+0
+.ds
+.adjust
+.indent 0
+
+^^^^^^^^^^Not only are these new procedures more flexibly applicable.  The way they fit together can now be modified to make a better house than the original !
+.ss
+.nofill
+.indent 10
+2TO^^HOUSE-WITH-EAVES
+RIGHT^^180^^^^STOREY^^100
+RIGHT^^180^^^^TRIANGLE^^120
+END0
+.ds
+.adjust
+.indent 0
+.page
+.ce
+7
+.ce
+WHY READ ONE CHARACTER AT A TIME ?
+
+^^^^^^^^^^Young children, especially those who have never used a typewriter -- and even more so those who have not yet learned to read -- can have a lot of fun with turtle geometry if using the keyboard is made simple for them.  One obvious and simple way to do so would be to make an "interface" for their use.  Many such have been made in the past, and surely more will come.  Typically, the simplifications are in reduction of the child's keying burden to a single character for any action desired.  For example, when the child keys F, the interface translates this into a command "FORWARD^20" and executes it.
+
+^^^^^^^^^^Many computer based games depend upon the speed of reaction of the person playing the game.  Consider a real-time game where you have to fire a rocket to change the trajectory of a space ship.  Typing the word "FIRE" and "return" could take so long the result of the force would be different from what you wanted.  In contrast, keying a single letter whose value was encoded to mean "FIRE" could be effective at once in changing the space ship's speed.
+
+^^^^^^^^^^Have you ever wondered why the letters on the typewriter keyboard or the computer terminal are where they are ?  Alvin Toffler relates the history of keyboard development, pointing out that the keyboard arrangement was made difficult on purpose, to slow people down so that their high speed keying would not jam the originally slow-moving mechanical linkages of early machines.  Would you like to make your own keyboard arrangement ?  You can.  All you need is an interface which will substitute your characters for those wired at the keyboard, and a set of sticky labels to show how the interface will assign meaning to the keys struck.
+.ss
+.nofill
+SUMMARY:^Writing an interface which reads one character at a time is a primary way
+^^^^^^^^^of shaping your computer environment to be what you want it to be like.
+^^^^^^^^^You can make is simpler, more responsive, you can even change the meanings
+^^^^^^^^^of individual keys.
+.ds
+.adjust
+.page
+.ce
+8
+.ce
+THE CLEVER HACK VERSUS THE CLEVER TACTIC
+
+^^^^^^^^^^Two children played a simple Logo game, SHOOT.  In that game, the turtle first draws a circle on the video display then, after lifting the pen, sets the turtle down at a random screen location.  The objective of the game is to turn the turtle with RIGHT and LEFT commands until it points at the target then SHOOT the turtle forward into the target.  When SHOOT is executed, first it moves the turtle forward the specified number of turtle steps.  SHOOT next computes whether or not the turtle has landed within the circumference of the target.  If so, a point is scored, the screen is cleared and a new round begins.  Otherwise, the turtle is returned to its initial location and orientation.
+
+^^^^^^^^^^This is a simple, low pressure game, used to familiarize new Logo people with the commands of the language.  But with these two children taking turns at one terminal, the game quickly became competitive.  It became important to score every time SHOOT was executed (they counted SHOOT executions as the basis of turn taking).  One child noticed that the turtle always drew the target at the center of the screen.  He also knew that the HOME command puts the Logo turtle at the center of the screen (and thus at the target center).  He proceeded to score every time with the command sequence [HOME^^^^SHOOT^^0], despite the outraged complaints of cheating from his opponent.  This solution to the SHOOT problem is a clever hack. A "hack" is an accidentally effective way of mooting a particular problem.   The child's solution doesn't so much "solve" any problem as it permits achieving his objective by circumventing the obstacle based on an accident of its presentation.
+
+^^^^^^^^^^The child's clever hack was easy enough to render ineffective.  Some one else had only to change the game so that the turtle drew the initial target at another location for the clever hack to become worthless in itself.  And yet, this clever hack served well as an example of a more general form of solution the child developed.  He developed what he called a "clever tactic".  Knowing that the SETHEADING command could point the turtle in a specific direction, he used SETH^0 then moved the turtle forward or back as necessary to align it horizontally with the target.  A RIGHT or LEFT 90, with more forward and back commands would always then put the turtle within the target and permit SHOOT^0 to bring a certain score.
+.ss
+.nofill
+SUMMARY:  It is useful to distinguish between specific solutions to a problem
+^^^^^^^^^^in a particular circumstance and general solutions to all problems
+^^^^^^^^^^of a given class.  No one should despise, however, the particular solution
+^^^^^^^^^^for it can show the way to the more general and more powerful solution.
+.adjust
+.ds
+.page
+.ce
+9
+.ce
+RESOLVING AND RE-SOLVING PROBLEMS
+
+^^^^^^^^^^Some problems you want to put behind you -- like having to do what you don't want to do, and not being able to do what you do want.  Such problems should be resolved.  Other kinds of problems have a friendlier face, and certain of them are worth solving and re-solving.  Think about making a circle.  Doing so is a classic Logo problem for beginners.  Novice learners are typically asked to "do-it-yourself", to walk through the problem by simulating the turtle.  Their typical explanation of what they are doing as they walk in a circle is that they go forward a little and turn a little and do it again.  This explanation translate directly into the Logo circle:
+.ss
+.nofill
+.indent 15
+2TO^^CIRCLE
+FORWARD^^1
+RIGHT^^^^1
+CIRCLE
+END0
+
+.DS
+.ADJUST
+.INDENT 0
+The Logo circle is very easy to make with a Logo-speaking computer, but it would be difficult to make such a circle by drawing on a piece of paper.  The Logo circle is very perimeter-focussed because the turtle knows nothing at all about "centers".  (This leads to some interesting bugs and problems in turtle geometry procedures.)  The Logo circle is natural in the sense that it is no more than the path of as activity as familiar as walking is.
+
+^^^^^^^^^^If you ask, "What's a circle^?" in plane geometry, the object, "the locus of all points in a plane equidistant from another point", is easy to construct with a compass and not even hard to construct without one.  The euclidean circle is as "natural" as the Logo circle in the following sense: imagine a person sitting; the figure traced by the farthest reach of his arms is as circular as the path followed by any person imitating the Logo turtle.  The euclidean circle is center-focussed, and the circle is the boundary of the center's territory.  Can you get a computer to draw a euclidean circle^?   There are several ways.  If your computer speaks "polar", you can specify the definition of a circle with the simplest of equations, radius^-^constant.  Descriptions of circles in polar coordinates are simple, but they get complicated quickly if located away from the corrdinate system origin.
+
+^^^^^^^^^^While the description of a circle in polar coordinates still keeps in mind the relation of the circle to its center, and to a process a person could use unaided to make a circle, the description of a circle in a system of cartesian coordinates becomes remote from the process of generating a circle:
+.ce
+X320^+^Y320^=^C320
+This algebraic equation for an origin centered circle (of radius `C') specifies that the circle is the set of all point pairs (X,Y) in a cartesian coordinate system which satisfy the equation.  The primary relationship between the circle and "something else" is here between the circle and the cartesian reference frame.  This contrasts with the Logo circle (where the primary relation was between the circle and its process of creation) and the euclidean circle (where the primary relation was between the circle and its center).  The cartesian description of the circle and other curved lines, although central to the development of modern mathematics and science, seems relatively un-natural as compared to the Logo and euclidean circles because of the extent to which the person is removed from the description of the circle.
+
+.ss
+.nofill
+SUMMARY:^^1.^ it is important to solve some problems, to resolve them
+^^^^^^^^^^^^^so they are no longer problems for you.
+^^^^^^^^^^2.^ there are other kinds of problems that are important to solve
+^^^^^^^^^^^^^then re-solve other ways. The use of such problems is not
+^^^^^^^^^^^^^to get answers but to enrich your understanding of the world
+^^^^^^^^^^^^^you live in.  Solving such problems can help you build a coherent
+^^^^^^^^^^^^^and relatively well integrated store of knowledge.
+^^^^^^^^^^3.^ Scientists have recommended re-solving problems through the ages.
+^^^^^^^^^^^^^Descartes recommends that whenever you encounter a new idea, you bring
+^^^^^^^^^^^^^in into comparison with all the other ideas you hold as valuable and
+^^^^^^^^^^^^^try to appreciate their interrelations.  Feynman, a famous physicist
+^^^^^^^^^^^^^of our time, relates that his practice as a student was typically
+^^^^^^^^^^^^^one of solving a problem whatever way he could, then, with a worked out
+^^^^^^^^^^^^^solution to guide him, to re-solve that same problem in as many different
+^^^^^^^^^^^^^other formalisms or frames of reference as he could.
+.ds
+.adjust
+.page
+.ce
+10
+.ce
+GETTING OFF THE GARDEN PATH
+
+^^^^^^^^^^Some problems are terriblly difficult because they tempt you to set up your description in an unproductive way -- and lead you that way down a dead end path to useless fretting.  Here's a good example of such a problem, one that you might run into at a party:
+.ss
+.indent 2
+^^^^^You need people who are willing to work at the problem as couples.  You need string and a little ability to tie knots.  Here's what you do.  Take one string and tie it loosely around the wrist of one "victim".  (Leave about twoo feet of string between the wrists.)  The circle of string, arms and body form the first loop.  Pass the second stringthrough the first victim's loop and tie each end loosely around the wrist of the partner.  Passing the second string throuigh the first victim's loop made the loops interlocking.  The puzzle is how these two victims can separate without cutting the string or untying the knots.
+
+.ds
+.indent 0
+.sp 2
+Your victim's might get angry if you don't help them solve the problem.  Maybe you should try it yourself before imposing it on anybody else.
+
+^^^^^^^^^^Most everybody sees the string, arms and body as forming a loop.  This is what puts them on the dead end of the garden path.  After they have been told it's illegal to slip the string loop off the end of their arms from around the wrists, they frequently try all sorts of contortions to get free, then give up.  Have you given up yet^?  Do you see how to solve the problem^?
+
+^^^^^^^^^^A critical question to ask here is "what can I really count on^?".  Note that if the arms, body and string really do form a loop the problem can not be solved.  That whole way of looking at the problem must be wrong.  Next notice that the places where there might be a break in the loop can't be between the body and arms; it has to be at the wrists.  There are four wrists, but if you can get the string past one of them the problem is solved.  Focus on one wrist and try to think of a different way of seeing the problem.  I think of it as being like the picture below:
+.sp 3
+That "pole" is supposed to be a wrist.  The first string and loop go around the wrist at one end and then off somewhere else.  The problem is now to get the second string out from under the first.  It's easy, isn't it: through the loop, over the pole and down on the outside.  This sort of problem can only be solved after you get off the garden path.
+.ss
+.nofill
+SUMMARY:^1.^when you have a hard problem, it can be very important to ask yourself,
+^^^^^^^^^^^"what can I really count on in the way the way I am describing the problem^?"
+^^^^^^^^^2.^a second good question, when you are looking for a new way to describe
+^^^^^^^^^^^^a problem is "What's the point where there is something unusual or
+^^^^^^^^^^^^still unclear^?".  Focus your attention of that point.
+.ds
+.adjust
+.page
+.ce
+11
+.ce
+1CHANGING SCALE0
+
+^^^^^^^^^^The POLYSPI procedure below makes very attractive designs, which are more or less hard to relate and understand:
+.ss
+.nofill
+.indent 5
+2TO^^POLYSPI^^^:DISTANCE^^^:ANGLE^^^:DELTA
+1.^^FORWARD^^:DISTANCE
+2.^^RIGHT^^^^:ANGLE
+3.^^MAKE "DISTANCE^^:DISTANCE^^+^^:DELTA
+4.^^GO^^10
+
+.ds
+.adjust
+.indent 0
+With angle values chosen to be those of regular polygons, e.g. 120, 90 degrees, etc., regular "mazes" appear.  With small variations of angles, e.g. 119, 118 and so forth, spirals emerge from the bumping together of the corners and sides of the mazes.  Tracing the polygon vertices results in a spiral pattern.  But what about the areas in between the more nearly regular polyspis ?  In what sense are the figures spun from angles near 105 degrees related to those near the angles of reguar polygons ?  A new point of view on the question can be gained by changing  the scale of the space on which the turtle draws the polyspi design.  Doing that, you can see that all the polyspi executions result in emerging spiral patterns of vertices as the turtle spirals out from the staring place.  The variety of the attractive polyspi designs on the small scale are very much boundary-condition phenomena of a process more uniform on the grand scale.
+
+^^^^^^^^^^The INSPI procedure below makes very interesting designs when the distance and initial-angle variables are held constant and the delta variable changed (try INSPI 10 0 7):
+.ss
+.nofill
+.indent 5
+.block 5
+2TO^^INSPI^^^:DISTANCE^^^:ANGLE^^^:DELTA
+1.^^FORWARD^^:DISTANCE
+2.^^RIGHT^^^^:ANGLE
+3.^^MAKE "ANGLE^^:ANGLE^^+^^:DELTA
+4.^^GO^^10
+
+.indent 0
+.ds
+.adjust
+When you try different values of the initial angle (such as INSPI 10 2 5 ), you run into a blank wall because the figures drawn by the turtle very quickly go off the edge of the display screen.  The figures made on the display by multiple wrapping of the turtle make it even harder to perceive the order that such figures do, in fact, possess.  The way to appreciate this order is to increase the size of the display screen (from its noraml 400 x 400 turtle steps) to some larger field of movement (such as 1000 x 1000 turtle steps) where the figures can close on themselves without wrapping.
+
+SUMMARY:  Logo designs are emergents of local processes.  What you see very much depends on how you look at it.  Choosing the scale is an important factor in how you look at and understand designs.
+.page
+.ce
+12
+.ce
+DO SOMETHING A LITTLE DIFFERENT
+
+^^^^^^^^^^One of the basic procedures most people work out when starting Logo is a procedure to make a square.  If you're willing to stop the turtle with "control G", this procedure will do quite nicely:
+.ss
+.indent 10
+.nofill
+2TO^^SQUARE
+FORWARD^^100
+RIGHT^^^^^90
+SQUARE0
+
+.ds
+.indent 0
+.adjust
+If you want to do something a little different, you might pick out a command operand, such as 100 and turn it into a variable.  Doing so would permit you to makes squares of any size.
+.ss
+.indent 10
+.nofill
+2TO^^SQUARE^^:DISTANCE
+FORWARD^^:DISTANCE
+RIGHT^^^^90
+SQUARE^^:DISTANCE0
+
+.ds
+.adjust
+.indent 0
+If you want to do something a little different, you might consider changing the value of distance in every invocation of SQUARE.  You would have a SQUARE-MAZE procedure:
+.ss
+.indent 10
+.nofill
+2TO^^SQUARE-MAZE^^:DISTANCE^^:CHANGE
+FORWARD^^:DISTANCE
+RIGHT^^^^90
+SQUARE-MAZE^^(:DISTANCE^+^:CHANGE)^^^:CHANGE0
+
+.ds
+.indent 0
+.adjust
+If you want to do something a little different, you might look at the operand of the second command in the procedure and turn that `90' into a variable.  You would then have what's become known as a POLYSPI procedure (can you find some of the many good numbers for angle ?):
+.ss
+.indent 10
+.nofill
+2TO^^POLYSPI^^^^:DISTANCE^^^^:ANGLE^^^^:CHANGE
+FORWARD^^:DISTANCE
+RIGHT^^^^:ANGLE
+POLYSPI^^^^(:DISTANCE^+^:CHANGE)^^^^:ANGLE^^^^:CHANGE0
+
+.ds
+.indent 0
+.adjust
+If you want to do something a little different, you might think of applying the change value to the variable "ANGLE" instead of to "DISTANCE".  You would then have what's been called the INSPI procedure (be certain to try INSPI 10 0 7):
+.ss
+.indent 10
+.nofill
+2TO^^INSPI^^^^:DISTANCE^^^^:ANGLE^^^^:CHANGE
+FORWARD^^:DISTANCE
+RIGHT^^^^:ANGLE
+INSPI^^^^:DISTANCE^^^^(:ANGLE^+^:CHANGE)^^^^:CHANGE0
+
+.ds
+.indent 0
+.adjust
+If you want to do something a little different, you might ask yourself about symmetrical versions of the POLYSPI and INSPI procedure.  You might ask yourself what would happen if you varied both "DISTANCE" and "ANGLE" simultaneously -- by the same and by different amounts.  You might ask yourself if you can understand why the procedures generate the attractive designs they make.  You might ask yourself if you can apply other places the idea of isolating some single element of a procedure and changing it to create new things and to understand them.
+.page
+.ce
+13
+.ce
+MAKE IT YOUR OWN
+
+^^^^^^^^^^A six year old was introduced to the INSPI procedure below.  When she saw it executed with these variable values, INSPI 10 0 1, she declared that it looked like a "seahorse" and asked if she could have a seahorse procedure of her own.  Her "SEAHORSE" procedure was one she explored with considerable interest and satisfaction for several days, delighting in the pretty designs she discovered:
+.ss
+.nofill
+.indent 0
+2TO^^INSPI^^^^:DISTANCE^^:ANGLE^^:CHANGE^^^TO^^SEAHORSE^^^^:CHANGE
+1.^FORWARD^^:DISTANCE^^^^^^^^^^^^^^^^^^^^^^^^1.^MAKE "ANGLE 0
+2.^RIGHT^^^^:ANGLE^^^^^^^^^^^^^^^^^^^^^^^^^^^2.^FORWARD^^10
+3.^MAKE^^"ANGLE^^(:ANGLE^+^:CHANGE)^^^^^^^^^^3.^RIGHT^^^^^0
+4.^GO^^1^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^4.^MAKE^^"ANGLE^^(:ANGLE^+^:CHANGE)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^5.^GO^^10
+
+.DS
+.ADJUST
+.INDENT 0
+It was important to this child to make this procedure her own because it put limits on how much complexity she had to cope with in playing with her procedure.  She didn't have to worry about other people's procedures are how they related to hers.  She created her own little micro-world where she was free to explore and develop her own ideas.  
+
+^^^^^^^^^^Making things your own not only limits the range of problems you have to confront, it serves to make you more independent.  You can use your own procedure whatever way you want.  You can become as certain as you need to be about how your procedure behaves.  You can change your procedure without doing something unexpected to anybody else.  But greater independence has its problems.  You may get frustrated when your procedure doesn't work the way you think it should; you may have a harder time explaining your procedure to somebody when you ask them for help.  But best of all, as you make procedures your own, and change them to be exactly what you want them to be, you will go on from making things your own to making your own things.
+
+^^^^^^^^^^Not only will you become more independent of others for help in using your computer, you will even become independent of the computer itself -- and that's what's important: not solving problems, not mastering the computer, but learning the most important insights you can from the computer experience you will have.
+.page
+.ce
+14
+.ce
+WHAT'S A POWERFUL IDEA ?
+
+^^^^^^^^^^Everybody knows what a grapefruit is and how to cut one in half.  When you cut a grapefruit perpendicularly to the core, the cut face shows a pattern like a wheel, with axle, spokes and rim.  A little energy and perserverance are all you need to dig out and enjoy the juicy meat from between the spokes.  There must have been a time when you didn't know which way to cut a grapefruit.  Did you find out how the hard way ?  What happens if you divide the grapefruit the other way, along the core ?  It is nearly impossible to get at the still buried meat, for the tough skin of the sections is an intact obstacle.  The grapefruit looks pretty much uniform on the outside of its skin, but when you look deeper you can see there is a very specific and important organization that you must understand if you want to get at what's inside.   This very simple, very concrete situation of cutting up a grapefruit provides a useful way to look at many other very troublesome problems.  It points up the issue that how you analyze a problem, whether your analysis "goes with the grain" or "against the grain", can make a world of difference in how hard the problem is to solve.
+
+^^^^^^^^^^The intrinsic thing that gives such an example power in thought is its simplicity, in the sense that given the perspective of the idea (embodied in the concrete example), the primary conclusions that can be drawn are obvious without long chains of arguments.  That is, such ideas are elegant in the mathematician's sense.  The extrinsic root of power is the fecundity of the example, how well it can serve in helping you understand by analogy other problem situations.  
+
+^^^^^^^^^^Descartes introduces his Discourse on Method with the witticism that intelligence in the only thing in the world of which there is no scarcity, for although men may complain that they lack goods or information, no one complains that his judgment is inadequate.  Why should this be the case ?  People don't know -- or believe -- that ideas can be powerful.  The most powerful idea of all is that there are such things as powerful ideas.  Those of us who lack this idea may struggle valiantly with problems, combing the world for information and our minds to make connections, without imagining that we need to formulate the problem through a fundamentally different metaphor.
+.page
+.ce
+15
+.ce
+SOMETIMES YOU NEED ANOTHER IDEA
+
+^^^^^^^^^^One of the most famous problems in the history of ideas puzzled the mathematicians of ancient Greece.  They knew how to count very well (even though they used letters of their alphabet to represent numbers).  They even knew about fractions, and this is where the puzzle came up.  They knew about numbers like 1, and 1/2, and 1/4, but they wondered if there were any numbers that couldn't be represented by fractions; they wondered if there were any numbers they didn't know about.  The puzzle became a hot issue for them after the discovery of the pythagorean theorem.  They could prove that the areas of two squares constructed on the edges of a right triangle was equal to the area of a square constructed on the longer line (the hypotenuse), through the use of a technique such as shown below:
+.sp 4
+This proof helped make the problem more critical because it raised a specific question.  If you start with a square, one unit long on the side, and make a triangle by drawing the diagonal of the square, the sum of the areas of the two squares constructed on the side will be two units of area; but how long must be the hypotenuse of that triangle made from half a square ?  It must be greater than one and less than two.  It must be more than five-fourths and less than three-halves.  They could never find a fraction of whole numbers that would result in a number two when multiplied by itself.  
+
+^^^^^^^^^^Since no one could figure out that fraction might be, the mathematicians decided to try to prove that there wasn't any such fraction, that a number which squared is two doesn't make sense in the same way as fractions of whole numbers.  How would you try to do that^?  The Greeks made an equation of two whole numbers, P and Q, that would be true is there were such a fraction: (P/Q)320^=^2.  They wanted to prove that the equation was not true.  The first thing they did -- you probably thought of doing it yourself already -- was to simply the equation to this form: P320^=^2Q320.  And then they were stuck.  What else is there to do ?  Where can you go with this one idea ?  Think about it for a while.  Can you  go on from here^?
+
+^^^^^^^^^^Another idea is needed, another whole different way of looking at what "P" and "Q" might be.  The trick is to look "inside" P320 and Q320.  What must they be made of^?  No square can be a prime number (squares are made by multiplying at least two other numbers together).    The factors of a square must be two (in number) if the roots are prime or some multiple of two if the roots are not prime, as in the example below:
+.ss
+.nofill
+.indent 5
+2SQUARE^^^^^^^^^^^^^^^^^^^25^^^^^^^^^^36
+PRIME FACTORS^^^^^^^^^^^5x5^^^^^^(2x3)x(2x3)
+COUNT OF FACTORS^^^^^^^^^2^^^^^^^^^^^^40
+
+.ds
+.adjust
+.indent 0
+Any number is either a prime number or made up of prime factors.  Therefore every square must have an even number factors.  But think back about the equation: P320^=^2Q320.  Doesn't that imply there is at least one square which must have an odd number of factors^?  It surely does, and therefore it must be wrong.  Consequently, there must exist numbers, like the square root of two, which can not be expressed as the ratio of two whole numbers.  That is, irrational numbers exist.
+
+^^^^^^^^^This mathematical proof was a difficult one for men to discover.  Mathematicians struggled with the problem for centuries.  Then someone realized that a new idea was needed, a new way of looking at the problem.  Once a second way of describing the problem was brought to bear on the problem, its solution was relatively straight-forward, almost obvious.  When you have a real hard problem, maybe you ought to think about whether some  other description of the problem could help you with it.  Finding the right description isn't always easy, but it can be necessary.
+.page
+.ce
+16
+.ce
+1Bricolage0
+.page
+.ce
+17
+.ce
+1Look for Something Special0
+.page
+.ce
+18
+.ce
+DO IT AGAIN
+
+^^^^^^^^^A ten year old girl confronted the Logo language for the first time.  She didn't have any idea of what to do or what could be done.  She started to draw with the turtle, making it go forward different amounts and turn various numbers of degrees.  Sometimes she didn't like the latest line the turtle put on the screen and wanted to erase it.  The turtle didn't have an eraser, so she used a clever trick: whenever she liked an addition to her drawing, she would code it into a procedure she wrote as the drawing developed; when she didn't like a change, she would clear the screen and execute the procedure, that way re-creating the drawing as it looked before the latest change.  She completed here effort with a drawing that looked a bit like a boot, as you see below:
+.sp 4
+^^^^^^^^^^The girl had given Logo a fair chance, worked dutifully, had some good ideas, but she was basically bored.  "Is that all the turtle can do^?", she asked.  For no very good reason, she executed her "BOOT" procedure again.  The second boot drawn over the first was rotated through a large angle. She did it again, and again, and again, becoming caught up in the design that was emergin from repeating her "BOOT".  Finally, she cleared the screen and executed "BOOT" twenty five times in rapid succession under control of the REPEAT command.  She was thrilled with the design below which emerged from her doing it again.
+.sp 4
+.nofill
+.ss
+SUMMARY: repeating a specific list of commands can have interesting results
+^^^^^^^^^if the executions "add up".  The ways to do it again are by re-keying,
+^^^^^^^^^naming the commands as a procedure and rekeying the name; executing
+^^^^^^^^^under the scope of a repeat command; recursive invocation; and looping.
+.adjust
+.page
+.ce
+19
+.ce
+1Mneonic-naming0
+.page
+.ce
+20
+.ce
+1The Idea of a Formalism0
+.page
+.ce
+21
+.ce
+ADVICE TO A TEACHER
+
+^^^^^^^^^^I write here about my own experience and out of that experience, but my situation has been different from yours.  You've had to worry about instructing twenty or thirty children.  I have merely had to play with two children -- and those children were my own and I knew them well.  I write here also with the conviction that your work in the future will be more like my experiences than it has been.  Computers will permit the construction of intellectual worlds where children will be able to spend much time learning effectively on their own.  This will give you more time to know individual children and to intervene in their learning as the advisor you, their parents, and the children themeselves hope you will be.
+
+^^^^^^^^^^Geometry has been an important central theme of instruction in our laboratory because its founder invented a kind of geometry for children.  We've called it "turtle geometry".  It is distinguished from other geometries because it is a geometry of action.  The leading actor, the agent of this action, is "the turtle".  Either a mechanical robot or a triangular cursor on a video-display screen, the turtle goes forward some distance or turns through some angle on command.  When its pen is down, the turtle draws a line.  At their ages of six and eight, I introduced my children to SHOOT, a simple turtle geometry game.  A setup procedure drew a target and placed the turtle at some random screen location.  To score, the children had to turn the turtle right or left some angle to point it at the target then SHOOT forward some distance into the target.  The game was easy for them to play and they enjoyed it.  (They even played the game without the computer; setting a hula hoop on the floor for a target, the children took turns playing turtle and keyboard commander.)
+
+^^^^^^^^^^Robby, the older child, came to want a more complicated game.  He was fascinated by the air battles of World War II and asked me to make a game where the targets would be airplanes.  READY-AIM-FIRE (we called it R.A.F.) satisfied him; even more, it engaged him.  Robby spent the better part of an entire day trying to score more kills than von Richthofen, the famous Red^Baron of World War I.  This game permitted him to do what he wanted -- play in his own fantasy world.  It permitted me to introduce him to absolute coordinate geometry.  The AIM procedure required specification of the airplane's location through naming its X and Y coordinates.  (Axes provided a scale from which these values could be read off.)  After the plane's location was specified, the AIM procedure moved the "gunsight" to the location.  AIM could be executed as many times as necessary to get the gunsight on target, where FIRE would destroy the plane and increase the score.  When Robby later wanted a similar game for sinking ships, I showed him how to modify the R.A.F. procedures so that he could replace the gunsight with a SUB and the airplane with a CARRIER, both simple drawing procedures he made.
+
+^^^^^^^^^^The style of introduction presented in this story is opportunistic in the extreme.  In depends on three things: the initiative of the child to connect his computer activities with what he knows about other things that concern him; the flexibility of computer systems to enable the building of simple models; the knowledge and values of a teacher in shaping particular procedures through which the child's objectives are achieved in such a way that the child is introduced to important ways of looking at and describing the world.
+.page
+.ce
+22
+.ce
+1Microworlds0
+.page
+.ce
+23
+.ce
+1Computers and People0

@@ -1,0 +1,78 @@
+.xgp
+.font 0 31vg
+.font 1 40vg
+.ss
+.he1
+In LOGO;Jbman4
+.adjust
+A Tentative Treatment of Tile Number and Colortray number limitations.
+
+There will be about 200 tiles available for the user to design.  These
+tiles can be designed either by using TILEPATTERN or by commanding a
+turtle in DRAW-mode to travel over tiles with its pen down.
+
+Each tile has a background and a foreground color.  Of course, they can
+be the same.
+
+Of these 200 tiles, there are a manximum of 25 color pairs possible at
+one time on the screen.
+
+These color-pair sets of 8 are colortrays.
+
+What we propose is that the existence of colortrays be invisible to the
+user until the computer "runs out of ink."
+
+In other words, the user would be able to command a turtle to carry a
+tile to a certain place and drop it.
+
+She could then rename the transported tile (implicitly creating a new
+tile) and change its color (implicitly putting the new tile in a
+colortray of that color pair of one exists or beginning to fill a new
+colortray if there is not a colortray of that color pair alrady).
+
+Some examples may clarify the situation:
+.br
+(1)  The screen could be filled with one red tile.This would use very
+little "ink" and would use only one out of eight slots in one colortray.
+
+(2) The user could design 9 different tiles of one color pair, but this
+would commit two colortrays to that color pair.
+
+(3) The user might command a turtle in draw-mode to draw in different
+colors and over the screen.  Since many distinct tiles would be
+created, this would use a lot of "ink".
+
+Depending on what she has chosen to draw, the user might eventually
+either run out of "ink" (that is to say, tiles) or colorpairs (that is
+to say, colortrays).
+
+If the problem is no more "ink," an error message
+
+NO MORE INK -- USE DISPLAYTILES COMMAND
+
+might flash. If the user then typed
+
+.ce
+1DISPLAYTILES
+
+0the present screenful would disappear into the buffer and the tiles
+would be arrayed according to some numbering system on the screen.  Byu
+using the command FLUSHTILE the user could simply eliminate some tiles!
+Or she could use CHANGETILE to say, eg., 
+
+.ce
+1CHANGETILE [100 150]
+
+0which would replace Tile #100 with Tile #150.
+
+If the problem were no more colortrays an error message
+
+NO MORE COLORTRAYS -- USE DISPLAYTRAYS COMMAND
+
+might flash.  By typing
+
+.ce
+1DISPLAYTRAYS
+
+0the present screenful would go into the buffer and the colortrays
+could be shown.  Colortrays might then be flushed or chan

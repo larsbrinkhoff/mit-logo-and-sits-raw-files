@@ -1,0 +1,83 @@
+.ce
+The PDP-8 ESR Averager
+	This document describes a program written for Boston
+College's Chemistry Deptarment PDP-8 for the purpose of
+averaging signals recieved by their ESR, and displaying,
+storing and evaluating these averages.
+	The program uses the teletype, the a/d converter, the
+real time clock (trigger inputs), the x-y display and two
+fields of memory. When it is first started, it resets a few
+internal variables and goes into the normal signal display/
+command accepting mode. In general, it i safe to restart the
+program at any time. This can be done mannualy, by starting it
+at address 200, or under keyboard control, by typing "*".
+(note that the quotes are not typed, just the asterisk).
+Unless something is wrong, typing "*" should work
+whenever the program is running (execption: while the program
+is reading a paper tape, or thinks it is reading a papertape
+the program can only be restarted manually)
+Note that the "*" is not echoed, since restaring the program
+stops any teletype output; if the program is for some
+reason being long-winded, "*" may be typed. Whenever
+the computer is not occupied with some other task, it
+displays the current signal. Starting or restarting
+the program never disturbs the current signal; if you
+wish to zero it you must do so explictly by typing "Z".
+Normally the display parameters are adjusted by the program
+to make the signal fit on the screen, and in general look nice.
+If for some reason the signal is not so adjusted, the
+command "+" will cause it to be.
+	The prgram has several modes. The mode the program is
+in determines what is displayed and what else is going on.
+As already mentioned, the program starts up in a mode
+where it accepts commands and displays the current
+signal; this is the idle mode. The program acctually
+accepts commands in any mode except paper-tape reading mode.
+The other modes are: papertape punching mode, adjust mode,
+kaliedescope mode, and signal averageing mode.
+In kaliedscope mode (entered by typing "K") the program
+displays on the screen the results of DEC's kaliedscope
+program; the display is modified by the low order 3 or 4
+bits of the switch register. This is mostly useful
+for adjusting the scope and showing visitors how useful
+your computer is. Adjust mode (entered by typeing "A")
+allows you to adjust the shimitt triggers and a to d
+input in preparation for averaging a signal. In this mode,
+a dot is displayed on the screen whose y position cooresponds
+to the voltage input to a/d channel zero. The x position
+is incremented one to the right every time the trigger
+which is supposed to be connected to the esr's internal clock
+triggers. Every time the trigger which is supposed to be connected
+to the left limit switch triggers the teletype bell will ring.
+(except that if it triggers more than 10 times/second, the bell
+will only ring 10 times/sec.)
+	The program is capable of saving the results
+it gathers on papertape and reading them back at some latter time.
+papertape is punched by typing "P". The machine will imediately
+halt to remind you to turn on the tape punch. It will then punch
+out some leader tape, a start mark, the current settings of variables,
+the current signal and some trailer tape, in that order. Note
+that while the tape is being punched, the teletype might
+type strange things; this is because the tape is not punched
+in ascii but rather is punched in a special binary format.
+While the tape is being punched the current
+signal is displayed; you may stop the punching by typing "*".
+The tape which was punched out may be read back in by placeing
+it in the reader (making sure that you put the leader over
+the read head) and typing "R". Until the tape is fully read,
+the only way to stop this process is to manually restart the program.
+If the tape is installed wrong or is faulty, the program may
+go throught the whole tape and still expect to read more;
+if this happens the program has probably managed to clobber
+itself and you'll have to reload it. Note that when
+you place the tape in the reader you should put the reader
+switch into the "start" position. The tape will not be moved
+until you type "R". If you forget to put it into the start
+positon and type "R", nothing will happen; at that point
+you can put it to start and type any character except rubout
+to get it going (rubout will cause disaster). While the program
+reads past the leader and reads in
+the variables, the screen is blank. When it begins reading in the
+signal values, it displays the new signal on the screen as
+it is read in.
+

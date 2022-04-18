@@ -1,0 +1,239 @@
+.HEADER 4-
+.QUOTE #
+.adjust
+.line 65
+.fill
+.double
+.ce
+Chapter 4
+.ce
+File Structure
+	It is  desired  to  have a  flexible  format  for  file
+storage,  which does not impose  too strict requirements on the
+relative organization of files.   The  one or two level,  fixed
+name size structure of many systems seems inadequate.  It would
+also  be nice  to be able  to use  a wide variety  of disks and
+disk-like  devices,  both  very  large  and  very  small.    In
+particular, the fixed storage overhead of the system should  be
+small  enough to  permit small disks  to be  used without using
+half their space for directories.  The block size chosen should
+be such that large amounts of core are not needed for  buffers,
+but  each  block   still  contains  a   reasonable  amount   of
+information.
+	Depending  upon who  the users of  a timesharing system
+are, it may or may not  be desirable to provide access  control
+for  files.   Therefore,  a  general system  of  access control
+should   be  inherent  to   the  file  structure,   but  if  an
+adminstrative (or user) level decision  is made not to use  it,
+it should disappear gracefully. 
+	The  descriptions of the files  should, of course, take
+as little  space  as  possible;  files whith  short  names,  no
+special  access control, and few blocks should take very little
+room  in  the  directory,  while  a  file  with  a  long  name,
+complicated  access  protection  and   many  blocks  is   still
+
+
+possible.
+.br
+OVERVIEW
+	The  file  directory  will   be  a  Multics-like   tree
+structure,  allowing  hierarchies of  arbitrary  (well, almost)
+hairiness.  In this structure there is only one directory which
+is defined  as existing;  this  is called  the root  directory.
+Any other directory in the system is pointed to either directly
+or  indirectly  by the  root directory.   If  a directory  A is
+pointed to by another directory, B,  A is called a "son" of  B,
+while  directory B  is called the  "parent" of  directory A. In
+this terminology, all directories are descendants of the  root;
+the  special case  of the root  directory itself  is handled by
+considering the  root  to  be its  own  parent.   All
+directories may contain entries of four different types.  Every
+directory  contains, as its first entry, an entry of the header
+type.   This contains the name of  the directory and a  pointer
+back  to the directory's parent.   The  header may also contain
+access information  which  will apply  to  all entries  in  the
+directory  unless  overruled   by  access   information  in a
+particular entry.
+	The  second type of entry is  a pointer to a directory.
+There may be only  one such pointer for  each directory in  the
+system.   This  entry also  contains the name  of the directory
+that it points to.  The third type of entry is a link.  This is
+simply the name  of the  link and a file  specification of  the
+
+
+file it points to.
+	The forth and last type of entry is a file description.
+This  contains the name of the file,  the date and time that it
+was last modified, the year and month it was last accessed  for
+any  transfer, the location of the the files data blocks on the
+disk, and  possibly access  information.   The file's  size  is
+either specified as an exact number of blocks, or an indication
+is  made the last byte or word  of the  last block is not used;
+if the last word is not used, it
+indicates how many  bytes of the last block  are
+used.   
+	The  root directory contains  several special files and
+directories.  The most important of these are the bit table and
+the disk description.   The bit table contains one bit for each
+512 word block on the disk.   For the RF11 and RK05 disks, only
+one 512 word block of bits will be needed, but for a 2314  type
+of  disk, 3 or 4 might be needed.   If a disk device which uses
+all 16 available  addressing bits  is used, it  will require 8
+blocks  of bit table.   When a file  is created, as it requires
+blocks of disk space, the bit table is searched for a zero bit,
+which is then set to one.   Ordinarily, when a file is deleted,
+the  bits in  the bit table  associated with the  blocks of the
+file  are  set  to  zero.   However,  if  a  salvaging  program
+discovers  that two or  more files refer to  the same block, it
+will set a bit in the file entries of all files which point  to
+the  block.   When a file  entry is deleted  which has this bit
+
+
+set, none of the  bits associated whith  the file are  cleared,
+allowing  the other files to  continue to reference them.   The
+disk description contains  the limits of  the swap area(s),  if
+any,  bit table  entries for reserved  blocks, if  any, and the
+base year  to  be added  to  the  year bits  in  file  entries.
+Typically,  the root  directory will  also contain  pointers to
+user   directories  and   to  accounting,   password  and  user
+identification files.   It might be noted here that users  will
+have  up to  3 specifications:  all  users must  have a project
+name and a programmer name.   Each project and each  programmer
+is  also assigned a  8 bit number.   In  addition to these, the
+user might have an optional login name, from which his  project
+and  programmer  names and  numbers will  be obtained  by table
+lookup. 
+.br
+GRIMEY GUTS
+	Directories are up to 8 blocks (4096 words)  long.
+They are  composed  of 4  different  types of  variable  length
+entries.   Each entry has a name and may have a version number.
+The entries are kept in  order, first alphabetically, and  then
+by  version number, except for the  header, which is always the
+first entry.
+	All entries have the same basic format (figure 4-1):  the first byte
+contains 2 bits specifing the type of entry, and 6 bits  giving
+the  length  of the  entry in  words.   The next  byte contains
+flags.   Bit 7  of this  byte indicates  that the  entry has a
+version  number, and bit 6 indicates  that the entry has access
+information.   The meaning of the  remaining 6 bits depends  on
+the  type.   The name of the  entry immediatly follows the flag
+byte.   All characters of the name  have bit 7 off, except  for
+the  last.   If there is a version number, it follows the name.
+The two bytes following the name
+are the high a low bytes of the 16 bit version number.   If
+the file has access information, it follows the version number.
+This information comes in triples:
+	byte 0 project number (8 bits)
+	byte 1 programmer number (8 bits)
+	byte 2 access bits
+.br
+The first two bytes specify the project and programmer  numbers
+
+
+that  the triplet  is to apply  to, the third  gives the access
+bits for the specified user(s).  A project or programmer number
+of 377 specifies all projects or programmers.
+The format of the access byte is shown in figure 4-2.
+	The  access  information for  a given  user to  a given
+entry is determined either by the information for that user  in
+the  directory header or in the particular entry.   If there is
+no acces information in either  place all users may access  the
+entry for any transfer, i.e. the access byte is 077.   If there
+is access information  in both  the header and  the entry,  the
+information  in the entry applies.   The triplets are stored in
+order from  most specific  to least  specific.   Thus  triplets
+which  specify  specific projects  and programmers  come first,
+followed by those which specify  all programmers of a  specific
+project,  followed  possibly  by  one  for  all  projects   and
+programmers.  If there is any access information relating to an
+
+
+entry, users not specified by it have all access bits zero.
+	After  any access triplets, the meaning of data depends
+on the type  of entry.   For  files,  directories and headers,
+the  next
+bytes  give the addresse(s) of the block(s) associated with the
+file or  directory or parent of the directory.   This information  is stored  in a  highly
+compressed format similar to that used by the  ITS system.  The first
+2 bits of each byte give the type of the descriptor byte.
+	For
+type 0 bytes (figure 4-3), the next 6 bits are
+a displacement to be added  to the current disk address,  which
+is  always one greater than the address of the last block which
+was part of the file.   One block of the file is at the address
+resulting from this addtion.   Type 1 bytes (figure 4-4) give six bits which
+are a count of the number of times
+to get the next address by  adding one to the current  address.
+Type 2 bytes (figure 4-5) give a count of blocks to be used as in type 1 bytes;
+the next two bytes give  a sixteen bit
+address to start using blocks at.
+Type 3 bytes (figure 4-6) contain
+3  bits of displacement information and  3 bits of count, to be
+
+
+used as for types 0  and 1.   The displacement is added  before
+the count is used.
+	On  the next word boundary after the block usage bytes,
+file entries have two words of time and date  information;  the
+first  word is 16  bits of the  time the file  was last written
+[(hour*3600 + minute*60 + second)/2].   The next word  contains
+11  bits of  the date  the file  was last  written[(year - base
+year)*512 + month*32 + day] and  5 bits of the date the  file
+was  last refferenced  (other than  for entry  listing)[(year -
+base year)*8 + month/2].  Also, bits 3, 4 and 5 in the flag byte of
+file entries have  special meaning:  bit 3  means don't  delete
+the  blocks of the file when  deleteing the file.   Bit 4 means
+that the last byte of the last block of the file is not used by
+the file. Bit 5 indicates that the last word
+of the last block is not used; this word then contains the number
+of bytes which are not used in the block.
+	For  link  entries,  the  link  information immediately
+follows the last byte of name or access information.   This  is
+simply  a  file  specification   which  is  spliced  into   the
+specification  that cuased  it to be  referenced.   As with the
+
+
+name, the 7 bit is zero  for all but the last byte.   The  file
+specification  may include some special characters which either
+indicate which  version of  an entry  is to  be referenced,  or
+indicate  movement within  the tree  structure.   The character
+space causes  the termination  of a  file name.   If  the  next
+character  is  not  special, the  named  entry is  opened  as a
+directory.   If the  next character  is  special the  space  is
+ignored.  The character ## causes the following digits up to the
+next  non  digit  to  be  used  as  the  version  number.   The
+characters < and > cause the  entry with the least or  greatest
+version  number  to  be  referenced.   The  character  ^ causes
+movement up the tree  to the mother  of the current  directory,
+while  ;  causes movement all  the way back  to the root.   For
+example, ;FOO BAR>X##69NERD< specifies the least version  number
+of  the  file  NERD  in  the directory  X  version  69,  in the
+directory BAR of the greatest  version number in the  directory
+FOO in the root directory.
+	The  two special entries in the root directory, the bit
+table and the disk description, are just regular files in  that
+directory.     In the case of the bit table, the length of file
+in bytes, which is   information that  the system  keeps, gives  the  total
+number  of blocks  available on  the disk,  in multiples  of 8.
+Except for that,  the bit table  is perfectly  straightforward,
+with each bit indicating the status of one 512 word block, bit
+0 being the first and bit 7 being the last.   E.g. bit 3 of the
+
+
+5th byte refers to block 43.(53 octal).    The disk description contains 5+n
+words.   The  first word is the  base year for this pack.   The
+next 4 words are pairs of  address, length for each of the  two
+possible  swap areas.   The last  n words are  pairs, the first
+word of which is an offset in the bit table, and the second  of
+which  is a word of bits  indicating blocks which are always in
+use (possibly bad spots  on the disk,  or reserved for  special
+usage). 
+Files  are never written into these areas, but programs may be
+swapped into  the  swap areas.   The  timesharing  system  never
+references the reserved areas.  
+The root directory is always at block 46 octal; it
+is always exactly  one block long.
+.end
+
+|

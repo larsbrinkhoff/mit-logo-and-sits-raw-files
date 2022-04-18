@@ -1,0 +1,1223 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12i
+.fo 3 Helvetica10b
+.fo 4 TimesRoman10
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.chapter "bold(Getting Started with the Logo System)"
+.section "bold(Using the Keyboard)"
+.sp
+If you have never used a computer before, you will need to become
+accustomed to a few idiosyncrasies of computer keyboards vs.
+typewriter keyboards.  There are also minor differences between the way
+that the Apple keyboard is used in Logo, as opposed to other languages
+such as BASIC and Pascal.
+.nf
+Here is a Diagram of the Apple II Keyboard
+.sp 20
+.fi 
+Figure 1-1: The Apple II keyboard with special keys indicated
+.sp 2
+bold(WARNING!! DO NOT TYPE the <RESET> key!)
+.sp
+.fs
+This will restart the computer, erasing all your procedures, forcing
+you to restart Logo all over again.
+.bp
+.section "bold(Special Keys on the Keyboard)"
+.fi b
+Some keys, or combinations of keys  have special purposes.  (When using combination keys like  <CTRL>   or   <SHIFT>, hold it down while typing the other
+key.
+
+.nf l
+KEY			s(n)USE		s(m)EXPLANATION
+
+<RETURN>		t(n)do-it	t(m)sends a command to the computer and moves
+					t(m)the cursor down to the next line.
+
+<ESC>			t(n)back-space	t(m)erases one character behind the cursor,
+			t(n)rub-out		t(m)and moves the cursor back one space.
+	
+<     >			t(n)move-right		t(m)moves the cursor one space to the right.
+
+<     >			t(n)move-left		t(m)moves the cursor one space to the left.
+
+<SHIFT> - N		t(n)[		t(m)prints the   [   symbol on the screen.
+
+<SHIFT> - M		t(n)]		t(m)prints the   ]   symbol on the screen.
+
+<REPT>			t(n)repeat		t(m)repeats the effect of a key.
+					t(m)First press <REPT> then 
+					t(m)press key to be repeated.
+
+
+<CTRL> - G		t(n)STOP! t(m)stops whatever the computer is doing, and
+					t(m)returns to Logo, ready for a new command.
+
+.fi b
+Try typing each of the special keys. Some of them, like  <    >,  <    >  or   <ESC>, won't do anything until you've typed something else.
+
+.bp
+.section "bold(Logo Typing Hints)"
+
+Logo is a computer language, that is, a special code that
+translates words, symbols and numbers that people understand into
+electronic signals that the computer understands.  Every computer
+language has its own special rules which can be confusing when you are
+learning to use it.  When you type something the computer does not
+understand it will complain by sending you an error message. If you
+follow a few simple rules you can avoid most typing difficulties.
+
+** Note: When you see a word like <RETURN> or <ESC>, contained inside <
+>, press the key with that label.  Do not type the word
+"R,E,T,U,R,N" or "E,S,C."
+
+1. The   ?   symbol at the left of the screen is a prompt.
+
+?
+.fi b
+
+This tells you the computer is waiting for you to type a LOGO command.
+
+2.  Pressing the <RETURN> key means do-it!  Press <RETURN> to send a
+command to the computer.  Pressing <RETURN> at the end of a command
+line is like putting a "period" at the end of a sentence in English.
+
+Type DRAW <RETURN>
+
+Now type FD 50 <RETURN>
+
+The turtle should move forward  50 steps.
+
+** Note: type a space between each word and the next.
+.bp
+.chapter "bold(Introducing the Turtle)"
+The turtle is an object that can draw pictures on the TV screen. You
+can think of the turtle as a "robot" that can move forward and back
+and turn right or left. With its pen down, it can draw geometric
+shapes in color, as it moves around the screen.
+.section "bold(Basic Turtle Commands)"
+.fi b
+To see how to use the turtle, try out each of the turtle commands on
+the next page. Remember to leave a space between a command and its
+input number, and to press the <RETURN> key after every command.
+
+.nf L
+bold(To talk to the turtle type the command:)
+
+DRAW				s(m)This clears the TV screen and
+				t(m)places the turtle at its center.
+
+bold(Here are some commands that the Turtle understands:)
+
+.nf L
+FORWARD   20	 		t(m)Moves the turtle forward or back the number 
+BACK   15				t(m)of spaces you specify.  If the turtle's pen is
+FD   20				t(m)down, it will draw a line as it moves.  
+BK   15
+
+RIGHT   45 			t(m)Turns the turtle right or left the number
+LEFT   30				t(m)of degrees you specify.
+RT   45
+LT   30
+
+CS 				t(m)clears the screen, leaving
+				t(m)the turtle in its current position.
+
+HT         		t(m)Hides the turtle so it can't be seen.
+ST		t(m)Shows the turtle again.
+
+bold(To stop using the turtle, and use the entire TV  screen for text, type:)
+
+ND   or   NODRAW		t(m)Clears the whole screen for text.
+				t(m)To use the turtle again type  DRAW.
+.bp
+.section "bold(Exploring the Turtle's Screen)"
+.fi b
+Here are some activities that will help you start exploring the turtle's "world."
+
+1. Experiment with the turtle.  Type FORWARD, BACK, RIGHT and LEFT (or
+FD, BK, RT and LT), with a lot of different input numbers.  Try very
+large and very small inputs.
+
+Try to make the turtle go off the screen.  What happens?
+
+What happens if you tell the turtle to go FORWARD 1?  Clear the screen
+and go FORWARD 0!  You will have to "hide" the turtle to see the
+effect of such a small movement. Type HIDETURTLE or HT to hide the
+turtle, and SHOWTURTLE or ST to see it again.
+
+2.  Try large and small inputs to RIGHT and LEFT. 
+
+What is the largest input you can use?  What is the largest turn the
+turtle can make?  What is the smallest turn?
+
+3.  Find the size of the turtle's screen in several different
+directions.  How can you tell when the turtle is at the edge of its
+screen?
+
+4. Here is a game for beginning students.
+
+Pick several different points on the screen and move the turtle to
+each one.  Make this a game for two players:
+
+The first player picks a point on the screen and puts a finger there.
+The second player moves the turtle to the first player's finger.
+
+The object of the game is to reach the point using the smallest number
+of turtle commands. A "perfect" player could do it with two commands -
+one turn and one forward command. Very few people, even "turtle
+experts," can do this perfectly, however.
+.bp
+.section "bold(How the Turtle Uses its Pen)"
+
+
+When you first type  DRAW,  the Turtle always starts with its pen down.  It will draw white lines on a black background whenever it moves forward or back.
+
+.nf L
+You can change what the turtle's pen does:
+
+PENUP    or    PU t(m)The turtle will not draw lines when it moves.
+
+PENDOWN    or    PD t(m)The turtle will draw lines whenever it moves.
+
+.keep
+.nf l
+
+Using  PENCOLOR   or   PC  the turtle can draw in seven colors.
+
+	PENCOLOR   0        		t(m)Black
+	PENCOLOR   1			t(m)White
+	PENCOLOR   2			t(m)Green
+	PENCOLOR   3			t(m)Violet
+	PENCOLOR   4			t(m)Orange
+	PENCOLOR   5			t(m)Blue
+
+
+.fi b
+PENCOLOR  6  or  PC  6  has a special effect which you can think of as a  "color reversing" effect. When it draws over a blank space, it leaves a line. When it draws over a line drawn by pencolor 6, it erases it.  When the turtle draws over a line of another color, strange effects occur. When it retraces the line, the original colors will be restored.
+.end_keep
+
+Experiment with drawings in several different colors.  To erase any
+line on the screen, just draw over it with the pen set to the
+background color.  If the background color is black, type PENCOLOR 0
+or PC 0 to erase lines.  This is not the same as PENUP.  
+.bp
+.section "bold(Changing Background Colors)"
+
+You can use the   BACKGROUND  command to make the turtle can draw on seven different backgrounds.
+
+.nf l
+	BACKGROUND   0		t(m)Black
+	BACKGROUND   1		t(m)White
+	BACKGROUND   2		t(m)Green
+	BACKGROUND   3		t(m)Violet
+	BACKGROUND   4		t(m)Orange
+	BACKGROUND   5		t(m)Blue
+
+.fi b
+If you use BACKGROUND 6, you will get the sharpest possible lines, but
+the color will vary.
+
+Each  PENCOLOR  command will have the same effect on all backgrounds,  except that only black, white, green or violet can be drawn on a green or violet background, and only black, white, orange and blue can be drawn on an orange or blue background.
+
+Make the turtle draw with different pen colors on different backgrounds. Then change the background colors without erasing the drawing.  When you change the background color after drawing lines with the turtle, the colors of the lines will also be changed in unexpected ways.
+
+Here is something that may surprise you. Copy this line exactly as typed:
+
+REPEAT   10   [ BACKGROUND   RANDOM   6 ]
+
+This makes the background change rapidly 10 times in a row.  Try it again with a number larger than  10.  
+.bp
+.chapter "bold(Drawing Shapes with the Turtle)"	
+
+One of the best ways to use the turtle is to make it draw shapes.
+Later you will learn to teach the computer to draw shapes so that it
+can remember them. You can make the turtle draw complex and
+interesting shapes by combining different shapes that the computer has
+already learned.
+
+.section "bold(Making the Turtle Draw a Square or Rectangle.)"
+
+A square is one of the easiest shapes for the turtle to draw. This is
+because all the sides are the same length, all the turns are the same,
+and there are only four of each.  If you don't already know how much
+to turn the turtle for a "square corner", you may have to experiment,
+or figure it out.  (HINT: RIGHT 360 or LEFT 360 will turn the turtle
+all the way around.  When the turtle draws a square it has to turn all
+the way around in four equal turns. )
+
+A rectangle is like a square, but only the sides opposite to each other are equal.  The angle for each turn is the same, because each corner of a rectangle is a square corner. You can make the turtle draw a lot of different rectangles. Draw each one in a different color.
+
+.section "bold(Making the Turtle Draw Your Initials)"
+
+Another good turtle drawing project is to make the turtle draw initials.
+.sp 7
+.keep
+.section "bold(Drawing 'any old shape')
+
+Sometimes it can be fun to make the turtle draw an unplanned shape,
+just by mixing up turtle commands.  Sometimes the shapes "look like"
+something and sometimes they don't.  Sometimes interesting shapes can
+be made using FORWARD and BACK commands, combined with different
+turns.
+
+Some of these "shapes" make interesting designs when they are repeated.
+.end_keep
+.sp
+.keep
+.section "bold(Harder Shapes - Drawing `Stars' or Triangles)"
+
+Stars can be drawn in the same way the turtle draws a square.  It
+keeps going forward the same amount and turning the same angle.  But
+the angle it turns has to be bigger than a square corner turn.  Here
+is one way to start a star.  Try to finish it:
+
+.nf l
+FORWARD  50
+RIGHT   135
+FORWARD  50
+RIGHT   135
+FORWARD  50
+RIGHT   135
+
+.end_keep
+.fi b
+How many points does this star have?   Many different stars can be drawn by choosing different angles for the "star corner".  Try to draw some of these, or invent some stars of your own.
+.sp 10
+
+If you choose one particular angle for the turn, you will get a
+triangle instead of a star, because the third line will return
+exactly to the turtle's starting place.  (HINT: The turtle has to turn
+right ot left 360 degrees to turn all the way around. When it draws a
+triangle, it turns all the way around in three equal turns.)
+
+.bp
+.chapter "bold(Teaching the Computer a New Command)"
+.section "bold(What is a procedure?)"
+.keep
+
+.fi b
+A procedure is a series of Logo commands that has been given a name
+so that the computer can remember all the steps as one command.  When
+you teach the computer to remember a particular series of steps you
+are defining a procedure.  Suppose you want the turtle to draw a
+square, and type the command, SQUARE.  The computer will print an
+"error message" saying "THERE IS NO PROCEDURE NAMED SQUARE!"  Defining
+a procedure with the name "SQUARE" is telling the computer "how to
+square."
+
+You start defining a procedure by typing TO followed by a name that
+you have chosen. When you do this, the computer changes to edit
+mode. While you are editing, the computer does not carry out your
+commands, but just stores them until you finish editing. Here's what
+you do:
+.nf l
+
+Type   TO   followed by a name.
+Then type each step in order.  
+When your procedure is complete, type  END.
+To stop using the editor, type   <CTRL> - C.
+(Hold down the key marked   <CTRL> and type  C  at the same time.)
+.end_keep
+
+.section "bold(Examples of Simple Procedures - a `Funny Shape' and a `Square')"
+.fi b
+
+Pick one of these examples to try first. Then try the other one. For
+each one, follow the steps listed above. Be sure to type <CTRL> - C
+when you are finished teaching the computer your new command.
+
+.nf l
+TO    FUN		t(m)TO    BOX
+FORWARD    30  t(m)FORWARD    20
+RIGHT    120 t(m)RIGHT    90
+FORWARD    10 t(m)FORWARD    20
+LEFT    90 t(m)RIGHT    90
+BACK    20 t(m)FORWARD    20
+END t(m)RIGHT    90
+		t(m)FORWARD    20
+		t(m)RIGHT    90
+		t(m)END
+.bp
+
+.fi b
+You can use any name that is not already a LOGO command or the name of
+a procedure you have already defined.  The steps of the procedure can
+be any other LOGO commands or procedures.  You can teach the computer
+a procedure for any shape you know how to make the turtle draw. You
+can invent a new shape, by choosing a number of different commands at
+random.
+
+To use the new command, just type its name, FUN or BOX, (followed by
+<RETURN> of course), and the computer will carry out your sequence of
+steps.
+
+Try typing each command,  FUN,  or  BOX,  several times to see what happens.
+
+.section "bold(Making Your Own Procedures.)"
+
+You are now ready to teach the computer to remember any procedures you want.
+
+Make a procedure to draw a large square, a tall skinny rectangle, a triangle, a star, or any other shape you know how to draw.
+
+Once you have taught the computer a new procedure, that procedure can be a subprocedure in another new procedure. For example,
+.nf l
+
+	TO   TOWER
+	BOX
+	FORWARD   20
+	BOX
+	FORWARD   20
+	BOX
+	FORWARD   20
+	BOX
+	END
+.sp 5
+.fi b
+The computer can easily draw the TOWER, since it already knows the
+procedure, BOX.
+.bp
+.chapter "bold(Editing Procedures)"
+
+If you want to change a procedure for any reason, type EDIT or ED
+followed by the procedure name. This will return the computer to edit
+mode, with your procedure displayed on the screen ready for you to
+edit.
+
+.section "bold(Using the Logo Screen Editor)"
+
+Special keys let you make changes or additions to a procedure very
+easily while you are editing or defining it.  To finish using the
+editor, type <CTRL> - C.
+
+bold(Commands to Move the Cursor)
+ 
+.nf L
+	<CTRL> - P			s(m)moves cursor up one line
+
+	<CTRL> - N			t(m)moves cursor down one line
+
+	<     > 			t(m)moves cursor left one space
+
+	<     > 			t(m)moves the cursor right one space
+
+	<CTRL> - A			t(m)moves cursor to beginning of line
+
+	<CTRL> - E			t(m)moves cursor to end of line
+
+
+bold(Editing Commands)
+
+	<CTRL> - D			t(m)erases the character at the cursor.
+
+	<ESC>				t(m)erases the character behind the cursor,	
+				t(m)just as it does when you are typing
+				t(m)normal LOGO commands.
+
+	<CTRL> - K			t(m)"kills" or erases an entire line
+					t(m)to the right of the cursor.
+	
+	<RETURN>                     t(m)creates a new line and moves the cursor 
+                                       t(m)down to the beginning of the new line.
+				t(m)If there is any text to the right
+				t(m)of the cursor it will be moved too.
+
+	<CTRL> - O			t(m)creates a new line at the cursor
+			     t(m)and moves all the other lines down.
+.bp
+.fi b
+
+.section "bold(Ways of Using the Screen)"
+
+So far you have used the screen in two ways:
+
+When you start using the computer, the screen is in nodraw mode.
+You can type words on the entire screen.
+
+When you type DRAW, the computer switches to splitscreen mode.  This
+allows you to see the turtle and four lines of text at the same time.
+
+If you want to see the full turtle screen, type
+
+<CTRL> - F
+
+This is called fullscreen mode.  You can also get the fullscreen
+mode by typing the command FULLSCREEN.
+
+To return to splitscreen mode,  type 
+
+<CTRL> - S
+
+or type the command,  SPLITSCREEN.
+
+Sometimes it is useful to see the entire text screen while you are
+drawing.  (For example, if you want to remember a command you used a
+few miniutes ago, but it no longer appears on the split screen.)  To
+see the full text screen, type
+
+<CTRL> - T
+
+You can return to splitscreen or fullscreen by typing <CTRL> - S or
+<CTRL> - F. Your turtle drawing will not disappear as it would have if
+you had typed NODRAW.
+
+
+More Useful Commands
+.sp
+.nf
+
+CLEARTEXT			s(m)clears all text from the TV screen.
+
+NODRAW			 t(m)clears all text and turtle drawings.
+ND
+
+PRINTOUT (procedure name)			t(m)prints out the procedure.
+PO (procedure name)
+
+POTS			t(m)prints the titles of all procedures.
+			t(m)POTS is short for PRINTOUT TITLES.
+.fi
+.bp
+.chapter "bold(Making Repeating Designs)"
+
+It is possible to make complex designs by making the computer repeat a
+series of steps over and over again.  There are several ways to carry
+out a project of this type.  
+
+.section "bold(Recursion--Making Something Many Times)"
+
+Recursion is a good way to make
+something repeat many times - especially when you don't know exactly
+how many times to repeat it.  Suppose you want to invent your own
+procedure to make the turtle draw a circle.
+
+There is a way to tell the computer to keep repeating something "forever".
+.nf
+.sp
+	TO   CIRCLE
+	FORWARD   1
+	LEFT   1
+	CIRCLE
+	END
+.fi b
+.sp
+When the turtle carries out the command CIRCLE, it goes forward one
+step, turns left one degree, and starts doing CIRCLE again. Then it
+goes forward one step, turns left one degree and starts doing CIRCLE
+again.  And so on... and so on... and so on.
+
+Teach the computer to CIRCLE and see what happens.
+
+Of course there is a "bug."  The turtle never stops!  To make it stop
+you have to press <CTRL> - G.
+.section "bold(Making a Repeating Design Using Recursion)"
+
+The procedure FUN makes a simple turtle design:
+
+.nf l
+.keep
+TO  FUN
+FORWARD  30
+RIGHT  120
+FORWARD  10
+LEFT  90
+BACK  20
+END
+.end_keep
+.fi b
+
+If you teach the computer to FUN, and repeat FUN several times, another design
+begins to appear.  If you make the computer keep repeating these steps
+over and over without stopping an
+interesting design may result.
+
+.nf l
+.keep
+TO  FUNNY
+FORWARD  30		
+RIGHT 120		
+FORWARD  10		
+LEFT  90
+BACK  20
+FUNNY
+END
+.end_keep
+
+.fi b
+FUNNY is the same as FUN except for the last line.  When you type the
+command FUNNY, the computer will draw a shape, then start the
+procedure FUNNY again, draw the same shape, starting from a different
+place, start FUNNY again, etc.  It will keep going, eventually
+retracing the same design unless you stop the computer by typing
+<CTRL> - G.
+
+This way of making a procedure repeat is called recursion.
+.keep
+
+Here are some other examples of recursion:
+
+.nf l
+TO SQUARE	
+FORWARD  20	
+RIGHT  90	
+SQUARE		
+END		
+.end_keep
+.keep
+TO STAR	
+FORWARD 40
+RIGHT 150	
+STAR		
+END
+.end_keep
+
+Try making some recursive procedures of your own.  Change the size of
+the forward step in SQUARE or the angle in STAR.
+
+.section "bold(Making Repeating Designs Using the REPEAT Command)"
+
+The LOGO command REPEAT allows you to repeat a command or list
+of commands as many times as you want.
+
+.nf l
+Examples:
+
+.keep
+REPEAT   7   [  FORWARD  10    BACK  10    RIGHT  20 ]
+REPEAT   3   [  FUN  ]
+REPEAT   4   [  RIGHT  90    FORWARD  20  ]
+REPEAT   15   [  BACKGROUND   RANDOM   6  ]
+.end_keep
+.fi b
+
+REPEAT needs two inputs.  The first input is a number telling how
+many times to repeat something; the second input is a list of instructions.
+The list must be enclosed within square brackets  [   ]  ( <SHIFT> - M  and  <SHIFT> - N ). 
+
+REPEAT can also be used in procedures:
+
+Examples:
+
+.nf l
+.keep
+TO  SQUARE
+REPEAT  4    [ RIGHT  90    FORWARD  20 ]
+END
+.sp 5
+.end_keep
+.keep
+TO FLOWER
+REPEAT  6    [ RCIRCLE   30  RIGHT  60 ]
+END
+.sp 5
+.end_keep
+
+.chapter "bold(File Handling Facilities)"
+
+.section "bold(Reading Your File from Your Disk)"
+
+You should have been assigned a disk on which you can save all the new
+things you teach the computer. You are probably sharing your disk with
+several other people.  It is very important to learn to use your
+disk properly.  It is difficult to damage the computer in any way, but
+if you are not careful, it is possible to damage a disk.
+
+1. Find the LOGO file disk with your name on it.
+
+Next, open the cover of the disk drive, and carefully insert the disk, making sure that the label is on top, and goes into the slot last.
+
+When the disk is inserted all the way, close the cover.
+
+Once your disk is in place, you should probably leave it there until you are finished using the computer.
+
+2. After you write a new procedure and test it to make sure it works,
+you can save it by typing
+	SAVE  "JOHN  (using your own name, of course)
+
+In this way you will save all your procedures as you go along.
+
+3. When you are all finished working, type GOODBYE. This will leave
+the computer's working memory clear for the next user.
+
+4. Open the cover of the disk drive and remove your disk.  Carefully
+put it in its envelope and put it away.
+
+5. When you start using the computer type GOODBYE to clear the computer's
+working memory.  (If a "Welcome to Logo" message is already printed, you don't 
+have to do this.)
+
+.keep
+6. Read your file by typing
+
+	READ  "JOHN   (if your name is John - otherwise type your own name.)
+
+This will return all your old procedures to the computer's working
+memory.  (In order to type the " symbol you will have to press <SHIFT>
+- 2 -that is, hold down the <SHIFT> key while pressing the <2> key.)
+
+
+bold(WARNING!!!  Be sure to READ your file when you start work. If you SAVE new procedures before READing your old ones, you will lose all your old procedures!!!)
+.end_keep
+
+You may check to see that your file is properly stored on the disk by typing:
+
+CATALOG
+
+The computer will now print a list of all the files stored on the
+disk.  You will see your new file among them.  It will be called
+JOHN.LOGO.  The .LOGO after JOHN is the computer's way of remembering
+that "JOHN is the name of a Logo file.  Since all your files will be
+Logo files, you only have to remember the name "JOHN.
+
+You can choose any name you like for a file name.  If you are not used
+to computer files it might be a good idea to use your own name at
+first.
+
+.section "bold(Erasing Files From a Disk)"
+
+To erase a file from a disk, type:
+
+ERASEFILE "JOHN
+
+When you erase a file, you only change what is on the disk.  The
+information in the computer's working memory is not changed.  It is
+important to separate the disk memory and the computer's working
+memory in your thinking.  File commands SAVE and READ transfer
+information between the working memory and the disk, without changing
+the information.  ERASEFILE erases information from the disk, without
+changing the working memory.
+
+bold(WARNING:  Be sure not to erase a file that you still want.  An)
+bold(error in erasing files can be a disaster because you can lose)
+bold(information it may have taken you a long time to create!)
+
+.section "bold(Saving Logo Pictures as Files on a Disk)"
+
+Logo commands SAVEPICT, READPICT and ERASEPICT can be used to save
+pictures on your disk, read them from the disk, or erase a picture
+file from a disk.
+
+To save a picture, you must have a Logo turtle drawing on the TV
+screen.  Choose a name for the picture and type:
+
+.nf
+SAVEPICT "BUTTERFLY       or any name you choose.
+
+.fi b
+If you then type CATALOG, you will see that there is a file called
+BUTTERFLY.PICT stored on the disk.  The picture on your screen will
+not be changed by SAVEPICT.
+
+To read a picture from the disk, type:
+
+READPICT "BUTTERFLY
+
+This will cause the computer to draw the picture (the one previously
+saved with the name "BUTTERFLY) on the TV screen.  Any picture that
+had been there will be erased as the new one is drawn.
+
+Picture files use up a lot of disk memory.  You may need to erase old
+pictures in order to have roomm to store new ones.  The command
+
+
+ERASEPICT "BUTTERFLY
+
+will erase the picture file from the disk.
+
+.chapter "bold(Using Subprocedures)"
+.section "bold(What is a Subprocedure?)"
+
+.fi b
+When you use a procedure that you have defined as part of something
+else, it is called a "subprocedure".  The procedure BOX, used as
+part of TOWER, on page 12, is an example of a subprocedure.  
+
+Using subprocedures makes it possible to draw a very
+complicated shape more easily than by using one long complicated
+procedure to draw the shape.  Subprocedures can be used as "building
+blocks" for new shapes, and they can be used in planning complicated
+designs.
+
+.section "bold(Using Subprocedures as Building Blocks.)"
+.fi b
+
+Turtle procedures which draw shapes can be used to build more complex 
+shapes.  Here are some examples.
+
+You can start with two procedures.  One draws a box, and the other a triangle:
+
+.nf L
+.keep
+TO    BOX t(m)TO    TRIANGLE
+FORWARD    30 t(m)LEFT    90
+RIGHT    90 t(m)FORWARD    30
+FORWARD    30 t(m)RIGHT    120
+RIGHT    90 t(m)FORWARD    30
+FORWARD    30 t(m)RIGHT    120
+RIGHT    90 t(m)FORWARD    30
+FORWARD    30 t(m)END
+END
+.end_keep
+
+.fi b
+You can build other designs from them, by repeating them
+and combining them in different ways. 
+
+.nf L
+.keep
+For example,
+
+TO    WINDOW
+BOX
+BOX
+BOX
+BOX
+END
+.sp 6
+.end_keep
+
+.keep
+Putting a box and a triangle together, you can construct a house:
+
+
+
+TO   HOUSE
+TRIANGLE
+RIGHT   30
+BOX
+END
+.sp 4
+.end_keep
+
+.keep
+and, repeating HOUSE four times,
+.sp 4
+TO   HOUSE4
+HOUSE
+HOUSE
+HOUSE
+HOUSE
+END
+.sp 4
+.end_keep
+
+.bp
+.section "bold(Using Subprocedures for Planning a Project.)"
+
+.keep
+.fi b
+Here is an example of a planned project.  You might want
+the turtle to draw a "person" that looked something
+like this:
+.sp 10
+.end_keep
+You could probably draw the person using a long series of turtle
+commands-- FORWARDs, BACKs, RIGHTs and LEFTs, but you could easily
+make a mistake.  For this type of project it is usually easier to make
+the drawing using subprocedures and a superprocedure named PERSON.
+
+.nf L
+.keep
+TO    PERSON
+LEGS
+BODY
+ARMS
+NECK
+HEAD
+END
+.end_keep
+
+.fi b
+Teaching the computer five different procedures might seem to be
+complicated, but this method offers several advantages.  First, you
+can start by planning your whole project in advance, so you know
+exactly what you have to do to accomplish your goal.  Second, you can
+try to solve a series of small problems, one at a time, rather than
+one big problem.  Third, when you want to change one part of your
+design while leaving the rest of it the same, it will be easier to
+decide which commands to change.
+.keep
+
+One subprocedure, VEE, can be used to draw both the arms and the legs
+of the person.
+.nf L
+
+TO    VEE
+RIGHT    45
+FORWARD    10    BACK    10
+LEFT    90
+FORWARD    10    BACK    10
+RIGHT    45
+END
+.end_keep
+.keep
+
+Now  use VEE to make procedures for the arms and the legs.
+
+TO    ARMS t(m)ARMS uses VEE directly
+VEE
+END
+.end_keep
+
+.keep
+TO    LEGS t(m)LEGS reverses the turtle's direction before
+RIGHT    180		t(m)using VEE, then reverses the turtle again so that
+VEE		t(m)it ends up where it started.
+RIGHT    180
+END
+.end_keep
+
+.keep
+.fi b
+BODY and NECK are just straight lines.  After experimenting, you might
+decide to try  these sizes:
+
+.nf L
+TO    BODY t(m)TO    NECK
+FORWARD    15 t(m)FORWARD    5
+END t(m)END
+.end_keep
+.keep
+
+To draw the head, you can use a circle procedure.
+
+TO    HEAD
+LEFT    90
+RCIRCLE    5
+RIGHT    90
+END
+.end_keep
+
+.fi b
+Now, when you type the command, PERSON, you should get this result:
+.bp
+.chapter "bold(Project Ideas)"
+
+.section "bold(Project Ideas  Using Recursion and REPEAT)"
+
+.bp
+.section "bold(Project Ideas Using Subprocedures as Building Blocks.)"
+
+.bp
+.section "bold(Project Ideas for Using Subprocedures in Planning.)"
+
+.bp
+.section "bold(More Project Ideas)"
+.bp
+.bp
+.bp
+.bp
+.chapter "bold(Glossary of Logo Terminology)"
+
+.ls 1
+bold(arc)
+.br
+.in 5
+2
+Part of a circle. Logo procedures RARC and LARC draw quarter circular arcs.
+.in 0
+0
+
+bold(background color)
+.br
+.in 5
+2
+One of six background colors for turtle drawings. Controlled by the Logo command BACKGROUND.
+.in 0
+0
+
+bold(boundary)
+.br
+.in 5
+2
+Edge of the turtle's territory. The turtle cannot go beyond the boundary. If commanded to do so, an OUT OF BOUNDS error message results.
+.in 0
+0
+
+bold(bug)
+.br
+.in 5
+2
+Any mistake or error in a computer program or  typed command.
+.in 0
+0
+
+bold(character)
+.br
+.in 5
+2Any symbol which can be typed including numbers, letters, punctuation marks, space, etc.
+
+.in 0
+0bold(circle)
+.br
+.in 5
+2A shape drawn by making the turtle continue going forward a little and turning a little, until it returns to its starting position.
+
+.keep
+.in 0
+0bold(command)
+.br
+.in 5
+2A word that causes the computer to carry out some action. Commands
+that are part of the Logo language are called primitives.  Commands
+that are created by users are called procedures.
+.end_keep
+.in 0
+
+0bold(computer language)
+.br
+.in 5
+2A code for translating typed characters into electronic signals that
+can be "understood" by the computer.
+
+.in 0
+0bold(cursor)
+.br
+.in 5
+2The blinking square on the TV screen that shows where the next character will be printed on the screen.
+
+.keep
+.in 0
+0bold(debugging)
+.br
+.in 5
+2The process of finding, identifying, and resolving bugs in computer programs or commands.
+.end_keep
+
+.in 0
+0bold(disk or diskette)
+.br
+.in 5
+2A round magnetic storage device for long term storage of electronic information for use by a computer. Also called mini-floppy disk or mini-floppy diskette.
+
+.in 0
+0bold(disk drive)
+.br
+.in 5
+2An electro-mechanical device that receives electronic signals from the computer and stores information magnetically on a disk, and reads magnetic information from a disk and sends it electronically to the computer.
+
+.in 0
+0bold(edit mode)
+.br
+.in 5
+2The condition of the computer when it is storing procedures and text without executing them, so that procedures can be defined or changed.
+
+.in 0
+0bold(editor)
+.br
+.in 5
+2A special program used by Logo, to allow the typing and changing of Logo procedures without executing them.
+
+.in 0
+0bold(erasefile """"john)
+.br
+.in 5
+2Erases a file names "JOHN from the disk.
+
+.in 0
+bold(erasepict """"butterfly)
+.br
+.in 5
+2Erases a picture file named "BUTTERFLY from the disk.
+
+.in 0
+0bold(error message)
+.br
+.in 5
+2A statement printed by the computer explaining why it cannot carry out a command.
+
+.in 0
+0bold(file)
+.br
+.in 5
+2A collection of information stored on a disk under a common name.
+
+.in 0
+.keep
+0bold(file name)
+.br
+.in 5
+2The name of a disk file, usually a user's name for beginning Logo users. A file name is always preceeded by  " , as in   "JOHN  or  "SUPER.
+.end_keep
+
+.in 0
+0bold(home)
+.br
+.in 5
+2Center of the turtle's screen. Starting position of the turtle when the DRAW command is given.
+
+.in 0
+0bold(input)
+.br
+.in 5
+2Additional information needed by a command or procedure. It can be a
+number as in FORWARD 100, a word as in READ "JOHN, or a list as in
+REPEAT 20   [ SQUARE RIGHT 18 ].  A command or procedure can have
+several inputs.
+
+.keep
+.in 0
+0bold(keyboard)
+.br
+.in 5
+2Device used to input commands and other information to the computer by typing individual characters.
+.end_keep
+
+.in 0
+0bold(list)
+.br
+.in 5
+2A Logo object consisting of one or more words or numbers or lists,
+surrounded by square brackets.   For example [ SQUARE RIGHT 18 ], or [
+HELLO ], or       [ A [ BC ] ].
+
+.in 0
+0bold(Logo command mode)
+.br
+.in 5
+2The condition of the computer when it is ready to carry out a Logo command. A   ?   is used as a prompt to indicate to the user that the computer is ready for a new Logo command.
+
+.in 0
+0bold(pen state)
+.br
+.in 5
+2The state of the turtle's pen includes whether it is up or down, and what color it is drawing with.
+
+.in 0
+0bold(primitive)
+.br
+.in 5
+2A command that is built in to the Logo language and cannot be changed.
+
+.in 0
+0bold(printout or PO)
+.br 
+.in 5
+2The command used to print a listing of all the commands in a procedure or all procedures. (Similar to the LIST command in BASIC but not the same as the LIST command in Logo.)
+
+.in 0
+.keep
+0bold(procedure)
+.br
+.in 5
+2A Logo command defined by a user, with its own unique name, and a set of instructions made up of other Logo commands and procedures.
+.end_keep
+
+.in 0
+0bold(prompt)
+.br
+.in 5
+2The  ?  symbol used in Logo to indicate that the computer is ready to accept a new command.
+
+.in 0
+0bold(radius)
+.br
+.in 5
+2The distance from the center of a cricle to its edge. In Logo procedures RCIRCLE, LCIRCLE, RARC and LARC, the input number specifies the radius of the resulting circle or arc.
+
+.in 0
+bold(read """"john)
+.br
+.in 5
+2Reads the information in a disk file named "JOHN, and places it in
+the computter's working memory.
+
+.in 0
+bold(readpict """"butterfly)
+.br
+.in 5
+2Reads a picture file named "BUTTERFLY from the disk, and displays
+that picture on the TV screen.
+
+.in 0
+0bold(recursion)
+.br
+.in 5
+2A process in which a procedure calls itself as a subprocedure.
+
+.in 0
+bold(save """"john)
+.br
+.in 5
+2Creates a file named "JOHN on the disk, and saves the information
+currently in the computer's working memory in that disk file.
+
+.in 0
+bold(savepict """"butterfly)
+.br
+.in 5
+2Creates a picture file called "BUTTERFLY on the disk, and stores a
+turtle picture currently on the screen, in that file.
+
+.in 0
+0bold(screen modes)
+.br
+.in 5
+2The condition of the screen, first, either DRAW or NODRAW. Second,
+in DRAW mode, either fullscreen, splitscreen or text screen.
+Controlled by the keys <CTRL> - F, <CTRL> - S, and <CTRL> - T.
+
+.in 0
+0bold(square corner)
+.br
+.in 5
+2A 90 degree turtle turn, needed to draw a square, rectangle and many other shapes. Corresponds to the term "right angle".
+
+.in 0
+0bold(stored memory)
+.br
+.in 5
+2The contents of the computer's working memory stored semi-permanently on a disk.
+
+.in 0
+0bold(subprocedure)
+.br
+.in 5
+2A procedure which is used in the definition of another procedure. In Chapter 6 of the Student Activities Booklet, SQUARE is a subprocedure of TOWER.
+
+.in 0
+0bold(superprocedure)
+.br
+.in 5
+2A procedure which is typed at top-level to carry out a project. In Chapter 6 of the Student Activities Booklet, PERSON is a superprocedure. 
+
+.in 0
+0bold(top-level)
+.br
+.in 5
+2The condition in which the user is typing commands and is in direct control of the computer.
+.keep
+
+.in 0
+0bold(turtle)
+.br
+.in 5
+2A "robot" that moves around on a TV screen and can be made to draw lines. Its position on the TV screen is indicated by a triangle. The name was derived from a round robot that moves around on the floor.
+.end_keep
+
+.in 0
+.keep
+0bold(turtle state)
+.br
+
+.in 5
+2The total current characteristics and position of the turtle
+including its x and y coordinates, heading, whether its pen is up or
+down, whether it is shown or hidden, the color of its pen and the
+color of the background.  For many purposes, only the turtle's
+position and heading need to be considered, the other characteristics
+being constant or unimportant to the particular problem being solved.
+.end_keep
+
+.in 0
+0bold(working memory or workspace)
+.br
+.in 5
+
+2The memory available to the user for his own procedures; sometimes the terms refer to the contents of the computer's working memory.
+.in 0
+0

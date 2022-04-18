@@ -1,0 +1,360 @@
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 3 Helvetica12b
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi l
+bold(Talking to the Turtle)
+.ls 2
+.chapter "bold(Basic Turtle Commands)"
+.nf L
+The turtle is an object that can make drawings on a special pad. 
+
+To talk to the turtle type the command:
+
+PAD				s(m)This makes the computer draw a white pad
+			t(m)on the screen and place the turtle at its center.
+
+Here are some commands that the Turtle understands:
+
+.nf L
+FORWARD and BACK 		t(m)moves the turtle forward or back the number of
+or FD and BK			t(m)spaces you specify.  If the turtle's pen is
+				t(m)down, it will draw a line as it moves.  
+
+RIGHT and LEFT 			t(m)turns the turtle right or left the number of	
+or RT and LT				t(m)degrees you specify.
+
+CLEARSCREEN 			t(m)clears both the text screen and the turtle's
+or CS 				t(m)pad, and replaces the turtle in the center of
+				t(m)the pad, facing up.
+.bp
+Examples:
+.keep
+
+FD    20 t(m)moves the turtle forward  20  steps
+RT    45 t(m)turns the turtle right  45  degrees 
+BK    15 t(m)moves the turtle back  15  steps
+LT    45 t(m)turns the turtle left  45  degrees
+CS t(m)clears the text screen and the pad, restarting
+t(m)the turtle in the center of the pad
+.end_keep
+
+Things to try:
+
+.fi b
+Experiment with the turtle.  Type FD, BK, RT and LT, with a lot of
+different inputs.  Try very large and very small inputs.  Here are
+some more suggestions of things to do with the turtle:
+
+.nf L
+Make the turtle draw a square.  Or a rectangle.  Or a triangle.
+Make an unplanned drawing using a variety of turtle commands.
+Find the size of the turtle's screen.
+Pick a point on the screen and move the turtle there.
+.bp
+.chapter "bold(Teaching the Computer a New Turtle Command)"
+.fi b
+You can teach the computer to remember a particular series of steps
+by defining a procedure.  Type   TO   followed by a name that you have
+chosen.  Then type each step in order.  When you are finished, type  END.
+
+.nf L
+Examples:
+
+	TO    FUN		t(m)TO    BOX
+	FD    20  t(m)FD    20
+	RT    120 t(m)RT    90
+	FD    8 t(m)FD    20
+	LT    35 t(m)RT    90
+	BK    15 t(m)FD    20
+	END t(m)RT    90
+		t(m)FD    20
+		t(m)RT    90
+		t(m)END
+
+.fi b
+You can use any name that is not already a LOGO command, and the steps of the
+procedure can be any other LOGO commands.  When you type the command, FUN or
+BOX, the computer will carry out your sequence of steps.
+
+Things to try:
+
+.nf L
+Type the command, FUN, several times.
+.fi b
+Teach the computer to draw a smaller square, a rectangle, triangle, or any
+other shape you know how to draw.
+.br
+Invent a new shape, by choosing a number of different commands at random.
+
+If you want to change a procedure for any reason, you can refer to Booklet II,
+Section xx, Using The LOGO Editor.
+.bp
+.chapter "bold(How the Turtle Uses Its Pen)"
+When you first type  PAD, the Turtle always starts with its pen down.  This
+means that it draws lines whenever it is commanded to move forward or back.
+
+.nf L
+You can change what the turtle's pen does with these commands if you type
+
+PENUP    or    PU t(m)the turtle will not draw lines when it moves.
+PENERASE    or    PE t(m)the turtle will erase existing lines
+	t(m)as it moves.
+PENREVERSE  t(m)the turtle will erase any existing lines, and,
+		t(m)if there is no line already on the screen, it
+		t(m)will draw one.
+PENDOWN    or    PD t(m)the turtle will draw lines whenever it moves.
+.bp
+.chapter "bold(Tools)"
+.fi b
+Sometimes a procedure can be a tool for accomplishing something else.
+
+.section "Procedures for drawing 'circles' and 'arcs'
+You can teach the computer a set of procedures that draw "circles" and "arcs."
+
+.nf L
+RCL    20  t(m)draws a circle of radius 20, curving to the right.
+
+LCL    10 t(m)draws a circle of radius 10, curving to the left.
+
+RQC    20 t(m)draws a quarter circle of radius 20, curving 
+	  t(m)to the right.
+
+LQC    10 t(m)draws a quarter circle of radius 10, curving
+	  t(m)to the left.
+
+.fi b
+RCL and LCL draw 12-sided polygons that look a lot like circles.  You might be 
+able to make a smoother circle procedure yourself, by using smaller angles,
+but RCL and LCL look enough like circles to be useful for most turtle drawings.
+
+These procedures can be used to draw circles and are curving to the right.
+
+.nf L
+.keep
+TO    RCL    R t(m)RCL stands for "right circle"
+REPEAT    12    [RCP    :R] t(m)Twelve repeats of RCP make a complete "circle"
+END				t(m)of radius  :R
+.end_keep
+
+.keep
+TO    RCP    R  t(m)RCP draws one "piece of a circle" curving to the 
+RT    15       t(m)right.  :R stands for the radius of the circle.
+FD    :R/2
+RT    15
+END
+.end_keep
+
+.keep
+TO    RQC   R t(m)RQC stands for "right quarter circle"
+REPEAT    3    [RCP   :R]
+END
+.end_keep
+
+.fi b
+These procedures can be used to draw "circles" and "arcs" curving to the left:
+
+.nf L
+.keep
+TO    LCL    R t(m)This draws a "circle" of radius :R, 
+REPEAT    12    LCP  :R		t(m)curving to the left.
+END
+.end_keep
+
+.keep
+TO    LCP   R t(m)LCP draws one piece of a circle curving to the left.
+LT    15
+FD    :R/2
+LT    15
+END
+.end_keep
+
+
+
+.keep
+TO    LQC    R t(m)This draws a quarter circle of radius :R,
+REPEAT    3    LCP    :R		t(m)curving to the left.
+END
+.end_keep
+.bp
+.chapter "bold(Building Complex Shapes from Subprocedures)"
+.section "Using shapes as 'building blocks.'"   
+.fi b
+
+Turtle procedures which draw shapes can be used to build up more complex 
+shapes.  Here are some shapes invented by a girl named Kathy.
+
+Kathy started with two procedures.  One draws a box, and the other a triangle:
+
+.nf L
+.keep
+TO    BOX t(m)TO    TRIANGLE
+FD    30 t(m)LT    90
+RT    90 t(m)FD    30
+FD    30 t(m)RT    120
+RT    90 t(m)FD    30
+FD    30 t(m)RT    120
+RT    90 t(m)FD    30
+FD    30 t(m)END
+END
+.end_keep
+
+.fi b
+She found that she could build other designs from them, by repeating them
+and combining them in different ways.
+.nf L
+.keep
+For example,
+TO    WINDOW
+BOX
+BOX
+BOX
+BOX
+END
+.end_keep
+
+and
+
+.keep
+TO    BUTTERFLY
+TRIANGLE
+TRIANGLE
+END
+.end_keep
+
+and
+.keep
+TO    6BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+BUTTERFLY
+END
+.end_keep
+
+.fi b
+Putting a box and a triangle together, Kathy constructed a house:
+
+.nf L
+.sp 8
+HOUSE
+and, repeating HOUSE four times,
+.sp 8
+HOUSE4
+
+.fi b
+Then she decided to put HOUSE4 and 6BUTTERFLY together, to make a new design,
+
+.nf L
+.keep
+TO    HB46
+HOUSE4
+6BUTTERFLY
+END
+.end_keep
+
+.fi b
+After seeing HB46 Kathy thought it looked "something
+like a spider," so she added some circles to make a SPIDER procedure.
+
+.nf L
+.keep
+TO    SPIDER
+HB46
+RCL    16
+LCL    16
+RCL    8
+LCL    8
+BK    15
+RCL    4
+LCL    4
+END
+.end_keep
+
+.section "Building a planned shape from pieces."
+
+.fi b
+A student named Bill wanted the turtle to draw a "person" that looked something
+like this:
+.sp 10
+He could have drawn the person by using a long series of turtle commands--
+FORWARDs, BACKs, RIGHTs and LEFTs.  He decided that it would be simpler
+to solve the problem using subprocedures, so he taught the computer a
+superprocedure which he named PERSON.
+
+.nf L
+.keep
+TO    PERSON
+LEGS
+BODY
+ARMS
+NECK
+HEAD
+END
+.end_keep
+
+.fi b
+Note:  Teaching the computer five different procedures might seem to be
+complicated, but this method offered several advantages.  First, Bill 
+started by planning his whole project in advance, so he knew exactly what
+he had to do to accomplish his goal.  Second, he was able to solve a series of
+small problems, one at a time, rather than one big problem.  Third, when he
+wanted to change one part of his design while leaving the rest of it the same,
+it was easy to decide which commands to change.
+
+Bill noticed that the person's arms and legs were the same shape, so
+he made a subprocedure, VEE, to draw them.
+
+.nf L
+.keep
+TO    VEE
+RT    45
+FD    10    BK    10
+LT    90
+FD    10    BK    10
+RT    45
+END
+.end_keep
+
+Now he used VEE to make procedures for the arms and the legs.
+
+.keep
+TO    ARMS t(m)ARMS used VEE directly
+VEE
+END
+.end_keep
+
+.keep
+TO    LEGS t(m)LEGS reversed the turtle's direction before
+RT    180		t(m)using VEE, then reversed the turtle again so that
+VEE		t(m)it was back where it started.
+RT    180
+END
+.end_keep
+
+.fi b
+BODY and NECK were just straight lines.  After experimenting, Bill decided
+on these sizes:
+
+.nf L
+.keep
+TO    BODY t(m)TO    NECK
+FD    15 t(m)FD    5
+END t(m)END
+.end_keep
+
+To draw the head, Bill used a circle procedure.
+
+.keep
+TO    HEAD
+LT    90
+RCL    5
+RT    90
+END
+.end_keep
+
+Now, when he typed the command, PERSON, he got this result:

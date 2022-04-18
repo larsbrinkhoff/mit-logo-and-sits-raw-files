@@ -1,0 +1,389 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.tabfnt 2
+.ss
+.adjust
+.chap 2
+.he1
+Betsy
+.he2
+Horse Project
+
+12.  Betsy0
+
+Betsy is a slow, methodical student who tended to work on long
+projects, each lasting for a number of class periods.  Although she was
+quiet, and rarely asked for help in her work, she responded well to
+suggestions from her teacher and once having acquired a new idea she
+was usually able to make use of it in different contexts.   Betsy is 
+considered to be below average in overall academic ability.  Her most
+recent achievment test scores place her in 32nd percentiel, when
+compared to national norms.  Our presentation of Betsy's work focuses on
+examples of her major projects.
+
+11. Betsy's Horse Project
+
+0Betsy's first project was to draw a horse, using the computer.  In the
+course of working on this project, Betsy learned to estimate angles and
+distances with the TURTLE, to make use of 90 degree angles; to draw
+rectangular shapes; and to make use of right/left reversibility.  In
+the area of programming she learned to write procedures to use
+subprocedures to draw different parts of her horse, and to write a
+superprocedure to put the entire project together.
+
+.block 26
+.sp 24
+.ce
+Figure 2.1
+
+.NOFILL
+.block 6
+TO HORSE	HORSE is a superprocedure
+1 BODY		which draws the entire horse
+2 HEAD
+3 TAIL
+4 LEG
+5 SEE
+END
+
+.BLOCK 11
+TO BODY		BODY draws a rectangle to represent
+10 FORWARD 90	the horse's body
+20 RIGHT 90
+30 FORWARD 90
+40 FORWARD 90
+50 RIGHT 90
+60 FORWARD 90
+70 RIGHT 90
+80 FORWARD 90
+90 FORWARD 90
+END
+
+.BLOCK 16
+TO HEAD		HEAD draws the head and neck of
+10 RIGHT 63	the horse
+20 FORWARD 180
+30 LEFT 63
+40 FORWARD 90
+50 RIGHT 90
+60 FORWARD 20
+70 FORWARD 10
+80 RIGHT 90
+90 FORWARD 90
+100 FORWARD 40
+110 RIGHT 63
+120 FORWARD 90
+130 FORWARD 20
+140 LEFT 60
+END
+
+.block 9
+TO TAIL
+10 PENUP FORWARD 170
+20 LEFT 63	TAIL moves the TURTLE over from
+30 PENDOWN	where the neck finishes, and draws
+40 FORWARD 40	the horse's tail
+50 RIGHT 63
+60 RIGHT 90
+70 FORWARD 90
+END
+
+.block 16
+TO LEG		LEG moves the TURTLE from where
+10 RIGHT 90	the tail finishes, and draws the
+20 PENUP	horse's rear leg
+30 FORWARD 20
+40 LEFT 90
+50 FORWARD 30
+60 RIGHT 90
+70 FORWARD 10
+80 LEFT 90
+90 PENDOWN
+100 FORWARD 90
+110 RIGHT 90
+120 FORWARD 20
+130 RIGHT 90
+140 FORWARD 90
+END
+
+.block 12
+TO SEE		SEE moves the TURTLE over to
+10 LEFT 90	draw the front leg
+20 PENUP
+30 FORWARD 90
+40 LEFT 90
+50 PENDOWN
+60 FORWARD 90
+70 RIGHT 90
+80 FORWARD 20
+90 RIGHT 90
+100 FORWARD 90
+END
+
+.adjust
+Having already called one procedure LEG, Betsy chose a miscellaneous
+name, SEE, for the second leg.  Since she used the same subprocedure to
+move the TURTLE over, and to draw each feature, the same subprocedure LEG,
+could not be used again to draw the second legs.
+
+.he2
+Geometric Designs
+.block 5
+12.2  Geometric Designs Using Arcs
+
+0Betsy spent six class periods making a series of designs with
+quarter arcs.  She enjoyed the effect made by alternating left and
+right arcs.  Her procedure, BOX, drew the largest series of four
+alternating arcs that would fit on the screen without producing an "OUT
+OF BOUNDS" message:
+
+.NOFILL
+.block 20
+TO BOX			TO JIMMY
+10 RARC 49		10 BOX
+20 LARC 49		20 LEFT 90
+30 RARC 49		30 LEFT 90
+40 LARC 49		40 BOX
+END			END 
+.sp 12
+.SPREAD
+/Figure 2.2//FIGURE 2.3
+
+
+.adjust
+Her procedure, JIMMY, made the TURTLE retrace its steps so that it
+returned to its point of origin.  When she repeated the same process
+four times, to make a symmetrical design, KATHY, she gave each of her
+four subprocedures a different name.  At this point she followed the
+same pattern of subproceduralization that she had in her horse project:
+each part of the design had its own function, and hence its own name.
+While she was consciously repeating the same process four times to
+make the overall design, she was not yet comfortable with the idea of
+repeating the same procedure four times -- although that had been
+suggested by the teacher.
+.page
+.NOFILL
+TO KATHY	TO JIMMY	TO KARL
+10 JIMMY	10 BOX		10 BOX
+20 KARL		20 LEFT 90	20 LEFT 90
+30 SUSAN	30 LEFT 90	30 LEFT 90
+40 LAURA	40 BOX		40 BOX
+END		END		END
+
+TO SUSAN		TO LAURA
+10 RIGHT 90		10 BOX
+20 BOX			20 LEFT 90
+30 LEFT 90		30 LEFT 90
+40 LEFT 90		40 BOX
+50 BOX			END
+END
+
+
+.ce
+Figure 2.4:  Kathy
+.page
+.adjust
+Betsy's next design was made after a period of experimentation with
+repeating BOX, rotation, BOX, rotation, ...  This time she made a
+subprocedure, RAY, consisting of BOX and a rotation, and found that
+repeating RAY nine times produced a "sun".
+
+.nofill
+.block 28
+TO RAY		TO SUN
+10 BOX		10 LEFT 130
+20 LEFT 180	20 PENUP
+30 RIGHT 20	30 FORWARD 180
+END		40 RIGHT 130
+		50 PENDOWN
+		60 REPEAT [RAY] 9
+		END
+.sp 18
+.ce
+Figure 2.5
+
+.adjust
+Lines 10-50 of SUN are needed to move the TURTLE over so that the
+entire design appears on the screen.  The design is drawn by line 60:
+REPEAT [RAY] 9.
+
+Next, Betsy wanted to make suns of different sizes.  She learned the
+syntax for using variables, and rewrote her procedures:
+
+.nofill
+.block 6
+TO BOX2 :SIZE	TO RAY2 :SIZE	TO SUN2 :SIZE
+10 RARC :SIZE	10 BOX2 :SIZE	10 REPEAT [RAY2 :SIZE] 9
+20 LARC :SIZE	20 LEFT 180	END
+30 RARC :SIZE	30 RIGHT 20
+40 LARC :SIZE	END
+END
+
+.adjust
+Having defined a variable sun, Betsy set out to make a "sky" full of
+stars.  Her design was limited to two stars, by the memory limitations
+of the display computer.  Betsy's superprocedure, BUD, which draws the
+sky, uses the subprocedure SUN2, twice.
+
+.nofill
+.block 28
+TO BUD
+10 PENUP
+20 LEFT 90
+30 FORWARD 180
+40 RIGHT 180
+50 PENDOWN
+60 FORWARD 370
+70 LEFT 120
+80 PENUP
+90 FORWARD 90
+100 PENDOWN
+110 SUN2 10
+120 PENUP
+130 BACK 20
+140 LEFT 120
+150 RIGHT 45
+160 RIGHT 10
+170 FORWARD 180
+180 RIGHT 90
+190 FORWARD 70
+200 PENDOWN
+210 SUN2 10
+END
+.ri
+Figure 2.6
+
+.adjust
+.he2
+Recursive Projects
+.block 5
+12.3  Recursive Projects
+
+0For a few periods, Betsy experimented with randomly creating
+geometric designs by using recursion.  ABC and SWING were two designs
+which she liked well enough to make printed copies:
+
+.nofill
+.block 25
+TO ABC		TO SWING
+10 FORWARD 90	10 FORWARD 50
+20 RIGHT 90	20 LEFT 40
+30 FORWARD 180	30 SWING
+50 LEFT 180	END
+60 FORWARD 40
+70 LARC 20
+80 ABC
+END
+.sp 14
+.ce
+Figure 2.7
+
+.adjust
+This led rather naturally to making a series of designs using POLY, and
+exploring the relation betweeen the angle inputs to POLY, and the
+resulting shape.  These explorations, and designs made using POLY
+occupied another few classes.
+
+.he2
+Debugging a Person
+.block 5
+12.4  Debugging a Person
+
+0Near the end of the series of classes, Betsy was asked to debug a
+set of deliberately buggy procedures, designed to draw a person.  She
+was faced with the problem of debugging a set of subprocedures which
+drew a figure like this:
+
+.block 15
+.sp 13
+.ce
+Figure 2.8
+
+Betsy had no difficulty getting the arms oriented correctly.  She did
+have difficulty positioning the TURTLe to draw the head, however.
+Rather than make use of the standard "fix" of rotating the turtle 90
+degrees before drawing the head.  Betsy used a more elaborate process
+of moving the TURTLE upward and to the left before starting to draw the
+head.
+
+.block 20
+.sp 16
+.spread
+/Figure 2.9a//Figure 2.9b
+.ce
+Figure 2.9
+
+The resulting figure, and the procedures which were used to draw it are
+shown below.
+
+.nofill
+.block 34
+TO PERSON	TO ARMS
+10 BOD		10 RIGHT 180
+20 LEGS		20 FORWARD 60
+30 ARMS		30 RIGHT 90
+40 HEAV		40 RIGHT 45
+END		50 FORWARD 30
+		60 BACK 30
+TO BOD		70 RIGHT 90
+10 FORWARD 20	80 FORWARD 30
+20 BACK 80	90 FORWARD 30
+END		100 RIGHT 90
+		110 RIGHT 90
+TO LEGS		120 LEFT 45
+10 RIGHT 180	END
+20 LEFT 45
+30 FORWARD 40		TO HEAV
+40 BACK 40		10 FORWARD 30
+50 RIGHT 90		20 PENUP
+60 FORWARD 40		30 LEFT 90
+70 BACK 40		40 FORWARD 20
+80 LEFT 45		50 RIGHT 90
+END			60 FORWARD 25
+			70 PENDOWN
+			80 RCIRCLE 30
+			END
+.SP 8
+.ce
+Figure 2.4.10
+
+.adjust
+Betsy's work debugging person was followed by a recursive design, which
+produced a string of overlapping figures,
+
+.nofill
+.block 4
+TO PEOPLE
+10 PERSON
+20 PEOPLE
+END
+
+.adjust
+and a symmetrical design drawn by arranging four PERSONs in a kind
+of square:
+
+.nofill
+.block 20
+TO PERSO
+10 PERSON
+20 RIGHT 90
+30 PENUP
+40 FORWARD 90
+50 PENDOWN
+60 PERSON
+70 RIGHT 90
+80 PENUP
+90 FORWARD 90
+100 PENDOWN
+110 PERSON
+120 RIGHT 90
+130 PENUP
+140 FORWARD 90
+150 PENDOWN
+160 PERSON
+END
+
+.ce
+Figure 2.11

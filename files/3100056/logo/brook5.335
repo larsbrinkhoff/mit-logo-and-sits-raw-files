@@ -1,0 +1,658 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.ss
+.chap 2
+.adjust
+.he1
+Learning Styles
+.he2
+Kathy
+.ce
+12. Learning Styles in the LOGO Environment
+                        
+0In this chapter and in Chapter 3 which deals with "exceptional"
+students, we present brief summaries of the learning experiences of
+several of our experimental subjects.  In presenting the different
+learning processes of several individuals we describe varied
+approaches to geometry, computer programming, choice of
+projects, planning and debugging and problem solving that are available
+to students of LOGO.  Each summary has been chosen to illustrate a
+particular approach to LOGO.  The work of these students and of the
+rest of our experimental sample is described more fully in Part III of
+this report, in which detailed, comprehensive profiles of the
+work of each of our sixteen subjects are presented.
+
+We present here a summary of the experiences of four students, Kathy,
+Deborah, Donald and Kevin.
+Kathy specialized in a "bottom-up"
+approach, building up complex designs from a set of modular
+subprocedures.  Deborah also made use of a "bottom-up" approach
+although hers was based on exploring the effects of long sequences of
+direct commands, selecting successful designs and copying the steps to
+create procedures.  Eventually Deborah learned to make use of
+subprocedures and planned and carried out a major project.  Donald
+worked in a "top-down" manner, starting with a definite plan, writing a
+superprocedure to define his project, and carefully planning each
+sub-procedure before carrying it out.  Kevin's work fit somewhere
+between Donald's and Deborah's; his plans were more vague than Donald's
+and he was willing to alter them as he worked, while creating structures
+that helped him carry out his projects.
+
+.block 5
+11. Kathy: A Modular, Bottom-Up Approach to LOGO Activities.
+
+0Kathy was a student with a subtle sense of humor who derived a
+great deal of intellectual pleasure from her work.  
+When difficulties were encountered,
+she preferred to resolve them on her own, although without a great deal
+of persistence.  When she did ask for help, she usually accepted the
+teacher's suggestions, and readily learned new ideas in the context of
+the projects in which she was engaged.
+
+.he2
+Kathy: Naming Procedures
+Kathy carried out dozens of small projects in the course of her LOGO
+experience.  She shifted back and forth between open ended explorations
+and small goal directed projects.  Her favorite activity was to repeat
+and combine existing procedures to produce unexpected results.
+Often she would interrupt an exploration to pursue a particular idea
+which had been suggested to her by the designs she had just created.
+
+One of the ways in which Kathy structured her work was in her choice of
+procedure names.  Her procedure names often indicated the relationship
+between a new procedure, and the subprocedures from which it had been
+built.  Thus, a symmetrical design was called BARN because it was built
+by repeating a subprocedure called HORSE.  A procedure called WORMY was
+made by doubling all the sizes in a similar design called WORM.  And,
+in a rare example of top-down naming, a procedure called MONSTER was
+made up of subprocedures MO, NS, and TER.
+
+.he2
+Kathy: Naming Procedures
+Kathy's approach to her work is exemplified by a series of small
+projects which made use of a BOX and a TRIANGLE procedure as
+fundamental building blocks.  The BOX and TRIANGLE procedures
+were constructed during periods of careful, goal-directed
+explorations. 
+
+.he2
+Kathy: Simple Designs
+.NOFILL
+.block 12
+TO BOX			TO TRIANGLE
+1 FORWARD 100		1 LEFT 90
+2 RIGHT 90		2 FORWARD 100
+3 FORWARD 100		3 RIGHT 120
+4 RIGHT 90		4 FORWARD 100
+5 FORWARD 100		5 RIGHT 120
+6 RIGHT 90		6 FORWARD 100
+7 FORWARD 100		END
+END
+
+.spread
+//Figure 1.1/Figure 1.2
+
+
+.adjust
+Box was the first procedure completed by Kathy and her group, and they
+immediately followed by constructing a series of figures making use of
+BOX as a subprocedure.  (See examples in section 1.3.2 of Chapter 5).
+It was quite natural for her to repeat TRIANGLE as well.  She was
+pleased with the result, calling it BUTTERFLY.  She then repeated
+BUTTERFLY six times until the figure "closed".  This new design she
+called 7BUTTERFLY (reflecting an initial miscount of how many repeats
+of the BUTTERFLY procedure she had used).
+
+.NOFILL
+.block 14
+TO BUTTERFLY	TO 7BUTTERFLY
+1 TRIANGLE	1 BUTTERFLY
+2 TRIANGLE	2 BUTTERFLY
+END		3 BUTTERFLY
+		4 BUTTERFLY
+		5 BUTTERFLY
+		6 BUTTERFLY
+		END
+
+
+
+
+
+Figure 1.3	Figure 1.4
+
+.adjust
+Following her initial exploration with triangles, Kathy's teacher
+suggested that she put her TRIANGLE and BOX procedures together to make
+a "house".  After some goal-directed exploration, the HOUSE procedure
+resulted.  Kathy immediately repeated HOUSE four times (calling this
+new procedure HOUSE4) until the design
+closed.  Next she wanted to see how her HOUSE4  and 7BUTTERFLY designs
+would go together.  She named the result HB47, indicating its
+relationship to HOUSE4 and 7BUTTERFLY.
+
+.nofill
+.block 24
+TO HOUSE	TO HOUSE4	TO HB47
+1 TRIANGLE	1 HOUSE		1 HOUSE4
+2 RIGHT 30	2 HOUSE		2 7BUTTERFLY
+3 BOX		3 HOUSE		END
+END		4 HOUSE
+		END
+.sp 15
+.ce
+Figure 1.5
+
+.he2
+Deborah: Working Style
+.adjust
+This set of projects culminated when Kathy declared that HB47 "looks
+like a spider," and returned to goal-directed activity, adding a series
+of circles to the design, to produce the procedure SPI.
+
+.nofill
+.block 14
+
+
+TO SPI
+2 RCIRCLE 30
+3 LCIRCLE 30
+4 RCIRCLE 20
+5 LCIRCLE 20
+6 BK 30
+7 RCIRCLE 10
+8 LCIRCLE 10
+END
+
+.ri
+Figure 1.6
+
+.he2
+Deborah: Working Style
+.adjust
+Although Kathy had constructed HB47 and its subprocedures by repeating
+simple shapes over and over to make a symmetrical design, she was also
+able to make explicit use of both right/left symmetry and similarity of
+shape in the process of constructing her "spider".  It was this
+combination of more or less random explorations 
+involving existing procedures, with expert use of heuristics such
+as similarity and symmetry when working in a goal-directed manner, that
+most commonly characterized Kathy's work.
+
+.he2
+Deborah: Working Style
+.block 5
+12. Deborah: A Contrasting "Bottom-Up" Approach
+
+0Unlike Kathy, who is a bright student, successful in all of her
+academic work, Deborah is considered to be a "slow learner".  In class
+she often appears to be withdrawn, indifferent to the subject matter or
+to her fellow students.  When she began work in LOGO, she was totally
+dependent on the teacher -- requiring his reassurance on matters as
+routine as when to type a carriage return.
+
+Deborah was able to build her confidence and understanding slowly by
+limiting her choices of LOGO commands and inputs, limiting the goals of
+her work, and by working in a way that minimized the chances of error.
+It was as if Deborah invented an unstated set of rules governing her
+work in LOGO which helped her to be successful.
+
+Deborah used as few different commands as possible in her work.  Basic
+TURTLE commands along with RARC and LARC were almost the only commands
+she used.   For inputs to TURTLE commands, she used only multiples of
+10, up to 100.  If a larger effect was needed, she would use additional steps,
+as in FORWARD 90, FORWARD 30.  In fact, Deborah began by using only inputs of 30,
+and gradually expanded to include other numbers, while continuing to
+use 30, 60 and 90 as her favorites.
+
+Deborah's patience in a one-step-at-a-time mode of operation was quite
+remarkable.  Her format was quite stereotyped.  (1) carry out one
+TURTLE step (turn, move or penup); (2) check to see if that looks right
+on the screen; (3) if so, write down the step and continue; (4) if not,
+clear the screen, retype all the steps previously written down and try
+another choice for the questionable one.
+
+While Deborah began her LOGO experience by asking for help at literally
+every turn, she had a deeply engrained resistance to new ideas or
+concepts.  For a long time she rejected the use of subprocedures,
+although that modification in strategy would have greatly expanded her
+possibilities.  It was as though she deliberately provided herself with
+a very definite and restricted "microworld" in which to operate.
+
+.he2
+Deborah: Drawing a Star
+On the other hand, the "microworld" which Deborah chose for herself,
+the world of FORWARD 30 RIGHT 30, is very nearly as rich as all of
+Turtle Geometry.  It includes squares, triangles, "circles," stars,"
+"men," "rabbits," and a variety of abstract designs, as well as the
+mathematical concepts of perpendicularity, inverse operations, the
+Total Turtle Trip theorem, symmetry, similarity, estimation of lengths
+and angles, planning and debugging, and procedure writing.
+
+By limiting her inputs to numbers such as 30, 60 and 90, Deborah
+enhanced the possibility that her explorations would produce interesting
+results.  At the same time, she seemed to have a high degree of visual
+intuition, often choosing precisely the correct input to produce a
+desired effect.  For example, during one LOGO session the class watched
+a film which featured computer designs, among them, a six-pointed star.
+When Deborah came back to class, she drew a six-pointed star with the
+computer, without making a single mistake.  She began by turning the
+TURTLE RIGHT 30, and used a combination of FORWARD 70s and RIGHT 60s to
+complete the star.  The actual rotations required to construct the star
+were RIGHT 120 at the points, and LEFT 60 at the inner vertices.  The
+way Deborah accomplished these rotations was quite typical of her work.
+After each forward step, Deborah would turn the TURTLE RIGHT 60.  She
+kept turning it RIGHT 60, until the TURTLE was headed in the right
+direction.  This required two repeats of RIGHT 60 at each point, and
+five repeats of RIGHT 60 at each inner vertex.  At one inner vertex she
+missed the correct orientation, and calmly repeated RIGHT 60 for a
+total of eleven times until the TURTLE was aimed in the right
+direction.  When she copied the steps in her notebook, she copied all
+eleven RIGHT 60s without any hesitation.
+
+.block 15
+.sp 13
+.ce
+Figure 2.1
+
+.he2
+Deborah: Drawing a Rabbit
+It was not until quite late in the series of classes that Deborah was
+ready to undertake a major project.  She drew a picture of a rabbit in
+her notebook, and asked the teacher if he thought that would make a
+good project.  He suggested modifying the rabbit, to make use of
+straight rather than curved lines, and redrew the picture for her in
+more simplified form.
+
+.block 15
+.sp 13
+.ce
+Figure 2.2
+
+Although Deborah began by trying to draw the rabbit as a long series of
+commands, she quickly accepted her teacher's suggestion that she break
+the problem into parts, and make each part a separate subprocedure.
+While her work was directed toward an overall goal, and involved a
+certain amount of "top-down" planning, she constructed the rabbit piece
+by piece, in her usual exploratory fashion.  Once again her choice of
+inputs to FORWARD and RIGHT comands were such that it was relatively
+easy for her to make the design come out the way she wanted.  Without
+any apparent planning, she chose the length for the sides of the
+rabbit's head (FORWARD 90 FORWARD 30) in a way that made it easy for
+her to locate the eyes and nose symmetrically.  The angles and lengths
+she chose for the ears -- a departure from her usual 30 or 60 degrees
+-- resulted in almost perfect symmetry.  Details of the project
+are given in the profile of Deborah's work, in part III of this report.
+
+.block 28
+.sp 26
+.ce
+Figures 2.3
+
+.he2
+Donald: Working Style
+With the completion of her rabbit project, Deborah had almost totally
+reversed her initial feelings of dependence and incompetence.  She
+invited her parents, teachers and school principal to visit the
+computer lab, and in many ways, demonstrated to her visitors and
+classmates her new found sense of confidence, satisfaction and power.
+
+.block 5
+13. Donald: A Structured, Top-Down Approach to LOGO Activities
+
+0Donald provides a striking contrast to both Kathy and Deborah.
+Donald's work was characterized by a strong component of advanced
+planning, and the creating of structures within which problems could be
+solved.  At the same time, Donald was quite ineffective at the
+visually-based, exploratory modes of problem solving which were so
+useful to Kathy and Deborah.  He had difficulty estimating angles, and
+making use of the visual feedback provided by his explorations to
+improve his next attempt.
+
+Throughout his work Donald was extremely receptive to suggestions from
+the teacher, often making use of new ideas before he fully understood
+them.  In this way, he was able to incorporate into his way of working,
+strategies that would continue to prove useful, as he gradually came to
+understand them through use in more than one context.  He seemed to
+have the confidence that he could make use of the teacher's suggestions
+effectively and that he would eventually understand them, even if the
+concepts were a bit hazy at first.
+
+As an example of both the effectiveness and drawbacks associated with
+Donald's structured planning approach as well as of his difficulties
+with visual approaches to problem solving, we consider his construction
+of a "house" from a square and a triangle, a common LOGO task, tackled
+by many students at an early stage of their LOGO experience.
+
+At first Donald attempted an exploratory approach to solving this
+problem.  He began by drawing a triangle on the screen, making use of
+TRI, a state transparent equilateral triangle procedure:
+
+.nofill
+.block 13
+
+
+TO TRI
+1 FORWARD 100
+2 RIGHT 120
+3 FORWARD 100
+4 RIGHT 120
+5 FORWARD 100
+6 RIGHT 120
+END
+
+.ri
+Figure 3.1
+
+.adjust
+Having started with the triangle, the framework Donald established for
+solving the problem involved changing the "normal" orientation of a
+"house," to correspond to the initial orientation of the triangle. When
+Donald was asked to draw a picture of what he was trying to accomplish,
+he made this diagram:
+
+.block 12
+.sp 10
+.ce
+Figure 3.2
+
+Since he was now dealing with two disorientations, the gap between
+the TRI and BOX procedures, and the tilted orientation of the entire
+shape, Donald had more difficulty than he could handle, and in an
+entire period of exploration, he never succeeded in resolving the
+problem in this form.
+
+At the next class, the teacher suggested that Donald draw the BOX
+first.  This suggestion provided him with enough new insight to devise
+a plan for solving the problem.  Donald's plan allowed him to avoid the
+usual problem of finding the rotation needed to attach the triangle to
+the upper left hand corner of the box.
+
+.block 16
+.sp 14
+.ce
+Figure 3.3
+
+Instead, Donald moved the TURTLE to the upper right hand corner of the
+box, reversed its direction, and then drew the triangle so that its
+first side was along the top of the box.
+.nofill
+.block 19
+
+
+TO HOUSE
+1 BOX
+2 RIGHT 90
+3 FORWARD 100
+4 RIGHT 90
+5 FORWARD 100
+6 RIGHT 180
+7 TRI
+END
+.sp 5
+.ri
+Figure 3.4
+
+.he2
+Donald: Drawing a Head
+.adjust
+.block 3
+Donald had one major project which occupied him for more than 12 class
+periods -- more time than any other student devoted to a single
+project.  Typically, this project began with a plan, a cartoon-like
+drawing of a man's head, which formed the basis of Donald's work.
+After one brief session of exploratory work, Donald revised his plan,
+and worked with his teacher to create a superprocedure, designed to
+draw the entire figure.
+
+.block 28
+.sp 24
+.spread
+/Donald's First Plan//Donald's Revised Plan
+.spread
+/Figure 3.5//Figure 3.6
+
+Donald's original superprocedure, TO HEAD, included the first six
+features of the head:  the outside (BOX), EYES, NOSE, MOUTH, BEARD and
+HAIR.  Once the superprocedure was written, each subprocedure became a
+mini-project, requiring one or two classes to resolve.  Each feature of
+the head required it's own construction plan, a combination of the
+analysis and exploration needed to carry it out.  While working on the
+features of his head, Donald make use of a great deal of teacher
+assistance -- especially in developing approaches to geometric analysis
+that were necessary to overcome his difficulties with visual problem
+solving. 
+
+.he2
+Kevin: Writing Style
+In the course of his work Donald encountered estimation of distances
+and angles, the geometry of arcs and circles, the Total Turtle Trip
+theorem, and the use of both grid-based and intrinsic coordinate
+systems.  He learned to use subprocedures and sub-subprocedures, to use
+patterned procedures making use of a REPEAT command, to make use of
+variables to control the size and shape of his "hat" and "flower" and
+to use a POLY procedure with a conditional stop rule.  Although Donald
+only "learned" these approaches to the extent necessary to solve the
+particular problems inherent in his project, each succeeding use of the
+same concept, reinforced his exposure to it, deepening his sense of
+mastery. 
+
+Donald's final figure, drawn by the superprocedure, HEAD, represents an
+almost literal translation of his revised plan, figure 3.6, into a
+computer program.
+.block 15
+.sp 13
+.ce
+Figure 3.7
+
+.block 5
+14. Kevin:  An Expert "TURTLE Driver"; an Intermediate Example
+.br
+
+0In his LOGO work, Kevin combined certain qualities that were present
+in the styles of Kathy, Deborah and Donald.  What particularly
+distinguished Kevin's style from that of the other three students
+discussed in this chapter was his superior ease and comfort in
+manipulating the TURTLE -- both in moving the TURTLE from place to
+place on the graphics display screen, and in finding ways of combining
+and simplifying series of turtle steps, to facilitate his work.
+
+.he2
+Kevin: Drawing a "Turtle"
+Like Deborah, Kevin worked in a linear step-by-step fashion, taking
+careful notes as he worked.  Unlike Deborah, Kevin was able to examine
+his lists of steps, (combining FORWARD 150, BACK 10 into one step,
+FORWARD 140, for instance) eliminating unnecessary steps.  Like
+Deborah, Kevin chose inputs to LOGO commands and procedures very
+effectively.  Unlike Deborah, he often made connections between the
+inputs he used.  For example, when drawing a right isosceles triangle
+he began with a rotation of 45 degrees.  When asked why he chose 45
+degrees, Kevin had two responses: first, "it looked about right" and
+second, "45 is half of 90".
+
+.block 11
+.sp 9
+.ce
+Figure 4.1
+
+Kevin was also like Donald in that he usually engaged in goal directed
+work, including one long term project, and in that he made use of
+particular structures to help him resolve issues that arose in carrying
+out his projects.  Unlike Donald, he did not participate in creating
+those structures for himself, nor did he engage in any significant
+advanced planning.  In his major project, drawing a large "turtle",
+Kevin learned to use subprocedures to break his problem into manageable
+"chunks" or when he needed to repeat the same procedure more than once
+as part of his project.  The names Kevin chose for his procedures and
+subprocedures sometimes had a random quality, such as the name OF for a
+procedure which drew a triangle, or the name LIFS for a procedure that
+drew a set of nested squares.
+
+Kevin's project to draw a large "turtle" provides examples of the way
+in which utilized various structures to help with his work.  Having
+drawn a circle of radius 90, to form the "shell" of his "turtle", Kevin
+made use of an arc procedure that turns through a variable angle, as a
+way of moving around the "turtle's" shell.  He had noticed that the small
+dots which appeared when the circle and arc procedures were used
+occured at
+intervals of 10 degrees.  Using this discovery he created a system of
+intrinsic coordinates for the purpose of moving around his "turtle's" shell.
+He would count the dots, and use an angle input of 40 to move a
+distance of 4 dots along the shell, etc.
+
+Another structure which Kevin used to draw his "turtle", was the
+creation of the modular subprocedures, FOOT and BKFOOT.  Kevin would
+move the LOGO TURTLE around the "turtle's" shell using an arc command
+until he reached the point where he needed to locate a "foot" of the
+"turtle".  The two procedures, FOOT and BKFOOT, were equivalent to a
+state transparent procedure which drew a foot of the "turtle" and
+returned the TURTLE to the shell, ready to move around to the next
+point at which a foot would be located.
+.he2
+Kevin: Using Variables
+
+.block 15
+.sp 13
+.ce
+Figure 4.2
+
+The last set of projects that Kevin worked on provides a nice example
+of the way in which Kevin came to understand the use of variables and
+stop rules.  After having explored the effects of different inputs to a
+POLY procedure (see chapter 5 section 1 for a discussion of POLY),
+Kevin built a design by keeping the angle constant while varying the
+size of the POLY.  The teacher helped him talk through this procedure:
+
+.nofill
+.block 13
+
+
+TO TUNNEL :SIZE
+10 POLY :SIZE 45
+20 IF :SIZE - 105 STOP
+30 TUNNEL :SIZE+5
+END
+.sp 3
+
+.RI
+Figure 4.3
+
+Next, he repeated the process with an angle of 90 degrees:
+
+.block 12
+
+
+TO LIFS :SIZE
+10 POLY :SIZE 90
+20 IF :SIZE = 150 STOP
+30 LIFS :SIZE + 2
+END
+
+.sp 2
+.ri
+Figure 4.4
+
+.adjust
+Kevin then asked if "the amount the POLYs grow each time" could be
+changed, and if the largest size could be changed.  He picked the
+variable names "SET and "LARGE for these quantities, and with some
+syntax help from his teacher,  wrote the procedure:
+
+.nofill
+.block 13
+
+
+TO UFC :SIZE :SET :LARGE
+10 POLY :SIZE 90
+20 IF :SIZE = :LARGE STOP
+30 UFC :SIZE + :SET :SET :LARGE
+END
+
+.sp 3
+.ri
+Figure 4.5
+
+.adjust
+In the course of exploring the use of different inputs to this
+procedure, Kevin was delighted to discover that keeping all the inputs
+the same had the effect of producing a variable sized square.  He
+understood that the reason the procedure drew only one square was that
+the starting and ending sizes were identical.
+
+.he2
+Other Students
+Kevin's major difficulty in using the computer was an initial
+reluctance to plan ahead or to structure his work more than one step at
+a time.  When new ideas were presented to him in a way that enabled him
+to simplify his work, he was able to absorb them relatively painlessly
+and incorporate them into his thinking.
+
+.block 5
+15.  Working Styles of the Other Students.
+
+0We have given a description of the differences in learning style
+among four different students carrying out very similar tasks in order
+to provide a sense of the differences that existed among all
+16 of the students.  To offer a better some sense of the scope of these
+variations among the group, we will attempt a differentiation of the
+rest of our 16 students based on how their approaches compared with
+those of our models.  Since this greatly oversimplifies the different
+ways in which these students worked, the reader is urged to read the
+full profiles in Part II of this report, and the descriptions of the
+work of exceptional children presented in the next chapter, to get a
+better sense of the flavor of each child's particular LOGO experience.
+
+Monica and Darlene showed a lot of similarity to Kathy's style of work.
+Both made a lot of use of repetition to create designs, and preferred
+small, easily completed explorations to long term projects.  Neither had
+Kathy's interest in relating the procedure names that they used to the
+ways in which their procedures were constructed.  Darlene was unusually
+curious about the possibilities inherent in the LOGO language, and in
+the computer system we were using, and explored a lot of different
+kinds of projects, without settling on any major area of interest.
+
+Although Jimmy was a quicker and more articulate learner than Deborah,
+his work was similar to hers in many respects.  He worked in a linear
+step-by-step fashion, limiting himself to a few key ideas in carrying
+out LOGO tasks.  He had a great deal of resistance to suggestions for
+new ways of doing things, and had difficulty making effective use of
+subprocedures.  Jimmy was also like Deborah in his excellent intuitive
+manipulation of the turtle.  Jimmy's work had a much finer level of
+detail than Deborah's, and like Kathy, he was able to make excellent
+use of symmetry and similarity in planning his steps.
+
+Dennis and Harriet showed a certain amount of similarity to
+Donald, in the way that they made use of top-down approaches and in the
+structures they needed to carry out their work.  Dennis also
+had difficulties with solving problems by visual exploration, similar
+to those encountered by Donald.  Harriet had no difficulty with visual
+explorations but preferred to work on challenging tasks in which the
+visual effects were less important than other aspects of programming.
+In particular, Harriet carried out two elaborate interactive projects
+-- designing a tictactoe game, and writing a "madlib" program.
+Although Harriet needed help with the syntax and programming knowledge
+to carry out these tasks, she was able to understand how to create
+complicated structures for her projects, once she was given
+a model of how they functioned.
+
+Laura probably belongs in a category of her own.  Her projects tended
+to involve large scale designs, which required complex strucures.
+Although her creative ideas were sophisticated and unusual, she lacked
+the patience and insight necessary to develop the structures she needed
+to carry them out.  Since Laura did not like to ask for help, or to
+appear to be having difficulties, she experienced some frustration from
+time to time.
+
+Karl, Albert and Betsy all had a degree of similarity to Kevin, in that
+they utilized a mixture of top-down and bottom-up approaches, and that
+they were able to make use of the particular structures needed to carry
+out a task without necessarily understanding those structures in a more
+general way.  Karl and Albert tended to prefer shorter projects, while
+Betsy usually worked on more complex projects, making use of a number
+of subprocedures.
+
+Gary, Tina, and Ray worked in more unique ways that cannot easily be
+compared to those of our four "model students,"  Their work will be
+examined, along with Karl's, in Chapter 3 dealing with exceptional
+children. 
+

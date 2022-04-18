@@ -1,0 +1,662 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi b
+--DRAFT--
+
+LOGO Curriculum Materials
+
+6/1/81
+.sp 5
+1BOOKLET 
+
+Talking to Sprites0
+
+By Daniel H. Watt
+
+(TI Logo Version)
+.sp 5
+.ls 1
+This booklet will introduce you to sprites.  Sprites are objects - like small "robots" - that can move around rapidly with different shapes and colors on the TV screen. You can use sprites to make animated artwork or cartoons.  Eventually you will be able to invent your own TV game! 
+.sp 5
+The development of these materials was supported in part by the National Science Foundation under grant number SED - 7919033 and conducted at the Artificial Intelligence Laboratory, Massachusetts Institute of Technology, Cambridge, Massachusetts. Field tests were conducted in the public schools of Brookline, Massachusetts. The material contained in this document represents the views of its authors and should not be interpreted as necessarily representing the oficial policies, either expressed or implied, of the National Science Foundation or the United States Government.
+.chapter "bold(Talking to Sprites)"
+.ls 2
+Sprites are objects controlled by the computer, that can appear on the TV screen. There are 32 sprites, numbered from 0 to 31. When you start using the computer, all 32 sprites are invisible. They are located at the top of the TV screen with no color or shape, and with  HEADING  0  (direction of motion straight up), and  SPEED  0.  Before you can see a sprite you have to give it a shape and color and place it on the visible part of the screen.
+
+
+.section "bold(Starting a Sprite)"
+
+
+First, tell the computer which sprite you want to command:
+
+	TELL   SPRITE   0      or      TELL   0
+
+Make it carry a shape:
+
+	CARRY   :PLANE
+
+Give it a color:
+
+	SETCOLOR   :RED      or      SC   :RED
+
+Send it to the center of the screen, where it can be seen:
+
+	HOME
+
+
+Now you can make it move:
+
+	SETSPEED   10      or      SS   10
+
+Make it change its direction:
+
+	SETHEADING   90      or      SH   90
+
+
+.section "bold(Changing a Sprite's Properties)"
+
+
+Once a sprite has started you can change its properties in several ways.
+
+
+Move it to a new point on the screen:
+
+	HOME
+	SXY   10   50
+	SXY   (-20)  20
+
+Change its speed:
+
+	SETSPEED   0
+	SETSPEED   100
+	SETSPEED   SPEED  +  20
+
+Change its direction:
+
+	RIGHT   45
+	LEFT   90
+	SETHEADING   150
+	SETHEADING   -90
+	SETHEADING   HEADING  +  30
+
+Make it change shape:
+
+	CARRY   :TRUCK
+	CARRY   :BALL
+
+Make it change color:
+
+	SETCOLOR   :GREEN
+	SETCOLOR   :YELLOW
+	SETCOLOR   COLOR  +  1
+
+Make it move instantly forward or back
+
+	FORWARD   50      or      FD   50
+	BACK   50         or      BK   50
+
+.section "bold(Talking to More Than One Sprite at a Time)"
+
+
+You can give commands to several sprites at once:
+
+TELL   1			s(m)commands only sprite 1
+
+TELL   [ 1 3 10 ]		t(m)commands sprites 1, 3, and 10 at once
+
+TELL   :ALL			t(m)commands  all 32 sprites at once
+
+
+(To type square brackets, [  and  ] , you have to type   <SHIFT> - 4  and  <SHIFT> - 5. That is, hold down the  <SHIFT>  key and the  <4>  or <5>  key at the same time.)
+
+When you talk to more than one sprite, all commands will be directed to all the sprites at once.
+
+
+.section "bold(Simple sprite activities)"
+
+
+TELL   0			t(m)commands sprite 0
+
+SETCOLOR   :RED		t(m)sets its color to the color named  "RED
+
+CARRY   :TRUCK			t(m)tells it to carry the shape named  "TRUCK
+
+HOME				t(m)moves it to the center of the screen
+
+SETSPEED   10			t(m)sets its speed to 10
+
+SETHEADING   45			t(m)makes it move at an angle of 45 degrees
+
+
+Make this sprite move in another direction, with exactly the speed, shape and color you want.
+
+Now start up a new sprite, by typing   TELL  1, for example, and give it a shape, color, location, direction and speed. Place several sprites on the screen at one time. make them all move in different directions.
+
+Now make them all move in the same direction:
+
+TELL   :ALL			t(m)commands all sprites
+
+SETHEADING   90			t(m)makes them all move horizontally across the screen
+
+
+To move them in different directions again, talk to them one at a time and give them each a diferent heading.
+
+
+.section "bold(Pre-defined Sprite Shapes)"
+
+
+   Shape  Name			t(m)Shape Number
+
+.nf l
+CARRY   :PLANE			t(m)CARRY   1
+CARRY   :TRUCK			t(m)CARRY   2
+CARRY   :ROCKET			t(m)CARRY   3
+CARRY   :BALL			t(m)CARRY   4
+CARRY   :BOX			t(m)CARRY   5
+.fi b
+
+To learn how to make your own sprite shapes, turn to Chapter 6.
+.bp
+.section "bold(Color Names and Numbers)"
+Sprites can be any one of sixteen different colors.
+
+.nf l
+   Color   Name			t(m)Color   Number
+
+SETCOLOR   :CLEAR			t(m)SETCOLOR   0
+SETCOLOR   :BLACK			t(m)SETCOLOR   1
+SETCOLOR   :GREEN			t(m)SETCOLOR   2
+SETCOLOR   :LIME			t(m)SETCOLOR   3
+SETCOLOR   :BLUE			t(m)SETCOLOR   4
+SETCOLOR   :SKYBLUE			t(m)SETCOLOR   5
+SETCOLOR   :RED			t(m)SETCOLOR   6
+SETCOLOR   :CYAN			t(m)SETCOLOR   7
+SETCOLOR   :RUST			t(m)SETCOLOR   8
+SETCOLOR   :ORANGE			t(m)SETCOLOR   9
+SETCOLOR   :YELLOW			t(m)SETCOLOR   10
+SETCOLOR   :LEMON			t(m)SETCOLOR   11
+SETCOLOR   :OLIVE			t(m)SETCOLOR   12
+SETCOLOR   :PURPLE			t(m)SETCOLOR   13
+SETCOLOR   :GRAY			t(m)SETCOLOR   14
+SETCOLOR   :WHITE			t(m)SETCOLOR   15
+.fi b
+.chapter "bold(Teaching the Computer a New  Command Using the Logo Procedure Editor)"
+.fi b
+
+You can teach the computer to remember a particular series of steps
+by defining a procedure. When you type   TO   followed by a name that you have
+chosen, the computer changes to edit mode. While you are editing, the computer does not carry out your commands, but just stores them until you finish editing. Here's what you do:
+.nf l
+
+Type   TO   followed by a name.
+Type the   <ENTER>  key to clear a new line.
+Then type each step in order.  
+To stop using the editor, type   <SHIFT> - Z.
+(Hold down the key marked   <SHIFT> and type  Z  at the same time.)
+
+.fi b
+For more information about using the editor, read booklet II - bold(Using the Logo Operating System).
+
+.nf L
+Here is an example you can try. Type
+
+	TO   DANCE   <ENTER>
+
+The computer will shift to edit mode.   Copy the following steps:
+
+	TO   DANCE
+	SETSPEED   10   WAIT   20
+	SETSPEED  -10   WAIT   20
+	RIGHT   15
+	DANCE
+	END
+
+.fi b
+When you have finished typing all the steps of the procedure type   <SHIFT> - Z  to return to Logo command mode. 
+
+In Logo command mode you can use the new procedure,  DANCE as a command by typing:
+
+	DANCE   <ENTER>
+
+Since the last line,  DANCE,  calls the procedure procedure  DANCE  again,  the sprite or sprites you are talking to will continue to "dance"  on the screen until you stop them by typing   <SHIFT> - Z. 
+
+To invent a procedure of your own, you can use any name that is not already a LOGO command or the name of a procedure
+you have already defined.   The steps of the
+procedure can be any other LOGO commands or procedures.  When you type the command  name, the computer will carry out your sequence of steps.
+ 
+
+The next chapter has several sugestions for simple sprite procedures.
+.bp
+bold(Notes about the Logo Screen Editor)
+
+If you want to change a procedure for any reason, type  EDIT    followed by the procedure name. This will return the computer to edit mode, with your procedure displayed on the screen ready for you to edit. When you are finished editing your procedure type:
+
+	   <SHIFT> - Z
+
+You can use all the special editing keys to make changes in your procedure:
+
+bold(Commands to Move the Cursor)
+ 
+.nf L
+	<SHIFT> - 			s(m)moves cursor up one line
+
+	<SHIFT> - 			t(m)moves cursor down one line
+
+	<SHIFT> - 			t(m)moves cursor left one space
+
+	<SHIFT> - 			t(m)moves the cursor right one space
+
+	<SHIFT> - V	t(m)moves cursor to end of line.
+
+	<SHIFT> - W	t(m)moves cursor to beginning of line.
+
+.keep
+bold(Editing Commands)
+
+	<SHIFT> - F			t(m)erases the character at the cursor.
+
+	<SHIFT> - T				t(m)erases the character behind the cursor,	
+				t(m)just as it does when you are typing
+				t(m)normal LOGO commands.
+
+	<SHIFT> - C	t(m)erases an entire line
+	t(m)to the right of the cursor.
+	
+	<ENTER>                     t(m)creates a new line and moves the cursor 
+                                        t(m)down to the beginning of the new line.
+				t(m)If there is any text to the right
+				t(m)of the cursor it will be moved too.
+
+<SHIFT> - W    <ENTER>		t(m)this combination can be used to
+				t(m)create a blank line.
+.end_keep
+.chapter "bold(Examples of Sprite Procedures)"  
+  
+This procedure makes a sprite change color several times:
+
+.nf l
+	TO   CHANGECOLOR
+	SETCOLOR   :RED
+	WAIT   60
+	SETCOLOR   :WHITE
+	WAIT   60
+	SETCOLOR   :GREEN
+	WAIT   60
+	END
+
+.fi b
+This procedure makes a sprite change color continuously:
+
+.nf l
+	TO   RAINBOW
+	SETCOLOR   COLOR  +  1
+	WAIT   30
+	RAINBOW
+	END
+.fi b
+
+Since the last line of  RAINBOW   calls the procedure  RAINBOW  all over again, it  will never stop unless you type   <SHIFT> - Z.
+
+Here's a procedure to get a  sprite started at the center of the screen:
+.nf l
+
+	TO   STARTUP
+	HOME
+	CARRY   :TRUCK
+	SETCOLOR   :BLUE
+	SETSPEED   10
+	END
+
+.fi b
+Startup will work for any sprites you are talking to.  You can use it to get several sprites on the screen at once: 
+
+.nf l
+TO   SHOWOFF
+FREEZE			t(m)stops all sprites from moving
+TELL   0   SETHEADING   0 t(m)each sprite is given a different heading
+TELL   1   SETHEADING   15
+TELL   2   SETHEADING   30
+TELL   3   SETHEADING   45
+TELL   [ 0  1  2  3 ]	t(m)commands four sprites at once	
+STARTUP			t(m)puts them all at the center
+THAW			t(m)starts them all moving again
+END
+
+
+This will make a moving sprite move in a circle:
+
+TO   CIRCLE
+RIGHT  10
+CIRCLE
+END
+
+
+Now try some procedures of your own:
+
+Make a sprite change shape several times.
+Make sprites move in a square formation.
+Make a procedure that will make all the sprites on the screen move in the same direction.
+.fi b
+
+Make a procedure that will make the sprites "explode". That is, go instantly to the center of the screen, move rapidly outward and then "explode" again after a few seconds.
+
+Make a procedure to make all the sprites on the screen invisible, and stop them from moving.
+.chapter "bold(Changing The Background Color)"
+
+The command  COLORBACKGROUND  or  CB can be used to change the background color:
+
+.nf l
+	COLORBACKGROUND   :WHITE
+or	CB   :WHITE
+
+This procedure makes the background flash:
+
+	TO   FLASH   
+	COLORBACKGROUND   :WHITE
+	WAIT   100
+	COLORBACKGROUND   :GREEN
+	WAIT   100
+	COLORBACKGROUND   :CYAN
+	END
+
+
+This one flashes continuously:
+
+	TO   KEEPFLASHING
+	COLORBACKGROUND   :WHITE
+	WAIT   100
+	COLORBACKGROUND   :GREEN
+	WAIT   100
+	COLORBACKGROUND   :CYAN
+	WAIT   100
+	KEEPFLASHING
+	END
+
+This one cycles through all l6 colors:
+
+	TO   FLASHALL  :COLOR
+	COLORBACKGROUND   :COLOR
+	WAIT   100
+	FLASHALL   :COLOR  +  1
+	END
+
+.fi b
+Before teaching this procedure to the computer you might want to read page  11  of Booklet II  bold(Using the Logo Operating System),  about editing procedures with inputs.
+
+Some other projects to try:
+
+Get some sprites moving on the screen. Then experiment wth different sprite colors and background colors.
+
+Make a black background for an outer space or night scene.  
+
+bold(Warning:  If you set the background color to  black or clear, you won't be able to see what you are typing. You can still type commands to the computer even though you can't see them.)
+
+To restore the normal background type:
+
+	CB   7
+.chapter "bold(Making Your Own Sprite Shapes)"
+There are five shapes available when Logo starts:
+
+.nf l
+Shape Name				t(n)Shape Number
+:PLANE					t(m)   1
+:TRUCK					t(m)   2
+:ROCKET					t(m)   3
+:BALL					t(m)   4
+:BOX					t(m)   5
+
+You can make your own shapes using the command   MAKESHAPE  or  MS.  At any one time you can create up to 28 shapes, numbered from 0 to 27.  If you choose the number of an existing shape, that shape will be displayed on a 16 by 16 grid.  If no prior shape exists, the grid will be blank.
+
+	MAKESHAPE   1			t(m)MAKESHAPE   6
+.sp 12
+Draw your shape by using the arrow keys to move the shape cursor. If you hold the  <SHIFT>  key down, the cursor will leave a colored square behind when it moves.  With the   <SHIFT>   key up,  the cursor will leave a blank square when it moves.
+
+To clear the entire shape so that you can start over, type   <SHIFT> - C.
+When the shape is finished, type   <SHIFT> - Z.
+
+Tell a sprite to carry the new shape:
+
+	TELL   0   CARRY   6
+	SETCOLOR   :BLUE
+	HOME
+
+You can give the shape a name if you want to:
+
+	MAKE   "NEWSHAPE   6		t(m)and then you can type
+
+	TELL   1   CARRY   :NEWSHAPE
+
+If you want to see what a new shape will look like while you are drawing it, tell a sprite to carry it before you make the shape. Then put the sprite over on the right side of the screen so you can see it while you draw it:
+
+.nf l
+	TELL   2   CARRY   7		t(m)shape  7  does not yet exist
+	SETSPEED   0
+	SETCOLOR   :BLACK
+	SXY   20   20
+	MAKESHAPE   7
+
+.fi b
+As you draw the shape on the drawing pad, it will appear on the sprite at the same time.
+.chapter "bold(Making Movies - A Sprite Animation Project)"
+A simple animated movie can be made by having a sprite carry two different shapes, one after another. This example shows how you could animate a "flying bird."  First, you need to design to shapes to represent two wing positions:
+
+	MAKESHAPE   10			t(m)MAKESHAPE   11
+.sp 12
+Now give names to both shapes:
+
+MAKE   "WINGUP   10		MAKE   "WINGDOWN   11
+
+These commands make the names   "WINGUP   and   "WINGDOWN   stand for the numbers 10 and 11.  The command   CARRY   :WINGUP   will have the same effect as the command   CARRY   10.  When you write a procedure, the names make it easier to understand  what the procedure is doing.  This procedure will make the sprite look like a flying bird:
+
+.nf l
+	TO FLY   :T
+	CARRY   :WINGUP
+	WAIT   :T
+	CARRY   :WINGDOWN
+	WAIT   :T
+	FLY   :T
+	END
+
+Now give a sprite a speed, heading and color and tell it to  "fly:"
+
+	TELL   1
+	SETSPEED   20
+	SETHEADING   75
+	SETCOLOR   :BLACK
+	FLY   20
+
+Explore the effect of different inputs to fly:
+
+	FLY   30   FLY   5   FLY   100
+
+.fi b
+You might want to make a more "realistic" movie by having more than two wing positions.  You could do this by making some more wing shapes between  "up" and "down."
+
+Tell several sprites to fly at the same time. Each one needs to have a speed heading and color first:
+
+.nf l
+TELL   2   SETSPEED   10   SETHEADING   20
+TELL   3   SETSPEED   15   SETHEADING   30
+TELL   4   SETSPEED   20   SETHEADING   40
+
+TELL   [ 2 3 4 ]   SETCOLOR   :BLACK    FLY   20
+.chapter "bold(Teams of Sprites)"
+.fi b
+You can organize groups of sprites into "teams,"  with a group of sprites in each team. For example,
+.nf l
+
+	MAKE   "PILOTS   [ 0 1 2 3 4 ]
+	MAKE   "TRUCKERS   [ 5 6 7 8 9 ]
+
+.fi b
+[ 0 1 2 3 4 ]  and  [5 6 7 8 9 ]  are called  lists. Lists are very important in Logo for storing and processing information.  You can command a list of sprites in the same way you would command an individual sprite.  TELL   :PILOTS    is the same as    TELL   [ 0 1 2 3 4 ].
+
+.nf l
+	TELL   :PILOTS   CARRY   :PLANE   
+	SETCOLOR   :GREEN   SETSPEED   0   HOME
+
+.fi b				
+The planes look like only one plane, because they are all on top of each other.  To separate them, you have to talk to each member of the team separately:
+
+.nf l
+	TELL   0   SX   0
+	TELL   1   SX   20
+	TELL   2   SX   40
+	TELL   3   SX   60
+	TELL   4   SX   80
+
+.fi b
+Now they are spread out on the screen. Talk to them as a team to get them moving:
+
+	TELL   :PILOTS   SETHEADING   45   SETSPEED   70
+
+Now get the truckers moving differently:
+
+.nf l
+	TELL   :TRUCKERS   CARRY    :TRUCK   
+	SETCOLOR   :BLUE   SETSPEED   0   HOME
+
+.fi b
+Separate them, by talking to them one at a time and moving them around. TEn tell them all to move:
+
+	TELL   :TRUCKERS   SETHEADING   90   SETSPEED   20
+
+There are many things you can do with teams:
+
+Make a FLY procedure with two teams of birds flying in different directions and flapping differently. (see Chapter Seven)   Try  designing flying saucer and spaceship shapes and flying them in teams against a black, outer-space background.   Make a giant sprite shape by putting several sprites next to each other so that they combine into a large shape. Then move the new shape around together as a team of sprites.
+
+9. Getting Messages from a Sprite
+
+You can ask the computer for information about the sprite you are "talking" to.  Some
+sprite commands output messages. 
+
+These commands are:
+     
+WHO             tells which sprite you are talking to
+YOUR NUMBER     outputs the sprite's numeber
+SHAPE           outputs the number of the sprite's shape
+COLOR           outputs the number of the spriute's color
+SPEED           outputs the sprite's speed
+HEADING         outputs the sprite's heading
+XCOR            outputs the sprite's "x" or horizontal
+YCOR            outputs the sprite's "y" or vertical position on the screen
+
+These messages can be used in different ways.  You can print them, give them a
+name, or cimbine them arithmetically with any other numbers.  As far as the computer 
+is concerned, the messages output by these commands are only numbers.  So it makes sense to say
+SETSPEED COLOR, or SETCOLOR SPEED, or SETHEADING HEADING-30.
+
+Examples:
+
+PRINT YOUR NUMBER
+
+PRINT SPEED
+
+CALL COLOR "TINT          This gives the name "TINT to the sprite's color number
+
+SETCOLOR COLOR +1         Changes the sprite's color to the color with the
+                          next largest number
+SETCOLOR R:TINT           Sets the color back to its old value
+
+SETHEADING YOUR NUMBER *5 Sets the heading to 5 times the sprite's number
+                          If you were commanding sprite 0, it would now have a heading
+                          of 0.  Sprite 4 would have a heading of 20, etc.
+
+SETSPEED HEADING/2        Sets the speed to half the value of the sprite's heading
+
+Here are some siple procedures that use sprite messages.
+
+TO RAINBOW
+
+SETCOLOR COLOR +1        This procedure keeps changing the color of the sprites
+WAIT 20                  you are "talking" to.
+RAINBOW
+END
+
+TO SWITCH
+CARRY SHAPE +1
+IF SHAPE=5 CARRY 0
+WAIT 50
+END
+
+A sprite must already be carrying a shape before you tell it to SWITCH.
+
+TO RB
+SETCOLOR XCOR/16
+RB
+END
+
+First type SETHEADING 90  SETSPEED 10, then type RB.  Try other speeds and headings and
+see what happens.
+
+TO SPIRAL
+SETSPEED HEADING/3
+SETHEADING HEADING +30:
+SPIRAL
+END
+
+
+TO SPREAD NUMBER
+TELL :NUMBER
+SETHEADING YOUR NUMBER *12
+IF :NUMBER=31 STOP
+SPREAD :NUMBER +1
+END
+
+Typing SPREAD 0 will make each sprite to set its heading to a different number.
+Try this example:
+
+SPREAD 0
+TELL :ALL
+CARRY :BOX
+SETS 10
+HOME
+
+Invent some procedures of your own that make use of sprite messages to cause
+interesting effects.
+
+10. Talking to a Group of Sprites, One at a Time
+
+A special LOGO command, EACH, allows you to give a different command
+to each sprite in a group.  EACH needs a list of commands as an input.
+
+Examples:
+
+CALL [ 0 1 2 3 4] "TEAM1
+TELL :TEAM1
+SETHEADING 90
+EACH [CARRY YOURNUMBER]
+EACH [SXY 0 YOUR NUMBER *20]
+EACH [SETCOLOR RANDOM SETSPEED YOURNUMBER *10]
+
+Your list must be contained within square brackets <shift>-4 and <shift>-5,
+and can include one command or several. The * symbol means multiplication.
+
+Example:
+
+Here are two procedures that use EACH to spread all 32 sprites in different
+directions, and produce an interesting effect.
+
+TO SETUP
+TELL :ALL CARRY :BALL
+SETSPEED 30
+EACH [SETHEADING YOURNUMBER *12]
+END
+
+TO EXPLODE
+SETCOLOR COLOR +1
+HOME
+WAIT 100
+EXPLODE
+END
+
+Now type:
+
+	
+SETUP
+EXPLODE

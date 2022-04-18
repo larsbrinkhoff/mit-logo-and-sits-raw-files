@@ -1,0 +1,121 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.tabfnt 2
+.ds
+.adjust
+.dummy @
+.he1
+Analysis of Interview Data
+.he2
+Brookline Report
+
+.ce
+1Analysis of Interview Data
+
+0In order to gain information about transfer of the skills and
+concepts involved in the students' LOGO experiences, we devised a
+pre/post interview including several tasks which might shed light on
+such transfer.  While this work is still in a fairly primitive stage,
+we believe that our analysis of the interview data indicates some clear
+gains made by the students as a result of the LOGO experience.  In this
+section we describe four of the tasks which were presented to the seven
+students in our Spring classes, and analyze the gains made by the
+students.  Results are shown in table 1.@@@.
+
+Task 1 involved estimation of length.  The students were asked to
+compare a given line with five other lines drawn in various
+orientations, and to draw three horizontal lines of their own (Figure
+1.1)  This task should provide information about gains made in
+estimating distances in the LOGO environment.  (Chapter 5, Section 2.2)
+
+The eighth student, Tina, was unable to perform these tasks in a
+consistent manner, or she performed them in a way that we have been
+unable to understand.
+
+Task 2 involved estimation of angle, and was similar to Task 1, except
+that the subject was not asked to draw any angles.  (See Figure 1.2)
+This could provide information about gains made in estimating angles.
+(Chapter 5, Section 2.3)
+
+Task 3 involved combining a series of Forward and Back Steps.  Subjects
+were asked to replace the series of steps by a single step.  (See
+figure 1.3)  This could provide information about gains made in
+understanding the group properties of number, as students learn to
+combine TURTLE steps in carrying out LOGO projects.  (Chapter 5,
+Section 3).
+
+Task 4 was more complex, and involved drawing a line on three grid-like maps of
+increasing complexity,  and giving directions to move from one point to
+another on the grid.  (See figures 1.4 and 1.5)  This task could
+provide information about how accurately subjects give directions,
+whether they distinguish right from left in different orientations,
+whether they can transfer visual information to verbal information, and
+in some cases, how well they can recognize errors and debug them.  It
+combines aspects of Turtle Geometry, and procedure writing and debugging.
+
+The results of these tasks, for the seven students who attempts them,
+are shown in Table 1.@@@.  The students are considered to have made
+major improvement, slight improvement or no improvement.  An
+interpretation of no improvement may indicate that the subject made
+compensating errors, or that the subject performed exactly the same in
+both pretest and posttest situations.  In many cases subjects who
+showed no improvement carried out the tasks perfectly in both cases.
+.page
+1INTERVIEWS - 30
+
+
+.ss
+.nofill
+Task		
+Y}		Major		Slight		No
+		Improvement	Improvement	Improvement
+
+
+
+1. Estimating	4		2		1
+   Distances
+
+
+2. Estimating	4		0		3
+   Angles
+
+
+3. Combining	3		1		3
+   Steps
+
+
+4. Map		2		1		4
+   Directions
+
+.page
+1INTERVIEWS - 40
+
+.adjust
+In table 1.@@@, the tasks are broken down by student.  "M" indicates
+"major improvement", "S", "Slight Improvement", and "N" "No improvement".
+.nofill
+
+.ce
+1TASKS
+
+		1	2	3	4
+
+
+0Albert	M	M	S	N
+
+Betsy		M	N	N	N
+
+Darlene		S	N	M	S
+
+Dennis		S	M	N	M
+
+Jimmy		M	M	M	M
+
+Harriet		M	N	N	N
+
+Karl		N	M	M	N
+.adjust
+.ds
+

@@ -1,0 +1,770 @@
+.xgp
+.font 0 31vg
+.font 1 40vg
+.ss
+.adjust
+.ri
+in LOGO:JBMAN3
+
+
+WELCOME TO TI-LOGO
+
+Intro: Designing Tile patterns and Tortoise shells
+
+Let's start by designing a tile pattern.  We shall then place the
+pattern around the borders of the picture part of the screen.
+
+I.  
+Type
+
+.ce
+1TILE PATTERN "BORDER
+
+0This tells the computer that we want to design a tile pattern and name
+it "border."
+Instead, we could have typed
+
+.ce
+1TP "ONE
+
+0since the computer understands TP to be the abbreviation of TILEPATTERN.
+
+Notice that an 8x8 grid appears in the upper portion of the screen.
+
+This grid represents a tile.  But it is much larger than actual size.
+Your screen is made up of +68 tile spaces -- 24 across and 32 up and down.
+
+On the grid, each small square of the grid corresponds to a dotspot.
+Each tile space, then, is made up of 64 dotspots -- 8 across and 8 down.
+This means that the entire screen c ontains 49,l52 dotspots.
+
+As you design the tile pattern in the grid, the pattern will appear in
+its actual size alongside the grid.
+
+Tile patterns can be designed in two ways:  by moving a cursor -- known
+as a Turtle -- around in the grid, drawing as it goes on by writing a procedure.  
+
+At first, we shall design a tile pattern using the turtle.
+
+Type
+
+.ce
+1KEYTURTLE
+
+0The LOGO comand KEYTURTLE (abbrev. KT) switches the computer into
+Keyturtle mode.  In this mode, turtles can be moved directly by typing
+in commands at the keyboard.  KEYTURTLE mode is used to design both
+tile patterns and Tortoise shells.
+
+Tile patterns can appear in two colors, a background color and a
+foreground color.  If you want the pattern to appear in red against a
+black background, type
+
+.ce
+1COLORS [RED  BLACK]
+
+0In the appendix on p.   , you will find a list of all possible color
+combinations for tile patterns.
+In the bottom left square of the grid you willfind the turtle.  The
+following LOGO commands can now be used to design the tile pattern:
+
+.nofill
+FORWARDDOTSPOTS (abbrev. FDD)
+BACKDOTSPOTS (abbrev. BKD)
+RIGHTTURN (abbrev. RT)
+LEFTTURN (abbrev. LT)
+PENUP  (abbrev. PU)
+PENDOWN (abbrev. PD)
+ERASERUP (abbrev. EU)
+ERASERDOWN (abbrev. ED)  [If this abbrev. holds, EDIT will not be abbreviated.]
+
+.adjust
+We want to design a tile pattern that will look like this:
+.sp 7
+
+To do this, we can use the following sequence of commands:
+
+.nofill
+PU
+FDD 3
+PD
+RT 90
+FDD 8
+LT 90
+FDD l
+LT 90
+FDD 7
+PU
+FDD 3
+RT 90
+FDD 3
+PD
+RT 90
+FDD 8
+LT 90
+FDD l
+LT 90
+FDD 7
+
+.adjust
+[Seems that you have to do too much for too little.  Maybe it's better
+just to use arrow-keys...]
+Notice that as you design the tile pattern, the pattern appears in
+actual size, step-by-step, alongside the grid.
+If you give the turtle a command that causes it to draw something you
+don't like, you can erase that portion using the command ERASERDOWN.
+
+If, for example, we had forgotten to type PU at the beginning and then
+typed FDD 3, we would get
+.sp 7
+
+To erase the shaded portion you could type:
+
+.nofill
+.indent 8
+1ED
+BKD 3
+EU
+
+.indent 0
+.adjust
+0ERASERDOWN replaces the foreground color with the background color.  
+
+Now that we have designed our border tile pattern, we type
+
+.ce
+1ENDPICTURE
+
+0and the grid and actual-size representation of the tile pattern
+disappear from the screen.
+
+Our job now is to position the border tile pattern around the border of
+the picture part of the screen.
+
+There are two ways we could do this: (l) By reference to tile-space or
+dotspot coordinates
+and
+.br
+(2) By getting a turtle to carry and drop tiles.
+
+Here we shall learn how to get a turtle to trail the tile pattern
+around the border.
+
+Type
+
+.ce
+1CARRYTILE "BORDER
+
+0We could also have typed
+
+.ce
+1CT "BORDER
+
+0Notice that the tile pattern we have just designed now appears in the
+lower corner of the picture part of the screen.
+
+REVIEW
+
+We have just learned one way to design a tile pattern.  To do this, we
+first type the LOGO command TILEPATTERN "(patternname) which makes an
+8x8 grid appear on the screen with a turtle in the lower left box.  In
+addition, this assigns the name (patternname) to the tile pattern.
+We then switch to Keyturtle mode by typing
+KEYTURTLE
+In Keyturtle mode, we can move a turtle by giving a command which we
+type in at the keyboard.
+We can then design the tile pattern using the LOGO commands:
+
+.nofill
+.indent 8
+FDD
+BKD
+RT
+LT
+PU
+PD
+EU
+ED
+
+.indent 0
+.adjust
+When we finish designing the tile pattern we type ENDPICTURE (abbrev.
+EP) and the grid representation and actual size representation of the
+tile pattern disappears from the screen.
+
+II.  A Turtle can trail tiles as it goes.  But it can also fly and
+leave no trail at all.  To get the Turtle to leave a trail, type
+
+.ce
+1TRAILTURTLE
+
+0or use the abbreviation
+
+.ce
+1TT
+
+0You can now use regular commands to draw a border.
+Since the picture part of the screen is 24 tilespaces across and 24
+tilespaces up and down, you can type
+
+.nofill
+.indent 8
+FDT 24
+RT 90
+FDT 24
+RT 90
+FDT 24
+RT 90
+FDT 24
+
+.indent 0
+.adjust
+Notice that here we have used the command FDT or FORWARDTILESPACE.
+If we had wanted, we could also have used the command FDD.  If you give
+a FDD command to a trailing turtle, it will drop the tile as soon as it
+gets one dotspot into a tilespace. 
+If we had wanted to leave some of the tiles around the border free of
+the pattern, we could have used the command FLYTURTLE (abbrev. FT).
+When we type FT, the turtle will follow all commands, but it will "fly
+over" the tilespaces and leave no pattern trail.
+
+REVIEW 
+
+In this section, we have learned one way to position tile patterns on
+the screen.  We have done this by using the LOGO command CARRYTILE
+"(tile patternname) or CT "(tile patternname).
+If we want the Turtle to trail the pattern, dropping tiles as it goes
+we type the LOGO command TRAILTURTLE or TT.
+If we want the Turtle to fly over the tilespaces, leaving no trail, we
+type the LOGO command FLYTURTLE or FT.
+We then use regular LOGO commands to moive the Turtle about on the screen.	
+
+III.  Designing  a Tortoiseshell
+We can design up to 32 tortoiseshells for oiur various Turtles to wear.
+
+We design a tortoiseshell in much the same way as we design a tile
+pattern.  One important difference, however, is that a tortoiseshell
+can only appear in a single color.  When we are in the process of
+designing a tortoiseshell in KEYTURTLE mode, we can only design the
+tortoiseshell in black and white.  After the tortoiseshell is designed,
+we can assign it to a turtle and give it a color.
+
+In this session, we shall design a tortoiseshell in the form of a box.
+
+First type
+
+.ce
+1TORTOISESHELL "BOX
+
+0If you want, you can use an abbreviation and type instead 
+TS "BOX (is this too scatalogical for an abbrev.?)
+As you can see, an 8x8 grid has appeared in the picture part of the
+screen.  The tortoiseshell we shall design has been given the name "box."
+
+Now type
+
+.ce
+1KEYTURTLE
+
+0or 
+
+.ce
+1KT
+
+0to switch the computer to Keyturtle mode.
+
+Notice that a turtle appears in the bottom-left square of the grid.  We
+use turtles to design tortoiseshells.
+
+You can now use the following LOGO commands to design the tortoiseshell:
+
+.indent 8
+.nofill
+FDD
+BKD
+RT
+LT
+PU
+PD
+EU
+ED
+
+.indent 0
+.adjust
+You should find that the following sequence of commands will draw ou
+tortoiseshell "box" in the form of a box:
+
+.indent 8
+.nofill
+FDD 8
+RT 90
+FDD 8
+RT 90
+FDD 8
+RT 90
+FDD 8
+
+.adjust
+.indent 0
+Now that the tortoiseshell is designed, type
+
+.ce
+1ENDPICTURE
+
+0or
+
+.ce
+1EP
+
+0and the grid and actual-size tortoiseshell will disappear from the screen.
+
+We now want to call up one or more Turtles that we want to wear a box.
+Type
+
+.ce
+1Turtle 1
+
+0or, if we want more turtles,
+Turtles [1 2 3].
+
+Notice that 1 or 3 turtles in the form of asterisks now appear in the bottom
+left corner of the picture part of the screen.
+Now type
+
+.ce
+1WEAR "BOX
+
+0and you will see all the turtles we have called change into their tortoiseshells.
+
+Session 1:  Turtles -- An Overview
+
+I.  Existence
+Up to _______ Turtles can exist in the world.
+
+To bring a Turtle into existence, type
+
+.ce
+1TURTLE 1 (How about EXIST as this primitive?)
+
+0Notice that an asterisk appears in the center of the screen.  This is
+what a Turtle looks like when it is not wearing a tortoiseshell.
+Another way of saying this is that an asterisk is the default picture
+of a turtle.
+
+You can also bring more than one Turtle into existence at a time.  To
+do this type
+
+.ce
+1TURTLES [1 2 3]
+
+0The LOGO command TURTLE takes a number between 1 and _____ as an input*.
+Notice that you need to skip a space between the word TURTLE and
+the number that is input.
+
+The LOGO command TURTLES takes a list* numbers as its input.  Each of these
+numbers must be between 1 and _____. 
++++++++++
+
+Beyond simply existing, Turtles can do the following things:
+
+.nofill
+-- They can change their size, their color and their shape.
+-- They can move.
+-- They can change their heading*.
+-- They can design tilepatterns* and tortoiseshells*.
+-- They can carry tilepatterns.
+and
+-- They can draw.
+
+.adjust
+We shall examine all these attributes, discussing the relevant LOGO
+commands* and LOGO  questions* as we go along.
+
+When a Turtle is given a command or asked a question that it does not understand,
+the computer prints an error message*.  The main thing to remember is
+that Turtles are being literal.  If you accidently spell a command or
+question incorrectly or forget a space or make some mistake in
+punctuation, the Turtle will not understand and the computer will print
+an error message.  After an error message has been printed you must
+retype the entire command or question.
+ 
+Happily, the computer and the Turtles can be taught.  This is done by
+writing procedures*.  Thus, we do not every day have to call newborn
+turtles into a newly created world.
+
+Turtles do not live alone in an undifferentiated world where only LOGO
+can be spoken.  We have already mentioned that Turtles can be directed
+to design tiles to decorate their world.  This world can be divided
+into zones.  The computer can play music if we tell it how and we can 
+type human language into the world.
+
+For purposes of clarity, we discuss the world in terms of discrete
+characteristics.  But, of course, we -- and Turtles too -- can
+experience more than one characteristic at a time.
+
+WELCOME TO LOGO!
+ENJOY THE WORLD!
+
+SESSION 2:  Size and Color
+
+Turtles can appear in two sizes:  big and small.
+
+As we've said, a Turtle that is not wearing a tortoiseshell looks like
+an asterisk.
+
+When we call a Turtle into existence, it appears as a small Turtle.
+That is to say, it is an asterisk drawn within square of 8 dots pots by
+8 dots pots.
+
+If we have called Turtle 1 into existence by typing
+
+.ce
+1TURTLE 1,
+
+0we can double its size by typing
+
+.ce
+1BIGTURTLE 1
+
+0or we can use an abbreviation and type
+
+.ce
+1BT 1.
+
+0If we have called three turtles into existence by typing
+
+.ce
+1TURTLES [1 2 3]
+
+0we can double their size all at once by typing
+
+.ce
+1_BIGTURTLES [1 2 3]
+
+0or simply
+
+.ce
+1BT[1 2 3]
+
+0A big turtle appears within a square of 16 dotspots by 16 dotspots.
+
+All we have to do to get a small turtle back again is to type
+
+.ce
+1SMALL TURTLE 1
+
+0which can be abbreviated
+
+.ce
+1ST 1
+
+0If we want to change more than one big turtle into small turtles, type
+
+.ce
+1ST [1 2 3]
+
+0Any Turtle can appear in any of 16 colors.  The available colors are
+listed in the COLOR GLOSSARY on p.---
+
+When a Turtle first appears in the world, its color is green.  This is
+its default color.
+
+To change a turtle's color, type the command COLOR followed by the name
+of the turtle and the name of the color.  For example, type
+
+.ce
+1COLOR TURTLE 1 "DARKBLUE
+
+0Notice that the name of a color must be preceded by a quotation
+mark.  This alerts the computer that we are talking about the name of a
+color and not a procedure-command.*
+
+If you want, you can change the names of colors.  For example, if you
+want to call the color "blue" "water", type
+
+.ce
+1COLORNAME "BLUE "WATER
+
+0The LOGO command COLORNAME takes two inputs:  the name of a color as
+listed in the COLOR GLOSSARY and the name you want to change it to.
+Notice that each of these names is preceded by a quotation mark.
+
+Section 3:  Heading, Movement, Position and Speed
+
+Now that we know how to call Turtles into existence and how to change
+their size and color, we'll explore ways that we can control their
+movement, heading and speed.
+
+When we call a new born Turtle into existence it appears as a green
+asterisk, 8 by 8 dotspots large.
+
+Since this Turtle is not carrying tiles (see session __) it will leave
+no trail as it moves aroung the screen.
+
+To enable it to draw as it goes type 
+
+.indent 8
+.nofill
+1TURTLE 1
+DRAW
+
+.indent 0
+.adjust
+0Turtle 1 is now capable of drawing but it doesn't have to.  It must
+first put its pen to the ground.  To get it to do this type
+
+.ce
+1PENDOWN
+
+0or use the abbreviation and type
+
+.ce
+1PD.
+
+0If, on the other hand, you want Turtle 1 to move without drawing type
+
+.ce
+1PENUP
+
+0or use the abbreviation and type
+
+.ce
+1PU.
+
+0You are now talking to Turtle 1 and it will follow your commands.
+
+If you want to talk to another turtle simply type in its name and talk
+to it.
+
+HEADING
+
+One of the attributes of a turtle is its heading.  A turtle's heading
+is invisible when it is at rest.  But you can ask a turtle its heading
+by just calling the turtle and then asking its heading in LOGO.
+Type
+
+.ce
+1TURTLE 1
+
+0You are talking to Turtle 1.
+Now type
+
+.ce
+1HEADINGQ
+
+0or simply
+
+.ce
+1HQ
+
+0and the computer will give you the direction the turtle is facing in degrees.
+
+If the Turtle is facing straight up, its heading is 0.  If it is facing
+due east, its heading is 90.  A turtle facing due south has a heading
+of l80 and a turtle facing due west has a heading of 270.
+
+The LOGO primitive* HEADINGQ is a LOGO question*.
+
+You can set a turtle's heading by using the LOGO command* SETHEADING
+(abbrev. SH).  For example, to set a turtle's heading due east, first
+call the Turtle by typing
+
+.ce
+1TURTLE 1
+
+0and then bgive it the proper SETHEADING command by  typing
+SH 90.
+
+If you now give Turtle 1 the movement commands FDD or FDT (see section
+on movement commands below), you will see the Turtle moving due east.
+If you have told the Turtle to draw (by typing DRAW) and have told
+it to put its pen down (by typing PENDOWN), you will see it draw a
+horizontal line the given number of dotspots or tilespaces long in an
+easterly direction.
+
+If, on the other hand, you give Turtle 1 the movement commands BKD or
+BKT, (see movement commands below), the Turtle will move due west.
+
+You can also change a Turtle's heading by using the LOGO commands
+RIGHTTURN (abbrev. RT) and LEFTTURN (abbrev. LT).
+
+Unlike SH, which sets a Turtle's heading according to an absolute
+directional system, RT and LT set the Turtle's heading relative to its
+present heading.
+
+For example, if a Turtle's present heading is 0, the command RT 90 will
+change the Turtle's heading to 90. But, if a Turtle's present heading
+is 90, the command RT 90 will change the Turtle's heading to l80.
+
+Similarly, if a Turtle's present heading is 0, the command RT 90 will
+change the Turtle's heading to 270.  And, if a Turtle's present heading
+is 270, the command LT 90 will change the Turtle's heading to l80.
+
+MOVEMENT COMMANDS
+
+Turtles can move forward and back.  And they can move by dotspots or by
+tilespaces.  To give you an idea of distances, the entire screen is 24
+by 32 tilespaces large and the picture part of the screen is 24 by 24
+tilespaces large.  Each tilespace is 8 by 8 dotspots large.
+
+To make Turtle 1 move forward 10 tilespaces, type
+
+.ce
+1FORWARDTILESPACES 10
+
+0or since this is such a long command, type simply
+
+.ce
+1FDT 10.
+
+0To make Turtle 1move forward 60 dotspots, type 
+
+.ce
+1FORWARDDOTSPOTS 60
+
+0or, using the abbreviation,
+
+.ce
+1FDD 60.
+
+0The forward commands, FDT and FDD, move the turtle the specified number
+of tilespaces or dotspots in the direction of the turtle's heading.
+
+To move the turtle in the direction opposite from its heading, use the
+movement commands BACKTILESPACES (abbrev. BKT) and BACKDOTSPOTS
+(abbrev. BKD).
+
+Unfortunately, the computer has only a limited amount of "ink."  "Ink"
+is used up by drawing tile patterns, printing text and when the Turtle
+draws.
+
+If a Turtle is drawing and the computer runs out of ind, the error message*
+
+OUT OF INK
+
+will flash in red in the text part of the screen.
+
+If you keep drawing, a weird thing will happen.  As the Turtle draws in
+one tile, all of its _________ will also change.  (Maybe it would be
+better just not to let it draw at all anymore?)
+
+POSITION
+
+You can set a Turtle's position according to its dotspot coordinates or
+its tilespace coordinates.  To do this, we use the LOGO commands SETPOSTIONDOTSPOT
+(abbrev. SPD) and SETPOSITIONTILESPACE (abbrev. SPT).
+
+When a Turtle first appears in the center of the screen (remember to
+change this in other sessions) both its dotspot position and tilespace
+postion is (00).  The left-top corner of a turtle works its position.
+The following diagrams are approximations of the dotspot and tilespace
+coordinate system:
+
+.sp 10
+(Note:  It has yet to be decided what the coordinate system will be.
+The question is whether (00) should be in the center of the screen or
+at bottom left.  Seems to me that this is an esthetic-psychological-educational
+issue of some importance.  Comments please!!!)
+
+SPEED
+
+A turtle can be commanded to move at various speeds.
+
+To do this, use the LOGO command SETSPEED
+
+The input to SETSPEED represents the number of dotspots per .x seconds
+<not yet set> traversed by the Turtle.
+
+SESSION 4:  ZONES
+
+A zone -- a rectangular portion of the screen -- can be output using
+the LOGO command ZONE.
+
+As inputs, ZONE takes t wo lists.  The first is a lot containing the
+dotspot coordinates of the top-left <or bottom-left>:
+<This must be decided>  corner of the rectangle.  The second list
+contains the dotspot dimensions of the rectangle:  length and width.
+
+For example, 
+
+.ce
+1ZONE [ 0 0 ] [ 10 5 ]
+
+0outputs a rectangle whose top-left <bottom-left?> corner is at the
+dotspot coordinates ( 0 0 ), whose length is (0 dotspots and whose
+width is 15 dotspots.
+
+A zone can be created and named in the following manner:
+
+.ce
+1CALL ZONE [ 0 0 ] [ 10 15 ] "RUSSIA
+
+0If you want the borders of the zone to appear in dotted lines on the
+screen, type
+
+.ce
+1SHOWZONE 0(abbrev. 1SZ0)
+
+To make the borders disappear, type
+
+.ce
+1HIDEZONE 0(abbrev. 1HZ0).
+
+Zones can be used in conjunction with "when demons" and the LOGO
+predicate IN?  For example,
+
+.nofill
+.indent 6
+TO FELLOWTRAVEL
+
+10: TURTLES [1 2]
+20: CALL ZONE [ 0 0 ] [10 15] "RUSSIA
+30: WHEN TURTLE 1 IN? "RUSSIA
+   TURTLE 2 COLOR "RED
+
+.adjust
+.indent 0
+<we have wondered about making the following distinction:  LOGO words
+ending in "Q" are "LOGO questions" that output something besides true
+or false, e.g. 
+
+HEADINGQ; LOGO words ending in "?" are predicates, e.g. IN?  comments please.>
+
+STAMPS
+
+If you have designed tiles -- using either TILE PATTERN or a turtle in
+DRAW mode -- you can make a copy of a set of tiles and make this copy
+appear elsewhere on the screen.
+
+To do this, we use the LOGO primitives DEFINESTAMP (abbrev. DS) and STAMP.
+
+Imagine that you have, by one method or another, created a garden
+within an area of the screen that could be described as [ 0 0 ] [10
+15], where the first list gives the tilespace coordinates of the
+upper-left <or lower-left??> corner of a rectangle and the second list
+gives the height and width <width and height??> in tilespaces.
+
+Note that coordinates and dimensions can only be given in tilespaces.
+
+We define this area as a stamp and give it the name "garden" by typing
+
+.ce
+1CALL DS [0 0] [10 15] "GARDEN
+
+0If we then want to place a copy of "garden" with its upper-left
+<lower-left??> corner at the tilespace coordinates [50 50] we type
+
+.ce
+1STAMP "GARDEN [50 50]
+
+0We can also get a Turtle to stamp.  Whenever it is, e.g.
+
+.nofill
+.INDENT 6
+TURTLE 1
+STAMP "GARDEN TPOSQ
+
+.adjust
+.indent 0
+(TPOSQ means pritn tilespace position as a list).
+

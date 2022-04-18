@@ -1,0 +1,2811 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 31vgi
+.font 3 25vg
+.tabfnt 3
+.chap 5
+.dummy @
+.he1
+Turtle Geometry
+.HE2
+Differentiating FORWARD/RIGHT
+.ss
+.adjust
+.ce
+1Turtle Geometry:  What the Students Learned
+
+.indent 3
+2The ways in which students control the movements of the LOGO 
+TURTLE is an important aspect of their behavior in the LOGO learning
+environment.  
+In this section, we shall describe the range of student behaviors in
+the "learning environment" of "Turtle Geometry", and relate these
+behaviors to fundamental understandings in mathematics.
+
+We have organized our observations into six general categories:
+
+.adjust
+.indent 6
+1. Qualitative structuring of the number worlds.
+
+2. Quantitative structuring of the number worlds.
+
+3. The "group properties" of the number worlds -- the structuring
+of mathematical operations.
+
+4  The use of "TURTLE Coordinates" -- the beginnings of
+differential geometry. 
+
+5. The use of coordinate systems -- the "global structure" of the
+geometric world.
+
+6. Theorems and heuristics -- movement towards formal mathematics.
+
+.indent 0
+.adjust
+.block 5
+11. Qualitative Structuring of the "Number World"
+
+.indent 3
+2The use of numbers as inputs to TURTLE commands
+forces a student to recognize the different roles for
+numbers within Turtle Geometry, as well as the different properties of
+numbers within each role.  The primary distinction that a student has
+to make is between the use of numbers as inputs to FORWARD and as
+inputs to RIGHT and LEFT.  For example, in producing figures, the input
+to FORWARD determines the size of the figure, while the input to
+RIGHT determines the shape.  As an input to FORWARD, a bigger
+number produces a "bigger" effect, while as an input to RIGHT, a bigger
+number usually produces a "different", but not necessarily "bigger" effect.
+RIGHT 180 reverses the TURTLE's direction, while RIGHT 360 causes no
+rotation at all for the LOGO screen TURTLE!
+
+Loosely speaking, inputs to FORWARD are mainly "quantitative," while
+inputs to RIGHT are largely "qualitative."  FORWARD is conceptually a
+"continuous function", while RIGHT is conceptually a "discontinuous
+function:" FORWARD 90 and FORWARD 91 produce "almost the same effect,"
+while RIGHT 90 and RIGHT 91 can produce extremely different effects in
+some circumstances.  
+
+These discontinuities become apparent when a sequence of instructions
+is repeated a number of times.  It is the effect of a repeated
+difference in rotation that is "discontinuous" even when two single
+rotations appear to be very close.  Compare two squares made by the commands
+
+.nofill
+.indent 0
+0REPEAT [FORWARD 90 RIGHT 90]@4 2and0 REPEAT [FORWARD 93 RIGHT 90] 4
+
+.block 10
+.sp 8
+.SPREAD
+/Figure 1.1a//Figure 1.1b
+
+
+.indent 3
+.adjust
+2No matter how often these commands are repeated, the results will be
+similar squares of slightly different sizes.  In contrast, consider the effect
+of a small change in the angle.  Compare two figures drawn by the commands
+
+.indent 0
+.nofill
+0REPEAT [FORWARD 90 RIGHT 90 ]@4 2and0 REPEAT [FORWARD 90 RIGHT 93]@4
+
+.indent 3
+.block 10
+.sp 8
+.spread
+/Figure 1.2a//Figure 1.2b
+
+
+.adjust
+2The figure on the right is "almost the same" as the one on the left.
+If, however, we repeat both FORWARD 90 RIGHT 90 and FORWARD 90 RIGHT
+93 a few more times, the differences become more apparent:
+.nofill
+
+.indent 0
+0REPEAT [FORWARD 90 RIGHT 90 ]@8 2and0 REPEAT [FORWARD 90 RIGHT 93]@8
+
+.indent 3
+.block 10
+.sp 8
+.spread
+/Figure 1.3a//Figure 1.3b
+
+
+.adjust
+2and if we repeat the two pairs of commands a lot more times, the two
+figures become significantly different in appearance:
+
+.indent 0
+.nofill
+0REPEAT [FORWARD 90 RIGHT 90]@100 2and0 REPEAT [FORWARD 90 RIGHT 93]@100
+
+.he2
+Behavior of POLY Procedures
+.block 10
+.sp 8
+.spread
+/Figure 1.4a//Figure 1.4b
+
+
+.indent 3
+.adjust
+2These differences are shown in a more general way by the
+behavior of the LOGO procedure, POLY:
+
+.nofill
+.indent 6
+.he2
+Behavior of POLY Procedures
+.block 5
+0TO POLY :SIDE :ANGLE
+10 FORWARD :SIDE
+20 RIGHT :ANGLE
+30 POLY :SIDE :ANGLE
+END
+
+.indent 0
+.adjust
+2When the command POLY (with two inputs) is given, it will continue to
+repeat a fixed FORWARD-RIGHT combination, until the computer runs out
+of storage space.  The first input determines the amount the turtle
+will move forward each time; the second determines how much it will
+turn.  Varying the second (angle) input, while holding the first
+constant, produces dramatically different shapes:
+.page
+.indent 0
+.sp 8
+.spread
+/0POLY 100 90/POLY 100 93/POLY 100 120
+.spread
+/Figure 1.5/Figure 1.6/Figure 1.7
+
+.sp 8
+.spread
+/POLY 100 144//POLY 100 145
+.spread
+/Figure 1.8//Figure 1.9
+
+.sp 8
+.spread
+/POLY 100 179//POLY 100 180
+.SPREAD
+/Figure 1.10//Figure 1.11
+.indent 3
+.he2
+Non-Geometric Choice of Inputs
+.page
+2On the other hand, varying the first (side) input, while holding the
+second constant, produces a set of geometrically similar shapes:
+
+.indent 0
+.block 16
+.sp 12
+.spread
+/POLY 10 144/POLY 50 144/POLY 100 144
+.SPREAD
+/Figure. 1.12/Figure 1.13/Figure 1.14
+
+.indent 3
+.adjust
+2One of the learner's earliest challenges in the control of the LOGO
+TURTLE is to comprehend and make use of this qualitative difference in
+the effects of numbers as inputs to TURTLE commands.  (Other roles of
+numbers in the LOGO environment have to do with the use of line numbers
+to order a sequence of steps in a LOGO procedure, and the use of
+numbers as counters in determining how often a series of steps will be
+repeated.  
+
+.indent 0
+.BLOCK 6
+1 BEHAVIORS OBSERVED:
+
+11.1 Inputs Chosen by Non Geometric Considerations
+
+0Numbers used as inputs to both FORWARD and RIGHT commands have
+no apparent geometric regularity.  They may be determined by
+non-geometric considerations such as ease of typing, or previously
+familiar number patterns.  At this stage of comprehension, interesting
+effects may be produced, but in an uncontrolled way, subject to
+unexpected "disasters" such as "OUT OF BOUNDS" messages.
+
+.block 6
+1EXAMPLES:
+
+1.1.10 A student may repeat a pair of commands FORWARD 99 RIGHT 99,
+several times to make an interesting design:
+
+.block 11
+.sp 9
+.ce
+Figure 1.15
+
+11.1.20 A student makes a procedure by using the commands FORWARD 123,
+RIGHT 123, FORWARD 123, RIGHT 123, FORWARD 123.  An interesting 
+design may be made by repeating
+this procedure a number of times:
+
+.NOFILL
+.block 30
+TO JANE
+1 FORWARD 123
+2 RIGHT 123
+3 FORWARD 123
+4 RIGHT 123
+5 FORWARD 123
+END
+
+.sp 18
+.spread
+/TO JANE/REPEAT [JANE] 3/REPEAT [JANE] 30
+.SPREAD
+/Figure 1.16/Figure 1.17/Figure 1.18
+
+
+.adjust
+.he2
+Designs with Squares
+.block 5
+11.2 More Systematic Choices of Inputs
+ 
+The student's choice of input numbers becomes more
+systematic, but s/he still does not differentiate between FORWARD/BACK
+and RIGHT/LEFT commands.
+
+1Examples:
+
+1.2.1 0One simple regularity consists of reducing all inputs to
+relatively small numbers (say under 100) in hopes of avoiding "OUT OF
+BOUNDS" messages.
+
+11.2.20 Another undifferentiated regularity consists of using
+multiples of ten as inputs, apparently reflecting the observation by
+the student that small changes in inputs to FORWARD (and to RIGHT and
+LEFT in cases where polygons are not involved) produce very small
+effects.  At this stage some students repeatedly use a few key
+"round numbers;"e.g.,  30, 50, 90 or 100, for inputs to all turtle commands.
+
+.block 5
+11.3 Differentiation Between Linear and Angular Inputs
+
+0The student differentiates between linear and angular uses of
+numbers.  Typically this involves at first the discovery that certain
+"special angles" produce uniquely desirable effects.  Eventually the student 
+clearly differentiates between the two by dropping the
+use of the "special angle" numbers: 90, 120, 180, etc. as inputs to
+FORWARD (except in certain isolated particular instances).  Some students
+develop a less significant set of "special inputs to FORWARD":
+100, 200, etc.  that are not usually used as inputs to RIGHT and LEFT.
+ 
+1EXAMPLES:
+
+1.3.1 0The student discovers the significance of 90 degrees as an
+input to RIGHT and LEFT commands.  A typical student project is the
+construction of a square or rectangle, using 90 degree rotations.  (At
+this point some students still show a blurred differentiation between
+linear and angular inputs.  Many students draw their first squares by
+typing FORWARD 90, RIGHT 90, FORWARD 90, ...)
+
+.BLOCK 9
+.sp 7
+.ce
+Figure 1.19
+
+11.3.2 0A student uses squares and rectangles to make a variety of
+designs.  Student procedures WINDOW, CHAMP, DOUBLECHAMP and CULL are
+good examples of this type of design:
+.page
+.block 22
+.sp 18
+.spread
+/WINDOW//CHAMP
+.SPREAD
+/Figure 1.20//Figure 1.21
+.block 22
+.sp 18
+.ce
+DOUBLECHAMP
+.ce
+Figure 1.22
+.block 21
+.sp 17
+.ce
+CULL
+.ce
+Figure 1.23
+.he2
+Other "Special" Angles
+.block 5
+11.3.3 0A student uses RIGHT 180 or LEFT 180 to reverse the
+TURTLE's direction.
+
+11.3.4 0The student finds rotations that produce simple closed
+shapes when repeatedly rotating a figure.  Repeating RCIRCLE, RIGHT 60,
+for example, produces a shape that closes after six repetitions;
+RCIRCLE, RIGHT 45 closes after eight repetitions.
+
+.block 20
+.sp 18
+.spread
+/Figure 1.24//Figure 1.25
+
+11.3.5 0The student uses combinations of 45 and 90 degree
+rotations, or a series of 120 degree rotations to draw a triangle.
+
+.nofill
+.indent 6
+.block 9
+RIGHT 45
+FORWARD 100
+RIGHT 90
+FORWARD 100
+RIGHT 45
+RIGHT 90
+FORWARD 141
+.ri
+Figure 1.26
+
+.block 7
+or,
+
+FORWARD 100
+RIGHT 120
+FORWARD 100
+RIGHT 120
+FORWARD 100
+.ri
+Figure 1.27
+
+.indent 0
+.adjust
+11.3.6 0A student makes use of "special angles" when carrying out
+planned designs involving non-right-angles.  For example, the "nose
+cone" of a "rocket" is drawn by making use of rotations of 30 and 120 degrees:
+
+.nofill
+.block 11
+FORWARD 100
+RIGHT 30
+FORWARD 20
+RIGHT 120
+FORWARD 20
+RIGHT 30
+FORWARD 100
+RIGHT 90
+FORWARD 20
+.RI
+Figure 1.28
+
+.adjust
+11.3.7 0A student finds "special angles" useful for drawing
+regular polygons or stars.  Using either a POLY procedure or a sequence
+of repeated commands, the student finds the angles which will draw a
+hexagon (60 degrees), an octagon (45 degrees), a five pointed star (144
+degrees), etc.
+
+.block 12
+.sp 8
+.spread
+/POLY 50 60/POLY 50 45/POLY 50 144
+.SPREAD
+/Figure 1.29/Figure 1.30/Figure 1.31
+.he2
+Quantitative Structuring of Numbers
+.page
+12. Quantitative Structuring of the "Number Worlds"
+
+.indent 3
+2Many students begin LOGO with a very poor ability to estimate the
+relative effect of numbers.  Splitting the "world of numbers" into
+"length numbers" and "angle numbers" provides a qualitative
+structure for that world.  Estimating the practical effects of
+particular numbers provides a quantitative structure.  We have
+observed that most students find it easier to make estimates involving
+linear numbers than estimates involving angular numbers.  The same
+holds true for other operations with these numbers, to be discussed in
+section 4 below.  This may be due both to a greater ease of visual
+comparison of linear magnitudes and to the discontinuous effects of
+angular numbers, discussed in section 2 above.
+
+.indent 0
+.block 5
+1BEHAVIORS OBSERVED:
+
+2.1 Becoming Aware of Limiting Factors
+
+0 A student's first quantiative structuring of numbers often occurs
+when he or she becomes aware of certain limiting factors and
+realizes that certain numbers are too small or too large to be of
+practical effect in most applications.
+
+.BLOCK 5
+1EXAMPLES:
+
+2.1.1 Lack of Appreciation of "Orders of Magnitude"
+
+0The student discovers that very small inputs to FORWARD/BACK
+and RIGHT/LEFT produce negligible effects, and shifts to inputs larger
+than 10 for most FORWARD and RIGHT commands.  For a student who has
+little sense of relative magnitude of numbers, this step may be far
+from obvious, and may require a great deal of experimentation.  Deborah's
+first LOGO command was FORWARD 10.  When she
+realized that the effect was so tiny as to be almost invisible, her
+friends urged her to "try a larger number".  She responded by typing
+FORWARD 12.  At this point she had no sense how much larger a number
+had to be to produce an appreciably different effect.  (We have found
+this type of behavior to be more generally prevalent when much younger
+children (ages 6-9) are introduced to LOGO.)
+
+.he2
+Finding the Limits
+.block 5
+12.1.2  Coping with "OUT OF BOUNDS" errors
+
+0 The student discovers that large inputs to FORWARD and
+BACK may result in "OUT OF BOUNDS" error messages. S/he attempts to
+predict how large a number can be used as an input without producing an
+"OUT OF BOUNDS" message.  Eventually s/he is able to create designs
+that remain "in bounds" by limiting the size of inputs to FORWARD
+commands to numbers less than 100 or 200.
+
+.block 5
+12.1.3  The Largest Possible Inputs to LOGO Commands
+
+0The student discovers upper limits to RIGHT/LEFT and SPIN
+comands.  In this case, the limits do not correspond to physically
+observable criteria such as a distance on the display screen, but are
+based on "arbitrary" limits imposed by the designers of the computer
+language.  Students often find these limits by a process of trial and error. 
+
+.block 5
+12.1.4  Finding that 360o is the Largest Meaningful Rotation
+
+0The student discovers that inputs to RIGHT and LEFT turn
+the TURTLE more than once around.  This is a relatively early discovery
+for students using a "floor TURTLE" as it can be clearly observed that
+a rotation larger than 360 degrees turns the TURTLE more than once
+around.  It is more difficult to discover with the "screen TURTLE,"
+because the TURTLE moves instantaneously to its new position without
+visibly rotating.
+
+.he2
+Estimating Distances
+.block 5
+12.2  Estimating Distances
+
+0The student develops strategies for estimating the number of
+TURTLE steps needed to move the turtle to a particular point on the screen.
+The estimate can be refined by an approach involving successive approximations.
+
+.block 6
+1EXAMPLES:
+
+2.2.1 Predicting Large Scale Effects.
+
+0A student begins to be able to predict with some degree of
+accuracy the effect of particular inputs to FORWARD such as FORWARD 50
+or FORWARD 100.
+
+.block 5
+12.2.2  Finding Precise Distances by Successive Approximations
+
+0A student moves the turtle to a particular location, by
+using a trial and error approach.  For example, Kevin
+constructed a right isoceles triangle, each of whose equal sides was
+100 turtle steps.  To complete the hypotenuse, he used the
+following sequence of commands:  FORWARD 100 (too small), FORWARD 50
+(too big), BACK 5 (still to big) and BACK 5 (seemed just right).
+
+.block 25
+.sp 8
+.spread
+/FORWARD 100//FORWARD 50
+.SPREAD
+/Figure 2.1//Figure 2.2 
+
+.sp 8
+.spread
+/BACK 5//BACK 5
+.spread
+/Figure 2.3//Figure 2.4
+
+A student may also use a method of successive approximations to
+find the distance from the center, to the edge of the screen.  The
+following sequence of commands is a typical one.  Starting with the
+TURTLE in the center of the screen, a student might type:  
+
+.nofill
+.block 10
+?FORWARD 150
+?FORWARD 100
+OUT OF BOUNDS
+?FORWARD 50
+?FORWARD 50
+OUT OF BOUNDS
+?FORWARD 20
+OUT OF BOUNDS
+?FORWARD 1
+OUT OF BOUNDS
+
+.he2
+Estimating Rotations
+.adjust
+Since
+the student can go no lower than FORWARD 1, s/he realizes that the
+TURTLE is now situated at the edge of the screen.  By adding all the
+steps that did not result in an OUT OF BOUNDS message (the steps
+underlined above), the student concludes that the distance from the
+center to the top of the screen is 150 + 50, or 200 TURTLE steps.
+
+.block 5
+12.3  Estimating Rotations
+
+0The student develops strategies for estimating the amount of
+rotation necessary to aim the TURTLE in a particular direction.
+The estimate can be refined by a method involving successive approximations.
+
+.block 6
+1EXAMPLES:
+
+2.3.1  Estimating Rotations Less than 90 Degrees
+
+0A student estimates rotations of less than 90 degrees with an
+accuracy of + 10 degrees.  Trial and error techniques can be used
+to refine the estimate.  A student may want to aim the TURTLE towards the
+upper right hand corner of the screen.  S/he might choose to turn the TURTLE RIGHT 50,
+knowing that it has to be less than 90 degrees.  By moving the TURTLE
+forward, the student can see how accurate the estimate was.
+
+.block 5
+12.3.2  Estimating Rotations Greater Than 90 Degrees
+
+0A student estimates rotations of more than 90 degrees by
+first turning the TURTLE through a rotation of 90 degrees and then
+estimating how much further rotation is necessary.  For example, a student
+constructing a right isoceles triangle who has reached the end of the
+second equal leg might try the sequence of rotations shown below.
+Since it might be difficult for the student to see
+when the turtle is aimed in exactly the right direction, these steps
+may be combined with some FORWARD commands, in order to see exactly how
+close to the correct ending point the TURTLE will come.
+
+.he2
+Drawing a Right Triangle
+.block 12
+.sp 8
+.spread
+/Starting Point/RIGHT 90/RIGHT 50
+.spread
+/Figure 2.5/(too small)/(too large)
+.spread
+//Figure 2.6/Figure 2.7
+
+.block 12
+.sp 8
+.SPREAD
+/LEFT 10//RIGHT 5
+.spread
+/(still too large)//(just right)
+.SPREAD
+/Figure 2.8//Figure 2.9
+
+.he2
+Drawing an Equilateral Triangle
+.block 5
+12.3.3  Estimating Repeated Rotations by Trial and Error
+
+0A student develops a trial and error strategy for
+estimating a repeated rotation.  Consider the process of constructing
+an equilateral triangle.  The student must first realize that the same
+FORWARD and RIGHT steps have to be repeated three times.  The following
+sequence of attempts is a typical one for solving this problem:
+.nofill
+
+.block 8
+11. 
+0FORWARD 100 
+RIGHT 100 
+FORWARD 100 
+RIGHT 100 
+FORWARD 100:
+
+.RI
+rotation too small 
+.ri
+Figure 2.10
+
+.block 8
+12. 
+0FORWARD 100 
+RIGHT 150 
+FORWARD 100 
+RIGHT 150 
+FORWARD 100:
+
+.RI
+rotation too big
+.ri
+Figure 2.11
+
+.block 8
+13. 
+0FORWARD 100 
+RIGHT 125 
+FORWARD 100 
+RIGHT 125 
+FORWARD 100
+
+.RI
+still too big
+.ri
+Figure 2.12
+
+.block 8
+14. 
+0FORWARD 100 
+RIGHT 120 
+FORWARD 100 
+RIGHT 120 
+FORWARD 100
+
+.RI
+just right!
+.ri
+Figure 2.13
+
+.he2
+Finding an Exact Fit
+.adjust
+It should be noted that some students using this method may decide that
+RIGHT 119 or RIGHT 121 is the correct solution to their
+problem.  Unless they "hide" the TURTLE and carefully examine the
+resulting figure, the differences between such a "solution" and the
+correct rotation of 120 degrees may not be apparent to them.
+
+.block 14
+.sp 8
+.spread
+/REPEAT [FORWARD 100 RIGHT 121] 3//HIDETURTLE
+.spread
+/(lines appear to meet exactly)//(lines overlap slightly)
+.spread
+/Figure 2.14//Figure 2.15
+
+.he2
+Group Properties of Numbers
+The difference becomes significant when a student wants to repeat the
+figure, or relate it to other figures (to construct a "house" for example).
+.page
+13. The Group Properties of the Number Worlds:  The Structuring of
+Mathematical Operations.
+
+.indent 3
+2Piaget has demonstrated the significance of the way in which
+children develop intellectual structures to deal with mathematical
+operations.  The most significant of these operations have been
+described by Piaget as "composition" (e.g. the additive property of
+numbers) and "inversion" (e.g. formation of the inverse or negative of
+an operation).  In the LOGO environment we can observe the development
+(or lack of development) of these intellectual structures in the
+following ways:
+
+.indent 6
+.block 4
+-- The use of "composition" is seen in the ways that students combine
+or aggregate TURTLE commands so that two commands, FORWARD 50, FORWARD
+50, may be combined as FORWARD 100.  Angular rotations can be similarly
+aggregated. 
+
+.block 2
+--The use of "inversion" is seen in the ways that students are
+able to use BACK as an inverse to FORWARD and LEFT as an inverse to RIGHT;
+
+.block 7
+--The combination of these operations is seen when students
+aggregate a series of commands such as FORWARD 100 BACK 30 FORWARD 10
+into one command, FORWARD 80, or a similar series with respect to
+rotation, LEFT 90 RIGHT 20 LEFT 10, into LEFT 80 
+(It is our finding that that students tend to combine 
+these operations more readily with linear numbers than with
+angular numbers);
+
+.block 2
+--The use of inversion is particularly powerful in projects
+involving SPIN commands
+
+.block 2
+--The use by students of the particular properties of the
+"rotational group" -- its modularity with respect to 360 degrees.
+
+.he2
+Failure to Combine Steps
+.indent 0
+Among our sample of sixteen sixth grade students, we have observed a wide
+variety of behaviors with respect to these operations:  from students
+who never made use of composition and inversion, to students who use
+them inconsistently and tentatively, to students who learned to use them
+within certain limited contexts, to students who used them
+"automatically" and regularly as part of their LOGO work.  We believe
+that this particular set of behaviors provides an unusually good
+"window" through which we can view an important aspect of the
+children's cognitive development.
+
+Instances of this kind of behavior can often be seen by an examination
+of a student's dribble files.  Typically a student's exploratory work
+on a project includes many steps which could either be combined at a
+later point, or eliminated as unnecessary.  By taking note of just how
+readily the student combines or eliminates these steps, and under what
+circumstances, we can get a good sense of the student's use of
+mathematical operations.
+
+.indent 0
+.block 6
+0BEHAVIORS OBSERVED:
+
+13.1  Students Who do Not Make Use of Operations
+
+0Many students do not easily arrive at the strategy of simplifying
+their work by combining several commands into one.
+
+.block 6
+EXAMPLES:
+
+13.1.1.  Failure to Combine Steps
+
+0A student will determine by trial and error that the final
+leg of a right isoceles triangle can be built by a series of FORWARD
+steps:  FORWARD 100 FORWARD 40 FORWARD 1.  (See example 2.2.2 above).
+When writing a procedure to draw this triangle, the student would
+include three separate steps to draw the final line:
+.indent 6
+.nofill
+
+.block 11
+TO TRI
+1 RIGHT 45
+2 FORWARD 100
+3 RIGHT 90
+4 FORWARD 100
+5 RIGHT 90
+6 RIGHT 45
+7 FORWARD 100
+8 FORWARD 40
+9 FORWARD 1
+END
+.ri
+Figure 3.1
+
+.he2
+Partial Use of Operations
+.indent 0
+.adjust
+.block 5
+13.1.2 The Example of Deborah
+
+0The student who exhibited this type of behavior most
+consistently was Deborah.  Although she carried out a number of
+projects in Turtle Geometry she was never observed to combine steps.
+If she was pleased with an exploration, she always copied all her
+original steps exactly as she had first used them.  Thus although she
+seemed to understand that two turns of RIGHT 90 and RIGHT 90 were
+always needed to "turn the TURTLE around," she never combined these in one
+step as RIGHT 180.  Similarly, when she made a mistake, turning LEFT
+90, where she needed a right turn, she would correct it by turning
+the TURTLE RIGHT 90 to bring it back to its original position, and then
+turning it an additional RIGHT 90 to achieve the desired direction.
+While this showed a limited ability to use the inverse operation with
+regard to angles, it should be noted that Deborah always copied this
+series of steps as LEFT 90, RIGHT 90, RIGHT 90, rather than as simply
+RIGHT 90.
+
+Students who, like Deborah, had a limited strategy of copying all
+experimental steps literally, sometimes had fewer bugs than students who
+attempted to combine steps and made arithmetical or copying errors.
+
+.block 5
+13.2 Transitional Phase -- Incomplete and Inconsistent Uses of Operations.
+
+0Students usually begin
+combining forward
+steps before combining rotations
+(sometimes a good deal before).
+At first, they may
+be inconsistent, combining in some cases and not in others.  They begin
+the use of inversion by realizing that a forward step can be reversed
+by an equal BACK step and that a RIGHT turn can be reversed by an equal
+LEFT turn.  It is somewhat later that students are consistently able to
+combine FORWARD and BACK steps by subtracting the BACK from the FORWARD
+inputs.  Many students never achieve the further step of
+combining RIGHTs and LEFTs, by subtracting one from the other.
+
+.block 6
+EXAMPLES:
+
+13.2.1  Combining FORWARD Steps but Not Rotational Steps
+
+0An example of partial use of composition is seen in Kevin's
+construction of a right isoceles triangle, described above
+(section 2.2.2).  Compare Kevin's initial steps with his final
+procedure:  
+
+.nofill
+.block 14 
+Kevin's Ten Original Steps	Kevin's Procedure (Seven Steps):
+
+RIGHT 45			TO OF
+FORWARD 100			1 RIGHT 45
+RIGHT 90			2 FORWARD 100
+FORWARD 100			3 RIGHT 90
+RIGHT 90			4 FORWARD 100
+RIGHT 45			5 RIGHT 90
+FORWARD 100			6 RIGHT 45
+FORWARD 50			7 FORWARD 140
+BACK 5				END
+BACK 5
+.ce
+Figure 3.2
+
+.adjust
+Kevin easily combined four FORWARD and BACK steps in one FORWARD
+step, making use of both composition and inversion, but at this point
+he did not combine rotational steps
+at all.
+
+.block 5
+13.2.2  Jimmy's Boat
+
+0A more complex example of inconsistent use of
+composition and inversion is shown by Jimmy's first project in which he
+drew the BODY of a boat.  First he drew the boat by a series of
+exploratory steps, arrived at by a process involving a good deal of
+trial and error.  Compare the original steps as written in Jimmy's
+notebook with his procedure:
+
+.nofill
+.block 25
+.spread
+/Jimmy's 22 Original Steps://Jimmy's 15 Step Procedure:
+
+LEFT 90				TO BODY
+FORWARD 60			1 LEFT 90
+RIGHT 40			2 FORWARD 60
+FORWARD 20			3 RIGHT 40
+RIGHT 140			4 FORWARD 20
+PENUP				5 RIGHT 140
+FORWARD 70			6 FORWARD 70
+BACK 70				7 FORWARD 10
+PENDOWN				8 RIGHT 96
+FORWARD 70			9 FORWARD 14
+FORWARD 10			10 RIGHT 180
+RIGHT 92			11 FORWARD 14
+RIGHT 2				12 RIGHT 89
+RIGHT 4				13 LEFT 178
+FORWARD 10			14 FORWARD 20
+FORWARD 4			15 LEFT 10
+RIGHT 180		
+FORWARD 14
+RIGHT 89
+LEFT 178
+FORWARD 20
+LEFT 10
+.ri
+Figure 3.3
+
+.he2
+Copying Bugs
+.ADJUST
+Jimmy made use of both composition and inversion in reducing his
+original list of 22 steps to a procedure of 15 steps.  When he used
+composition in reducing the group of steps labelled B, RIGHT 92, RIGHT
+2, RIGHT 4, to the single step, RIGHT 96, Jimmy made a small
+arithmetical error.  When Jimmy combined the steps listed as group A,
+he made use of inversion to realize that he could eliminate the steps
+PENUP, FORWARD 70, BACK 70, PENDOWN, but he did not combine the 
+step, FORWARD 70, with the next step, FORWARD 10.  On the other
+hand, he did combine the steps (labeled C), FORWARD 10, FORWARD 4, replacing them
+with FORWARD 14.
+
+What Jimmy did with the steps labeled D, RIGHT 89, LEFT 178, is
+typical of many students at this stage.  While working, he realized
+that he had turned the wrong direction when he typed RIGHT 89.  In his
+head he calculated that to compensate for this he would need to turn
+LEFT 89 twice, for a total turn of LEFT 178, which he used.  He did not
+take the next possible step and replace his two steps by one, LEFT 89.
+
+.block 5 
+13.2.3  Dealing With Copying Bugs.
+
+0A common difficulty exhibited by students who are at this
+transitional stage is problems with copying combined with faulty
+arithmetic.  We have seen an example above, where Jimmy combined RIGHT
+92 RIGHT 2 RIGHT 4 as RIGHT 96.  In this case the results were
+inconsequential.  Often, however, similar situations have caused rather
+confusing bugs.
+
+.he2
+Consistent Use of Operations
+Laura usually had difficulty predicting whether 
+to turn the TURTLE to the right or left.  Once she made a choice, however,
+she could easily reverse it.  If she mistakenly typed RIGHT 90, for
+example, she would then follow it by typing LEFT 90, LEFT 90.  This
+might occur several times within one short project.  When Laura copied
+the steps over into her notebook she simplified by writing LEFT 90,
+eliminating the "unneeded steps," RIGHT 90, LEFT 90.  Unfortunately, she
+often made mistakes in copying, and since she had many opportunities
+for such errors, extremely puzzling bugs sometimes occured in her final
+procedures.  Since the original steps had been erased from the text
+display screen, and since her notebook reflected only her "simplified"
+version, she had no easy way of debugging her procedure, other than
+starting all over again.
+
+Deborah's approach of copying all steps could have been very useful
+to Laura.  Since Laura was conceptually far beyond Deborah and since
+Laura was extremely reluctant to do "extra work", she persisted in her
+scheme of eliminating "unneccessary" steps as she copied.  This led to
+bugs Laura could not understand except
+as an inconsistency of the computer.
+
+.block 5
+13.3  Consistent Use of Mathematical Operations.
+
+0Some students came to incorporate these operations into their work
+quite simply and easily.  Although errors might occassionally be made
+in arithmetic or copying, it usually became quite clear when a student
+understood these ideas with no difficulty.
+
+.BLOCK 6
+EXAMPLES:
+
+13.3.1 0A simple example can be taken from Gary's work.  The following
+sequence of statements occured in his dribble file:
+
+.indent 6
+.nofill
+.BLOCK 4
+RIGHT 99
+99 + 99
+YOU DON'T SAY WHAT TO DO WITH 198
+LEFT 198
+
+.indent 0
+.adjust
+Later, when Gary incorporated this as part of a procedure, he simply
+replaced these steps by LEFT 99.  Gary had turned the TURTLE in the
+wrong direction and wanted to both undo the wrong turn and make the
+correct turn in one combined step.  He used the computer to carry out
+the necessary arithmetic and then typed the correct command.  When
+copying these steps over, he remembered the process, and without
+further ado, used only the correct step, LEFT 99, in his procedure.
+Compare this with Jimmy, who kept the two steps RIGHT 89 LEFT 178, as part
+of his procedure, or with Laura's regular confusion in copying.
+
+.he2
+Using Inversion
+.block 5
+13.3.2 Sophisticated Uses of Inversion
+
+0An example of a more sophisticated use of inversion is the
+process of moving the TURTLE over without changing its orientation.
+In this case the LEFT/RIGHT inversion is separated by one or more
+intervening steps.
+This is necessary when the student wants to repeat a figure two or more
+times; for example, three houses could be drawn by
+the procedure HOUSES, with its
+subprocedures HOUSE and MOVEOVER:
+
+.nofill
+.block 23
+TO HOUSES	TO MOVEOVER
+10 HOUSE	10 PENUP
+20 MOVEOVER	20 RIGHT 90
+30 HOUSE	30 FORWARD 120
+40 MOVEOVER	40 LEFT 90
+50 HOUSE	50 PENDOWN
+END		END
+.sp 14
+.ce
+Figure 3.4.1
+
+.adjust
+As part of his STARSHIP project, GARY created two
+procedures like MOVEOVER, MO and MOV, each the inverse of the other:
+
+.nofilll
+TO MO		TO MOV
+10 RIGHT 90	10 LEFT 90
+20 FORWARD 100	20 FORWARD 100
+30 LEFT 90	30 RIGHT 90
+END		END
+
+.he2
+Using Inverse SPIN
+.adjust
+.block 5
+13.4 The Use of Inverse SPINs
+
+0Another example of the use of operations occurs in projects
+involving the SPIN command.  SPIN, followed by a number (e.g. SPIN 100)
+causes the TURTLE to spin at a fixed rate in the clockwise direction.
+Once the TURTLE is spinning it will remain spinning about its original
+center of spin.  Any additional non-spin commands will be carried out
+so as to maintain the rate of spin of the entire design.  SPIN commands
+allow the usual operations of composition and inversion.  Additional
+SPIN commands result in increased or decreased rate of spin in an
+additive manner.  If the sum of a series of SPINs is negative, the
+turtle will spin in a counter clockwise direction.  If the sum is zero
+the turtle will stop spinning.  The inverse of a SPIN command is that
+same command with a negative input.
+
+To understand how this works, consider the command SPIN 100 FORWARD 100.  This will
+cause the turtle to draw a line of length 100, spinning about the
+origin.  Any other commands or procedures added at that point will also
+be spinning with the original line.
+
+.block 11
+.sp 9
+.ri
+Figure 3.5
+
+.block 5
+1EXAMPLES:
+
+3.4.1 A Car With Spinning Wheels
+
+0In one of his projects, Dennis drew a car with spinning
+wheels.  This meant that he had to make a circle which would spin about
+its own center, then return the turtle to the center of the circle and
+make it stop spinning so that the (non-spinning) turtle could be moved
+over to draw the rest of the car.  His procedure, WHEEL, made use of
+inversion with respect to distances, angles and spins:
+
+.nofill
+.BLOCK 11
+TO WHEEL
+10 SPIN 100
+20 PENUP FORWARD 40
+30 RIGHT 90 PENDOWN
+40 RCIRCLE 40
+50 LEFT 90 PENUP
+60 BACK 40
+70 SPIN -100
+END
+.ri
+Figure 3.6
+
+.adjust
+His procedure leaves the TURTLE, unmoving, in the center of a spinning
+circle.
+
+.he2
+360o Modularity
+13.4.2 0A "ferris wheel" design makes use of
+positive and negative SPINs.  After typing SPIN 100, FORWARD 100
+the student types SPIN -100.  This leaves the TURTLE facing straight up
+at all times (a total spin of zero) while moving around at the end of a
+spinning line.  Adding a "car" which hangs vertically makes one arm of
+a "ferris wheel".  Adding seven more "cars" each separated by 45
+degrees results in a simulation of the motion of a ferris wheel.
+
+.block 15
+.sp 13
+.ce
+Figure 3.7
+
+.block 5
+13.4.3 A Cowboy's "Lasso"
+
+0Harriet's procedure LASSO,
+(described in
+detail here in chapter 8 of part III)
+required the "undoing" of two SPINs, each spinning about a
+different origin.  This required a fairly sophisticated use of
+inversion involving combinations of angles, distances and spins,
+similar to, but more complex than Dennis's use of inversion in his
+WHEEL procedure.
+
+.block 20
+.sp 18
+.ce
+Figure 3.8
+
+.block 5
+13.5  The use by students of the 360 degree modularity of the
+rotational group.
+
+.indent 3
+2The group of rotational numbers has a unique property which
+distinguishes it from a linear number system -- its modularity with
+respect to a "complete rotation" of 360 degrees.  This has some
+interesting consequences as far as both composition and inversion are
+concerned.  With regard to composition, it has the effect that as
+rotations are combined, the total rotation increases until it is 360
+degrees.  Beyond 360 degrees, the orientation of the TURTLE is the same
+as if it had been turned 360 degrees less.  For example two rotations
+of RIGHT 90 turn the TURTLE twice as far as one RIGHT 90. Adding
+another RIGHT 90 turns the TURTLE three times a far as one RIGHT 90.
+Adding a fourth RIGHT 90 however produces no net effect at all!  A
+fifth RIGHT 90 has the same effect as one RIGHT 90, and so on.
+
+With regard to inversion, this modularity means that particular steps
+can have more than one inverse.  The inverse of RIGHT 90 is LEFT 90.
+It is also RIGHT 270, or LEFT 450.  Two steps that are
+conceptually quite different, for example, turning the TURTLE RIGHT
+270 and turning the TURTLE LEFT 90, can have exactly the same effect.
+
+One would expect that some students would take a long time to become
+aware of these properties, and even longer to make use of them.
+Deborah, for instance, was never aware that the same effect could be
+obtained by one LEFT 90 as by three RIGHT 90s.  Gary, at the other
+extreme, could make use of the equivalence of the two with ease,
+whenver it was useful to do so.
+
+.he2
+TURTLE Coordinates
+We will not discuss specific behaviors here, as most of them belong not
+to the realm of composition and inversion, as discussed in the section,
+but more properly to student use of coordinate systems, discussed in
+Section 5, and on student use of theorems and heuristics, discussed in
+section 6 below.
+.page
+.indent 0
+.block 5
+14. The Use of Turtle Coordinates -- The Beginnings of
+Differential Geometry.
+
+.indent 3
+2When we discuss the use of Turtle Coordinates, we mean the
+understanding that the specific consequences of one particular TURTLE
+action, dependent on a specific position and heading, can be used to
+predict a more distant effect, achieved by a sequence of such actions.
+This involves the extrapolation of an immediate effect, into a global
+consequence, and is an important example of mathematical reasoning.  The
+most common examples of this are the construction of a "LOGO circle,"
+changing the rate of curvature of a circle, and the extensions of a
+circle -- the POLY and POLYSPI procedures.  These activities can help a
+student develop an intuitive feeling for differential geometry, laying
+the foundation for an entirely new computational approach to the
+subject of calculus*.
+
+.adjust
+.indent 0
+.block 5
+1BEHAVIORS OBSERVED
+
+4.1  The Construction of a "LOGO circle." 
+
+.indent 3
+2Many students who have been introduced to the LOGO TURTLE, and to
+its basic commands (FORWARD, BACK, RIGHT and LEFT) find themselves
+asking, "Can the TURTLE draw a circle?"
+
+A teacher's response to this is usually to suggest that the student
+"play turtle:"  get
+up and walk in a circle, and try to make a description of what s/he is
+doing.  Some students spontaneously describe their behaviors as "keep
+going forward a little and turning a little."  These students may then
+be able to immediately translate this description to a series of turtle
+commands: FORWARD 1, RIGHT 1, FORWARD 1, RIGHT 1, ... or FORWARD 5,
+RIGHT 5, FORWARD 5, RIGHT 5, ...  Repeating such a series of commands,
+360 and 72 times, respectively, will produce a many sided polygon that
+is visually indistinguishable from a circle.
+
+.indent 0
+.nofill
+********
+See Abelson and diSessa, Turtle Geometry, MIT Press. To be
+published in 1980.
+********
+.indent 3
+.he2
+Constructing a "LOGO Circle"
+.page
+.adjust
+Other students have more difficulty separating the "forward" and "turn"
+aspects of walking in a circle.  This may be because they move forward
+and turn at the same time when they walk in a circle.  If the teacher
+reminds the student that s/he has to try to "be the TURTLE" which can
+only "do one thing at a time," the student is usually able to recognize
+that forward and turn have to be used alternatively by the TURTLE.
+Some students still do not realize that the inputs to FORWARD and RIGHT
+must be uniform, in order to achieve a circle.  Often some direct
+experimentation with the screen TURTLE is necessary before students
+realize that the TURTLE steps that are repeated must be small and
+uniform, in order to produce a circle.
+
+For many students, their work in drawing a LOGO circle is also their
+first contact with writing "patterned" procedures -- procedures that
+make use of a REPEAT command, looping or recursion.  Learnings in this
+area are described in Chapter 4, Section 6 of this report.
+
+.block 6
+.indent 0
+0EXAMPLES
+
+14.1.1  Circles of Different Curvature
+
+0Most students draw their first circle by using the same input
+for both FORWARD and RIGHT commands.  It is not until they wish to
+vary the size of the circle, that students begin to realize that the
+forward and turn inputs can be different and still produce a circle.
+Typically, a student will try to increase the size of a circle by
+increasing both inputs the same amount.
+Surprisingly, FORWARD 2, RIGHT 2... FORWARD 1,
+RIGHT 1, and even FORWARD 10, RIGHT 10, draw almost identical circles.
+
+.block 8
+.sp 6
+.CE
+Figure 4.1
+
+It is only when a student can separate the effects of the FORWARD and
+RIGHT commands that s/he can change the size of the circle.
+
+Darlene's first successful circle used different inputs for FORWARD
+and RIGHT:  RIGHT 2, FORWARD 3, ...  When she wanted to make a
+smaller circle she tried reducing the inputs to RIGHT 1, FORWARD 2.
+This drew a larger circle.  She then tried RIGHT 3, FORWARD 2,
+which was smaller than her original.  Her next circle was RIGHT 3,
+FORWARD 3, which was larger than the previous one, but smaller than her
+first circle.  RIGHT 4, FORWARD 2, produced the smallest circle of all.
+In this way Darlene was gradually able to control the curvature of her
+circles.
+
+.block 23
+.sp 19
+.spread
+/Figure 4.2/Figure 4.3/Figure 4.4
+.spread
+/RIGHT 2 FORWARD 3/RIGHT 1 FORWARD 2/RIGHT 3 FORWARD 2
+
+.block 12
+.sp 8
+.spread
+/Figure 4.5//Figure 4.6
+.spread
+/RIGHT 3 FORWARD 3//RIGHT 4 FORWARD 2
+
+
+.he2
+Extensions of POLY
+.block 5
+14.2  The Use of POLY Procedures.
+
+0The POLY procedure offers students the opportunity to experiment
+with curvature:
+
+.nofill 
+.block 5
+TO POLY :SIZE :ANGLE
+10 FORWARD :SIZE
+20 RIGHT :ANGLE
+30 POLY :SIZE :ANGLE
+END
+
+.adjust
+POLY procedures
+allow a student to construct many different shapes making use of
+repetition of a fixed distance and turn.  This allows the student to
+experiment more easily with the global effects of local changes and to
+experience the effects of changing "curvature".
+Aspects of student work with POLY procedures are also discussed in
+Sections 1, 3.5, and 6.4 of this chapter,
+and in Section 6 of chapter 4,
+which describes student
+behaviors in learning to write "patterned" procedures.
+
+.block 5
+14.3  Extensions of POLY
+
+0Procedures which increment the distance or angle variables in a POLY
+procedure, provide a further opportunity for investigation of the
+global effects of local actions.  Consider the effects of a procedure
+called POLYSPI:
+
+.indent 6
+.nofill
+.block 5
+TO POLYSPI :SIDE :ANGLE :INCREMENT
+10 FORWARD :SIDE
+20 RIGHT :ANGLE
+30 POLYSPI :SIDE + :INCREMENT :ANGLE :INCREMENT
+END
+
+.indent 0
+.adjust
+POLYSPI produces continuous changes in curvature, as the size of
+the FORWARD step increases or decreases uniformly.  This is similar to
+the continuous effect of small changes in a FORWARD step discussed in
+Section 1, above.
+
+.block 23
+.sp 18
+.ce
+POLYSP 10 45 1@@@@@@@@@@@@@@@@@@@POLYSPI 10 45 5
+
+.ce
+Figure 4.7@@@@@@@@@@@@@@@@@@@@@@@@@@Figure 4.8
+
+
+Another procedure, called INSPI, produces discontinuous changes in
+curvature, by uniformly increasing or decreasing the angle
+variable.  This is similar to the discontinuous effects of making a
+small change in a rotational step, discussed above in section 1.
+
+.indent 6
+.nofill
+.block 5
+TO INSPI :SIDE :ANGLE :INCREMENT
+10 FORWARD :SIDE
+20 RIGHT :ANGLE
+30 INSPI :SIDE :ANGLE+ :INCREMENT :INCREMENT
+END
+
+.block 15
+.sp 13
+.spread
+/Figure 4.9//Figure 4.10
+
+.indent 0
+.adjust
+.he2
+Coordinate Systems
+.page
+.block 5
+15. The Use of Coordinate Systems: the Global Sructure of the
+Geometric World.
+
+.indent 3
+2Students working in the area of Turtle Geometry begin by becoming
+aware of the local geometry of the TURTLE.  It is necessary for them to
+take into acount the TURTLE's position and heading in order to
+accomplish even the simplest tasks.  Through their work on specific
+projects, they come to make use of -- sometimes even invent -- global
+structures of their own. They can use these structures to solve problems that
+require that they take into account aspects of geometry other than the
+turtle's immediate position and heading.  In this section we describe
+student behaviors that relate to structures that can be used to organize
+two dimensional space:
+turtle coordinates, domain specific coordinate systems, standard cartesian 
+coordinates, and various types of polar or angular coordinates.
+
+.indent 0
+.block 5
+15.1 Drawing a "Bear" Using Three Different Coordinate Systems
+
+.indent 3
+2As an example of the way in which the same LOGO project could be
+carried out utilizing different coordinate systems, consider this
+cartoon drawing of the head of a "bear":
+
+.block 14
+.sp 12
+.ri
+0Figure 5.1
+
+2The project could be carried out without any use of coordinate systems,
+by simply moving the turtle to each location where a circle is to be
+drawn, and using the command RCIRCLE, with the appropriate input to
+draw circles of different radii.  Without some advance planning,
+however, the result is likely to lack the symmetry of the original
+plan.  Albert's procedure, KEITH and Laura's procedure, FACE, were
+carried out without benefit of any coordinate system, and are typical
+of this type of effort.
+
+.indent 0
+.block 16
+.sp 14
+.spread
+/0Figure 5.2//Figure 5.3
+
+
+.indent 3
+2To create a symmetrical "bear" it would be simpler to make use of
+a circle
+procedure which started from its own center, rather than the procedures
+RCIRCLE and LCIRCLE which are given to our students as "primitives".
+Such a procedure can be defined as follows:
+
+.block 9
+.nofill
+0TO CIRCLE :RADIUS
+10 PENUP FORWARD :RADIUS
+20 RIGHT 90 PENDOWN
+30 RCIRCLE :RADIUS
+40 LEFT 90 PENUP
+50 BACK :RADIUS
+END
+
+.he2
+Intrinsic Coordinates
+.ADJUST
+.indent 0
+.block 5
+15.1.1  Drawing the Bear with Domain Specific or Intrinsic Coordinates
+
+.indent 3
+2Intrinsic coordinates are coordinates developed for a particular
+figure, and involve developing a structure which allows the TURTLE to
+move around the figure itself, as part of the process of constructing
+it.  In order to use intrinsic coordinates for this project, a student
+would require an arc procedure, ARCR :RADIUS :ANGLE, whose two inputs
+determine the radius and the angle of the arc.  This procedure allows
+the TURTLE to move from point to point along a particular circle,
+rather than to try to move the TURTLE directly to the desired point.
+In figure 5.4, the command 0ARCR 100 1202 allows the TURTLE to move along
+the arc from A to B, rather than straight across the circle.0
+
+.block 17
+.sp 15
+.ri
+Figure 5.4
+
+.nofill
+.BLOCK 15
+TO BEAR1	TO OUTSIDE1	TO INSIDE1
+10 OUTSIDE1	10 CIRCLE 100	10 CIRCLE 10
+20 INSIDE1	20 EARS1	20 PENUP BACK 50 PENDOWN
+END		END		30 CIRCLE 10
+				40 LEFT 90
+TO EARS1			50 PENUP ARCR 50 120 PENDOWN
+10 LEFT 60			60 CIRCLE 10
+20 PENUP FORWARD 100 PENDOWN	70 ARCR 50 120 PENDOWN
+30 CIRCLE 20 RIGHT 90		80 CIRCLE 10
+40 ARCR 100 120			90 PENUP ARCR 50 120
+50 CIRCLE 20			100 RIGHT 90
+60 LEFT 90			110 FORWARD 50 PENDOWN
+70 PENUP BACK 100 PENDOWN	END
+80 LEFT 60
+END
+
+.block 17
+.sp 13
+.spread
+/OUTSIDE1/EARS1/INSIDE1
+.SPREAD
+/Figure 5.5/Figure 5.6/Figure 5.7
+
+.block 18
+.sp 14
+.ce
+BEAR1
+.ce
+Figure 5.8
+
+.indent 0
+.adjust
+.he2
+Polar Coordinates
+.block 5
+15.1.2  Drawing the Bear Using Polar Coordinates:
+
+.indent 3
+2Polar coordinates involve locating points using distances from a
+common center, and angles measured from a common (vertical) reference
+line.  It would be a simple matter to draw the bear using polar
+coordinates making use of two commands, PLACE and REPLACE, which place
+the TURTLE with reference to the center of a circle and return it to
+the center.0
+
+.nofill
+.block 21
+TO PLACE :RADIUS :ANGLE
+10 PENUP 
+20 RIGHT :ANGLE
+30 FORWARD :RADIUS
+40 PENDOWN 
+END
+.ri
+Figure 5.9
+
+and
+
+TO REPLACE :RADIUS :ANGLE
+10 PENUP
+20 BACK :RADIUS
+30 LEFT :ANGLE
+40 PENDOWN
+END
+.ri
+Figure 5.10
+
+.BLOCK 9
+TO BEAR2	TO OUTSIDE2	TO INSIDE
+10 OUTSIDE2	10 CIRCLE 100	10 EYES2
+20 INSIDE2	20 EARS2	20 NOSE2
+END		END		30 MOUTH2
+				END
+TO NOSE2
+10 CIRCLE 10
+END
+
+.block 8
+TO EARS2		TO EYES2
+10 PLACE 100 (-60)	10 PLACE 50 (-60)
+20 CIRCLE 20		20 CIRCLE 10
+30 REPLACE 100 (-60)	30 REPLACE 50 (-60)
+40 PLACE 100 60		40 PLACE 50 60
+50 CIRCLE 20		50 CIRCLE 10
+60 REPLACE 100 60	60 REPLACE 50 60
+END			END
+
+.block 5
+TO MOUTH2
+10 PLACE 50 180
+20 CIRCLE 10
+30 REPLACE 50 180
+END
+
+.block 17
+.sp 13
+.spread
+/CIRCLE 100/EARS2/EYES2
+.SPREAD
+/Figure 5.11/Figure 5.12/Figure 5.13
+.block 19
+.sp 15
+.spread
+/NOSE2/MOUTH2/BEAR2
+.spread
+/Figure 5.14/Figure 5.15/Figure 5.16
+
+
+
+.indent 0
+.he2
+Cartesian Coordinates
+.adjust
+.block 4
+15.1.3  Drawing the Bear Using Cartesian Coordinates
+
+.indent 3
+2The use of Cartesian coordinates involves locating points according to their 
+x-and-y-coordinates.  Because of the circular symmetry of the bear's
+head, cartesian coordinates would be a less likely choice.  If
+cartesian coordinates were used, the x-and-y-coordinates of the eyes and
+ears would most likely be determined by trial and error, rather than by
+simple angular relationships.  The drawing of a bear, making use of
+SETXY, might look slightly different as a result.0
+
+
+.nofill
+.BLOCK 20
+TO BEAR3	TO OUTSIDE3	TO INSIDE3
+10 OUTSIDE3	10 CIRCLE 100	10 EYES3
+20 INSIDE3	20 EARS3	20 NOSE3
+END		END		30 MOUTH3
+				END
+
+TO EARS3		TO EYES3		TO NOSE3
+5 PENUP			5 PENUP			5 PENUP		
+10 SETXY (-90) 50	10 SETXY (-45) 25	10 HOME	
+15 PENDOWN		PENDOWN			20 CIRCLE 10
+20 CIRCLE 20		20 CIRCLE 10		END
+25 PENUP		25 PENUP	
+30 SETXY 90 50		30 SETXY 45 25	
+35 PENDOWN		35 PENDOWN	
+40 CIRCLE 20		40 CIRCLE 10	
+END			END
+
+.BLOCK 8
+TO MOUTH3
+5 PENUP
+10 SETXY 0 (-25)
+15 PENDOWN
+20 CIRCLE 10
+25 PENUP
+30 HOME
+END
+
+.BLOCK 16
+.SP 12
+.spread
+/CIRCLE 100/EARS3/EYES3
+.SPREAD
+/Figure 5.17/Figure 5.18/Figure 5.19
+
+.he2
+Intrinsic Coordinates
+.block 16
+.sp 12
+.spread
+/NOSE3//BEAR3
+.spread
+/Figure 5.20//Figure 5.21
+
+
+.adjust
+.indent 0
+.block 5
+BEHAVIORS OBSERVED:
+
+15.2 Student Use of Domain Specific Coordinate Systems.
+
+0Sometimes in the course of a particular project, a student will
+develop a way of structuring the geometry, to aid in solving the
+problem.  The student is not usually aware that s/he is using a
+"coordinate system," but merely feels they have figured out a kind of
+"trick" to help with one aspect of a problem.
+
+.block 6
+1EXAMPLES:
+
+5.2.1 Kevin's Intrinsic "Arc Coordinates"
+
+0Kevin's major project was to draw a picture of a "turtle" on the
+graphics display screen.  He was shown an arc procedure which allowed
+both radius and angle as inputs.  The circle procedure that he used to
+draw the outline of the "turtle's" shell made use of 10 degree steps,
+and had a radius of 90.  At the end of each step, a tiny dot appeared
+on the screen.  Kevin could manouever the TURTLE along the "turtle's"
+shell, by counting dots, and using the appropriate input to ARCR.  For
+example, after drawing the "turtle's" head, Kevin wanted to place four
+feet and a tail on the "turtle's" shell.   He simpy oriented the
+TURTLE along the shell, counted three dots between where the TURTLE was,
+and where he wanted to start drawing the first foot, and used the
+command ARCR 90 30, to move the TURTLE there.  The first input, 90, was
+the radius of the circle, and remained constant.  The second input was
+the angle.  Since Kevin knew that three dots represented three 10 degree
+steps, he used the second input, 30, to move that far along the circle.
+
+.block 21
+.sp 10
+.spread
+/Figure 5.22//Figure 5.23
+
+.nofill
+SHELL HEAD LT 70		
+.ri
+ARCR 90 30
+.ri
+LT 90
+.ri
+FOOT
+
+.adjust
+.block 5
+15.2.2 The "Hat" on Donald's "Head"
+
+0Donald's extended project was to have the computer draw a complex
+head, complete with beard, hair, hat and flower:
+At one point, he had to figure out where to locate the "hat" on the
+head, and how large to make it, so that it would appear symmetrical.
+Since Donald had difficulty estimating sizes, and solving problems
+visually (see a summary of Donald's work in section chapter 5 of this
+report, and a full profile in section @@@@ of part II), he often
+resorted to "analytical" strategies to help solve his problem.  In this
+case he made use of the "hairs" which he had already drawn as part of
+his head.  By counting hairs, from each side of the head, he was able
+to determine when the hat was sufficiently symmetrical to satisfy him
+(he didn't get it "perfectly" centered).  A drawing in his notebook was
+used as part of the process.
+
+.he2
+Cartesian Coordinates
+.block 16
+.sp 14
+.spread
+/Figure 5.24//Figure 5.25
+.block 16
+.sp 14
+.spread
+/Figure 5.26//Figure 5.27
+
+.block 5
+15.3 Student Use of Cartesian Coordinates
+
+.indent 3
+2The cartesian coordinate system is the most commonly used global
+geometric structure in most courses on analytic geometry, trigonometry, calculus,
+etc.  In LOGO activities, cartesian coordinates have a more limited
+applicability, because of the compelling immediacy of local Turtle
+Coordinates as a way of solving the simplest geometric problems which
+arise in Turtle Geometry.  The cartesian description of a circle, for
+example, x2 + y2 = r2, requires the user to understand
+algebra, the use of exponents, and possibly the pythagorean theorem.
+It specifies the radius of the circle, and gives a formula enabling the
+user to find any number of points on the circle, relative to the
+center.  The LOGO description, FORWARD 1, RIGHT 1, ... on the other
+hand, tells exactly how to draw the circle, without specifying how large
+it is, or where the center is, or where any particular point is located.
+
+LOGO is designed to simplify the use of
+cartesian coordinates for specific
+applications.  Every point on the display screen is considered to have
+an x-and-y-coordinate.  The LOGO comands XCOR and YCOR output the 
+x-and-y-coordinates of wherever the TURTLE happens to be.  SETXY is a
+command requiring two inputs, will move the TURTLE directly to the
+point on the screen which has the x-and-y-coordinates given.  To
+totally specify a TURTLE position, it's orientation or "heading" must also be given.
+The LOGO commands HEADING and SETHEADING are analagous to XCOR, YCOR
+and SETXY.
+
+The LOGO command HERE outputs a list of three numbers, the x, y and
+heading coordinates of the turtle.  The command, HERE, allows a user to
+give a name to a point on the screen, by moving the TURTLE to that
+point and using the MAKE comand, as in MAKE "POINT1 HERE.  To return
+the TURTLE to that point later the user types SETTURTLE :POINT1.
+Points on the screen can also be named without moving the TURTLE as in
+the command MAKE "POINT2 [100 100 0].  "POINT2 then represents a TURTLE
+position whose x-coordinate and y-coordinate are both 100, and whose
+orientation is straight up on the screen.
+
+.he2
+Using an Implicit Grid
+Many students who do not use cartesian coordinates explicitly do make
+use of a sort of implicit grid system, in moving the turtle from one
+place to another on the display screen.  Students are often introduced
+to the coordinates in a situation in which the naming of a specific
+point, and the later return of the TURTLE to that point are needed for
+a particular project.  Cartesian coordinates may also be encountered in
+a situation in which the user wants to know whether the TURTLE is
+inside or outside of a particular region of the screen (as in an
+animated "race" or a "target game.")  Another use of cartesian
+coordinates occurs when the student wants the TURTLE to draw a grid on
+the screen -- for example, to draw a tictatoe board.0
+
+.indent 0
+.block 6
+1EXAMPLES:
+
+5.3.1  The Use of an "Implicit Grid" In Moving the TURTLE
+
+0Many students find it easier to move the turtle around the display
+screeen in horizontal and vertical "steps", than to accurately estimate
+both the distance and direction of a point to which the turtle is to be
+moved.  To move the TURTLE to one corner of the screen, for example,
+many students spontaneously learn to use this 
+set of commands:  RIGHT 90, FORWARD 200, LEFT
+90, FORWARD 200 (rather than RIGHT 45, FORWARD 282, which would move the
+TURTLE directly to the same spot.)
+
+.block 17
+.sp 15
+.spread
+/Figure 5.28//Figure 5.29
+
+
+.he2
+Naming Points
+Albert used this approach for almost all TURTLE
+moves (other than drawing curves or triangles).  Using a series of
+alternating FORWARD and RIGHT 90 or LEFT 90 commands, he could move the
+TURTLE anywhere on the screen.  His inputs to FORWARD usually started
+with multiples of 50 or 100, which "fit" nicely into the total screen
+size of 400 TURTLE steps.  
+
+A student who uses this approach is not using "coordinates", but is in
+a sense "drawing a mental grid," creating a structure in the mind which
+will later make a grid-like cartesian coordinate system seem quite natural.
+
+.block 6
+15.3.2  Naming Points Without Coordinates
+
+0Let us consider a few different ways that a student might make use of
+the capability to name point and set the turtle to that point in the
+context of a particular project, a target game.  The idea is that a
+target is drawn on the screen.  The turtle is then placed at the center
+of the screen (or another point), aimed at the target, using RIGHT and
+LEFT commands, and then "shot" at the target.  The computer has to tell
+the player if the target has been hit.
+
+First, the student might use point naming to draw a state transparent
+circle that starts from the center of the circle:
+.nofill
+
+.indent 6
+.block 8
+TO TARGET
+10 MAKE "P1 HERE
+20 PENUP FORWARD 40
+30 PENDOWN RIGHT 90
+40 RCIRCLE 40
+50 PENUP SETTURTLE :P1
+END
+
+.indent 0
+.adjust
+The student must now draw the target at a particular point on the
+screen.  The TURTLE is first driven to the desired point, and the point
+given a name, say "P2.  To set up the target for a game, the student
+can make a procedure.
+
+.nofill
+.indent 6
+.BLOCK 5
+TO SETUP
+10 PENUP SETTURTLE :P2
+20 TARGET
+30 HOME
+END
+
+.indent 0
+.adjust
+In a game, the TURTLE is aimed at the target, and fired by a procedure
+called SHOOT, which checks to see whether the TURTLE has hit the target.
+
+.indent 6
+.nofill
+TO SHOOT :D
+10 MAKE "P3 HERE
+20 FORWARD :D
+30 IF DISTANCE :P2<40 PRINT [YOU'VE HIT THE TARGET!] STOP
+40 SETTURTLE :P3 PRINT [YOU MISSED.  TRY ANOTHER SHOT]
+END
+
+.INDENT 0
+.ADJUST
+(DISTANCE :POINT < is a LOGO procedure which calculates the distance
+between the TURTLE and any point, and which could be given to the student as
+a "primitive")
+
+.block 4
+15.3.3 Naming Points With Coordinates.
+
+0Involvement in a project such as the target game described above
+leads quite naturally to the desire to select many different points for
+the location of the target, and for the initial position of the TURTLE
+before shooting.  After gaining some experience with points by using
+MAKE "POINT HERE, the student can acquire some experience with the coordinates
+themselves by typing PRINT HERE.  S/he will then see that the computer keeps track
+of the TURTLE's location by means of a list of three numbers
+corresponding to its x and y coordinates and its heading.  Instead of
+moving the TURTLE to a particular point, "P2, in order to define it, the student
+can define it by giving its coordinates, MAKE "P2 [50 50 45];  or by having the 
+computer choose coordinates for the point in a random way:
+
+MAKE "P2 (SENTENCE 10*RANDOM 10*RANDOM 20*RANDOM)
+
+.he2
+Polar Coordinates
+.block 5
+15.3.4 Constructing a Grid Using Cartesian Coordinates
+
+0A student could easily construct a simple grid, a TicTacToe board,
+for example, using x and y coordinates, and the command SETXY:
+
+.nofill
+.block 21
+TO TICTACTOE
+10 PENUP SETXY (-75) 150
+20 PENDOWN SETXY (-75) (-150)
+30 PENUP SETXY 75 150
+40 PENDOWN SETXY 75 (-150)
+50 PENUP SETXY 150 75
+60 PENDOWN SETXY (-150) 75
+70 PENUP SETXY 150 (-75)
+80 PENDOWN SETXY (-150) (-75)
+90 PENUP HOME
+END
+.sp 8
+.ce
+Figure 5.30
+
+.adjust
+.indent 0
+The same result could be achieved in a straightforward manner using
+FORWARD, BACK, RIGHT and LEFT, but would require many more steps.
+
+.block 5
+15.4 The Use of Polar Coordinates
+
+.indent 3
+2In a polar coordinate system
+any point is located by
+specifying its distance from a fixed origin and its angle of
+orientation with respect to a fixed line through the origin.  To use
+the TURTLE with a polar coordinate system, one can set the orientation of the
+TURTLE to the desired heading with respect to the vertical, and move
+it forward the desired distance.  Polar coordinates can be
+useful in LOGO projects in which the TURTLE always returns to a fixed
+point, but changes its orientation, to carry out a sequence of actions.
+
+Students who make use of this kind of approach as part of a LOGO
+project, do not consider it a formal coordinate system.  For them, a
+structure based on the TURTLE's orientation can be thought of
+as another form of "intrinsic" or "implicit" coordinate system,
+a "trick" developed for its usefulness in a particular case.  
+Students who make use of this particular approach develop an
+intuitive understanding that may later help them understand a more
+formal use of polar coordinates.
+
+.indent 0
+.block 5
+15.4.1 Creating a "Beard" for Donald's Head
+
+0Donald used a procedure like the following to draw a beard for his
+head project.
+
+.indent 0
+.nofill
+.block 10
+TO BEARD		TO STRING
+10 RIGHT 15		10 PENUP
+20 REPEAT [STRING] 15	20 FORWARD 80
+30 LEFT 15		30 PENDOWN
+END			40 FORWARD 10
+			50 PENUP
+			60 BACK 90
+			70 LEFT 2
+			END
+
+.adjust
+The fixed point from which each "string" emanated was located near the
+top of the head, by trial and error.
+
+.block 8
+.sp 6
+.spread
+/Figure 5.31//Figure 5.32
+
+
+.block 5
+15.4.2 Angular Coordinates With Spinning Designs
+
+0Many students create spinning designs which end with a HOME command,
+to complete the design and "undo" the spin.  Karl called his design,
+NO.  A "flower-like" design he made by repeating NO, was called XX78055.
+
+.nofill
+.BLOCK 9
+TO NO		TO XX78055
+10 SPIN		10 NO
+20 FORWARD	20 RIGHT 10
+30 SPIN		30 NO
+40 FORWARD	40 RIGHT 20
+50 SPIN		50 NO
+60 FORWARD	60 RIGHT 30
+70 HOME		etc.
+END
+
+.adjust
+If NO had not contained a HOME command, Karl's
+XX78055 procedure would have been of the shape, rotation, shape,
+rotation... type of design, and would not have involved polar
+coordinates.  Since NO ends with a HOME comand, the TURTLE ends up at
+the origin, in a vertical orientation every time NO is executed.
+Therefore, the TURTLE's rotation had to be increased before each
+successive NO, in order to produce the design Karl wanted.
+
+.block 5
+15.4.3 Polar Coordinates in a Symmetrical "Face"
+
+0The "bear's head" described in Section 5.1, is an example of a
+project which lends itself readily to Polar coordinates.
+.he2
+Theorems and Heuristics
+.page
+.adjust
+.block 5
+16. Theorems and Heuristics:  Towards Formal Mathematics
+
+.indent 3
+2In formal mathematics classes, students are generally
+taught that a
+"theorem" is a mathematical proposition, already known to be "true"
+that has to be "proven" by a series of logical statements based on axioms
+and previously proven theorems.  
+The task of a working
+mathematician, on the other hand, is to formulate propositions, to try to discover the
+predictable regularities of a particular "world";  then to test, extend
+and revise or discard such propositions based on the tests; and only
+finally, after a theorem and its usefulness is quite well established,
+to attempt to prove or disprove it in a logical sense.
+
+Students learning LOGO have the opportunity to function like a
+mathematician, rather than like a student in a mathematics class.*
+
+While solving their own problems, students begin to discover some of
+the regularities of the mathematical world in which they are
+functioning.  Such regularities may be used by the students as
+"heuristics" -- strategies or "rules of thumb" that may be helpful in
+problem solving.  Heuristics used by LOGO students include general
+approaches to problem solving, such as breaking a large problem in
+small easily solved parts, specific techniques such as "playing TURTLE"
+to understand which way to move the TURTLE in a specific instance or to
+plan a shape like a circle, and specific geometric design ideas such as
+"keep repeating a shape and an interesting design will occur."
+
+When a student who has discovered and used a heuristic such as "repeat
+a shape" begins to be aware of certain regularities that occur whenever
+that heuristic is applied, s/he is on the track of a "theorem".  For
+instance, the student may realize that "all repeated designs eventually
+close;"  that is, the TURTLE begins to retrace its path,
+if a sequence of steps repeated
+often enough.  Some students become extremely interested in verifying
+such a proposition.  Although the formal "proof" of
+such a proposition is beyond the interest or ability of an elementary
+school student, it might be an interesting math project for a high
+school or college student studying LOGO.**
+
+.nofill
+.indent 0
+*******
+*See "Turtle Geometry" by Abelson and diSessa, to be published by
+MIT Pres, 1980.
+
+**See "Turtle Geometry" by Abelson and diSessa, to be published by
+MIT Press, l980.
+.indent 3
+.adjust
+.he2
+A "Repetition Theorem"
+.page
+If the student shows further interest in
+this idea, s/he may begin to compare specific shapes with the number of
+repeats required before they close.  Such an investigation could lead
+to another theorem:  "any time the TURTLE has completed a series of
+steps and returned to its exact starting position and heading, it has
+rotated through 360 degrees, or an integer multiple of 360 degrees."
+This is such a common and useful LOGO theorem that it has been given a
+name, the "Total Turtle Trip"  theorem, or "TTT" for short.  The TTT
+applies to situations that do not involve repetition, but it is most commonly
+discovered, and used in cases that do involve repetition of a series of
+fixed steps.
+
+In this section, we describe student behaviors involving theorems and
+heuristics that arise in the context of Turtle Geometry.  Many of these
+relate in some way to the properties of the rotational group, described
+in Section 3.  Theorems and heuristics we will consider in some detail
+include repetition;  the Total Turtle Trip theorem and a special case,
+the POLY theorem; the concept of similarity; and the use of symmetry.
+
+.indent 0
+.block 6
+1BEHAVIORS OBSERVED:
+
+16.1  The Use of Repetition
+
+0Once a student has written a first procedure to draw a shape on the
+display screen, a teacher usually suggests that the student repeat the
+design.  Students quickly adopt this idea, and use it to create many
+fascinating and unexpected designs.
+
+.block 5
+1EXAMPLES:
+
+6.1.1 Repeating a square.
+
+0A very common early LOGO project is to draw a "box".  Typically, a
+student draws a box in seven steps:
+
+.indent 6
+.nofill
+.block 9
+TO BOX
+1 FORWARD 50
+2 RIGHT 90
+3 FORWARD 50
+4 RIGHT 90
+5 FORWARD 50
+6 RIGHT 90
+7 FORWARD 50
+END
+.ri
+Figure 6.1
+
+.he2
+Repeating Shapes
+.indent 0
+.adjust
+Repeating BOX, produces this "surprising" result:
+.nofill
+.BLOCK 18
+.spread
+/BOX/BOX/BOX
+.spread
+/BOX/BOX/BOX
+.spread
+//BOX/BOX
+.ri
+BOX
+.sp 10
+.spread
+/Figure 6.2/Figure 6.3/Figure 6.4
+
+
+.adjust
+A fifth repeat of BOX just retraces the first BOX, starting the
+cycle again.
+
+.block 5
+16.1.2 Repeating Other Shapes.
+
+0Kathy enjoyed repeating shapes.  Her TRIANGLE,
+repeated twice, became a BUTTERFLY.  BUTTERFLY repeated until it closed
+and became 7BUTTERFLY.
+
+.block 24
+.sp 20
+.SPREAD
+/TRIANGLE/BUTTERFLY/7BUTTERFLY
+.ce
+Figure 6.5
+
+When Kathy made a HOUSE procedure, using her TRIANGLE and BOX
+procedures, she promptly repeated it four times to make HOUSE4.
+
+.block 15
+.sp 13
+.ce
+Figure 6.6
+
+.block 5
+16.1.3  Repeating a "Miscellaneous" Shape
+
+0Ray was one of many students who enjoyed "seeing what would happen"
+if he made up a miscellaneous set of commands, gave those commands a
+name and repeated them an arbitrary number of times.  His procedures,
+SAM, TIM, and JOE are examples of this.
+
+.nofill
+.block 7
+TO SAM			TO TIM		TO JOE
+1 FORWARD 17		1 FORWARD	1 SAM
+2 RIGHT 90		2 RIGHT 90	2 LEFT 150
+3 FORWARD 29		3 FORWARD 36	3 TIM
+4 LEFT 56		4 LEFT 61	END		
+END			END
+
+.block 15
+.sp 11
+.SPREAD
+/REPEAT [SAM]30/REPEAT [TIM]30/REPEAT [JOE]30
+.ce
+Figure 6.7
+
+.adjust
+.block 5
+16.1.4  Repeating a Shape and a Rotation
+
+0Many students develop a process of repeating a shape and a
+rotation.  If a procedure is "state transparent" -- that is, the TURTLE
+returns to its original position and heading when it completes the
+figure -- then repeating it causes it to retrace itself.
+One way to make a more complex design with such a shape is to rotate the TURTLE
+a fixed amount after each repetition of the shape.  
+Monica  used this approach with many of her basic shapes.  Here are
+some of the designs Monica made, using her state-transparent TRI
+procedure, with different rotations.
+
+.nofill
+.block 24
+TO TRI4			TO TRI42	TOTRI442	
+1 TRI			1 LEFT 40	1 TRI 4	
+2 LEFT 90		2 TRI4		2 TRI42	
+3 TRI			END		END	
+4 LEFT 90				
+5 TRI		
+6 LEFT 10
+7 TRI
+END
+
+.sp 12
+.spread
+/Figure 6.8/Figure 6.9/Figure 6.10
+
+
+.block 19
+TO FAN
+1 TRI
+2 RIGHT 10
+3 FAN
+END
+.sp 12
+.ce
+Figure 6.11
+
+.adjust
+.block 5
+
+.he2
+Using Special Angles
+16.2  Determining the Number of Repeats Needed to "Close" a
+Particular Shape
+
+0Some students quickly realize that when repeating "shape, rotation,"
+that certain "special angles" produce fairly simple closed figures,
+while other angles produce complex figures which take a long time to
+close, or which "fill up the screen" before closing.  Focussing on the
+particular angles which make the simpler shapes can be an important
+step, leading to understanding the significance of 360 degrees and to
+the TTT theorem.  A particular case of this is the
+process of making the TURTLE draw a circle by repeating FORWARD
+something, RIGHT something a certain number of times.
+
+.block 6
+1EXAMPLES
+
+6.2.1  Using "Special Angles" Without Analysis
+
+0Deborah limited most of her inputs to turtle commands to the numbers
+30, 60 and 90.  Therefore, when she began to use the idea of rotating a
+shape, it was quite natural for her to use RIGHT 60 as the rotation to
+produce her FLOWER:
+
+.nofill
+.block 15
+TO FLOWER
+1 CIRCLE
+2 RIGHT 60
+3 CIRCLE
+4 RIGHT 60
+5 CIRCLE
+6 RIGHT 60
+7 CIRCLE
+8 RIGHT 60
+9 CIRCLE
+10 RIGHT 60
+11 CIRCLE
+END
+.RI
+Figure 6.12
+
+.adjust
+Kathy made a star using a rotation of 45 degrees.  Her procedure BUS4,
+achieved by repetition, was the basis of her STAR procedure.
+
+.NOFILL
+.block 17
+TO BUS			TO 4BUS		TO STAR
+1 SQ 40			1 BUS		1 4BUS
+2 LEFT 90		2 BUS		2 RIGHT 45
+3 SQ 50			3 BUS		3 4BUS
+END			4 BUS		END
+			END
+
+.sp 10
+.CE
+Figure 6.13
+
+.he2
+Analyzing Repeated Rotations
+.ADJUST
+.block 5
+16.2.2   Analyzing the Effects of Repeated Rotations.
+
+0Monica, enjoyed rotating shapes, but had very little idea of the
+relationship between the angle she chose, and the resulting shape.  Her
+teacher suggested using the angle of rotation as a variable, and taking
+notes on the effects of different rotations.  She was helped to write the procedure
+WISHWOW to rotate her procedure, WOW, a collection of nested squares.
+.nofill
+
+.indent 6
+.block 6
+TO WISHWOW :ANGLE
+10 WOW
+20 RIGHT :ANGLE
+30 IF HEADING = 0 STOP
+40 GO 10
+END
+
+.adjust
+.indent 0
+Monica's notes show that although she was beginning to notice
+regularities and to connect the number of repetitions with the rotation
+used, she did not have a systematic understanding of these effects.
+.page
+.sp 40
+.ce
+Figure 6.14
+.he2
+Total TURTLE Trip Theorem
+.page
+.indent 6
+"WISHWOW 160 looked the same as WISHWOW 40.  It had thin cones and
+there were 9 of them.
+
+WISHWOW 165 had thin webbed cones and you couldn't really see them that
+good.
+WISHWOW 190 had cones but they looked like they didn't close up.  And
+it was fatter than other ones.  It had more squares and cones.  The
+cones were thin.  And close together.
+
+WISHWOW 45, WISHWOW 90.  These 2 look almost the same but WISHWOW 45
+looks like it goes twice around instead of once.  And the cone shaped
+things on the sides are bigger than the WISHWOW 90 ones."
+
+.indent 0
+.block 5
+16.3  "Discovery" and Use of the "Total Turtle Trip" Theorem
+
+0Most students make use of the "Total Turtle Trip" theorem in the context of a
+concrete project rather than in complete generality.  Once the student
+understands the idea in a general way s/he can apply it to the solution
+of a different specific problem.
+
+.block 6
+1EXAMPLES:
+
+6.3.1 Constructing a LOGO Circle Using Repetition
+
+0Darlene had a systematic approach to problems that she encountered.
+She was always interested in exactly how many repeats it took for a
+shape to "close".  When she drew a "circle", using the REPEAT command,
+she experimentally determined exactly how many repeats were required.
+With careful observation she found that the command REPEAT [RIGHT 2
+FORWARD 3] 180 would draw a closed circle with no overlap.  Once she
+realized that the TURTLE had turned exactly 360 degrees as it drew the
+circle she was able to draw smaller circles by using the commands:
+
+.nofill
+.block 9
+REPEAT [RIGHT 3 FORWARD 2] 120 and REPEAT [RIGHT 4 FORWARD 2] 90
+.sp 6
+.spread
+/Figure 6.15a//Figure 6.15b
+
+.adjust
+.indent 0
+.block 5
+16.3.2  Constructing an Equilateral Triangle, and Other Regular
+Polygons. 
+
+.indent 3
+2Once a student has drawn a square using the turtle, it is natural to
+attempt the construction of a triangle.  There are many ways to
+construct a triangle using trial and error approaches.  Some of these
+have been discussed above.  Another approach is to make use of
+information derived from the process of constructing a square and apply
+it to constructing a triangle.  The reasoning involved is far from
+trivial, and it is often the case that a student and a teacher will
+work together on this process, rather than a student figuring it
+all out independently.
+
+The reasoning goes like this.  A square is constructed by repeating the
+same "thing" four times.  The "thing" that is repeated is the pair of
+steps, FORWARD something, RIGHT 90.  In doing so, the TURTLE has rotated a
+total of 360 degrees.  The student also knows that a rotation of 360
+degrees will turn the TURTLE all the way around.  In order to draw a
+triangle, the TURTLE will also make a shape in which it turns all the
+way around, this time in three steps.  The amount of rotation
+needed for each step is thus 360/3 or 120 degrees.  The student 
+can now draw a triangle by
+repeating FORWARD something, RIGHT 120 three times.  
+
+At this point, the student might explore the generality of this
+approach by trying to construct a 6, 8 or 10 sided regular polygon.  In
+each case, the process as described above will lead to a successful result.
+(The process breaks down if the student wants to construct a 7 sided
+polygon, however, since 360 is not evenly divisible by 7.)
+
+.indent 0
+.block 5
+16.3.3  Application of the TTT to Solving a Particular Problem
+
+0A common student project is to draw a "leaf" for a plant, using
+quarter arcs:
+
+.block 8
+.sp 6
+.ce
+Figure 6.16
+
+The student knows that the RARC and LARC procedures cause the TURTLE to
+rotate a total of 90 degrees.  In order to draw a "leaf" and return to the point
+at which it started (which is useful in getting the TURTLE back on the
+plant's "stem") the student reasons that the TURTLE must draw an arc,
+turn some amount, draw another arc and turn the same amount.  Since the
+two arcs cause the turtle to rotate a total of 180 degrees, the TURTLE
+needs to turn a total of (360-180), or 180 degrees at both ends of the
+leaf.  Thus the TURTLE must turn 90 degrees at each end of the leaf.
+This procedure will draw the leaf:
+.nofill
+
+.indent l6
+.BLOCK 6
+TO LEAF
+10 RARC 100
+20 RIGHT 90
+30 RARC 100
+40 RIGHT 90
+END
+
+.indent 0 
+.he2
+Use of Similarity
+.adjust
+.block 5
+16.4 Calculating the Number of Points in a Star or Polygon, Using a
+POLY Procedure.
+
+.indent 3
+2Another way of approaching the "total turtle trip" is by analysing
+the results of using different inputs for POLY.  (See section 2)  A
+student might be asked by a teacher to keep a chart showing the angle
+input for poly, the number of points in the resulting star or polygon,
+and the calculated total rotation turned by the turtle in completing
+the design.  A student who has carefully carried out a number of POLY
+experiments will find that for any polygon, the turtle will turn
+through total rotation of 360 degrees, and that for any star, the
+turtle will turn through a total rotation of a multiple of 360 degrees.
+(A five pointed star, produced with an angle input of 144 degrees turns
+the turtle a total of 720 degrees.  An eight pointed star, produced
+with an angle of 135 degrees turns the turtle through a total of 1080
+degrees, etc.)  This is a more generalized form of the Total
+Turtle Trip Theorem.
+
+.indent 0
+.block 5
+16.5 The Use of Similarity
+
+.indent 3
+2There are a number of ways for students to encounter and make use of
+a "LOGO Similarity Theorem".  A proportional change in all the FORWARD
+and BACK steps in a sequence of TURTLE commands, while holding the
+angles constant, will change the size, but maintain the shape of the
+figure drawn by those commands.  While few students come to understand
+this principle in its full generality, there are many ways in which
+students encounter it in simpler forms and use it in their LOGO
+projects.  The desire to create similar designs often provides students
+with their first use of variables, as they try to create "different
+sized squares," for example.  
+
+.indent 0
+.block 6
+16.5.1  EXAMPLES:
+
+6.5.1  Similarity In Regular Shapes.
+
+0Almost every student encounters regular similar shapes when they
+work with RCIRCLE and LCIRCLE commands, squares of different sizes, and
+the shapes made by a POLY procedure.  Since all the sides of a regular
+shape are the same, making the length of that side a variable, rather
+than a fixed distance leads immediately to similar figures.
+
+Laura's design, AROUND was built of randomly selected circles:
+
+.indent 6
+.nofill
+.block 12
+TO AROUND
+10 LCIRCLE 90
+20 LCIRCLE 58
+30 LCIRCLE 48
+40 LCIRCLE 20
+50 LCIRCLE 10
+60 LCIRCLE 96
+70 LCIRCLE 50
+80 LCIRCLE 33
+90 LCIRCLE 66
+END
+.ri 
+Figure 6.17
+
+.adjust
+.indent 0
+Monica's procedure, WOW, was created using a variable sized square procedure:
+
+.nofill
+.indent 6
+.block 13
+TO WOW
+1 SQ 10
+2 SQ 20
+3 SQ 30
+4 SQ 40
+5 SQ 50
+6 SQ 60
+7 SQ 70
+8 SQ 80
+9 SQ 90
+10 SQ 100
+11 SQ 110
+END
+.RI
+Figure 6.18
+
+
+.adjust
+.indent 0
+Kevin's TUNNEL, using a POLY procedure was a more general use of the
+same idea.
+
+.indent 6
+.nofill
+.block 13
+TO TUNNEL :SIZE
+10 POLY :SIZE 45
+20 IF :SIZE = 105 STOP
+30 TUNNEL :SIZE + 5
+END
+.sp 6
+.ri
+Figure 6.19
+
+.indent 0
+.adjust
+Dennis' nested triangle procedure, Q, made use of similar triangles in
+a very different way:
+
+.indent 6
+.nofill
+.block 15
+TO Q :SIZE
+10 IF :SIZE = 10 STOP
+20 THRI1 :SIZE
+30 FORWARD :SIZE/2
+40 RIGHT 60
+50 Q :SIZE/2
+END
+.sp 6
+.ri
+Figure 6.20
+
+.indent 0
+.adjust
+One of the most elaborate "regular figures" was Betsy's SUN design.
+After first creating the procedure with fixed sizes, Betsy made a new
+set of procedures which took a variable :SIZE as input:
+
+.nofill
+.block 18
+TO SUN2 :SIZE
+10 REPEAT [RAY2 :SIZE] 9
+END
+
+TO RAY2 :SIZE
+10 BOX2 :SIZE
+20 LEFT 180
+30 RIGHT 20
+END
+
+TO BOX2 :SIZE
+10 RARC :SIZE
+20 LARC :SIZE
+30 RARC :SIZE
+40 LARC :SIZE
+END
+.spread
+//SUN2 20/SUN2 30
+
+.RI
+Figure 6.21
+
+.he2
+Use of Symmetry
+.adjust
+.block 5
+16.5.2  Similarity in Non-Regular Shapes.
+
+0The more general principal of similarity, in which all the sizes in
+a shape are multiplied by a constant factor, occurred less frequently
+in our trial classes.  One noteworthy example was Kathy's pair of
+procedures WORM and WORMY:
+
+.indent 6
+.nofill
+.block 17
+TO WORM
+1 RARC 30
+2 LARC 30
+3 RARC 30
+4 LARC 30
+5 RCIRCLE 10
+END
+
+TO WORMY
+1 RARC 60
+2 LARC 60
+3 RARC 60
+4 LARC 60
+5 RCIRCLE 20
+END
+.ri
+Figure 6.22
+
+.adjust
+.indent 0
+.block 5
+16.6 The Use of Symmetry
+
+.indent 3
+2The idea of symmetry is one which most students encounter as part of
+their LOGO experience.  A "LOGO symmetry theorem" might be stated as
+follows:  "If all the right and left commands in a sequence of TURTLE
+commands are reversed, without changing any of the other commands in
+the sequence, the resulting design will be a mirror image of the
+original design."  The reversing of RIGHT and LEFT, is
+one approach which students use to create symmetrical designs.  Another
+is the use of an "implied axis of symmetry," usually a vertical line
+down the center of a design, in which both sides are identical but in
+which the symmetry is produced by "working across from one side" of the
+design rather than by starting from the middle and reversing RIGHT and
+LEFT commands.  Some students make use of one of these approaches to
+symmetry in connection with a design that is not fully symmetrical, or
+in a design that is mostly symmetrical, but which has one or two
+dramatic asymmetries.  Finally, many students carry out projects
+involving rotational symmetry, many examples of which have been considered above.
+
+.indent 0
+.he2
+Right/Left Reversal
+.block 6
+1EXAMPLES:
+
+6.6.1 Symmetry by Right/Left Reversal
+
+0Symmetry by right/left reversal is usually preceded by the
+realization that a RIGHT turn can be eliminated by an equal LEFT turn,
+and reversed by a double LEFT turn.  This involves the use of right and
+left as inverses of each other, and was discussed in Section 4 of this
+chapter.  The most common example of designs which make use of
+right/left reversal are those made by using arc and circle primitives,
+RARC, LARC, RCIRCLE and LCIRCLE, since these immediately produce
+symmetrical designs.  
+
+Two simple examples of this type of symmetry were Deborah's procedure
+called EYES,
+drawn using RCIRCLE and LCIRCLE, and the NOSE procedure she used
+for her "rabbit" in which she used RARC and LARC as inverses of
+each other.
+
+.nofill
+.block 8
+TO EYES
+1 RCIRCLE 90
+2 LCIRCLE 90
+3 RCIRCLE 40
+4 LCIRCLE 40
+END
+.ri
+Figure 6.23
+
+.block 14
+TO NOSE
+1 RARC 30
+2 RIGHT 90
+3 RIGHT 90
+4 LARC 30
+5 RIGHT 90
+6 RIGHT 90
+7 LARC 30
+8 RIGHT 90
+9 RIGHT 90
+10 RARC 30
+END
+.ri
+Figure 6.24
+
+.adjust
+A somewhat more elaborate example was Karl's ACE procedure which
+involved vertical symmetry produced by using FORWARD/BACK reversals, as
+well as right/left symmetry.
+
+.nofill
+.block 13
+TO ACE
+1 RCIRCLE 50
+2 LCIRCLE 50
+3 BACK 100
+4 RCIRCLE 50
+5 LCIRCLE 50
+6 FORWARD 100
+7 FORWARD 100
+8 RCIRCLE 50
+9 LCIRCLE 50
+END
+.ri
+Figure 6.25
+
+.adjust
+Kathy's BIRDMAN procedure was an elaboration of the "eyes" approach,
+using inverse arcs.
+
+.nofill
+.block 7
+.sp 5
+.ri
+Figure 6.26
+
+.adjust
+.he2
+Implied Axis of Symmetry
+Gary regularly made use of the "LOGO symmetry theorem" in his work.  An
+example discussed fully in Section 5.5 of chapter 4, was his
+STARSHIP procedure, in which right/left symmetry was built into the
+entire process.
+
+.block 7
+.sp 5
+.ri 
+Figure 6.27
+
+
+.adjust
+16.6.2 Projects Involving an Implied Axis of Symmetry0
+
+Many students created symmetrical designs without reversing right and
+left commands.  Such a design is likely to be a drawing of a face, a
+rocket, a house, etc.  Such designs may also have one or two dramatic
+asymmetric features.
+
+When Kathy added a hat on her BIRDMAN design (Figure 6.26), she made
+use of an implicit axis of symmetry.
+
+.block 7
+.sp 5
+.ri
+Figure 6.28
+
+Gary's first major project was a FACE which looks as though it was
+constructed using right/left symmetry.  Actually Gary used a more
+elaborate approach which involved estimating the sizes of circles and
+placing the TURTLE so that it could draw the circles starting from the outside.
+The "Nose" is the only asymmetric feature.
+
+.block 20
+.sp 18
+.ce
+Figure 6.29
+
+Donald's HEAD was also worked out without the use of right/left
+symmetry.  Although his symmetrical placement of the "hat" was not
+exact, it was clearly intended to be so.  Once again the "nose" is
+deliberately asymmetic, as is the flower.
+
+.block 17
+.sp 15
+.ce
+Figure 6.30
+
+.block 5
+16.6.3 The Use of Symmetry in Non-Symmetric Designs.
+
+0Dennis used the "LOGO symmetry theorem" to create windows for his
+car.  Once he had drawn the rear window, WIN1, he reversed all the
+angles to draw the front window, WIN3.
+
+.NOFILL
+.block 11
+TO WIN1			TO WIN3
+2 FORWARD 60		1 LEFT 30
+3 RIGHT 60		2 FORWARD 60
+4 FORWARD 20		3 LEFT 60
+5 RIGHT 90		4 FORWARD 20
+6 FORWARD 40		5 LEFT 90
+7 RIGHT 90		6 FORWARD 40
+8 FORWARD 50		7 LEFT 90
+END			8 FORWARD 50
+			END
+.spread
+/Figure 6.31//Figure 6.32
+
+.block 28
+.sp 26
+.ce
+Figure 6.33
+
+.adjust
+As a final example of student use of symmetry we examine Kathy's
+procedure MONSTER.  MONSTER was produced by an exploration involving
+arcs and circles.  When Kathy divided this into subprocedures MO, NS,
+and TER, MO and NS were symmetrical, while MO and TER were identical.
+Although Kathy probably used a symmetric process in working out her
+design, the asymmetry of the design as a whole obscured this aspect of
+it.
+
+.nofill
+.block 10
+TO MO		TO NS
+1 RARC 40	1 LARC 40
+2 RARC 20	2 LARC 40
+3 LARC 40	3 RARC 40
+4 LARC 20	4 RARC 20
+5 LARC 20	5 RCIRCLE 20
+6 RCIRCLE 20	6 LCIRCLE 20
+END		END
+
+.block 18
+.sp 14
+.spread
+/MO (and TER)/NS/MONSTER
+.spread
+/Figure 6.34a/Figure 6.34b/Figure 6.35
+
+.adjust
+

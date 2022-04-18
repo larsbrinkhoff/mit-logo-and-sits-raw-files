@@ -1,0 +1,370 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 31vgi
+.ds
+.adjust
+.ri
+In LOGO;BRPREF
+
+.he1
+Preface
+Although the Education World is rapidly moving towards a general
+recognition of the need to give all students some knowledge of
+computers, it is still very far from taking a responsible position on
+the choice of this knowledge.  In using such strong language I do not
+mean to accuse individuals of irresponsibility.  I have known school
+administrations how try very hard to make sensible and informal
+decisions about the computer experience their school should offer.  But
+they are faced with Habson's choices in all directions.  Henry Ford
+said you can have any color of car you like provided it is black and
+the manufacturers of the model T computers allow a school to teach any
+computer language it likes provided it is BASIC.
+
+Of course, anyone who knows anything about computers knows that my
+statement about languages is not strictly true.  We shall discuss
+exceptions in a moment.  But it is essentially true and is,
+moreover, emblematic of a much more general restriction of choice than
+in the selection of programming language.  There has grown up around
+computers and computation a vast body of knowledge and, indeed, a vast
+culture.  Which parts of this should be included in the live of
+schools?  It is not sufficient to say "why, of course, the elementary
+parts".  There are in principle many possible entry routes to the
+intellectual world of computers, and these differ from one another in
+more than technical ways.  They differ in "philosophy".  They appeal
+differently to different people.  They facilitate very different
+intellectual styles.  Their differences resonate with the many lines of
+cleavage in a school population:  ethnic lines, gender lines, the
+verbal/quantitatve line and even the multiple lines separating the
+"intellectuals" from those whose sense of themselves is centered on
+sports and social life.  The  computer as such is not intrinsically
+related to any one of the many sub-cultures of a school.  But such
+relationship is largely determined as soon as an actual computer is
+chosen with a particular language and set of capabilities.  Some kids
+will like it and some will not, and these initial biases easily
+tarnslate into a self-perpetuating socio-cultural structure around the
+computer.  For example, a frequent pattern in an appropriation of the
+computer by white, mal,e math-oriented students with an aggressive,
+"convergent" intellectual style.  And very quickly this leads to a
+"social construction of the computer" in that school which makes it
+difficult for other students even to imagine liking it.
+
+A social construction of the computer in a particular image is taking
+place on a larger scale in the community of specialists on computes in
+education.  A classification of the uses of computers in schools may
+give a superficial impression of great variety.  For example, they are
+used for games, for science simulations, for learning to program, for
+drill and practice, and for specialized data processing courses.  But
+this sense of variety reflects ignorance of the options.  lThe variants
+of computes actually found in schools form a very thin slice of what
+actually exists in the real world of computation and a relatively even
+thinner slice of what could exist if the two worlds of education and of
+computation could get together in a creative collaboration.  But in
+order for this collaboration to take place a greater awareness is
+needed of the narrowness of the existing options and of the essentially
+social processes that encourage it.
+
+To see the social dynamics let us consider an experiment which has been
+going on for several years in France.  The experiment, consisted of
+placing computer systems in 58 Lycees and giving teachers from each of
+these schools a full year of training leave to become proficient in
+computation.  The "research question" was to see what those teachers
+and others in the school would do with the computers, and the results
+are now being used as data for a much larger project which will involve
+installing 10,000 computers in French Schools during the next 3-5
+years.  From a superficial point of view the experiment might appear to
+be exactly what is needed to encourage a variety of uses, and
+especially so since the selection of teachers for training emphasized
+variety of intellectual backgrounds including teachers of history,
+literature, philosophy, etc., taht is to say many who in the U.S. would
+be very unlikely to learn to program computers or make a significant
+contribution to their use.  But from another point of view the
+experiment can be seen as contributing to the digging in of a very
+narrow perspective on computers.  For the computers that were installed
+at the schools were of a particular kind and what the teachers in the
+end did with them was highly influenced by these limitations. 
+
+Unfortunately some influential people in France are arguing that the
+best programs developed in the 58 Lycees show "what teachers can do
+with computers" and that the choice of the 10,000 future computers
+should therefore be made according to the criterion of being adapted to
+this kind of program.  The fallacy guarantees that the future of
+computation (like so much else in education) will continue to be the
+prisoner of the primitivity of the past.
+
+In the United States things are done in a less systematic and
+centralized way.  But essentially the same process is at work.  The
+computer industry has offered a set of machines all made in a similar style.
+The small computer magazines, the trade fairs, teachers' conventions
+and other channels of publicity are filled with excited descriptions of
+prorams written for these machines, that is to say of programs of the
+particular kinds which these machines favor.  This creates an image of
+"what the schools want" which determines the demand for future
+computers.  But it determines it in the image of yesterdays technology.
+
+The obvious way out of the trap is to make sure that someone, somewhere
+is experimenting with the kinds of computers we can expect to have in
+schools in the future.  The LOGO group at M.I.T. has seen this role as
+one of its principal functions.  Thus, as early as 1972 we were
+constructing computer-based educational environments using computers
+with several important features that were not available to schools at
+that time at affordable prices.  In particular we made essential use of
+graphical capabilities and of memory sizes that would have added as
+much as $10,000 to the cost of a typical single user school computer system.
+
+Today many of the low-cost computers used in schools have a sufficient
+graphical capability and would need a memory extension costing only a
+few hundred dollars to ensure transferability of most of the methods we
+have developed.  Within a few years everything we were doing lin the
+mid-seventies will be available to schools at trivial cost while we
+shall be engaged in prospects, some of which (see below) are alrady
+under way using computer facilities that may not be generalizable until
+the mid-eighties.
+
+The LOGO/TURTLE project at the Lincoln School in Brookline is a study
+in the transfer of methods developed under laboratory conditions to the
+more realistic conditions of an urban, public elementary school.  This
+report has been written in sufficient detail and in a style of language
+which will, we hope, enable it to provide policy makers, administrators
+and, especially, teachers with at least one alternative image of how
+young students can learn to program computers and of how a programming
+experience can be integrated with their other school work.  I want to
+emphasize -- and this is one reason for my decision to write a personal
+preface to a collective work of which I am participant -- that what we
+shall be describing here is one out of many possible models for the
+future relationship between children and computers.  It is not even --
+far from it -- the only way in which my own work could in principle be
+diffused into the real world of children:  I am inclined towards much
+more utopian visions.  But I do believe that what happened at the
+Lincoln School captures the essential ways in which the experience of
+learning to program in the early nineteen eighties will in fact differ
+from the experiences which have become standard in schools in the
+nineteen siventies.  By using my own voice to place the project in the
+larger context of what came before and of what might come after I think
+I can better preserve the integrity of the project itself.  Indeed, one
+of its major achievements may prove to be the development of a "voice"
+better able than mine to speak to the school world.
+
+When the Lincoln Project was first planned I thought of it as
+"transferring" into a school setting a "learning unit" that had alrady
+been developed.  The research components of the enterprize were to test
+the feasibility of transfer and to collect data about the learning
+process.  However it gradually became apparent that something else was
+happening as well.  The model of bodily transfer of an existing entity
+did not accurately apply to what was happening.  The "learning with"
+that eventually took shape in the Lincoln school was a new construct,
+the result of the intervention of two cultures, our own, the one that
+had grown up in the LOGO Laboratory at M.I.T. and the culture of the
+schools.  As it became apparent that this was happening I had a choice:
+fight it and force the Lincoln project into a pre-conceived mold or
+join it.  By being as sensitive as possible to the "resistance" it
+seemed possible to ensure that certain fundamental aspects of the
+original were reproduced even if some others were attenuated or lost.
+
+It is time to be less abstract.  The learning unit we planned to
+implement at Lincoln was a version of Turtle Geometry implemented in
+the LOGO programming language.  One of the major ideas we had developed
+during the previous half decade was the use of resonant domains of
+knowledge: it is sometimes much easier to learn two ( or more)
+domains together than to learn either one of them separately.
+Sometimes learning more is less work than learning less.  This is
+particularly true of programming.  We have had great success in
+designers domains of knowledge and programming languages that "go
+together" so that each gives the greatest possible support to learning
+the other.  Turtle Geometry and TURTLE-LOGO are such a couple and the
+one we placed at the center of the Lincoln project.  Thus the students
+would be simultaneously learning geometry and programming.  What this
+means in detail is made clear in chapters 4 and 5 of the report when
+the knowledge content of what they learned is analyzed from two
+perspectives:  as knowledge about programming (Chapter 4) and as
+knowledge about geometry and numbers (Chapter 5).  The idea of mutual
+support between geometry and programming was transferred with only
+minor modifications (of which some examples will be given later.)
+There were more modifications in another component of my original
+conception of the LOGO/TURTLE lunit to be implemented at Lincoln.
+
+I have repeatedly argued that programming in the LOGO style can be used
+to enhance the conscious, articulate use of heuristics (i.e.
+problem solving strategies) and mathetics (learning strategies).
+When I work with chilren I try to develop this effect by using a number
+of techniques I have called "bridge activities".  For example, I have
+the children learn a skill such as juggling and use computational
+metaphors (including terminology the students have picked up in LOGO
+such as "procedure" "sub-procedure" "super-procedure" "input" "bug"
+"debug"....) to talk about the learning process.  I find that doing so
+encourages habits of "Loud Thinking" and have some evidence for the
+thesis that this leads to more effective learning.  I had hoped that
+the Lincoln experiment would provide some firmer data about this than
+we have had in the past.  But very early in the design phase of the
+project it became apparent to me that these bridge activities and
+especially "Loud Thinking" should not play a significant role; their
+spirit is too "alien" to the school culture to be assimilated as part
+of the first exportable LOGO unit.  They will come later.
+
+Our teacher, Dan Watt, played several important roles in the shaping of the
+learning unit for the project.  When he first came to us he knew little
+about computers and almost nothing about LOGO.  As he acquired more knowledge
+he was able to participate more and more fully in discussions about content
+and method.  But his influence began long before he reached the level of
+expertise needed to formulate his own ideas about how to teach LOGO.  From
+the very first days of his own learning experience in the LOGO Lab it
+became apparent to me that in his easy acceptance of certain ideas and
+resistance to others he was expressing more than personal preferences.  He
+was reacting not only as Dan Watt but also as a  Teacher who shared
+with many other teachers a certain set of values, a certain sense of reality,
+a certain common experience of what goes and what does not go in a class room.
+As a personal learning experience I learned as much about the problem of
+transferring LOGO to schools from participating in "teaching" Dan Watt as we
+later learned collectively from teaching the sixteen sixth grade students
+who form the set of subjects of the Lincoln project!
+
+What we learned in this way from Dan Watt could be impugned on two grounds:
+we were using him as a "sample of 1" to represent the class of teachers in
+general and, moreover, he is, in his background, far from even being
+a "typical"  elementary school teacher. His career path went through
+obtaining a Ph.D. in chemistry and working for several years on
+curriculum development in the  E.S.S. project before deciding to
+teach full time in an elementary school, which he did for seven years
+before becoming involved with LOGO. His story attests, as working
+with him does more strikingly, to a sophistication and degree of initiative
+that is, alas, rare in our elementary schools.  Nevertheless working
+subsequently with a larger group of teachers has confirmed for me that
+adopting Dan as a "prototype teacher" is much more objective than arbitrary.
+In any case there is no doubt that working with Dan could only improve 
+the match between our learning unit and the conditions it will encounter when it 
+goes  out into the larger world of schools.
+
+My personal vision of the role of computers in education has two prongs which
+I sometimes dub "revolutionary" and "reformist".  The revolutionary prong
+has a longer time span and focuses on the possibility that the computer
+presence may have very radical effects on the intellectual development
+of children.  For example: as personal computers become commonplace
+objects in our homes	 it is conceivable that children will
+pick up "computer languages" in the same spontaneous way they learn to talk
+and possibly at the same young age. It is conceivable that the use
+of "alphabetic languages" typed out at keyboards might free the process
+of learning to "write" from the mechanical acquisition of difficult
+motor skills and allow it to take place at a much younger age and in a 
+much more spontaneous and effective manner. I have argued that insofar as
+computers are "mathematics-speAking"  entities, learning mathematics in a
+computer rich environment might take place in a way more akin to the child's
+learning of his native language than to what takes place in contemporary
+math classrooms, which, to continue the metaphor, is not unlike foreign
+language classes. And computer controlled access to video-discs and
+information networks will certainly change  a child's relationship 
+to knowledge about the world beyond immediate physical reach
+from one of passive receiver to one of active seeker. In short, this
+is a vision of restructuring the educational process that has little to do
+with designing "units" to be integrated into the existing school
+curriculum. But the same research that informs the revolutionary prong of
+my thinking produces results of more immediate utility. The reformist
+prong looks for ways in which children can begin right now to have
+access to computers as personal instruments for learning. There are many
+ways in which computers can serve such a function: they can be used
+to give access to knowledge bases, they can be used as writing instruments
+and they can be used as personal tutors. But all these functions and others
+as well are enhanced if the child also learns to program the computer.
+Thus an important component of our research has been the exploration of ways
+in which programming can become more accessible. The Lincoln
+project carves out one of these ways of making programming accessible.
+The particular choice is based on criteria of realism among which  are
+the following:
+.ss
+.indent 6
+.block 3
+1(1) 0The route into programming must be embodied in a self-contained
+learning unit of about the size of a typical one-semester course
+meeting twice a week.
+
+.block 4
+1(2) 0The methods used must be transferable without changes in principle
+at least to the more advanced of the micro-computers now being used in schools.
+(For example, they are transferable to the Apple and T.I. Computers; they
+are not transferable to the Radio Shack computer.)
+
+.block 5
+1(3) 0The programming language used must be recognizably like
+and allow transfer of skills to commonly used languages. (This criterion
+biases against purely applicative languages such as" pure Lisp" and 
+object oriented languages such as SMALLTALK although the latter is
+very probably more representative of the languages of the future.)
+
+.block 2
+1(4) 0the relation of the work to the existing school curriculum must
+be direct enough to be visible without sophisticated arguments.
+
+.block 2
+1(5) 0The pedagogic methods used must be consonant with prevalent
+philosophies of education.
+
+.block 4
+1(6) 0The methods used should be  provide a meaningful
+learning experience for  all students in a 
+normal public school including the exceptional students at both ends
+of the scale of scholastic achievement.
+
+.ds
+.indent 0
+The success of the project in  attaining these criteria speaks for
+itself through the pages of the report with the possible exception of the
+technical aspects of (2) and (3).  The project worked with sixteen
+children spanning the range of scholastic achievement with subjects in
+each decile from bottom to top. All of them used the computer as a personal
+learning instrument. Fifteen of them learned to program  according to the
+criterion of conceiving,writing,editing,debugging and filing a sequential
+program. That the  intellectual content and the pedagogical methods are
+consonant with school practices can be judged by reading the detailed
+analyses in the report and by the fact that the school system in which the
+project was mounted invested its own money in two LOGO computers like the
+ones used in our work. In concluding this preface I shall comment on the
+choice of programming language (criterion 3), the transferability of
+the work to micro-computers (criterion 2) and my perspective on further 
+research related to this project.
+
+In order to situate the computer language LOGO as it is used here it
+is useful to compare it to other well known languages, particularly BASIC.
+In making such a comparison the first point to note is that LOGO  was
+constructed to satisfy two criteria that might at first sight appear
+to be in contradiction: access to LOGO for a beginner, particularly a 
+"non-mathematical" beginner was to be easier than access to other languages
+including BASIC; on the other hand LOGO is  not a "toy" language
+in which one can do only simple things but indeed a much more powerful and 
+sophisticated language than BASIC. These two criteria are sometimes summed
+up in the phrase (due,I think, to Virginia Grammar): "No threshold and No
+ceiling." A mathophobic child with learning difficulties can get into using
+LOGO and the sharpest members of the school math club can find challenging
+ways to use advanced concepts of computer science embedded in the language.
+
+Some very simple aspects of the language serve at both ends of this spectrum.
+Of these the most prominent in these uses report in this report is the
+power and simplicity of defining procedures in LOGO. At the simple end
+a child can use the metaphor of "teaching the computer a new word" to
+define any number of new commands starting with whatever primitive
+commands were given at the beginning. Thus in the Lincoln project
+they were introduced to the primitive commands FORWARD, RIGHT
+BACK, LEFT and were very soon engaged in defining commands to
+draw simple shapes. Since the new commands,once defined, act like the
+primitive commands, they can be used to define further commands
+thus giving the child exposure to the power of hierarchical definitions.
+The pleasure and power of doing this are so great that it really seems quite
+extraordinary that the education world has been willing to accept a
+language, BASIC, that perversely refuses to offer this facility.
+
+A more sophisticated use of the "extensibility" of LOGO is seen in the
+use in the Lincoln project of the command REPEAT which can cause a
+series of instructions to be repeated any specified number of times.
+The point of the example is that REPEAT is not a primitive command
+in LOGO but is something that a teacher with very little
+programming experience can introduce if he or she happens not to like the
+means of controlling repetitive processes. In the same spirit one could
+(though I have never known anyone do this except as a one-time exercise)
+define LOGO command to imitate BASIC's control structure.Thus one
+could define a command FOR which would act in essential
+ways exactly like the  famous FOR statement in BASIC. Thus
+in a LOGO environment BASIC is transformed from being a fetter
+on the progress of computation to being an interesting exercise
+for a second semester programming course.  In a BASIC environment
+you are stuck with the primitives supplied by the founding fathers.
+In a LOGO environment you cab make your own BASIC!
+
+

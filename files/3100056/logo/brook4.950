@@ -1,0 +1,2089 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 31vgi
+.font 3 25vg
+.tabfnt 3
+.chap 4
+.dummy @
+.he1
+Programming
+.he2
+Acquiring the Sense of Command
+.ss
+.adjust
+.ce
+4. Computer Programming:  What the Students Learned
+
+.indent 3
+2The process of learning to write procedures, particularly more
+complicated ones which involve subprocedures in an organized
+hierarchical form, is quite complex.  
+In developing a systematic way of describing student behaviors and
+student learnings in this area, we have separated our observed
+behaviors into seven interrelated categories for analysis.  
+
+.indent 6
+11. 2Acquiring the sense of command
+
+12. 2Developing the notion of a procedure as an entity
+
+13. 2Separating the process
+from the product of a procedure (how a procedure works versus what the end 
+result looks like).
+
+14. 2Acquiring flexibility in establishing hierarchies of procedures, including:
+
+.indent 8
+.block 10
+--"playing TURTLE" or "playing computer"
+
+--becoming aware of stage change equivalence and state
+transparency 
+
+--functional naming of procedures and subprocedures 
+
+--modularity
+
+--creating functional procedures
+
+.indent 6
+15. 2Fitting a procedure into a hierarchy:  "top-down" versus "bottom-up"
+
+16. 2Developing patterned procedures using REPEAT, recursion and looping
+
+17. 2Using variables in procedures
+
+.page
+.indent 0
+11.  Acquiring the Sense of Command
+
+.indent 6
+2Although the idea of "command" may seem quite obvious to an adult
+computer scientist, a beginning student may require some time to
+develop a purposeful sense of deliberatey controlling the TURTLE by
+particular commands.  As one expect, most students develop a sense of
+command after some degree of initial contact with a computer.
+Sometimes a student who has developed a sense of command with regard to
+basic TURTLE instructions, may revert to seemingly purposeless behavior
+when in initial contact with a new command or idea.
+.indent 0
+
+.block 6
+1Behaviors Observed:
+
+1.1  A Student sees no connection between commands typed at the
+computer terminal, and the actions of the TURTLE.
+
+Example:0  The student looks only at the text display screen.
+Following a teacher's instruction, s/he may type instructions such as
+FORWARD 100 or RIGHT 45, without looking at the graphics display screen
+to see what the TURTLE does.  Such a student is likely to be more
+interested in messages typed by the computer such as "YOU HAVEN'T TOLD
+ME HOW TO FD19", than in the motion of the TURTLE.
+
+.block 5
+11.2  A student types random Instructions on the Keyboard, and then
+looks to see what the TURTLE has done.
+
+Example: 0Having as yet no basis for predicting the types of inputs
+that might be useful for controlling the TURTLE, a student may type
+commands such as FORWARD 555 or RIGHT 123, choosing numbers on the
+basis of previously familiar number patterns, or because they are easy
+to type.  The student then looks at the screen to see what has
+happened, but is often confused by seemingly random effects or "OUT OF
+BOUNDS" messages.
+
+11.3 0A student who has seemingly mastered the sense of command
+with regard to TURTLE commands such as FORWARD and BACK, RIGHT and
+LEFT, etc. reverts to the useof random inputs when given the
+opportunity to make use of a procedure such as POLY or POLYSPI (see
+section 1 of chapter 5).
+
+.he2
+A Procedure as an Entity
+1Example. 0Having not understood the connection of the POLY
+procedure with FORWARD and RIGHT command with which s/he is already
+familiar, the student chooses inputs to POLY such as 123 456 or 555
+555, based on their familiarity as number patterns or because they
+are easy to type.  Working in this way, the student may see no
+consistency between the inputs to POLY and the results obtained, and
+may temporarily lose a sense of controlling the behavior of the TURTLE.
+
+.block 5
+12. Developing the Notion of a Procedure as an Entity 
+
+.indent 6
+2Merely acquiring the idea of a procedure in a form sufficiently rich
+and flexible to allow efficient planning, writing and debugging of
+programs as complex as those produced by our subjects is a significant
+accomplishment.  Learning the proper LOGO syntax is probably the least
+problematic step.  A more interesting issue is coming to think of a
+sequence of commands as "a thing" having well-defined internal
+constraints and external properties.  
+
+Internally, the strict sequential nature of a procedure is a new
+experience for most students.  Externally one may sometimes
+consider a procedure to be a command, to invoke a particular image on a
+graphics screen, for example.  Side effects, such as a net move or turn
+that results from running a procedure, will be discussed in the
+sections that follow.
+.indent 0
+
+.block 6
+1Behaviors Observed:
+
+12.1. The student uses a procedure name to run a procedure which
+s/he did not define.
+
+0Example:  A POLY or CIRCLE procedure; is given to a student by a
+teacher or another student.  The student may realize that this
+procedure is derived from direct LOGO commands, but s/he uses the
+procedure as though it were a direct command, without particular
+concern for how the procedure itself works; product logic dominates the
+student's process.
+
+.he2
+Writing a Sequential Procedure
+12.2. The student is observed to repeat a sequence of computer
+commands, achieving the repetition of a particular effect, without
+giving evidence of thinking of the sequence of commands as an entity.
+
+.block 6
+1Example:
+
+12.2.1 0A student may draw a square, using direct commands:
+FORWARD 100, RIGHT 90, etc., until the square is complete.  S/he repeats
+the sequence of commands to draw one or more additional squares,
+with increasing ease and swiftness, but without defining a procedure.
+
+.block 7
+12.3. The student creates a sequence of steps, and expresses the
+desire to repeat or preserve those steps for further use.
+
+1Examples:
+
+12.3.1 0A student may draw a square using direct commands.
+Then s/he may say, "I want the computer to do that again." Or "Will the
+computer remember how to do that?"  This indicates that the student is
+consciously aware that a particular sequence of commands can produce a
+replicable effect.
+
+12.3.2. 0The student gives a name to a particular sequence of steps, and using
+proper LOGO syntax (including TO, line numbers and END), creates a LOGO
+procedure by copying a particular list of direct commands in order to
+repeat a previous effect.
+
+.he2
+Separating Process from Product
+Having caused the computer to draw a square using
+direct commands, FORWARD 100, RIGHT 90, FORWARD 100, RIGHT 90, FORWARD
+100, RIGHT 90, FORWARD 100, the student writes a LOGO procedure:
+
+.nofill
+.indent 6
+.block 9
+TO SQUARE
+1 FORWARD 100
+2 RIGHT 90
+3 FORWARD 100
+4 RIGHT 90
+5 FORWARD 100
+6 RIGHT 90
+7 FORWARD 100
+END
+.ri
+Figure 2.1
+
+.adjust
+.indent 0
+12.3.3.0 The student chooses a name for a procedure, and then uses
+correct LOGO syntax to write a procedure using a random list of instructions.
+A procedure is written, and tried out afterwards. One can see this
+as exercising the abstraction "writing a procedure."
+
+.indent 6
+.nofill
+.block 7
+TO JOHNNY
+1 FORWARD 45
+2 LEFT 63
+3 FORWARD 22
+4 RIGHT 77
+5 BACK 99
+END
+.ri
+Figure 2.2
+
+.INDENT 0
+.block 5
+.ADJUST
+13. Separating the Process from the Product of a Procedure
+
+.indent 6
+2Distinguishing between the internal constraints and the external
+properties of a procedure involves distinguishing the "process logic"
+of how a procedure works from the "product logic" of the result of
+running the procedure.  We have observed that most students initially
+treat a procedure as the picture product they produce.
+Often the side effects of drawing a particular picture -- a net move or
+rotation of the TURTLE -- forces a student to relax the boundary
+between the internal and external aspects of a procedure, in order to
+appreciate how a particular procedure affects what happens next.  This
+boundary can become particularly problematic when the student needs to
+create one; for example, in creating process elements (FORWARD 100
+RIGHT 90, as "one side" of a square), or in creating subprocedures.
+This will also be discusssed in section 4.1, below. 
+
+.indent 0
+.block 6
+1Behaviors Observed:
+
+13.1 A Student is Surprised by the Effect of Running a Procedure
+More than Once
+
+0A common occurance is that a student creates a SQUARE
+procedure, such as that shown in Figure 2.1.  Running SQUARE twice
+produces the surprising effect shown in figure 3.1a.  Continuing to run
+SQUARE results in the shape shown in figure 3.1b, after the fourth SQUARE.
+
+.block 12
+.sp 10
+.spread
+/Figure 3.1a//Figure 3.1b
+
+13.2  Failing to account for the process of a procedure
+
+.block 4
+1EXAMPLES:
+
+3.1.1 0Darlene used a series of commands, FORWARD 40, RIGHT 40,
+FORWARD 40, RIGHT 40, ... to make a nine-sided polygon.  She carefully
+counted and found that there were nine FORWARD 40 steps and eight RIGHT
+40 steps.  She tried to repeat the drawing as follows:
+
+.nofill
+.indent 6
+.block 20
+REPEAT [FORWARD 40]  9
+REPEAT [RIGHT 40]  8
+.sp 16
+.ri
+Figure 3.2
+
+.adjust
+.indent 0
+Her procedure drew a straight line which resulted in an OUT OF BOUNDS
+message.  Darlene was not fully aware of the process of her design.
+From the product point of view, she had probably isolated the FORWARD 40
+steps as the only ones which had visible results and treated the
+RIGHT 40s as "additional ingredients in the recipe." 
+In reality it was the repeat
+of the process element, FORWARD 40 RIGHT 40, which was needed to produce her
+desired result.
+
+13.2.2 0The following sequence of steps may be suggested to draw a
+"balloon on a string" or a "lollypop".
+
+.indent 6
+.block 3
+FD 100
+
+RCIRCLE 20
+
+.indent 0
+Those steps, however, produce the following figure.
+.block 6
+.sp 4
+.ce
+Figure 3.3
+
+Betsy who had a pattern of "product oriented" behaviors,
+saw this bug as a misplacement of
+the circle and corrected it by "moving the ball" up and to the left,
+i.e. moving the TURTLE up and to the left before starting the circle.
+
+.block 12
+.sp 10
+.spread
+/Figure 3.4a//Figure 3.4b
+
+On the other hand, a student who is aware of the process that the
+TURTLE follows to draw the circle (even if students never look at the
+steps of the circle procedure, they see it acted out in boring detail
+each time RCIRCLE is run) notices that the TURTLE repeatedly goes
+forward and turns, thus drawing the first part of the circle in the
+direction initially pointed by the TURTLE.  A simpler debug is possible
+with this enriched view -- turn the TURTLE 90 degrees before starting
+the RCIRCLE process.
+
+.nofill
+.indent 6
+.block 11
+FORWARD 100
+LEFT 90
+RCIRCLE 20
+.sp 6
+.spread
+//Figure 3.5a/Figure 3.5b
+
+
+.block 5
+.indent 0
+.adjust
+13.2 "Playing Turtle" or "Playing Computer" to Uncover the Process
+Logic of a Procedure or Subprocedure.
+
+.he2
+Flexible Hierarchies of Procedures
+0One way to help students resolve this kind of difficulty is to
+suggest that students "play TURTLE", that is, "put themselves in the
+TURTLE's place," and physically try to carry out a set of instructions.
+This is often used to help students draw a circle with the TURTLE.
+First the student is asked to walk in a circle, then to separate his
+motion into distinct forward and turn steps.  In doing so, most
+students realize that a "TURTLE circle" can be drawn by repeating a
+very small step and a very small turn over and over again.
+
+.page
+14. Acquiring Flexibility in Establishing Hierarchies of Procedures
+
+.indent 6
+2The most flexible and efficient use of procedures in hierarchies,
+raises a number of issues which many students learned to cope with as
+part of their LOGO experience.
+.indent 0
+
+.block 6
+BEHAVIORS OBSERVED
+
+14.1 Paying attention to state change equivalence and state transparency
+
+.indent 6
+2This section extends the thread of distinguishing the process and
+the product of a procedure, begun in section 3, into the development of
+the concept of TURTLE state, state change, and state change equivalence.
+From the viewpoint of a TURTLE procedure all that is important about
+a particular subprocedure is its net change of state (net motion).  Any
+subprocedure with an equivalent state change can be substituted and
+will not affect in any way the rest of the procedure.  Students use
+this knowledge in a number of ways.  For example, a student may realize
+that a quarter circle is equivalent to going forward the radius,
+turning 90 degrees and going forward the radius again, and use that in
+his planning.
+
+.block 8
+.sp 6
+.ce
+Figure 4.1
+
+Another way of insuring modularity is to write procedures with no net
+state change.  Such "state transparent" procedures can be introduced or
+left out at any point of a superprocedure with no effect on the rest of
+the process. 
+.indent 0
+
+.he2
+Awareness of Turtle State
+.block 5
+14.1.1 An Example of Failure to Relate the State of the TURTLE
+(Process) of a Procedure to the Product
+
+0Albert had great difficulty "unpacking" the process of what he had
+done, once a series of steps were combined into a procedure.  Although
+he was quite competent at moving the TURTLE around the screen, he
+seemed to lose track of what to do when he had to move the turtle from
+the ending of one subprocedure, to the start of another.  This is shown
+most clearly in the project in which he had the computer draw his initials.
+
+Albert had no difficulty creating the subprocedures, A and J, which
+drew each initial.
+
+.block 12
+.sp 10
+.ce
+Figure 4.2
+
+The TURTLE finished drawing the A at point 2, and began drawing the J
+at point 3.  Despite a very clear idea of what he wanted to result to
+look like, he had no idea of how to plan the interface steps.  It took
+a trial and error process involving seven attempts before the A and J
+were aligned correctly.
+.page
+.sp 40
+.ce
+Figure 4.3
+.page
+.block 5
+14.1.2  Jimmy's Racetrack
+
+0Jimmy, in contrast to Albert, always seemed to know eactly where the
+turtle had to move to construct the next part of his design.  Jimmy had
+completed the inside of an "oval" racetrack by using the series of commands:
+
+.block 6
+.nofill
+.block 8
+FORWARD 150
+RARC 40
+RARC 40
+FORWARD 150
+RARC 40
+RARC 40
+.ri
+Figure 4.4
+
+.adjust
+Without "visible" calculations or planning, he moved the turtle over as
+shown, and used these commands to draw the outside of the racetrack.
+
+.nofill
+.block 13
+PENUP
+LEFT 90
+FORWARD 40
+RIGHT 90
+PENDOWN
+FORWARD 150
+RARC 80
+RARC 80
+FORWARD 150
+RARC 80
+RARC 80
+.RI
+Figure 4.5
+
+.adjust
+When asked by an observer how he knew where to place the turtle to draw
+the outside, and how he chose the input for RARC to draw the outside of
+the track, Jimmy replied that he knew that RARC was the same as
+"turning a corner," and that since he knew that he wanted the track to
+be 40 units wide, he made the radius of RARC 40 units larger than the
+radius he had used for the inner track.  This explanation, together
+with the way he moved the turtle, indicated that he was taking into
+account the "net effect" of the RARC procedure -- its starting and
+ending states -- as well as its product -- what it looked like --
+in carrying out his plan.
+
+.block 5
+14.1.3  Writing State Transparent Procedures
+
+.indent 6
+2The clearest way to eliminate confusion between the product drawn by
+a subprocedure and the steps necessary to put it in the right position,
+is to make the subprocedure itself state-transparent.  A state
+transparent procedure begins and ends with the turtle in the same
+state, so that the problem of locating the procedure on the screen can be solved
+separately from the problem of drawing it.  Although the use of state
+transparency was not consistent among our students, some of them did
+come to understand and apply this idea.  
+.indent 0
+
+0In Gary's STARSHIP, for
+example, the three major subprocedures, C, which drew the "cabin" of
+the starship and WINGL and WINGR, which drew its wings, were state
+transparent.  Each of them ended in the same state it began.  For more
+details of these procedures see section 4.6.1 below.
+
+.block 17
+.sp 13
+.spread
+/STARSHIP/C/WINGR
+.spread
+/Figure 4.6/Figure 4.7/Figure 4.8
+
+
+.he2
+Functional Procedure Names
+.ADJUST
+.block 4
+14.2 Functional Naming
+
+0In defining a superprocedure clearly it is helpful to give
+subprocedures names which describe their function in the
+superprocedure rather than an intrinsic propertie of the subprocedure
+itself.  For example a certain CIRCLE becomes an EYE in a FACE.
+
+14.2.1 The student may begin by choosing names for procedures according to
+the shape that they draw, such as SQUARE, TRIANGLE, STAR or DIAMOND.
+
+1EXAMPLE:  
+
+0HOUSE could be drawn using the subprocedures SQUARE and
+TRIANGLE:
+
+.nofill
+.block 13
+	TO HOUSE
+	10 SQUARE
+	20 RIGHT 90
+	30 FORWARD 100
+	40 RIGHT 30
+	50 TRIANGLE
+	END
+.sp 4
+.RI
+Figure 4.9
+
+.ADJUST
+14.2.2 0Later the student may choose names for procedures according to their
+purpose or function in a hierarchy.
+.nofill
+1Examples:0
+
+.block 5
+TO HOUSE	TO FRAME	TO ROOF
+10 FRAME	10 BOX		10 RIGHT 30
+20 ROOF		20 RIGHT 90	20 TRIANGLE
+END		30 FORWARD 100	END
+		END
+
+.adjust
+The FRAME and ROOF subprocedures need not use existing procedures BOX
+and TRIANGLE.  They might include all the steps necessary to draw those
+shapes.
+
+.he2
+Modular Procedures
+14.2.3 0Darlene made partial use of this approach in her CAT
+project (see section 5.2.1).  
+
+Her procedure names EAR, EAR1 and TAIL
+were descriptive of their function in her design, while her procedure
+names RIBIT, WEE and TURN, were randomly chosen.
+
+14.2.4 Donald's HEAD superprocedure (see section 5.2.2) made
+consistent use of functional procedure names.0
+
+.nofill
+.block 11
+	TO HEAD
+	1 BOX
+	2 EYES
+	3 NOSE
+	4 MOUTH
+	5 BEARD
+	6 HAIR
+	70 EARS
+	80 HAT
+	85 FLOWER
+	END
+
+.ADJUST
+114.3 Modularity  
+
+.indent 6
+2It is usually efficient to use certain procedures as modules, often
+having several different functions in the same or different
+superprocedure.  This may involve writing the procedure in a more
+general form (say, with size inputs) than might appear necessary on
+first thought.
+.indent 0
+
+.block 5
+14.3.1 Non-Modularity:  Deborah's "Square" and "Diamond"0
+
+Deborah, who had worked with squares for a long time, had made the
+statement, "Now I know all about squares."  When shown a picture of a
+tilted square, Deborah ignored her SQUARE procedure, and attempted to
+define a new procedure.  After a great deal of experimentation, she
+realized that her new shape required 90 degree turns at each corner,
+and she eventually defined the procedure.
+
+.nofill
+.block 12
+TO DIAMOND
+1 RIGHT 40
+2 FORWARD 30
+3 RIGHT 90
+4 FORWARD 30
+5 RIGHT 90
+6 FORWARD 30
+7 RIGHT 90
+8 FORWARD 30
+END
+.RI
+Figure 4.10
+
+.adjust
+14.3.2. 0Kevin used his TRIANGLE procedure as a subprocedure in two
+different ways.  He repeated it four times to make a FLOWER.  Later, He
+combined it with a BOX procedure to make a HOUSE.
+
+.block 32
+.sp 30
+.spread
+/Figure 4.11/Figure 4.12/Figure 4.13
+
+14.3.3  0Kevin's major project was to draw a "turtle".  He used the
+same pair of subprocedures, FOOT and BKFOOT, four times, to draw the
+"turtle's" feet.
+
+.block 24
+.sp 22
+.spread
+/FOOT/BKFOOT/TURTLE
+.spread
+/Figure 4.14/Figure 4.15/Figure 4.16
+
+.block 5
+14.4  Modular Debugging
+
+0A student realizes that a subprocedure is an "entity" which can be
+debugged without changing other elements of a project in which it is
+embedded.  The student will then have to take into account the way in
+which changing one subprocedure effects the rest of a project.
+
+.block 7
+14.4.1 0A student may have written the following buggy procedures:
+
+.nofill
+.block 5
+TO BALLOON	TO STRING
+10 STICK	10 FORWARD 100
+20 RCIRCLE 20	END
+END
+
+.adjust
+BALLOON produces the picture, shown in figure 4.17a instead
+of that shown in figure 4.17b as intended. 
+
+.block 14
+.sp 12
+.spread
+/Figure 4.17a//Figure 4.17b
+
+This can be debugged by changing the subprocedure STRING,
+without changing BALLOON as follows:
+
+.nofill
+.indent 6
+.BLOCK 4
+TO STRING
+10 FORWARD 100
+20 LEFT 90
+END
+
+.INDENT 0
+.ADJUST
+This will produce the desired effect (figure 4.17b) when the command BALLOON is given.
+
+14.4.2  0Suppose, however, that BALLOON is itself a subprocedure in
+another design:
+
+.indent 6
+.nofill
+.BLOCK 7
+TO PERSON	TO ARMS
+10 BALLOON	10 RIGHT 90
+20 BACK 40	20 FORWARD 30
+30 ARMS		30 BACK 60
+END		40 FORWARD 30
+		50 LEFT 90
+		END
+
+.indent 0
+PERSON is supposed to draw:
+
+.block 10
+.sp 8
+.ce
+Figure 4.18a
+
+When the original version of
+BALLOON is used, PERSON produces a buggy drawing: 
+
+.block 10
+.sp 8
+.ce
+Figure 4.18b
+
+.he2
+Systems of Procedures
+When STRING is debugged, so that BALLOON is correct, PERSON has a
+different bug:
+
+.block 10
+.sp 8
+.ce
+Figure 4.18c 
+
+This can be debugged by editing BALLOON:
+
+.indent 6
+.BLOCK 5
+TO BALLOON
+10 STRING
+20 RCIRCLE 20
+30 RIGHT 90
+END
+
+.indent 0
+.adjust
+Both BALLOON and PERSON now produce the desired effect (Figure 4.18a):
+
+.block 5
+14.5  Systems of Procedures
+
+.indent 6
+2As a student masters a number of these approaches, s/he may
+be able to combine several of them into a "system" of procedures and
+subprocedures to carry out a complex task.  In particular, 
+the process of a procedure may have parts and even modules which are
+not evident in the final product.  In terms of student behaviors, for
+example, 
+beginning students rarely separate the
+interface steps needed to go from one part of a design to another, as
+an independent subprocedure, though that is a practice which can aid
+readability and debugging.  Some students do begin to use these
+functional procedures after some programming experience.
+.indent 0
+
+.block 6
+1EXAMPLES:
+
+14.5.1  0The second version of Gary's starship design used
+functional procedure names, state transparent subprocedures, STA, WINGR
+and WINGL, and interface subprocedures MO, MOV and the modular procedure
+LI :LE.
+
+The procedure STA draws the central part of the STARSHIP, while WINGR
+and WINGL make use of LI, MO, and MOV, to draw the two wings.  LI :LE,
+draws a symmetrical line of any length.  MO and MOV shift the turtle
+100 units to the right and left respectively.  (See figure 4.6-4.8).
+.he2
+Bottom-Up Hierarchies
+
+.nofill
+.block 7
+TO STARSHIP	TO WINGR	TO WINGL
+10 STA		10 MO		10 MOV
+20 WINGR	20 RIGHT 90	20 LEFT 90
+30 WINGL	30 LI 50	30 LI 50
+END		35 LEFT 90	35 RIGHT 90
+		40 MOV		40 MO
+		END		50 HIDETURTLE
+				END
+
+
+.block 10
+TO LI :LE	TO MO		TO MOV
+5 PENDOWN	10 RIGHT 90	10 LEFT 90
+10 RIGHT 90	20 FORWARD 100	20 FORWARD 100
+20 FORWARD :LE	30 LEFT 90	30 RIGHT 90
+30 LEFT 180	END		END
+40 FORWARD 2 * :LE
+50 RIGHT 180
+60 FORWARD :LE
+70 LEFT 90
+END
+
+.adjust
+14.5.2 0A much more elaborate example of the combined use of these techniques
+is the system Harriet created for her
+TICTACTOE game.  She needed a large number of subprocedures and
+variables in order to draw the board and play a game of TICTACTOE,
+keeping track of the moves, so that the computer could declare a
+winner.  (For a detailed description of the system Harriet created, see
+the profile of Harriet's work, in part III, CHAPTER 8).
+
+.page
+.indent 0
+15. Fitting a Procedure Into a Hierarchy:  "Top-down" vs. "Bottom-Up"
+
+.indent 6
+2There are two opposing mode of placing procedures in a hierarchy.
+The most natural is to take procedures at hand and fit them as
+primitive elements into a superstructure.  This is a "bottom-up"
+approach.  Alternatively one may design the superstructure as an
+outline first and then implement the necessary new subprocedures.  This
+latter, "top-down" approach, usually allows better fitting of the
+hierarchy of the process to the logic of the product and hence makes
+procedures easier to plan, read, and debug.  Our list details some of
+the stages in coming to learn both of these complementary approaches
+and some interesting "pathological" use of the notions as well.
+.indent 0
+
+.block 5
+1BEHAVIORS OBSERVED:
+
+5.1 The "Bottom-Up" Approach
+
+In this section we present a sequence of successively more complex uses
+of the bottom up approach.
+
+Examples:
+
+5.1.1 0The student uses one of her own procedures as an entity in a design
+involving simple repetition of that procedure with possible intervening steps.
+
+0 A student instructs the computer to carry out the
+following series of steps: SQUARE, SQUARE, SQUARE, SQUARE, or SQUARE,
+RIGHT 40, SQUARE, RIGHT 40, SQUARE, RIGHT 40.
+
+.block 15
+.sp 13
+.spread
+/Figure 5.1//Figure 5.2
+
+
+15.1.2.0 The student combines several self-written procedures in one design.
+
+1For example:0 SQUARE, JOHNNY, SQUARE:
+
+.block 15
+.sp 13
+.ce
+Figure 5.3
+
+.he2
+Top-Down Hierarchies
+.block 5
+15.1.3.0 The student writes procedures that incorporate previously written procedures0:
+
+.nofill
+
+.indent 6
+.block 6
+TO WINDOW	or	TO JUNKY
+1 SQUARE		1 SQUARE
+2 SQUARE		2 JOHNNY
+3 SQUARE		3 SQUARE
+4 SQUARE		END
+END
+
+.indent 0
+.adjust
+15.1.4. 0The student incorporates existing procedures as sub-elements
+of a planned design.  This involves a goal-directed moving and
+turning of procedure-shapes
+with TURTLE commands.
+
+1Example: 0A "house" built from a triangle and a square procedure.
+.nofill
+
+.block 9
+TO HOUSE
+10 SQUARE
+20 RIGHT 90
+30 FORWARD 100
+40 RIGHT 30
+50 TRIANGLE
+END
+.RI
+Figure 5.4
+
+.adjust
+0A "face" built from square procedures of different sizes.
+
+.block 15
+.sp 13
+.ce
+Figure 5.5
+
+Note that using procedures as subprocedures in this fashion
+is distinct from "free-hand" construction of such
+designs using only basic TURTLE commands.
+
+.block 6
+15.2. The "Top-Down" Approach
+
+1EXAMPLES:
+
+15.2.1. 0A student divides a task into manageable chunks by breaking
+a long problem into subparts, which become
+subprocedures.   For example, Darlene's procedure, CAT:
+
+.nofill
+.indent 4
+.block 8
+TO CAT
+1 RIBIT		;draws two circles for the cat's body and head
+2 WEE		;moves the turtle to draw the cat's left ear
+3 EAR		;draws the left ear of the cat
+4 EAR1		;moves the turtle and draws the right ear
+5 TURN		;moves the turtle to draw the cat's tail
+6 TAIL		;draws the cat's tail
+END
+
+.block 25
+.sp 23
+.ce
+Figure 5.6
+
+.indent 0
+.adjust
+Darlene's CAT is atypical of this stage in separating off some
+interface steps (WEE and TURN) as subprocedures.  More typical is what
+she does in EAR1 which moves the TURTLE and draws the second ear.  Note 
+the use of both descriptive, functional
+subprocedure names, EAR, EAR1, and TAIL, and non-descriptive, non-functional 
+names RIBIT and WEE.
+
+15.2.2. 0A student breaks a long problem into subparts, but uses a
+"cumulative hierarchy" structure in which each procedure contains its
+predecessor procedure as the first step, and then adds additional steps.
+The following set of procedures draws a person.
+.page
+.nofill
+.block 21
+.sp 8
+.ce
+0Figure 5.7
+
+TO PERSON	TO LEG2		TO LEG1
+LEG2		10 LEG1		10 BODY
+10 RIGHT 135	10 LEFT 90	20 RIGHT 135
+20 FORWARD 50	20 FORWARD 50	30 FORWARD 50
+30 RIGHT 90	30 BACKWARD 50	40 BACK 50
+40 FODWARD 50	END		END
+50 BACK 100
+HIDETURTLE
+END
+
+.block 17
+TO BODY		TO HEAD
+HEAD		LT 90
+RT 90		RCIRCLE 15
+BK 50		END
+END		
+.sp 10
+.ce
+Figure 5.8
+
+.page
+.adjust
+0Note that the process hierarchy does not match the hierarchy of the
+product, defeating readability 
+and modular debugging.  LEG1 draws a lot more than a leg and
+legs can't be run by themselves to try them out. 
+
+Jimmy used this kind of
+approach in his long robot project  Details are given in Jimmy's
+profile, Chapter 9, Part III of this report.
+
+.block 5
+15.2.3 0A student engages in full top-down advance planning of a
+project, perhaps even writing procedures into the hierarchy before
+defining them.  Donald's project was to draw a head.
+
+.nofill
+.block 25
+Donald's Plan			TO HEAD
+				1 BOX
+				2 EYES
+				3 NOSE
+				4 MOUTH
+				5 BEARD
+				6 HAIR
+				7 EARS
+				80 HAT
+				85 FLOWER
+				END
+.sp 12
+.spread
+/Figure 5.9//Figure 5.10
+
+
+.adjust
+.indent 0
+First Donald planned his project by means of a drawing.
+First he wrote the superprocedure HEAD containing the first six
+subprocedures.  Donald then created each subprocedure in order.  After
+completing the head as far as the hair, Donald added the subprocedures
+EARS, HAT and FLOWER as he completed them.  All of the elements were
+present in his initial drawing.  In writing his subprocedures Donald
+did not separate out the interface steps, but included them at the
+beginning of each new subprocedure.
+
+.HE2
+Patterned Procedures
+.page
+16. Developing Patterned Procedures Using REPEAT, Recursion and Iteration
+
+.indent 6
+2There are three different approaches which can be used by beginning LOGO students
+to cause the same command or series of commands to be repeated more
+than once by the computer.  Using a LOGO procedure called
+REPEAT, provided by the teacher; using a procedure name recursively
+within the procedure itself; and using a process of looping, in which
+the computer is directed to go back to a previous line of the same
+procedure. 
+
+We refer to a procedure in which a set of steps is repeated  as a
+"patterned procedure", because the student must be aware of a repeating
+pattern in the process s/he is using, and because such procedures
+produce visual patterns when they are used in Turtle Geometry.  In
+describing student use of patterned procedures, we will first consider
+examples of use of the REPEAT command, and of other simple ways that
+students can cause a repeated sequence of commands before we consider
+recursion and looping.  Initial use of patterned procedures leads
+naturally to the use of "stop rules" which require knowledge of
+variables.  Thus there will be a certain amount of overlap between this
+section, and section 7, "Using Variables in Procedures."
+
+.indent 0
+.block 6
+1BEHAVIORS OBSERVED:
+
+16.1 Simple Forms of Repetition
+
+.indent 6
+2Many students begin to repeat a particular set of instructions over
+and over, before they have even learned to write a procedure, or even
+to distinguish clearly between the effects of inputs to FORWARD and
+RIGHT commands.  At a later stage, they may make a procedure, and
+create an unexpected pattern by repeating the procedure.  At a still
+later stage a student who has planned to create a visual pattern with
+the TURTLE can carry it out by defining a procedure which is then
+repeated to complete the pattern.
+.indent 0
+
+.he2
+Simple Repetition
+.block 6
+1EXAMPLES:
+
+6.1.1 Repetition of a Sequence of Commands
+
+0At an early stage of LOGO work, a student may type FORWARD 65, RIGHT
+65, FORWARD 65, RIGHT 65, ... Although this may be begun as a random
+activity, once the student notices the visual pattern s/he may keep
+typing the same commands until s/he feels the pattern is "complete".
+This type of behavior often occurs when students are beginning their
+exploration of LOGO, and have not yet distinguished between the effects
+of inputs to FORWARD and RIGHT commands (see Chapter 5, Section 1).
+
+.block 9
+.sp 7
+.ce
+Figure 6.1
+
+.block 5
+16.1.2  Repetition of Procedures
+
+0Having defined a procedure, the student may repeat that
+procedure several times.  The emerging pattern may at first be a
+surprise to the student.  Later, s/he may deliberately create a
+procedure in order to make a pattern by repeating it.  For example:
+
+.nofill
+.block 24
+.SPREAD
+/SQUARE//JOHNNY
+.SPREAD
+/SQUARE//JOHHNY
+.SPREAD
+/SQUARE//JOHNNY
+.SPREAD
+/SQUARE//JOHNNY
+.RI
+ETC.
+.sp 12
+.SPREAD
+/Figure 6.2//Figure 6.3
+
+
+
+.he2
+Using REPEAT
+.adjust
+.block 5
+16.1.3 Defining a Procedure for the Purpose of Repeating a Fixed
+Sequence of Steps
+
+0A student may define a procedure to aid in drawing a patterned
+design.  Kathy, for example, had decided to make the TURTLE draw a
+"circle" by repeating FORWARD 20 RIGHT 20 a large number of times.  To
+save typing, she wrote the procedure, ROUND, repeating it four times to
+complete the circle:
+
+.nofill
+.BLOCK 12
+TO ROUND		TO SHELL
+1 FORWARD 20		1 ROUND
+2 RIGHT 20		2 ROUND
+3 FORWARD 20		3 ROUND
+4 RIGHT 20		4 ROUND
+5 FORWARD 20		END	
+6 RIGHT 20	
+7 FORWARD 20
+8 RIGHT 20
+9 FORWARD 20
+10 RIGHT 20
+END
+
+.block 5
+.adjust
+16.2 The Use of REPEAT
+
+.indent 6
+2REPEAT is a LOGO procedure given to our students as a "primitive",
+indistinguishable to them from a LOGO command.  REPEAT requires two
+inputs: a list of instructions (contained within square brackets, [@@])
+and a number, telling how many times the instructions are to be
+repeated.  This allows a student to experiment with the number of times
+a pattern is to be repeated, as well as to create automatically
+repeating patterns without having to learn the more complex process of
+creating a repeating procedure with a stop rule.
+.indent 0
+
+.block 6
+1EXAMPLES
+
+6.2.1  Using REPEAT to Draw Circles
+
+0Darlene used REPEAT to create a variety of circles of different
+curvature.  Using REPEAT she was able to easily explore the effects of
+varying both size and angle as well as to discover the connction
+between the angle turned, and the number of turns needed to complete a
+circle (the "Total Turtle Trip Theorem," see Chapter 5, Section 4).
+These learnings came at an early stage of Darlene's LOGO activities,
+before she had the sophistication to incorporate variables in a
+repeating procedure.  Darlene made several circles, two of which she
+used later as part of her CAT design.
+
+.nofill
+.block 18
+.spread
+/REPEAT [FD 3 RT 2] 180//REPEAT [FD 2 RT 3] 120
+.sp 14
+.spread
+/Figure 6.4//Figure 6.5
+
+.block 34
+.sp 32
+.ce
+Figure 6.6: CAT
+
+.adjust
+.block 5
+16.2.3 Using REPEAT to Create Random Patterns
+
+0Ray made a number of designs using REPEAT.  He would write a
+procedure with a few random steps, and then experiment with the
+patterns created by repeating it different numbers of times:
+
+.nofill
+.BLOCK 21
+TO SAM			TO TIM		TO JOE
+1 FORWARD 17		1 FORWARD 19	1 SAM
+2 RIGHT 90		2 RIGHT 90	2 LEFT 150
+3 FORWARD 29		3 FORWARD 36	3 TIM
+4 LEFT 56		4 LEFT 61	END
+END			END
+.SP 15
+.spread
+/REPEAT [SAM] 30/REPEAT [TIM] 30/REPEAT [JOE] 30
+.spread
+/Figure 6.7/Figure 6.8/Figure 6.9
+
+
+.he2
+Using Recursion
+.adjust
+.block 5
+16.2.3  Using REPEAT to Draw Patterned Elements of a Larger Design
+
+0Donald used REPEAT to draw both the BEARD and HAIR of his head.  His
+procedure STRING drew one hair of a BEARD, and rotated the TURTLE a
+little.  BEARD used REPEAT [STRING] 15, to draw a complete beard.
+Similarly, the hair was drawn by using REPEAT [HAIRY] 25, where HAIRY
+drew a single hair and moved the turtle over.
+
+.nofill
+.block 18
+.spread
+/STRING/REPEAT [STRING] 15/HEAD
+.sp 14
+.spread
+/Figure 6.10//Figure 6.11
+
+
+.block 6
+.adjust
+16.3  The Use of Recursion to Create Patterned Procedures
+
+.indent 6
+2All the students in our LOGO classes were introduced to the use of
+recursion at some point during their LOGO experience.  Typically, their first
+use of recursion is "to make something keep happening."  In trying to
+make a circle, for example, they might be shown the procedure:0
+
+.nofill
+.block 5
+TO CIRCLE
+1 FORWARD 1
+2 RIGHT 1
+3 CIRCLE
+END
+
+.adjust
+2Many students incorporate this idea into other projects which involve
+the creation of designs by repeating a fixed series of steps over and
+over.  Students who incorporate this approach into their own work
+usually go on to include "stop rules" to stop a procedure when the
+pattern is complete, and variables to allow a greater variety of
+effects with the same procedure.  Some of the students used recursive
+procedures which increment or decrement a variable.  A few students
+used recursive procedures to manipulate variables -- words or lists,
+although this was typically after they had had a good deal of
+LOGO experience.  Only the simplest use of recursion is discussed here.
+Use of recursion with variables and stop rules is discussed in section
+7.3 below.  
+.indent 0
+.he2
+Using Looping
+
+.block 6
+1EXAMPLES:
+
+6.3.1  Using Recursion in "cliche" form to Repeat a Series of Fixed steps.
+
+0Monica was a student who made a great deal of use of simple recursion.
+Her procedurce, FAN, designed to produce a
+pattern by rotating a triangle, is a
+typical example:
+
+.nofill
+.block 18
+TO FAN
+1 TRI			
+2 LEFT 10		
+3 FAN
+END
+
+.sp 10
+.ce
+Figure 6.12
+
+.adjust
+.block 5
+16.4  The Use of Looping to Create Patterned Procedures
+
+.indent 6
+2Looping in LOGO is carried out by using the command GO, followed by
+a line number, which transfers control to the given line, in the same
+procedure.  For example, the following procedure draws a "circle"
+
+.nofill
+0TO CIRCLE
+10 FORWARD 1
+20 RIGHT 1
+30 GO 10
+END
+
+.adjust
+2For many applications, the issues involved for beginning students are
+similar to those encountered in projects involving recursion.  Each
+approach has its own distinct advantages and disadvantages, which will
+be mentioned briefly.  Except for the use of looping in animation,
+specific examples of student work will not be presented.
+
+.adjust
+In procedures involving list and word processing, recursion is usually
+preferred because it makes it easier for a student to understand the
+process if each new step is carried out by a new procedure with altered
+inputs.
+
+Situations in which looping is preferred are those in which a large
+number of repeats (more than 100) are required.  Looping can continue
+indefinitely, while recursion is limited by the amount of storage space
+available for new procedures.  Looping is therefore to be preferred in the
+case of a POLY procedure (see chapter 5 section 1) which can require as
+many as 360 repeats before completing a design, or in an animation, in
+which a process is repeated indefinitely.
+
+.indent 0
+.block 6
+1EXAMPLES
+
+6.4.1  The Use of Looping in Animation Procedures
+
+0Karl developed a procedure in which the turtle was made to move
+continuously across the screen, and could be controlled by typing
+commands at the keyboard:
+
+.nofill
+.block 6
+TO CAR		TO CH
+10 MAKE "D 10	10 MAKE "LETTER KEY
+20 CH		20 IF :LETTER = "R RIGHT 30
+30 FORWARD :D	30 IF :LETTER = "L LEFT 30
+40 GO 20	40 IF :LETTER = "F MAKE "D :D + 5
+END		etc.
+
+.adjust
+Karl's work in developing this procedure is discussed more fully
+in section 7 of this chapter which deals with student use of variables,
+and in Chapter 3, dealing with exceptional students.
+
+.he2
+Variables in Procedures
+Whereas Karl's procedure CAR "animated" the TURTLE, Gary's procedure
+MOVESHIP, "animated" his "starship." (see Figure 4.6)
+
+.nofill
+.block 8
+TO MOVESHIP
+10 MAKE "D 10
+20 DISPLAY :SHIP
+30 FLY
+40 CS
+50 FORWARD :D
+60 GO 20
+END
+
+.adjust
+Gary's FLY procedure was similar to Karl's CH, allowing
+Gary to change the speed or direction of the starship's motion.
+.page
+17. Using Variables in LOGO Procedures
+
+.indent 6
+2The use of variables is a major step in the development of
+mathematical thinking.  A variable in LOGO involves the assignment of a
+name to an object, in such a way that the name of the object
+can be used in procedures to stand for the value of the object itself.
+The object might be a number, a word, a list of numbers, words or
+other lists, or in special cases a "snapshot" of a LOGO drawing.  An
+object may be able to take on a number of different values, which
+must be specified before a procedure can be carried out.
+
+The use of variables thus represents a higher level of abstraction than
+the use of direct commands.  Instead of being able to see an immediate
+direct connection between the command and the action it produces, the
+student must anticipate a variety of different actions, depending on
+the different values of the variable.  A variably sized square or
+triangle procedure can draw a large number of similar figures, either
+separately, or one after another, rather than one fixed shape.  A
+procedure can be made to print out a statement, in which the message or
+messages to be printed have not yet been determined.  The use of
+variables, along with the use of patterned procedures, can unlock the
+power of a computer for a student.
+
+The LOGO language deals with variables in a way that requires the user
+to distinguish the name of a variable (indicated by an opening
+symbol called `quotes') from the value or thing of the variable
+(represented by a colon:  called "dots").  Variables are created in
+LOGO in two ways.  By using the LOGO comand MAKE to assign a name to a
+particular thing:
+
+0MAKE "NUM 7
+
+MAKE "MESSAGE "HELLO
+
+MAKE "SENTENCE [HELLO, HOW ART YOU?]
+
+2And by including a variable name in the title of a procedure:
+
+.nofill
+.BLOCK 3
+0TO MOVE :DISTANCE
+10 FORWARD :DISTANCE
+END
+
+.BLOCK 3
+TO SAY :MESSAGE
+10 PRINT :MESSAGE
+END
+
+.adjust
+2In using variables, the distinction must be maintained between the
+use of the name of the variable, and the use of the object or value of
+the variable.  For example, the command 
+
+PRINT :MESSAGE results in
+
+0HELLO
+
+While the command
+
+PRINT "MESSAGE results in
+
+MESSAGE
+
+2If "DISTANCE has a value of 100, then the command
+
+FORWARD :DISTANCE 
+
+will cause the TURTLE to move forward 100 TURTLE
+steps.  The command
+
+FORWARD "DISTANCE, however, will result in an error message,
+
+FORWARD DOESN'T LIKE "DISTANCE AS AN INPUT.
+
+Student use of variables in our LOGO classes fell mainly into three major
+categories having  some degree of overlap:
+
+.he2
+Variable Size or Shape
+1. The use of variables to change the size and/or shape of a drawing
+
+2. The use of variables to store information which can later
+be used in a procedure, or printed as part of a message;
+
+3. The use of variables to control or stop the action of a procedure
+
+.indent 0
+.twinch 6
+.block 6
+1BEHAVIORS OBSERVED:
+
+17.1  Using Variables to Change the Size or Shape of a Turtle Drawing.
+
+0The use of variables to provide ways of changing the size or shape
+of a LOGO procedure, provides a concrete introduction to the use of
+variables. 
+
+.block 6
+EXAMPLES:
+
+17.1.1  Varying a Fixed Shape
+
+0Once a student has written a procedure to draw a square, for
+example, and has isolated the idea of a square, realizing that many
+squares of different sizes can be drawn, just by changing the value of
+all the forward steps in a square procedure, the student is usually
+ready to understand the use of LOGO variables to accomplish this task
+with just one procedure.  The procedure SQUARE can be "copied" as the
+procedure NEWSQUARE, by adding :SIZE to the title, and by substituting
+:SIZE for each forward step:
+
+.nofill
+.BLOCK 9
+TO SQUARE 		TO NEWSQUARE :SIZE
+10 FORWARD 100		10 FORWARD :SIZE
+20 RIGHT 90		20 RIGHT 90
+30 FORWARD 100		30 FORWARD :SIZE
+40 RIGHT 90		40 RIGHT 90
+50 FORWARD 100		50 FORWARD :SIZE
+60 RIGHT 90		60 RIGHT 90
+70 FORWARD 100 		70 FORWARD :SIZE
+80 RIGHT 90		80 RIGHT 90
+END			END
+
+.block 12
+.sp 8
+.CE
+SQUARE
+.ce
+Figure 7.1
+
+.block 12
+.sp 7
+.spread
+/NEWSQUARE 20/NEWSQUARE 50/NEWSQUARE 100
+
+.ce
+Figure 7.2
+
+.adjust
+Monica and Kathy used a variable square procedure, SQ, to make other designs:
+
+.nofill
+.block 26
+TO BUS		TO 4BUS	TO STAR
+1 SQ 40		1 BUS	1 4BUS
+2 LEFT 90	2 BUS	2 RIGHT 40
+3 SQ 80		3 BUS	3 4BUS 
+END		4 BUS	END
+		END
+.sp 18
+.ce
+Figure 7.3
+
+and
+
+.block 13
+TO WOW
+1 SQ 10
+2 SQ 20
+3 SQ 40
+4 SQ 40
+5 SQ 50
+6 SQ 60
+7 SQ 70
+8 SQ 80
+9 SQ 90
+10 SQ 100
+11 SQ 110
+END
+.ri
+Figure 7.4 
+
+.adjust
+Kevin created a similar figure using a POLY procedure with a fixed 90
+degree angle, and a variable size.  In addition, he made use of a
+recursive procedure which incremented the value of the size and
+included a stop rule:
+
+.nofill
+.block 7
+TO FU :SIZE
+10 POLY :SIZE 90
+20 IF :SIZE = 100 STOP
+30 FU :SIZE + 5
+END
+.RI
+Figure 7.5
+
+.adjust
+Using a variably sized equilateral triangle, THRI1 :SIZE, Dennis
+created a set of nested triangles by halving the size of the triangle
+with each repeat, and including a stop rule:
+
+.NOFILL
+.BLOCK 7
+TO Q :SIZE
+10 IF :SIZE < 10 STOP
+20 THRI1 :SIZE
+30 FORWARD :SIZE/2
+40 RIGHT 90
+50 Q :SIZE/2
+END
+
+.block 10
+TO THRI1 :SIZE
+1 FORWARD :SIZE
+2 RIGHT 120
+3 FORWARD :SIZE
+4 RIGHT 120
+5 FORWARD :SIZE
+6 RIGHT 120
+END
+.ri
+Figure 7.6
+
+.adjust
+.he2
+Multiple Variables
+.block 5
+17.1.2  Varying the Angle in a Procedure
+
+0A common theme in Turtle Geometry is to create a design by using a
+shape, rotation, shape, rotation...motiv.  Students usually used fixed
+angles in their first attempts -- Monica's procedure, FAN, (figure 6.12)
+for example.  An easy next step would be to make the angle a variable,
+as Monica did in her procedure WISHWOW 
+In similar fashion, Albert varied the angle of rotation of a series of
+stars in his procedure. 
+.page
+.block 40
+.sp 38
+.ce
+Figure 7.7
+.page
+.nofill
+.block 14
+TO AS :ANGLE
+10 STAR
+20 RIGHT :ANGLE
+30 AS :ANGLE
+END
+.sp 5
+.ri
+AS 90
+.RI
+Figure 7.8
+
+.adjust
+.block 5
+17.1.3  Procedures with More Than One Variable
+
+0One easy extension of this type of variable use is to include more
+than one variable.  For example, a rectangle.
+
+.nofill
+.block 12
+TO RECT :SIZE1 :SIZE2
+10 FORWARD :SIZE1
+20 RIGHT 90
+30 FORWARD :SIZE2
+40 RIGHT 90
+50 FORWARD :SIZE1
+60 RIGHT 90
+70 FORWARD :SIZE2
+80 RIGHT 90
+.SPREAD
+/END/RECT 20 50/RECT 100 10
+
+.RI
+Figure 7.9
+
+.adjust
+The most widely used procedure involving two variables is the POLY
+procedure, described extensively in Chapter 5, Section 1.
+
+.nofill
+.block 7
+TO POLY :SIZE :ANGLE
+10 FORWARD :SIZE
+20 RIGHT :ANGLE
+30 POLY :SIZE :ANGLE
+END
+
+(See Chapter 5, Section 1)
+
+.adjust
+Fascinating extensions of POLY can be explored by incrementing either
+the size or angle variable.  Kevin's TUNNEL procedure (Figure 7.15) and
+his FU procedure (Figure 7.6) are examples of the effect of
+incrementing the variable of a particular POLY shape.  More generally,
+incrementing the size of a POLY procedure's forward step, produces a
+spiral effect:
+
+.nofill
+.block 5
+TO SPI :SIZE :ANGLE
+10 FORWARD :SIZE
+20 RIGHT :ANGLE
+30 SPI :SIZE + 5 :ANGLE
+END
+
+.block 22
+.sp 18
+.spread
+/SPI 5 144//SPI 5 120
+.CE
+Figure 7.10
+
+.adjust
+Incrementing the angle, however, produces a more unusual effect.
+
+.nofill
+.block 14
+TO INSPI :SIZE :ANGLE
+10 FORWARD :SIZE
+20 RIGHT :ANGLE
+30 INSPI :SIZE :ANGLE + 10
+END
+.sp 7
+.RI
+Figure 7.11
+
+.he2
+Naming Points
+.adjust
+.block 5
+17.2  Using Variables to Store Information
+
+.indent 6
+2Information is stored in the computer's memory by assigning a name
+to a number, word or list that can be used, updated, or changed at a
+later time.
+.indent 0
+
+.block 5
+17.2.1  Naming Points
+
+.indent 6
+2The LOGO command HERE, outputs a list of three numbers specifying
+the x, y and heading coordinates of the TURTLE.  A point can be named
+by moving the turtle to a particular point, and using 
+
+0MAKE: MAKE "POINT HERE.
+
+2Later, the turtle can be moved back to the same point by commanding
+
+0SETTURTLE :POINT,
+
+2or the coordinates of the point can be printed out with the command
+
+0PRINT :POINT.
+
+.indent 0
+0This process was used extensively by Harriet in her TICTACTOE game, in
+which the user could decide whether to draw an X or an 0, and specify
+that it should be drawn in one of nine boxes.  The procedure then moved
+to a particular point in each box before drawing the X or 0:
+
+.he2
+Naming a Message
+.nofill
+.block 4
+TO X :POINT
+10 IF :POINT = 1 PENUP SETTURTLE :P1 PENDOWN EX
+20 IF :POINT = 2 PENUP SETTURTLE :P2 PENDOWN EX
+etc.
+
+.adjust
+"P1, "P2, ... were points named at an earlier stage of the process.  EX
+is a procedure which draws an X.
+
+.block 5
+17.2.2  Storing a "Message" to be Used Later
+
+0The LOGO command REQUEST waits for a user at the keyboard to type a
+message and carriage return, and then outputs that message as a list.
+This allows a procedure to store information and present it later.
+
+.nofill
+.block 6
+TO HELLO
+10 PRINT [HI, HOW ARE YOU TODAY?]
+20 PRINT [PLEASE TYPE YOUR FIRST NAME]
+30 MAKE "PERSON REQUEST
+40 PRINT SENTENCE [IT'S NICE TO SEE YOU TODAY] :PERSON
+END
+
+.adjust
+In use, the procedure would look like this:
+
+.nofill
+.block 5
+HELLO
+HI, HOW ARE YOU TODAY?
+PLEASE TYPE YOUR FIRST NAME.
+<JOHN
+IT'S NICE TO SEE YOU TODAY, JOHN
+
+.adjust
+A message can also be included as a variable in a procedure title:
+
+.nofill
+.block 3
+TO HELLO :PERSON
+10 PRINT SENTENCE [IT'S NICE TO SEE YOU TODAY] :PERSON
+END
+
+.ADJUST
+In this case, the user at the keyboard would have to input the name in
+one of two ways:
+
+.nofill
+.block 7
+HELLO  "JOHN
+IT'S NICE TO SEE YOU TODAY JOHN
+?
+or 
+MAKE "PERSON "JOHN
+HELLO :PERSON
+IT'S NICE TO SEE YOU TODAY JOHN
+
+.he2
+Variables in Conditional Statements
+.adjust
+A common use of variables to store information is in a quiz program.
+Here, the variable must also be compared with another object to see if
+the answer is correct.
+
+.nofill
+.block 7
+TO QUIZ
+10 PRINT [WHAT IS YOUR FAVORITE BASEBALL TEAM?]
+20 MAKE "ANSWER REQUEST
+30 IF :ANSWER = [BOSTON] PRINT [ME TOO] STOP
+40 PRINT [I DON'T AGREE! TRY AGAIN.]
+50 QUIZ
+END
+
+.adjust
+.block 5
+17.3  Using Variables to Control or Stop a Recursive Procedure.
+
+.indent 6
+2A student who creates a repeating design by using recursion often
+wants to stop the computer after it has completed drawing the design
+once.  At this stage of work a student begins to confront important
+issues which lead to a richer understanding of the logic of computer
+programming.  Among these issues are the exact wording of a stop rule,
+and its location in a procedure.  The procedure STAR, for example, is
+intended to draw a six-pointed hexagonal star:
+
+.nofill
+.block 14
+0TO STAR
+10 TRI
+20 RIGHT 30
+30 STAR
+END
+.sp 6
+.ri
+Figure 7.12
+
+.adjust
+2When it continues to draw redundant triangles after completing the
+design, a student can add a stop rule:  IF HEADING = 0 STOP", (assuming
+the TURTLE starts in the "home" position).
+Beginning students usually assume that the stop rule can simply be
+added as the last step of the procedure.  The reasoning is that since
+"the last thing the computer has to do is stop, the stop rule should
+come last".  This is a natural consequence of the step-by-step
+sequential programming they have done up to this point.  In the edited
+version of STAR, however, the stop rule has no effect:
+
+.nofill
+.block 6
+0TO STAR
+10 TRI
+20 RIGHT 30
+30 STAR
+40 IF HEADING = 0 STOP
+END
+
+.adjust
+2The computer continues to re-execute STAR at line 30, and never carries
+out line 40.  Students can learn to debug this kind of error by
+"playing computer," and "acting out" the execution of the procedure.
+Once they have realized that "line 40 is never executed," and that the
+stop rule must be placed before line 30, in the procedure, the problem
+is still not resolved.  Placing the stop rule at line 5:
+
+.nofill
+.block 6
+0TO STAR
+5 IF HEADING = 0 STOP
+10 TRI
+20 RIGHT 30
+30 STAR
+END
+
+.adjust
+2terminates execution of the procedure immediately, if the TURTLE starts
+at the "home" position.  Placing the stop rule at line 15, stops the
+procedure after drawing only one triangle.
+
+It may require a lengthy process of trial and error, including "playing
+computer" several times before the student realizes that the stop rule
+must be placed between lines 20 and 30 in order to have the desired effect:
+
+.he2
+Incrementing Variables
+.nofill
+0TO STAR
+10 TRI
+20 RIGHT 30
+25 IF HEADING = 0 STOP
+30 STAR
+END
+
+.adjust
+2Another bug might occur if the TURTLE's initial heading is not 0.
+In a recursive procedure, this can only be resolved by initializing the
+stopping condition before executing the recursive procedure:
+
+.block 7
+.NOFILL
+0TO STAR1		TO STAR
+10 MAKE "START HEADING	10 TRI
+20 STAR			20 RIGHT 30
+END			25 IF HEADING = :START STOP
+			30 STAR
+			END
+
+.adjust
+.indent 0
+.block 5
+17.3.1  A Stop Rule in a Repeated Design
+
+0Monica's procedure, WISHWOW, incorporated a variable angle as well as a
+stop rule:
+
+.nofill
+.block 6
+TO WISHWOW :ANGLE
+10 WOW
+20 RIGHT :ANGLE
+30 IF HEADING = 0 STOP
+40 WISHWOW :ANGLE
+END
+
+.adjust
+WISHWOW 90 stops after four repeats of the commands WOW, RIGHT 90;
+
+WISHWOW 60 stops after six repeats of WOW, RIGHT 60; etc.
+
+.block 22
+.sp 18
+.spread
+/WISHWOW 90//WISHWOW 60
+.spread
+/Figure 7.13//Figure 7.14
+
+
+.he2
+Word and List Manipulation
+.adjust
+.block 5
+17.3.2  Incrementing Variables in a Recursive Procedure
+
+0Recursive procedures provide a simple mechanism for incrementing and
+decrementing variables.  Students are often introduced to this
+technique by being shown a sample procedure, COUNTDOWN:
+
+.nofill
+.block 5
+TO COUNTDOWN :NUMBER
+10 PRINT :NUMBER
+20 IF :NUMBER = 0 STOP
+30 COUNTDOWN :NUMBER - 1
+END
+
+.adjust
+Kevin made use of this technique in his procedure, TUNNEL, which was
+built by using a POLY procedure in which the angle was kept constant
+(45 degrees) and the size continually increased:
+
+.nofill
+.block 17
+TO TUNNEL :SIZE
+10 POLY :SIZE 45
+20 IF :SIZE = 105 STOP
+30 TUNNEL :SIZE + 5
+END
+.sp 10
+.ri
+Figure 7.15
+
+.adjust
+.block 6
+17.3.3  Using Recursive Procedures to Manipulate Variables, Words and
+Lists
+
+.indent 6
+2The use of recursive procedures to manipulate words and lists was
+not attempted by many of our students.  Although students could have
+been introduced to these activities in a simple way, our major focus on
+Turtle Geometry in these classes led us to defer word and list
+manipulation until students needed it for particular projects --
+usually near the end of the series of classes.
+
+In order to manipulate words and lists a student needs to understand
+the use of the LOGO commands FIRST, BUTFIRST, LAST and BUTLAST.  The
+command FIRST outputs the first character of a word, or the first word
+of a list.  BUTFIRST outputs everything but the first character of a
+word, or the first word of a list:
+.indent 0
+
+.nofill
+.block 8
+0PRINT FIRST "HELLO
+H
+PRINT BUTFIRST "HELLO
+ELLO
+PRINT FIRST [HOW ARE YOU?]
+HOW
+PRINT BUTFIRST [HOW ARE YOU?]
+ARE YOU?
+
+.adjust
+LAST and BUTLAST have similar effects on the last element of a word or
+a list.
+
+Gary made use of these commands in an elaborate Morse Code project.
+Gary's procedure, PRI2 :SENT, took an English sentence as input, and
+printed the Morse Code for that sentence with single slashes between
+letters, and spaces between words.  The morse code translator was built
+up by first creating a lengthy procedure, CODE, which output the
+correct sequence of dots and dashes for any letter or number:
+
+.nofill
+.block 6
+TO CODE :LETTER
+10 IF :LETTER = "A OUTPUT ".-
+20 IF :LETTER = "B OUTPUT "-...
+
+.adjust
+And so forth, with one line of the procedure for each letter of
+the alphabet.
+
+.adjust
+The procedure PRI :WORD prints the correct sequence of letters for an
+entire word:
+
+.nofill
+.block 6 
+TO PRI :WORD
+10 IF :WORD = "@@@@@@STOP
+20 TYPE CODE FIRST :WORD
+30 TYPE "/
+40 PRI BUTFIRST :WORD
+END
+
+PRI "HELLO
+ ..././.-../.-../---/
+
+.he2
+Looping With Stop Rules
+.adjust
+The procedure PRI2 :SENT, prints the correct sequence of letters for an
+entire sentence:
+
+.nofill
+.block 6
+TO PRI2 :SENT
+10 IF :SENT = [@@] STOP
+20 PRI FIRST :SENTENCE
+30 TYPE "
+40 PRI2 BUTFIRST :SENT
+END
+
+.block 2
+PRI2 [HELLO HOW ARE YOU]
+ ...././.-../.-../---/ ..../---/.--/ .-/.-././ -.--/---/..-/
+
+.adjust
+In creating these procedures Gary had to understand the difference
+between words and lists, and how this effected the wording of the
+stop rules in PRI (which manipulated words) and in PRI2 (which
+manipulated lists of words).  He also had to carry out a process of
+trial and error to determine the location of the stop rule in each
+procedure.  When the series of LOGO classes ended, Gary was engaged in
+the process of reversing the code -- that is, writing a set of
+procedures which would take a string of Morse Code symbols as input,
+and print out an English sentence.
+
+.block 5
+17.4 Looping Procedures With Stop Rules
+
+0To add a stop rule to a looping procedure, one has to consider the
+location and wording of the stop rule, just as with recursive
+procedures.  To add a stop rule to a procedure to draw six-pointed
+stars, we simply write:
+
+.nofill
+.block 16
+TO STAR
+10 TRI
+20 RIGHT 30
+25 IF HEADING = 0 STOP
+30 GO 10
+END
+.sp 8
+.RI
+Figure 7.12
+
+.adjust
+To generalize this to a case in which the initial heading is not 0, a
+line setting the ending condition can be added within the same
+procedure, while the analogous situation requires two procedures when
+recursion is involved (see section 5.3.2):
+
+.nofill
+.block 7
+TO STAR
+5 MAKE "START HEADING
+10 TRI
+20 RIGHT 30
+25 IF HEADING = :START STOP
+30 GO 10
+END
+
+.adjust
+When incrementation is required, however, looping requires an extra
+step to change the value of the variable.  Compare this looping version
+of COUNTDOWN, for example, with the recursive version, described in
+section 5.3.3:
+
+.nofill
+.block 6
+TO COUNTDOWN :NUMBER
+10 PRINT :NUMBER
+20 IF :NUMBER = 0 STOP
+30 MAKE "NUMBER :NUMBER - 1
+40 GO 10
+END
+
+

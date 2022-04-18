@@ -1,0 +1,710 @@
+.dv press
+.fo 0 timesRoman12
+.fo 1 timesRoman12b
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi l
+.ls 2
+.fi b
+--DRAFT--
+
+Curriculum Materials
+
+6/20/80
+.sp 5
+
+BOOKLET  IVa:
+Talking to Sprites
+
+This booklet will introduce you to sprites and sprite graphic's commands and capabilities.
+.bp
+.chapter "bold(Talking to Sprites)"
+
+Sprites are objects under the control of the computer which appear
+on the TV screen.  There are 32 sprites, numbered from 0 to 31.  
+You can give certain properties to any sprite.  
+
+First tell the
+computer
+which sprite you are commanding.
+
+.nf L
+Example:	TELL  0
+
+It can carry a shape
+.br
+Example:	CARRY  :PLANE
+
+It can have a color
+.br
+Example:	SETCOLOR  :RED  or  SETC  :RED
+
+It can head in any particular direction
+.br
+Example:	SETHEADING  90   or  SETH  90
+
+It can move with a speed between 0 and 127
+.br
+Example:	SETSPEED  10   or  SETS  10
+
+.fi b
+It can send messages about its number, or its current shape, color,
+speed, heading or position.
+.nf l
+.br
+Example:	PRINT  HEADING
+.in 
+.fi b
+When the computer starts, all sprites are located in the upper left
+hand corner of the screen, with no color or shape and with heading   0  
+(straight up) and speed   0.
+
+.nf l
+You can change a sprite's state in several ways:
+
+Move it to a point on the screen.
+.br
+Examples:  	HOME
+		SETXY 10 50
+
+Change its speed.
+Example:	SETS	0
+		SETS	100
+		SETS	SPEED + 10
+
+Change its direction
+Examples:	RT 	45
+		LT	90
+		SETH	HEADING + 30
+
+Give it a new shape:
+Example:	CARRY	:TRUCK
+
+Change its color:
+Example:	SETC	:GREEN
+		SETC	COLOR + 1
+
+Make it move instantly forward or back:
+Examples:	FD	20
+		BK	100
+
+You can talk to one sprite at a time, or several:
+
+TELL    0			   s(m)commanding only sprite  0
+TELL   [ 1   3   10 ]t(m)commanding sprites  1,  3  and  10
+TELL   :ALL		t(m)commanding all sprites,  0  to  31
+.fi b
+
+Until you use the command TELL again, you will be "talking" to the
+sprites or sprites you last named, and all sprite commands will be directed to them.
+.br
+Try this example:
+
+.nf L
+.keep
+TELL   0
+SETC   :RED    		t(m)sets the color to the color named "RED
+CARRY   :TRUCK	 	t(m)tells the sprite to carry the shape named "TRUCK
+HOME			t(m)moves the sprite to the center of the screen
+SETS   10		  	t(m)sets the speed to 10
+.end_keep
+
+.keep
+To change direction type:
+RT   45			t(m)turns the sprite right 45 degrees
+or
+SETH   90		t(m)sets the sprite's heading to 90
+.end_keep
+
+.keep
+Things to try:
+- Tell the sprite to carry a new shape or set it to another color.
+- Change its speed and direction.
+- Start up a new sprite, by typing TELL   1, for example, and give it some commands.
+- Place several sprites on the screen at one time. Make them all move in 
+different directions.
+.end_keep
+.keep
+
+You can make the sprite carry different shapes.  These shapes are pre-defined.
+
+    Shape Name	    	t(m)Shape Number
+CARRY    :TURTLE	t(m)CARRY    0
+CARRY    :PLANE		t(m)CARRY    1
+CARRY    :TRUCK		t(m)CARRY    2
+CARRY    :BALL		t(m)CARRY    3	  
+CARRY    :BOX		t(m)CARRY    4   
+.end_keep
+
+.keep
+Or change the color to any one of sixteen colors.
+Color Name		t(m)Color Number
+SETC    :CLEAR		t(m)SETC   0
+SETC    :BLACK		t(m)SETC   1
+SETC    :GREEN		t(m)SETC   2
+SETC    :LGREEN		t(m)SETC   3
+SETC    :BLUE		t(m)SETC   4
+SETC    :LBLUE		t(m)SETC   5
+SETC    :RED		t(m)SETC   6
+SETC    :CYAN		t(m)SETC   7
+SETC    :ORANGERED	t(m)SETC   8
+SETC    :ORANGE		t(m)SETC   9
+SETC    :YELLOW		t(m)SETC   10
+SETC    :LEMON		t(m)SETC   11	
+SETC    :OLIVE		t(m)SETC   12
+SETC    :PURPLE		t(m)SETC   13
+SETC    :GRAY		t(m)SETC   14
+SETC    :WHITE		t(m)SETC   15
+.end_keep
+.bp
+.chapter "bold(Teaching the Computer a New Command)"
+.fi b
+To teach the computer a new command you must define a procedure.  Type TO 
+followed by a name of your choice.  Then type each step in order.  When
+you are finished, type END.
+.nf L
+Example:
+.in 2i
+TO  DANCE
+SETS   10    WAIT   20
+SETS  -10    WAIT   20
+RT   15
+DANCE
+END
+.in
+.fi b
+
+The last line, DANCE, calls the procedure DANCE, again, so that the
+sprite or sprites will continue to "dance" on the screen.
+
+When you type DANCE, followed by ENTER, the computer will carry out the procedure.
+
+To stop the procedure type Shift-G.
+
+To change the procedure see the instructions for using the LOGO
+editor, Booklet III, section 3.
+.bp
+.chapter "bold(Examples of Simple Procedures)"
+.fi b
+This procedure places a sprite at the center of the screen with a fixed
+shape and color:
+.nf L
+.in 2i
+TO   STARTUP
+HOME
+CARRY   :TRUCK
+SETC   :BLUE
+END
+.in
+.fi b
+STARTUP  will command the sprite or sprites you are talking to at
+any particular time.
+
+STARTUP  can be used to get several sprites on the screen at once.
+
+.keep
+.nf L
+FREEZE		t(m)Stops all sprites from moving.
+
+TELL   0    SETH   0	t(m)Each sprite is given a different heading
+TELL   1    SETH   15
+TELL   3    SETH   45
+
+TELL   [ 0  1  2  3 ]	t(m)tells the computer to command
+			t(m)all four sprites at once.
+STARTUP   SETS   10
+
+THAW		 t(m)Starts all sprites moving again.
+.end_keep
+
+.fi b
+This procedure will teach the computer to carry out the last
+sequence of steps whenever you want:
+.nf l
+
+.keep
+TO SHOWOFF
+FREEZE
+TELL	0	SETH	0
+TELL	1	SETH	15
+TELL	2	SETH	30
+TELL	3	SETH	45
+STARTUP
+SETS 10
+THAW
+END
+.end_keep
+
+.nf L
+Some more simple procedures:
+
+.keep
+TO   RAINBOW		t(m)This makes a sprite's color change repeatedly.
+SETCOLOR   COLOR   +   1
+WAIT   20
+RAINBOW
+END
+.end_keep
+
+.keep
+TO   CIRCLE		t(m)This makes a moving sprite move in a circle.
+SETH   HEADING   +   5
+CIRCLE
+END
+
+To stop either of these procedures, type Shift-G.
+.end_keep
+.bp
+.chapter "bold(Making Useful Procedures)"
+Sometimes a procedure can be a useful tool.  Here are some examples:
+
+This procedure makes all 32 sprites disappear:
+.in 2i
+.nf L
+.keep
+
+TO     CLEAR
+TELL   :ALL
+SETC   :CLEAR
+END
+.in
+.end_keep
+
+.fi b
+These procedures are abbreviations for longer sprite commands.
+
+
+.keep
+.nf L
+TO    T    SPRITE  t(m)T stands for TELL
+TELL    :SPRITE
+END
+
+TO    C    COLOR t(m)C stands for SETCOLOR
+SETC    :COLOR
+END
+.end_keep
+
+.keep
+TO    S    SPEED t(m)S stands for SETSPEED
+SETS   :SPEED
+END
+
+TO    H    HEADING t(m)H stands for SETHEADING
+SETH  :HEADING
+END
+
+TO    SH    SHAPE t(m)SH stands for set shape
+CARRY    :SHAPE
+END
+.end_keep
+.fi b
+
+.keep
+After teaching all these abbreviations to the computer, you would type:
+.nf L
+This			t(m)Instead of This
+T    1			t(m)TELL   1
+C    :RED 		t(m)SETC   :RED
+S    10 		t(m)SETS   10
+SH    :BOX 		t(m)CARRY  :BOX
+H    45 		t(m)SETH   45
+.end_keep
+
+.fi b
+Procedures like this can be very useful for commands that you have to type
+over and over again.
+.bp
+.chapter "bold(Changing the Background)"
+.nf L
+To change the background color type:
+
+	TELL   BACKGROUND              	t(m)Notice the G in BACKGROUND
+
+	SETC   :WHITE
+
+It you want to you can make yourself an abbreviation to save typing:
+
+	TO   CB   C	t(m)CB is an abbreviation for "Change BACKGROUND"	
+	TELL  BACKGROUND
+	SETC    :C
+	END
+
+The input for TB should be a color name or number.
+
+	TB    10      
+   or	TB    :YELLOW
+
+.keep
+This Procedure makes the background color change continuously:
+
+TO    FLASH    C
+SETC    :C
+WAIT    100	t(m)You can change the waiting time to any number you like
+FLASH    :C  +  1
+END
+
+FLASH needs one input, the name or number of a starting color.
+
+	TELL    BACKGROUND    FLASH    15
+   	TELL    BACKGROUND    FLASH    :WHITE
+.end_keep
+
+.fi b
+(FLASH could also be used to make sprites change color
+too, like the procedure RAINBOW.)
+
+	TELL   1   FLASH   10
+
+Some short projects:
+
+- Get some sprites moving in a pattern on the screen.  Then experiment
+with different sprite colors against different backgrounds.
+
+- Use a black background for an outer space scene or game.  Make some
+tiny sprite shapes for stars.  Make other sprites carry starships or
+flying saucers and have them fly among the stars.
+
+WARNING:  If you set the background color to black, you won't be
+able to see what you are typing.  You can still type and send commands
+to the computer, even though you can't see them.  To restore the
+original color type:
+
+	SETC    7
+
+.bp
+.chapter "bold(Making Your Own Shapes)"
+There are 5 shapes available when LOGO starts:
+
+.nf L
+Shape Name		t(m)Shape Number
+:TURTLE			          s(n)0
+:PLANE			    t(n)1
+:TRUCK			    t(n)2
+:BALL			    t(n)3
+:BOX			    t(n)4
+
+.fi b
+It is possible to create 28 different shapes numbered from
+0 to 27.  You can
+make your own shape by typing MS followed by a number.  If
+you choose the number of an existing shape, that shape will be displayed
+on a 16 by 16 grid.  If there is no shape for that number, a blank 16
+by 16 grid will appear.
+
+To make a new shape, type MS   5  (or any number between 0 and 27 for
+which a shape doesn't already exist).
+
+To draw a shape, move the blinking cursor using the four arrow keys.
+
+.keep
+.sp 6
+.end_keep
+If you hold the shift key down, the cursor will leave a colored square
+when it moves.  If the shift key is up the cursor will leave a
+blank square when it moves.
+.nf L
+
+To clear the entire shape so that you can start over, type C.
+
+When the shape is finished, type F.
+
+.keep
+Then tell a sprite to carry the new shape.
+
+	TELL   0     CARRY   5
+	SETC	:BLUE
+.end_keep
+
+.keep
+You can give the shape any name you like:
+
+	CALL   5   "NEWSHAPE	t(n)and then you can type:
+         
+	TELL  1  CARRY  :NEWSHAPE
+.end_keep
+
+.fi b
+If you want to see exactly what a new shape will look like
+while you are drawing it, tell a sprite to carry the shape before you
+start.  Put the sprite over to the right of the screen so
+that you can see it:
+
+.keep
+.in 2i
+.nf L
+TELL   1    CARRY   6
+SETS   0
+SETC   :BLACK
+SETXY   20   20
+MS   6
+.in
+.fi b
+
+As you draw the shape on the drawing pad, it will appear on the sprite
+at the same time.
+.end_keep
+.bp
+.chapter "bold(Making Movies - A Simple Project with Sprites)"
+A simple animated movie can be made by having one sprite carry two
+shapes in succession.  For example, you could design two shapes:
+.nf L
+	MS   10  t(n)MS   11
+
+
+
+	(figure)		 t(n)(figure)
+
+
+
+
+	CALL   10   "WINGUP			
+
+	CALL   11   "WINGDOWN
+
+.fi  b
+These commands make the names "WINGUP and "WINGDOWN stand for the numbers
+10 and 11, respectively.  The command CARRY  :WINGUP has the same effect
+as the command CARRY 10.
+.nf L
+
+.keep
+TO   FLY   T
+CARRY    :WINGUP
+WAIT    :T      
+CARRY    :WINGDOWN
+WAIT    :T
+FLY	:T
+END
+.end_keep
+
+Explore the visual effect of different inputs to FLY:
+	FLY   20     FLY   60     FLY   200
+
+See if you can make a more realistic movie by having more than two wing positions.
+.keep
+.sp 6
+.end_keep
+
+.fi b
+Tell several sprites to fly.  (Each sprite needs to have a
+speed, heading and color, too.)
+
+.bp
+.chapter "bold(Teams)"
+.fi b
+You can talk to more than one sprite at a time.  You probably have given
+commands to all the sprites by typing something like:
+.in 2i
+
+TELL    :ALL    SETC    :PURPLE
+.in
+
+If you organize smaller groups of sprites into teams you can get one team
+of, say, five to be doing one thing and another team to be doing another.
+.nf L
+
+.keep
+Try this:
+.in 2i
+
+CALL   [ 0   1   2   3   4 ]   "TEAM1
+CALL   [ 5   6   7   8   9 ]   "TEAM2
+.in
+.fi b
+[0  1  2  3  4]  and  [5  6  7  8  9]  are called lists.  You can give 
+commands to a list of sprites in the same way that you give commands to
+individual sprites.  The list must be enclosed in square brackets,
+[    ], (shift-4 and shift-5 on the keyboard).  For example:
+.end_keep
+.nf L
+.in 1i
+
+.keep
+TELL   :TEAM1    CARRY    :TURTLE    SETC    :GREEN
+TELL   :TEAM2    CARRY    :TRUCK    SETC    :BLUE
+.in 0i
+.fi b
+.end_keep
+
+If the team members are piled up on top of each other so you can't see them, talk
+to them individually and give them a different speed or heading or move them
+using FORWARD or BACK.
+
+You can do a lot of things using teams.  Try rewriting FLY so that there are
+two teams of birds flying in different directions and flapping differently.
+(See Section 7, Making Movies)
+
+You might try designing spaceships and flying saucers and flying
+them in teams.
+
+.chapter "bold(Getting Messages From a Sprite)"
+You can ask the computer for information about the sprite you are "talking"
+to.  Some sprite commands output messages.
+
+These commands are:
+.nf l
+.keep
+MYNUMBER	t(n)outputs the sprite's number
+SHAPE		t(n)outputs the number of the
+		t(n)sprite's shape
+COLOR		t(n)outputs the number of the sprite's color
+SPEED		t(n)outputs the sprite's speed
+HEADING		t(n)outputs the sprite's heading
+XCOR		t(n)outputs the sprite's "x" or horizontal
+		t(n)position on the screen
+YCOR		t(n)outputs the sprite's "y" or vertical
+		t(n)position on the screen
+.end_keep
+
+.fi b
+These messages can be used in different ways.  You can print them, give
+them a name, or combine them arithmetically with any other numbers.  As far
+as the computer is concerned, the messages output by these commands are only
+numbers.  So it makes sense to say  SETSPEED   COLOR , or  SETCOLOR   SPEED ,
+or   SETHEADING   HEADING - 30 , etc.
+
+.keep
+.NF L
+Examples:
+
+PL   MYNUMBER		t(n)PL stands for PRINTLINE
+PL  SPEED
+CALL  COLOR  "TINT	t(n)This gives the name "TINT to the
+			t(n)sprite's color number
+SETC   COLOR + 1	t(n)Changes the sprite's color to the
+			t(n)color with the next largest number
+SETC   :TINT		t(n)Sets the color back to its old value
+SETH MYNUMBER * 5	t(n)Sets the heading to 5 times the
+			t(n)sprite's number.  If you were commanding
+			t(n)Sprite 0 it would now have a heading
+			t(n)of 0.  Sprite 4 would have a heading
+			t(n)of 20, etc.
+SETS HEADING/2		T(n)Sets the speed to half the value
+			t(n)of the sprite's heading
+.end_keep
+
+.fi b
+.keep
+Here are some simple procedures that use sprite messages.
+.nf l
+
+TO RAINBOW
+SETC   COLOR  +  1	t(n)This procedure keeps changing the
+WAIT   20		t(n)color of the sprite(s) you are
+RAINBOW			t(n)"talking" to
+END
+.end_keep
+
+.keep
+TO SWITCH
+CARRY   SHAPE  +  1
+IF  SHAPE  =  5   CARRY  0
+WAIT  50
+SWITCH
+END
+.end_keep
+.fi b
+
+A sprite must already be carrying a shape before you tell it to SWITCH.
+
+.nf l
+.keep
+TO RB
+SETC   XCOR / 16
+RB
+END
+.end_keep
+.fi b
+
+First type  SETH  90  SETS  10,  then type  RB.   Try other speeds and headings
+and see what happens.
+.nf l
+
+.keep
+TO SPIRAL
+SETS  HEADING / 3
+SETH HEADING  +  30
+SPIRAL
+END
+.END_KEEP
+
+.keep
+TO  SPREAD  NUMBER
+TELL   :NUMBER
+SETHEADING   MYNUMBER * 12
+IF  :NUMBER = 31   STOP
+SPREAD  :NUMBER  +  1
+END
+.end_keep
+
+.fi b
+Typing SPREAD  0  will make each sprite to set its heading to a 
+different number.
+
+.keep
+Try this example:
+
+.nf l
+SPREAD  0
+TELL   :ALL
+CARRY   :BOX
+SETS   10
+HOME
+.end_keep
+.fi b
+
+Invent some procedures of your own that make use of sprite messages
+to cause interesting effects.
+
+.chapter "bold(Talking to a Group of Sprites, One at a Time)"
+A special LOGO command, EACH,  allows you to give a different command to each
+sprite in a group.   EACH  needs a list of commands as an input.
+
+Examples:
+
+.nf l
+.keep
+CALL  [ 0  1  2  3  4 ]   "TEAM1
+TELL   :TEAM1
+SETH   90
+EACH   [ CARRY   MYNUMBER ]
+EACH   [ SETXY   0   MYNUMBER * 20 ]
+EACH   [ SETC   RANDOM   SETS   MYNUMBER * 10 ]
+.end_keep
+.fi b
+
+Your list must be contained within square brackets (shift-4 and
+shift-5), and can include
+one command or several.  The   *   symbol means multiplication.
+
+.keep
+Example:
+
+Here are two procedures that use  EACH  to spread all 32 sprites in
+different directions, and produce an interesting effect.
+
+.nf l
+TO   SETUP
+TELL   :ALL  CARRY   :BALL
+SETS   30
+EACH   [ SETH  MYNUMBER * 12 ]
+END
+.end_keep
+
+.keep
+TO EXPLODE
+SETC  COLOR  +  1
+HOME
+WAIT   100
+EXPLODE
+END
+.end_keep
+
+.keep
+Now type:
+
+SETUP
+EXPLODE
+.end_keep

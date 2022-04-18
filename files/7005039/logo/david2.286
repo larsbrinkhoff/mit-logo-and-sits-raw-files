@@ -1,0 +1,867 @@
+.xgp
+.font 0 30vr
+.font 1 37vrb
+.dummy @
+.ds
+.adjust
+.ce
+1Profiles;David2
+
+I. David's Working Style
+.br
+0David is a bright, articulate student who makes connections easily,
+and has a strong desire to continually expand his knowledge.  He began
+by being very excited about using the computer, asking a lot of
+questions about what the computer could do, and how to accomplish
+different things.  Although he quickly progressed through a number of
+LOGO activities, he seemed to have difficulty with syntax --
+remembering how to WRITE his file, or use a PRINT statement -- and had
+difficulty settling into a project for a long time.
+
+David had a way of quickly understanding a "concept", and then having
+difficulty with the details involved in using the concept.  He liked to
+keep all his work "in his head," and only very gradually accepted the
+idea of taking notes that might help him carry on his work (notes, once
+taken, were often left lying around the room).  Once he had worked out
+a series of steps to draw a particular figure on the screen, he seemed
+to have difficulty concentrating on the task of accurately transferring
+those steps into a LOGO procedure.
+
+David eagerly sought new information and asked questions about new
+ideas.  On the other hand, he did not like to ask for help when he
+encountered difficulties in his work -- and often rejected "helpful
+suggestions," when they were offered.
+
+He seemed to prefer his own ideosyncratic way of doing things, to
+learning a more efficient way from another person.  When he was asked,
+in a pre-LOGO interview, "if you're stuck on something in school, what
+kinds of things do you do?"  David answered:  "I try to control myself
+to work harder on it, and if worse comes to worse (sic) I just sit in
+the corner and sulk.  I just try to deal with it."  This approach to
+situations in which he was "stuck" was quite characteristic of his work
+in the LOGO classes.
+
+One of the areas in which David often had difficulty was in taking a
+series of successful steps already worked out on the screen, and making
+them into a LOGO procedure.  He persisted for a long time in numbering
+steps by ones (despite the fact that he understood quite well the
+justification for numbering steps by fives or tens).  Since he often
+made mistakes in copying steps, he had to make some rather laborious
+changes in his procedures.  To compensate for the problem of forgetting
+line numbers, David usually put many steps on one line.  He
+persisted in using this technique despite numerous errors which
+required that he re-type long lines of commands.  It was more important
+for David to use his method (numbering by ones, and putting many
+steps on a line) than it was for him to have a method that made
+debugging easier (numbering by tens, putting one command on each line,
+and carefully keeping track of the line number).
+
+It seemed as though David expected that bugs would not occur -- even
+though he continued to make small errors throughout his LOGO classes --
+and that he did not have to work in a way that made debugging
+easier.  The irony was that he understood the advantages, of the
+suggested methods, but persisted in using his own, even though they
+were less successful, and caused him more problems later.  "It's my
+funeral," he once remarked in such a situation.
+
+It is unusual to see a bright child persist in unsuccessful strategies,
+which he knows are unsuccessful, when alternative strategies are available.
+
+David seemed to be somewhat at loose ends during the first few weeks of
+computer classes.  He explored a lot of different ideas, without
+settling in to work in one particular area, or committing himself to a
+project.  Finally, after a great deal of coaxing, he agreed to work on
+a project of my suggestion -- a moving car with spinning wheels.  He
+worked on this project for eight classes.  Although he had a lot of
+difficulty carrying it out (see below), and was feeling frustrated at
+several points, he maintained a strong commitment to the project until
+it was completed.
+
+1II.  David's Work in Turtle Geometry
+.br
+0David's work in turtle geometry was characterized by an excellent
+understanding of the use of LOGO to create designs, by a good ability
+to estimate distance, and a lot of problems with orientation and
+estimating angles.
+
+1a. David's work with Triangles and Variables
+.br
+0David worked on a series of short projects involving triangles,
+starting with drawing a triangle, and continuing to make an equilateral
+triangle, variable sized triangles, designs using triangles, and a
+design consiting of nested triangles.  This work occupied five
+different sessions mostly during the early classes, but including one
+class near the end.
+
+He began his work on triangles, by constructing one, using a trial and
+error approach.  At first he tried an equilateral triangle, and got
+quite close as a first approximation (with internal angles of 52 and 70
+degrees).  When he copied over his steps to make a procedure, TRI, he
+made an arithmetical error in combining angles, and wound up with the
+shape shown in fig. Dn-1.
+.block 12
+.sp 10
+.ce
+Figure Dn-1
+
+Although David realized that this was not what he expected, he decided
+to make another shape by using recursion to rotate this one.  Drawing
+on previous experience in making a recursive design with a BOX, David
+used his non-triangle TRI procedure to create the procedure ULTRATRI:
+
+.indent 6
+.block 5
+TO ULTRATRI
+1 TRI
+2 RT 80
+3 ULTRATRI
+END
+
+.indent 0
+Returning to constructing a triangle, David abandoned equal lengths,
+and produced a close approximation to a triangle.  He called his
+procedure THRI (to distinguish it from TRI, which he wanted to keep).
+
+.block 13
+.indent 4
+TO THRI
+1 RT 140
+2 FD 99
+3 RT 130
+4 FD 110
+5 RT 120
+6 FD 93
+END
+
+.ce
+Figure Dn-2
+.indent 0
+
+David determiend the last distance by first going forward 99 then
+backing up six until the triangle seemed to close.
+
+At a subsequent class, David asked how to make a triangle of variable
+size, so that he could make a design of nested triangles.  I explained
+to him about how to use variables, and pointed out that it would be
+simpler to use variables neatly if he could make an equilateral
+triangle.  I pointed out that an equilateral triangle also had equal
+angles at each point.  With this information, and a suggestion that he
+use the REPEAT command, David started with REPEAT FD 100 RT 140 3, and
+was able to find the correct angle, 120 degrees, in five or six tries.
+David called his new procedure THRI1, and his new variable, "S3.
+
+.indent 6
+.block 8
+TO THRI1:S3
+1 FD :S3
+2 RT 120
+3 FD :S3
+4 RT 120
+5 FD :S3
+6 RT 120
+END
+.indent 0
+
+In the next classes, David wanted to make a "nested" type of design.  I
+suggested that he use the variable-sized triangle he had already
+created, and make a nested triangle design.  He started out to make a
+design that looked like this:
+
+.block 11 
+.sp 9
+.ce
+Figure Dn-3
+
+While making it, he had a lot of trouble with the state of the
+turtle: orientation of the turtle before and after making the triangle;
+re-orientation of it to move vertically before making the next
+triangle; whether the pen was up or down, etc.  After struggling
+through several repetitions, he wanted to give up.
+
+In the next class, I reminded him that he could make a procedure to
+repeat the group of steps that kept recurring, and together we defined:
+
+.indent 4
+.block 8
+TO SECT:SIZE	and	TO HAL :SIZE
+1 LT 90			10 SECT :SIZE
+2 THRI1:SIZE		20 HAL :SIZE
+3 RT 90			END
+4 PU
+5 BK 30
+6 PD
+END
+
+.epage 1
+.indent 0
+He was content to leave these procedures without varying the size after
+all.  He did make another procedure on this model, and asked him to
+construct it.  At this point he had a better idea of how to use the
+variable subprocedure.  He realized that if he could nest a second
+triangle inside the first one, he would be able to complete the design
+by repeating that process.  He also realized immediately, that after
+completing one triangle, he had to move forward half of it's length,
+before turning the turtle to make the second triangle half the size of
+the first.  He still had difficulty however, figuring out how to orient
+the second triangle so that it would fit precisely inside the larger
+one.  Finally after about 10 tries, he decided that 55 degrees was the
+right amount to turn the turtle.  He and I looked closely at the
+resulting design, and I suggested that the triangles did not quite
+meet.  He then suggested a turn of 60 degrees, which did work. (Figure
+Dn-6):
+
+.block 8
+.sp 6
+.ce
+Figure Dn-6
+
+At this point we talked through the necessary steps: "THRI1 :SIZE,
+forward half of size, RT 60.  Then repeat the whole thing using half
+the value of size."  I showed David how to make this procedure, which
+he called Q :SIZE.
+
+.indent 6
+.block 6
+TO Q :SIZE
+10 THRI1 :SIZE
+20 FD :SIZE/2
+30 RT 60
+40 Q :SIZE/2
+END
+
+.indent 0
+David wanted to make Q stop, "when :SIZE is less than 10."  After some
+additional conversation about the location of the stop rule in the
+procedure, we added line 35 to Q:
+.br
+	"35 IF :SIZE < 10 STOP"
+.br
+which had the desired effect.
+
+Some things to notice about David's work with triangles and variables:
+he consistently had the most difficulty with problems of orientation,
+as in making his HAL figure or in nesting the smaller triangle inside
+the larger one.  He had no difficulty with the idea of variables --
+which he did relate to something he'd seen in math class.  But he
+had difficulty with the syntax of using variables -- where to put the
+dots, in both the commands and in the procedure titles.  He seemed to
+understand the way in which his procedures functioned, and was able to
+see how his descriptions of what he wanted to do translated into LOGO.
+He never did carry through a project like this entirely on his own.
+
+1b. David's CAR Project
+.br
+0In class #13, at my insistence, David committed himself to a long
+term project -- drawing a moving car, with wheels that spin.  Once
+committed to the project, he followed through on it for eight classes
+-- despite a good deal of frustration with the details.  (Figure Dn-7).
+.block 27
+.sp 25
+.ce
+Figure Dn-7
+
+Rather than describe DAvid's work on this project sequentially, I will
+describe some of the aspects of the work that were easy for him, and
+some of the difficult aspects, and offer some speculation about why so
+much of this project -- which would have been simple and
+straightforward to a student like JOEY -- were so difficult for David.
+
+Most of David's problems seemed to be in the area of "work habits" and
+attention to detail.  Lack of attention to detail, combined with
+left-right orientation problems, meant that a lot of David's
+difficulties showed up as turtle state bugs.
+
+On the other hand, David rather easily understood the important
+"concepts" of the project:  how to use positive and negative inputs to
+the SPIN command, together with a centered circle procedure, to make a
+wheel that spins around its own center; how to use MOVET to move the
+car; how to use 45 and 60 degree angles to make the fenders and body of
+his car; and how to use symmetry to make his front window a "reversed"
+version of his rear one.  During the course of the project he learned
+to make use of separate subprocedures for each part of his design, and
+began to number the steps in his procedures by fives.
+
+To illustrate both the strengths and weaknesses of David's work on this
+project, I will describe the process by which David made the windows
+for his car, during classes 16, 18 and 19.
+
+At the end of class #15, David had completed a series of procedures
+that drew the basic outline of the car as shown in figure Dn-8.  He
+wanted the rear window located parallel to the body of the car as shown
+in the figure.
+.block 20
+.sp 18
+.ce
+Figure Dn-8
+
+I made two suggestions to help him get started:  I suggested that he
+draw the window by itself on an empty screen first, and add it to the
+car as a separate procedure later; also suggested that he look at the
+BODY procedure, to find the angle to use for the windows.
+
+Looking at the BODY procedure, David quickly noticed that the correct
+angle was 60 degrees.  He then cleared the screen and easily drew a
+window, starting with the turtle in the upright position:
+
+.indent 6
+.block 14
+TO WIN1
+1 RT 30 FD 60 RT 60 FD 20 RT 90 FD 50
+2 RT 90 FD 50
+END
+.INDENT 0
+.sp 7
+.ce
+Figure Dn-9
+
+With the turtle in the vertical position, David had no difficulty
+turning it right 30 degrees, going forward and then turning it 60
+degrees to make it horizontal.  It seemed as though he had decided to
+use 60 for the second turn, because 30 and 60 add up to a full 90
+degrees turn -- although this was never stated.  The distance estimates
+were farily easy for him to make.  WIN1 procedure left the turtle
+facing horizontally to the left.
+
+When David went back to his car, however, he did not realize that he
+had to orient the turtle vertically before using his WIN1 procedure.
+As a result, he became very confused about why the window kept coming
+out in the wrong position.  He did not save the procedure which moved
+the turtle over to set up the window.
+
+During class 17 David worked on another activity.  In class 18, David
+came back to working on his window.  I began the period by reminding
+him that to orient his window properly he had to begin with the turtle
+in an upright position.  This time, David decided to add another
+feature to the car, before drawing the window.  He added a curved
+antenna after completing the body, so that the turtle was now in
+position A needing to move to position B (shown in figure Dn-10).
+.block 11
+.sp 9
+.ce
+Figure Dn-10
+
+After experimentation, estimation of distances, etc., David wrote the
+following procedure:
+.br
+TO WIP (windon in place)
+.br
+1 MO HUBS BUM BODY ANT PU RT 180 FD 100 RT 90 FD 80 RT 180 RT 20 FD 10
+.BR
+PD
+.BR
+2 WIN1
+.BR
+END
+.br
+This procedure accurately placed the turtle in an upright position
+before drawing the window.  David's subprocedure MO moved the car
+over, so that the entire picture fit on the screen.  The other
+subprocedures draw the car parts.  In typing in the steps David left
+out two commands:  ANT and PD.  He had to retype the entire procedure
+twice to replace them.  He placed all the steps on one line despite
+several discussions explaining how numbering steps by 10s and placing
+each step on a different line would make corrections and debugging easier.
+
+At the end of the period David forgot to save the procedure on his disk
+by writing a file!  He had to repeat the whole process over again next
+time -- including the exploration, since he had kept no notes.  This
+time, he came out with a slightly different location for the turtle --
+one which left the turtle tilted 1 degree from the vertical.
+.nofill
+.BLOCK 4
+TO WIP
+10 MO HUBS BUM BODY ANT
+20 RT 180 PU FD 100 RT 90 FD 60 FD 10 RT 70 RT 180 LT 45 BK 5 LT 6 PD
+30 PD WIN1
+END
+.adjust
+
+The organization of David's final version of WIP shows some improvement
+over what he had previously done.  The lines are numbered by tens.
+Each line of WIP has a distinct purpose.  Line 10 carries out all the
+previous parts of the car; line 20 moves the turtle over to draw the
+window; line 30 draws the window.
+
+He had no problem figuring out how to draw the middle window as a square:
+.nofill
+.block 3
+TO WIN2
+10 PU BK 100 RT 90 PD FD 55 RT 90 FD 55 RT 90 FD 55 RT 90 FD 55
+END
+
+.adjust
+He originally made WIN2 draw a square with sides of 43.  When he
+decided to change to 55, he had to retype all of line 10.
+
+Before David began to draw WIN3, I suggested that he use the WIN1
+procedure as a model, and draw the new window by reversing the turns in
+WIN1, while keeping all the distances the same.  David understood this
+approach and decided to use it.  He did not remember, however, that the
+turtle had to be vertical before starting in carrying out this aspect
+of the project.  Finally he recovered after I reminded him to set the
+turtle heading up before reversing the steps of WIN1.  Finally David produced:
+.nofill
+.block 3
+TO WIN3
+10 PU BK 145 PD RT 90 LT 30 FD 60 LT 60 FD 20 LT 90 FD 50 LT 90 FD 50
+END
+
+.adjust
+Once again, David left out PD in copying the steps, and had to redo the
+whole line.  Notice that the underlined steps are the steps of WIN1
+reversed, although they are not set off as a separate sub-procedure, or
+even accorded a line of their own in WIN3.
+
+Throughout this process David was constantly frustrated by his failure
+to remember where the turtle had to be heading at the start of a
+procedure like WIN1; by his failure to take useful notes -- leading to
+the omission of steps like PD; and by his method of including as many
+steps as possible on one line -- necessitating the retyping of an
+entire line, everytime he made a typing error or omission.  Although
+all these problems were pointed out to him by me, along with
+suggestions for how to alleviate them, David seemed to prefer to
+struggle along with his own methods rather than to `bother', to take
+notes or put each step on its own line in a procedure.
+
+1C. An Interesting Parallel, and a Question0
+.br
+I would like to offer, without much comment, an interesting parallel
+between details that occured in each of the two projects described;
+making the window for his car, and drawing the nexted triangles.
+
+In drawing the window during class 16, David started with the turtle in
+an upright position.  He turned it RT 30, then moved FD 60 and then
+turned RT 60, to make the top of the window.  All this was done without
+any explanation -- following a discussion in which David decided to
+make the window slant at an angle of 60 degrees, to parallel the BODY
+of his CAR (see figure Dn - 11a).
+
+A similar situation occurred when he was making the nested equilateral
+triangles, in class 22.  The first triangle started in an upright
+position.  lAfter completing one triangle, David moved the turtle
+forward half of its length, and once again, had to turn the turtle
+right 60 degrees.  In this case, he did not "know" that the angle to
+turn was 60 degrees, and had to establish it (with some help from me)
+by means of a series of successive approximations.  (see figure Dn - llb).
+
+My question is -- why was David not able to make use of the
+knowledge he had about 60 degree angles when he was drawing the nested
+triangles, when he was able to use it drawing the car window?
+Possibly he used the fact that 30 + 60 = 90, when drawing the window.
+If this was the case, it would be interesting to see if he would have
+been able to find the correct angle without experimentation if the
+first triangle had been oriented at an angle of 30 degrees to the
+vertical to start with (see figure D-llc).
+.block 10
+.sp 8
+.ce
+Figure D-lla	Figure Dn-llb	Figure Dn-llc
+
+.block 3
+1III. David's work With DYNATURTLE0
+.br
+David's work with DYNATURTLE gave an opportunity for him to discover
+new strategies to solve problems in another domain.  The DYNATURTLE is
+a simulated "Newtonian turtle" which follows Newtonian laws of motion,
+rather than regular turtle commands.   The motion of the DYNATURTLE can
+be changed only by giving it a "kick" (impulse) in a given direction.
+David was shown two games to use with the DYNATURTLE: GAME1 required
+him to land the turtle on a fixed target; LUNER required him to move a
+"falling" dynaturtle so that it landed on a specified "landing pad",
+rather than "crash" on the moon. (see section@@@@@@@@@@of this report,
+@@@@@@@@@@, for more information about activities with DYNATURTLEs.)
+
+David worked on DYNATURTLE activities for all or part of three
+different classes.  He gradually began to show a lot more interest in
+the messages printed by the different game programs than in playing the
+games themselves.  (see David, Part IV, below.)  David's work with the
+LUNER game was characteristic of his approach in general.  The LUNER
+game begins with the turtle situated above, and to the left of a
+platform on which it must land for a successful outcome.  The initial
+orientation of the turtle is straight up -- as shown in fig. Dn-12.  If
+the DYNATURTLE is not kicked, it will "fall" straight down and "crash".
+The LUNER program gives the turtle a steady downward "gravitational kick."
+.block 12
+.sp 10
+.ce
+Figure Dn-12
+
+One fairly simple strategy for the game would be to quickly turn the
+turtle until it was facing horizontally to the right, ten give it three
+or four kicks.  The combination of rightward velocity and continuing
+downward acceleration would be likely to land it on the pad --
+depending on the timing and number of the rightward kicks.
+
+David quickly realized that if left alone, the turtle would fall to the
+bottom of the screen and crash.  He discovered that he could counteract
+this by kicking the turtle straight up, temporarily counteracting the
+gravitational effect, and giving the DYNATURTLE an upward velocity.
+What he did most of the time was to give the turtle so many upward
+kicks that it would rapidly rise off the screen (wrapping around and
+coming onto the screen again from the bottom.)  By the time he
+started to turn the turtle to the right, it was so far above the
+landing pad that a slight rightward motion would cause it to crash far
+to the right of the pad.
+
+During his first two days of working with LUNER, David and Holly worked
+together.  Holly had adopted a strategy of turning the DYNATURTLE so
+that it was aimed at the landing pad, then kicking several times.
+This usually had the desired effect of landing in the right place,
+although at unneccessarily high speed.  Although David watched Holly at
+work he did not adopt her strategy when she was present.  When he
+worked alone, however, on the third day, David did adopt a version of
+Holly's method and was able to be reasonably successful with the LUNER
+game.
+
+Throughout his work with DYNATURTLE, it was not unusual for David to
+type the K, R, and L keys very rapidly (kick, right and left), without
+looking at the effects of any of his actions before continuing to type
+new instructions.
+
+.block 4
+1IV. David's Work with Printing, Messages and Interactive Programming0
+.br
+David showed a lot of interest in using the computer in an
+"interactive" fashion.  although he did not undertake a major
+interactive project, he indicated that this might be a possible future
+direction for him.  From time to time, in the early stages, he asked
+about uses of the computer other than turtle geometry, and was shown a
+little bit about how to use PRINT, arithmetic commands, and simple list
+processing.  He limited his initial work with PRINT to making a design
+of a face.
+
+.epage 1
+David devoted class 17 to using the computer as a typewriter/editor for
+a story he was writing about Julius Caesar.  He did this by writing a
+procedure with 53 lines, each of which printed a sentence.  (see fig.
+Dn-13).  In the course of this task, which took about two hours, David
+also mastered the use of Control keys for editing.  
+
+While he was working with DYNATURTLE, David became interested in the
+messages printed by the computer at the end of the game.  These
+messages told the player whether the landing had been soft, rough or a
+crash, depending on the DYNATURTLE'S speed at the moment of impact.  He
+complained that these messages were "dumb", and I suggested that he
+change them.  Together we printed out through the LUNER procedure, and
+all its subprocedures, until we found the subprocedure FINISH, which
+printed the message.  David spent almost all of one period creating his
+own rather elaborate version of these messages:
+
+.nofill
+.ss
+.block 11
+TO FINISH
+10 IF SPEED < 7 PRINT [WOWEEEE!!!!YOU FINALLY DID IT MY GOD YOUR SPEED
+WAS GOOD] PRSPEED STOP
+20 IF SPEED < 25 PRINT [YOU ROTTEN LOUSY NO GOOD PLAYER YOUR SPEED WAS
+SO FAST I'M SURPRISED I'M NOT PEELING YOUR BODY OFF OF THE LANDING PAD A
+ SECOND GRADER WITH THE BRAINS OF AN AMOEBA COULD DO BETTER THAN YOU JUS
+T DID !!!!! TRY AGIAN DUMMY!!!] PRESPEED STOP
+30 PRINT [HA!HA!HA! YOU STUPID IGNORANT DUMP REALLY DUMB PLAYER!!!!
+YOU DIDN'T LISTIN TO ANYTHING I SAID YOU CRASHED!!! YES YOU CRASHED!!!
+COM'ON NOW KLUTZO TRY AGIAN HA!HA!HA!HAAAAA!!! HEH HEH HEE HO!!!!
+!!HEH HEH HEH HEH !!!!] PRSPEED STOP
+
+.ds
+.adjust
+Throughout his work on thse messages, David appeared to be more deeply
+involvd with his work than he did on Turtle Geometry projects.  He
+laughed, talked to himself cheerfully, thought carefully about each
+word.  I would also speculate that the wording he chose for the
+messages indicate a lack of self-confidence in his own abilities,
+combined with a strong belief that he should be more successful
+than he is.
+
+One interesting consequence of David's work on messages for the LUNER
+game was that he became much more interested in landing the DYNATURTLE
+on the landing pad, since this was required to activate the messages.
+He became quite successful at the LUNER game from this point on.
+
+It is my opinion that David was ready to tackle a large interactive
+project when the classes ended, and that he will do so if he has a
+further opportunity to use a computer. 
+
+As his last activity, on the last day of classes, David left a message
+for the MIT LOGO Group, in his procedure WERTS:
+.ss
+.nofill
+.block 4
+TO WERTS
+10 PRINT [WELL ITS NOW A FINAL GOODBYE TO LOGO, SO WHEN ALL THE EGGHE
+ADS AT MIT LOOK AT MY DISK I WANT THEM TO KNOW I HAD A @!#$%&%$#"!@* HE
+LL OF A TIME]
+
+.DS
+.adjust
+1A. Summary of David's Performance in LOGO: Answers to 5 Questions0
+.br
+David: Computer programming: David mastered these:
+.br
+.nofill
+Procedures; printing out procedures;
+Subprocedures; editing procedures;
+Recursive procedures;
+procedures with conditionals;
+procedures with messages;
+using error messages for debugging;
+print commands (drawings and statements)
+
+1B. 
+.br
+0David used these, but did not quite master them:
+.br
+forgetting line numbers in procedures;
+putting too many commands on a line -- leading to debugging problems;
+syntax problems; forgetting to write files; complicated, non-helpful
+  names (TRI, THRI, THRI1, etc.);
+
+.block 5
+1David: Academic Areas, Question 2
+I. Mathemaatics:
+A: mastered:
+.adjust
+0estimating length and angles; special uses of angles: 90, 180, and
+45 (60-30-90 relation); square and triangular shapes; reversing a
+mistake in direction by doubling; (mistake: LT 45, correction: RT 90);
+aggregating inputs; RT-LT and BK-RT reversibility; the use of variables
+to produce changes in size and direction;
+
+1B. Used, but not fully mastered:
+.br
+0special angles of 120 degrees; radius of a circle; symmetry,
+similarity; use of ocnditionals; positive and negative numbers;
+
+1C. Problem Areas:
+.adjust
+0Orientation: lots of left/right mistakes: although he had a good
+strategy for correcting it (see above); also, great difficulty in being
+aware of the effect of turtle state on where a procedure would be drawn;
+details: a problem of confusion of concept for execution; David would
+have an idea of how something should be, but would not follow through
+to get the details right.  He almost seemed to "stop thinking" at such
+points.  He himself related this to difficulties  he has with
+"carelessness" in arithmetic problems. 
+
+1II. Language:0
+.br
+David had a great deal of interest in using the computer for language
+activities of two general types:
+.br
+11. 0Typing editing.  He devoted all of one class period to typing
+a story for social studies.  He did this using LOGO, procedures, PRINT
+commands, etc.  He would have done this much more easily with an editor.
+.br
+12. 0Interactive programs.  He was fascinated by the possibility of
+designing funny error messages, and could have enjoyed the process of
+developing an interactive program of some kind.  He devoted much of two
+class periods to revising the finishing messages for the DYNATURTLE programs.
+
+1III. Science (Physics)0
+.br
+David had difficulty with strategies to control DYNATURTLE.  He did,
+however, develop a good method of slowing the turtle down.  The idea is
+to reverse the turtle, then kick, then reverse the turtel again.  He
+added the letter "Z" to COMMAND.  Then if he wanted to use this, he had
+to type ZKZ (see notes by Andy).  With David's general difficulty in
+attending to details in what he is doing, he had a lot of difficulty
+being thoughtful about what he was doing in controlling DYNA.  He paid
+little attention to the connection between his commands and what the
+Dyna did.
+
+David had an ideosyncratic approach to problem solving.  As in other
+things, he valued uniqueness and originality over efficiency, and had
+great difficulty attending to details.  He was not careful about note
+taking, and often encountered errors when he tried to translate series
+of commands that he had successfully carried out into a procedure.  In
+such cases he had great difficulty debugging.  It was as if having the
+concept in his had was felt to be enough.
+
+David was encouraged to learn certain strategies that would facilitate
+his overcoming these problems:  write down the successful steps in his
+notebook; number the steps by fives or tens; break up each problem into
+parts, to allow for the solution of one problem at a time; name each
+part in such a way that it is easy to remember what each procedure
+does; look carefully at the beginning and ending state of the turtle
+for each part of a drawing.
+
+David responded ideosyncratically.  He accepted the idea of numbering
+steps by fives (after a good deal of initial hesitation).  He made this
+much less useful by putting a large number of steps on each line.
+Apparently he felt this was a "shortcut" because he had to number fewer
+lines.  On the other hand, this made debugging much more difficult
+because any change necessitated redoing a whole long line, rather than
+just one command.  David put a high premium on having whatever he was
+doing all worked out in his head, to eliminate the "bother" of writing
+things down.  He was not used to having to debug or revise his work.
+
+Although David generally refused to adopt many of the suggestions that
+were made to help his problem solving, it seemed clear from
+conversation that he understood their value -- in the abstract -- but
+preferred to do things his own way.
+
+At first, when things went wrong, David tended to blame the computer.
+Eventually he came to realize that it was his own working processes
+that were at fault.  He compared the difficulty he had with turtle
+projects to difficulty he had with details in math class.  He tends to
+attribute this sort of thing to "carelessness" and only partly
+recognizes how he is responsible for his carelessness and how he
+refuses to learn strategies for making his work easier, if they are
+originated by another person.
+
+What David said he liked best in computer classes was "having something
+finished" so that he could "fool around with it."
+
+1Attitude Toward Himself as  Learner -- Question 40
+.br
+During the computer classes David was forced to confront the gap
+between what he wanted to accomplish, what he had planned, and what he
+was in fact accomplishing.  Through a number of explicit discussions
+with the teacher, David was able to at least state that he was
+careless, and that he preferred his own methods to more efficient ones.
+In this way he was able to take responsibility for the choices he was
+making -- and possibly be able to consider alternative choices for the
+future, when he can feel he is making them on his own and not in
+response to a teacher.
+
+1DAvid's Attitude Toward Computers -- Question 50
+.br
+David has an unusually rich and positive sense of the social utility of
+computers.  He recognizes their contribution in a great variety of
+fields.  He is also aware of dangers to privacy from computer use.
+
+Although David was very excited about the potentiality of computers, he
+was actually a bit reserved about using a computer for the first
+few weeks.  He seemed oriented to very short projects, and had
+difficulty when the results of his computer activity did not come out
+as he had intended.  He restrained himself from committment to a project.
+
+As he allowed himself to be "guided" into a project, he gradually
+became more involved.  He stayed with his project for a long time,
+despite difficulties.  He was very pleased with the outcome.  In
+addition, he got very interested in non-graphics applications of the
+computer.  He used the computer to type a social studies report -- even
+though he had to use the awkward LOGO syntax for this.  He got very
+excited about an interactive program, and the possibility of having the
+computer give peculiar funny messages to a user.  Once he began to see
+the computer as a personal tol rather than as a "challenge," he was
+able to acept the challenge involved in his computer work as well.
+
+.block 4
+1Notes on David's Interviews:
+.br
+0A. David definitely has a non-standard approach to things, and
+enjoys it.
+.br
+1Examples0
+.br
+a. Tin can/brick:  could use a large tin can as a "podium" for "tin can
+politics," like "soap box politics," could melt it down and make
+anything.  brick: could shave it into a sculpture; smash it and build
+something else with the pieces.
+.br
+b. number patterns:  an intersting strategy for "cheating"; take the
+last few increments, and just repeat them:
+.br
+1, 2, 4, 8, 9, 11, 15, 16, ...
+.br
+This can make a "correct" solution for any pattern problem, without
+figuring out the "real" pattern.  If you are too "lazy" to check out
+the whole thing, you might "guess" as David did in,
+.br
+0, 2, 6, 12, 20, 30, 42, 50, 60, 72...repeating only last
+three increments; the next time he did this one he used, 46,
+52, 60..., going back to increments of 4, 6, 8 but still not
+seeing the whole pattern.  It's interesting that he should have had
+trouble with this one.  His own pattern on the first try had increasing
+increments of 11, 12, 13, 14, 15 (although he got them wrong through
+carelessness).  My guess is that David thought of htis as "clever" --
+possibly as "cheating".  If he had taken the care to look at the whole
+pattern he could hardly have failed to get it.
+
+.block 4
+1B. David's Self Consciousness.0
+.br
+David was always trying to fathom the intention of questions,
+rather than necessarily give direct answers.  First he wanted to know
+what answers were wanted: on number patterns:  I'm careless
+sometimes...so I want to watch it." and "I don't see the purpose of
+this but..." on uses of a brick: "you definitely want useful
+purposes..." When asked "what do you think you're good at?" he began:
+"good at?  Me and my modest way.  I don't know what others really think
+of me.  Let's see..."  and had to be reminded of the question.  When
+asked what he found hard to do, he replied: "...the trouble is it's
+hard to stop worrying about things you think are hard to do..."
+
+.block 4
+1C. David's Performance on Tasks0
+.br
+Creature cards, triangles, lenght and angle estimations, permutations.
+(See below for discussion of his strategy for solving permutations.)
+Did well each time, no significant change.  
+.br
+Geoboards. had difficulty with rotations -- some improvement on II.  
+.br
+number patterns -- discussed above; some improvement in each case I-II
+and II-III.
+.br
+mapping. Significant improvement between II and III; in III he chose
+routes that were more involved than necessary.  Relates to his interest
+in "non-standard" approaches (see above).  In II he chose simple routes
+and escribed them more confusedly.  In III he used Turtle language to
+describe path -- FDs, LTs, and RTs. 
+
+1Carelessness0.  David remarked on this with regad to computations:
+"I could make a mistake because of flaky carelessness, but none of
+these are all that hard..." For a hard problem he choose addition
+of fractions, which offered fewer possibilities for careless errors
+than either long multiplication or long division.  He made anumber of
+"careless" errors in his work on number patterns.  He did not check his
+permutations for duplications.
+
+.block 4
+1D. Making Connections:0
+.br
+David correctly recognized that he needed to find 24 permutations of
+four colors.  He knew this because he remembered it from studying
+factorials in math class.  He had a good strategy:  make all the
+patterns with pink first; then make all the patterns with white first,
+etc.  However, he decided there were four of each; so he wound up
+making 16 permutations easily; then struggling to get the rest.  He did
+not check for duplicates.
+
+David made no connection between the six possibilities for 3 colors,
+and his strategy.  He was perhaps misled by the factorial idea: 4 x 3
+2x 2 x 1, to look for four of each kind, not looking more deeply to
+realize that the four represented the four colors and that there were 3
+x 2 possibilities for each of the four starting colors.
+
+Like his work with the number patterns, David, had a "successful"
+strategy that he stuck to, despite its incompleteness.  He did not
+check his results -- and if the two or three duplications had been
+pointed out to him, would probably have said -- "carelessness" and
+shrugged it off.  He never examined his 4 of a kind strategy, despite
+evidence to the contrary each time.
+
+.block 4
+1E. Computer Uses:0
+.br
+David listed many "helping" uses of computers in both interviews (how
+computers help society).  He was aware of dangers ("big brother") as well.
+
+His view of personal uses did not change either, although it became
+mroe specific in two areas:  put a lot of lists into it; use it as an
+alarm clock.
+
+David felt that computer classes had helped him in math, because they
+had been studying geometry.  He also said it helped him get a good
+grade in social studies, because he had typed his Julius Caesar story
+on the computer.
+
+.block 4
+1F. Self Reliance:0
+.br
+When asked "If you're stuck on something in school, what kinds of
+things do you do?" David answered: "I try to control myself to work
+harder on it, and if worse comes to worse (sic) I just sit in the
+corner and sulk.  I just try to deal with it."
+

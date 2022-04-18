@@ -1,0 +1,198 @@
+;Format for XGP SCN files:
+;
+;Files consist of sequential lines on the XGP.  Each line consists of a header,
+;specifying how long it is, which line it is to be printed upon, and options
+;such as specifying a cut and the end of file. These two words of header are
+;followed by the line in the format required by the XGP interface.
+;
+;The first PDP-11 word in each line is the number of PDP-11 WORDS_____ not bytes
+;used for this scan line, including itself and the rest of the header.  For
+;most PDP-10 programs this will be an even number, resulting in an integer
+;number of PDP-10 words.
+;
+;The second PDP-11 word is the scan line upon which this line is to be printed.
+;It is allowable to have non-sequential lines.  The unspecified lines will
+;be blank.  If the line numbers are not ordered, they will come out as close
+;as possible together, and the internal line count will be reset.  This is not
+;the recommended mode of operation.  The top line on a page is numbered 1.
+;Line specification which would result in pages longer than 36" are treated as
+;end-of-file, as is a line specification of zero.
+;
+;Paper cutting may be specified by setting the sign of the second PDP-11 word.
+;The rest of the buffer so marked will be ignored, and the paper will be cut
+;at the line number specified by the second PDP-11 word with the sign bit cleared.
+;
+;The paper will be automatically cut just before the top margin on the page.
+;The top margin will equal the value of the (setable) parameter LFTMAR in the
+;PDP-10 program.
+;
+;PDP-11 words are stored in PDP-10 format in two 16 bit bytes, left justified in
+;the 36 bit word.  It is required that the remaining 4 right bits be clear.
+;
+;The format of the XGP interface data fis as follows:
+;
+;The data sent to the XGP is in the form of eight bit bytes.  Due to 10/11 numbering
+;disagreement, the order of the bytes taken by the interface is (in a PDP-10 word)
+;Byte 2, Byte 1, Byte 4, Byte 3, where the 8 bit bytes are numbered from the left.
+;The byte stream is interpreted in one of two (useful) modes.  Image mode, once
+;entered, accepts bytes and sends them to the XGP until the end of the XGP line is
+;reached.  There is no method of escaping from it.  It is entered (from command mode)
+;by the byte sequence 0 , 2 .  Run length mode is entered from command mode
+;by the sequence 0 , 0 , and accepts a count of the number of bits which are to be 
+;(alternately) black or white.  Initially, the color is white.  If a string of more
+;than 377 dots which are white or black is encountered, then you must output
+;a 377, followed by a zero, to switch back to the color in use, followed by the
+;remainder.  Two sequential zeros will escape from run length encoding mode back
+;into command mode.  From command mode, 
+;
+;The maximum allowable size for a line is 55. PDP-10 words, which is enough to
+;specify a line in image mode.  The line should be specified in image mode if the
+;run length encoding of it would be longer than this.  Note that it is necessary
+;to provide the trailing zeros in image mode, as the interface will otherwise
+;output garbage for the remainder of the line.
+.INSRT SITS;SITMAC >
+PLTBCR=177500	;PLOTTER BYTE COUNT REGISTER
+LPTMEX=177502	;DMA MEMORY EXTENSION BITS REGISTER
+PRTBCR=177504	;PRINTER BYTE COUNT REGISTER
+LPTBA=177506	;BUSS ADDRESS FOR THE DMA CONTROLLER
+PLTCSR=177510	;PLOTTER CONTROL STATUS REGISTER
+PLTDBR=177512	;PLOTTER DATA BUFFER REGISTER
+PRTCSR=177514	;PRINTER CONTROL STATUS REGISTER
+PRTDBR=177516	;PRINTER DATA BUFFER REGISTER
+	SSR0=177572
+	SSR1=177574
+	SSR2=177576
+	SSR3=172516
+	KIAR=172340
+	KIDR=172300
+HACKAR==KIAR+10
+HACKAD==100000
+.=600
+PDL::
+.=1000
+RDY11:	0,0
+RDY10:	0,0
+LINSIZ==264.	;NUMBER OF BYTES/LINE
+BUFFER:	.BLKB LINSIZ
+ZEROS:	.BLKB LINSIZ
+LINE:	0
+
+
+.=2000
+START:	RESET
+NEXT:	MOV #PDL,P
+	JSR PC,SEGSET
+	MOV #0,LINE
+	MOV #20,PLTCSR	;CAUSE A FORM FEED
+2$:	TSTB PLTCSR	;WAIT FOR READY
+	BGE 2$
+	MOV PC,RDY11	;TELL 10 WE'RE READY
+1$:	TST RDY10	;IS THE 10 READY?
+	BEQ 1$
+	CLR RDY11	;NO LONGER READY
+	CLR RDY10
+	CLR RDY10+2	;NEITHER IS THE 10
+	MOV #HACKAD,A	;ADDRESS TO GET BYTES FROM
+	MOV #1600,HACKAR	;SEGMENTER HACK
+LINE:	MOV (A)+,B	;GET WORD COUNT FOR THIS LINE
+	MOV (A)+,C	;GET LINE NUMBER
+	BLT NEXT	;CUT PAPER=DONE
+1$:	CMP C,LINE	;THIS LINE #?
+	BLE THLINE	;YUP
+	MOV #ZERO,F	
+	JSR PC,OUTLIN
+	BR 1$
+THLINE:	MOV C,LINE
+	SUB #2,B	;WORD COUNT-HEADER WORDS
+	ASL B		;BYTES
+	MOV #BUFFER,C	;BUFFER POINTER
+COMMND:	DEC B
+	BEQ LINEDN
+	TSTB (A)+	;ZERO?
+	BNE COMMND	;???????
+	DEC B
+	BEQ LINEDN
+	MOVB (A)+,D	;COMMAND BYTE
+	BEQ RUN
+	CMP #2,D	;IMAGE?
+	BNE COMMND	;???????
+IMAGE:	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;SEGMENT LOWER MEMORY UP TO 28K WORDS
+;IGNORE D-SPACE
+SEGSET:	CLR SSR0	;TURN OFF SEGMENTATION INITIALLY
+	MOV #10,C	;DO FOR 8 KERNAL I-SPACE PAGES	
+	CLR D		;D=0
+	MOV #KIDR,A	;POINT TO PDR'S
+SEGST1:	MOV D,KIAR-KIDR(A)	;PUT BASE ADDR'S IN PAR'S
+	ADD #200,D
+	MOV #77406,(A)+	;SET PDR'S: PAGE LEN=128 32-WORD BLKS
+			;WITH READ/WRITE ACCESS
+	SOB C,SEGST1
+	MOV #7600,KIAR+16	;LAST PAR POINTS TO I/O PAGE
+	MOV #1,SSR0	;ENABLE MEMORY MANAGEMENT
+	RTS PC
+
+CACHNT: MOV NCBLKS,D	;INITIALIZING ROUTINE
+	MOV #CBLKTB,C	;POINT TO BEG. OF CACHE BLK TABLE
+1$:	MOV #-1,(C)+	;FILL EA. SLOT WITH -1
+	SOB D,1$	;REPEAT TILL END
+	RTS PC
+

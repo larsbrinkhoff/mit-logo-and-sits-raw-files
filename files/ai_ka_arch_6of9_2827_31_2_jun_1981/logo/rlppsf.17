@@ -1,0 +1,157 @@
+.xgp
+.squish
+.font 0 31vg
+.font 1 31vgb
+.tlinch 8.5
+.twinch 6.5
+.dummy ^
+.he1
+Robert W. Lawler
+.he2
+The Computer's Impact
+.nofill
+.ss
+.ce
+1The Computer's Impact on a Child's Thinking0
+.sp 35
+.ce
+Robert W. Lawler
+.ce
+Massachusetts Institute of Technology
+.ce
+Logo Project
+.adjust
+.ds
+.page
+.ce
+1Overview0
+
+^^^^^^^^^^For the past decade, M.I.T.'s Logo Project has concerned itself with the interactions of children and computers.   One of my contributions to that effort has been the methodical case study and detailed analysis of one child's cognitive development in our computer rich environment.  That analysis exists as a long and complex doctoral dissertation.  I propose to condense some of this material and refine the conceptualizations to produce two articles -- of professional journal quality -- about the computer's impact on a child's thought.  
+
+^^^^^^^^^^The case study followed the learning of my daughter Miriam from her sixth birthday for six months and more, both in the laboratory and beyond its confines.  Miriam, her brother, and I were constant companions.  All of our work at the Children's Learning Laboratory was recorded on audiotape and some on videotape.  Computer logs and output were saved as well.  Beyond the range of mechanical recording, naturalistic observation traced influences between the computer laboratory and the rest of Miriam's world.  The resulting corpus is a richly textured record of one child's learning -- and one in which it is possible to examine, in detail, the interaction of particular experiences and the child's knowledge.  The motive for constructing so detailed a corpus was the effort to trace the interactions of experience and knowledge as learning occurred.
+
+^^^^^^^^^^To make the analysis of One Child's Learning more accessible, I have chosen to prepare segments of the material and analysis as journal articles.  One such article will soon be published in Cognitive Science.  A second is now ready for submission.  I want to have the time, six months, to produce the two remaining major articles from this study.  Both those remaining articles focus on my daughter's computer-centered learning.
+.page
+.ce
+1The Computer's Impact on a Child's Thinking0
+.adjust
+
+^^^^^^^^^^From March through August 1981 I will prepare for publication two articles.    The first article is a study of how this six year old was able to learn certain ideas of geometry and the extent to which she succeeded and failed in coming to understand the idea of a variable as it is used in programming.  The second article is about this same child's experience in programming and debugging.  It also touches on the issue of how the skill of debugging affected her life outside the computer environment.  The first aspect of both articles is that they trace one child's learning computer related material.
+
+^^^^^^^^^^Each of the articles has a second aspect which is more important and profound than the article's thematic content.   As we observe this child confront problems of geometry and using variables, we ask why certain ideas function in a powerful way in the mind and what sorts of knowledge is prerequisite in the development of new cognitive structures.  Intertwined with the observation of the "programming" article is the more general issue of how being a member of a culture affects solving problems.  Specifically, the corpus permits a focus on the relative efficacy of verbal knowledge, an artifact which comes about through being a member of a culture , and the knowledge derived from confronting specific problems.  
+
+^^^^^^^^^^Over the two years following our laboratory sessions, I analyzed that material in considerable detail to produce One Child's Learning.  This last year and a half, between other projects, I have taken some time to refine two of the studies from that corpus of material.  Instead of taking another two years to refine material about the computer's impact on a child's thought, I want to set aside the time to do that refinement and integration now.  What I propose then is to take the material from the third chapter of my thesis, to refine the conceptions and better integrate the ideas of the "geometry" and "programming" papers with the two others I have already revised.  During this process of revision, of course, I will also go back to the corpus and put new questions to it - to make sure that my interpretations are sound -- and, where required, to develop better interpretations. Should the effort take fewer than the six months I estimate to be required, I would take the opportunity to produce articles of a more accessible sort,  derived from the more scholarly articles and directed to an audience of educators interested in using computers.
+
+^^^^^^^^^^There are two major reasons for doing this work now.  One reason is timeliness.  The rapid proliferation of personal computers into homes and schools has raised to salience the question of how computer experience will affect children.  The public, educators, and other researchers have begun to recognize a need for the kind of information I can provide.  A second reason is the increasing burden of other research commitments which, by the fall of 1981, will demand nearly all of my time.  I believe I must make this material available now or it will be lost.
+
+^^^^^^^^^^There are other studies of children using computers.  The uniqueness of my study was the theoretical program behind the endeavor.  We used the case study method to construct a corpus of such detail as to provide an empirical foundation for cognitive modelling.  Within a Piagetian framework and using the descriptive tools of Artificial Intelligence, we have striven to achieve the objective Kurt Lewin set as the criterion of a scientific psychology: understanding the mind through the detailed description and explication of the particular case.  As cognitive science, the work is worth the time to make it more accessible to the scholarly community.
+.page
+.nofill
+.ss
+.spread
+/1Robert W. Lawler//Curriculum vitae
+
+
+1Professional Concerns0
+.indent 2
+How should we conceive of the knowledge structures of the mind ?
+How should we conceive of their functional organization and
+^^^^development ?
+How will extensive computer experience affect the minds of children^?
+Can we apply our findings and conceptions to the problems of education^?
+.indent 0
+
+1Objectives0
+.indent 2
+Continuing my research through further analysis of previously collected
+^^^^materials; extending my research through further observation and
+^^^^experiments.
+Rendering the results of my previous work more generally available, 
+^^^^i.e. preparing articles, possibly a book.
+Applying what I have learned to the design of computer environments
+^^^^for use by children and other learners.
+.indent 0
+
+1Schooling at M.I.T.0
+.indent 2
+Ph.D., June 1979 in Variform Intelligence.  Thesis: One Child's Learning.
+^^^^Submitted to the Department of Electrical Engineering and Computer Science.
+^^^^Interdisciplinary program with faculty from the Artificial Laboratory
+^^^^(Marvin Minsky), the Psychology Department (Susan Carey) and the Division
+^^^^for Study and Research in Education (Seymour Papert, thesis supervisor).
+^^^^Two topics are treated in detail: Learning Addition; and the Computer's
+^^^^Impact on Learning.  
+S.M., February 1977 in Educational Technology.  Thesis: Pre-Readers' Concepts
+^^^^of the English Word.    Submitted to the School of Science.
+^^^^Thesis supervisor: Susan Carey.  Interdisciplinary program with studies
+^^^^in the Artificial Intelligence Laboratory, the Psychology Department
+^^^^and the Division for Study and Research in Education.
+Certificate, Fellow in the Center for Advanced Engineering Study, June 1975.
+^^^^Introductory courses in Atificial Intelligence, natural language processing;
+^^^^tutorial with Seymour Papert.
+.indent 0
+
+1Previous Schooling0
+.indent 2
+IBM: ten percent of employment time for eight years.
+YALE: Drama School; two years in an M.F.A. Playwriting program.
+TEMPLE: A.B. in English, Magna cum laude, Distinction in major.
+CALTECH: Engineering, three years. Admitted as the Regional Scholar
+^^^^for New England and the Middle Atlantic States.
+.indent 0
+
+.page
+1Positions0
+.indent 2
+1980-now^  Research Associate, M.I.T. Logo Project
+1979-1980  Post-doctoral Fellow, M.I.T. Logo Project
+1977-1979  Graduate Fellow, M.I.T. D.S.R.E.
+1976-1977  Research Assistant, M.I.T. Logo Project
+1967-1975  IBM. Advisory Systems Engineer.  Experience with multiprogramming
+^^^^^^^^^^^(DOS and MVT),teleprocessing (CICS and IMS),  and multi-processing 
+^^^^^^^^^^^(ASP and locally supported systems).  Focus on insurance applications
+^^^^^^^^^^^in real-time, on-line database environments.
+.indent 0
+
+1Family0: Wife and three children (ages 11, 9, and 2).
+
+1Publications0
+.indent 1
+Journals
+.indent 2
+The Progressive Construction of Mind.  Cognitive Science, forthcoming.
+Introducing Writing with a Computer.  SIGCUE, July 1980.
+.indent 1
+Logo Project Memos
+.indent 2
+The Articulation of Complementary Roles.  Logo Memo 59.  December 1980
+Extending a Powerful Idea.  Logo Memo 58.  July 1980.
+The Progressive Construction of Mind.  Logo Memo 57.  June 1980.
+Introducing Writing with a Computer.  Logo Memo 56.  March 1980.
+Pre-Readers' Concepts of the English Word.  Logo Memo 40.  November 1976.
+.indent 1
+Logo Working Papers (internal distribution)
+.indent 2
+The Development of Objectives: a case study.  W.P.62. March l977.
+Emerging Forms in Turtle Geometry. W.P.60. February, 1977.
+Order Free Adding. W.P.59. January 1977.
+Turtle: Learning by doing - Logo interface design ideas.  Unnumbered.  January 1977.
+ADDVISOR - a program to help with vertical form addition. W.P.53.  February 1976.
+ZOOM - a Logo language interface for pre-school children. W.P.45. December 1975.
+EEL - a picture program generator for pre-school children. W.P.36. May 1975.
+
+.indent 0
+1References0
+.indent 1
+Professor Sheldon White,
+Department of Psychology
+William James Hall
+Harvard University
+Cambridge, Mass., 02138
+
+Professor Donald A. Norman
+Program in Cognitive Science  C-015
+Center for Human Information Processing
+University of California, San Diego
+LaJolla, California, 92093
+.indent 0

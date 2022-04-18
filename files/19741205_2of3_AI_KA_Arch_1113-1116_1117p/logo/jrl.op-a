@@ -1,0 +1,164 @@
+     This file is an outline of things one can do with op amps.  It is
+intented to present things on the scale of projects.  There is another
+file, ???, on small things one can do.  These are smaller ideas,
+hints, and tricks.  This file is an outline of ideas for large
+projects.  
+     The following to be expanded in more detail. 
+
+ 
+ 
+          
+MUSIC (SYNTHESIZERS, ORGANS, AND RTSA)
+ 
+CHEMISTRY (CYRSTAL GROWING, SECTROFATOMETRY?, IR AND UV SPECTROMETERS)
+
+
+CONTROL THEORY   (INVERTED PENDULUM,...) 
+
+ELECTRONICS 
+ 
+ELECTRIC DRAG RACES  
+     the basic idea here is to take two kids, two motors and tow
+carts, alongwith some gears and to build the fastest 'drag racer'.  I
+suspose that the carts would have tobe constrained to move along a
+track of some sort, but this could easily be accomplished  by eyelets
+on the cart that follow a wire streched accross the room.  The problem
+that is here is how to get the cart over that distance in the shortest
+amount of time. 
+     Yhe clearest place to start would be to somehow connect the motor
+to the wheels.  Luckilly there asre all sort and sizes of gears
+provided; the problem is only which one to choose.  Perhaps one might
+be luchy but more likely with the first choices one of the carts will
+be faster than the other.  One could experimenbt some and find the
+simple, order relations: a high gearing make it start out fast but it
+poops out at the fast end, while, on the other hand, a low gear couses
+it to get a burst of energy at the far end but the starting
+performance leaves much to be desired.  The decision now to be made is
+does one solve the problem of choosing the optimal gearing by
+succesive approximation, i.e. keep changing the gearing and home in on
+the best, or, does one turn to theory, i.e, try to gain some insight
+into the important factors and find the best way of looking at what is
+present.  
+     While I favor the second there is much to be said for the first.
+It contains possiblities for lerning, eapecially for younger
+children.  And the leatning is of an important kind.  While I would,
+as adult, use the knowledge I have of a general curve with a peak in
+the middle to quickly jump to the vicinity of the best ratio this is
+not obvious; There is a best way of getting something by sucessive
+approximations which must be learned.  One need to have a global view
+while doing  local operations, for it is this global view that give
+one the confidence to take the large jumps in the beginning.  
+     However if this is not so much of a problem, and consewuencly not
+too interesting, them one can formulate a theory.  As a sadditional
+benefit a theory would be easily extendable but more about that
+latter.  If you youn are acquanted with physics the theory is probably
+obvious, if you aren't then you are probably as unsure as the child as
+to what is happening.  This is not the place to state the physics;
+that would be a paper in itself.  But I must mention that in order to
+get a view of the situation that works, i.e. that gives correct
+predictions, one must understand the basic concepts of position,
+velicity, acceleration, and time as well as their relations, along
+with ideas such as force and power.  These and some sort of theory of
+motors are all involved in this deceptively simple problem.  But it is
+simple, after one u_n_d_e_r_s_t_a_n_d_s_.  
+     And once one u_n_d_e_r_s_t_a_n_d_s_ one can easily calculate, if not see, the
+effect of varing various other constrainsts such as the lenght of the
+track, the mass of the cart, the voltage avaiable to drive the motor,
+etc.  in short, one has achieved a powerful technique, and thereby
+gained mastery over part of the world.  
+     
+     (((((mention somewhere: Tweo carts are compared time is not
+measured (or it could be)  One will find paradoxes such as the quickes
+cart is going slower at the end.  Strange thing may happen.  Ther is
+material here sutable for advanced Piaget type experienct; one can learn from teaching.
+)))) 
+ 
+     This has described the pasdics; from now on I will be sidcussing
+variousramifications to the above. 
+     There is a question of whether a cart should be provided to built
+by the child.  In building one he would have the oppunity to learn
+about friction byut mostly,from my experience, about the problems and
+frsutrations of building things which have too many possiblities.  A
+cart is something one could perfect only through several generations
+of cart making; the mistakes don't show up until it is too late to
+change them.  Perhaps one culd get around this by having some sort of
+erector set type of parts which eliminates most of the serious
+pitfalls while allowing rapid modifications.  But the most serious
+objection is that building it himself shifts the emphasis away from
+the physics.  In fact it isn't obvious to me which is the more
+difficult problem, and if it is the cart building and it is too
+dificultthen one misss the physcs.  And I know that the physics is the
+more important.  Building the cart should I think be the problem of
+building an improved version.  
+     
+     Finally there is a more philosophical problem that concerns me. 
+I have been thinking some recently about yo-yos.  Can one build a
+machine that does a yo-yo.  It is trivial but that is beside thge
+pint; yo-yods are on my mind.  I also noticed that with the cart what
+one needs is a gear ratio that is high to start out and then  lwers as
+the speed--or distance--increased.  In a car one shifts gears but that
+isn't possible here, at least not easily.  But something else is.  One
+can make a variable ratio pully.  On one end the diameter of the pully
+increases as the string is would onto it and th string in effect
+becomes another layer of pully.  On the other end the string unwinding
+decreases the lever arm.  The effect is to increase the ratio with
+distance.  This with some other gears could make a drastic improvement
+in the performance of the drag cart. 
+     Now whileI have generally indicated how this idea came to me the
+question is where do such global reconstructions come from in general.
+And is there any way we can foster such `revcolutions' in
+thoughts.Finally are there large differences in people with respet to
+this ablity; is it sacrifices in some for other, contradictory ablities?
+   
+ 
+ 
+PHYSICS!!!  
+
+ALGRBRA MACHINES, DIFFERENTIAL EQUATION MACHINES: 
+     Reportedly there is a problem solving method of great power and
+generallity, loved by all physics and similiar people: write a set of
+differential equations and then solve them.  I'm not sure, as a
+physicist, whther I believe this but it is worth looking into.  The
+point of a defferential equation machine is that it can and will do
+the second part of this powerful approach, and the part a true
+physicist would consider the uninteresting part, solve the equations.
+     And it does more that solves the equations.  It alows one to
+examine them, how they work, or perhaps more approate of diff eq, how
+they more. 
+ 
+
+AUDIO: 
+     If one takes a bunch of resistors and capacitors, and perhaps
+inductors but no one useses them any more, and hooks them around an op
+amp one notices all sorts of strange behavior.  What you get ut is not
+what you put in.  A good problem is how to describe this.  If fact
+only a few capacitors will give interesting phenomona.
+     This could be a project.  But there is more.  The same ideas and
+concepts that apply to this area apply to a a much larger and divese
+number of disciplins.  It is as basic as sine waves, whether they
+are simple pendulums or radio waves.  But first, what could a child
+do? 
+     Plenty.  One of the standard domains to express the behaviour of
+networks is the frequency domain.  Keeping the input a_m_p_l_i_t_u_d_e_
+constant one varies the f_r_e_q_u_e_n_c_y_ and records the a_m_p_l_i_t_u_d_e_ of the
+output. If one plots the log of the output versus the log of the
+frequency (input amplitude constant) one get nice results--stright
+lines.  Moreover the lines can be easily related to the values of the
+components chosed.  And one can change the components to get any response one
+wants.  The problem is that all this plotting on log-log paper is slow
+and soon boring.   But op amps come to the rescue. 
+     What would be nice to have is a device that one could hook up to
+the network and would then display this graph on a CRT type display. 
+Then one could instantly see the effect of varying things, and within
+a short time develope a working knowledge of what is going on.  Shall
+we say an intuition?  At the very least one could quickly test
+predictions and guesses. 
+    I7M TIRED.  TELL HOW TO DO IT, BRNIFITS LERNED IN DOING IT , AND
+SOME OF THE USES OF FILTERS.  TRANSLATE THE RESULTE INTO THE COMPLES
+PLANE.  FROM HERE TO THE TIME DOMAIN 8THIS MAKES THREE, COUNT THEM
+THREE DIFFERENT DOMAINS FROM WHICH TO VIEW THE SAME PROBLEM.
+     CAN ONE MAKE LAPLACE MACHINES? TIME MACHINES? 
+
+
+DIGITAL STUFF 
+

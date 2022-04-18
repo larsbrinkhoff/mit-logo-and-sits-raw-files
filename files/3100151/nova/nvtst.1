@@ -1,0 +1,9 @@
+BEGIN:	.OPEN 1,[SIXBIT /  %T15/
+	JRST	.-1
+	.OPEN 2,[SIXBIT /  $T15/
+	JRST	.-1
+LOP:	.IOT	2,0
+	.IOT	1,0
+	JRST	LOP
+	END	BEGIN
+

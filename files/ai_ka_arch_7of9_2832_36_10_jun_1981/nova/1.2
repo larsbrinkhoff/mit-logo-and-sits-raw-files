@@ -1,0 +1,781 @@
+
+
+
+
+Draft-0 Smalltalk: Dreams and Schemes, Chapter I
+
+
+
+I
+
+Personal Computing
+
+
+
+
+How do you know when you have what you want?
+
+Of course it is hard to know for certain.  Goals change with time and new
+experiences.  But you can try to acquire sufficient leverage to add or modify
+what you have as new goals are discovered.
+
+In the educational community, leverage means learning how to find out something
+new.  It is no longer possible to acquire all possible factual knowledge; it is
+no longer possible to be taught in the context of formal schooling all the facts
+needed outside that context.
+
+In the business community, leverage means learning how to research new ideas and
+how to predict the outcomes of applying these ideas without having to test all
+of them in the real world.
+
+In the social, recreational, or home communities, leverage means learning how to
+gather and organize the constantly changing possibilities for using ones' time
+and resources.
+
+At home, at work, in formal studies, leverage means the power to act
+effectively.  Such power is obtained from the incorporation of a broad range of
+information into a particular decision.  One aspect of this is to access
+information, to communicate it to oneself and to others, and to apply one idea,
+a part of that information, to a variety of contexts.  Such contexts are the
+decision making situations with which we deal each day.  Though abstract rather
+than real, these contexts serve as learning situations.  The ability to explore
+conjectures, to practice both the acquisition and evaluation of information,
+potentially increases the leverage to deal with a quickly changing society.
+
+It is the underlying assumption of this book that such accessibility and implied
+maleability of information can be obtained through a computer-based system whose
+content consists of tools for communication and modelling.  We name a system
+that provides this leverage, a personal computer.
+
+For the past several years, the Xerox Learning Research Group has been concerned
+with human-to-computer communications, particularly in the context of portable
+personal computers.  Our definition of portability is that you should be able to
+carry something else too; the vision is that a person could carry the system
+around and use it in the grass or at the beach, or other places.  The idea here
+is not the aesthetics of being able to use something outside, because of course
+we don't always do things outside.  The basic idea is that we want this resource
+to be available always so that people can use it as their primary medium for
+handling informational needs.
+
+That is our goal.  This book traces the history of our efforts to obtain our
+goal.  It is an incomplete history, written now in order to share our
+discoveries, both succcesses and misdirections, at a time when others are
+choosing to explore similar problems.
+
+
+
+What is Personal Computing?
+
+Both the word "person" and the word "computer" in "personal computing" must be
+kept in mind at all times.  In particular, all of our designs for a personal
+computing system have really started with the idea of a person sitting in front
+of a video display screen, wanting to do something with the information
+accessible via such a medium.  One of the first questions we asked ourselves is
+what is the probability that we can specifically anticipate this unfamiliar
+person's need for handling information?
+
+We decided that we could not anticipate his need at all.
+
+Complicating our inability to predict the precise activities to be carried out
+on a personal computer is that we must regard most people as being experts at
+what they already choose to do.  Indeed, almost anyone who might use the system
+knows his own way of doing whatever it is that he does: a child is an expert at
+doing what he does every day, such as drawing or constructing model airplanes,
+and children are quite different from one another; teachers engage in work that
+consists of transmitting a myriad of skills in as many different ways.  Most
+adults are engaged in work that, whether they enjoy it or not, consists of
+skills that have been built over thousands of hours.  So it was our judgment
+that it would be a hopeless task to try and provide a set of simple tools that
+would correctly anticipate people's needs in a way commensurate with their
+expertise at carrying out their needs.
+
+The conclusion we came to is that a system should be built that people
+themselves can mold into the kinds of tools they require at a given time.  This
+of course brings up what we think is 90% of the personal computer problem: It is
+a communication problem between a person and a piece of hardware, specifically
+the contents of that hardware--the software.
+
+The computer is the greatest information amplifier that has ever been produced.
+The experimental system we have presently is by no means the ultimate system,
+neither the hardware nor the software.  We hope it is in the right direction.  A
+thing that came to us as a big shock a couple of years ago, after we had been
+enjoying some success, was to suddenly discover something that is really obvious
+when you think about it; there is an enormous difference between programming and
+designing.  It is an important distinction.  While programming is easy, just
+like brick laying is easy, not everyone can design a house to be made from those
+bricks.  Not everyone can design a house and, given a design, not everybody can
+build one.  We believe this is one of the essential difficulties in making
+personal computing a reality; most of the useful tools that a user wants require
+complex designs.  Programming is by no means the most important or the most
+useful interchange of having personal computing--there are other ways of using
+it.  We feel though that the user should always have the opportunity to program.
+Programming is, after all, the ultimate way of controlling a computer.  Even if
+it is somebody else's text editor or information retrieval system, if you want
+to change a picture in it, there should be a way for the personal computer to
+allow you to do it.
+
+Here are five properties of personal computing.  They are in the order of what
+we can call distinctiveness.  Unfortunately, the first most distinctive thing
+about personal computing is the enormous attention span of each user.  The great
+uses of it in the next five to ten years may be only because it has a great
+attention span.  It is the equivalent of seventy-six trombones: You don't
+absolutely need them to do music, but boy is it fun to see them marching down
+the street.
+
+The second is the editing of everything: text, pictures, sound and models.  It
+is the one process for which personal computers will find value far beyond paper
+media.
+
+Searching and editing are the two activities that users of personal computers
+are always doing.  Users search for desired effects, ways to cause them, reasons
+why they did not happen, and how to fix them.  This third property of personal
+computing, searching, perhaps with the aid of multi-indexed information systems,
+provides an elimination of distance by connection.  Looking at the computer as a
+space, it is a space that is only topological, not metric.  In other words,
+every part of the space is the same distance from every other part.  For
+example, we are not constrained to the linear relationship of text on a display
+screen.  Rather, we can organize the parts of the text in far more complex ways
+than we are used to doing in books.  The tyranny of single-dimensional paper
+organization of information is replaced by multi-dimensional relations.
+
+Fourth, modelling and simulation are the primary substance of computers.  They
+encompass the ultimate content in using the machine.  Modelling to capture
+information, such as has been done for thousands of years in speech, hundreds of
+thousands of years in text, for just a few centuries in mathematics and a few
+decades on the computer, ever more dynamic and ever richer models than we can
+manipulate; this is how we grasp our own universe.  We can't touch our
+universe--our brain is the thing that is doing the thinking.  You can not touch
+anything with your brain; you have to convert whatever happens to all sorts of
+electro impulses.  Always dealing with the media--learning about the media and
+learning what reactions happen to a single system within it--is the most
+important content related area in computers.
+
+Finally, the most subtle use and most subtle value in interactive computing is
+the human implication.  Probably everyone has noticed how much a human can take
+in using touch and sight and smell and hearing.  There is an enormous amount of
+input bandwidth compared to what we have to communicate out with. This may be
+part of human beings' fading to media.  We see all this wonderful new
+information flooding in through all of our senses: we can hear a Bach fugue but
+can only sing one line; we can see enormous distances, but our ability to paint
+what we see is severely limited by our own physical attributes.  This is
+probably why human beings invented symbol systems--to grasp far more than they
+can communicate through the kinds of sounds they can make.  One of the
+interesting things we have noticed is that when a user of one of our
+experimental system wants to explain something to someone else, they go to the
+machine.  Why go to a machine?  Well, perhaps because there is a model there
+that, with a few simple commands or waves of ones' hand, can cause a whole
+display to appear or to change, thus invoking bandwidth that is much closer to
+what a person can see.  This is the computer acting as an amplifier of the
+ability of humans to communicate with each other, a way of matching up the
+inadequate output bandwidths that we were born with.
+
+One of the principles we have used as a guide when thinking about personal
+computing has to do with musical instruments. Nothing is more portable than a
+flute or violin--take them anywhere and play them anywhere.  One thing to notice
+about a flute or violin is that there is no lag from input to output.  Imagine
+what it would be like to play something serious on the flute if there were a
+two- or three-second lag.  This would be equivalent to a musician going to the
+concert hall in the afternoon and playing a concert, and then returning in the
+evening to hear what it might have sounded like.  Absurd.
+
+And, there is another analogy to musical instruments which is very constructive:
+By and large most musical instruments were invented as prosthetics, not to make
+music per se, but to make up for perceived deficiencies in the human voice.
+Hence they were used in order to make a lot of noise in a Roman theater or in a
+cathedral.  Back in those days the musical instruments were worse than the
+things they were replacing, except in one trivial thing: they were louder.  Over
+a long period of time--one or two hundred years--there was alot of interaction
+among composers, players and musical-instrument manufacturers.  Musical
+instruments found a value system of their own so that today they are not
+prosthetics, but amplifiers.  That is what we see as the destiny of personal
+computers: amplifiers, not prosthetics.
+
+The success of a personal computing system, then, lies in its ability to support
+the information-related activities of its many possible users.  Such a system
+must contain facilities which range from directly usable tools, such as text and
+picture editors, to the ability to describe new tools.  And these facilities
+must be learnable in various stages by users with a broad range of computing
+expertise.
+
+The problems faced by a new user parallel those of a person who has books all
+over the house and wishes to have a bookcase.  He may see an ad for one, go to
+the store, find a bookcase that is just right, and buy it.  Fortuitous and
+satisfying.  Often, though, the bookcase is not quite right.  The buyer may
+decide to get it anyway, refinish it, and adjust the shelves to fit.  If this is
+not possible, the next level of strategy is to find a kit which has much of the
+hard work already done yet still allows the builder some options.  If no kit is
+available, many people would quit and go back to orange crates.  Our resolute
+subject is brave enough to go to a lumber store to purchase materials and a
+manual about sawing, fastening and other properties of wood.  In an extreme case
+(for example, when a fancy veneer is desired), new materials must be constructed
+and the amateur must subcontract the task to an expert or must become more of an
+expert himself.
+
+All of these situations will arise in a personal computing system; it must
+contain facilities for meeting each difficulty, ranging from directly usable
+parts, to "kits" and instructions, to raw materials and theoretical knowledge.
+In order of greatest return for least amount of work, users must learn: to
+characterize their current need, to browse for and recognize a facility that
+possibly meets that need, to use it, to modify it, to fix it, to combine it with
+other facilities into a kit, and to make a facility from scratch.
+
+To summarize, our main goal is to develop and invent general media which can be
+shaped by others into facilities useful to them.  We are particularly interested
+in three aspects of this new metamedium:
+
+o	First, how media are shaped into tools, such as the ones we describe in
+the next section.
+
+o	Second, the nature of descriptions and communication which makes
+possible access to existing tools and models as well as the use and formulation
+of kits.
+
+o	And, third, we would like to learn how people may be taught
+communication skills which enable them to shape their computer medium.
+
+Ways to Use a Personal Computer
+
+One of our initial research goals is to determine a basic set of tools for
+editing and searching the information contained in a personal computing system.
+The style of editing that is selected directs the design of the user interface
+as well as the kinds of activities that the programming environment must
+support.
+
+Font Editing
+
+Although our intent is not to duplicate paper, we are finding that it works like
+paper.  There is this funny thing that happens when a new medium is invented.
+The claim is that you have been given something more, but you wind up getting
+something less.  There is something almost obscene about the idea of being able
+to edit text on a computer in a way that you can't ever do on paper, and having
+it printed out or appearing on a display screen as something that is unreadable
+(whose contrast, resolution, or ease of viewing fail to capture that of paper).
+There is more to the problem than just the display of text in a high quality
+font.  Different fonts create different moods and cast an aura that influences
+the subjective style of both writing and reading.  Our interests are to not dull
+people's senses by giving them presentations that are distant from what their
+own senses can take in.
+
+Below is an example of a page set in a particular font; it is followed by
+another example that is the same page set in another font.  The fonts should be
+programmable in the personal computing system; the user at any time should be
+able to create fonts simply by drawing them.  This is the first time, but not
+the last, that we will use the term "programming" in such a general way.  We
+prefer to think of any kind of control transaction with a computing system as
+identical to a programming transaction.  In fact, we feel that the programming
+language design is properly part of the design of the interface between the user
+and the system.
+
+------------------------------------------------------------------	---------------------------------------------------------------
+Figure 1.1.  Insert a picture of the display screen	Figure 1.2 Insert a
+picture of the same
+with a page of text in timesroman10.	page of text in helvetica12.
+-----------------------------------------------------------------	---------------------------------------------------------------
+
+
+
+Here are a number of fonts which are contained in our experimental system.
+
+----------------------------------------------------------------------------------------
+Figure 1.3.  About six displays of various interesting fonts: handwriting, ita,
+sanskrit, elvish, fingerspelling, smalltalk
+---------------------------------------------------------------------------------------
+
+Any character font can be described as a matrix of black and white dots.  Using
+a pointing device, the user can draw in a character font of his own choosing.
+He can then immediately view font changes within the context of text displayed
+on the screen.  With our system's fine grain of display, the rough edges
+disappear at normal viewing distance to produce high quality characters.
+
+----------------------------------------------------------------------------------------
+Figure 1.4.  Designing the font for the button box simulation: Create the horn;
+Show the rest--uparrow, right arrow, penup, pendn, start to remember, stop
+remember, do what you remember, forget, and numbers 1 through 10.
+---------------------------------------------------------------------------------------
+
+The malleability of this approach is illustrated below: this user has decided to
+embellish some favorite nouns with their iconic referent.  A teacher of early
+reading might like to help children form correspondences between words and
+objects by having the visual representations interchange when pointed to by the
+child; an audio output facility could provide the sound of the word as well.
+
+----------------------------------------------------------------------------------------
+Figure 1.5.  Telling a story with pictures (from PDM: a flower, a bee, and a
+bear.
+---------------------------------------------------------------------------------------
+
+Text Editing
+
+Every description or object in a personal computing system--such as the
+character fonts described above--must be displayable and editable.  Text, both
+sequential and structured, can be manipulated by combining pointing and a simple
+"menu" of editing commands, thus allowing deletion, transposition and
+structuring.  Although a little unglamorous to discuss, users do find themselves
+editing text and pictures for about eighty percent of the time they spend using
+a computing system.  The malleability possible through interactive editing is
+illustrated by entering a little story about butterflies [or some such thing].
+
+By pointing with the stylus to some position in the text and typing, text is
+inserted.  Here we see first a clean page.  We point to the beginning and type
+some text, making some typing errors along the way.
+
+----------------------------------------------------------------------------------------
+Figure 1.6.  Blank page; cursor and selection symbol; typing with inset view of
+keyboard the text about butterflies.
+---------------------------------------------------------------------------------------
+
+The stylus can be used to "grab" characters.  It leaves a "trail" to show where
+it has been, that is, which characters have been selected (here we are using a
+box to indicate the trail).  We grab a part of the text that was incorrectly
+typed, selecting it, and then type new characters on the keyboard.  The selected
+text is easily replaced.
+
+----------------------------------------------------------------------------------------
+Figure 1.7.  Grabbing characters and replacing them, with inset view of the
+pointing device.
+---------------------------------------------------------------------------------------
+
+Anything can be deleted.  Select the characters and then select the command
+'delete' that appears in a list of editing commands, a menu, near the text.
+
+----------------------------------------------------------------------------------------
+Figure 1.8.  Grabbing characters and deleting them.
+---------------------------------------------------------------------------------------
+
+Deleted text is stored away and can be retrieved to be placed into a new
+position on the page.
+
+----------------------------------------------------------------------------------------
+Figure 1.9.  Pasting the deleted text elsewhere.
+---------------------------------------------------------------------------------------
+
+Similarly, anything can be selected and copied.
+
+----------------------------------------------------------------------------------------
+Figure 1.10.  Copying text.
+---------------------------------------------------------------------------------------
+
+Copied text can be pasted into new positions.
+
+----------------------------------------------------------------------------------------
+Figure 1.11.  And pasting it in several places.
+---------------------------------------------------------------------------------------
+
+Text can be entered via the stylus as well.  Individual handprinted character
+recognizers like the one we have been experimenting with have been around for a
+number of years.  The handprinted word gets changed to the proper font
+characters.  It can then be selected and inserted.
+
+----------------------------------------------------------------------------------------
+Figure 1.12.  Hand drawn characters for insertion.
+---------------------------------------------------------------------------------------
+
+Setting margins, justification of paragraphs, changing facing and fonts, are all
+done by selecting the text and choosing the appropriate command displayed in a
+menu next to the text area.
+
+Graphics
+
+The only way we felt that we could achieve flexability in the new graphics was
+to design a mosiac display.  We felt that the display surface of a personal
+computer would be a million-dot mosaic display of some kind.  Instead of
+building graphics hardware to manipulate this mosaic display, we would build a
+machine so that all of the graphics could be done entirely by software.  [extend
+with human factors study, Cornsweet reference]
+
+Here is a tool for drawing around with a thin line of black ink.  The message
+here is that you should be free to play around and do the kind of doodling that
+you can do on paper as well the very crystalline things normally associated with
+computer graphics.
+
+----------------------------------------------------------------------------------------
+Figure 1.13.  A tool for drawing around with a thin line of black ink.
+---------------------------------------------------------------------------------------
+
+The sequence below shows a sketch being planned, scrubbed out, edited, and then
+finished off to the user's pleasure.  The dots on the display are either black
+or white, as are the dots in newspaper photos.  The subjective effect of grey
+scale is caused by the eye fusing an area containing a mixture of small black
+and white dots.
+
+----------------------------------------------------------------------------------------
+Figure 1.14.  A sketch of the LRG logo: ACK's little man.
+---------------------------------------------------------------------------------------
+
+The next set of pictures shows a palette of paint dots (toned patterns) and some
+brushes.  A brush can be grabbed with the pointing device, dipped into a paint
+pot, and then the half-tone can be swabbed on as a function of the size, shape
+and velocity of the brush.  Brushes can be 0-dimensional (like a pencil point),
+1-dimensional (like a hoe or rake), or 2-dimensional.  The set of pictures shows
+a rather large rectangular brush after swabbing on some tone.  [or some such
+sequence] Then a circular brush is grabbed.  The last pair of pictures shows a
+flower-shaped brush used to give the effect of painting wallpaper; anything that
+appears anywhere can be used, not just as a picture, but as a brush. [Use one of
+flegal's tile designs instead] It can be stored away in a repertoire of brushes
+for later use.
+
+----------------------------------------------------------------------------------------
+Figure 1.15.  Pictures showing the painting with halftone paint and brushes. Use
+one of flegal's tile designs for final sequence.
+---------------------------------------------------------------------------------------
+
+Pictures are manipulable objects and may be stored in the same way as character
+fonts and texts, and printed on hard copy.
+
+Document Editing
+
+A document is any object in the information system that has structure.  A
+chapter of a book, such as the one you are presently reading, is a document;
+this entire book is a document; an office memo is a document; a library catalog
+entry card is a document; and a description of an algorithm in some programming
+language is a document.  Primitively, a paragraph, a picture, a heading, and a
+bar chart are each documents.  They can be grouped together to compose a page of
+a report; the grouping is a document.
+
+A document editor is a facility for creating, modifying, and composing documents
+containing other documents.  Using this chapter as an example, a document
+created using an editor may contain an image consisting of a mapping of black
+and white dots (a bitmap, or with less jargon, a picture), text images
+(paragraphs), and headings.  Each kind of image is idiomatic in the sense that
+it is made up of particular parts that are added, deleted or formatted in a
+particular fashion (like bits or text characters); each image therefore has its
+own idiomatic editor such as those already portrayed for drawing or text
+editing.
+
+Below is a page from a document describing a "heading" idiom of a particular
+document editor.
+
+----------------------------------------------------------------------------------------
+Figure 1.16.  A page from the document editor documentation showing textimage,
+bordered textimage, heading, bitimages.
+---------------------------------------------------------------------------------------
+
+To edit the parts, simply point: pointing to text invokes a text editor;
+pointing to a picture invokes a painting tool; pointing to a heading invokes an
+editor that lets the user shift individual characters right, left, up, or down.
+
+----------------------------------------------------------------------------------------
+Figure 1.17.  Zoom in on a heading: shift the characters and change the font and
+content.
+---------------------------------------------------------------------------------------
+
+The font or facing for the entire heading can be changed.  Text is changed
+simply by typing on a keyboard as in the text editor previously described.
+
+Controlling the Display of Information
+
+A view is the manner in which a particular document is displayed on the video
+screen or on paper or using some other device.  This book can be viewed in a
+number of ways: ordered as written and displayed on the screen or on paper,
+headings only (the table of contents), index only, a listing of special terms (a
+kind of glossary), graphic images only, text images only, and so on.
+
+Viewports are display frames within the larger display screen.  They enable the
+user of a personal computing system to organize and edit documents viewed at
+several levels of refinement.  Views of the same or different documents can be
+displayed simultaneously.  Physically, viewports are rectangular areas of the
+screen that provide user access to both a document and its editor.
+
+Here is a view of someone's personal information display.
+
+----------------------------------------------------------------------------------------
+Figure 1.18.  Zoom out from the bitimage of the flegal's tile, made from the
+user-brush of Figure 1.15, to see it as a frame with several less elaborate
+others.  The distance should only hint at content.
+---------------------------------------------------------------------------------------
+
+Looking closer we see each of the kinds of images already mentioned.  The user
+"enters" a viewport by placing a pointing device in the rectangular area.  The
+system recognizes this request by displaying additional information related to
+the editing of the viewed document.
+
+----------------------------------------------------------------------------------------
+Figure 1.19.  A closer view of Figure 1.18 to see some content.  Put the
+pointing device in the viewport containing the fancy frame; the toolbox editor
+is displayed.
+---------------------------------------------------------------------------------------
+
+Forms for Information Retrieval
+
+So far, the personal computer has been discussed as an easily changeable file
+memory for words and pictures.  A user's context can be arranged as a dictionary
+of names and their definitions.  The names could label fields of a library
+catalog card; the definitions would be the completed fields describing a book
+name, author, publication date, and so on.  The names could be the names of
+procedures in a programming language and the definitions their associated
+algorithms; or the names could be references to pictures with the actual
+drawings stored as the definitions.
+
+The dictionary is, of course, a document; it is a way to store and retrieve
+related information.  As we saw earlier, each kind of entry in the dictionary
+could have its own editor.  And each entry may be related sequentially (as with
+ordinary paper usage) or inverted with respect to properties (as in a
+cross-indexed file system).  One application of using the inversion method is to
+be able to automatically crossfile several thousand multifield records, say of a
+library system.  One kind of library record could be one that is dynamically
+maintained by the library users; the record for a book or reference material
+would be annotated by the current readers, and updated and reread by previous
+readers.  The annotation could be text, or a sketch, or a diagram.
+
+----------------------------------------------------------------------------------------
+Figure 1.20.  A Findit record view.
+---------------------------------------------------------------------------------------
+
+A document could be used as a formatting device for specifying information to be
+retrieved.  The next figure shows a document whose view is like that of a
+dictionary.  Only the template of the dictionary appears at first.  The user
+fills in as much of the document as is known, including either the names of the
+entries or the definitions.  The layout of the form can be like a conventional
+catalog card, as shown, or be viewed more like a report whose parts' labels are
+typically hidden.
+
+----------------------------------------------------------------------------------------
+Figure 1.21.  A sequence showing a Findit record being completed and search
+requested.
+---------------------------------------------------------------------------------------
+
+Animation and Music
+
+Animation, music, and programming can be thought of as different sensory views
+of dynamic processes.  The structural similarities among them are apparent in a
+personal computing system that provides a common framework for expressing these
+ideas.
+
+All of the systems are equally controllable by hand or by programming.  Thus,
+drawing and painting can be done using a pointing device or in conjunction with
+programs which draw straight lines or curves, fill in areas with tone, show
+perspectives of three-dimensional models, and so on.  Any graphic expression can
+be animated, either by reflecting a simulation (such as bouncing objects in free
+space) or by showing an example (giving an "animator" program a sample trace or
+a route to follow).
+
+----------------------------------------------------------------------------------------
+Figure 1.22.  An animation sequence.
+---------------------------------------------------------------------------------------
+
+Music is controlled in a completely analogous manner.  The personal computer can
+act as a "super synthesizer" getting direction either from a keyboard or from a
+"score" (a sequence of actions over time).  The keystrokes can be captured,
+edited and played back.  Children can both learn to play and compose at the same
+time because they do not have to spend several years becoming good enough
+technically to play their own compositions.
+
+Timbres are the fonts of musical expression as they contain the quality and mood
+which different instruments bring to an orchestration.  They may be captured,
+edited and used dynamically.
+
+----------------------------------------------------------------------------------------
+Figure 1.23.  Captured score; generation of a timbre.
+---------------------------------------------------------------------------------------
+
+Smalltalk Programming
+
+Each of the example tools of the previous sections are taken from experimental
+systems written in the Smalltalk programming language.  Smalltalk is a language
+whose basis is that of communication itself.  Ideas like numbers, simulations
+and drawings are gotten as extensions to the kernal language.  We figured the
+safest way of not anticipating what people were going to do was to not try and
+guess a fixed set of features for the system.  One of our main points is that
+the power of a programming system is determined almost entirely by how well it
+does in areas for which it does not have features.  We designed Smalltalk so
+that the kernal really doesn't have any features except the ability to create
+communicating descriptions.
+
+We have actually designed and implemented several software systems.  Each come
+under the generic name Smalltalk.  Each of these implementations will be
+explored in this book.  For this chapter, however, Smalltalk's semantics has
+been somewhat idealized and simplfied.
+
+The traditional differences between interactive control of computer tools and
+the programming of these tools have rarely been resolved in an interactive
+system.  Yet, ever since JOSS in the early sixties, the only distinctions needed
+between direct and indirect programming have been the amount and the kinds of
+delay between specification and effect.  In designing a programming language, we
+wish to limit the forms of specification, but not their range; we want to
+crystallize a style of programming, not just arrive at a syntax for expressions.
+Though we search for ways to make our personal computing system more abstractly
+simple, we wish to teach users through examples and incremental changes.  In
+this way, the user can gradually notice the uniformity of the system and begin
+to rely on guesses derived from concrete experience.
+
+If we think of a computer as an environment in which time, space, and structure
+can be fashioned, and a programming language as a vehicle for describing and
+building complex dynamic structures, then metaphors drawn from the most complex
+systems we know, the biological cell, can be very helpful in guiding the
+principles of the language we will use.
+
+A biological cell is a structure with more on the inside than on the outside.
+In fact, these organisms expend a considerable percentage of their energy and
+activities in just maintaining the distinction between inside and outside.
+Where almost all of a complex molecule's structure is exposed to the ravages of
+any environment in which it is put, a cell only exposes a small part of its
+structure: its cell membrane, a fabric specialized to keep all parts of the
+environment, except those beneficial to the cell, away from the more delicate
+structures inside.
+
+The cell membrane also keeps the cell in.  Inside is a miniature sea, a
+primordial soup which the cell keeps simmering to make more cells.  There are
+recognizable parts within a cell.  Some, like granules and a host of organic and
+inorganic molecules, appear to have a simple relation to the entirety.  Others,
+like the mitochondrial chemical factories and genetic material, are so
+intertwined into the life cycle of the organism that it is difficult to
+fruitfully discuss their nature in isolation.
+
+When a cell divides to produce a twin, the least important of its constituants,
+the majority of its cytoplasm and membrane, is simply increased and shared.  Its
+most important parts however, the nucleus and mitochondria, are copied as
+exactly as nature will permit.  Thus, part of every kind of cell are closely
+similar structures which link their destinies coupled with parts that are those
+of individual cells alone.
+
+The potential for differentiation within a fixed heritage is enormous.  Every
+body-cell in human beings has the same ancestry, yet has let itself be
+differentiated by chemical messengers to form a marvelous variety of specialized
+tissues and organs to make up creatures which for the most part are blissfully
+unaware of their inner majesty.
+
+Now how does this relate to a programming language?
+
+Stripped of their metaphysics, every Smalltalk language design has been
+concerned with how to deal with information organized in the form of parts and
+wholes, for example, dictionaries which relate part-names to their active
+meanings.  The first step in the development of this model was to give each
+dictionary-object a separate inside and outside.  Users of the object can deal
+with a never changing virtual organization from the outside.  Programmers of the
+object can, from the inside, change methods for carrying out its virtual
+meanings at any time, as long as the external behavior stays the same.  The
+distinction between inside and outside means that users must communicate with an
+object to get it to do anything.  Direct absolute commands no longer are
+possible; they are replaced by queries tendered in the form of messages.
+Objects from the outside thus act quite like digital computers in a
+communications network and are neither data-structures nor procedures.
+
+Since there are many more objects in the universe than are contained in any one
+dictionary (save the universal dictionary), every dictionary can be thought of
+as a filter (or masking device) that selects some objects from the universe and
+rejects most others.  The "insideness" and "outsideness" of a dictionary-object
+is itself constructed by filtering: the outside is portrayed by a filter that
+suppresses internal organization for a simpler external fiction.  Filtering
+provides a mechanism for developing interfaces to the human user of a computing
+system and to other objects in the system.  As we introduced earlier, because
+every dictionary-object is ultimately dealt with as a picture on the display
+screen, it simplifies matters to consider every object as inherently an image
+with a variety of default and user-supplied ways to display itself for perusal
+and editing.  In the next figure we see a complex object in process being viewed
+by three objects: two are display viewports.  Each view of an object is
+constructed by specifying a particular filter and method for displaying that
+filter.  Edits passed through one view that change the state of the object must
+be continuously reflected back through all the other views of the object.
+
+----------------------------------------------------------------------------------------
+Figure 1.24.  Multiple views of a musical score presented through different
+viewports.
+---------------------------------------------------------------------------------------
+
+If entries in the internal representation of an object can refer to each other,
+then a perfectly general systems network is possible.  We can think of an entry
+as containing references to the name of the entry and its meaning.  The meaning
+of an entry is thus an object which can be shared (that is, it can be contained
+by other entries in other dictionary objects).  This parts-wholes semantics is
+also used by the external representation of an object but, as mentioned, its
+details may be completely different from the object's internal strategies.
+
+Filtering is used to provide meta-levels of description structuring, ranging
+from low-level parts, wholes and messages; to inheritance of properties of an
+object; to meta-building blocks; to kits and applications.  An
+identify-preserving filtration was shown in Figure 1.24; the identical musical
+score is viewed in different ways on the display screen.  Identity-changing
+filtration facilitates a second level of system structuring: ways to describe
+the kinds of objects we wish to gather together to carry out our wishes.  A
+framework we can employ is to use filtering to create new objects that are
+dynamic analogies of objects we already know about.  This analogy filtering
+mechanism permits differential programming, that is, programming by saying:
+"...I want something just like you, except...".  So the first level of
+structuring--communicating-objects, parts-wholes, insides-outsides, and
+filtering with editing and searching facilities--provides objects that act as
+prototypes from which new objects may inherit analogous characteristics.
+
+More system levels are possible and needed in order to have a system for users
+who vary greatly in their computing abilities.  A third level is to impose
+sharply orthogonal properties on a small number of basic prototypical objects in
+order to provide a rich domain for building simulations.  As an example,
+consider the following three orthogonal prototypes.  First, a prototypical
+object which represents spatial (or locative) characteristics can be the basis
+for a wide variety of further descriptions, such as numbers and other algebraic
+systems, composition and setting for illustrations, documents, circuit diagrams,
+musical scores, animation scenarios, and programs themselves.  A second
+prototype embodies the general notion of travelling in a spatial domain.
+Examples are a constrained numeric variable, a cursor in a document, a paint
+brush in an illustration, a player in a musical score, a role in an animation, a
+process point in a program.  Travellers may employ elaborate strategies in
+deciding when to move from one location in a space to another, and what to do
+when they arrive.  A prototype which supplies a third dimension to this model is
+that of a decoration.  This is an entity which is not strictly necessary for the
+trip of a traveller through a space, except in a zero-dimensional form, but,
+when present, greatly enhances the journey.  In the following example, the
+zero-dimensional form is provided in parentheses.  Examples are: a physical
+dimension such as length or weight attached to a changing quantity (a scaler);
+different type-fonts in a document (a default font); tone/color and texture in
+an illustration; the timbre of an instrument used to play a score (a pure sine
+wave); the costume of a role in an animation (a dot); and the particular
+pragmatic-primitives employed by a program-interpreter.
+
+Kits are the fourth level of structure we can use.  A kit is a further filtering
+on a domain; it greatly focuses the degrees of freedom of the domain towards a
+particular goal.  Examples that we have tested in Smalltalk include kits for:
+arithmetic, algebra, and geometry; document editing; drawing and painting;
+music; animation; and job-shop simulation.  Each of these can be understood as
+specializations (filtrations) of the three orthogonal prototypes mentioned
+previously.
+
+A fifth level of structuring is that of an application, a system whose use is
+tailored to a particular problem.  Applications require the least deep
+understanding by a user because most degrees of freedom have been removed; as a
+result, they are the most difficult system designs to anticipate correctly.
+Examples of applications are a music system for composition and orchestration, a
+particular kind of viewport for examining Smalltalk programs (called a browser),
+and an information retrieval system for a library.  Ideally, all applications
+should be built with a careful regard to each of the four lower levels of
+structuring we have discussed.  Like the person with books all over the house
+who wished to purchase a bookcase, a user unhappy with features in an
+application could very likely fix them at the next (kit) level without having to
+descend to more atomic levels to create new material.  For example, a kit such
+as the job-shop simulator can be specialized by a user into a specific
+application for estimating solutions to a business problem.  Yet the simulation
+application can again be addressed by the user at the kit level when changes are
+needed (such as to add office workers or office equipment).
+
+
+
+-------------------------
+
+This has just been a quick sampler of the kinds of things that can be done using
+a personal computing system.  Each of these editing tools, as well as other ways
+of providing the same functions, will be explored in some depth as we begin to
+look more closely at the Smalltalk programming language and the environment it
+creates.
+
+
+
+Other Readings
+
+Human Factors
+
+Card and Moran book
+
+Cornsweet
+
+Earlier Interactive Systems
+
+JOSS
+
+Smalltalk Papers
+
+Kay Goldberg and Kay
+
+Ingalls
+
+Windowing as an interface device
+
+Teitelman
+

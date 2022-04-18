@@ -1,0 +1,190 @@
+(comment
+
+Basic Setup for critterworld
+
+Events--Most or all can be WHILE or WHEN.
+:AGE= n
+:HEADING= n
+:MOUSE-BUTTONS clicked
+:DISTANCE critter1 critter2 <n   This covers touching, too.  If we want to have areas,
+                               distinct from critters,(I think so--they'll have almost
+				no moving parts) then we need an--
+:OVERAREA area
+
+
+Actions--
+:MOVE heading speed				;note the assymetry between args to
+:MOVE-TO x y &opt speed				;MOVE and to :TURN . The analogous format 
+:TURN  angle &opt omega				;would be :MOVE heading distance &opt speed.
+:TURN-TO heading &opt omega
+:DISAPPEAR
+:REAPPEAR
+:CREATE-INSTANCE species-name &opt etc.
+:CHANGE-TO other-species &opt etc.
+:MAKE-SOUND note-list
+:GO-AWAY  (for good)                                                   
+:SCORE-POINTS etc.
+:PAINT etc.
+:BOUNCE &opt (rules Newtonian) (elasticity 1)
+:WAIT-THEN-DO time action			end comment)
+
+;The conditionals:
+
+(defmacro WHILE (event . messages)		;(WHILE ( :HEADING= n)(:MOVE heading)
+    `(if (<- self ,event )                         ;                    (:PAINT color)
+               	(<<-- self ,messages)))	        	;                    (:BEEP))
+
+
+
+(defclass sprite-class object-class (x-pos y-pos parent picture-array mask background
+				  picture-heading age ))
+(defclass critter-class sprite-class (rules heading speed dx dy dt))  
+
+(defmethod (sprite-class :BORN) () (setq x-pos 0
+					 y-pos 0
+					 picture-heading 0
+					 age 0))
+(defmethod (sprite-class :BORN) () (setq x-pos 0
+					 y-pos 0
+					 picture-heading 0
+					 age 0
+					 heading 0
+					 speed 0
+					 dx 0
+					 dy 0
+					 dt 0)) 
+
+;Events--
+
+(defmethod (sprite-class :DISTANCE) (crit)	;Note--Box metric.
+  (let ((x1 (<- crit ':x-pos))
+	(y1 (<- crit ':y-pos)))
+    (let ((dist (+ (abs (- x-pos x1))(abs (- y-pos y1)))))
+;      (<- crit ':NEW-DIST-INFO self dist)
+      dist)
+    )						
+  )
+
+(defmethod (sprite-class :MOVE-TO) (x y)
+  (setq x-pos x y-pos y))
+
+(defmethod (critter-class :MOVE) ()
+  (setq dx (* (cos heading) (* speed dt))
+	dy (* (sin heading) (* speed dt))
+	x-pos (+ x-pos dx)
+	y-pos (+ y-pos dy)))
+(comment
+(defmethod (sprite-class :MOVE) ()
+  (setq dx (* (cos heading) (* speed dt))
+	dy (* (sin heading) (* speed dt))
+	x-pos (+ x-pos dx)
+	y-pos (+ y-pos dy)))
+end comment)
+
+(defmethod (critter-class :PICTURE-SPIN) (omega)
+  (setq picture-heading (+ picture-heading (* omega dt))))
+
+(defmethod (critter-class :TURN-TO) (angle &optional omega)	;Perhaps this shd be for all
+    (setq picture-heading (+ picture-heading (- angle heading))	;sprites.  Also, I'm punting
+	  heading angle))			                ;on angular velocity for now.
+
+(defmethod (critter-class :TURN) (angle &optional omega)
+  (setq heading (+ heading angle)))
+
+
+(defmacro make-new-species
+        (species-name species-rules species-picture-array)	
+        `(progn
+	  (defclass ,(intern (string-append species-name "-CRITTER-CLASS")) critter-class nil)
+	  (defmethod (,(intern (string-append species-name "-CRITTER-CLASS")) :BORN) ()
+		     (setq picture-array  ,species-picture-array
+			   rules  ,species-rules)		
+		     ;(<- self :STARTMOVING)
+		     )))
+
+(defclass ticktockman-class object-class (critterlist cycletime dt))
+
+
+(defmethod (ticktockman-class :FIAT-CRITTERMUNDI)()
+  (<- self ':critterlist critterlist)
+  (do () ((kbd-tty-no-hang))				;Comment  What for an end test--g?
+    (let ((timer (time)))			        ;this is only every 1/60 sec
+      (dolist (crit critterlist)		
+	(<- crit ':UPDATE))
+      (<- self ':COMMUNE-WITH-HEAVEN)	       	;this will allow for divine intervention. Is
+      (let (( dt (- (time) timer)))	                	;a no-op for now. see below
+	(if ( dt cycletime)
+	    (progn (sleep dt)(<- self ':dt<- cycletime))
+	    (<- self ':dt<- (+ cycletime dt)))
+	)
+      )
+    )
+  )
+
+;;About COMMUNE-WITH-HEAVEN.  This is to give us gods a chance to throw in new critters,
+;;or fiddle around with those we've already made.  None of this Prime Mover, give things 
+;;a shove and go away stuff. I have yet to find out how to do this, so for now:						
+
+(defmethod (ticktockman-class :COMMUNE-WITH-HEAVEN)()
+  ()      )
+(defmethod (ticktockman-class :NEWCRITTER) (newby)
+  (setq critterlist (append critterlist (list newby))))
+
+(setq ticktockman (<- ticktockman-class ':NEW 'cycletime 4))
+
+(defmethod (sprite-class :CREATE-INSTANCE)
+  (species-name &optional
+		(name (gensym))
+		(new-x x-pos)			;default is creator's x-pos
+		(new-y y-pos)	        	;etc.
+		(new-heading  heading)
+		(new-speed speed))
+  (let ((creature (<- (symeval (intern (string-append  species-name "-CRITTER-CLASS")))
+		      ':NEW 'x-pos new-x
+		            'y-pos new-y
+			    'heading new-heading
+			    'speed new-speed
+			    'parent self)))
+    (set name creature))
+  (<- ticktockman ':NEWCRITTER name)   )
+
+;(defclass sprite-class object-class (x-pos y-pos parent picture-array mask background
+	;				   picture-heading age ))
+;(defclass critter-class sprite-class (rules heading speed dx dy dt))
+
+(defmethod (sprite-class :UPDATE)(newdt)	;alternatively, each critter could check the
+  (setq age (+ age 1)				;time hisself.This would be more accurate,
+    	dt newdt  )				;and more "local", but also more time 
+						;consuming (no pun intended, but now that
+						;that it's there...).
+  (<- self ':DO-RULES)
+ ;(<- self ':REDRAW)
+  )
+
+(defmethod (critter-class :DO-RULES) ()
+  (mapc 'eval rules))
+
+
+
+
+
+
+
+
+                                                                      (comment
+	Who  Done?	     Actions--
+	T       T            :MOVE heading speed
+	T       T            :MOVE-TO x y &opt speed			
+	T	T	     :TURN  angle &opt omega			
+	T	T	     :TURN-TO heading &opt omega
+	P	?	     :DISAPPEAR
+	P	?	     :REAPPEAR
+	T	T	     :CREATE-INSTANCE species-name &opt etc.
+	T	N	     :CHANGE-TO other-species &opt etc.
+	T	N	     :MAKE-SOUND note-list
+	T	N	     :GO-AWAY  (for good)  
+	T	N	     :SCORE-POINTS etc.
+	P?	?	     :PAINT etc.
+	T	N	     :BOUNCE &opt (rules Newtonian) (elasticity 1)
+	T       N            :WAIT-THEN-DO time action			end comment)
+

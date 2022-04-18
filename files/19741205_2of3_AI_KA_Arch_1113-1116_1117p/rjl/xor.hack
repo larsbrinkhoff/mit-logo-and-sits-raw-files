@@ -1,0 +1,7 @@
+;MINI-XOR-RWG
+	MOV A,C
+	BIS B,A
+	ASL A
+	SUB B,A
+	SUB C,A
+

@@ -1,0 +1,92 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.fi b
+.ls 2
+.sp 5
+bold(LOGO:  A Computer Language As A Learning Environment)
+
+.ls 1
+.nf l
+.sp 4
+by Daniel H. Watt, Ph. D.
+
+Research Associate, MIT LOGO Group
+545 Technology Square, Cambridge, MA 02139
+
+Director, Computer Resource Center,
+Technical Education Research Centers
+8 Eliot Street, Cambridge, MA 02138
+
+
+.fi b
+.sp 5
+For many years the work of the MIT LOGO Group has been supported  primarily by the National Science Foundation, and secondarily by a number of other public and private agencies. The Texas Instruments company has provided direct support for the technical development of TI LOGO. The author wishes to acknowledge the support of these agencies, and of the Public Schools of Brookline, Massachusetts. The opinions expressed here are those of the author, and not the responsibility of any of the supporting agencies. 
+
+.bp
+.ls 2
+bold(LOGO: A Computer Language as a Learning Environment)
+
+LOGO, a powerful, high-level computer language designed for educational purposes - especially as a programming language suitable for young children - will soon be available on Texas Instruments  TI  99/4   Home Computers. For more than a dozen years the LOGO language and related computer programming activities have been developed and tested by the LOGO Group at the Massachusetts Institute of Technology. Under the leadership of MIT Professor Seymour Papert, LOGO activities have been used with children as young as nursery school age, with MIT undergraduates, and with many students of all ages in between. The philosophy of LOGO's developers has been:  "No threshhold, no ceiling." A beginner can make the computer do something meaningful and interesting in the very first programming session. At the other extreme, LOGO is suitable for extremely advanced programming projects.
+
+
+The philosophy of LOGO has been derived  primarily from two sources: the developmental theories of the late Swiss psychologist, Jean Piaget, with whom Seymour Papert worked for several years before coming to MIT, and ideas from a modern scientific field called Artificial Intelligence. From Piaget comes the idea of creating learning environments in which most of what children learn can occur naturally - in the same way children learn to speak their native language, walk or run, and play ball. From Artifical Intelligence come ideas about ways to use programming languages to aid thinking and problem solving. Programming a computer in LOGO is seen as the act of teaching the computer a set of new commands, based on what it already knows how to do. Each user is, in effect, creating her own computer language, to suit her own purposes. Readers interested in learning more about these ideas should read Mindstorms, a recent book by Seymour Papert, in which he develops and extends his vision of the relationship between computers and learning that led to the development of LOGO.
+
+LOGO activities are designed to allow use of the computer in a way that is personally meaningful to the user. Activities developed by the MIT LOGO Group have included using a computer to control the behavior of a robot turtle, draw pictures and explore geometric environments on a TV screen, create computer animations, invent interactive computer games, compose, arrange and play music,  and produce "poetry". The best known LOGO activity is using a simulated robot turtle on a TV screen to produce geometric designs and cartoon-like drawings. Hundreds of children have learned  computer programming and problem solving skills, and  developed mathematical expertise while writing programs for the turtle. 
+
+The LOGO language includes commands to make the turtle move and draw pictures. A student drawing with the turtle can make it move around on the TV screen, by typing familiar commands such as FORWARD and BACK or RIGHT and LEFT.  The information a beginner needs to control the turtle is already present in her own body knowledge of how to move forward or back and how to turn right and left. Programming becomes an extension of something the learner already knows rather than something requiring the mastery of an elaborate technical language or a complex coordinate system. The turtle becomes for the learner, what Seymour Papert has called "an object to think with."  The student using the computer as a programming tool becomes more aware of both her own body motion and the behavior of the computer.
+
+The version of LOGO developed collaboratively by Texas Instruments and the MIT LOGO Group for the TI 99/4, includes an entirely new graphics environment called a "Sprites World". Sprites are small objects that can move rapidly around the screen changing shape, color, speed and direction. Large numbers of sprites can appear at the same time to produce exciting animated designs, or to be used as elements in programs to create video games. The sprites world promises to be one of the most exciting computer based learning environments yet invented, because of its inherent attraction for so many people and because of the geometric and problem solving ideas embedded in it.
+
+bold(The World of the Turtle)
+
+Let's take a closer look at what actually happens when someone learns to program a computer using the LOGO turtle. The turtle responds to simple commands typed at the keyboard:  FORWARD  100,  BACK  50,  RIGHT  90,  LEFT  45,  etc.  FORWARD 100 moves the turtle forward "100 turtle steps," drwaing a line on the TV screen in the process.  LEFT 45 makes the turtle rotate 45 degrees to its own left. People learning LOGO find it natural to "identify" with the turtle, imagining themselves going through its motions, as it carries out a particular task. At the same time, controlling the turtle becomes a metaphor for controlling the computer itself - like the turtle, the computer responds to an ordered series of commands, and to procedures, defined as series of commands.
+
+The ways in which the actions of the turtle can lead to geometric designs, as well as the method used to define procedures is illustrated in the following simple examples. The turtle can draw a square by repeating the commands  FORWARD  100  RIGHT  90  four times.  A procedure can be defined by choosing a name (BOX, for example) and typing a series of commands in order.
+.sp 4
+(figure 1)
+.sp 4
+
+When the new command,  BOX,  is typed, the turtle immediately draws the shape shown in the figure. (The small triangle shown in the figure represents the turtle - showing its position and heading.)  A similar procedure,  TRI,  can be defined as follows:
+.sp 4
+(figure 2)
+.sp 4
+
+
+A student who has defined procedures such as BOX  and  TRI  is beginning to  "teach the computer" her own private language.  BOX  and TRI  can now be used in the same way as other LOGO commands.  They can be used to create other drawings such as a simple "house" or an abstract geometric "flower".
+.sp 4				
+(figure 3)
+.sp 4
+(figure 4)
+.sp 4
+This approach to geometry and programming provides the basis for a rich universe of activities known as Turtle Geometry, which includes cartoon drawings, simple and complex geometric designs, mathematical theory building and computer games. Extensions of Turtle Geometry have proven fruitful when used with advanced high school students or MIT undergraduates. The universe of Turtle Geometry provides a conceptual framework for such aspects of mathematics as the relation between shapes and angles, coordinate systems, positive and negative numbers, the use of variables, symmetry and similarity, and even calculus and differential geometry. The computer programming involved in beginning LOGO activities can include procedures and subprocedures, the naming of procedures and variables, procedural hierarchy, recursion and iteration, the use of conditional logic, and the development of problem solving strategies. 
+
+Within the universe of Turtle Geometry there is room for different students, working individually, to create their own sub-universes or microworlds, with their own limited but expandable sets of concepts and related activities and projects. Teaching someone LOGO can be seen as the task of helping each learner create, explore, and extend her own microworld. (For more information about what has actually been done by students in this type of learning environment, readers can order a copy of the Final Report of the Brookline LOGO Project, from the MIT LOGO Group.) Here are some more examples of turtle drawings, created by students learning LOGO.
+.sp 4
+(figure 5)
+.sp 4
+I have used turtle geometry as an example of what can be done with LOGO because it is easy for a reader to visualize the commands and to see how they lead to procedures that produce the results in the pictures - just as it is for young children. Children learning LOGO have actually carried out many other types of projects as well: moving turtles, finding their way around racetracks or mazes, animated cartoons, interactive computer games such as Nim and Tic-Tac-Toe, programs which generate sentences or poetry, or play mad-libs, and programs to translate English into Morse Code, or vice-versa. As LOGO becomes available to owners of  TI 99/4 computers I hope that these pages can be a forum for describing your LOGO projects. Since there will soon be more LOGO users than ever before, we can expect more and different LOGO projects to emerge. One of the best ways to build the culture of LOGO, is for users to share project ideas through the pages of magazines such as this.
+
+Although TI LOGO is a recent entry to the LOGO World, a prototype version has already been tested with hundreds of students between the ages of three and nine at the Lamplighter School in Dallas, Texas, and by students in fifteen elementary and junior high schools in New York City.  Using the Sprites World of animated graphics  activities, these students are busily creating a new universe of LOGO activities, to delight and educate a new generation of computer users.  In an age in which computers are omnipresent in society, and in which universal computer literacy is a pressing national need, computer-based learning environments like LOGO have become essential to the process of growing up literate in the last decades of the twentieth century.
+
+bold(References)
+
+Abelson, H. and A. diSessa. Turtle Geometry, MIT Press, Cambridge, Massachusetts, 1981.
+
+Papert, S. Mindstorms: Children, Computers, and Powerful Ideas, Basic Books, New York, NY, 1980.
+
+Papert, S. diSessa, A., Watt, D., and S. Weir. "Final Report of the Brookline LOGO Project" Volumes II and III. MIT LOGO Memos 53 and 54, Cambridge, Massachusetts, 1979.
+
+Papert, S. "Teaching Children to BE Mathematicians vs. Teaching About Mathematics," MIT LOGO Memo 4, Cambridge, Massachusetts, 1971.
+
+Papert, S. and C. Solomon. "Twenty Things to do With a Computer," LOGO Memo 3, Cambridge, Massachusetts, 1971.
+
+Watt, D. "A Comparison of the Problem Solving Styles of Two Children Learning LOGO," Proceedings, National Educational Computing Conference, 1979. Reprinted, Creative Computing, December, 1979.
+
+Watt, D. "Computer Literacy: What Schools Should be Doing About It," Classroom Computer News, Volume 1, Number 2, November/December 1980.
+
+Watt, D. and S. Weir. "LOGO: A Computer Environment for Learning Disabled Students," To be published in The Computing Teacher, Volume 8, Number 5, Spring, 1981.

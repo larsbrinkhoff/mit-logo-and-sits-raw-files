@@ -1,0 +1,203 @@
+;SKIP 1
+;KSET FONTS;20FG KST,,
+;VSP 4
+@ 440: PAGEL = 78, LINEL = 120
+MC:REM;NEWLSP 47    RJL    08:28:58 Tuesday, December 20, 1977   FQ+2D.14H.33M.27S.
+Created 04:58:52 Friday, December 16, 1977   NM+5D.20H.14M.22S.
+
+
+NNN         NNN      EEEEEEEEEEEEEEE      WWW         WWW      LLL                     SSSSSSSSS         PPPPPPPPPPPP   
+NNN         NNN      EEEEEEEEEEEEEEE      WWW         WWW      LLL                     SSSSSSSSS         PPPPPPPPPPPP   
+NNN         NNN      EEEEEEEEEEEEEEE      WWW         WWW      LLL                     SSSSSSSSS         PPPPPPPPPPPP   
+NNNNNN      NNN      EEE                  WWW         WWW      LLL                  SSS         SSS      PPP         PPP
+NNNNNN      NNN      EEE                  WWW         WWW      LLL                  SSS         SSS      PPP         PPP
+NNNNNN      NNN      EEE                  WWW         WWW      LLL                  SSS         SSS      PPP         PPP
+NNN   NNN   NNN      EEE                  WWW         WWW      LLL                  SSS                  PPP         PPP
+NNN   NNN   NNN      EEE                  WWW         WWW      LLL                  SSS                  PPP         PPP
+NNN   NNN   NNN      EEE                  WWW         WWW      LLL                  SSS                  PPP         PPP
+NNN      NNNNNN      EEEEEEEEEEEE         WWW   WWW   WWW      LLL                     SSSSSSSSS         PPPPPPPPPPPP   
+NNN      NNNNNN      EEEEEEEEEEEE         WWW   WWW   WWW      LLL                     SSSSSSSSS         PPPPPPPPPPPP   
+NNN      NNNNNN      EEEEEEEEEEEE         WWW   WWW   WWW      LLL                     SSSSSSSSS         PPPPPPPPPPPP   
+NNN         NNN      EEE                  WWW   WWW   WWW      LLL                              SSS      PPP            
+NNN         NNN      EEE                  WWW   WWW   WWW      LLL                              SSS      PPP            
+NNN         NNN      EEE                  WWW   WWW   WWW      LLL                              SSS      PPP            
+NNN         NNN      EEE                  WWWWWW   WWWWWW      LLL                  SSS         SSS      PPP            
+NNN         NNN      EEE                  WWWWWW   WWWWWW      LLL                  SSS         SSS      PPP            
+NNN         NNN      EEE                  WWWWWW   WWWWWW      LLL                  SSS         SSS      PPP            
+NNN         NNN      EEEEEEEEEEEEEEE      WWW         WWW      LLLLLLLLLLLLLLL         SSSSSSSSS         PPP            
+NNN         NNN      EEEEEEEEEEEEEEE      WWW         WWW      LLLLLLLLLLLLLLL         SSSSSSSSS         PPP            
+NNN         NNN      EEEEEEEEEEEEEEE      WWW         WWW      LLLLLLLLLLLLLLL         SSSSSSSSS         PPP            
+
+
+
+MC:REM;NEWLSP 47    RJL    08:28:58 Tuesday, December 20, 1977   FQ+2D.14H.33M.27S.
+Created 04:58:52 Friday, December 16, 1977   NM+5D.20H.14M.22S.
+
+
+         444         777777777777777
+         444         777777777777777
+         444         777777777777777
+      444444                     777
+      444444                     777
+      444444                     777
+   444   444                  777   
+   444   444                  777   
+   444   444                  777   
+444      444            777777777777
+444      444            777777777777
+444      444            777777777777
+444444444444444            777      
+444444444444444            777      
+444444444444444            777      
+         444            777         
+         444            777         
+         444            777         
+         444         777            
+         444         777            
+         444         777            
+
+
+Switch Settings: L[LISP] % A N 78V 120W X 
+Fonts: F[FONTS;20FG KST,,] 
+Ó  001   (DECLARE                                                         Å&NEWLSP 47  12/20/77  Page 1Å'
+  002    (SPECIAL TRACE#RIVPHI #R #S #T)
+  003    (MUZZLED T))
+  004   
+  005   (DEFUN CUSTOM-CODE EXPR NIL
+  006    (PROG (ND1 ND2 PREFIX PRELEN P1 P2 FILE)
+  007     (PRINT 'FOR/ DECIMAL/ VALUES/,/ TERMINATE/ INPUT/ WITH/ PERIOD/ SPACE)
+  008     (TERPRI) (PRINC 'HOW/ MANY/ DIGITS/ IN/ FIRST/ PRIME/?)
+  009     (SETQ ND1 (READ))
+  010     (TERPRI) (PRINC 'HOW/ MANY/ DIGITS/ IN/ SECOND/ PRIME/?)
+  011     (SETQ ND2 (READ))
+  012     (TERPRI) (PRINC 'WHAT/ PREFIX/ /(DECIMAL/)/?)
+  013     (SETQ PREFIX (READ))
+  014     (COND ((NOT (NUMBERP PREFIX)) (SETQ PREFIX (CVD PREFIX))))
+  015     (SETQ P1 (RANDPRIME ND1 NIL))
+  016     (SETQ PRELEN (FLATC PREFIX))
+  017     (SETQ PREFIX (TIMES PREFIX (EXPT 10. (DIFFERENCE ND1 PRELEN))))
+  018     (SETQ PREFIX (TIMES PREFIX (EXPT 10. (DIFFERENCE ND2
+  019         (COND ((LESSP P1 PREFIX) 1)
+  020   	    (0))))))
+  021     (SETQ PREFIX (PLUS (QUOTIENT (TIMES 5 (EXPT 10. (DIFFERENCE
+  022   	 (FLATC (CVS PREFIX))	 PRELEN))) 9.) PREFIX))
+  023     (SETQ PREFIX (QUOTIENT PREFIX P1))
+  024     (SETQ P2 (RANDPRIME ND2 (CVS (QUOTIENT PREFIX 100000.))))
+  025     (MAKECODE P1 P2)
+  026     (SETQ FILE (OPEN '/RIVEST/ /> 'OUT))
+  027     (PRINT 'R= FILE) (PRINC (CVS #R) FILE)
+  028     (PRINT 'S= FILE) (PRINC (CVS #S) FILE)
+  029     (PRINT 'T= FILE) (PRINC (CVS #T) FILE)
+  030     (TERPRI FILE) (CLOSE FILE)
+  031     (RETURN (LIST 'CODE 'WRITTEN 'ON FILE))))
+  032   
+  033   (DEFUN SEELIST EXPR (LOW HI)
+  034    (PROG (A D)
+  035   L (SETQ A (PLUS LOW (BRANDOM (ADD1 (DIFFERENCE HI LOW)))))
+  036     (SETQ D (MUNKAM A))
+  037     (COND ((NOT (EQUAL 'LIST (TYPEP D)))
+  038   	 (PRINC (TYPEP D)) (PRINC '/.) (GO L)))
+  039     (PRINT A) (PRINC '//) (PRINC D)
+  040     (READ)
+  041     (GO L)))
+  042   
+  043   (DEFUN PHIFAC EXPR (RR PHI)
+  044    (PROG (A PQSUM DISC SQRTDISC ROOT1 ROOT2)
+  045     (SETQ A (PLUS 2 (BRANDOM (DIFFERENCE RR 3))))
+  046     (COND ((NOT (EQUAL A (PWRMOD A (ADD1 PHI) RR)))
+  047   	 (ERROR 'PHIFAC-BAD-PHI-GIVEN)))
+  048     (SETQ PQSUM (ADD1 (DIFFERENCE RR PHI)))
+  049     (SETQ DISC (DIFFERENCE (TIMES PQSUM PQSUM) (TIMES 4 RR)))
+  050     (SETQ SQRTDISC (BSQRT DISC))
+  051     (SETQ ROOT1 (QUOTIENT (DIFFERENCE PQSUM SQRTDISC) 2))
+  052     (SETQ ROOT2 (QUOTIENT (PLUS PQSUM SQRTDISC) 2))
+  053     (COND ((NOT (EQUAL RR (TIMES ROOT1 ROOT2)))
+  054   	 (ERROR 'PHIFAC-BUG)))
+  055     (RETURN (LIST ROOT1 ROOT2))))
+  056   
+  057   (DEFUN RIVFAC (RR SS TT)
+  058    (PROG (PHI ANS)
+  059     (SETQ PHI (RIVPHI RR SS TT))
+  060     (SETQ ANS (PHIFAC RR PHI))
+  061     (PRINT 'P1=) (PRINC (CVS (CAR ANS)))
+  062     (PRINT 'P2=) (PRINC (CVS (CADR ANS)))
+  063     (RETURN ANS)))
+  064   
+  065   (DEFUN RIVPHI EXPR (RR SS TT)
+  066    (PROG (PHIMUL PHIDIV PHIMAX I ORIGMAX ORIGMUL AUDIT A ORIGA TMPAUDIT)
+  067     (COND ((NOT (EQUAL 2 (PWRMOD (PWRMOD 2 SS RR) TT RR)))
+  068   	 (ERROR 'NOT/ A/ RIVEST/ CODE/ GIVEN)))
+  069     (SETQ PHIMUL (SUB1 (TIMES SS TT)))
+  070     (SETQ PHIMAX (QUOTIENT PHIMUL (ADD1 (QUOTIENT PHIMUL RR))))
+  071     (SETQ A (QUADNR RR))
+  072     (COND ((EQUAL A (PWRMOD A (ADD1 PHIMAX) RR))
+  073   	 (TERPRI) (PRINC 'THAT/ WAS/ EASY/!/!)
+  074   	 (RETURN PHIMAX)))
+  075     (COND ((NOT (BOUNDP 'TRACE#RIVPHI))
+  076   	 (TERPRI) (TYO 073)
+  077   	 (PRINC 'TRACE#RIVPHI/ UNBOUND/ VARIABLE/ --/ WILL/ DEFAULT/ TO/ NIL)
+  078   	 (SETQ TRACE#RIVPHI NIL)))Ó                                                                         Å&NEWLSP 47  12/20/77  Page 1.1Å'
+  079     (SETQ PHIMAX (DIFFERENCE (ADD1 RR) (BSQRT (TIMES 4 RR))))
+  080     (SETQ PHIMUL (SUB1 (TIMES SS TT)))
+  081     (SETQ PHIDIV 1)
+  082     (SETQ ORIGMAX PHIMAX)
+  083     (SETQ ORIGMUL PHIMUL)
+  084     (SETQ AUDIT NIL)
+  085     (SETQ ORIGA A)
+  086     (SETQ I 2)
+  087   L1(COND ((NOT (EQUAL 0 (REMAINDER (QUOTIENT PHIMUL PHIDIV) I)))
+  088   	 (SETQ I (ADD1 I))
+  089   	 (COND ((EQUAL 0 (REMAINDER I 1000))
+  090   		(PRINC I) (PRINC '/ ))
+  091   	       (1 (GO L1))))
+  092   	((EQUAL A (PWRMOD A (ADD1 (QUOTIENT PHIMUL I)) RR))
+  093   	 (SETQ AUDIT (CONS I AUDIT))
+  094   	 (SETQ PHIMUL (QUOTIENT PHIMUL I)))
+  095   	((SETQ PHIDIV (TIMES PHIDIV I))))
+  096   L2(PRINC '/ )
+  097     (COND (TRACE#RIVPHI
+  098   	 (PRINT 'I=)))
+  099     (PRINC I)
+  100     (COND (TRACE#RIVPHI
+  101   	 (PRINT 'PHIDIV=) (PRINC PHIDIV)
+  102   	 (PRINT 'PHIMAX=) (PRINC PHIMAX)
+  103   	 (PRINT 'PHIMUL=) (PRINC PHIMUL)))
+  104     (COND ((EQUAL A (PWRMOD A (ADD1 PHIMAX) RR))
+  105   	 (SETQ PHIMUL (TIMES PHIMAX (QUOTIENT RR PHIMAX)))
+  106   	 (COND ((NOT (EQUAL PHIMUL PHIMAX))
+  107   		(PRINT 'SUBMULTIPLE/ OF/ PHI=) (PRINC PHIMAX)
+  108   		(PRINT 'TRUE/ PHI=) (PRINC (SETQ PHIMAX PHIMUL))))
+  109   	 (RETURN PHIMAX)))
+  110     (SETQ A (PLUS 2 (BRANDOM (DIFFERENCE RR 3))))
+  111     (COND ((NOT (EQUAL A (PWRMOD A (ADD1 PHIMUL) RR)))
+  112   	 (PRINT 'OOPS/,/ A=) (PRINC A)
+  113   	 (PRINT 'WILL/ BACKTRACE/ NOW/././.)
+  114   	 (SETQ TMPAUDIT AUDIT)
+  115   	 (SETQ AUDIT NIL)
+  116   	 (SETQ PHIMUL ORIGMUL)
+  117   	 (SETQ PHIMAX ORIGMAX)
+  118   	 (COND ((NOT (EQUAL A (PWRMOD A (ADD1 PHIMUL) RR)))
+  119   		(ERROR 'ORIGMUL-BAD)))
+  120   	 (MAPC
+  121   	  (FUNCTION
+  122   	   (LAMBDA (P)
+  123     	    (COND ((NOT (ZEROP (REMAINDER (QUOTIENT PHIMUL PHIDIV) P)))
+  124   		   (ERROR 'P-NOT-FACTOR))
+  125   		  ((AND (EQUAL ORIGA
+  126   			   (PWRMOD ORIGA (ADD1 (QUOTIENT PHIMUL P)) RR))
+  127   			(EQUAL A (PWRMOD A (ADD1 (QUOTIENT PHIMUL P)) RR)))
+  128   		   (PRINC '/OK/() (PRINC P) (PRINC '/)/ )
+  129   		   (SETQ AUDIT (CONS P AUDIT))
+  130   		   (SETQ PHIMUL (QUOTIENT PHIMUL P)))
+  131   		  ((SETQ PHIDIV (TIMES PHIDIV P))
+  132   		   (PRINC 'RETRACT/() (PRINC P) (PRINC '/)/ )))))
+  133   	  TMPAUDIT)
+  134   	 (GO L2)))
+  135     (SETQ PHIMAX (QUOTIENT PHIMUL (ADD1 (QUOTIENT PHIMUL PHIMAX))))
+  136     (SETQ PHIMAX (TIMES PHIDIV (QUOTIENT PHIMAX PHIDIV)))
+  137     (GO L1)
+  138     ))ÓSymbol Table for:    MC:REM;NEWLSP 47                                        12/20/77  Page I
+                     
+
+CUSTOM-CODE LEXPR  001 005   RIVFAC .... EXPR   001 057   RIVPHI .... EXPR   001 065   SEELIST ... EXPR   001 033 
+PHIFAC .... EXPR   001 043     

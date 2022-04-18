@@ -1,0 +1,122 @@
+AAAA   PLX     1, DS	19-Feb-73	P64
+			19-Feb-73	P61
+ADCB1  DRW     1, DS	13-Oct-73	P205
+			13-Oct-73	P192
+			16-Mar-73	P79
+			16-Mar-73	P75
+ADCB1  PLT     1, DS	15-Oct-73	P205
+			15-Oct-73	P192
+ADCB1  WD      1, DS	16-Oct-73	P205
+			16-Oct-73	P192
+ADCB13 WL      1, DS	16-Oct-73	P205
+			16-Oct-73	P192
+ADCB13 WLS     1, DS	16-Oct-73	P205
+			16-Oct-73	P192
+ADCB2  DRW     1, DS	12-Mar-73	P70
+ADCB3  DRW     1, DS	13-Oct-73	P205
+			13-Oct-73	P195
+			13-Oct-73	P192
+			16-Mar-73	P79
+			16-Mar-73	P75
+ADCB3  PLT     1, DS	15-Oct-73	P205
+			15-Oct-73	P192
+ADCB3  WD      1, DS	16-Oct-73	P205
+			16-Oct-73	P192
+ADIOB  DRW     1, DS	13-Oct-73	P205
+			13-Oct-73	P192
+			18-Mar-73	P79
+			18-Mar-73	P75
+ADIOB  PLT     1, DS	15-Oct-73	P205
+			15-Oct-73	P192
+ADIOB  WD      1, DS	16-Oct-73	P205
+			16-Oct-73	P192
+ADIOB  WL      1, DS	16-Oct-73	P205
+			16-Oct-73	P192
+ADIOB  WLS     1, DS	16-Oct-73	P205
+			16-Oct-73	P192
+ADIOB1 DRW     1, DS	13-Mar-73	P70
+AS     DMP     1, DS	 9-Oct-73	P205
+			 9-Oct-73	P192
+			 9-Oct-73	P188
+AS1    DMP     1, DS	16-Oct-73	P205
+			16-Oct-73	P192
+ASCB1  PC      1, DS	 5-Mar-73	P70
+			 5-Mar-73	P67
+ASCB38 PC      1, DS	11-Mar-73	P70
+ASCB39 PC      1, DS	13-Mar-73	P70
+ASCB40 PC      1, DS	13-Oct-73	P205
+			13-Oct-73	P195
+			13-Oct-73	P192
+			16-Mar-73	P79
+			16-Mar-73	P75
+ASCB40 PCP     1, DS	13-Oct-73	P205
+			13-Oct-73	P192
+ASW    DRW     1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+ASW1   DRW     1, DS	21-Feb-73	P70
+			21-Feb-73	P67
+			21-Feb-73	P64
+			21-Feb-73	P61
+ASW3   DRW     1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+ASW4   DRW     1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+ASW5   DRW     1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+ASW6   DRW     1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+ASW7   DRW     1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+ASW8   DRW     1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+ASWIOB DRW     1, DS	21-Feb-73	P64
+			21-Feb-73	P61
+ASWMD1 PC      1, DS	27-Feb-73	P67
+			27-Feb-73	P64
+ASWMJ  PC      1, DS	13-Oct-73	P205
+			13-Oct-73	P195
+			13-Oct-73	P192
+			 1-Mar-73	P70
+			 1-Mar-73	P67
+ASWMJ  PCP     1, DS	13-Oct-73	P205
+			13-Oct-73	P192
+ASWMJS PC      1, DS	 1-Mar-73	P70
+			 1-Mar-73	P67
+ASWMOD PC      1, DS	27-Feb-73	P64
+ASWSAV PC      1, DS	28-Feb-73	P67
+			28-Feb-73	P64
+ASWSEL PC      1, DS	26-Feb-73	P64
+ASWSLE PC      1, DS	26-Feb-73	P67
+			26-Feb-73	P64
+ASWSV1 PC      1, DS	 1-Mar-73	P70
+			 1-Mar-73	P67
+BARF           1, DS	17-Feb-73	P64
+			17-Feb-73	P61
+BAZ    DRW     1, DS	19-Feb-73	P64
+			19-Feb-73	P61
+ERROR  DMP     1, DS	13-Mar-73	P70
+FILE           1, DS	 2-Feb-73	P55
+			 2-Feb-73	P50
+FOO    DRW     1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+			14-Feb-73	P58
+FOO    PLT     1, DS	14-Oct-73	P205
+			14-Oct-73	P192
+			21-Feb-73	P64
+			21-Feb-73	P61
+FOO    WD      1, DS	20-Feb-73	P64
+			20-Feb-73	P61
+FOO            1, DS	31-Jan-73	P55
+			31-Jan-73	P50
+FOO1   DRW     1, DS	15-Feb-73	P64
+			15-Feb-73	P61
+SPEL2          1, DS	 1-Feb-73	P55
+			 1-Feb-73	P50
+SPELL          1, DS	 1-Feb-73	P55
+			 1-Feb-73	P50
+TEST   SAI     1, DS	 2-Feb-73	P55
+			 2-Feb-73	P50
+TRC    39      1, DS	31-Jan-73	P55
+			31-Jan-73	P50
+X      PLT     1, DS	14-Feb-73	P61
+			14-Feb-73	P58

@@ -1,0 +1,592 @@
+;SKIP 1
+;KSET FONTS;20FG KST,,
+;VSP 4
+@ 440: PAGEL = 78, LINEL = 120
+MC:REM;RANPRI 105    RJL    08:29:32 Tuesday, December 20, 1977   FQ+2D.14H.34M.1S.
+Created 04:35:50 Saturday, December 17, 1977   NM+6D.19H.51M.20S.
+
+
+RRRRRRRRRRRR               AAA            NNN         NNN      PPPPPPPPPPPP         RRRRRRRRRRRR            IIIIIIIII   
+RRRRRRRRRRRR               AAA            NNN         NNN      PPPPPPPPPPPP         RRRRRRRRRRRR            IIIIIIIII   
+RRRRRRRRRRRR               AAA            NNN         NNN      PPPPPPPPPPPP         RRRRRRRRRRRR            IIIIIIIII   
+RRR         RRR         AAA   AAA         NNNNNN      NNN      PPP         PPP      RRR         RRR            III      
+RRR         RRR         AAA   AAA         NNNNNN      NNN      PPP         PPP      RRR         RRR            III      
+RRR         RRR         AAA   AAA         NNNNNN      NNN      PPP         PPP      RRR         RRR            III      
+RRR         RRR      AAA         AAA      NNN   NNN   NNN      PPP         PPP      RRR         RRR            III      
+RRR         RRR      AAA         AAA      NNN   NNN   NNN      PPP         PPP      RRR         RRR            III      
+RRR         RRR      AAA         AAA      NNN   NNN   NNN      PPP         PPP      RRR         RRR            III      
+RRRRRRRRRRRR         AAA         AAA      NNN      NNNNNN      PPPPPPPPPPPP         RRRRRRRRRRRR               III      
+RRRRRRRRRRRR         AAA         AAA      NNN      NNNNNN      PPPPPPPPPPPP         RRRRRRRRRRRR               III      
+RRRRRRRRRRRR         AAA         AAA      NNN      NNNNNN      PPPPPPPPPPPP         RRRRRRRRRRRR               III      
+RRR   RRR            AAAAAAAAAAAAAAA      NNN         NNN      PPP                  RRR   RRR                  III      
+RRR   RRR            AAAAAAAAAAAAAAA      NNN         NNN      PPP                  RRR   RRR                  III      
+RRR   RRR            AAAAAAAAAAAAAAA      NNN         NNN      PPP                  RRR   RRR                  III      
+RRR      RRR         AAA         AAA      NNN         NNN      PPP                  RRR      RRR               III      
+RRR      RRR         AAA         AAA      NNN         NNN      PPP                  RRR      RRR               III      
+RRR      RRR         AAA         AAA      NNN         NNN      PPP                  RRR      RRR               III      
+RRR         RRR      AAA         AAA      NNN         NNN      PPP                  RRR         RRR         IIIIIIIII   
+RRR         RRR      AAA         AAA      NNN         NNN      PPP                  RRR         RRR         IIIIIIIII   
+RRR         RRR      AAA         AAA      NNN         NNN      PPP                  RRR         RRR         IIIIIIIII   
+
+
+
+MC:REM;RANPRI 105    RJL    08:29:33 Tuesday, December 20, 1977   FQ+2D.14H.34M.2S.
+Created 04:35:50 Saturday, December 17, 1977   NM+6D.19H.51M.20S.
+
+
+      111               000000000         555555555555555
+      111               000000000         555555555555555
+      111               000000000         555555555555555
+   111111            000         000      555            
+   111111            000         000      555            
+   111111            000         000      555            
+      111            000      000000      555            
+      111            000      000000      555            
+      111            000      000000      555            
+      111            000   000   000      555555555555   
+      111            000   000   000      555555555555   
+      111            000   000   000      555555555555   
+      111            000000      000                  555
+      111            000000      000                  555
+      111            000000      000                  555
+      111            000         000      555         555
+      111            000         000      555         555
+      111            000         000      555         555
+   111111111            000000000            555555555   
+   111111111            000000000            555555555   
+   111111111            000000000            555555555   
+
+
+Switch Settings: L[LISP] % A N 78V 120W X 
+Fonts: F[FONTS;20FG KST,,] 
+î&	BIGRAND EXPR (NDIGITS)                                           RANPRI 105  12/20/77  Page 1'
+  001   (DECLARE
+  002    (SPECIAL #P #R #S #T #Q
+  003     #BR-NB #BR-BITS #MAXFACTOR #210LIST #210N)
+  004    (MUZZLED T))
+  005   
+  006   (SETQ #MAXFACTOR 100000)
+  007   
+  008   (DEFUN NTH EXPR (L N)
+  009    (COND ((GREATERP N 1) (NTH (CDR L) (SUB1 N)))
+  010          ((EQUAL N 1) L)
+  011          ((CONS NIL (NTH L (ADD1 N))))))
+  012   
+  013   (DEFUN INIT210 EXPR ()
+  014    (PROG (N)
+  015     (SETQ #210LIST NIL)
+  016     (SETQ #210N 0)
+  017     (SETQ N 209.)
+  018   L (COND ((EQUAL 1 (GCD N 210.))
+  019   	 (SETQ #210LIST (CONS N #210LIST))
+  020   	 (SETQ #210N (ADD1 #210N)))
+  021   	((ZEROP N) (RETURN NIL)))
+  022     (SETQ N (SUB1 N))
+  023     (GO L)))
+  024   
+  025   (DEFUN RAN210 EXPR ()
+  026    (CAR (NTH #210LIST (ADD1 (BRANDOM #210N)))))
+  027   
+  028   (DEFUN QUADREC EXPR (P Q)
+  029    (PROG (M T1 T2)
+  030     (COND ((OR (NOT (GREATERP P 0))
+  031   	     (NOT (GREATERP Q 0))
+  032   	     (ZEROP (REMAINDER Q 2)))
+  033   	 (ERROR 'QUADREC-BAD-ARG)))
+  034     (SETQ M 1)
+  035   L1(SETQ P (REMAINDER P Q))
+  036   L2(SETQ T1 (DIVIDE P 2))
+  037     (COND ((ZEROP (CDR T1))
+  038   	 (SETQ T2 (DIVIDE (CAR T1) 2))
+  039   	 (COND ((ZEROP (CDR T2))
+  040   		(SETQ P (CAR T2))
+  041   		(GO L2)))
+  042   	 (SETQ M (TIMES M (Q2REC Q)))
+  043   	 (SETQ P (CAR T1))))
+  044   (COND	((EQUAL P 1)
+  045   	 (RETURN M)))
+  046     (SETQ M (TIMES M (QINV P Q)))
+  047     (SETQ T1 P) (SETQ P Q) (SETQ Q T1)
+  048     (GO L1)))
+  049   
+  050   (DEFUN QUADNR EXPR (Q)
+  051    (PROG (P)
+  052     (SETQ P 1)
+  053   L (COND ((LESSP (QUADREC P Q) 0)
+  054   	 (RETURN P)))
+  055     (PRINC (CVS P))
+  056     (SETQ P (ADD1 P))
+  057     (GO L)))
+  058   
+  059   (DEFUN QINV EXPR (P Q)
+  060    (EXPT -1 (TIMES (QUOTIENT (REMAINDER P 4) 2)
+  061   		 (QUOTIENT (REMAINDER Q 4) 2))))
+  062   
+  063   (DEFUN Q2REC EXPR (Q)
+  064    (PROG NIL
+  065     (SETQ Q (REMAINDER Q 8))
+  066     (RETURN (EXPT -1 (QUOTIENT (TIMES Q Q) 8)))))
+  067   
+  068   (DEFUN DIVIDE EXPR (P Q)
+  069    (CONS (QUOTIENT P Q) (REMAINDER P Q)))
+  070   
+  071   (DEFUN RANDCOMP1 EXPR (NMIN NMAX)
+  072    (COND ((NOT (LESSP NMIN NMAX))
+  073   	(TYO 170)
+  074   	(RANDCOMP1 NMIN (ADD1 NMIN)))
+  075          ((NOT (LESSP (TIMES #MAXFACTOR #MAXFACTOR) NMAX))
+  076           (SETQ NMIN (TIMES 2 (QUOTIENT NMIN 2)))
+  077           (PLUS NMIN 1î&	BIGRAND EXPR (NDIGITS)                                           RANPRI 105  12/20/77  Page 1.1'
+  078   	 (TIMES 2 (BRANDOM (QUOTIENT (PLUS 1 NMAX (MINUS NMIN)) 2)))))
+  079          (((LAMBDA (Q) (TIMES Q (RANDCOMP1 (ADD1 (QUOTIENT (SUB1 NMIN) Q))
+  080   					 (QUOTIENT NMAX Q))))
+  081   	 (PLUS (RAN210)
+  082   	  (TIMES 210.
+  083   	   (ADD1 (BRANDOM (QUOTIENT (SUB1 #MAXFACTOR) 210.)))))))))
+  084   
+  085   (DEFUN RANDCOMP2 EXPR (NMIN NMAX)
+  086    (TIMES 2 (RANDCOMP1 (QUOTIENT (ADD1 NMIN) 2)
+  087   		     (QUOTIENT NMAX 2))))
+  088   
+  089   (DEFUN ORDMOD EXPR (A S R F)
+  090    (COND ((NOT (EQUAL 1 (PWRMOD A S R)))
+  091   	(ERROR 'ORDMOD-WRONG-INITIAL-ORDER))
+  092          ((NOT (EQUAL S (APPLY (FUNCTION TIMES) F)))
+  093   	(ERROR 'ORDMOD-WRONG-FACTORIZATION))
+  094          ('T
+  095   	(MAPC (FUNCTION (LAMBDA (D)
+  096   			 (COND ((EQUAL 1 (PWRMOD A
+  097   					  (QUOTIENT S D)
+  098   					  R))
+  099   				(SETQ S (QUOTIENT S D))))))
+  100   	 F)
+  101   	S)))
+  102   
+  103   (DEFUN PRIMEP EXPR (N)
+  104    (PROG (F A O OA)
+  105     (COND ((NOT (EQUAL (PWRMOD 2 (SUB1 N) N) 1))
+  106   	 (RETURN NIL)))
+  107     (PRINC '/[FACTORING/ )
+  108     (PRINC (CVS (SUB1 N)))
+  109     (PRINC '/././.)
+  110     (SETQ F (FACTOR (SUB1 N) 'T))
+  111     (PRINC '/]/ )
+  112     (SETQ O 1)
+  113     (SETQ A (QUADNR N))
+  114   L (COND ((NOT (EQUAL 1 (PWRMOD A (SUB1 N) N)))
+  115   	 (RETURN NIL)))
+  116     (SETQ OA (ORDMOD A (SUB1 N) N F))
+  117     (TERPRI)
+  118     (PRINC (CVS A))
+  119     (PRINC '/ HAS/ INDEX/ )
+  120     (PRINC (CVS (QUOTIENT (SUB1 N) OA)))
+  121     (SETQ O (QUOTIENT (TIMES O OA) (GCD O OA)))
+  122     (PRINC '/ GCD/ HAS/ INDEX=)
+  123     (PRINC (CVS (QUOTIENT (SUB1 N) O)))
+  124     (PRINC '/ )
+  125     (COND ((LESSP (SUB1 N) O)
+  126   	 (ERROR 'FATAL-PHI>N-1))
+  127   	((LESSP O (SUB1 N))
+  128   	 (SETQ A (ADD1 A))
+  129   	 (GO L)))
+  130     (RETURN 'T)))
+  131   
+  132   (DEFUN BRANDOM1 EXPR (NBITS)
+  133    (COND ((LESSP NBITS 0)
+  134   	(ERROR 'NBITS-IS-NEGATIVE))
+  135          ((= NBITS 0) 0)
+  136          ((GREATERP NBITS 44000000)
+  137   	(ERROR 'NBITS-TOO-BIG))
+  138          ((PROG (N NB BITS)
+  139   	 (SETQ N 0)
+  140   	 (COND ((AND
+  141   		 (BOUNDP #BR-NB)
+  142   		 (> #BR-NB 0))
+  143   		(GO L2)))
+  144   L1	 (SETQ #BR-BITS (RANDOM))
+  145   	 (SETQ #BR-NB 44)
+  146   L2	 (SETQ NB (MIN #BR-NB NBITS))
+  147   	 (SETQ BITS (LSH #BR-BITS
+  148   		     (- NB 44)))
+  149   	 (COND ((LESSP BITS 0)
+  150   		(SETQ BITS (PLUS BITS 400000000000))))
+  151   	 (SETQ #BR-NB (- #BR-NB NB))
+  152   	 (SETQ #BR-BITS (LSH #BR-BITS NB))
+  153   	 (SETQ N (PLUS (TIMES (EXPT 2 NB) N) BITS))
+  154   	 (SETQ NBITS (- NBITS NB))î&	BIGRAND EXPR (NDIGITS)                                           RANPRI 105  12/20/77  Page 1.2'
+  155   	 (COND ((> NBITS 0)
+  156   		(GO L1)))
+  157   	 (RETURN N)))))
+  158   
+  159   (DEFUN BRANDOM EXPR (N)
+  160    (PROG (NB R)
+  161     (SETQ NB (HAULONG N))
+  162   L (SETQ R (BRANDOM1 NB))
+  163     (COND ((LESSP R N)
+  164   	 (RETURN R))
+  165   	((GO L)))))
+  166   
+  167   (DEFUN BIGDECRAND EXPR (NDIGITS  PREFIX)
+  168    (PROG (PR NDPREFIX NDSUFFIX N)
+  169     (COND ((NULL PREFIX)
+  170   	 (SETQ N
+  171   	  (EXPT
+  172   	   (PLUS 5 5)
+  173   	   (SUB1 NDIGITS)))
+  174   	 (RETURN
+  175   	  (PLUS N
+  176   	   (BRANDOM
+  177   	    (TIMES (PLUS 4 5)
+  178   	     N))))))
+  179     (COND ((NOT (EQ (CAR (EXPLODE
+  180   		    PREFIX))
+  181   	      '//))
+  182   	 (ERROR 'BIGDECRAND-PREFIX-NOT-SLASHIFIED)))
+  183     (SETQ PR (EXPLODEN PREFIX))
+  184     (COND ((NOT (APPLY (FUNCTION AND)
+  185   	   (MAPCAR (FUNCTION (LAMBDA (N) (LESSP 57 N 72)))
+  186   	    PR)))
+  187   	 (ERROR 'BIGDECRAND-PREFIX-NOT-DECIMAL-DIGITS))
+  188   	((LESSP (CAR PR) 61)
+  189   	 (ERROR 'BIGDECRAND-PREFIX-LEADING-DIGIT-ZERO)))
+  190     (SETQ NDPREFIX (LENGTH PR))
+  191     (SETQ NDSUFFIX (- NDIGITS NDPREFIX))
+  192     (COND ((< NDSUFFIX 0)
+  193   	 (ERROR 'BIGDECRAND-PREFIX-LONGER-THAN-NDIGITS)))
+  194     (SETQ N (EXPT (PLUS 5 5)
+  195   		NDSUFFIX))
+  196     (RETURN
+  197      (PLUS
+  198       (TIMES (CVD PREFIX) N)
+  199       (BRANDOM N)))))
+  200   (DEFUN BIGDECRANDC EXPR (NDIGITS  PREFIX)
+  201    (PROG (PR NDPREFIX NDSUFFIX N)
+  202     (COND ((NULL PREFIX)
+  203   	 (SETQ N
+  204   	  (EXPT
+  205   	   (PLUS 5 5)
+  206   	   (SUB1 NDIGITS)))
+  207   	 (RETURN (RANDCOMP2 N (SUB1 (TIMES N (PLUS 5 5)))))))
+  208     (COND ((NOT (EQ (CAR (EXPLODE
+  209   		    PREFIX))
+  210   	      '//))
+  211   	 (ERROR 'BIGDECRAND-PREFIX-NOT-SLASHIFIED)))
+  212     (SETQ PR (EXPLODEN PREFIX))
+  213     (COND ((NOT (APPLY (FUNCTION AND)
+  214   	   (MAPCAR (FUNCTION (LAMBDA (N) (LESSP 57 N 72)))
+  215   	    PR)))
+  216   	 (ERROR 'BIGDECRAND-PREFIX-NOT-DECIMAL-DIGITS))
+  217   	((LESSP (CAR PR) 61)
+  218   	 (ERROR 'BIGDECRAND-PREFIX-LEADING-DIGIT-ZERO)))
+  219     (SETQ NDPREFIX (LENGTH PR))
+  220     (SETQ NDSUFFIX (- NDIGITS NDPREFIX))
+  221     (COND ((< NDSUFFIX 0)
+  222   	 (ERROR 'BIGDECRAND-PREFIX-LONGER-THAN-NDIGITS)))
+  223     (RETURN ((LAMBDA (NP NS) (RANDCOMP2 (TIMES NP NS)
+  224   				      (SUB1 (TIMES (ADD1 NP) NS))))
+  225   	   (CVD PREFIX)
+  226   	   (EXPT (PLUS 5 5) NDSUFFIX)))))
+  227   
+  228   (DEFUN OPENBIGBITS EXPR (BNUM)
+  229    (COND ((NOT (FIXP BNUM))
+  230   	(ERROR 'OPENBIGBITS-NEED-FIXNUM-OR-BIGNUM))
+  231          ((LESSP BNUM 0)î&	BIGRAND EXPR (NDIGITS)                                           RANPRI 105  12/20/77  Page 1.3'
+  232   	(ERROR 'OPENBIGBITS-NEED-NONNEGATIVE))
+  233          ((EQUAL BNUM 0) (LIST 0 0))
+  234          ((BIGP BNUM)
+  235   	(CONS 43 (REVERSE (CDR BNUM))))
+  236          ((LIST 43 BNUM))))
+  237   
+  238   (DEFUN ONEBIGBIT EXPR (STAT)
+  239    (PROG (TMP)
+  240     (COND ((LESSP 0 (CAR STAT)))
+  241   	((CDDR STAT)
+  242   	 (RPLACD STAT (CDDR STAT))
+  243   	 (RPLACA STAT 43))
+  244   	((RETURN NIL)))
+  245     (RPLACA STAT (SUB1 (CAR STAT)))
+  246     (RPLACA (CDR STAT)
+  247   	  (SETQ TMP (LSH (CADR STAT) 1)))
+  248     (RETURN (COND ((LESSP TMP 0) 1)
+  249   		(0)))))
+  250   
+  251   (DEFUN PWRMOD EXPR (A R N)
+  252    (PROG (S B A1 AP)
+  253     (SETQ S (OPENBIGBITS R))
+  254   L1(SETQ B (ONEBIGBIT S))
+  255     (COND ((NULL B)
+  256   	 (RETURN 1))
+  257   	((= B 0)
+  258   	 (GO L1)))
+  259     (SETQ AP (SETQ A1 (REMAINDER A N)))
+  260   L2(SETQ B (ONEBIGBIT S))
+  261     (COND ((NULL B) (RETURN AP)))
+  262     (SETQ AP (REMAINDER
+  263   	    (TIMES AP AP)
+  264   	    N))
+  265     (COND ((LESSP 0 B)
+  266   	 (SETQ AP
+  267   	   (REMAINDER
+  268   	    (TIMES AP A1)
+  269   	    N))))
+  270     (GO L2)))
+  271   
+  272   (DEFUN BSQRT EXPR (BIGN)
+  273    (COND ((LESSP 0 BIGN)
+  274   	(BSQRT1 BIGN
+  275   	 (EXPT 2 (// (1+ (HAULONG BIGN)) 2))))
+  276          ((= BIGN 0) 0)
+  277          ((ERROR 'BSQRT-OF-NEGATIVE-NUMBER))))
+  278   (DEFUN BSQRT1 EXPR (BIGN GUESS)
+  279    ((LAMBDA (NEXT)
+  280      (COND ((LESSP NEXT GUESS)
+  281   	  (BSQRT1 BIGN NEXT))
+  282   	 (GUESS)))
+  283     (QUOTIENT
+  284      (PLUS GUESS
+  285       (QUOTIENT BIGN GUESS))
+  286      2)))
+  287   
+  288   (DEFUN FACTOR EXPR (N EZFLG)
+  289    (PROG (K KLIM FACS KK KNOWCOMP)
+  290     (SETQ KNOWCOMP NIL)
+  291     (SETQ FACS NIL)
+  292   TRY2
+  293     (COND ((EQUAL 0 (REMAINDER N 2))
+  294   	 (SETQ FACS (CONS 2 FACS))
+  295   	 (PRINC 2)
+  296   	 (TYO 40)
+  297   	 (SETQ N (QUOTIENT N 2))
+  298   	 (GO TRY2))
+  299   	((EQUAL N 1)
+  300   	 (GO EX)))
+  301     (SETQ K 1)
+  302     (SETQ KLIM (BSQRT N))
+  303   NEWK
+  304     (SETQ K (PLUS K 2))
+  305   DIVN
+  306     (COND ((LESSP KLIM K)
+  307   	 (PRINC (CVS N))
+  308   	 (SETQ FACS (CONS N FACS))î&	BIGRAND EXPR (NDIGITS)                                           RANPRI 105  12/20/77  Page 1.4'
+  309   	 (GO EX))
+  310   	((EQUAL 0 (REMAINDER N K))
+  311   	 (PRINC (CVS K))
+  312   	 (SETQ FACS (CONS K FACS))
+  313   	 (TYO 40)
+  314   	 (SETQ N (QUOTIENT N K))
+  315   	 (SETQ KNOWCOMP NIL)
+  316   	 (SETQ #Q N)
+  317   	 (SETQ KLIM (BSQRT N))
+  318   	 (GO DIVN))
+  319   	((AND (NOT KNOWCOMP)
+  320   	      (LESSP 10000 K))
+  321   	 (COND ((PRIMEP N)
+  322   		(SETQ FACS (CONS N FACS))
+  323   		(PRINC (CVS N))
+  324   		(RETURN (REVERSE FACS))))
+  325   	 (SETQ KNOWCOMP 'T)
+  326   	 (GO DIVN))
+  327   	((AND EZFLG (> K 200000))
+  328   	 (TERPRI) (PRINC (CVS N))
+  329   	 (PRINC '/ HAS/ NO/ PRIME/ FACTORS/ SMALLER/ THAN/ 65536)
+  330   	 (TERPRI)
+  331   	 (PRINC 'IT/ IS/ DEFINITELY/ COMPOSITE/,/ BUT/ I/ GIVE/ UP/.)
+  332   	 (TERPRI)
+  333   	 (PRINC 'PLEASE/ HELP/ ME/ BY/ TYPING/ A/ PRIME/ FACTOR/,/ OR/ TYPE/ NIL/ TO/ GIVE/ UP/ ON/ FACTORING)
+  334   	 (TERPRI) (PRINC '*)
+  335   	 (SETQ KK (READ))
+  336   	 (COND ((NOT (NUMBERP KK)) (THROW N PRIMEP-HARD))
+  337   	       ((LESSP KK 2) (ERROR 'BARF-NOT-POSITIVE))
+  338   	       ((NOT (LESSP KK N)) (ERROR 'BARF-NOT-SMALLER-NUMBER))
+  339   	       ((CDR (FACTOR KK 'T)) (ERROR 'BARF-NOT-PRIME))
+  340   	       ((NOT (EQUAL (REMAINDER N KK) 0))
+  341   		(ERROR 'BARF-NOT-FACTOR)))
+  342   	 (PRINT 'THANK-YOU)
+  343   	 (SETQ FACS (CONS KK FACS))
+  344   	 (PRINC (CVS KK))
+  345   	 (TYO 40)
+  346   	 (SETQ N (QUOTIENT N KK))
+  347   	 (SETQ KNOWCOMP NIL)
+  348   	 (SETQ #Q N)
+  349   	 (SETQ KLIM (BSQRT N))
+  350   	 (SETQ K (DIFFERENCE K 2))
+  351   	 (GO DIVN))
+  352   	((GO NEWK)))
+  353   EX(RETURN(REVERSE FACS))))
+  354   
+  355   (DEFUN CVD EXPR (S)
+  356    (PROG (L N K)
+  357     (SETQ L (EXPLODEN S))
+  358     (SETQ N 0)
+  359   LP(COND ((NULL L) (RETURN N)))
+  360     (SETQ K (CAR L))
+  361     (COND ((OR (LESSP K 60)
+  362   	     (LESSP 71 K))
+  363   	 (ERROR 'CVD-BAD-DIGIT)))
+  364     (SETQ L (CDR L))
+  365     (SETQ N (PLUS (TIMES N 12)
+  366   		(DIFFERENCE K 60)))
+  367     (GO LP)))
+  368   
+  369   (DEFUN DIOSOLVE EXPR (N1 N2)
+  370    (COND ((NOT (EQUAL (GCD N1 N2)
+  371   		1))
+  372   	(ERROR 'NOT-REL-PRIME))
+  373          ((LESSP N1 1)
+  374   	(ERROR 'NOT-POSITIVE))
+  375          ((LESSP N2 N1)
+  376   	(REVERSE (DIOSOLVE N2 N1)))
+  377          ((PROG (Q V0 V1 V2)
+  378   	 (SETQ V1 (LIST N1 1 0))
+  379   	 (SETQ V2 (LIST N2 0 1))
+  380   	L(COND ((= (CAR V1) 1)
+  381   	        (RETURN (CDR V1))))
+  382   	 (SETQ Q (QUOTIENT
+  383   		  (CAR V2)
+  384   		  (CAR V1)))
+  385   	 (SETQ V0 (MAPCAR (FUNCTION (LAMBDA (X1 X2) (DIFFERENCE X2 (TIMES X1 Q)))) V1 V2))î&	BIGRAND EXPR (NDIGITS)                                           RANPRI 105  12/20/77  Page 1.5'
+  386   	 (SETQ V2 V1)
+  387   	 (SETQ V1 V0)
+  388   	 (GO L)))))
+  389   
+  390   (DEFUN MAKECODE EXPR (P1 P2)
+  391    (PROG (F R S)
+  392     (COND ((NOT (EQUAL 1
+  393   		(PWRMOD 2 (SUB1 P1) P1)))
+  394   	 (ERROR 'P1-NOT-PRIME))
+  395   	((NOT (EQUAL 1
+  396   	   (PWRMOD 2 (SUB1 P2) P2)))
+  397   	 (ERROR 'P2-NOT-PRIME))
+  398   	((NOT (EQUAL 1
+  399   	   (GCD P1 P2)))
+  400   	 (ERROR 'GDC-NOT-1)))
+  401     (SETQ F (TIMES (SUB1 P1)
+  402   		 (SUB1 P2)))
+  403     (TERPRI)
+  404     (PRINC 'PHI=)
+  405     (PRINC (CVS F))
+  406   L (TERPRI)
+  407     (PRINC '/ / S=)
+  408     (SETQ R (EVAL (READ)))
+  409     (COND ((NOT (EQUAL 1 (GCD R F)))
+  410   	 (PRINT 'BAD-GDC-NOT-1)
+  411   	 (GO L)))
+  412     (SETQ S (CAR (DIOSOLVE R F)))
+  413     (COND ((LESSP S 0) (SETQ S (PLUS S F))))
+  414     (TERPRI)
+  415     (PRINC '/ / T=)
+  416     (PRINC (CVS S))
+  417     (SETQ #R (TIMES P1 P2))
+  418     (SETQ #S R)
+  419     (SETQ #T S)
+  420     (PRINT '(HAVE SET GLOBALS #R=P*Q #S #T))
+  421     ))
+  422   
+  423   (COMMENT PWRMOD EXPR (A K N)
+  424    (PROG (Q TQ NX LO HI AS NR)
+  425     (SETQ Q NIL)
+  426     (SETQ TQ (LIST K))
+  427   L1(SETQ NX NIL)
+  428   L2(COND ((NULL TQ)
+  429   	 (SETQ TQ (REVERSE NX))
+  430   	 (GO L1)))
+  431     (SETQ K (CAR TQ))
+  432     (SETQ Q (CONS K Q))
+  433     (COND ((LESSP K 3) (GO L3)))
+  434     (SETQ TQ (CDR TQ))
+  435     (SETQ LO (QUOTIENT K 2))
+  436     (SETQ HI (DIFFERENCE K LO))
+  437     (COND ((EQUAL HI (CAR NX)))
+  438   	((SETQ NX (CONS HI NX))))
+  439     (COND ((EQUAL LO (CAR NX)))
+  440   	((SETQ NX (CONS LO NX))))
+  441     (GO L2)
+  442   L3(SETQ AS (LIST (CONS 1 A)))
+  443   L4(COND ((NULL Q)
+  444   	 (RETURN (CDR (CAR AS)))))
+  445     (SETQ K (CAR Q))
+  446     (SETQ Q (CDR Q))
+  447     (SETQ LO (QUOTIENT K 2))
+  448     (SETQ HI (DIFFERENCE K LO))
+  449     (SETQ NR (REMAINDER
+  450   	    (TIMES
+  451   	     (CDR (ASSOC LO AS))
+  452   	     (CDR (ASSOC HI AS)))
+  453   	    N))
+  454     (SETQ AS (CONS (CONS K NR) AS))
+  455     (GO L4)))
+  456   
+  457   (COMMENT BIGRAND EXPR (NDIGITS)
+  458    (PROG (NUM)
+  459     (SETQ NUM (ADD1 (RANDOM 11)))
+  460   L (COND ((LESSP NDIGITS 2)
+  461   	 (RETURN NUM)))
+  462     (SETQ NUM (PLUS (TIMES NUM 12)î&	BIGRAND EXPR (NDIGITS)                                           RANPRI 105  12/20/77  Page 1.6'
+  463   		  (RANDOM 12)))
+  464     (SETQ NDIGITS (SUB1 NDIGITS))
+  465     (GO L)))
+  466   
+  467   (DEFUN RANDPRIME EXPR (NDIGITS PREFIX)
+  468    (PROG (P K RES KLIM PFLG)
+  469     (SETQ PFLG NIL)
+  470     (SSTATUS RANDOM (RUNTIME))
+  471   L (SETQ P (BIGDECRANDC NDIGITS PREFIX))
+  472     (COND ((ZEROP (REMAINDER P 2))
+  473   	 (SETQ P (ADD1 P))))
+  474     (SETQ KLIM 10000)
+  475     (COND ((LESSP P (TIMES KLIM KLIM))
+  476   	 (SETQ PFLG 'T)
+  477   	 (SETQ KLIM (BSQRT P))))
+  478     (SETQ K 3)
+  479   LK(COND ((EQUAL 0 (REMAINDER P K))
+  480   	 (GO L))
+  481   	((> (SETQ K (+ K 2)) KLIM)
+  482   	 (PRINC '/.)
+  483   	 (COMMENT PRINC (CONS (CVS P) '(BEING TESTED))))
+  484   	((GO LK)))
+  485     (SETQ #P P)
+  486     (COND (PFLG
+  487   	 (PRINT 'PROVEN-TO-BE-PRIME)
+  488   	 (RETURN P)))
+  489     (CATCH (COND ((PRIMEP P)
+  490   		(PRINT 'PRIME!)
+  491   		(RETURN P))
+  492   	       ((GO L))) PRIMEP-HARD)
+  493     (PRINC 'TOO-HARD-GIVE-UP)
+  494     (GO L)
+  495     (SETQ K 2)
+  496   TESTK
+  497     (SETQ RES (PWRMOD K (SUB1 P) P))
+  498     (COND ((EQUAL RES 1)
+  499   	 (PRINC K)
+  500   	 (PRINC 'OK/ )
+  501   	 (SETQ K (ADD1 K))
+  502   	 (GO TESTK)))
+  503     (TERPRI)
+  504     (PRINC K)
+  505     (PRINC '^/(P/-1/)=)
+  506     (PRINC (CVS RES))
+  507     (PRINT 'COMPOSITE)
+  508     (GO L)
+  509     ))
+  510   
+  511   (DEFUN CVS EXPR (N)
+  512    (PROG (S)
+  513     (SETQ S NIL)
+  514   L (SETQ S (CONS (PLUS 60 (REMAINDER N 12)) S))
+  515     (SETQ N (QUOTIENT N 12))
+  516     (COND ((NOT (EQUAL N 0))
+  517   	 (GO L)))
+  518     (RETURN (READLIST (CONS 57 S)))))
+  519   
+  520   (INIT210)îSymbol Table for:    MC:REM;RANPRI 105                                       12/20/77  Page I
+                     
+
+#MAXFACTOR  SETQ   001 006   CVD ....... EXPR   001 355   NTH ....... EXPR   001 008   QINV ...... EXPR   001 059 
+BIGDECRAND  EXPR   001 167   CVS ....... EXPR   001 509   ONEBIGBIT   EXPR   001 238   QUADNR .... EXPR   001 050 
+BIGDECRANDC EXPR   001 200   DIOSOLVE .. EXPR   001 369   OPENBIGBITS EXPR   001 228   QUADREC ... EXPR   001 028 
+BRANDOM ... EXPR   001 159   DIVIDE .... EXPR   001 068   ORDMOD .... EXPR   001 089   RAN210 .... EXPR   001 025 
+BRANDOM1 .. EXPR   001 132   FACTOR .... EXPR   001 288   PRIMEP .... EXPR   001 103   RANDCOMP1   EXPR   001 071 
+BSQRT ..... EXPR   001 272   INIT210 ... EXPR   001 013   PWRMOD .... EXPR   001 251   RANDCOMP2   EXPR   001 085 
+BSQRT1 .... EXPR   001 278   MAKECODE .. EXPR   001 390   Q2REC ..... EXPR   001 063   RANDPRIME   EXPR   001 465 
+   

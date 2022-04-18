@@ -1,0 +1,487 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.dummy @
+.tabfnt 2
+.ss
+.adjust
+.chap 7
+.he1
+Gary
+.he2
+Working Style
+.ce
+17. Gary
+
+Gary is considered to be "extremely bright" by his teachers.
+On his sixth grade school
+achievement tests his overall score placed him in the 83rd percentile.
+His teachers report that they find it difficult to
+find ways to challenge him within his regular school program, while at
+the same time reporting "peculiar gaps" in his academic knowledge -- in
+the area of standard arithmetical skills, for example.
+
+Gary found LOGO to be an exciting challenge.  He worked on four major
+projects each of which led to significant new learning in different
+areas:  using arcs and circles to draw a face; creating a simple math
+quiz; drawing and animating a starship; and writing a computer program
+capable of "understanding" Morse Code.  During the course of his work,
+Gary mastered the use of recursion and variables in a number of
+different contexts; he understood the use of conditionals and
+"branching"; he learned to write state transparent procedures, and to
+use superprocedures with modular subprocedures.  
+In his last project he was beginning to
+make use of recursion in list and word processing, 
+and learned the concepts of "empty list" and "empty word".
+
+The teaching strategy used with Gary was to offer him simple models of
+a particular kind of procedure, give him the information he needed, and
+leave him alone to elaborate on the model, providing help only when
+asked.  When one phase of a project was finished, additional challenges were
+suggested occasionally he was asked to
+alter or improve his work.  In this way, Gary was able to move ahead on
+his own, at as fast a rate as he wanted.
+
+.block 5
+11. Gary's Working Style
+
+0Of all our experimental subjects, Gary, who had had some prior
+exposure to computers, seemed the most predisposed
+to success in LOGO.  He combined a strong interest in computers
+with a learning style that encompassed both analytical and
+trial-and-error approaches.
+He absorbed new ideas voraciously, and rarely had to
+be shown something twice.  He tackled extremely ambitious projects, and
+always stayed with a project until some kind of completion was achieved.
+
+0Gary's work demonstrated some clear characteristics that set him
+apart from most of the other students:
+Gary easily understood the use of a procedure as an entity, recognizing
+the usefulness of naming a series of steps, and thereafter considering
+them as a "unit"; he often wrote procedures without trying out the
+steps individually first, recognizing that the series of steps could be
+considered to have a "total effect," as though it were a single command.
+
+Gary had faith in his ability to solve problems by reasoning as well
+as trial-and-error.  He was constantly trying things out "in his head",
+making use of a number of "abstract principles" to simplify and debug
+his work as he went along.  A series of FORWARD and BACK commands would
+easily be combined into one command.  Left/right reversibility would be
+used to correct an error.  At one point, for example, Gary had typed
+RIGHT 99, and realized from the effect that he should have used LEFT 99.  He
+then used the computer to add 99 + 99, and typed LEFT 198.  In writing
+his procedure later, he simply used the correct command LEFT 99,
+without ever having tried it explicitly.
+
+Gary tended to "plunge into a problem" impetuously, with very little
+advance planning, drawing on a quick analysis, based on partially
+understood ideas.  He then enjoyed the process of debugging his
+original idea, or of moving in a new direction, if his result was
+significantly different from what he had intended.  In the first class,
+Gary noticed that repeating a simple three step procedure made a
+"pattern" that looked something like a "circle".  When another student
+suggested making a smaller circle inside the first one, Gary
+started a small investigation of curvature.  He began to
+make a new circle by using the same procedure with smaller inputs.
+When his new circle came out larger than the original one, Gary was
+surprised and delighted.
+He then tested another approach -- make all
+the inputs exactly half of the original, which led to a "circle" of
+almost the same size as his first one.  And so on, until he had tried
+many variations.
+
+.he2
+Gary: Drawing a Face
+Gary usually worked in a step-by-step fashion, rather than
+plan his work in advance.
+While he generally had an overall idea of what he was
+trying to do, he tended to incorporate subprocedures one after another,
+rather than to break down his problem into parts and plan his
+subprocedures in advance.  He showed that he was capable of using a
+more structured approach.  When he was asked by his teacher to rewrite
+his STARSHIP procedure, he created a set of simple modular
+subprocedures to draw the starship.
+
+Gary often sought out bugs, testing for extreme situations:  the
+largest possible inputs, the largest number of REPEATs, situations
+which would produce error messages, as a way of understanding both the
+capabilities and limitations of the computer, beyond the needs of any
+specific project on which he was working.
+
+Gary's work was goal-directed and ambitious.  During his seven weeks of
+LOGO classes  he
+worked on four major projects.
+While he enjoyed brief detours, such as the "circle" exploration
+described above, his work was usually directed quite specifically at
+his particular immediate goal.  Between projects, he often appeared to be
+restless; once a new task was selected, he was off and running again.
+
+.he2
+Drawing a Face
+.block 5
+12. Gary's FACE Project
+
+0Gary's first project was to draw a complicated "face"
+built from a large number of subprocedures.
+The project involved learning to use superprocedures,
+subprocedures, and a great deal of Turtle Geometry.
+Gary used functional procedure names,
+abbreviated procedure names, and "nonsense" names, all in a rather
+elaborate scheme to "hide" the sub-procedures which actually "did the
+job". 
+This complex hierarchy of subprocedures was
+extremely difficult for Gary himself to debug, and he often had to
+trace through the entire "tree structure" of his project to find a
+bug in a particular procedure.
+
+.nofill
+.block 11
+			FACE
+
+			ENM
+
+		EN		M
+
+	EYES		NOSE		MOUTH
+
+	FOO6		FOO7		FOO8
+
+	FOO5
+
+.ADJUST
+.block 5
+In carrying out his FACE project Gary quickly developed a facility with
+Turtle Geometry:  basic TURTLE commands; RIGHT/LEFT reversibility;
+mastery of 90 degree angles; the geometry of arcs and circles; and the
+use of an implied axis of symmetry.  Although his design was
+symmetrical, it was not constructed by simply reversing RIGHT/LEFT
+commands to make it symmetrical about its center.  Gary's
+more complex method involved
+working "from the outside, in."  To draw the
+eyes, for instance, Gary moved the TURTLE to the outside of the
+right-hand circle and drew the circle.  Then he calculated the distance
+of two diameters, moved the TURTLE to the outside of the left-hand
+circle, and drew that circle.  (See Figure 7.1, and Gary's procedure, FOO6).
+.block 10
+.sp 8
+.ce
+Figure 7.1
+
+.NOFILL
+.BLOCK 26 
+TO FACE	TO ENM	TO EN	TO M
+10 ENM	10 EN	1 EYES	1 MOUTH
+END	20 M	2 NOSE	END
+	END	END
+
+TO NOSE	TO EYES	TO MOUTH
+1 FOO7	1 FOO6	10 FOO8
+END	END	END
+END
+
+TO FOO6
+1 FOO5
+2 PENUP
+3 LEFT 90
+4 FORWARD 80
+5 PENDOWN
+6 RIGHT 90
+7 RCIRCLE 45
+8 PENUP
+9 RIGHT 90
+10 FORWARD 160
+11 LEFT 90
+12 PENDOWN
+13 LCIRCLE 45
+14 HIDETURTLE
+END
+.ri
+Figure 7.2
+.HE2
+Making a Math Quiz
+.page
+.BLOCK 24
+TO FOO5		TO FOO7
+1 LCIRCLE 90	1 PENDOWN
+2 RCIRCLE 90	2 S
+END		3 FORWARD 100
+		4 RIGHT 99
+TO FOO8		5 FORWARD 30
+1 PENUP		6 RIGHT 90
+10 PENUP	7 RARC 10
+20 FORWARD 70	8 RARC 10
+30 PENDOWN	9 HIDETURTLE
+40 RIGHT 90	END
+50 PENUP
+55 RIGHT 90	TO S
+60 FORWARD 166	6
+70 RIGHT 90	10 PENUP
+80 FORWARD 70	20 SHOWTURTLE
+90 LEFT 90	30 LEFT 90
+100 PENDOWN	40 FORWARD 80
+110 LARC 80	50 LEFT 90
+120 HIDETURTLE	60 LEFT 9
+END		70 PENDOWN
+		END
+
+.ADJUST
+.he2
+Making a Math Quiz
+.block 5
+13. Gary's Math Quiz
+
+0Gary's second project
+involved the use of conditionals,
+PRINT statements, the naming of variables, and random numbers to create
+a "math quiz" which gave a user a series of two-digit addition problems.
+Although he planned to extend the project to include subtraction,
+multiplication and division, he decided to go on to other activities
+after completing the addition portion of the quiz.
+During the following year, Gary went back to this project and completed
+it, making use of LOGO computer provided by his school system.
+
+While working on the math quiz Gary encountered an interesting bug
+which was typical of the kinds of problems that often resulted from
+Gary's working style.  Gary would
+plunge into a problem
+"headfirst", with very little planning or consideration for the effects
+of an action that might go beyond his focus of the moment.  In making
+his math quiz, he originally had a set of procedures named MATH, MATH1,
+MATH3.  He decided that they were ordered incorrectly, 
+and so decided
+to EDIT the titles of the procedures, so that 
+the superprocedure would be called MATH, the first subprocedure
+would be MATH1, the second, MATH2, etc.  What he forgot while doing
+this, was that he would also have to change all the procedures
+themselves, so that they would be calling the correct subprocedures.
+When he finished changing the names around, all his procedures suddenly
+stopped working.  He was able to debug this situation himself by
+printing out his procedures and "playing computer".
+
+.nofill
+.BLOCK 39
+2TO MATH
+10 PRINT [WOULD YOU LIKE TO HAVE A MATH TEST?]
+15 MAKE "ANS REQUEST
+20 IF :ANS = [YES] PRINT [WELCOME TO THE WORLD OF MATH!] MATH1 STOP
+30 IF :ANS = [NO] PRINT [O.K. COME BACK AGAIN!] STOP
+END
+
+TO MATH1
+5 MAKE "NUM1 WORD RANDOM RANDOM
+6 IF FIRST :NUM1 = 0 GO 5
+7 MAKE "NUM2 WORD RANDOM RANDOM
+8 IF FIRST :NUM2 = 0 GO 7
+10 PRINT ( SENTENCE [%%] :NUM1 )
+15 PRINT [+]
+20 PRINT ( SENTENCE [%%] :NUM2 )
+21 PRINT [_____________]
+25 MAKE "ANS TYPEIN
+30 TST :ANS = :NUM1 + :NUM2
+40 IFTRUE PRINT [CORRECT!] MATH2 STOP
+50 IFFALSE PRINT [TRY AGAIN!]
+60 GO 10
+END
+
+TO MATH2
+10 PRINT [WOULD YOU LIKE TO HAVE ANOTHER PROBLEM?]
+20 MAKE "ANS REQUEST
+30 IF :ANS = [YES] PRINT [O.K. HERE WE GO AGAIN!] MATH1 STOP
+40 IF :ANS = [NO] PRINT [ALL RIGHT SEE YOU NEXT TIME!] STOP
+END
+
+TO MATH3
+5 PRINT [WELCOME TO THE WORLD OF MATH!]
+10 PRINT [17 + 28=]
+20 MAKE "ANS TYPEIN
+30 TEST :ANS = 17 + 28
+40 IFTRUE PRINT [CORRECT!] STOP
+50 IFFALSE PRINT [TRY AGAIN.]
+60 GO 10
+END
+
+.adjust
+.he2
+Drawing a Starship
+.block 5
+14. Gary's Starship Project
+
+0Gary's third major project was the drawing and animation of a
+starship (Figure 7.3).  At first he constructed a long, involved
+step-by-step procedure, which required some involved, rather
+frustrating debugging.  Gary's debugging resulted in the addition
+of even more lines to his one basic procedure.
+
+Although Gary successfully debugged the
+procedure, his teacher suggested that he redo the entire
+project, making use of simple procedures and subprocedures.  This time,
+having experienced both extremes -- an unnecessarily complex hierarchy
+of subprocedures in his FACE project, and an unnecessarily long single
+procedure for his STARSHIP, Gary constructed a set of modular
+subprocedures to draw the starship:
+
+Old Starship Procedure2
+
+TO STARSHIP
+10 RIGHT 90
+20 FORWARD 100
+30 LEFT 90
+40 FORWARD 50
+50 RIGHT 180
+60 FORWARD 100			0Figure 7.32
+70 PENUP
+71 LEFT 180
+72 FORWARD 50			
+73 LEFT 90
+74 FORWARD 100		0New Starship Procedures2	
+75 RIGHT 90
+90 LEFT 90	TO STARSHIP	TO STA		TO WINGR
+95 PENDOWN	10 STA		5 WRAP		10 MO
+100 FORWARD 100	20 WINGR	10 C		20 RIGHT 90
+105 RIGHT 90	30 WINGL	20 LI 100	30 LI 50
+110 FORWARD 50	END		END		40 MOVE
+120 LEFT 180					END
+
+(continued, next page)
+.page
+0(Old Starship, cont.)	(New Starship, cont.)2
+
+130 FORWARD 100	TO WINGL	TO MO
+140 PENUP	10 MOV		10 RIGHT 90	TO MOV
+141 RIGHT 180	20 LEFT 90	20 FORWARD 100	10 LEFT 90
+142 FORWARD 50	30 LI 50	30 LEFT 90	20 FORWARD 100
+143 RIGHT 90	35 RIGHT 90	END		30 RIGHT 90
+144 FORWARD 100	40 HIDETURTLE			END
+145 LEFT 90	END	
+155 PENDOWN
+160 RIGHT 90	TO C				TO LI :LE
+170 FORWARD 30	10 SQ.1				5 PENDOWN
+180 LEFT 90	20 PENDOWN RCIRCLE 10		10 RIGHT 90
+190 FORWARD 30	30 LCIRCLE 10			20 FORWARD :LE
+200 LEFT 90	40 PENUP FORWARD 30		30 LEFT 180
+210 FORWARD 60	45 PENDOWN			40 FORWARD 2 * :LE
+220 LEFT 90	50 REPEAT [RARC 10] 2		50 RIGHT 180
+230 FORWARD 60	60 PENUP REPEAT [RARC 10] 2	60 FORWARD :LE
+240 LEFT 90	70 PENDOWN REPEAT [LARC 10] 2	70 LEFT 90
+250 FORWARD 60	80 PENUP REPEAT [LARC 10] 2	END
+260 LEFT 90	90 BACK 30
+270 FORWARD 30	END		TO SQ.1
+280 PENUP			5 PENUP
+290 LEFT 90			10 RIGHT 90
+291 FORWARD 30			20 FORWARD 30
+292 RIGHT 90			30 RIGHT 90
+300 HIDETURTLE			35 PENDOWN
+310 PENDOWN			40 FORWARD 30
+320 RCIRCLE 10			50 RIGHT 90
+330 LCIRCLE 10			60 FORWARD 60
+340 PENUP FORWARD 30		70 RIGHT 90
+345 PENDOWN			80 FORWARD 60
+350 RARC 10			90 RIGHT 90
+360 RARC 10			100 FORWARD 60
+370 PENUP RARC 10		110 RIGHT 90
+380 RARC 10			120 FORWARD 30
+390 LARC 10			130 RIGHT 90
+400 LARC 10			135 PENUP
+410 HIDETURTLE			140 FORWARD 30
+END				150 FORWARD 30
+				END
+
+
+.he2
+A Morse Code Translator
+.adjust
+.block 5
+15. Gary's Morse Code Project
+
+0For his last project, Gary decided to create a Morse Code Translator as
+the first step of a project to actually transmit morse code over radio
+waves, which he had read about in a computer hobbyist magazine.  In
+creating the Morse Code translator he made
+use of FIRST and BUTFIRST comands in connection with list
+and word processing; his recursive procedures used
+the concepts of "empty word" and "empty list" in their STOP rules; and
+he used  conditional statements to decide which particular set of Morse
+Code symbols to output.  
+
+The morse code translator was built up by first creating a lengthy
+procedure, CODE, which output the correct sequence of dots and dashes
+for any letter or number:
+.nofill
+
+.block 6
+TO CODE :LETTER
+10 IF :LETTER = "A OUTPUT ".-
+20 IF :LETTER = "B OUTPUT "-...
+30...
+END
+
+.adjust
+The procedure PRI: WORD prints the correct sequence of letters for an
+entire word:
+
+.nofill
+.BLOCK 6
+TO PRI :WORD 
+10 IF :WORD = " STOP 
+20 TYPE CODE FIRST :WORD 
+30 TYPE "/ 
+40 PRI BUTFIRST :WORD 
+END
+
+PRI "HELLO
+
+ ..././.-../.-../---/
+.adjust
+
+The procedure PR12 :SENT, prints the correct sequence of letters for an
+entire sentence:
+
+.nofill
+.BLOCK 6 
+TO PRI2 :SENT
+10 IF :SENT = [ ] STOP
+20 PRI FIRST :SENTENCE
+30 TYPE "
+40 PRI2 BUTFIRST :SENT
+END
+
+PRI2 [HELLO HOW ARE YOU]
+
+ .../.-../.-../.../---/.--/.-/.-././-.---/---/..-/
+
+.adjust
+In creating these procedures Gary had to understand the difference
+between words and lists, and how this effected the wording of the stop
+rules in PRI (which manipulated words) and in PRI2 (which manipulated
+lists of words).  He also had to carry out a process of trial and error
+to determine the location of the stop rule in each procedure.  When the
+series of LOGO classes ended, Gary was engaged in the process of
+reversing the code -- that is, writing a set of procedures which would
+take a string of Morse Code symbols as input, and print out an English
+sentence.
+
+.he2
+Conclusions
+.block 5
+16 Conclusions
+
+0Gary absorbed a great deal in approximately 25 hours of LOGO
+classes.  His projects involved a number of different content areas:
+Turtle Geometry, interactive programming, animation, list processing,
+etc.  His enthusiasm remained at a fever pitch throughout the series of
+classes.  Gary actively resisted leaving class each day and
+when the cycle of LOGO classes was finished, Gary helped
+establish an after school "computer club," so that he could carry on
+his work.
+
+The computer activities provided the kind of challenge and the scope of
+intellectual activities that Gary wanted and needed to develop his
+abilities most fully.  The fact that this challenge and
+scope was not always present his regular classes was attested to
+frequently by his classroom teachers.  A LOGO capability in a
+classroom could help teachers meet the needs of students
+like Gary.
+
+
+

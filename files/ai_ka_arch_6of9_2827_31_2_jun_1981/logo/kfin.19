@@ -1,0 +1,871 @@
+.dv press
+.fo 0 TimesRoman11
+.fo 1 TimesRoman11b
+.fo 2 TimesRoman13b
+.fo 3 TimesRoman13
+.fo 4 TimesRoman10
+.fo 5 TimesRoman10i
+.fo 6 TimesRoman14b
+.fo 7 TimesRoman14
+.fo 8 TimesRoman11i
+.sr chapter_toc_space_after .50
+.so r; r macros
+.nr chapter_font 2
+.nr table_of_contents 3
+.nr table_of_figures 1
+.nr print_headings 0
+.margin 1i 1i 1i 1i 
+.ls 1.25
+6
+.sp 5
+MULTIPLE INPUT SYSTEMS:
+Creating a Friendly Environment for
+Physically Handicapped Computer Users
+7
+by
+Katherine K. Liu
+
+0
+Submitted in Partial Fulfillment
+of the  Requirements for the 
+Degree of Bachelor of Science
+at the 
+Massachusetts Institute of Technology
+May, 1981
+
+c  Katherine K. Liu, 1981
+
+
+The author hereby grants to M.I.T. permission to reproduce and to
+distribute copies of this thesis document in whole or in part.
+
+
+Signature of Authorline5
+Department of Electrical Engineering and Computer Science, May 22, 1981
+0
+.sp
+Certified byline5
+Thesis Supervisor
+0
+.sp
+Accepted byline5
+Chairman, Departmental Committee on Theses
+
+
+.bp
+6
+MULTIPLE INPUT SYSTEMS:
+CREATING A FRIENDLY ENVIRONMENT
+FOR HANDICAPPED COMPUTER USERS
+
+by
+Katherine K. Liu
+
+0
+Submitted to the Department of Electrical Engineering and Computer Science
+on May 22, l981 in partial fulfillment of the 
+requirements for the degree of Bachelor of Science in
+Computer Science and Engineering
+2
+
+
+
+
+
+
+
+Abstract0
+
+
+(5)Computers can be used by the physically handicapped in many ways, including as an 
+educational aid and as a therapeutic device.
+A method has been proposed which permits
+multiple input devices to replace or complement the use of the keyboard.  A Multiple Input
+System is described which relies on the existence of a device called a Multiple Input
+Communicator (MIC).  MIC would be able to accept the multiple inputs and convert them
+into a stream of bits which would appear as if they had been generated from a terminal at
+the computer's point of view.  In order to investigate MIC's feasibility, a Multiple Input
+Device System was designed and a simulation of its behavior was implemented on the LISP
+Machine.
+
+Thesis Supervisor:  Dr. Sylvia Weir
+.br
+Title:  Research Associate
+.bp
+2Acknowledgements0
+
+(5)I would like to than Dr. Sylvia Weir for the opportunity to work in this facinating
+field and for the advice she has given to me concerning this thesis.  I am also grateful
+to Jose Valente for the advice, encouragement, and support he has given my project.  I
+appreciate the opportunity that both the Cotting School for Handicapped Children in
+Boston, MA and the Masssachusetts Hospital School in Canton, MA have given to me to
+observe and work with their students.  I am especially indebted to Louie for his feedback
+and questions about the computer; this was a real help in designing the system.
+
+(5)I want to express my gratitude to Peter Szolovits, my academic advisor,
+not only for his words of wisdom concerning
+completing the thesis project, but for the patience and understanding and kind words
+of encouragement he has given me for the past three years.
+
+(5)To Matt BenDaniel, I extend much thanks for his patience and time while teaching me about
+the LISP Machine.
+
+(5)I want to express my appreciation to Latanya Sweeney for the tremendous amount of
+effort she spent to explain her Multiple Input Communicator to me.
+
+(5)For giving me advice on the content and presentation of my paper, I would like to
+thank Sue Ann Bidstrup and especially Shane Hartman.
+
+(5)Without the help of all the above and others, I would never have completed this project.
+0
+.nr print_headings 1
+.begin_table_of_contents "2"
+.chapter "Background and Motivation"
+
+.nr chapter_starts_page 0
+(5)Physically disabled but mentally alert individuals today often face
+a bleak future. Their handicaps force them into passive roles
+and deprive them of opportunities to increase learning.
+They have few occupational alternatives.  Those who are non-vocal
+experience tremendous frustration since they have difficulty communicating or
+cannot communicate their thoughts and  questions to others.
+
+(5)Computer systems have great potential to free such people
+from passive roles, to let them inquire and gain knowledge, to
+open more occupational alternatives, and to bring greater promise to
+their futures.
+A computer can be filled with information which the physically handicapped
+can investigate with a query language designed to meet their needs.  Text
+editors would enable the handicapped to write, improving their communication
+skills by allowing them to practice spelling and grammar.
+With LOGO, an interactive graphics, computer-based
+learning environment, the initiative and control of tasks is left
+completely to the user.  Learning in this manner could give these individuals
+new self-confidence as well as the opportunity to gain experience in programming techniques.  
+
+(5)In order to reap these and other benefits, the handicapped user
+must first be able to communicate with the computer.  Current techniques
+by which computer users transmit their requests to a
+machine are
+generally unsuitable for use by a handicapped person.  The most common
+method, typing instructions at a teletype keyboard, cannot be
+used by handicapped people lacking the motor ability to type.
+A method currently being developed with some success involves voice and
+speech recognition; unfortunately, such a method is of no help
+to non-vocal individuals.  Some other computer input system
+which would accommodate non-vocal people with severe physical limitations
+is therefore desireable.
+
+(5)There are several other points that should be remembered while developing this system.
+For maximum practicality, the system
+should be adaptable to several different physical handicaps.  This
+will increase the number of people who might benefit from the design.
+Also, the cost of the system should be considered
+since many people who might be able to use the system will not purchase
+the product or obtain the benefits of it if the cost is
+excessive.  The philosophy behind LOGO dictates that the input
+system remain user initiated:  the user  will actively pick and input
+the requests rather than stop a pointer when the desired request has
+been chosen by the computer.
+
+(5)A multiple input device system
+in which device definitions and capabilities could be easily altered to fit
+the particular needs of any individual would meet the above considerations.
+Such a system has been designed, permitting up to eight input devices
+to be used.  Devices would be placed, selected, and defined to meet the special needs
+of the given user, and the signals generated by these devices would be transmitted to
+a Multiple Input Communicator (MIC).  The MIC would process these signals
+to determine the equivalent stream a teletype would pass to a computer
+and then, imitating the teletype, the MIC sends this stream on to the computer
+
+(5)The intentions of my work are these:  (1) To investigate the utility
+of a Multiple Input System as an aid to handicapped
+computer users; and (2) To design a Multiple Input System providing access
+to all capabilities of the LOGO environment for one particular
+subject.
+
+
+
+.chapter "Previous Work and Available Literature"
+
+(5)Although no work has been done previously to develop a multiple
+input system for use by the handicapped, there is some literature available
+which shows the feasibility of such a system and suggests that these
+developments should prove beneficial.
+
+(5)Papert and Weir [1,2,3]  are investigating the way people afflicted with cerebral palsy
+think about the space around them and how they conceptualize that space.  One idea they are
+investigating is that cerebral palsy-afflicted people have trouble with this type of
+thinking because their disability restricts them from the freedom to explore the world
+around them as others can.  A large amount of current LOGO work at the Massachusetts
+Hospital School in Canton, MA involves testing the spatial knowledge of students afflicted
+with cerebral palsy.   Students who were unable to type, a skill needed to take the exams,
+were required to "type" using headsticks.  A headstick is a plastic-tipped metal rod attached
+to headgear and strapped around the chin of the student.  Since this method of typing is
+very inaccurate, a clear plastic key guard was developed.  This guard was placed over the
+keyboard so that the subject would be likely to strike plastic rather than an incorrect key
+if the position of the headstick was not quite accurate.  This resulted in a significant 
+reduction in the number of keys hit unintentionally.
+
+(5)Papert and Weir [3] conducted a pilot study at the Cotting School for
+Handicapped Children in Boston, MA.  The results of this study showed
+that LOGO, a computer-based learning environment, could help
+educate and rehabilitate severely handicapped students.
+In one instance, a boy afflicted with cerebral palsy,
+serious speech problems and athetoid movements changed dramatically
+after working with LOGO.  He was transformed from a quiet non-participant
+into a leader at school.  His self-worth rose dramatically, as did his self-confidence.
+He also developed facility in geometry and in programming processes.  He was recently
+accepted into a college to study programming.
+
+(5)Such benefits are slow in coming and generally not quite as spectacular.  However, many
+students exposed to LOGO develop a higher sense of personal worth.  This additude change is
+probably due at least in part to LOGO's environment which places initiative and control in
+hands of the user; this gives students high motivation  to learn.  Students at Cotting School
+showed accelerated learning in areas where improvements were not thought possible and, 
+surprisingly, even developed better control over fine motor movements as their typing
+improved.  This suggests that the potential therapeutic benefits of computer exposure are
+great.
+
+(5)Many students experienced a great deal of difficulty in typing, making the need for
+specially
+designed keyboards or input systems permitting parts of the body other than the fingers
+to generate signals apparent.  The concept of a "Button Box", an input device with large keys
+separated by a greater distance and defined to reduce the number of gestures needed when
+making a Turtle request in the LOGO Graphics environment, was introduced.  The suggestion was
+made that the number of required gestures could be similarly reduced by redefining the present
+teletype keys via software techniques.
+
+(5)Sweeney [4] has proposed a flexible Multiple Input  System which would permit input
+signals to
+be accepted from up to eight input devices rather than from the single teletype keyboard.
+These devices may be strategically placed to allow different parts of the body to activate
+generation of signals through them.  The signals are sent in the form of a bit stream to a
+Multiple Input Communicator (MIC), the crux of the system design.  MIC is a data driven
+program which is achieved here as a program on a separate microprocessor. as suggested by
+Vanderheiden [5].  Basically, MIC acts as am interpreter.  He listens to the Multiple Input
+Devices and translates from their "language" to the "language" a computer would expect from a
+keyboard.  The substitution from keyboard to Multiple Input Devices and MIC can be seen in 
+Figure 1.
+.begin_page_figure "Normal and Multiple Input Device Configurations"
+.finish_figure
+(5)There are other ways that MIC con be realized.  In cases where the
+computer has multi-process capability, MIC could be realized as one process on the machine.
+On a larger computer, MIC could be a subroutine which handles input to the computer.
+In all cases, MIC has to same basic task:  to take information provided by the bit stream
+then determine what device initiated the stream and what should be done based on this
+information.  Using this analysis, MIC
+will produce a single stream which serves as the input stream to the computer.
+
+.chapter "The LOGO Learning Environment"
+
+(5)In addition to providing the standard mathematical problem solving
+tools, the following capabilities are found in the LOGO Learning
+Environment.
+         
+     -  Graphics.  A powerful set of primitive graphics commands 
+        are provided.  This area is referred to as the LOGO
+        Turtle World.
+     -  Editor.  Standard line editor facilities are provided.
+     -  String Manipulations.  LOGO provides standard string
+        manipulations for general problem solving.
+
+2
+.chapter "Observations of Handicapped Students at Cotting School"
+0
+
+(5)Observations of handicapped students working in the LOGO environment were conducted
+at the Cotting School for Handicapped Children.  Several students displayed awkward movements
+and speech problems that often are apparent in cases of cerebral palsy.  
+These problems often make communicating with computers difficult, yet some of Cotting
+School's students obtained tremendous therapeutic benefits from using the computer.
+In one instance, a student who had previously been willing to let his left hand lie helplessly
+at his side began using this hand to press down the control key.  Since some
+edit commands require that the control key and a character key be pressed simultaneously,
+developing this skill meant he could communicate editing commands independently, without
+instructor assistance.  It seems that therapeutic benefits like this are likely to occur,
+since there is a high motivation here to acquire improved motor skill and coordination.  As a
+result, a student may work more diligently towards this goal as a result.
+
+(5)These observations clearly showed that the standard
+keyboard-type of input device is difficult for many handicapped people to use.
+The existence of the "delete" key,
+which can forgive many mistakes, is an aid.  Unfortunately, this one
+key is not enough to sufficiently reduce the frustration experienced
+by more severely handicapped users who hit many, many
+incorrect keys.  More aids designed specifically for handicapped users
+are needed.
+
+
+.chapter "Development of a Multiple Input System Design"
+
+(5)Although all the students at Cotting School had enough fine motor
+coordination to type with some degree of accuracy, there are many very
+severely handicapped individuals who lack the needed coordination and would not be able to type at all.
+Also, there are quite a few people who, like the student mentioned
+above, lack needed typing skills in one hand and who therefore are
+unable to take full advantage of the power of the computer.
+LOGO group leaders had users in these categories in mind when
+they began encouraging the development of a Multiple Input System.
+
+(5)Based on these observations, an investigation was conducted to determine the number of
+input devices that a handicapped individual who could not type would need.
+Even a person who could use a headstick with some accuracy would still
+need an alternative means of communicating control characters to the computer
+(these characters require two keys to be pressed simultaneously).
+An additional device would be needed which could either: (a) contain the
+set of all control characters or (b) signal the MIC that the next
+character entered at the keyboard should be converted into a control character
+before being passed into the computer input stream.
+
+(5)Also, although a user with a headstick is theoretically capable of
+typing any commands using the present keyboard (excluding control-character commands), in practical use, 
+this method is long, tedious, and prone to error.  This suggests a need for
+two more device types.  One is a delete (rubout) device which should
+be chosen and placed so that the handicapped user could somehow activate the
+device easily.  The other is a sort of "shorthand keyboard" which would 
+substitute one or a short sequence of keys for long commands consisting of 
+long character strings.  The investigation suggested development of a system consisting
+of three to five input devices:  keyboard, control, rubout, and possibly
+one or two command (shorthand) keyboards.
+
+(5)Observations of one handicapped student were conducted
+with the goal of designing a system to meet his particular needs.
+Louie, a fourteen year old boy afflicted with
+cerebral palsy, is a student at the Massachusetts Hospital School in Canton,
+MA.  Louie is quadriplegic and non-vocal; he cannot type and possesses limited control over
+body movements.
+However, he has relatively good control over motions of his head.
+Louie regularly communicates by pointing with his nose to words or letters on
+a board attached to his wheelchair.  He knows how to use a headstick
+and is relatively accurate when typing on a teletype keyboard with it when the clear
+plastic guard is placed over the keyboard.
+
+(5)Louie was observed using the headstick
+during spatial knowledge testing of cerebral palsy afflicted youngsters
+by members of the LOGO group.  Further work was conducted with Louie to discover the
+areas of his body over which Louie possessed greater motor control and
+coordination and problems Louie had with headstick typing which needed
+to be resolved.  It was determined that Louie use a headstick on a keyboard device
+in the system being designed
+because Louie's familiarity with the keyboard-headstick combination
+outweighed difficulties asociated with the method:  the fact that Louie could 
+already manipulate the headstick would enable him to learn the entire
+system more rapidly.  
+
+(5)The best way to take advantage of Louie's familiarity
+with the headstick and keyboard while minimizing problems caused by his
+inaccuracy at typing with the headstick would be to 
+limit the number of "active" keys on the teletype keyboard.  
+In other words, the computer was to perform no action when "inactive"
+keys were pressed.  This way, if Louie were to make an error
+and hit the wrong key, there would be a good chance that the
+mistake would be ignored by the computer.  By spreading the active keys
+across the whole face of the keyboard, the odds that a key hit
+accidentally would produce no action could be increased.
+
+(5)Limiting the number of active keys meant Louie would be unable
+to access all computer capabilities through the keyboard.  It was proposed that a good
+compromise would be to have active keys result in the performance of LOGO Turtle
+primitive commands or serve as arguments to such commands.
+This allowed Louie to work on the computer with his headstick while the
+rest of the system was being defined.  Figure 1 shows the
+selection of active keys and the corresponding actions or values.
+The set of programs I called Board1 defines this and is listed in
+Appendix A.  LOGO Turtle primitive commands are briefly described in Appendix 
+B.
+.begin_page_figure "Board1 Setup."
+.finish_figure
+
+(5)Restricting the keyboard solely to Turtle commands meant other
+devices would be needed to access the other LOGO capabilities.
+However, additional devices increase the cost of the system as well as
+the time required to obtain parts for the system.
+The best way to minimize the complications resulting
+from additonal devices was to offer alternative definitions of the
+teletype keyboard.
+The particular definition in effect at any given time would be determined
+by another input device.
+				    
+(5)This Keyboard Definition Device (KDD) would either run the Board1 Turtle World
+definition or it would run the standard keyboard definition.
+When the system was turned on, the standard keyboard definition
+would be in effect.
+By activating this KDD, the program which restricts the user to the Turtle 
+World would begin.  Pushing this button again would terminate the program.
+
+(5)In addition to the keyboard and the KDD, two more devices are
+added to the system.
+The first is a Control Character Device (CCD) which will tell MIC
+that the next character typed at the keyboard should be converted
+into a control character in the output stream.  The last device
+is a Delete Device (DEL).  This is provided to simplify correcting errors as an
+alternative to the delete key provided on the keyboard.
+
+.chapter "Placement of the Multiple Input Devices"
+
+(5)From earlier work with Louie, it was observed that his hands were very strong, but very
+poorly coordinated.  Also, it was noted that Louie was very proficient at using his nose as
+a pointer.  Unfortunately, nose-activated devices could not be provided:  the headstick would
+get in the way.  Therefore, movements that Louie would not find excessively difficult to make
+were sought as were corresponding locations that were relatively accessible yet unlikely to be
+activated accidentally.  Button type devices would be preferred over any other because they
+are easy to operate and easy to purchase.  The upright metal bars supporting the armrests on
+Louie's wheelchair were found to be suitable locations, meeting all the above requirements.  
+A third location chosen was beside the teletype keyboard.  This could be activated either by
+hand or headstick.  The DEL and KDD buttons were placed on the wheelchair, and the table
+location was selected for the control character.  The main reason for this selection is that
+it would permit converting CCD from a one button, single signal generating device to a
+multi-button, multi-signal generating device relatively easily.
+Thus, rather than have to
+type CCD G for control-G (two keys), one key might do it all:  either the device could have
+many buttons, each representing a specific control character, or the number of times a single
+button is pressed could determine which character the user wanted.
+The present setup of devices is pictured 
+in Figure 2.
+.begin_page_figure "Device Setup"
+.finish_figure
+
+.chapter "Limitations Imposed on the Implemented System"
+
+     These are Limitations on the implemented system:
+          - Access is limited to the Turtle World
+          - Additional input devices were not implemented
+
+1
+.section "The Turtle World Limitation"
+0
+
+(5)The number of keys on the teletype keyboard was defined under Board1
+was limited to eighteen:  seven keys are the basic seven Turtle commands and the other
+eleven keys are ten numerical values (5, 10, 20, 30, ..., 90) which serve as arguments to 
+some of the
+commands and a "cancel command" key.  These numerical values were chosen since they permit
+any figure desired to be drawn relatively accurately.  The remaining keys were left
+undefined.  This limitation was entered because the area of the LOGO Project
+which is currently of greatest interest involves exploring the ability of the
+cerebral palsy afflicted to think spatially.  A brief description of the
+Turtle and Turtle Commands is given in Appendix B.  This restricts
+Louie's use of the computer to the Turtle World until MIC is completed, 
+but it has simplified communication with the computer.   This allows Louie to learn to work
+on the computer and to practice using the headstick.  It is important that the task of
+communicating with the computer not be too difficult so that users like
+Louie will not become overly discouraged.
+
+(5)With this idea of greatly simplifying communication in mind, a
+second guard
+was constructed of cardboard and placed over the clear plastic guard.
+This covered keys that have no effect under Board1, and
+prevented Louie from accidentally hitting these keys.
+
+1
+.section "Failure to Implement All Input Devices"
+0
+
+(5)The Multiple Input Communicator (MIC) which permits the developments of multiple input
+device systems is not yet debugged.  Therefore, it was not possible to implement the
+additional buttons described in my design.
+
+.chapter "Simulation of MIC"
+
+(5)In order to insure the feasibility of the Multiple Input Communicator, a program
+was written to simulate the logic behind the designed input system.  This programming
+was done on the LISP Machine in Technology Square.  
+
+1
+.section "Overview of MIC"
+0
+
+(5)A Multiple Input Communicator (MIC) is a device which serves as an interface
+between a computer system and a handicapped user.  MIC compensates for the afflicted 
+user's inability to effectively user conventional input devices (teletypewriters,
+for example) by accepting signals from several "special" input devices, translating 
+these signals into commands or sequences of commands acceptable to the computer, and 
+then transmitting the results to the host system.  These special input devices are
+most frequently switches of various kinds positioned in a manner designed to take
+advantage of what motor control the handicapped user may possess:  a single motion
+of the user's body can invoke a complex process within the host system.  These 
+processes are defined to suit the user's needs and can be modified as he or she becomes
+more sophisticated in using the system.  
+
+(5)Currently, MIC is visualized as a microprocessor, although different implementations are
+possible and seem likely.  On systems capable of supporting multiple processes, for
+example, MIC could be implemented as a process which handles input for the handicapped
+user.  A wide variety of forms combining different amounts of "hardware" and "software"
+may be conceived for MIC.  The flexibility of the idea renders it adaptable for 
+virtually any handicapped person.  
+
+1
+.section "Discussion of the Model"
+0
+
+(5)MIC shall be modelled as a "black box" which has the following properties:
+.in +12
+1.  Standard ASCII characters are accepted in the form of binary strings;
+these are transmitted to the computer without modification.
+
+2.  Signals are accepted from three special devices which shall result in special 
+behavior.  One device will send a delete character symbol to the host system.
+A second will tell MIC to transform the next character received into a control character
+and transmit it to the computer.  The third device will send a string of binary characters
+which will activate or terminate a program which enables single keystrokes to be
+interpreted as 
+Turtle commands.
+                      
+.in -12
+
+(5)A character is represented in the model as a list of eight "bits"  (0's and 1's).
+A word then corresponds to a list of characters or list of lists.  Standard ASCII 
+character code is used.  
+
+(5)Input is received from the keyboard one character at a time.  Each character is read 
+with the LISP primitive TYI which returns the ASCII value (octal) for the next character
+typed at the keyboard.  This value is stored away to be examined or changed later.
+If the examination indicates that a special button has been depressed, then 
+a corresponding special number that will be recognized by the functions representing
+MIC will be saved.  Depending on the values received by these functions, certain values
+will be determined to be sent on to the computer stream.
+
+The source code is provided in Appendix C, along with further explanation of the program.
+2
+	
+.chapter "Problems"
+0
+
+(5)There were a few problems encountered during the course of the project.
+The original student that had been selected for my system design developed a neck problem 
+that made using a headstick impossible.
+I needed to find another subject and was very fortunate to find Louie.
+
+(5)The computers that I have been using at Canton has been troublesome.
+The present keyboard is undependable, being very sensitive to
+humidity and temperature.  An earlier DEC 3500 developed extremely neurotic
+behavior and was finally sent in for repairs.
+The original plan had been to use an Apple computer; it was scrapped since LOGO's
+3500 was in Massachusetts Hospital School for other purposes.  When this
+machine broke, it was necessary to borrow one from the Cotting
+School.  This computer failure was not greatly detrimental to the development
+of the Multiple Input System.  However, it hindered the final evaluation
+of the modified keyboard; the user needed to become fully acquainted with the working in the
+LOGO Turtle Environment before its true effectiveness could be reported.
+
+(5)I was disappointed that MIC was not completed in time to be used in my project.
+Although it  was not expected to be completed, the absence of the device limited the bulk of
+this project to theory rather than implementation.
+Nonetheless, this project has been an enjoyable as well as a useful one.
+
+.chapter "Suggestions for Future Work"
+
+(5)The work done with Louie was promising.  Although Louie experienced some problems
+typing accurately even the modified version of the keyboard, he quickly acquired
+enough ability to draw simple figures and write his name.  Since Louie was aware that other
+computer activities were being performed for him (such as login in and out), he expressed
+a desire to also be able to perform these actions.  The Multiple Input Device System 
+described in this paper should enable him to accomplish this.  For this reason,
+this system should be implemented.
+There are many other ways that the system could have been designed,
+but the simplicity of this design makes it a good choice.
+
+(5)Work needs to be done to eliminate the need for the cumbersome headstick.
+This will require that the physical abilities of Louie or other handicapped individuals
+be studied carefully and that devices to meet these abilities be developed.
+For example, Louie has expressed a desire to be able to signal a computer
+request with his nose instead of a headstick.  I was unable to find a
+method to do this, since the keys on the teletype are too small to hit with
+a nose. However, a nose device might still be worth investigating
+since Louie is very good at pointing to characters on his 
+communication board with his nose.
+(5)Finally, the encouraging results of work done with Louie suggest that using Multiple 
+Input Device Systems as a therapeutic tool needs to be considered while
+the successful results of work done to develop this specific instance of such a system can
+be applied when considering
+other systems in the future.  It must not be forgotten that the goal of the system is to
+simplify communication with the computer using whatever means the handicapped user can.
+
+
+
+
+
+.bp
+.chapter "Literature References"
+.nf
+
+
+
+[1] Papert, S., and Weir, S.
+.in +12
+Using Information Technology for the Physically Handicapped:  
+Constructing Spatial Worlds for Communication and Control.
+.br
+l980.
+.in -12
+
+[2] Papert, S. and Weir, S.
+.in +12
+Information Prosthetics for the Handicapped.
+.br
+AI Memo No. 496 [LOGO Memo No.51]
+.br
+September 1978.
+.in -12
+
+[3] Papert, S. and Weir, S.
+.in +12
+ Final Report of Information Prosthetics for the Handicapped.
+.br
+MIT
+.br
+January, 1981.
+.in -12
+
+[4] Sweeney, L. 
+.in +12
+Towards a Multiple Input Communicator.
+.br
+MIT Artificial Intelligence Laboratory.
+.br
+January, 1981.  
+.in -12
+
+[5] Vanderheiden, G.
+.in +12
+Practical Application of Microcomputers to Aid the Handicapped.
+8
+.br
+Computer 14(1),0 January, 1981.
+.in -12
+
+
+[6] Sannella, M. 
+.in +12
+A Glossary of PDP11 LOGO Primitives.
+.br
+1979.
+.in -12
+
+[7] Rowe, N.
+.in +12
+An Intermediate Level Logo Manual.
+.br
+1976.
+.in -12
+
+.bp
+.chapter "Appendix A:  Board1 Programs"
+
+.bp
+.chapter "Appendix B:  Turtle and Turtle Commands"
+
+
+Turtles come in many species, but the one used in my project is
+the "display turtle".  The display turtle looks like this:     
+
+
+
+      The head is pointing upwards.  This turtle "lives" on the video screen and
+can be manipulated with the following commands:
+
+
+     LEFT NUM
+     RIGHT NUM
+     FORWARD NUM
+     BACK NUM
+     PENUP
+     PENDOWN
+     CLEARSCREEN
+
+
+LEFT and RIGHT will turn the turtle in the specified direction
+by NUM degrees.
+FORWARD and BACK move the turtle in the specified direction by NUM units.
+PENUP and PENDOWN determine whether a trace will be left when the turtle
+moves (PENDOWN) or not (PENUP).
+CLEARSCREEN removes all earlier traces made and returns the turtle to
+its "origin":  facing upward in the center of the screen.
+
+For more information, see Rowe [7].
+.bp
+.chapter "Appendix C:  Simulation of MIC"
+
+
+.nf
+4
+;; INTRODUCTORY REMARKS
+
+;; A multiple input communicator (MIC) is a device which serves as an interface
+;; between a computer system and a handicapped user.  MIC compensates for the afflicted 
+;; user's inability to effectively user conventional input devices (teletypewriters,
+;; for example) by accepting signals from several "special" input devices, translating 
+;; these signals into commands or sequences of commands acceptable to the computer, and 
+;; then transmitting the results to the host system.  These special input devices are
+;; most frequently switches of various kinds positioned in a manner designed to take
+'' advantage of what motor control the handicapped user may possess:  a single motion
+;; of the user's body can invoke a complex process within the host system.  These 
+;; processes are defined to suit the user's needs and can be modified as he or she becomes
+;; more sophisticated in using the system.  
+
+;; Currently, MIC is visualized as a microprocessor, although different implementations are
+;; possible and seem likely.  On systems capable of supporting multiple processes, for
+;; example, MIC could be implemented as a process which handles input for the handicapped
+;; user.  A wide variety of forms combining different amounts of "hardware" and "software"
+;; may be conceived for MIC.  The flexibility of the idea renders it adaptable for 
+;; virtually any handicapped person.  
+
+;;DISCUSSION OF THE MODEL
+
+;; We shall model MIC as a "black box" which has the following properties:
+;;        1.  Standard ASCII characters are accepted in the form of binary strings;
+;;            these are transmitted to the computer without modification.
+;;        2.  Signals are accepted from three special devices:  BUTTON1, BUTTON2, and
+;;            BUTTON3.  These signals shall have the following meanings:
+;;                BUTTON1 - Send a delete character (binary) to the host system.
+;;                BUTTON2 - Transform the next character received into a control character
+;;                          and transmit it to the computer.
+;;                BUTTON3 - Send a string of binary characters which activates BOARD1
+;;                          (a subset of the LOGO "Turtle World" graphics environment)
+;;                          if this program has not been invoked.  Or, if BOARD1 is currently
+;;                          being executed, sent a STOP CHARACTER string to the computer.
+
+;; A character is represented in the model as a list of eight "bits"  (0's and 1's).
+;; A word then corresponds to a list of characters or list of lists.  Standard ASCII 
+;; character code is used.  
+
+;; Input is received from the keyboard one character at a time.  Each character is read 
+;; with the LISP primitive TYI which returns the ASCII value (octal) for the next character
+;; typed at the keyboard.  This value is stored in INPUT_BUFFER, which is examined by the
+;; function CHECK_INPUT_BUFFER.  If the value of INPUT_BUFFER indicates that a special
+;; button has been depressed (ASCII values (octal) 133, 135, 137 corresponding to the
+;; characters "[" (BUTTON1), "]" (BUTTON2), and "_" (BUTTON3), respectively), then BUFFER is
+;; assigned a corresponding special number (301, 302, or 304) which is recognized by the
+;; functions MIC and SPECIAL_DEVICES as a button.  The value of BUFFER is then converted
+;; into a "character" via the functions CONVERT and EXPLODE_NUMBER:  MIC_BUFFER is assigned
+;; this value.  The function MIC then examines MIC_BUFFER.  If the value is a button, control
+;; transfers to the function SPECIAL_DEVICES which executes the appropriate action.
+;; Otherwise, OUTPUT_STREAM is assigned the value of MIC_BUFFER.  Transmission of the
+;; translated input to the computer is represented by printing the value of OUTPUT_STREAM.
+
+;;GLOBAL VARIABLES
+;; input_buffer holds octal representation of keyboard characters from the keyboard.
+;; buffer holds octal representation which will be sent to mic
+;; button1,
+;; button2,
+;; and button3 hold octal representations of keyboard characters which serve to represent
+;;             the additional input devices 
+;; anmic_buffer
+;; delete_stringherwise, board1_flag is set off
+
+
+(declare (special input_buffer))   (setq input_buffer 0)                          
+(declare (special buffer))         (setq buffer 0)
+(declare (special button1))        (setq button1 133)
+(declare (special button2))        (setq button2 135)
+(declare (special button3))        (setq button3 137)
+(declare (special mic_buffer))     (setq mic_buffer nil)
+(declare (special delete_string))  (setq delete_string (list 0 1 1 1 1 1 1 1))
+(declare (special board1_string))  (setq board1_string
+                              	   (list (list 0 1 0 0 0 0 1 0)
+                              	         (list 0 1 0 0 1 1 1 1)
+                              	         (list 0 1 0 0 0 0 0 1)
+                              	         (list 0 1 0 0 0 1 0 0)
+                              	         (list 0 0 1 1 0 0 0 1)))
+(declare (special stop_string))    (setq stop_string (list 0 0 0 0 0 1 1 1))
+(declare (special output_stream))  (setq output_stream nil)
+(declare (special off))            (setq off 'off)
+(declare (special on))             (setq on 'on)
+(declare (special control_flag))   (setq control_flag off)
+(declare (special board1_flag))    (setq board1_flag off)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(defun fill_input_buffer ()			;get a character from the keyboard
+   (setq input_buffer (tyi)))
+
+
+(defun check_input_buffer ()			;set buffer according to the value of
+   (cond ((equal input_buffer button1)		;input_buffer:  if the character is to
+	  (setq buffer 301))			;be interpreted as a button, then assign
+	 ((equal input_buffer button2)		;corresponding special value to buffer.
+	  (setq buffer 302))
+	 ((equal input_buffer button3)
+	  (setq buffer 304))
+	 ((equal control_flag on)		;character is to be interpreted as control
+	  (setq control_flag off)		;character.  Set buffer to appropriate value.
+	  (setq buffer (get_control_char)))
+	 (t (setq buffer input_buffer))))
+
+(defun get_control_char ()			;if character is lower case, then capitalize.
+   (cond ((and (lessp input_buffer 173)
+	       (greaterp input_buffer 140))
+	  (setq input_buffer (difference input_buffer 40)))
+	 (t nil))
+   (plus (times (cadr (explode_number input_buffer)) 10)	;strip hundreds digit from 
+	 (caddr (explode_number input_buffer))))	;number & return result (corresponds 
+						;to ASCII conventions for control chars.)
+(defun explode_number (num)
+  (prog (1st 2nd 3rd)				;return 3-digit number as a list of 3 digits
+	 (setq 1st (quotient (difference num (remainder num 100)) 100))
+	 (setq num (remainder num 100))
+	 (setq 2nd (quotient (difference num (remainder num 10)) 10))
+	 (setq 3rd (remainder num 10))
+	 (return (list 1st 2nd 3rd))))
+
+(defun convert (digit)				;convert octal digit to binary
+       (cond ((equal digit 0) (list 0 0 0))
+	     ((equal digit 1) (list 0 0 1))
+	     ((equal digit 2) (list 0 1 0))
+	     ((equal digit 3) (list 0 1 1))
+	     ((equal digit 4) (list 1 0 0))
+	     ((equal digit 5) (list 1 0 1))
+	     ((equal digit 6) (list 1 1 0))
+	     ((equal digit 7) (list 1 1 1))))
+
+(defun prepare_mic_input ()			;convert contents of buffer into binary.  
+       (setq mic_buffer				;set mic_buffer to a list of 8 bits
+	     (cdr (append (convert (car (explode_number buffer)))
+			  (convert (cadr (explode_number buffer)))
+			  (convert (caddr (explode_number buffer)))))))
+						
+(defun mic nil					
+       (cond ((and (equal (car mic_buffer) 1)	;if button then goto special devices
+		   (equal (cadr mic_buffer) 1))
+	      (special_devices))
+	     (t (setq output_stream mic_buffer))   ;otherwise set 
+                                    	;output_stream to mic=buffer
+
+
+(defun special_devices ()
+       (setq mic_buffer (reverse mic_buffer))  
+       (cond ((equal (car mic_buffer) 1)	;button1
+	      (setq output_stream delete_string))
+	     ((equal (cadr mic_buffer) 1)	;button2
+	      (setq control_flag on)
+	      (housekeeping))
+	     (t (cond ((equal board1_flag off)	;button3
+		       (setq board1_flag on)
+		       (setq output_stream board1_string))
+		      (t (setq board1_flag off)
+			 (setq output_stream stop_string))))))
+
+
+(defun simulate ()
+       (cond ((equal input_buffer 134)
+	      '(end of simulation))
+	     (t (terpri)
+		(princ '=>)
+		(housekeeping))))
+
+
+(defun housekeeping ()
+       (fill_input_buffer)
+       (check_input_buffer)
+       (prepare_mic_input)
+       (mic)
+       (print output_stream)
+       (simulate))
+
+
+
+
+
+.insert_table_of_contents

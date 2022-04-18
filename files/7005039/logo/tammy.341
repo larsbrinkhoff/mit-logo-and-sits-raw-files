@@ -1,0 +1,980 @@
+.xgp
+.font 0 30vr
+.font 1 37vrb
+.font 2 30fg
+.ds
+.adjust
+.ce
+1Tammy0
+
+Tammy is a student who has great difficult with academic work in
+school.  In mathematics and language she is considered to be several
+years behind her classmates (her national achievement test scores place
+her in the 2nd percentile).  Although she receives several hours of
+special tutoring in the school's Learning Center, the staff feels that
+she is not progressing rapidly enough, and are struggling to find an
+appropriate educational program for her as she enters seventh grade.
+
+From the beginning of her work in the LOGO classes, Tammy's work
+provided an exception to most of the patterns we have observed among
+the rest of the sixteen students in our study.  Although Tammy did very
+little turtle geometry, she was more "involved" with the computer than
+any other student.  She developed an almost "personal" relationship
+with the computer she used, giving it a name, and treating it in the
+way some chidren treat a doll or a pet.
+
+Tammy's major use of the computer was as a typewriter and "editor".
+Using a special program designed to allow her to use the printing
+capability of the computer without writing procedures or using PRINT
+commands, Tammy wrote a series of nine "stories", which she distributed
+to her family, friends and teachers.  These stories constituted the
+most significant work of Tammy's entire school year.
+
+Tammy's success in writing and completing work with the computer has
+led to success in other areas as well.  Tammy's assignments on a
+regular basis -- something she had not been able to do before taking
+the computer classes.  In addition, a friendship established with
+Holly, another girl in her LOGO class, has led to Tammy's being
+included socially with Holly and her friends in the classroom, ending
+her previous isolation.
+
+I.  Tammy's "Personal Relationship" with the Computer
+
+Tammy had a very special relationship with one of the computers, which
+she called "Peter".  While this was most noticeable in the earlier
+classes, it persisted throughout Tammy's computer experience.  Her
+attitude toward "Peter" was much like that often shown by children
+toward a favorite pet or doll -- an exaggerated version of how one
+might behave to a beloved younger child.
+
+In the very first class, Tammy expressed an interest in communicating
+with the computer:  "I thought it would talk to you, hello" When it
+responded to a missing space in an FD445 command by printing "You
+haven't told me how to FD445," Tammy responded with genuine anger:  "I
+did, you fool!"  "Oh, this isn't doing what I told it to do," she said
+at another point.
+
+In the next class she again asked about communication:  "I want to ask
+it questions.  Oh you know, What's your name?  Things like taht."  IN
+response I explained that all the computer's answers would have to come
+from her, ahd showed her how to use a PRINT command.  Her first
+procedure gave the computer an answer to her first question:
+.nofill
+
+	2TO WHO
+	1 PRINT [MY NAME IS PETER]
+	END
+
+.adjust
+0Tammy was extremely possessive about the particular machine she
+regularly used. She felt that this machine, her "Peter", was hers,
+and she would say things like "Take good care of Peter,"  when she left
+for the day.  lWhen she came late to class number four, "Peter" was
+already being used by another student.  Tammy stormed and fussed. "I
+want to use my computer.  That's the one I use very day."  When I
+insisted they were all the same, Tammy responded; "I hate you...I think
+I'm going to cry..." (to which Holly said "go right ahead, Tammy.")
+Finally she was persuaded to use another coputer and was somewhat
+reassured by the fact that it responded correctly to WHO, once she had
+logged in.  She actually worked quite successfully, using the LETTER
+procedure for the first time, to write a letter to her godmother,
+Doris, signing it "Love Tammy and Peter."
+
+In succeeding classes the other students all left "Tammy's computer" to
+her, even when she came late -- except when they needed to use the printer.
+
+As the classes went on, Tammy's "relationship" with Peter tempered
+somewhat.  I continued to stress that the computer was a machine,
+controlled by her, by me and by other programmers.  I pointed out that
+I had written the program, LETTER, to help the computer help her write
+stories, and that I wrote the message that she sometimes got from
+the computer.
+
+Gradually she reduced her expression of anger at the computer for error
+messages, as she realized how the error messages were related to what
+she had done.  Nonetheless, she continued to share credit for her
+work with "Peter". "Do you want to see the stories me and Peter have
+written?"  she would ask a visitor.  And she would often introduce
+visitors to "Peter", using her WHO procedure.
+
+I believe that Tammy progressed, by the end of the classes, to a more
+balanced understanding of her role in relation to the computer.  By
+this time, her behavior with the computer was much more matter-of-fact
+and she had begun to interact very extensively with the other children
+in the class.  As she came to understand the mechanical predictability
+with which the computer responded to her, and as she began to take
+pride in her accomplishments in story writing, "Peter" came more and
+more to take on the status of a personal fantasy -- one which a child
+knows is a fantasy, but persists in "playing" sometimes because
+it's fun.
+
+II. Tammy's way of working with the Computer
+
+The strongest characteristic of Tammy's approach to working with the
+computer was her need to clear the text display screen.  While many
+children have a desire to clear the screen between projects, or when
+bored or frustrated, Tammy exhibited this desire in an extreme way.
+One of Tammy's first questions was about "how to get the words off the
+screen," and learning how to accomplish this using the carriage return
+was a major discovery of hers during the first class.  Once she figured
+out how to do it she cleared the text display after almost every line
+-- clearing it instantly after an error message without looking at the
+message.  In later classes Tammy developed the habit of clearing the
+text display before logging in, after logging in, after almost every
+instruction that was not part of an ongoing task, and before and after
+saying GOODBYE.
+
+Tammy's habit of clearing the text display in this way interferred
+significantly with her learning.  It effectively prevented her from
+maintaining a continuity in what she was doing, and eliminated the
+possibility of her responding to the computer's error messages.  Even
+after completing a piece of work Tammy would hardly look at it:  after
+I had finished helping her edit her first letter, DORIS, she swept it
+off the screen without looking at the corrected version.
+
+Tammy was able to leave several sequential lines on the screen, while
+working on a specific project -- although it required a definite effort
+on her part not to endulge her carriage return habit.  When working on
+a drawing project, she would carefully copy all the necessary steps
+into her notebook, then quickly clear the screen.
+
+Tammy had a strong desire for completion and correctness in all her
+work.  Although she might work for an hour steadily on a story, she
+added to a "completed" story, however "unfinished" it might have
+seemed.  Although she was quite a perfectionist by her own standards,
+while working on a story, Tammy never proofread or edited a story once
+she had declared it finished.  In fact, unless she noticed an error in
+a particular line while typing it, or immediately after typing a
+carriage return, she never went back to find an error.  Once a story
+was done, it was done!  She might show it to other people, but she
+rarely read it over to herself, and certainly not with a view to
+analyze or correct it.  Incidents like the following were observed
+several times.  lTammy was proofreading a sentence which began "ONCE
+UPON TIME..."  but she read aloud, "Once upon a time..." and
+continued, satisfied that her work was correct.
+
+Tammy's attitude towards errors and towards completion of "correct"
+work is also shown by her behavior in other situations.  One of her
+learning disability tutors related that she would repeatedly throw out
+whole pages once she had made one error -- a tactic that frustrated her
+in working with a standard typewriter.  Hence in her written work she
+had developed a style of writing only short pieces of one or two
+"perfect" sentences.
+
+Tammy also had a great desire for neatness in the classroom.  She took
+it upon herself to collect and put away pens, notebooks, and other
+items which had been left out by the children.  She would also remind
+others regularly to put their things away.
+
+In her pre-LOGO interview, Tammy showed the same kind of strategy, when
+trying to arrange a series of permutations of a set of colored blocks.
+The task was to create as many different arrangements of the blocks as
+possible.  After having done a few, Tammy swept the old ones away,
+clearing the table -- thus making it impossible for her to know whether
+the next one was different or not.  When the interviewer re-established
+all Tammy's old arrangements, she made one more, and then compulsively
+swept them all away again.
+
+In her work with the computer, Tammy quickly established a set of
+conditions about what she could and couldn't do, and adhered to these
+with little change through the classes.  Tammy could do the
+folowing:  LOGIN "TAMMY; LET LETTER (to get her letter writing
+procedure); start, write and end a letter; run a letter or a drawing
+procedure by typing its name; and type the word GOODBYE.  Things she
+couldn't or wouldn't do on her own included:  writing a procedure;
+editing a procedure or a story; saving a procedure, by writing a file;
+reading a file; and using the lineprinter.  These things, part of her
+daily routine, wre done for her by me.
+
+Since I wanted Tammy's work with the computer to be simple and
+straightforward, with as few stumbling blocks as possible, I fell into
+the habit of doing some of these things for Tammy, thinking that she
+would gradually take over some of the functions as her work continued.
+I found that it was very important for Tammy to keep the boundary
+between what she would and wouldn't do, very firm.  Towards the end of
+the classes, I made an effort to get her to use the lineprinter on her
+own, showing her the PRINTON command, and showing her how to make
+multiple copies of a story by using REPEAT.  Tammy objected to this
+strongly, but agreed to do some of it, if I would share the work
+with her.  I think that she would have eventually learned these
+commands, and have attained a greater measure of independence in her
+computer use.
+
+Tammy did develop one way of editing stories.  If she made a mistake
+early in a story she could start again by typing END, and clearing the
+screen.  Typing LET LETTER again would clear out her workspace and
+allow her to begin her story again.  Interestingly, when she did this,
+she almost always typed an identical sentence to the one she had typed
+before -- without any printed reference -- sometimes complete with the
+error that had forced her to start over in the first place.  In such
+cases she would stop and go through the whole process again until she
+got it right.
+
+Another characteristic of Tammy's working style was that she took a
+long time to settle down to productive work.  She usually came to class
+later than the other students, and wandered around a bit before
+deciding what to do.  Once started on a story, she often made a lot of
+mistakes on the first line -- requiring her to start the whole story
+over again.  Once past the first line, however, she typ8ically finished
+a story without any more false starts.  Her problem with starting was
+reflected in a rush at the end of the class.  Since Tammy placed a
+premium on completed work, she often found it necessary to stay after
+class to finish up.
+
+.block 4
+III. Tammy and the Turtle
+
+Tammy used the turtle in only nine of the four class sessions.  Most of
+her use of the turtle required active help from me or one of the other
+students.
+
+From the beginning, Tammy had great difficulty concentrating on what
+the turtle was doing in response to the commands she typed.  In the
+very first class Tammy literally "dozed off" while the rest of the
+class was figuring out how to draw a box, and how to write a procedure.
+When she began to work on her own, she tended to work randomly,
+copying commands from an instruction sheet without looking at their
+effect, and clearing the actual commands from the text display almost
+as quickly as she typed them.  For numerical inputs she chose double
+numbers like 55, sequences like 34, or combinations like 445.  At the
+end of the period she did write a few steps and a comment in her notebook:
+
+.block 7
+.nofill
+21)?F.D. 45 	I told computer to go left and ::
+?B.D. 23	right and forward
+?F.D. 23
+?Rt 34
+.ce
+Figure 1
+
+.adjust
+0Although Tammy seemed to have difficulty throughout the first class in
+focussing on what the turtle was doing in response to her typing,
+she did notice when the command HT 78 made the turtle disappar, and
+asked for help saying "I want my turtle back."  She had a mch stronger
+response to the computer's text responses -- angrily commenting about
+error messages and sweeping them off the screen with a stream of
+carriage returns.
+
+In the second class she was more thoughtful about what she was doing,
+eventually recognizing that she had caused the computer to draw a
+"seven", and carefully copying down the steps in her notebook:
+
+.nofill
+.block 8
+	21) F.D. 66	This number that
+	2) F.D. 34	I got the compu.
+	3) F.D. 45	to do: (face)
+	4) L.T. 66
+	5) L.T. 34	(circled 7)
+	6) F.D. 66
+.ce
+Figure T-2
+
+.adjust
+0In class three, I help her make this into procedure SEVEN, copying the
+steps from her notebook, (fig. T-3).
+
+.nofill
+.block 12
+	2TO SEVEN
+	1 FORWARD 66
+	2 FORWARD 34
+	3 FORWARD 45
+	4 LEFT 66
+	5 LEFT 34
+	6 FORWARD 66
+	33 FORWARD 45
+	333
+	END
+.ce
+Figure T-3	
+.adjust
+
+0In class five, Tammy did some more drawing, copying the following steps
+in her notebook:
+
+.block 16
+.sp 12
+.ce
+Figure T-4
+
+This could be the beginning of a "house".  Tammy returned to a similar
+shape in class #13.
+
+In class six, Tammy decided in advance what she wanted the computer to
+draw:  a "zero".  When I asked her to draw a zero by hand, she drew it
+as a rectangle, indicating that she understood that it was easier for
+the turtle to draw straight lines than to draw curves.  In building her
+rectangle with the turtle she first tried FD 34, decided that was too
+small; swithced to FD 66 which was still too small; but then added
+on a step, FD 45, to complete the vertical side of the rectangle.  At
+the corner, she was not sure what to do.  She knew she wanted to turn
+right, but didn't know how much.  When I asked her to guess she
+suggested RT 8 or RT 9, or maybe RT 34.  I decided to give her the
+correct turn, RT 90, saying that it was the same for all four corners,
+because I wanted Tammy to be successful in her fist planned drawing.
+(Actually, I offered her the choices of experimenting for herself,
+or obtaining the angle from me.  She chose the latter.)  At the top of
+her rectangle, she first tried FD 23, then added FD 45.  She knew how
+big she wanted it to be, but had no clear idea of which numbers to use
+to get there.  Once she turned the upper right hand corner, she tried
+to use the PD (PENDOWN) command to finish the far side of the
+rectangle.  I explained the function of PD and reminded her to use FD,
+and the same numbers she had used before (66 and 45) to complete the
+side.  She was then able to complete the lower side of the rectangle by
+herself, and gave a cheer when it was finished.  She decided to call it
+"TAMMY" and carefully copied the steps in her notebook.  She put off
+teaching it to the computer until next time.
+
+IN class 12 Tammy taught her procedure TAMMY to the computer.  She had
+some trouble copying the steps.  When she typed 66 as a line number
+instead of 6, Tammy insisted on tredoing the whole thing, instad of
+editing.  When the same thing happened again, Tammy let me fix it, by
+erasing the line for her.
+
+.nofill
+.block 14
+	2TO TAMMY
+	1 FORWARD 66
+	2 FORWARD 45
+	3 RIGHT 90
+	4 FORWARD 23
+	5 FORWARD 45
+	6 RIGHT 90
+	7 FORWARD 66
+	8 FORWARD 45
+	9 RIGHT 90
+	10 FORWARD 23
+	11 FORWARD 45
+
+.ce
+Figure T-5
+
+.adjust
+0Once Tammy finished teaching the procedure, TAMMY, I suggested that she
+repeat it, asking her where she thought it would be drawn the second
+time.  While she had difficulty predicting hwere the second rectangle
+would appear, she had a pretty good idea whre the third and fourth
+would go.  Although she like this design, (fig, T-6) she did not want
+to teach it to the computer.
+
+.block 20
+.sp 18
+.ce
+Figure T-6
+
+Tammy then asked Holly to show her how to make it spin, using the SPON
+command.  Tammy did this several times, with spinds of 100 and 1000.
+She also asked for help in making the same design spin when she came to
+class next time (class 8).
+
+This was Tammy's last attempt to draw anything until class thirteen, in
+which I introduced her to a "DRAW" procedure which automatically made a
+procedure out of any turtle commands that she used.  I gave her a great
+deal of encouragement, as she produced a design that looked a little
+like the beginning of a "house".  She stopped it at the point shown,
+when the DRAW procedure ran out of storage space.  Tammy called the
+procedure "DAN" in my honor, but once she had completed drawing it, she
+had no interest in looking at it again, and never did.  I did not
+suggest that Tammy draw a picture again.
+
+.block 15
+.sp 13
+.ce
+Figure T-7
+
+One other exposure to using the turtle came when Tammy had a visit from
+Dianne in class ten.  Once Tammy had shown Dianne her stories, Dianne
+showed Tammy how to draw a pair of "eyes" using RARCs and LARCs.
+Although Tammy wrote the steps down in her notebook, she never tried
+them out on her own.
+
+.nofill
+.block 18
+	21) rarc 90
+	2) rarc 90
+	3) rarc 90
+	4) rarc 90
+	5) larc 90
+	6) larc 90
+	7) larc 90
+	8) larc 90
+	9) rarc 90
+	10) rarc 90
+	11) rarc 90
+	12) rarc 90
+	13) larc 90
+	14) larc 90
+	15) larc 90
+	16) larc 90
+
+.ce
+Figure T-8
+
+.adjust
+0I might conjecture that if Tammy had not had the possibility of using
+the computer to write stories, she might have persevered with drawing a
+lot more.  Tammy's experience with the "zero" drawing shows that she
+was capable of seeing the connection between the commands she was
+giving and what the turtle was drawing.  On the other hand, Tammy was
+delighted with using the computer to write stories.  This was a unique
+and special use of the computer, and she did not have to compare her
+work with anyone else's.   Drawing with the computer may have seemed to
+be just another activity at which she was "not as good" as her classmates.
+
+.block 4
+IV. Tammy's Stories
+
+Most of Tammy's time and effort in using the computer was devoted to
+writing.  A special program, LETTER was created for her use, allowing
+her to type a story directly into the computer with having to write a
+procedure, using line numbers or PRINT commands.  Tammy used the LETTER
+procedure to write two "letters" and seven "stories" over a period
+spanning twenty classes.  She also started at least three more stories
+that were discarded before she finished them.
+
+In her stories, Tammy had a "product" of which she could be proud.  She
+could easily share copies with her classmates, teachers and family and
+with visitors to the LOGO classes.  It was a unique product -- not to
+be compared with the work of other students -- which was very important
+to Tammy, who was used to having her work evaluated as being of lower
+quality than that of her fellow students.  Most importantly, Tammy was
+able to use the computer to express her ideas in writing and to improve
+her writing skills in a way that she had not been able to do in regular
+classes or in her special tutorial programs.
+
+Here are Tammy's nine "stories" (as she called them), beginning with
+DORIS (class 4) and continuing to MISS.HIRSH (class 21).  They show
+considerable development in style, sophistication and in proficiency in
+grammar and punctuation.  They are presented here exactly as Tammy
+wrote them.
+
+.nofill
+.BLOCK 5
+	2DORIS
+
+DEAR DORIS HOW ARE YOU DOING UP IN NEW YORK.  I HOPE I WILL SEE YOU IN
+THE SUMMER
+LOVE TAMMY AND PETER
+
+.BLOCK 5
+	HELEN
+
+DEAR HELEN HOW ARE YOU IN YOUR NEW HOME. I AM GOING TO GET YOU SOMETHING
+ FOR YOUR NEW HOME .AS SOON AS GET MY MONEY
+LOVE TAMMY
+
+.BLOCK 9
+	TOMMY
+
+TOMMY IS LITTLE BOY HE LIVE' IN JAMES TOWN FOR 3 YEARS HIS MOTHER
+DIE WHEN HIS FATHER CAME BAKE ARMY 2 YEARS AFTER THAT THEY MOVE
+TO NEW YORK AND HIS FATHER GOT MARRIED THEY HAD A LITTLE GIRL
+NAME LIZ.14 YEARS AFTER THAT TOMMY GOT MARRIED TO A TEACHER
+ENGLISH HIGH AFTER THEY GOT MARRIED TH HAD TO BABY'
+LITTLE BOY TOMMY JR AND LITTLE GIRL NAME LISA AFTER
+THE CHILD WERE 3 AND 2 THEY MOVE TO HOLLY WOOD
+
+.BLOCK 9
+	ANN
+
+ANN IS A OLD WOMAN SHE IS 81 YEAS OLD
+.SHE LIVE WITH HER HUSBAND IN FLORIDA HE IS 92 YEARS OLD
+THEY H BUSTER THAT IS MARRIED TO
+A NURSE AND THEY HA TRIPLETS.  THEY BE MARRIED FOR
+3 YEARS AFTER THEY GOT SETTLED DOWN THAN THEY
+MOVE TO NEW YORK WERE DORIS LIVES. ABOUT 5 YEARS AFTER
+ABOUT 5 YEARS THEY HAD A LITTLE GIRL SUE AND WAS PRETTIEST
+
+.BLOCK 11
+	SONNY
+
+SONNY IS A LITTLE BOY HE LIVES WITH HIS AUNT HELEN IN CALIFORNIA
+HE HAS BEEN LIVE WITH HER FOR 9 YEARS.  HE IS GOING TO A HOME FOR
+LITTLE WONDERS 4 WEEKS AFTER THAT TO
+COUPLE A ADOPTED SONNY HE WAS THE HAPPIEST BOY THAT YOU EVERY
+SEEN. I GUESS IF THAT WAS ME I WOULD BE HAPPY IF SOME ONE WOULD
+ADOPT. BUT SEE I AM NOT ADOPT I HAVE MY ON MOTHER AND I AM
+GLAD THAT I HAVE MY ON MOTHER.BECAUSE THE KIDS THAT HAVE FEELS
+REALLY BAD. THAT'S WHY ALL THE KIDS IN THE WORLD SHOULD BE
+GRATEFUL TO THEIR PARENTS. THE END.
+
+.BLOCK 9
+	DONELL
+
+DONELL IS A GROWN MAN HE LIVES WITH HIS
+FRIEND IN NEWYORK HE BE LIVE THERE FOR 3WEEK'S
+THEY BOTH BEING LIVE THERE FOR 4 WEEKS. THEY BOTH
+HELP PAY THE RENT THEY PAY 200 DOLLAR A WEEK FOR RENT
+JIM GUESS WHAT ?WHAT I GOT FIRE TODAY WHAT DID YOU SAY
+I GOT FIRE TODAY.WHAT ARE WE GOING TO TELL MR. SMITH
+I DO NOT KNOW WHAT TO TELL MR. SMITH ABOUT THE RENT.
+
+.BLOCK 15
+	MR. LEWIS
+
+ONCE UPON A TIME THERE WAS A MAN NAMED BOB .HE LIVED
+OUT IN BROOKLINE HE LIVED OUT THERE FOR 10 YEARS.
+2 YEARS LATER HE FOUND A JOB OUT IN NEWTON .NEWTON
+WASNT PAYING ENOUGH MONEY TO SUPORT HIM .HIS FRIEND
+HAD TOLD HIM TO GO SEE DAN WILSON. THE NEXT DAY BOB WENT OUT TO SEE MR.
+WILSON. MR. WILSON SAID BOB WHAT KIND OF WORK CAN YOU DO. I CAN TEACH
+,I CAN DO PAINTINGS DRAWING AND ALL KINDS OF THINGS.WHAT WOULD YOU LIKE
+TO DO MOST. I WOULD LIKE TO TEACH. I THINK KIDS NEED MY HELP. WHAT
+KINDS OF THINGS WOUULD YOU LIKE TO TEACH. IF I MAY I WOULD LIKE TO TEACH
+ MATH, AND SCIANCE, AND ENGLISH. ONE WEEK AFTER
+HE START WORK FOR LINCOLN
+BY TAMMY DIANNE AND PETTER
+
+.BLOCK 9
+	MISS.HIRSH
+
+ONCE UPON TIME THERE WAS A LITTLE GIRL NAME LISA SHE LIVED IN
+BROOKLINE. SHE LIVE THERE FOR 16 YEARS WITH HER MOTHER HELEN
+WAS THE BEST WOMAN IN THE WORLD .  THAT IS WHAT HER LITTLE 
+LISA THOUGHT OR HER MOTHER HELEN .SEE HELEN WAS NOTHING BUT
+A NASTY OLD 42 YEAR WOMAN.SHE DIDN'T CARE ABOUT LISA WENT TO
+SCHOOL VERY NASTY.SHE LOOK LIKE SHE HAVEN'T TOOK A BATH IN
+6 MONTHS.AND ROLL THROUGH THE MUD.
+
+.adjust
+0Tammy's first two stories, DORIS and HELEN, are really letters, written
+to her godmother and mother respectively.  The next four were all "made
+up stories about real people."  Tommy, Ann, Sonny and Donell are all
+Tammy's relatives.  Sonny and Donell are Tammy's brothers.  The last
+three stories, HOLLY< MR.LEWIS and MISS.HIRSH are about a classmate,
+and about Tammy's regular sixth grade teachers.
+
+Beginning with the very first class, Tammy had shown an interest in
+"communicating" with the computer, and in using the computer as a
+typewriter.  In the second and third classes I showed Tammy how to
+write procedures using the PRINT command, first with brackets, then
+with a variable input.  Her typing difficulties made it hard for her to
+be successful using the PRINT command.
+
+I created a special program for Tammy called LETTER, which allowed her
+to choose a name for a letter, then type whatever she wants to write
+directly into the computer.  The LETTER procedure interprets each of
+Tammy's typed lines as a separate "REQUEST" and automatically makes a
+procedure to print out her lines in order.  If Tammy wants to change a
+line she can use the rubout key, before she types a carriage
+return.  Other than that, it has no special editing capability.  When
+Tammy finishes with a story, she types END, which causes the LETTER
+procedure to finish defining the procedure.  It then types, out "HERE
+IS YOU RLETTER, DORIS" (for example), and runs the procedure, printing
+the lettter exactly as Tammy types it.  
+
+Tammy was quickly able to use the LETTER procedure on her own to write
+whatever she wanted.  She would type LET LETTER, choose a name for her
+story, and begin (LET is a procedure which reads her lettter writing
+procedures into her workshopace), she had problems if she wanted to
+change a line after typing a carriage return (in which case I had
+to help her edit her procedure after it was all finished), or when she
+typed a series of carriage returns to clear the text display.
+Sometimes she accidentally typed carriage return intending to type a
+rubout.  After typing a string of carriage returns, she would often
+type END and start all over.  Tammy was never able to edit a procedure
+on her own.
+
+Tammy was introduced to LETTER in class four -- the same class in which
+she made such a fuss about having to use a "different" computer.  She
+wrote the letter DORIS (fig. t-9), writing it out first by hand, and
+copying it on the computer.   At the end of the class I printed out
+several copies for her, as she carefully estimated how many she would
+need:  "One for me, one for my mother, one for Doris (her godmother),"
+etc.  In her notebook, Tammy wrote. "Today me and Peter did a letter".
+
+.nofill
+.block 5
+2DEAR DORIS HOW ARE YOU DOING UP IN NEW YORK.  I HOPE I WILL SEE YOU IN
+THE SUMMER
+LOVE TAMMY AND PETER
+
+.ce
+Figure T-9
+
+.adjust
+0Notice that Tammy's letter has a greeting, followed by a question and
+then a statement, it is signed jointly by Tammy and Peter."
+Tammy's letter seems to follow a set "letter writing format."  The only
+punctuation Tammy used was a period after the first question.  Tammy
+carefully proofread the letter, and I changed it from "HOW YOU DOING UP
+NEW YORK." to "HOW ARE YOU DOING UP IN NEW YORK." at Tammy's direction.
+
+Tammy's next letter was HELEN, written during class six.  This letter,
+accomplished in a much shorter time, was written to her mother.  It
+followed the same format:  greeting, question, statement, signature.
+Puncutation consisted of two periods.  Tammy accidently pushed the
+carriage return before correctly spelling the final word, "MONEY," so I
+helped her edit the letter, and helped her with spelling as well.
+
+.nofill
+.block 5
+2DEAR HELEN HOW ARE YOU IN YOUR NEW HOME. I AM GOING TO GET YOU SOMETHING
+ FOR YOUR NEW HOME .AS SOON AS I GET MY MONEY
+LOVE TAMMY
+
+.ce
+Figure T-10
+.adjust
+
+0In class eight, Tammy asked if she could use LETTER to write a "story".
+When I responded affirmatively, she began to write a story which she
+called TOMMY.  She had several false starts before settling down to
+complete a seven line story, which ends rather abruptly (fig. T-11).
+She had trouble typing the first line and used the carriage return a
+lot between lines, which messed up her story.  I helped her twice to
+erase it and start again.  Once she completed the first line
+successfully, she went on to write seven lines, before deciding she was
+finished.
+
+The story TOMMY represented a big change from Tammy's previous computer
+writing, and set the tone for the rest of the writing she was to do.
+IN Tommy, her concern was not for a grammatically correct carful
+statement following a prearranged format.  Rather she was concerned
+with the details of the story:  the names of the characters, the places
+they lived, the sequence and timing of events.  The only plunctuation
+was one period after LIZ, and two apostrophes (typed in very
+deliberately in places where Tammy should have had an "s").  Tammy had
+a lot of trouble typing the apostrophes, as she had to use the shift
+key.  I reminded her not to type carriage return until she was
+satisfied with the whole line, and she often rubbed out all or most of
+a line to correct a spacing or spelling error.  Once a line was
+finished, however, she did not ask me to correct anything.
+
+.nofill
+.block 9
+2TOMMY IS LITTLE BOY HE LIVE' IN JAMES TOWN FOR 3 YEARS HIS MOTHER
+DIE WHEN HIS FATHER CAME BAKE ARMY 2 YEARS AFTER THAT THEY MOVE
+TO NEW YORK AND HIS FATHER GOT MARRIED THEY HAD A LITTLE GIRL
+NAME LIZ.14 YEARS AFTER THAT TOMMY GOT MARRIED TO A TEACHER
+ENGLISH HIGH AFTER THEY GOT MARRIED TH HAD TO BABY'
+LITTLE BOY TOMMY JR AND LITTLE GIRL NAME LISH AFTER
+THE CHILD WERE 3 AND 2 THEY MOVE TO HOLLY WOOD
+
+.ce
+Figure T-11
+
+0In class 9, Tammy wrote another story, ANN, which ended even more
+abruptly (fig. T-12).  IN this case, time ran out before she completed
+it, and Tammy considered it finished as it stood.  She showed no
+interest in adding to it at a later class.  Tammy got started on her
+story right away, without any false starts.  She did push the carriage
+return while there was still an error on the first line, but this time,
+she asked for help, and I told her I'd  help her fix it when the whole
+story was finished.  She worked very carefully on her firt seven
+sentences, rubbing out and rewriting as often as necessary, carefully
+checking each sentence before going on.  She finally got frustrated in
+starting the eight line, typed a lot of carriage returns and called for
+help.  I helped her edit, correcting the mistakes she pointed out, and
+eliminating the extra lines.  lAt this point, Tammy declared the story
+finished, and printed out about 10 copies, offering them to classmates
+as well as to two visitors.  She appeared to have a great deal of pride
+in her work.
+
+.nofill
+.block 9
+2ANN IS A OLD WOMAN SHE IS 81 YEARS OLD
+.SHE LIVE WITH HER HUSBAND IN FLORIDA HE IS 92 YEARS OLD
+THEY H BUSTER THAT IS MARRIED TO
+A NURSE AND THEY HA TRIPLETS. THEY BE MARRIED FOR
+3 YEARS AFTER THEY GOT SETTLED DOWN THAN THEY
+MOVE TO NEW YORK WERE DORIS LIVES. ABOUT 5 YEARS AFTER
+ABOUT 5 YEARS THEY HAD A LITTLE GIRL SUE AND WAS PRETTIEST
+
+.ce
+Figure T-12
+
+0Tammy's next story, SONNY (fig. T-13) was written during class 14.
+Although Tammy had a lot of difficulty getting the first line the way
+she wanted it, and had to restart several times, she wrote a nine line
+story -- her longest to date -- without asking for any further
+corrections.  Tammy used several periods throughout the story.  In each
+case she checked with me to see if the period was located correctly.
+At one point Tammy asked whether she should use "adopt" or "adopted".
+I explained the difference in meaning by using each in a sentence.  It
+was clear to me that Tammyh could not hear the difference in the
+way the words sounded, so that the choice was completely arbitrary
+to her.  She decided to use "adopt" at that point, and throughout the
+rest of the story.
+
+In this case, Tammy was less interested in the details of the story
+than in the "moral" -- how glad she was that she was not adopted, and
+that every kid should be grateful to their parents.  Tammy was clearly
+using SONNY to express some very deep feelings and values -- as well as
+some appreciation for her own parents.
+
+.nofill
+.block 11 
+2SONNY IS A LITTLE BOY HE LIVES WITH HIS AUNT HELEN IN CALIFORNIA
+HE WAS BEEN LIVE WITH HER FOR 9 YEARS. HE IS GOING TO A HOME FOR
+LITTLE WONDERS 4 WEEKS AFTER THAT TO
+COUPLE A ADOPTED SONNNY HE WAS THE HAPPIEST BOY THAT YOU EVERY
+SEEN. I GUESS IF THAT WAS ME I WOULD BE HAPPY IF SOME ONE WOULD 
+ADOPT. BUT SEE I AM NOT ADOPT I HAVE MY ON MOTHER AND I AM
+GLAD THAT I HAVE MY ON MOTHER.BECAUSE THE KIDS THAT HAVE FEELS
+REALLY BAD. THAT'S WHY ALL THE KIDS IN THE WORLD SHOULD BE
+GREATEFUL TO THEIR PARENTS. THE END.
+
+.ce
+Figure T-13
+
+.adjust
+0After Tammy had completed SONNY, I asked her if I could see some
+samples of the writing she was doing in class.  "I don't have time to
+write stories in class," was her reply.  "I've got too much work to
+do."  I then asked Tammy's English teacher and her learning
+disabilities teacher for samples of Tammy's writing.  They both
+confirmed the fact that Tammy had done virtually no creative writing
+this year.  Her English teacher explained that Tammy rarely completed
+any work -- pointing out that Tammy's computer stories were among
+her first finished pieces of work.
+
+Tammy's next story, DONELL (Fig. T-14) was written during class
+fifteen.  Once again, Tammy had difficulty settling down to start her
+story, and ran out of time before finishing it.  I suggested that Tammy
+finish it next time.  She agreed, but never came back to it.
+
+.nofill
+.block 9
+2DONELL IS A GROWN MAN HE LIVES WITH HIS
+FRIEND IN NEWYORK HE BE LIVE THERE FOR 3WEEK'S 
+THEY BOTH BEING LIVE THERE FOR 4 WEEKS.THEY BOTH
+HELP PAY THE RENT THEY PAY 200 DOLLAR A WEEK FOR RENT
+JIM GUESS WHAT ?WHAT I GOT FIRE TODAY WHAT DID YOU SAY
+I GOT FIRE TODAY.WHAT ARE WE GOING TO TELL MR. SMITH
+I DO NOT KNOW WHAT TO TELL MR. SMITH ABOUT THE RENT.
+
+.ce
+Figure T-14
+
+.adjust
+0Donall seemed to have the making of a real story with a definite plot
+line, and realistic dialogue.  It is clearly "unfinshed" despite the
+fact that Tammy typed "THE END" on the last line.  During the course of
+her work, Tammy asked me whether $200 was a lot of money for rent.  I
+said that it depended on whether it was $200/month or $200/week.  I
+said that I thought that $200/month was a reasonable rent, while
+$200/week was very high.  Tammy wrote that the rent was $200 a week.
+
+Tammy came into the next class (number sixteen) in a loud, rather
+boisterous mood, and was quite impatient with my plan for the day,
+which involved a group discussion of the story, "ZEEP and the Paint."
+After fussing and joking all through the story and discussion, Tammy
+began to write a story "about HOLLY," (fig. T-15) another girl in the
+class.  This gave her the chance to make all kinds of jokes, to yell
+out questions about Holly (which Holly answered with more jokes --
+giving "EGGBERT" and "ABIGAIL" as her parents' names), and continuing
+to make a nuiscence of herself.  She ended with a reference to Holly
+"going with a boy name David Kleiler for 3 months".  that put the whole
+class in an uproar and resulted in a general chase.  In the turmoil,
+neither David or Holly could get any of their own work done, paying
+more attention to Tammy than to anything else.  Although it was all
+carried out in a spirit of lighthearted folling, Tammy effectively
+disrupted the class, despite numerous requests to calm down, which
+Tammy blithly disregarded.
+
+Despite this, her story, HOLLY, was well constructed and carefully
+written.  She paid careful attention to spelling and punctuation --
+asking for assurances on the placing of periods at the ends of
+sentences. 
+
+.nofill
+.block 8
+2HOLLY IS A LITTLE GIRL SHE LIVES OUT IN BROOKLINE WITH
+HER MOTHER ABIGAIL AND HER FATHER EGBERT.SHE BEING OUT
+IN BROOKLINE FOR 11 YEARS.SHE GOSE TO A SCHOOL CALL
+WILLIAM H. LINCOLN.SHE BEING GOING THERE FOR 6 YEARS
+AFTER 6 YEARS SHE START GOING WITH A BOY NAME DAVID 
+KLEILER FOR 3 MONTHS.
+
+.CE
+Figure T-15
+
+.adjust
+0Tammy came to class 20 with Deborah again.  I suggested that they work
+together on a story.  Their way of working together was for Tammy to
+dictate the story, while Deborah typed it for her.  The resulting
+story, MR. LEWIS (Fig. T-16) was Tammy's longest, clearest, and had a
+more direct flow than had been usual in Tammy's stories.  Deborah typed
+the story exactly as Tammy dictated -- Tammy dictated the puncutation
+as well.  Tammy's verbal dictation seems to have been closer to
+standard english grammar than her own typing.  The story has a clear
+plot, with a definite beginning and ending.  Tammy ended the story by
+writing "BY TAMMY DEBORAH AND PETER," after thinking for a few minutes
+about how to share the credit.  After finishing, Tammy had two
+corrections she wanted to make.  I did the editing by printing out the
+story and having her indicate corrections on the printed copy.
+
+.nofill
+.block 15
+2ONCE UPON A TIME THERE WAS A MAN NAMED BOB .HE LIVED
+OUT IN BROOKLINE HE LIVED OUT THERE FOR 10 YEARS.
+2 YEARS LATER HE FOUND AJOB OUT IN NEWTON .NEWTON
+WASNT PAYING ENOUGH MONEY TO SUPORT HIM .HIS FRIEND
+HAD TOLD HIM TO GO SEE DAN WILSON. THE NEXT DAY BOB
+WENT OUT TO SEE MR. WILSON. MR. WILSON SAID BOB WHAT
+KIND OF WORK CAN YOU DO. I CAN TEACH ,I CAN DO PAINTINGS 
+DRAWING AND ALL KINDS OF THINGS.WHAT WOULD YOU LIKE TO DO
+MOST.I WOULD LIKE TO TEACH.I THINK KIDS NEED MY HELP.WHAT
+KINDS OF THINGS WOUULD YOU LIKE TO TEACH.IF I MAY I WUULD LIKE TO TEACH
+ MATH, AND SCIANCE, AND ENGLISH.ONE WEEK AFTER
+HE START WORK FOR LINCOLN
+BY TAMMY DIANNE AND PETER
+
+.ce
+Figure T-16
+
+.adjust
+0Tammy's last story, MISS.HIRSH (Fig. T-17) was written in only 20
+minutes.  She managed to type it without any significant errors or
+false starts.  She was particularlly concerned about the location of
+periods, and the use of apostrophes in DIDN'T and HAVEN'T.  (She knew
+where the apostropes went, but wanted to have that confirmed by me.)
+I'm not sure what Tammy is trying to say in this story.  It is
+significant that the "nasty old 42 year old woman" (described in the
+story as Lisa's mother) is given the name HELEN.  Helen is the name
+of Tammy's mother.  After finishing the story, Tammy turned to me with
+a gleam in her eye and said "Mis Hirsh can take a joke."
+
+.nofill
+.block 9
+2ONCE UPON TIME THERE WAS A LITTLE GIRL NAME LISA SHE LIVED IN
+BROOKLINE.SHE LIVE THERE FOR 16 YEARS WITH HER MOTHER HELEN
+OF HER MOTHER HELEN .SHE HELEN WAS NOTHING BUT 
+A NASTY OLD 42 YEAR WOMAN.SHE DIDN'T CARE ABOUT LISA WENT TO
+SCHOOL VERY NASTY.SHE LOOK LIKE SHE HAVEN'T TOOK A BATH IN 
+6 MONTHS AND ROLL THROUGH THE MUD.
+
+.CE
+Figure T-17
+
+.adjust
+0Tammy spent class twenty-two printing out 12 cpies of each of her
+stories.  I suggested that she make a procedure to print them all out
+on one sheet of paper -- but Tammy said that she preferred to have
+twelve copies of each story.  After the stories were printed, she
+carefully cut them all apart (with the assistance of an adult visitor)
+and made up little piles, each of which contained nine different
+stories. 
+
+In class twenty-five, Tammy finally accepted my suggestions that she
+make a procedure to rpint out all her stories on one piece of paper.  I
+did all the typing for the procedure, FOXYLADY, and inserted the story
+titles and spacing.  Tammy told me the order in which she wanted the
+stories:  SONNY, DONELL, DORIS, HELEN, ANN, HOLLY, MR.LEWIS,
+MISS.HIRSH, and TOMMY.
+
+I have tried to speculate about the reasons why Tammy was able to
+accomplish so much in the area of writing in the LOGO classes, while
+she has been unable to accomplish much writing in either her regular
+classes or with her language tutors.  After consulting with her
+teachers, I think I have some insights about how this came about.
+
+Tammy is a fanatic about complete work without errors.  When an error
+occurs in Tammy's normal work, she tears up the paper and throws it
+away.  Since she never examines her errors, or tries to learn from
+them, errors are seen by her as a total disaster.  Using the computer,
+she was able to rubout many errors as they occurred without destroying
+all her work up to that point.  In this way she could be satisfied with
+her finished product.  Once she declared herself "finished" she never
+looked back to see if there were any other errors.
+
+The nicely typed computer output had a "professional" quality that
+looked more polished than anyone else's work.  In addition, she could
+have as many copies as she wanted at no extra effort -- which could
+bring her positive attention from friends, family, and several
+different teachers, all in the same day.
+
+In accordance with her abhorance of "errors", Tammy may feel extremely
+sensitive to any "correction" of her work whether direct or implied.  I
+offered no correctino or criticism of Tammy's work, and confined my
+assistance to answering her questions about spelling and
+punctuation.  In this case, Tammy knew that her work would not be
+criticized.  Therefore, since it looked "correct", even outstanding,
+and since Tammy had worked hard to get it "correct", Tammy assumed that
+it was "correct, and was very proud of it.
+
+Tammy felt that her work was unique among the kids in the computer
+classes.  Just as only Tammy could use the computer she called "PTER",
+only Tammy could use the LETTER procedure to write stories.  Thus Tammy
+could feel that her work was at least as good as the other students'
+work.  Tammy rearely has had the opportunity to feel taht way about her
+work.
+
+In a meeting held after the end of computer classes, Tammy's English
+teacher said that Tammy has recently been making a significant effort
+to complete assignments and turn in work.  She said that Tammy's
+computer stories were the first completed work that Tammy had given her
+this year.
+
+.block 3
+V. Tammy's Social Behavior with Adults and Children
+
+Just as Tammy's "relationship" with the computer was of the utmost
+importance to her, she also palced a high premium on her personal
+relationships with the people around her.  At first Tammy seemed to
+have a great deal of sensitivity about being "watched" by adults in the
+classroom which relaxed a bit as the classes went on.  She was
+particularly concerned about observers who took notes, and she would
+occassionally ask them what they were writing about.  Tammy made a
+point of introducing herself to all the visitors who came at different
+times to observe the classes, and of establishing a definite
+relationship with any who came more than once.
+
+At times, Tammy could be quite manipulative -- especially when she
+wanted help.  She could be loud and insistent calling across the room
+for assistance, and a few minutes later rebuke another child for
+"interrupting".  She often corrected other people's behavior, saying
+that some action, or omission was "rude", or "sloppy".  This was
+usually done in a somewhat cherrful, "motherly" tone that had only a
+slight undercurrent of hostility.
+
+Tammy insisted that she be noticed.  When she came to class late, she
+would often be singing or shouting loudly in an impressively powerful
+voice, as she walked in the door.  If a visitor was present, she would
+quite down suddenly in embarrassment. Throughout the class period she
+would call loudly across the room to a teacher, visitor or a classmate.
+
+In her relations with her classmates, Tammy adopted a "breezy,"
+somewhat teasing style, characterized by a cheerful good humor.
+Occasionally this "breeziness" got out of control, and became
+disruptive and rowdy, including chases around the room, hitting and
+hair-pulling.  At such times, Tammy had a very difficult time settling
+back into appropriate class behavior.
+
+At other times -- especially with visitors present -- Tammy would be
+extremely quitet, polite and demure.  It was as if she had two sets of
+rules -- one for serious behavior in public -- the other for playful
+behavior in private.  As the classes went on, it was clear that Tammy
+considered the LOGO classroom as a "private" place, where she was among
+friends and could be her playful self.
+
+At first Tammy was "tolerated", somewhat sceptically by the other kids.
+ Gradually, Holly and David got quite involved with her playfulness,
+and cherrful bantring.  Most of the time they seemed to enjoy the
+distraction she provided, and allowed her to provide an excuse for
+letting their own playfulness emerge on occasion.  A>J> remained aloof.
+
+Holly became quite "protective" of Tammy, sticking up for her on
+occasion, as well as helping her with her work from time to time.
+Tammy gradually came to consult Holy frequently about spelling and
+punctuation.  Holly spent a lot of one class period helping Tammy type
+a turtle procedure, and showing her how to use the SPIN command.
+
+Tammy took a lot of interest in Holly and David as a "couple", teasing
+them regularly about their friendship.  She wrote their "relationship"
+into her story, HOLLY, and spent a good deal of one class period
+watching them play dynaturtle games together -- commenting regularly,
+not on their dynaturtle strategies, but on their personal interchanges.
+
+Holly's interest in Tammy was evidenced outside of LOGO classes as
+well.  One of Tammy's classroom teachers reported that she had moved
+her seat in class to be near Holly and her group of friends.  In
+becoming accepted by them, she had moved from virtual "isolation into
+the core of the class, socially."  Her teacher attributed this to the
+relationship Tammy developed during the LOGO classes and to the feeling
+of success she has had with her computer work.
+

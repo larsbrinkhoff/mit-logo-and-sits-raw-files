@@ -1,0 +1,83 @@
+.adjust
+.fill
+.double
+.ce
+New Hardware on the 11/45
+	Recently we purchased several new hardware
+devices from DEC for our 11/45. This document will
+briefly decribe them. They are:
+.br
+.single
+DC11 modem controling line interface
+.br
+KW11-P programmable clock
+.br
+DL11-B single line switchable speed interface
+.br
+DH11  16 line variable everything hairy interface
+.double
+.ce
+The DC11
+	The DC11 is cabable of controlling one modem
+or local EIA serial line. It has programmable character
+length, and 4 program selectable speeds. It was
+ordered long ago and was intended for the second 11
+system that never materialized. It might be useful
+if we want to connect more modems, but not very.
+.ce
+The KW11-P
+	This is a 3 speed programable clock identical
+to the one we already have. It was intended for the other
+system and is essentially usless.
+.ce
+The DL11-B
+	This is a switch selectable speed single line interface
+similar to the KL11 but more flexible. It is currently wired
+to drive an EIA standard line, but can be changed to drive
+a current-loop (=TTY). The KL11 it replaced was the one driving
+the system console. The replacement of the system console
+by a TI terminal has the problem that the TI requires
+nulls to be sent after carriage returns after long
+(>30-40 characters) lines. LOGO and RUG have been
+modified to provide these nulls, but it is next to
+impossible to modify DEC's diagnostic programs to do so.
+The easiiest solution to this problem seems to be to
+use the Datapoint when running diagnostics; it does not
+need the nulls.
+	In order to accept characters from a line, both
+the datapoint and the TI require a "happiness level" to
+be asserted on pin 6. I have produced adapters to supply this
+signal for both terminals. In the case of the TI, the adapter
+is composed of 2 female conectors; the datapoint adapter is
+composed of 1 male and 1 femanle. The TI hapiness level is
+obtained from pin 20; the datapoint version is obtained from
+pin 4. Note the in both cases the level is obtained from the
+terminal itself, not from the DL11.
+.ce
+The DH11
+	The DH11 is DEC's replacement for the older DM11
+16 line multipler. In addition to correcting some disgusting
+design decsions in the DM11, the DH11 provides considerably
+more flexablity. The line speed, character length, number
+of stop bits and other line parameters are program selectable
+on a per line basis. This means that (when appropriate software
+exists) we can connect any speed terminal (50, 100, 110, 134.5,
+150, 200, 300, 600, 1200, 1800, 2400, 4800, 9600 baud)
+to the system. It might also allow the elimination
+of some timing errors in the current DM11 software.
+It also places less of a load on the Unibus than the DM11
+does, making high-speed terminals more practical.
+.ce
+Future Hardware Mods
+	Fiarly soon (hopefully) we should be getting
+some modifications made to the processor by DEC to
+enable us to use the parity option which Cambridge
+Memories is now suppling (and which we have had on
+order for some time). When this work is completed
+we will be able to spot memory failures considerably
+more quickly than has been possible in the past, and we
+will also be able to find out if any intermitent errors
+are occuring (which might result in strange behavior
+of the system if undetected as now).
+.end
+

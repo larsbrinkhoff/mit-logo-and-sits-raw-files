@@ -1,0 +1,77 @@
+TILOGO graphics outline    'WELCOME to GRAPHICS in LOGO'
+
+0.  GENERAL CHARACTERISTICS of SCREEN
+
+graphics,text (and edit) modes:
+      screen (tv on side) 24 wide by 32
+      graphics top 24 by 24
+      logo bottom 8 by 24
+
+this screen can be filled with designs in colors,
+and have parts which move.  
+
+1. MOTION and COLOR
+
+the moving/life forms in this world are turtles.
+you can make one appear by
+    TURTLE 1
+
+You can call it by a pet name 
+    CALL TURTLE 1 "LADYBUG          (not quite correct)
+
+and you can make it move:
+    GO 8                  (turtle moves forward at a speed of 8)
+
+you can make another turtle chase the first turtle.
+    TURTLE 2
+    GO 1          
+
+    STOP
+stops all turtles and
+    START
+does the obvious.
+
+You can change the shell of the turtle (what it looks like on the screen)
+    CARRY :FLOWER
+
+will make the turtle look like the shell named FLOWER.
+
+1a. COLOR
+
+Change the color of a turtle by saying:
+   COLOR :LADYBUG RED         ( RED is builtin. )
+
+Change the color of a logo object by
+   COLOR <object> <color or list of colors>
+
+tiles take either <color> (set fg only) or <list of colors> set
+fg, bg colors.
+
+turtles take only one color.
+
+COLORQ <logo object> returns the color or list of colors of an object.
+
+you can rename colors if you like
+    CALL RED "SUNSET
+    COLOR :SUN :SUNSET
+
+2. PATTERNS,TILES and SHELLS
+
+    CALL SHELL 1 "LADYBUG
+this program makes the ladybug shell look like a
+checkerboard:
+   DO UNTIL X>8
+   [FILL :LADYBUG [X Y]        FILL is a pattern command.  it takes
+   CALL "X :X+2                a tile/shell and fills in that dotspot.
+   CALL "Y :Y+2]
+
+to take out one of the dots,
+   BLANK :LADYBUG [X Y]
+
+You also can use your terminal keyboard to design patterns, 
+   PATTERN :LADYBUG
+ and you are in largescale pattern design mode.
+(grid appears, walk turtle around using keeze to make a design.)
+
+Patterns can also be assigned to tiles: in which case
+   CALL 

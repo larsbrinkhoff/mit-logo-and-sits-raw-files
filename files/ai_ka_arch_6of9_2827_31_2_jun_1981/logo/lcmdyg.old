@@ -1,0 +1,570 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 2
+.fi b
+--DRAFT--
+
+LOGO Curriculum Materials
+
+5/5/81
+.sp 5
+1BOOKLET VIIb
+
+GAMES WITH A DYNAMIC TURTLE0
+
+(Apple Logo Version)
+
+by Daniel H. Watt
+c. MIT Logo Group, 1981
+.sp 6
+This booklet tells you how to play some games in which the turtle behaves as though it were a rocket ship in outer space.  After playing the games, you can learn how the game procedures were made. If you want to, you can change the games, or make similar games of your own.
+
+.chapter "bold(What is a Dynamic turtle?)"
+
+
+A dynamic turtle or   bold(DYNATURTLE)   behaves as though it were a rocket ship in outer space. To make it move you have to give it a kick by "firing a rocket." It will then keep moving in the  same  direction until you give it another kick. Everytime you "kick" the dynaturtle it is like firing a rocket briefly. The motion instantly changes, and the dynaturtle continues moving with its new motiuon until it receives an additional kick.  Its new motion will be a combination of the old motion and the motion caused by the new kick.  You can reaim the dynaturtle by turning it to the right or left. Once you change its heading, you can change its motion by giving it another kick.   You may need to experiment with dynamic commands for a while before you understand how the  dynaturtle works.
+
+To help you understand the behavior of the dynaturtle, you may find it useful to describe its behavior, and the strategies you use to control it. Describing something in words can be very hard, but it can also be extremely useful in learning something new. When you describe a behavior in words, you get a better idea of exactly what you do and don't understand about it. You also have a way of talking to other people, and learning how they are thinking about it.  Each dynaturtle game simulates a different kind of problem in physics:  moving an object from one place to another, keeping an object moving on a particular path, or controlling the behavior of a falling object.  When you describe the behavior of the dynaturtle, or your strategies for playing a dynaturtle game, you are helping yourself learn about the science of physics, as well as learning to play the game better.
+
+Procedures for all the dynaturtle games should be stored on a special
+disk. If you do not already have such a disk, you can create one by carefully
+copying the procedures given at the end of this booklet.
+
+.chapter "bold(A dynaturtle target game.)"
+
+
+
+Before you start you will need to find the disk with the dynamics games procedures on it. If you have been playing another game, or writing your own procedures, make sure your procedures are saved on your disk. Then type  GOODBYE,  remove your disk and insert the dynamics disk. Read the target game procedures by typing:
+
+	READ   "TGAME
+
+When you type the command,
+
+	TGAME
+
+ a circular target will be displayed in the upper right hand corner of the screen, and the blinking  dynaturtle will appear in the lower left hand part of the screen.
+.keep
+.sp 20
+.end_keep
+ The object of the game is to make the dynaturtle reach the target.  You can control it by typing certain keys on the keyboard:
+
+
+.nf l
+.keep
+If you type   <R>   the turtle will turn right 30 degrees.
+If you type   <L>   the turtle will turn left 30 degrees.
+.fi b
+If you type   <K>   the dynaturtle will be given a sudden kick in the direction it is heading. This will make it increase its velocity in that direction.
+
+If you type   <T>   the dynaturtle will leave a trace of its path as it moves.
+.end_keep
+
+Once you have started the dynaturtle by typing  <K>,  any additional kicks will produce a motion that is a combination of the old motion, and a new motion caused by the kick.  When you hit the target, the computer will print a message, telling you the dynaturtle's speed, and how long it took to hit the target.
+
+People often find the behavior of the dynaturtle a little confusing at first.  Although you may find it difficult the first few times you try, with a little practice you should be able to make it hit the target regularly. There are many possible strategies for hitting the target. If you are having trouble it might help to compare your strategies with those of other people. Some specific suggestions are given in the next section.
+
+.bp
+bold(Target Game Activities)
+
+
+bold(Some helpful hints for playing the game.)
+
+Many people playing the target game for the first time experience the following "bug":  They start the dynaturtle moving upwards with a kick.  Then they turn it to face the right.  When the dynaturtle is even with the target, they kick it towards the target, expecting it to move as shown in the figure.
+.sp 10 
+What people expect to happen.
+
+.keep
+Instead, the dynaturtle moves at an angle:
+.sp 15
+What really happens.
+.end_keep
+
+The question is: bold(how can you make the dynaturtle go where you want it to?)
+
+Suggestion #1:
+
+Start the dynaturtle moving, and then make it stop at a point where it can be aimed directly at the target. Once you have figured out how to start and stop the dynaturtle, there are several ways to use this method to hit the target, for example:
+
+
+Start the dynaturtle moving upward. Stop it when it is even with the target. Then aim it straight at the target.
+.sp 12
+.keep
+Start the dynaturtle moving to the right. Stop it when it is even with the target.  Then aim it straight up at the target.
+.sp 12
+This is one way to force the dynaturtle to behave the way most people think it should behave before they start playing the game:
+.end_keep
+
+.keep
+Suggestion #2:
+
+Since the dynaturtle moves off at an angle when you give it a kick to the right, take advantage of that fact to give it a kick to the right before it is even with the target. If you find the right place to kick it, you might be able to send it on an angle straight to the target.
+.sp 12
+.end_keep
+
+.keep
+Suggestion #3:
+
+Since the dynaturtle moves up and to the right when you kick it to the right, try turning more to the right than you think you should have to:
+.sp 12
+To move this way...			Kick this way!
+.end_keep
+
+bold(Some challenges to improve your skill and understanding.)
+
+After you have played the game for a while and can hit the target regularly, you might like try these activities.
+
+Suggestion#4: Try to hit the target as softly as you can.  Then hit the target as quickly as you can.  Then hit the target as quickly and softly as you can.
+
+Suggestion#5:  Start the dynaturtle, and then hit the target with only two more kicks. (There are several ways to do it.)
+
+Suggestion#6:  Start the dynaturtle. Hit the target with only one more kick.
+.keep
+
+Suggestion#7:  You already know that you can hit the target by moving the dynaturtle straight up, applying a reverse kick, and then aiming and kicking to the right. If you have the dynaturtle trace its path, you will see the following:
+.sp 12
+Can you combine the two kicks at the corner, using one or more kicks in a diagonal direction?
+
+.sp 12
+How many diagonal kicks do you need?
+.end_keep
+
+bold(Conclusion)
+
+How many different strategies can you find for making the dynaturtle hit the target? Describe your strategies in words.  Do you think some strategies are better than others?  Understanding the behavior of the dynaturtle when you play the target game will help you understand the behavior of a rocket in outer space, or the behavior of moving objects on Earth, in situations where outside forces such as friction, wind, or gravity, are not important factors.
+
+Do you have ideas for improving the target game?  Chapter 6.1 will show you some ways that an experienced LOGO programmer can change the game.
+ 
+.chapter "bold(A Dynaturtle Racetrack)"
+
+The object of this game is to keep the dynaturtle moving on a circular track as long as possible. If you crash into the track wall the game is over, and the computer tells you how much time has passed since the game started. 
+
+If you have been playing another game, or writing your own procedures, make sure your procedures are saved on your disk. Then type  GOODBYE,  remove your disk and insert the dynamics disk. Type
+
+	READ   "DYNATRACK
+
+Start the game by typing:
+
+	DYNATRACK
+
+The computer will ask you two questions:
+
+.nf l
+HOW WIDE DO YOU WANT THE TRACK TO BE?    (type a number between 0 and 50)
+HOW STRONG DO YOU WANT THE KICK TO BE?   (type a number larger than 0)
+
+.fi b
+Once you have chosen the track size and kick strength, the turtle will draw the track, and as soon as you give the dynaturtle a kick, it will start moving.  Use the same commands that you used in the target game,  <K>  for kick,  <R>  for right turn, and  <L>  for left turn.  Remember, your objective is to keep the dynaturtle on the track as long as possible.  (Time is not counted when the dynaturtle is standing still -- as it is at the beginning of the game.)
+
+If you find it difficult to keep the dynaturtle on the track, make the track wider or the kick softer when you play again. If you find it easy, make the track narrower and the kick harder.
+
+As in the target game, there are several strategies you can use to keep the dynaturtle on the track.  Once you can do this successfully, describe your strategy in words. This may help you understand the physics of moving objects. A satellite orbiting the Earth, or the Earth orbiting around the Sun, moves on a path that is very similar to the path of a dynaturtle on a circular racetrack. Understanding how to keep a dynaturtle moving on a circular path can help you understand how the Earth moves around the Sun.
+
+.chapter "bold(The Lunar Lander Game)"
+
+In this game the dynaturtle simulates a "lunar landing module" trying to make a soft landing on a special "platform", built on the moon's surface. As soon as the game starts, the module begins falling  (with constant gravitational acceleration) towards the lunar surface.  You have to maneuver the dynaturtle  (using  <K>,  <R>, and  <L>   commands), so that it lands on the platform, rather than crashing on the moon. You can make the game easier or harder by making the platform wider or narrower.  
+
+Another complication has been added to the game. You have to accomplish the landing with a limited amount of fuel. Every  kick  reduces your fuel by three units. Every right or left turn uses up one unit of fuel. By allowing yourself more or less fuel to start with, you can make the game harder or easier.
+
+To read the procedures from the disk, first type GOODBYE. Then insert the  disk with the dynamics games, and type:
+
+	READ   "LUNAR
+
+To start the game type
+
+	LUNAR
+
+The computer will give you some instructions and ask two questions:  
+
+HOW WIDE SHOULD THE PLATFORM BE?  (Choose a number between 20 and 60)
+HOW MUCH FUEL DO YOU THINK YOU NEED?  (Choose any number)
+
+The dynaturtle will start falling towards the moon's surface when you type   <RETURN>.
+
+You can make the game easier by making the platform wider or increasing your fuel.  You can also make the game  harder by narrowing the platform and reducing the amount of fuel.
+
+This game is different from the other two because there is a constant force acting on the dynaturtle -- the Moon's gravity  -- which always pulls it toward the Lunar surface.  Just as with the other dynaturtle games, you may  find it helpful to describe the dynaturtle's behavior and the strategies you invent for playing the game. In addition to helping you play the game more effectively, it may help you understand the behavior of falling objects -- airplanes, baseballs or divers -- on Earth as well as on the Moon.
+
+.chapter "bold(How the Dynaturtle Games Work)
+
+Each of the dynaturtle games is constructed from the same basic set of procedures.  Each game is started by a superprocedure named for the game, TGAME,  DYNATRACK,  or  LUNAR.  Each superprocedure has two subprocedures,  one called  SETUP, which sets up the starting conditions for each game, and one whose name begins with  DT  (short for "dynaturtle"), which is used to control the dynaturtle's motion.  
+
+Here is the superprocedure for the target game:
+.nf l
+	
+	TO   TGAME
+	SETUP
+	DT.TGAME  0
+	END
+.keep
+
+The SETUP  procedure sets up the conditions for starting the game:
+
+	TO   SETUP
+	MAKE   "VX   0   MAKE   "VY   0
+	MAKE   "FORCE   2
+	MAKE   "R   10
+	MAKE   "XT   70   MAKE   "YT   70
+	MAKE   "XS   (-70)   MAKE   "YS   (-70)
+	DRAWTARGET
+	PENUP
+	SETXY   :XS   :XY   
+	SETHEADING   0
+	END
+.end_keep
+.fi b
+"VX   and   "VY   are the horizontal (x)  and vertical  (y)  components of the  velocity of the dynaturtle.  
+.br
+"FORCE  determines how hard the kick will be.
+.br
+"R is the radius of the target.  
+.br
+"XT   and   "YT   are the horizontal and vertical position of the target.  
+.br
+"XS   and   "YS   are the horizontal and vertical positions at which the dynaturtle starts the game.   
+.br
+DRAWTARGET  is the procedure that draws the target on the screen.
+.keep
+
+
+The fundamental procedure that makes the dynaturtle work for the target game is called   DT.TGAME.  This is an abbreviation for  "dynaturtle for the target game."	
+
+.nf l
+	TO    DT.TGAME    :T
+	DYNAMOVE
+	COMMAND
+	CHECK.TGAME
+	DT.TGAME   :T + 1
+	END
+.fi b
+The input,  :T  keeps track of the "time" as you play the game. Everytime the procedure  DT.TGAME  is called,  :T  is increased by  1.  
+.br
+DYNAMOVE  is the procedure that changes the turtle's position  with each cycle of the  DT.TGAME  procedure.  
+.br
+COMMAND  checks to see whether you have typed a command at the keyboard, and tells the computer what to do if you have.  
+.br
+CHECK.TGAME   checks the dynaturtle's position to see if it has hit the target, or whether it is "lost in space."  
+.br
+Another important procedure,  KICK,  increases the dynaturtle's  velocity  in the direction it is heading.
+.end_keep
+
+.keep
+.fi b
+The  DYNAMOVE  procedure changes the turtle's position during each cycle of DT.TGAME:
+
+	TO   DYNAMOVE
+	SETXY   (XCOR  +  :VX)   (YCOR  +  :VY)
+	END
+.fi b
+
+The  distance the dynaturtle moves each time depends on how large the velocity values,  :VX  and   :VY are.  When the game starts they are both zero, so that the dynaturtle won't move until you give it a kick.
+
+.end_keep
+.keep
+.nf l
+The  COMMAND  procedure controls the effect of the keys you type:
+
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30   STOP
+	IF   :COM   =   "L   LT   30   STOP
+	IF   :COM   =   "K   KICK   STOP
+	END
+
+.fi b
+The first line of  COMMAND  "reads" the key you type and gives the name  "COM   (short for "command") to whatever you typed. The next three lines check to see if you typed  "R,  "L,  or "K.  If you did, the rest of each line tells the computer what to do, and tells the  COMMAND  procedure to stop.
+.end_keep
+.keep
+.nf l
+The  KICK  procedure changes the dynaturtle's velocity:
+
+	TO   KICK
+	MAKE   "VX   :VX  +  :FORCE * (SIN  HEADING)
+	MAKE   "VY   :VY  +  :FORCE * (COS  HEADING)
+	END
+
+.fi b
+Every time you type  <K>,  the procedure  KICK increases the values  :VX  and  :VY.  The amount of increase depends on how large the  force is  (in the SETUP procedure, the value  of "FORCE  was made equal to 2), and the direction in which the dynaturtle is heading.   SIN   and   COS  are  Logo commands  (short for sine and cosine)  which output  ratios to determine how much of the force is in the horizontal (x) direction and how much of it is in the vertical (y) direction.
+.end_keep
+
+CHECK.TGAME  has subprocedures that check whether the dynaturtle has reached the edge of the screen or hit the target. If so, other procedures tell you that the game is over, print some information telling you how you did, and ask you whether you want to play again. If you are interested in examining these subprocedures in detail,  print out  CHECK.TGAME and each of its subprocedures to see how they work.
+
+.chapter "bold(Making Changes to the Games)"
+.section "bold(Changing the Target Game)"
+
+There are several relatively simple changes you can make in the target game to make it easier or more interesting to play:
+
+Change the location of the commands on the keyboard, or add new commands to do new things.
+.br
+Add commands to make the computer print the dynaturtle's speed or direction whenever you want.
+.br
+Write a set of instructions for the game so that a beginner can play it more easily.
+.br
+Change the messages that the computer prints when the game is over.
+.br
+
+ Change the size, shape or location of the target.
+.br
+Allow a player to have a limited amount of fuel (as in the Lunar Lander game).
+
+
+You could also make some more complicated changes to make the game more difficult:
+
+Add in a friction force that slows the dynaturtle down, and changes its behavior.
+.br
+Add a "wind force" or gravitational pull (as in the Lunar Lander game) that always pushes the dynaturtle in some particular direction. This force could be the same for every game, or it could be different each time the game is played. 
+.br
+Add obstacles that the dynaturtle hs to avoid. (This change will slow the game down a little because the computer will have to check more things every time through the cycle.)
+
+bold(Change #1:  Changing the keyboard commands)
+
+The COMMAND procedure determines the effect of typing certain keys on the action of the dynaturtle. The original  COMMAND  procedure is set up as follows:
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30   STOP
+	IF   :COM   =   "L   LT   30   STOP
+	IF   :COM   =   "K   KICK   STOP
+	END
+
+The letters of the keys,  <R>,  <L>,  and  <K>, were chosen to stand for the functions, "right turn," "left turn" and "kick." Some players might find it easier to play the game if the keys were located near each other at one end of the keyboard. For example, you could use the  <Q> and  <W>  keys, located next to each other at the left end of the keyboard, to stand for "left" and "right".  The  <A>  key, located under  <Q>  and  <W>  might be used for "kick". To accomplish this change, just edit the command procedure as follows:
+
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "W   RT   30    STOP
+	IF   :COM   =   "Q   LT   30   STOP
+	IF   :COM   =   "A   KICK   STOP
+	END
+
+(Insert keyboard diagram here.)
+
+Suppose you wanted to add commands to make the "kick" harder or softer. If you use the keys  <H>  and  <S> to stand for "harder" and "softer", the command procedure could be edited to look like this:
+
+.nf l
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30   STOP
+	IF   :COM   =   "L   LT   30   STOP
+	IF   :COM   =   "K   KICK   STOP
+	IF   :COM   =   "H   MAKE   "FORCE   :FORCE   +   1   STOP
+	IF   :COM   =   "S   MAKE   "FORCE   :FORCE   -   1   STOP
+	END
+.fi b
+(One interesting effect with these new commands is that if you type  <S>  for "softer" enough time, you can actually produce a negative or backwards force on the dynaturtle.)
+
+If you want to keep track of the dynaturtle's state  - that is, its speed and heading - as you play the game, you can add commands to print those whenever you type  <P>, standing for "printinfo".
+
+
+.nf l
+
+	TO   COMMAND
+	MAKE   "COM   READKEY
+	IF   :COM   =   "R   RT   30   STOP
+	IF   :COM   =   "L   LT   30   STOP
+	IF   :COM   =   "K   KICK   STOP
+	IF   :COM   =   "H   MAKE   "FORCE   :FORCE   +   1   STOP
+	IF   :COM   =   "S   MAKE   "FORCE   :FORCE   -   1   STOP
+	IF   :COM   =   "P   PRINTINFO   STOP
+	END
+
+and
+
+	TO   PRINTINFO
+	PRINT   ( SENTENCE [ SPEED  = ]   SPEED   [, HEADING  =  ]   HEADING )
+	END
+.fi b
+
+bold(Change #2:  Changing the printed messages.)
+
+If you want to have the computer print some instructions before the game starts, you could add an  INSTRUCTIONS   procedure to  the  SETUP  procedure which starts the game. For example:
+
+.nf l
+.keep
+	TO   INSTRUCTIONS
+	PRINT  [ DO YOU WANT INSTRUCTIONS? ]
+	MAKE   "ANSWER   REQUEST
+	TEST   ANYOF   :ANSWER  =  [YES]  :ANSWER  =   [ Y ]
+	IFFALSE   STOP
+	PRINT   [ THIS IS HOW THE GAME IS PLAYED: ]
+
+(Print any instructions you want here.)
+
+
+	PRINT   [TYPE   <RETURN>   WHEN YOU ARE READY TO PLAY.]
+	MAKE   "ANSWER   REQUEST
+	END
+
+.end_keep
+.fi b
+The first two  lines of  INSTRUCTIONS  find out if the player wants instructions, and stops the procedure if he doesn't.  Then you use  PRINT  commands to actually give the instructions.   The last line of the procedure makes the computer wait for the player to type  <RETURN>  before starting the game.  (The program doesn't actually  use the variable   "ANSWER  for anything, but this is just a little trick for making the computer wait.
+
+If you want to you can add  INSTRUCTIONS as a subprocedure to both  SETUP   and   REPLAY.  That way a player playing the game a second time will be able to read the instructions again.
+
+
+If you want to change the messages that the computer prints when the dynaturtle hits the target, or when it reaches the edge of the screen, you will have to find out which procedures  have the job of printing each message:
+
+.nf l
+.keep
+	TO   HIT
+	PRINT  [YOU HIT THE TARGET!]
+	PRINT   ( SENTENCE  [SPEED:] SPEED  [TIME]  :T  )
+	END
+
+	TO   LOST
+	PRINT   [LOST IN SPACE]
+	END
+.end_keep
+.fi b
+
+To change the message asking about playing a new game, you will have to change the procedure   REPLAY? :
+.nf l
+.keep
+	TO   REPLAY?
+	PRINT   [DO YOU WANT TO PLAY AGAIN?]
+	CLEARINPUT
+	MAKE   "RESPONSE   REQUEST
+	IF  (ANYOF  :RESPONSE = [YES]  :RESPONSE = [Y]  LAST  LAST  :RESPONSE = "Y  )   REPLAY
+	END
+.end_keep
+.fi b
+
+Notice that   REPLAY?  (with a  "?")  has the job of asking  about playing again, while the procedure   REPLAY   (no  "?" )  has the job of starting the game over.
+
+
+bold(Change #3:   Changing the size, shape or location of the target.)
+
+
+To change the size or location of the target, you only have to change one line of the  SETUP  procedure - the line in which   "XT,  "YT,  and  "R  are  specified.  If you change these values the computer will draw and check the target in its new location.
+
+
+bold(Change #4:   Allowing a player a limited amount of fuel for playing the game.)
+
+First you have to make sure that the player starts with some fuel by adding a line to  SETUP:
+
+	MAKE   "FUEL   25   (or whatever you want)
+
+Then you have to add a line to the KICK procedure that reduces the fuel after each kick:
+
+.keep
+.nf l
+	TO   KICK
+	MAKE   "VX   :VX   +   :FORCE * SIN  HEADING
+	mAKE   "VY   :VY   +   :FORCE * COS  HEADING
+	MAKE   "FUEL   :FUEL - :FORCE
+	END
+.end_keep
+.fi b
+
+The  COMMAND   procedure needs to be changed so that  it won't respond if there is no fuel left:
+
+.keep
+.nf l
+
+	TO   COMMAND
+	IF   :FUEL < 1  PRINT  [OUT OF FUEL!]   STOP
+	MAKE   "COM   READKEY
+	IF   "COM   =   "R   RT   30   STOP
+	IF   "COM   =   "L   LT   30   STOP
+	IF   "COM   =   "K   KICK   STOP
+	END
+
+.end_keep
+.fi b
+
+To complete the change we need to add the same line to REPLAY  that we added to  SETUP  so that when the game starts again  it  starts with enough fuel:
+
+	MAKE   "FUEL  25   (or whatever amount you used in  SETUP)
+
+bold(Change #5:  Add a gravitational force, pulling the dynaturtle downward  -  or in any direction you like.)
+
+This change makes a big difference in the game, and in the strategies you need to hit the target.  If you make the effect of gravity strong enough, you can make the target game more like the lunar lander game.
+
+.keep
+To make this change, add a line to the basic dynaturtle procedure,  DT.TGAME:
+
+.nf l
+	TO   DT.TGAME   :T
+	FALL
+	DYNAMOVE
+	COMMAND
+	CHECK.TGAME
+	DT.TGAME  :T  +  1
+	END
+
+and add a new procedure,  FALL:
+
+	TO   FALL
+	MAKE   "VY   :VY   -   :G
+	END
+.fi b
+.end_keep
+
+Now, add a line to  SETUP, specifying the value of  "G   (the gravitational attraction).  
+
+	MAKE   "G   0.2   
+
+By changing the value of  "G you  can create games which require very different strategies for hitting the target. Try values such as 0.02,  0.05,  0.1, 0.2, 0.5  and 1, to see how they effect the game.
+
+
+bold(Change #6:  Adding obstacles to the game.)
+
+
+Adding obstacles to the game makes it more difficult.  It also slows the game down because the computer has to check for more conditions. Suppose we add a large  "asteroid"  near the target.  First specify its position by adding lines to  SETUP:
+
+.keep
+.nf l
+	MAKE   "XA  (20)   MAKE  "YA   (70)   MAKE  "RA  5
+	DRAWASTEROID
+.end_keep
+.keep
+
+and make a new procedure:
+
+
+	TO   DRAWASTEROID
+	HIDETURTLE
+	PENUP
+	SETXY   :XA   :YA
+	CIRCLE   :RA
+	END
+.end_keep
+.keep
+
+New lines need to be added to the checking procedure,   CHECK.TGAME
+
+	TO   CHECK.TGAME
+	IF   NEAREDGE   LOST   ENDGAME
+	IF   ATTARGET   :R   HIT   ENDGAME
+	IF   ATOBSTACLE   :XA :YA :RA  CRASH   ENDGAME
+	END
+.end_keep
+
+.keep
+Two more new procedures are needed:
+
+	TO ATOBSTACLE  :X  :Y   :R
+	TEST   DISTANCE.SQUARED  :X  :Y  <  ( :R  + 2 ) * ( :R + 2 )
+	IFTRUE   OUTPUT   "TRUE
+	IFFALSE   OUTPUT   "FALSE
+	END
+
+and
+
+	TO   CRASHED
+	PRINT   [ YOU'VE  CRASHED  INTO  AN  ASTEROID ]
+	END
+.end_keep
+
+.fi b
+If you find it easy to play the game and avoid the obstacle,  try adding more obstacles  and trying to maneuver the dynaturtle around them.  (To get around the obstacles, you might want to make the kick very soft, so that you have time to think.
+
+Can you find a path for the dynaturtle through a maze like this one?
+.sp 12
+ 

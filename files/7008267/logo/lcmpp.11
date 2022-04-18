@@ -1,0 +1,302 @@
+.dv press
+.fo 0 TimesRoman12
+.fo 1 TimesRoman12b
+.fo 2 TimesRoman12
+.tr @
+.so r;r macros
+.ls 1
+bold(MIT Logo Group, August 1981)
+.sp 10
+bold(Publication Plan for Logo Curriculum Materials)
+
+bold(NSF Grant SED - 7919033)
+
+bold("Logo Methods in Science Education Using Low Cost Home Computers.")
+
+.chapter "bold(Identification and description of materials)"
+
+For the past two years, the MIT Logo Group has been carrying out a curriculum development project, "Logo Methods in Science Education Using Low Cost Home Computers", with funding from the National Science Foundation (SED - 7919033). Curriculum materials from this project are in draft form and will soon be available for publication. 
+
+The materials as presently configured consist of a set of student and teacher booklets designed to help students learn Logo, and carry out explorations in mathematics and  physics. The set includes eight booklets and one disk.   Principal authors are Seymour Papert, director of the MIT Logo Group, and Daniel H. Watt, Research Associate, with additional contributions by John Berlow, Harold Abelson and Andrea diSessa.
+
+Except for one booklet dealing with Sprite Animation graphics, written to be used with the current version of TI Logo, the booklets are written to be used with the final release version of MIT Logo for the Apple II. They can be easily adapted for use with any existing or anticipated microcomputer implementations of Logo. At present we know of three implementations of Logo for personal computers:
+
+.in 5
+.nf l
+TI Logo for the Texas Instruments 99/4 Personal Computer.
+MIT Logo for the Apple II.
+LCSI (Logo Computer Systems Incorporated) Logo for the Apple II.
+
+.in 0
+.fi b
+TI Logo is currently available and the other two versions should be commercially available by the end of 1981. We expect other implementations to be developed over the next few years. The curriculum materials need not be tied to a particular Logo implementation. For reasons of convenience we have written them primarily for MIT's version of Logo for the Apple II. A publisher can easily adapt them for other Logo implementations.
+
+
+The booklets can be used with students of different ages: 
+
+Teacher Booklets one and two are designed for adults - teachers and parents. 
+
+Student Booklets one through three can be used by students as early as fourth grade, and are suitable for use by anyone as a beginner's  introduction to Logo. 
+
+Student Booklets four through six will probably be most useful for students in grades six, seven and eight, and for advanced students in lower grades, who have already covered the material in the introductory booklets. 
+
+
+Our materials will fit naturally into certain school activities:
+
+Computer literacy programs in grades four through eight.
+
+Mathematics enrichment programs for all students in these grades, as well as for special populations including gifted students and those with learning difficulties.
+
+Middle school science classes, high school General Science classes, high school physics classes.
+
+bold(Publication Format)
+
+Although we have prepared the materials as distinct booklets, we are open to a range of suggestions for how they could best be published. We envision two possibilities for publication arrangements:
+
+.in 5
+1. Publish materials more or less "as is" with minor editing changes, possible changes in page format, etc.
+				
+2. Publish with significant changes in format or content, to meet the particular needs of anticipated audiences. In this case we would expect to work closely with a publisher on revisions, but the cost of any such revisions would have to be suported by the publisher.
+
+.in 0
+In either case the MIT Logo Group reserves the right to approve all suggested changes, large or small.
+
+bold(Marketing Considerations)
+
+We believe that the materials can have an extremely large school audience with an appropriate combination of marketing, training and support. A major criterion for choice of publisher relates to this expectation. (See section five, below). 
+
+Properly marketed, these materials could also reach a sizable audience of home computer users as well. We have observed that with educational uses of computers, home users are often ahead of the schools at present. Schools often rely on knowledgeable parents for assistance in making decisions about educational use of computers. This leads us to believe that success in the home computer market could lead to increased impact on the school market and vice-versa.
+
+Success in the initial marketing plan for these materials may influence schools to acquire computers with Logo capability.  On the other hand, the potential market for the materials depends partially on factors not entirely within the direct control of the vendors, such as:
+
+The number of schools that already have (or will purchase for other reasons) computer systems on which Logo is implemented.
+
+The number of computer systems on which Logo will be implemented in the future, and the rate at which schools will acquire those systems.
+
+
+
+Although we know of no competing materials available to schools at present, we expect many Logo related materials to be produced during the next few years. It is difficult to predict the impact of such future developments on the market for this particular set of materials, but it is our present belief that the existance of many different Logo materials would increase the potential market for all of them, as more potential users become aware of Logo and its benefits.
+
+The shelf life of our materials in their present form will be at least two or three years. Ultimately it will depend on the market viability of the computer systems on which Logo is implemented. Apple II computers are presently very widely used in schools. These materials should be marketable as long as that is the case. Minor Revisions can easily be made by publishers to adapt to new Logo implementations. More importantly, we hope that the publishers will want to create additional materials to complement them - in effect, a "Logo product line" that would increase the market viability of the entire line.
+
+.chapter "bold(Expressed Interest by Publishers and Distributors)"
+
+During the past year we have held a number of informal meetings with publishers who reach both the school and home computer markets. We will send a soliciation letter to all publishers who have previously contacted us, or who seem particularly appropriate for other reasons. We anticipate receiving a number of favorable responses to our solicitation.  The procedures to be followed in reaching publishers are described in section four.
+
+In addition to publishers, several organizations who market computers and computer-related products to schools have expressed interest in including Logo materials as part of their product line when they are available from publishers. We will send a solicitation letter to these organizations as well.
+
+.chapter "bold(Alternative Publication/Distribution Arrangements)"
+
+We believe that the best type of arrangement for dissemination of these materials is through a publisher with a large marketing and promotional capability. Since some publishers may specialize in reaching the home computer market and others in reaching school markets, we would consider a co-publication plan in which two publishers distribute the materials to different markets. Our preference is to deal with one publishing company that can reach both types of markets.  If we do not receive a satisfactory proposal from a single publisher, we will consider a co-publishing situation. Since we feel this is less desirable, we do not explicitly raise it as a possibility in our letter to publishers.
+
+We have also considered (and rejected as  less desirable) a non-commercial publication plan. We could publish these materials as memos distributed by MIT. This has been a major outlet for dissemination of reports produced by our research projects in the past. The Artificial Intelligence Laboratory of MIT (with which we are affiliated) could distribute these documents to interested parties at a relatively low cost. MIT, however, would not be able to promote sales of the materials or provide the support and training necessary for their effective use. Thus although the cost might be lower, we believe that they would reach a much smaller audience and be used much less effectively than if adopted by a commercial publisher.
+
+If we fail to reach agreement with any commercial publisher, we can fall back on distribution through MIT as a temporary expedient while seeking other means of dissemination.
+
+.chapter "bold(Procedures for competitive selection of publishers.)"
+
+As soon as this plan is approved by the foundation, we will send a letter to publishers offering the curriculum materials for publication, detailing the criteria to be used in selecting a publisher, and inviting responses within six weeks. We will clearly state in the letter that we cannot enter into a final publication agreement until it receives NSF approval.
+
+
+At the same time that letters are sent to the publishers and distributers on our first list, we will print a notice in Publishers Weekly, announcing the availability of these materials for publication.  Any publishers who respond to that announcement will be sent the letter inviting publication proposals.
+
+
+Six weeks after the date of our letter, we will examine the responses according to the criteria set forth in the solicitation letter, and determine which publisher best answers the questions. We will then choose the best proposal and begin discussions with the selected publisher. It is our hope to have a contract acceptable to MIT and the publisher by the middle of December. This contract will then be submitted to the National Science Foundation for approval as soon as possible. We hope for publication of the materials in time for the 1982-83 school year.
+
+
+In the event that a contract cannot be successfully negotiated with the publisher of first choice, we will enter discussions with the publisher offering the next best proposal.
+
+
+Here is a list of publishers who have already indicated interest and who will receive the solicitation letter initially:
+
+.nf l
+.in 8
+Addison-Wesley
+Bell and Howell
+Borg Warner
+Byte Publications (McGraw-Hill)
+Creative Computing
+Ginn
+Hammetts
+Harcourt Brace
+McGraw-Hill, School Division
+Prentice Hall
+Scholastic
+Scott Foresman
+.in 0
+.fi b
+.chapter "bold(Copy of Solicitation Letter)"
+.ls 1
+draft letter to publishers, 9/1/81
+.sp 10
+For the past two years, the MIT Logo Group has been carrying out a curriculum development project, "Logo Methods in Science Education Using Low Cost Home Computers", with funding from the National Science Foundation (SED - 7919033). Materials from this project are in draft form and will soon be available for publication. With this letter we invite proposals for publication of curriculum materials developed during this project.  This is the first step in a publication plan which has been approved by the National Science Foundation.  NSF approval must also be obtained before any publication agreement can be finalized.
+
+While discussions with publishers are taking place, we plan to make draft versions of the booklets available for trial teaching use in extremely limited numbers, at sites that agree to provide feedback on their effectiveness. The information obtained from diverse trial sites will be extremely helpful in preparing final versions for publication.
+
+The materials as presently configured consist of a collection of booklets designed to help students learn Logo, and carry out explorations in mathematics and  physics. The set includes eight booklets and one disk containing programs written in Logo.   Principal authors are Seymour Papert, director of the MIT Logo Group, and Daniel H. Watt, Research Associate, with additional contributions by John Berlow, Harold Abelson and Andrea diSessa.
+.bp
+Except for one booklet dealing with Sprite Animation graphics, written to be used with the current version of TI Logo, the booklets are written to be used with the final release version of MIT Logo for the Apple II. They can be easily adapted for use with any existing or anticipated microcomputer implementations of Logo. At present we know of three implementations of Logo for personal computers:
+
+.in 5
+.nf l
+TI Logo for the Texas Instruments 99/4 Personal Computer.
+MIT Logo for the Apple II.
+Logo Computer Systems Logo for the Apple II.
+
+.fi b
+.in 0
+All of these versions should be commercially available by the end of 1981. We expect other implementations to be developed over the next few years. We believe that it will be in the publisher's interest to make the minor revisions necessary to adapt these materials for use with current and future Logo implementations as they become viable in the marketplace. We also hope that publishers will want to create additional materials to complement these, creating eventually a "Logo product line" that will increase the market viability of all the materials.
+
+
+The booklets can be used with students of different ages: 
+
+Teacher Booklets one and two are designed for adults - teachers and parents. 
+
+Student Booklets one through three can be used by students as early as fourth grade, and are suitable for use by anyone as a beginner's  introduction to Logo. 
+
+Student Booklets four through six will probably be most useful for students in grades six, seven and eight, and for advanced students in lower grades, who have already covered the material in the introductory booklets. 
+
+Although we have prepared the materials as distinct booklets, we are open to a range of suggestions for how they could best be published. We envision two possibilities for publication arrangements:
+
+.in 5
+1. Publish materials more or less "as is" with minor editing changes, possible changes in page format, etc.
+
+2. Publish with significant changes in format or content, to meet the particular needs of anticipated audiences. In this case we would expect to work closely with a publisher on revisions, but the cost of any such revisions would have to be suported by the publisher.
+
+.in 0
+In either case the MIT Logo Group reserves the right to approve all suggested changes, large or small.
+.bp
+We view publication of these materials as part of a larger effort to make Logo learning environments - the results of many years of publicly supported research and development - accessable to a wide public, now that Logo is available on microcomputers. In selecting a publisher we will consider  your answers to the following questions, and any other response you care to make to indicate your suitablity to publish these materials.
+
+
+.in 5
+1.  How would you plan to reach each of these  relevant markets:  school systems, teacher training institutions, home computer users, and computer stores? Which of these do you think will be the most important? Which are you already reaching with your publications?
+
+2. What efforts are you prepared to make in publishing, promoting, and disseminating the materials?  How soon could they be published? In what form would you think it best to publish the materials?  What kind of editorial and design support can you offer?  What training would you provide for sales personnel?  Can you provide orientation, training workshops, and follow up assistance for potential users?
+
+3. What plans are you considering for other activities supporting Logo as an educational programming language, in addition to publishing these materials? (This could be very important in developing public acceptance of Logo as a computer language for educational use.)  Have you carried out, or are you planning other projects related to computer literacy, and the use of computers in education?
+
+4. How will you maintain and develop the materials? How would you plan to adapt these materials for present and future implementations of Logo?
+
+5. What is your estimated price for this set of materials for the home and school markets? Please estimate both volume and individual prices.
+
+6. What is your estimate of potential sales for these materials?  What royalty arrangements can you propose? (These must be in accordance with the policies of the National Science Foundation as described in the enclosed NSF Circular No. 123.)
+.bp
+.in 0
+We hope to conclude contract negotiations before the end of 1981, and obtain approval from the National Science Foundation shortly thereafter.
+.nf l
+Please reply within six weeks of the date of this letter to:
+.in 5
+
+Publication Plan
+Professor Seymour Papert
+MIT Logo Group
+Division for Study and Research in Education
+Massachusetts Institute of Technology
+Cambridge, MA 02139
+.in 50
+
+Sincerely yours,
+
+
+
+Seymour Papert
+Director, MIT Logo Group
+
+
+.in 0
+Enclosures:
+
+.in 8
+Outline of curriculum materials.
+Draft copies of Student Booklets One and Five.
+Copy of NSF publication guidelines and regulations.
+.chapter "bold(Outline of Curriculum Materials)"
+.in 0
+.nf l
+Teacher Booklet 1. Introduction and Teachers' Guide for the Series
+.in 5
+Background information about Logo;
+Ideas about how to use the booklets;
+Some general comments on learning and teaching Logo;
+A Glossary of Logo-related terminology
+.in 0
+
+.fi b
+Teacher Booklet 2. Introducing Logo to Children: A Teacher's Guide for Introductory Turtle Geometry
+.in 5
+.nf l
+Lesson suggestions for whole class activities
+Helping Students with introductory turtle geometry
+Difficulties to be anticipated
+Reference Sheets of Logo commands
+A checklist for assessing student learning
+.in 0
+
+Student Booklet 1. Talking to the Turtle - Introductory Turtle Geometry
+.in 5
+basic turtle commands
+teaching the computer new commands
+using the turtle's pen  (pen and background colors)
+Drawing designs with circles and arcs
+Using subprocedures
+Repeating Designs (REPEAT and recursion)
+.in 0
+
+Student Booklet 2. Using the Logo Operating System:
+.in 5
+using the keyboard
+using the Logo Screen Editor
+saving procedures (shapes,etc) on disk and cassette
+information about screen modes
+reference lists of Logo commands
+.in 0
+
+Student Booklet 3. Talking to Sprites - Introductory Animation Projects 
+.in 5
+basic sprite commands
+teaching the computer new commands
+examples of sprite procedures
+making your own shapes
+making sprite movies
+teams of sprites
+getting messages from sprites
+.keep
+.in 0
+
+Student Booklet 4.  Further Explorations with Turtle Geometry 
+.in 5
+procedures with inputs
+procedures with changing inputs and stop rules 
+explorations with poly, polyspi and inspi
+.in 0
+.end_keep
+.keep
+
+Student Booklet 5. Games with a Dynamic Turtle
+.in 5
+what is a dynamic turtle
+a dynaturtle target game
+a racetrack game		
+a lunar lander game
+.in 0
+.fi b
+
+( This booklet does not involve student programming, but describes  a set of games written in Logo designed to help students develop an understanding of the behavior of moving objects. The games should be provided on a disk that is included as part of the package. Each section of the booklet includes a description of how the game is played, helpful hints for people who are having trouble, challenges for successful players, and information to help students understand something about the physics involved. )
+.in 0
+.end_keep
+
+Student Booklet 6a. Personalizing the Dynaturtle Games: An Advanced Programming Project.
+.in 5
+.nf l
+How the dynaturtle games work
+changing the target game
+changing the dynatrack game
+changing the lunar lander game
+suggestions for inventing your own dynaturtle game
+.in 0
+
+Student Booklet 6b. Complete Procedures for the Dynaturtle Games.
+
+
+An Apple Diskette containing Logo procedures for three Dynaturtle games is included as an adjunct to booklets 5 and 6.

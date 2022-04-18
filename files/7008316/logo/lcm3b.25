@@ -1,0 +1,567 @@
+.dv press
+.fo 0 timesRoman12
+.fo 1 timesRoman12b
+.fo 2 Helvetica10b
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 1
+--DRAFT--
+
+LOGO Curriculum Materials
+
+1/16/81
+.sp 5
+
+Booklet III
+
+SYSTEM MECHANICS
+
+Apple Logo Version
+
+.fi b
+This booklet provides information you will need for loading LOGO into your computer, using
+the keyboard, defining and editing LOGO procedures, saving procedures on a disk and reading them from a disk.
+.bp
+.chapter "bold(Loading LOGO into your Apple Computer)
+To start using LOGO you will need to load the LOGO language from a special disk, into the computer's memory. The steps are simple:
+
+.nf L
+1. Turn off the Apple's power switch located at the left rear corner of the Apple.
+
+2. Insert the disk labelled "LOGO Release Disk" or "LOGO disk" into the slot of the disk 
+drive, and pull the cover down.
+
+3. Turn the power on.
+
+.fi b
+At this point the red light on the disk drive should go on, and you should hear it begin to click and whirr. After several seconds a square bracket,    ]   should appear on the screen and the disk should continue whirring softly. After about thirty seconds a   "Welcome to LOGO"   message should appear.
+
+Sometimes the disk does not make clicking noises. In such a case press the   <RESET>   key, remove the disk, and start the whole process again.
+
+bold(Note for users of Apple integer systems:)
+
+If your computer happens to be equipped with Integer Basic Roms instead of Applesoft Roms, your procedure will be a little different. Follow the first three steps as given. After the computer clicks for a while, a message saying "language not available" will appear, followed by a prompt,  > . When the  >  appears, type  BRUN  LOGO  <RETURN>. After about thirty seconds a "Welcome to LOGO" message should appear.
+.bp
+.chapter "bold(Using the Keyboard)"
+The computer keyboard is like an electric typewriter which allows you to communicate
+with the computer.  Like a typewriter it prints each character you type 
+but it prints on the TV screen.  
+The blinking cursor shows you where the next character will appear.  Some keys have
+other special functions.
+
+.nf l
+	<RETURN>			s(m)sends a command to the computer and moves
+					t(m)the cursor down to the next line.
+
+	<ESC>				t(m)erases one character behind the cursor,
+					t(m)and moves the cursor back one space.
+	
+	<CTRL> - D			t(m)erases one chracter at the cursor.
+
+	<     >				t(m)moves the cursor one space to the right.
+
+	<     >				t(m)moves the cursor one space to the left.
+
+	<SHIFT> - N			t(m)prints the   [   symbol on the screen.
+
+	<SHIFT> - M			t(m)prints the   ]   symbol on the screen.
+
+	<REPT>				t(m)repeats the effect of the key you
+					t(m)typed just before typing   <REPT>.
+					t(m)To repeat the effect of a key continuously,
+					t(m)first type the key you want to repeat.
+					t(m)Then hold down both that key and the   <REPT>
+					t(m)key for as long as you want.
+
+.fi b
+
+(When using the  <CTRL>   or   <SHIFT>    key, hold it down first, then type the other
+key while holding the  <CTRL>   or   <SHIFT>   key down at the same time.)
+
+
+The LOGO command,   CLEAR,  as well as   ND  or  NODRAW  will  clear all text from the screen.
+
+.nf l
+.keep
+bold(WARNING!!  DO NOT TYPE the    <RESET>    key!)
+.fi b
+
+This will restart the computer, erasing all your procedures, forcing you to restart LOGO all over again.
+
+Other special keys are used only to edit procedures. They will be described later.
+.end_keep
+.chapter "bold(LOGO Typing Hints)"
+Every computer language has its own special rules which can be confusing when you
+are learning to use it.  When you type something the computer does not understand
+it will complain and send you an error message. If you follow a few simple rules you can avoid most typing difficulties.
+
+1. The   ?   symbol at the left of the screen is a prompt.
+
+.nf l
+?
+.fi b
+
+This tells you the computer is waiting for you to type a LOGO command.
+
+2.  Always leave a space after a LOGO command or input (except at the
+end of a line).  (The computer needs a space after every word to avoid confusion,
+just as we leave a space after a word in English.)
+
+Examples
+.br
+	Type	FD	100	not	FD100
+
+	Type	PRINT   "HI	not	 PRINT"HI
+
+3.  When using  "   as in PRINT   "HI,  think of the  "   as the first "letter"
+of the name. (Never leave a space after    "  unless you want to print a blank line.)
+
+	Type	PRINT	"HI	not	PRINT"   HI
+				or	 PRINT   "   HI
+
+(The same is true of    :    in  LOGO. Never leave a space after   :   .)
+.keep
+
+4.  Don't use  :  when typing numbers.
+
+	Type 	FORWARD   10	 not	 FORWARD   :10
+.end_keep
+.keep
+
+5. Aways type  <RETURN> to send a command to the computer. When a printed instructions suggests that you type
+
+	FD  100
+
+what you really type is
+
+	FD  100   <RETURN>
+
+
+6.  Explore what happens when you make a typing mistake by
+trying to type some buggy commands. Each of these commands will result in an error message:
+
+
+.nf l
+Examples:
+
+	FD100   <RETURN>
+
+	FD   <RETURN>
+
+	100   <RETURN>
+
+	PRINT"HI   <RETURN>
+
+	PRINT   "   HI   <RETURN>
+
+.end_keep
+
+.fi b
+.chapter "bold(Using the LOGO Editor)"
+The LOGO procedure editor makes it easy to change or define a procedure.
+In addition to normal typing, you can use special editing keys to:
+
+- add something to a line
+.br
+- rub out and change part of a line
+.br
+- erase an entire line
+.br
+- add a new line
+
+
+To change an existing procedure type ED, or EDIT followed by the procedure
+name.  To start writing a new procedure using the editor, type TO, followed by a new procedure name.  To stop using the editor, and return to
+the LOGO interpreter, type  <CTRL> - C.	
+
+.fi b
+Once you type   EDIT  or  TO,   you will be communicating directly with the editor, instead of the LOGO interpreter. LOGO  commands will not be carried out. While using the editor you can teach the computer a new procedure, or change an old procedure.  By moving the edit cursor and
+using editing commands, you can make changes in what has been typed.
+
+bold(Commands to Move the Cursor)
+ 
+You can move the edit cursor using the  <CTRL>  key, and the arrow keys.
+
+.nf L
+
+	<CTRL> - P			s(m)moves cursor up one line
+
+	<CTRL> - N			t(m)moves cursor down one line
+
+	<     > 			t(m)moves cursor left one space
+
+	<     > 			t(m)moves the cursor right one space
+
+	<REPT>				t(m)repeats the effect of the key you
+					t(m)typed just before typing   <REPT>.
+					t(m)To repeat the effect of a key continuously,
+					t(m)first type the key you want to repeat.
+					t(m)Then hold down both that key and the   <REPT>
+					t(m)key for as long as you want.
+
+
+.keep
+bold(Editing Commands)
+
+	<CTRL> - D			t(m)erases the character at the cursor.
+
+	<ESC>				t(m)erases the character behind the cursor,	
+				t(m)just as it does when you are typing
+				t(m)normal LOGO commands.
+
+	
+	<RETURN>                     t(m)creates a new line and moves the cursor 
+                                        t(m)down to the beginning of the new line.
+				t(m)If there is any text to the right
+				t(m)of the cursor it will be moved too.
+
+	<CTRL> - O			t(m)creates a new line at the cursor
+			     t(m)and moves all the other lines down.
+
+bold(Finishing Using the Editor)
+
+
+	<CTRL> - C			t(m)This tells the interpreter that you are 
+				t(m)finished editing and ready to return
+           			t(m)to using normal Logo commands.
+
+.end_keep
+
+
+.keep
+bold(Learning to Use the Logo Editor)
+
+.fi b
+The best way to learn to use the Logo editor is to try editing a procedure.
+If you already have a procedure, you can edit it by typing:
+
+EDIT	(name of your procedure)	<RETURN>
+
+Then experiment with the different editing commands to see what to do.
+When you are finished editing type
+.nf L
+
+<CTRL> - C
+
+.end_keep
+.keep
+.fi b
+
+To show you a little about how to use the editor, here is a simple example. You you can type
+each command and follow along using your computer if you wish.
+
+First, you'll need a simple procedure to practice on.  Type in a
+procedure like this:
+
+.nf l
+	TO   HI    <RETURN>
+
+.fi b
+The TV screen will clear, with  TO  HI  at the upper left hand corner, and LOGO SCREEN EDITOR printed at the bottom. You can now copy the next two lines.
+
+
+.nf l
+	PRINT   [HELLO  FRIEND]  <RETURN>
+	END   <RETURN>
+
+Your procedure is now complete. To return from the editor to the LOGO interpreter, type
+
+	<CTRL> - C
+.end_keep
+
+.keep
+To try out the procedure, type
+
+	HI  <RETURN>
+
+.end_keep
+.keep
+To print out all the steps in your procedure, type
+
+	PO   HI   <RETURN>		t(m)PO  is short for "print out."
+
+The computer will now print
+
+	TO   HI
+	 PRINT   [ HELLO   FRIEND ]
+	END
+.end_keep
+.keep
+
+Now you can use the editor to change the procedure.  Type:
+
+	EDIT   HI   <RETURN>
+
+.fi b
+and the entire procedure will be printed on the editing screen, with the edit
+cursor at the T in the upper left-hand corner. (The underlining  (__)  shows the position of the cursor.)
+
+.nf l
+	TO   HI
+	PRINT  [HELLO   FRIEND]
+	END
+.end_keep
+
+.fi b
+.keep
+Here's how you could add the word "MY" between "HELLO" and "FRIEND".
+
+1.  Move the edit cursor down one line using 
+
+.nf l
+	<CTRL> - N     		t(m)TO   HI
+				t(m)PRINT   [HELLO   FRIEND]
+				t(m)END
+.end_keep
+.keep
+2.  Move the cursor over several spaces using
+
+	<     > 			t(m)TO   HI
+				t(m)PRINT   [HELLO__FRIEND]
+				t(m)END
+.end_keep
+.keep
+
+3.  Type in the new word.
+
+	<SPACE>  MY			t(m)TO   HI
+				t(m)PRINT   [HELLO   MY__FRIEND]
+				t(m)END
+.end_keep
+
+.fi b
+4.  If this was all you wanted to do, you could
+return to the LOGO Interpreter by typing
+
+	<CTRL> -  C
+
+Suppose you wanted to add another line before doing that.  To add a new
+line, you have to first move the cursor out to the end of the line it is
+already on, using
+
+.keep
+.nf l
+	<     >			t(m)TO   HI
+				t(m)PRINT   [HELLO   MY   FRIEND] __
+				t(m)END
+.end_keep
+
+.keep
+To move the cursor down and open up a new line, type
+
+	<RETURN>				t(m)TO   HI
+				t(m)PRINT   [HELLO   MY   FRIEND]
+				t(m)__
+				t(m)END
+.end_keep
+
+.keep
+Now, type in a new line.  For example,
+
+				t(m)TO   HI
+				t(m)PRINT   [HELLO   MY   FRIEND]
+				t(m)PRINT   [HOW ARE YOU TODAY?]__
+				t(m)END
+.end_keep
+
+.fi b
+The procedure has now been changed, and if you are satisfied, type
+
+	<CTRL> - C
+
+This will return you to the LOGO interpreter which will be ready to
+accept regular LOGO commands. The computer will now print
+
+	HI   DEFINED
+
+You can print out the procedure by typing
+
+	PO   HI   <RETURN>
+
+Now you can try out the new command by typing
+
+	HI    <RETURN>
+
+.keep
+bold(Defining More Than One Procedure at a Time)
+.br
+
+0You can define more than one procedure at a time, using the editor.  After
+typing END, go on to define another procedure in the usual way. When you are finished defining all your procedures, type
+
+	<CTRL> - C
+.end_keep
+.fi b
+.bp
+.chapter "bold(Saving and Recalling Information)"
+.section "bold(Saving Your Procedures on a Disk)"
+Once you have taught the computer some new procedures you may want to save them, so that you can use the procedures
+at a later date.
+
+First make sure that you have a LOGO file disk. (Information about making LOGO file disks is available in the manual   MIT LOGO for the Apple II.)
+
+Next, open the cover of the disk drive, and carefully insert the disk, making sure that the label is on top, and goes into the slot last. See the diagram below.
+.keep
+
+
+
+
+
+
+
+
+
+.end_keep
+
+
+When the disk is inserted all the way, close the cover.
+
+Once your disk is in place, you should probably leave it there until you are finished using the computer.
+
+Before saving your procedures it is a good idea to type:
+
+	POTS   			t(m)POTS is short for "print out titles."
+
+The computer will print a list of the names of all the procedures you are about to save.
+
+To save the procedures on the disk type:
+.nf l
+
+	SAVE   "JOHN		t(m)"JOHN is the name of a file. 
+				t(m)You can choose any one-word name you like.
+.fi b
+You must type   "   before the name! Do not type    "   after the name.
+
+	SAVE   "JOHN	not	SAVE   "JOHN"
+
+You may check to see that your file is properly stored on the disk by typing:
+
+	CATALOG
+
+The computer will now print a list of all the files stored on the disk. You will see your new file among them. It will be called  JOHN.LOGO. The  .LOGO  after  JOHN  is the computer's way of remembering that  "JOHN   is the name of a  LOGO  file. Since all your files will be  LOGO  files, you only have to remember the name   "JOHN.
+
+You can choose any name you like for a file name. If you are not used to computer files it might be a good idea to  use your own name at first.
+.keep
+
+.section "bold(Reading Files From a Disk.)"
+
+To get procedures back into the computer's memory from the disk, type:
+.nf l
+
+	READ   "JOHN		t(m)Use your file name instead of "JOHN,
+				t(m)of course.
+.fi b
+
+The computer will print a message listing all the new procedures that have been defined.
+.end_keep
+
+
+
+.section "bold(Some Suggestions About Filing For Beginners.)"
+
+
+It is a good idea to always use the same file name, when you are first starting out. Your own name would be a good choice, especially if you share the same disk with other people. Here is a good method for making sure you never lose your information.
+
+1. When you first start using the computer type   GOODBYE   to clear the computer's working memory.
+
+2. Read your file by typing  READ  "JOHN   (if your name is John). This will return all your old procedures to the computer's working memory.
+
+3. After writing a new procedure and testing it to see if it works, type  SAVE  "JOHN  (using your own name, of course).  In this way you will save all your procedures as you go along.
+
+
+bold(WARNING!!!   Be sure to  READ  your file when you start work. If you  SAVE  new procedures before READing your old ones, you will lose all your old procedures!!!)
+
+
+4. When you are all finished working, type GOODBYE. This will leave the computer's working memory clear for the next user.
+
+.keep
+.chapter "bold(Glossary of Commands)"
+
+bold(Commands for examining your work:)
+
+.nf l
+	CLEAR			t(m)clears all text from the TV screen.
+
+	ND   			t(m)clears all text and turtle drawings.
+				t(m)ND  is short for  NODRAW
+
+	PO   (procedure name)	t(m)prints out the procedure.
+				t(m)PO  is short for  PRINTOUT 
+
+	POTS			t(m)prints the titles of all procedures.
+				t(m)POTS  is short for   PRINTOUT  TITLES
+
+	CATALOG			t(m)prints a list of all the files 
+				t(m)on the disk you are using.
+
+	ED   (procedure name)	t(m)starts the editor with the steps of
+				t(m)your procedure displayed on the screen.
+				t(m)ED  is short for  EDIT
+
+	<CTRL> - C		t(m)finishes editing and returns
+				t(m)to a normal LOGO mode.
+.end_keep
+.keep
+
+bold(Commands for reading and saving files:)
+
+	READ  "JOHN		t(m)reads the information in a disk file
+				t(m)named   "JOHN,   and  places it in
+				t(m)the computer's working memory.
+
+	SAVE  "JOHN		t(m)Saves the information in the computer's
+				t(m)working memory, on the disk, in a
+				t(m)file named   "JOHN
+.end_keep
+.keep
+
+bold(Special keys on the keyboard:)
+
+	<RETURN>			s(m)sends a command to the computer and moves
+					t(m)the cursor down to the next line.
+
+	<ESC>				t(m)erases one character behind the cursor,
+					t(m)and moves the cursor back one space.
+	
+	<CTRL> - D			t(m)erases one chracter at the cursor.
+
+	<     >				t(m)moves the cursor one space to the right.
+
+	<     >				t(m)moves the cursor one space to the left.
+
+	<SHIFT> - N			t(m)prints the   [   symbol on the screen.
+
+	<SHIFT> - M			t(m)prints the   ]   symbol on the screen.
+
+	<REPT>				t(m)repeats the effect of the key you
+					t(m)typed just before typing   <REPT>.
+					t(m)To repeat the effect of a key continuously,
+					t(m)first type the key you want to repeat.
+					t(m)Then hold down both that key and the   <REPT>
+					t(m)key for as long as you want.
+
+.fi b
+
+(When using the  <CTRL>   or   <SHIFT>    key, hold it down first, then type the other
+key while holding the  <CTRL>   or   <SHIFT>   key down at the same time.)
+
+.end_keep
+.keep
+bold(Special keys used only while editing:)
+
+.nf L
+
+	<CTRL> - P			s(m)moves cursor up one line
+
+	<CTRL> - N			t(m)moves cursor down one line
+
+
+	<CTRL> - O			t(m)creates a new line at the cursor
+			     t(m)and moves all the other lines down.
+
+
+	<CTRL> - C			t(m)finishes editing and returns
+           			t(m)to using normal Logo commands.
+
+.end_keep

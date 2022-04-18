@@ -1,0 +1,636 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.nofill
+.ss
+.twinch 4.5
+.ce
+1FINAL TECHNICAL REPORT OF THE 
+.ce
+BROOKLINE LOGO PROJECT
+
+.CE
+"An Assessment and Documentation of a 
+.ce
+Children's Computer Laboratory"
+
+.ce
+(Grant #77-19083SED)
+
+.ce
+TABLE OF CONTENTS
+
+1.  Introduction
+
+    1.1  Overview of the Project.
+    1.2  Analysis and Publication of Findings
+    1.3  Summary of Findings
+    1.4  Articulation with further work.
+
+2.  Organization and Teaching in the LOGO Classroom
+
+    2.1  Goals of Teaching LOGO
+    2.2  Organization of the LOGO Classroom
+    2.3  Teaching Strategies in the LOGO Classroom
+
+3.  Research Methodology
+
+4.  Detailed Organization of the Project
+
+    4.1  Selection of Students
+    4.2  Scheduling of the Trial Classes
+    4.3  Scheduling of Observations
+    4.4  Interviews of Teachers and Students
+
+.twinch 6
+.he1
+Final Technical Report
+.he2
+Brookline LOGO Project
+.dummy @
+.adjust
+.page
+.adjust
+11. Introduction0
+
+11.1 Overview of the Project
+
+
+0The M.I.T. LOGO group has developed over the years an approach to
+teaching programming and to using computational environments to
+facilitate the learning of a variety of subject matters as well as the
+enhancement of general intellectual development.  The project reported here 
+consisted of (a) defining a particular "learning unit" embodying this
+general approach and (b) studying the implantation of this unit in a public
+school.  The content of the learning unit includes :       
+
+.indent 6
+(a) the elements of writing computer programs in the language LOGO
+
+(b) topics in mathematics and science based on the use of the 
+concept of "turtle" as a bridge between traditional bodies of knowledge
+and new computational methods for understanding and for learning these
+topics
+
+(c) formulations of a number of heuristic methods in a LOGO/turtle
+framework. 
+
+.indent 0
+The school used for the project is in the lower socio-enconomic
+section of the town of Brookline, Mass.  The student population spanned
+the range of academic performance from students who have presented
+serious learning difficulties to students who have shown exceptional
+mathematical talent.  
+
+The learning  unit is designed to be realistic in its
+length (approximately 30 class hours per student) as well as in the
+teacher-training and computer system necessary to implement it.  Since
+the primary purpose of the study was to document the students' patterns
+of learning, we were rigorous in selecting typical students and in
+confining their interaction with the computer to the conditions
+prescribed by the experiment.  We were less rigorous in selecting a
+"typical" teacher and in standardizing the teacher training process.
+Indeed, while staying within the general ball-park of what we consider
+to be feasible under normal operational conditions, we allowed
+ourselves a "safety margin" in giving our teacher 2 or 3 times the
+extent of training we consider to be minimally necessary.
+
+Another area in which we gave ourselves a "safety margin" was in the
+use of a computer with more power and flexibility than would be
+generally available to schools at a reasonable price.  Apart from
+allowing us
+to modify the conditions of
+work of the students in the study, the machine's power contributed
+essentially to the collection of data which includes a complete
+transcript of all interactions with the machine in addition to notes
+taken by the teacher and by observers.
+
+In October 1977 a computer laboratory consisting of four independent
+LOGO computer systems was established in a classroom of the William H.
+Lincoln School, Brookline, Massachusetts.  Sixteen representative
+students selected from among fifty sixth graders were provided with
+special LOGO classes for approximately four hours per week.  Two groups
+of four students were exposed to approximately 25 hours  of LOGO
+experiences over a seven week period in the Fall; two additional groups
+of four students were exposed to approximately 36 hours of LOGO
+experiences over a ten week period in the Spring.  The work of the
+sixteen experimental subjects was carefully monitored by means of
+annotated dribble files, teacher's observations, and by regular
+observations by members of the MIT LOGO Group and outside consultants.
+The students were interviewed before and after their LOGO experience to
+establish a base-line of interests, abilities, and attitudes from which
+we could assess each student's progress during the LOGO classes.
+Additional feedback was provided by the regular teaching staff of the
+school by means of routine meetings and conversations, and by
+interviews conducted after the end of each series of LOGO classes.
+
+.block 5
+11.3 Analysis and Publication of Findings0
+
+0A preliminary analysis of the performance of the first set of
+eight subjects was published as LOGO Memo No. 49: "Interim Report of
+the LOGO Project in the Brookline Public Schools," in June 1978.  
+After the formal work with children came to an end in June 1978 we
+began a new analysis of data which extended the Interim Report in
+several ways:
+
+.indent 6
+.block 8
+(a) all sixteen subjects are now included
+
+(b) the analysis is much more detailed and systematic
+
+(c) we now have data on the learning of physics as well as of mathematics
+in the LOGO/turtle environment used by the project 
+
+(d) we have data on one student whose primary gains were in the use of language
+rather than in mathematics or science.
+
+.indent 0
+The results of this analysis take the form of a book-length document to be
+published in June 1979 as a LOGO Memo.  Four copies will be sent to the
+N.S.F. (c/o Dr.Andrew Molnar.)  Further copies can be obtained by writing
+to "LOGO Laboratory, 545 Technology Square, Cambridge  02139." We refer
+to this document in later scetions of this report as "Data Analysis" and
+for external reference as "Sixteen Young Programmers: An Analysis of the
+LOGO/Turtle Project in the Lincoln School,Brookline Mass."  We are
+exploring the possibility of having the document published as a book.
+
+It is not meaningful to summarize here the contents of "Data Analysis";
+interested people are refered to the document itself.  However in the
+following section we provide a qualitative summary of the categories of
+general conclusions that can be drawn from the work.
+
+11.2 Summary of Findings0
+
+The product of the work can be seen on several levels.
+
+.twinch 4.5
+.block 4
+A DEMONSTRATION OF FEASIBILITY:  
+.br
+Elementary school students CAN learn to program computers. Our analysys
+of data constitutes by far the most detailed publicly avalailable
+documentation of how a group including average and below average
+elementary school students actually learned to program under realistic
+school conditions.  (Data analysis:  Chapters 1, 2, 3, and 4)
+
+.block 4
+THE ESTABLISHMENT OF BENCHMARKS:  
+.br
+We have a list of programming skills achievable within the typical time
+limits of a single semester course.  As more knowledge about learning
+to program is acquired the set of skills achievable in this time will
+undoubtedly change both qualitatively and quantitatively.  In the
+meantime the set of skills established here will serve as a guide-line
+to teachers and as a base line for further research.  (Data analysis:
+Chapters 1 and 4)
+
+.block 4
+A COGNITIVE ANALYSIS OF PROGRAMMING
+.br
+Our data on patterns of learning provides insights into the cognitive
+structures underlying programming and the difficulties encountered by
+students.  (Data analysis:  Chapter 4)
+
+.block 4
+A WINDOW ON THE ADVANTAGES OF LOGO-LIKE LANGUAGES OVER BASIC-LIKE LANGUAGES
+.br
+It is intuitively obvious to us that while some of the students in our study
+would have learned to program in a standard BASIC programming environment
+others would certainly not have learned under those conditions. The latter
+group made essential use of features  designed so that LOGO would be
+accessible to mathematically naive and even to mathophobic students.
+Although we have no rigorous proof of these judgments we expect that anyone
+who has tried to teach BASIC to children will be able to see how what
+might seem to be small differences between LOGO and BASIC allow certain
+children to overcome obstacles that often block entry to the world of
+programming.
+
+
+.block 4
+A DEMONSTRATION OF MATHEMATICAL LEARNING IN A COMPUTATIONAL ENVIRONMENT:
+.br
+Our students were learning mathematics as an integral part of
+the same learning experience that led to skill in programming.  The
+data collected here illuminates this process.  And just as we have
+established "benchmarks" for the learning of programming at elementary
+school level we have also established benchmarks for the learning of
+the topic in computational mathematics we have called "Turtle
+Geometry".  (Data analysis:  Chapter 5)
+
+.block 3
+A DEMONSTRATION THAT THE COMPUTER CAN BE USED TO RENDER VISIBLE, TO
+EXPLORE AND DEVELOP VARIED COGNITIVE STYLES.  (Data analysis:  Chapters
+2 and 3 and individual profiles)
+
+.block 3
+A DEMONSTRATION THAT THE COMPUTER CAN SIGNIFICANTLY CHANGE A STUDENT'S
+SELF-IMAGE 
+.br
+as a learner and provide a context within which serious learning
+difficulties can be overcome.  (Data analysis:  Chapters 2 and 3 and individual
+profiles)
+
+.block 4
+ON A META-LEVEL:  DATA RELEVANT TO FORMULATING A METHODOLOGY OF EVALUATION
+.br
+of the process of learning in the open ended learning environments made
+possible by personal computers.  (sections 3 and 4 of this report)
+.twinch 6 
+.page
+11.4  Articulation With Further Work0
+
+We believe that the work reported here constitutes a sufficient demonstration
+of feasibility and of educational value to justify the implantation of the
+LOGO/turtle learning unit in elementary schools.  The principle obstacle
+to this happening on a large scale is the fact that most computers in schools
+were designed for a very different mode of use. The machines in general use
+have two kinds of limitations to the transposition of the LOGO/turtle unit
+used in the present project: limitations of memory and limitations of the
+display system used. The latter is more serious.  Computer systems such as the
+TRS-80 which have no graphics capability would require serious modifications
+in order to permit the transposition.  Fortunately several systems have
+a graphics capability which  allows  the transposition to take place with
+some changes in the detail although not in the principle of the LOGO/turtle
+unit.  These include the Apple, the Itari and the recently announced T.I.
+computers. The extensions of memory required to make the transposition are 
+less serious, requiring only an "add on" to the existing system rather than 
+a change in structure.  A version of the LOGO/turtle unit has in fact actually
+been implemented for the T.I. computer with a memory extension.  A 
+project to make a transposition to the Apple is under way. Thus the hardware
+barrier that has blocked the spread of LOGO for many years seems to have
+broken down just at the appropriate moment when we are also able to provide
+(through the publication of the Data Analysis from the project reported here)
+the kind of information schools will need in order to adopt it.
+
+Some "developmental" work needs to be done in order to make the transpositions
+and we have made a proposal to the N.S.F. D.I.E.S. program to carry it
+out.  If
+this proposal is accepted we can expect to see LOGO/turtle methods being
+used in schools by the school year 1980/81 on a sufficient scale to make
+possible a new set of research issues concerned with the effects of LOGO
+work as it becomes more closely integrated into the school.
+
+An important step in the direction of understanding how much integration is
+possible and what its consequences might be will be taken by a project in
+the Lamplighter School in Dallas, Texas.  This project will introduce nearly
+one hundred  LOGO computers into a small elementary school.  The underlying
+philosophy of the project is to treat the computer as a "free resource"
+for the entire third grade.  This means not only that the computers will be
+available at all times for work at school, but also that the children will
+be able to take the machines home and keep them there for extensive periods.
+One of the many conjectures one might make about the project is that the
+LOGO/turtle methods we have been testing in a school context
+might be transferable to learning in a home context where other members of the
+family will be able to have access to the computers brought home by the
+children participating in the study.
+
+.block 6
+12. Organization and Teaching in the LOGO Classroom
+
+2.1  Goals of Teaching LOGO
+
+0The LOGO language and introductory LOGO activities can form the
+basis for several different kinds of learning, integrated in a complex
+way into the actual classroom activities of the children.  While these
+types of learning can and do occur simultaneously, it is valuable to
+list them as separable goals, and to assign priorities, for the purpose
+of developing a classroom organization and teaching strategies.  The
+major goals of teaching LOGO, as defined in our research proposal are:
+
+.indent 6
+1. Learning to feel comfortable with a computer, and in control of what
+the computer does.  The child will learn that s/he can decide what
+the computer will do, and have the computer carry out a set of
+instructions.  There are many ways in which children can use the
+computer in their own fashion.
+
+2. Learning the elements of the LOGO computer language.  This includes
+commands that are included in the language, how to write and name
+procedures and subprocedures, use recursion and/or iteration, how to
+define,  name and use variables, as well as conditionals and stop rules,
+etc.
+
+3. Learning the "subject matter" of Turtle Geometry.  This includes
+concepts involving measurement and estimation of angles and distances;
+the relations among angles and distances, necessary to produce certain
+well defined shapes such as a square, triangle, polygon, star or
+circle; such general geometric concepts as similarity, scaling and
+symmetry, etc.
+
+4. Learning to develop problem solving skills.  This includes such
+things as procedural thinking, "playing turtle", "playing computer",
+the concept of a "bug" in a computer program, and strategies for
+debugging and planning, the usefulness of generalizations or "big
+ideas"; and the development of a language with which to discuss all
+these things.
+
+.indent 0
+The LOGO language and computer activities are designed so that all
+these things can happen simultaneously as the child works on projects
+which he or she has initiated.
+
+The initial projects and the initial knowledge needed are 
+simple enough that a child can learn them relatively easily, and
+begin to feel successful, and in control, right from the start.
+Additional aspects of the language and projects of greater
+sophistication are added as each child becomes comfortable with them.
+Directing the computer to carry out a series of steps involves
+planning.  Gaps, misconceptions or errors in the planning lead to
+"bugs" which have to be eliminated.  Thus the teacher can help the
+child begin to develop problem solving skills needed to debug the
+child's work.  By discussing all of these things explicity, a language
+is built up that can be applied to other kinds of problem-solving
+situations. 
+
+In practical situations, with a group of children and one teacher,
+different children tend to be successful with different aspects of LOGO.
+Some children are extremely adept at using elements of Turtle
+Geometry
+but have a great deal of
+difficulty with the syntax of the computer language.  For others, the
+reverse may be true.  
+In order to create a learning
+environment that supports the learning of all of the children in a
+group, we have made learning to be comfortable with the computer:
+enabling the learner to feel in control -- the first priority among the four
+goals.  As the students develop their own working styles and sets
+of priorities, they develop a sense of confidence
+about what they have
+done.  On the other hand, they will not all cover the same subject
+matter in any given period of time.  
+Our experience shows that children have many different
+approaches to LOGO, and successfully follow several different learning paths.
+
+.block 5
+12.2 Organization of the LOGO Classroom
+
+0The classroom itself consists of four independent microcomputers,
+each with its own keyboard, display screen and disk drive.  A printer is
+available for use with one of the computers when necessary.  The
+children are supplied with notebooks, graph paper drawing paper,
+different kinds of pens, pencils and markers, as well as a full set of
+stationary supplies.  A small round table, near a blackboard 
+provides a setting for group lessons or discussions, and
+for informal conversation among the children.  Children's work is
+displayed on bulletin boards around
+the room.
+
+.block 5
+12.3 Teaching Strategies in the LOGO Classroom
+
+0A child's initial contact centers around learning the basic TURTLE commands,
+FORWARD, BACK, RIGHT, LEFT and CLEARSCREEN; mastering syntax matters
+such as spacing, and reading and taking notice
+of error messages.  The children are encouraged to define their own
+tasks, typically involving drawing a specific, "simple" figure such as a
+square, a house, a flower, or their initials; and to record the steps
+as they go along, so that they will be able to "teach it to the
+computer".  The latter involves an early introduction to procedure writing.
+
+It is at this point, that the child begins to feel a sense of control:
+"I made that design!" Procedures can now be saved, repeated, showed
+off to friends, integrated into a larger design.  The importance of the
+child's first procedure being an individual one (even if it's an idea
+that the teacher suggested and helped with ) is very critical in
+determining the child's relationship with the computer as the
+classes progress.
+
+From this point on, each child's work is different.  Some get
+interested in repeating simple figures, introducing simple variations
+and repeating again.  These children might get into using recursion and
+variables in a fairly short time.  Others might have elaborate ideas
+for computer drawings.  These children might get into use of
+superprocedures and subprocedures right away.  The best of all worlds
+occurs when children begin to show each other their work and swap
+ideas and approaches.  Children are encouraged to borrow each other's
+procedures, even to copy them line-by-line at times.  A lot of very
+useful debugging can occur when a "copied" procedure leads to an
+unexpected result.
+
+As the classes continue, the teacher takes on a guiding role
+helping the children choose projects or suggesting projects to
+children based on their interests and abilities.  S/he introduces
+new material when appropriate, encourages children to improve their
+programming styles by the use of model programs and suggestions for
+debugging, encourages the children to investigate certain areas more
+deeply, and in general, helps the children consolidate their learning.
+
+At intervals, the children meet for group lessons and to share and
+discuss their work.  They each keep a notebook in which they make
+drawings, write out plans, record information, keep printed records of
+their procedures, and make a brief daily comment about what they have
+accomplished.  
+
+Throughout the classes, the teacher makes a daily study of each child's
+"dribble file" -- the complete printed record of the child's
+interaction with the computer.  In addition to providing much of the
+data on which our study of the children's learning is based,
+the dribble files are an invaluable source of information to the
+teacher as to what each child's working style, methods of
+problem-solving, strengths and weaknesses really are.  This information
+is used in planning the individual teaching strategies that are
+developed for each child as the classes progress.
+
+.block 7
+13. Research Methodology
+
+0We rely primarily on qualitative methodology:  on observations,
+interviews and documentation, organized in a carefully designed
+framework, which provides both a conceptual structure for the project
+and a data management system.
+
+Our research design was developed by our project team in a series of
+meetings with Dr. George Hein and Ms. Stephanie (Penny) Dunning,
+consultants to Education Development Center, who also participated in
+the data collection.  The methods of analysis owe a great deal to
+discussions with Prof. Hermine Sinclair-de Zwaart of the University of
+Geneva who visited classes and commented critically on our first
+attempts at analysis.
+
+.block 7
+0The following data collection methods supplied the information upon
+which this report is primarily based:
+
+.twinch 4.5
+1. Dribble files which recorded each child's daily interaction with the
+computer.  Following each class, printouts of the dribble files were
+carefully annotated by the teacher and/or a regular class observer.
+
+2. The teacher's anecdotal records of each child's daily work.
+
+3. A daily compilation of each child's work -- printouts of procedures,
+hard copy of computer drawings, etc.
+
+4.  Observations by Ms. Dunning, conducted on a regular basis, and
+written up to focus on child-teacher, child-child and child-computer
+interactions. 
+
+5. Regularly conducted observations by members of the MIT LOGO Group.
+
+.twinch 6
+The following sources of data were useful in corroborating other
+findings, offering fresh insights into children's experiences providing
+information about transfer of both skills and attitudes to other areas
+of school, and understanding the overall community reaction to the project:
+
+.twinch 4.5
+6.  Occasional observations by members of the MIT faculty, Dr. George
+Hein, other evaluation consultants and visitors to the LOGO classes.
+
+7.  Informal meetings and workshops with the classroom teacher and the
+school principal.
+
+8.  A series of pre/post student interviews developed by the
+project staff in collaboration with Dr. Hein and Ms. Dunning, and
+carried out by Ms. Dunning.  Pre-interviews were useful
+in providing us with baseline information about each child's interests,
+skills, problem solving abilities, and attitudes towards themselves,
+their school work and towards computers.  Post-interviews were not
+as useful as we had hoped in providing external information about
+student gains during the LOGO classes.  While some students showed
+improvements on some tasks, they showed regression on others, and we
+have not been able to establish enough consistencies to draw any
+conclusions from the post-interview data.
+
+9.  Interviews with the classroom teachers conducted by Dr. Hein, after
+the conclusion of each series of classes.
+
+10.  Seminars and meetings with evaluation consultants who commented on
+the data.
+
+11.  Comments made at parents' meetings, school "open house" etc.
+
+12.  An independent study made by Ms. C. Solomon of the diffusion as
+seen in the year following the work reported here of LOGO knowledge in
+the school.
+.twinch 6
+.page
+.block 5
+14.  Detailed Organization of the Project
+
+4.1  Selection of Students for the Trial Classes
+
+0The subjects for the trial classes were chosen on the basis of
+consultations among the project staff and the regular classroom
+teachers.  The teachers were asked to rate the 50 sixth-grade students
+on a 3-point scale of overall ability in school work: "average", "below
+average", and "above average".
+
+The students were then divided into groups of four, so as to achieve
+the following:
+
+.nofill
+.indent 6
+--a range of abilities within each group
+--a balance of boys and girls in each group
+--a minimum of scheduling problems in relation to other classroom activities
+--compatibility among individuals in the group to ensure that the
+  groups could be as supportive as possible for each child
+
+.indent 0
+.adjust
+Two of these 4-unit groups from each of the two school classes formed
+the 16 subjects of the experiment.  The range of abilities of students
+in the trial classes, was compared with the range of abilities in the
+sixth grade as a whole, to ensure that our sample was a representative
+one:
+
+.nofill
+.block 13
+.ce
+Teachers Rating of Students
+
+.spread
+//Entire 6th Grade/Experimental Group
+.spread
+//n = 50/n = 16
+.spread
+/I. Above average/19/6
+.spread
+/II. Average/15/4
+.spread
+/III. Below Average/16/6
+
+
+.adjust
+In addition to the teacher ratings of student abilities, the latest
+national achievement test scores of students in our sample were
+compared to the scores in the entire sixth grade.  In this way we
+confirmed that our sample was representative, although no attempt was
+made to achieve a random selection, or to match our subjects with a
+control group.
+
+An additional commitment to the school was that no child in the 6th
+grade was to be excluded from the LOGO experience and this was achieved
+using M.I.T. student volunteers.  These latter children do not form
+part of the experiment and their activities are not recorded here.
+
+During April of 1978, the school administered a battery of achievement
+tests to all sixth grade students.  Their results, made available to
+us, allow us to rank fifteen of our subjects according to their
+percentile ratings when compared to national norms (the sixteenth
+subject, Karl, was not tested with his classmates because of severe
+learning problems).
+
+.block 22
+.ce
+Insert National Percentile Achievement Tests Scores Here
+.sp 20
+
+.block 16
+14.2  Scheduling of the Trial Classes
+.br
+.sp 13
+
+0Fall classes met four times a week, for periods ranging from 40
+minutes to 90 minutes.  In the Spring it was possible to arrange to
+hold the classes three times a week, and to standardize the times at
+approximately 80 minutes for each class.  Each of the four groups had
+approximately 4 hours of exposure to LOGO per week.  Late notification
+of the award by the National Science Foundation resulted in a late
+start for the fall classes, and a total duration of approximately three
+weeks less than that of the Spring classes.
+
+.block 5
+14.3  Scheduling of Observations
+
+0A major source of data for the project was derived from written and
+verbal comments of observers who attended the trial classes.  These
+observations were of four types.
+
+.twinch 4.5
+1. Members of the MIT LOGO Group -- faculty, and students.  At least
+two different MIT observers visited each of the trial classes once each
+week.  Bi-weekly meetings were held at which the entire project staff
+shared their observations and monitored the progress of the classes.
+
+2. A regular consultant observer, Ms. Penny Dunning, visited the trial
+classes weekly in the Fall, and bi-weekly in the Spring.  Her written
+observations of each session she visited form a significant part of the
+data of the experiment.
+
+3. Other consultants paid irregular visits to the trial classes.  Their
+insights were shared in group meetings and in written reports to the project.
+
+4. Visitors to the project were asked to leave a written comment before
+departing.
+
+.twinch 6
+.block 5
+14.4 Student and Teacher Interviews
+
+0Interviews were conducted with each of our 16 students both before
+and after their LOGO experiences.  The students in the Fall classes
+were interviewed in October, and again in January.  The students in the
+Spring classes were interviewed in October, and were given a second
+pre-interview in February, to form a comparison with the students who
+had completed their LOGO classes in the Fall.  The students in the
+Spring Classes were also given a post-interview, following the
+completion of the classes in June.
+
+The three teachers of our students were interviewed by Dr. George Hein
+after the Fall series of classes, and again after the Spring classes.
+
+

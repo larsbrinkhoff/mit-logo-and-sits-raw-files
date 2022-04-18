@@ -1,0 +1,120 @@
+;this is a simulation of Latanya's MIC.
+
+  (declare special input_buffer)		(setq input_buffer nil )
+  (declare special output_buffer)		(setq output_buffer nil)
+  (declare special control_cases)		(setq control_cases
+						      (list 143 144 146 147 154 156 160 163))
+  (declare special control_output)	(setq control_output
+					      '((143 'CNTL_C)(144 'CNTL_D)(146 'CNTL_F)
+						(147 'CNTL_G)(154 'CNTL_L)(156 'CNTL_N)
+						(160 'CNTL_P)(163 'CNTL_S)))
+  (declare special off)			(setq off 'off)
+  (declare special on)			(setq on 'on)
+  (declare special lookup_flag)		(setq lookup_flag off)
+  (declare special next_lookup_flag)	(setq next_lookup_flag off)
+  (declare special last_lookup_flag)	(setq last_lookup_flag off)
+  (declare special control_flag)		(setq control_flag off)
+  (declare special yes)                   (setq yes 'yes)
+  (declare special no)                    (setq no 'no)
+  (declare special exit)                  (setq exit no)
+
+
+;************************************************************
+					       
+
+(defun fill_input_buffer ()
+  (cond ((equal exit no)
+
+         (do ()
+       	  (())
+	  (cond ((null input_buffer)(setq input_buffer tyi)))))
+	(t ())))
+
+;************************************************************
+
+(defun check_input_buffer ()
+	(do ()
+	    (())
+	(cond	
+	  ((equal input_buffer 134) (setq exit yes))
+	  ((null input_buffer) ( ))
+	  ((and	(equal lookup_flag off)
+		(equal next_lookup_flag off)
+		(equal last_lookup_flag off)
+		(equal control_flag off)) 
+	          (prog (x)
+		   	(setq x input_buffer)
+		   	(setq input_buffer nil)
+		   	(lookup x ))))))
+
+;************************************************************
+
+(defun lookup (key)
+	(setq lookup_flag on)
+	(cond
+		((and (lessp key 72) (greaterp key 57))		;keyboard number
+			(setq output_buffer key))
+		((and (lessp key 173) (greaterp key 140))	:keyboard locase
+			(setq output_buffer key))
+		((equal key 040)				;keyboard space
+			(setq output_buffer key))
+		((equal key 135)	
+			(setq input_buffer nil)			;shift designation
+			(next_lookup))
+		((equal key 052)(setq output_buffer 207))	;rubout
+		((equal key 146)(setq output_buffer 215))	;return
+		(t						;not acceptable input
+
+			(setq input_buffer nil)))
+	(setq lookup_flag off))
+
+;************************************************************
+
+(defun next_lookup ()
+   (setq next_lookup_flag on)
+   (prog ()
+    loop
+    (cond ((null input_buffer) (go loop))			;wait for input
+          ((equal input_buffer 135)				;control designation
+		(setq input_buffer nil)
+		(last_lookup))
+	  ((and (greaterp input_buffer 140)			;uppercase alphabet
+	        (lessp input_buffer 172))
+       		   (setq output_buffer (diff input_buffer 30))
+		   (setq input_buffer nil))
+	  ((equal input_buffer 052) (setq input_buffer nil))	;rubout the shift
+	  (t							;wait for acceptable
+		(setq input_buffer nil)  			;shift or control designation
+		(go loop))))					;or rubout
+
+	  (setq next_lookup_flag off))
+
+;************************************************************
+
+(defun last_lookup ()
+	(setq last_lookup_flag on)
+	(prog ()
+	loop
+	(cond ((null input_buffer) (go loop))			;wait for input
+	      ((equal input_buffer 052)				;rubout the control
+			(setq input_buffer nil))
+	      ((member input_buffer control_cases)
+			(control))
+	      (t        (setq input_buffer nil)
+			(go loop))))
+	(setq last_lookup_flag off))
+
+;************************************************************
+
+(defun control ()
+	(setq control_flag on)
+	(prog (x)
+		(setq x control_output)
+	loop
+		(cond	((equal input_buffer) (caar x))
+				(setq output_buffer (cdar x))
+			(t	(setq x (cdr x))
+				(go loop))))
+	(setq control_flag off))
+
+;************************************************************

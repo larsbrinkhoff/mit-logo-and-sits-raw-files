@@ -1,0 +1,102 @@
+;SIZE 11
+;VSP 6
+;TOPMAR 0
+;BOTMAR 0
+;LFTMAR 0
+;SKIP 1
+;KSET ,,,
+NNTJ6.3
+
+Å PCost of a raster-scan display system.
+Å  1) Video Generation (for a 4 channel system)
+Å  Intel Memory                    10,800
+Å  fans                            330
+Å  custom backplane                400
+Å                                  ______
+Å                                  11,530
+Å  
+Å  Video and superbuss interface cards
+Å  60 IC's @ $1.50                 90
+Å  60 IC sockets @ $1.50           90
+Å  PC board                        25
+Å  connectors                      10
+Å                                  ___
+Å                                  215
+Å                                  x 4
+Å                                  ___
+Å                                  860
+Å  total                                   12,390
+Å  or                                      3,097/channel
+Å  
+Å  PDP11 interface
+Å  Augat board                     324
+Å  Wiring backplane (raytheon)     300
+Å  DEC mounting panel              120
+Å  180 IC's @ $1.50                270
+Å  UNIBUS cable, misc cables etc   300
+Å                                  ____
+Å                                  1,314
+Å  
+Å  Relay rack for mounting         300
+Å  
+Å  total for 4 channels                    14,004
+Å  
+Å  labor
+Å  Intel memory            0
+Å  Video cards @ 9 hrs     36
+Å  PDP11 interface         20
+Å  Assembly and debugging  20
+Å                          ___
+Å                          76
+Å  Consoles
+Å  
+Å  Keyboard (based on 10 units)    170
+Å  transmiter card                 50
+Å  
+Å  monitors
+Å  TV                              235
+Å  box                             50
+Å  filter                          30
+
+
+Å pPAGE 2
+
+Å  sync sep card                   50
+Å                                  ___
+Å                                  365
+Å  
+Å  power supply and box            60
+Å  
+Å  total per console               645
+Å  
+Å  labor           8 hours/console
+Å  
+Å  Video switch
+Å  Multiplexor cards               80 each
+Å  Dec mounting panel              120
+Å  Interface cards                 200
+Å  input cards                     50
+Å  output cards                    50
+Å                                  ___
+Å  totalt                          500
+Å          (for 16x8 video switch)
+Å  labor
+Å  multiplexor cards               4
+Å  mounting panel                  10
+Å  interface cards                 0
+Å  input cards                     5
+Å  output cards                    5
+Å  Keyboard multiplexor
+Å  Reciecver cards ($50/keyboard)          200
+Å  Dec mounting block                      120
+Å  interface cards                         200
+Å                                          ___
+Å                                          520
+Å  labor
+Å  reciever cards (4 hrs/ea)       16
+Å  dec mounting block              10
+Å  interface cards                 0
+Å                                  __
+Å                                  26
+
+

@@ -1,0 +1,991 @@
+.dv press
+.fo 0 Helvetica10	 Regular font
+.fo 3 Helvetica12b	 Big, bold font
+.tr ` .
+.so r;r macros
+.smargins 1i 1i 1i 1.5i
+.
+.de para
+.  sp
+.  ne 2l
+.em
+.
+.nf C
+.keep
+Massachusetts Institute of Technology
+
+Division for Study and Research in Education
+
+Logo Group
+
+.sp 5
+.fs 3
+Bibliography of Logo Memos
+Available for Distribution
+.sp 19
+.fs
+Publications may be ordered from:
+.sp 1
+Logo Group: D.S.R.E.
+Massachusetts Institute of Technology
+20C-109
+18 Vassar St.
+Cambridge, MA 02139
+.sp 1
+Include Logo memo numbers.
+Please pre-pay.
+.end_keep
+.bp
+.in
+.fs 3
+I. Logo Memos
+.sp
+.fs
+.fi
+Logo Memo 1:  A Computer Laboratory for Elementary Schools, Seymour Papert, October, 
+.in +15
+1971 ($1.25) (AIM 246) 
+.sp 1
+This is a research project on elementary education whose
+immediate objective is the development of new methods and materials
+for teaching in an environment of computers and computer controlled
+devices.  Longer term objectives are related to theories of cognitive
+processes and to conjectures about the possibility of producing much
+larger changes than are usually thought possible in the expected
+intellectual achievement of children.  This proposal is formulated in
+terms of the self- sufficient immediate objectives.
+.in -15
+
+Logo Memo 2:  Teaching Children Thinking, Seymour Papert, October, 1971,($1.25) (AIM 247)
+.in +15
+.sp 
+The phrase technology and education usually means inventing new
+gadgets to teach the same old stuff in a thinly disguised version of
+the same old way.  Moreover, if the gadgets are computers, the same
+old teaching becomes incredibly more expensive and biased towards its
+dullest parts, namely the kind of rote learning in which measurable
+results can be obtained by treating the children like pigeons in a
+Skinner box.
+.sp
+The purpose of this essay is to present a grander vision of an
+educational system in which technology is used not in the form of
+machines for processing children but as something the child himself
+will learn to manipulate, to extend, to apply to projects, thereby
+gaining a greater and more articulate mastery of the world, a sense
+of the power of applied knowledge and a self-confidently realistic 
+image of himself as an intellectual agent.  Stated more simply,
+I believe with Dewey, Montessori and Piaget that children learn by
+doing and by thinking about what they do.  And so the fundamental
+ingredients of educational innovation must be better things to do and
+better ways to think about oneself doing these things.
+.in -15
+
+Logo Memo 3:   Twenty Things to Do with a Computer, Seymour Papert and Cynthia
+.in +15
+Solomon, June 1971 ($2.50) (AIM 248)
+.sp
+Each section of this paper describes something one can do with
+a computer.  As you read on you will be learning a computer language
+called Logo.  In order to use a computer language you do not need 
+to know how the computer works -- no more than you need to know how
+a human brain works in order to give a person instructions.  In both
+cases you need only know how to describe what you want in an appropriate
+language.
+.in -15
+
+Logo Memo 4:   Teaching Children to be Mathematicians vs. Teaching About Mathematics,
+.in +15       
+Seymour Papert, July, 1971, ($1.75) (AIM 249)
+.sp
+Being a mathematician is no more definable as knowing a set 
+of mathematical facts than being a poet is definable as knowing a set of 
+linguistic facts.  Some modern math ed reformers will give this statement
+a too easy assent with the comment:  Yes, they must understand, not merely know.  But this misses the capital point that being a mathematician,
+again like being a poet or a composer or an engineer, means doing, rather
+than knowing or understanding.  This essay is an attempt to explore some ways
+in which one might be able to put children in a better position to do 
+mathematics rather than merely learn about it.
+.in -15
+.sp
+Logo Memo 5:    NIM:  A Game Playing Program, Seymour Papert and Cynthia Solomon,
+.in +15
+February 1972 ($1.25) (AIM 254)
+.sp
+This note illustrates some ideas about how to initiate beginning
+students into the art of planning and writing a program complex
+enough to be considered a project rather than an exercise on using
+the language or simple programming ideas.  The project is to write
+a program to play a simple game (one-pile NIM of 21) as invincibly
+as possible.  We developed the project for a class of seventh grade
+children we taught in 1968-60 at the Muzzy High School in Lexington, MA.
+(This work was supported by NSF contract No. NSF-C-558 to Bolt, Beranek
+and Newman, Inc.)  This was the longest programming project these
+children had encountered, and our intention was to
+give them a model of how to go about working under these conditions.
+To achieve this purpose we ourselves worked very hard to develop a
+clear organization of sub-goals which we explained to the class
+at the beginning of a three week period devoted to this particular
+program.  One would not expect beginners to find as clear a subgoal
+structure as this one;  but once they have seen a good example, they
+are more likely to do so in the future for other problems.  Thus our
+primary teaching purpose was to develop the idea of splitting a task
+into subgoals.  We wanted the children to have good models of
+various ways in which this can be done and to experience the heuristic
+power of this kind of planning (as opposed to jumping straight into
+writing programs.)
+.in -15
+.sp
+Logo Memo 6:   Developing a Musical Ear: A New Experiment, Jeanne Bamberger,
+.in +15
+July 1972 ($1.25) (AIM 264)
+.sp
+This is a report on some ideas we have been developing at 
+M.I.T. for self-paced independent music study.  The aim of our approach is
+to nurture in students that enigmatic quality called, musical -- be 
+it a musical ear or an individual's capacity to five a musical 
+performance.  While all of us cherish these qualities, rarely do we
+come to grips with them directly in teaching. More often we rely
+on our magical or mystical faith in the inspiration of music, itself,
+and its great artist, to do the teaching.  And for some (maybe
+ultimately all) this is the best course.  But what about the others
+too whom we teach only the techniques of playing instruments or some
+facts about music  --  its forms, its history and its apparent elements?
+How often do we have to take the time to examine the assumptions
+underlying these facts we teach, or to question the relations between
+what we teach and what we do as musicians?
+.sp
+.in 
+Logo Memo 7:    Logo Manual, Harold Abelson, Nat Goodman, Lee Rudolph,
+.in +15
+August 1973, Revised August 1974, Jim Adams.  
+.sp
+NO LONGER AVAILABLE
+.sp
+.in
+Logo Memo 8:    Uses of Technology to Enhance Education, Seymour Papert,
+.in +15
+June 1973 ($4.00) (AIM 298)
+.sp
+This paper is the substance of a proposal to the N.S.F.  for support
+of research on children's thinking and elementary education.  This
+work was supported by the National Science Foundation under grant
+GJ-1049 and conducted at the Artificial Intelligence Laboratory.
+.sp
+.in
+Logo Memo 9:     TORTIS--Toddler's Own Recursive Turtle Interpreter System
+.in +15
+Radia Perlman, March 1974 ($1.25)  (AIM 311)
+.sp  
+TORTIS is a device for preschool children to communicate 
+with and program the turtle.  It consists of several boxes (currently 3
+button boxes and two blox boxes) designed so that only a few new concepts
+are introduced at a time but more can be added when the child
+becomes familiar with what he has.  Hopefully transitions are
+gradual enough so that the child never thinks talking to the turtle
+is too hard or that he is "too dumb."  And hopefully playing with
+the system should teach such concepts as numbers, breaking large
+problems into small solvable steps, writing and debugging procedures,
+recursion, variables, and conditionals.  Most important of all,
+it should teach that learning is fun.
+.sp
+.in
+Logo Memo 10:   Summary of MYCROFT:  A System for Understanding Simple Picture
+.in +15
+Programs, Ira Goldstein, May 1974 (AIM 305) Replaced by
+TR-294, available through the Artificial Intelligence Lab.
+.sp
+.in
+Logo Memo 11:   LLOGO: An Implementation of Logo in LISP, Ira Goldstein, Henry
+.in +15
+Lieberman, Harry Bochner, Mark Miller, June 1974.  NO LONGER AVAILABLE
+.sp
+.in
+Logo Memo 12:    The Luxury of Necessity, Jeanne Bamberger, May 1974 ($1.75)  (AIM 312)
+.in +15
+.sp
+This paper was originally written as an address to a 
+conference of the National Association of Schools of Music on "The Music
+Consumer."  Posing a series of questions which point to a fundamental issue 
+underlying the Logo music project, the paper goes on to describe some
+of the specific projects with which students have been working in an
+effort to probe these issues.  Emphasis is placed on "modes of representation"
+as a significant realm of enquiry:  just how does an individual
+represent a tune to himself, what are the differences between formal
+and informal modes of representation -- what features and relations of
+a melody does a representation capture, what does it leave out?  What
+is the influence of such modes of "perception," how do they effect
+strategies of problem solving, notions of "same" and "different" or
+even influence musical "taste"?  Finally, there are some hints at what
+might constitute "sufficiently powerful representations" of musical
+design with examples from both simple and complex pieces of music as
+well as a probe into what might distinguish "simple" form "complex"
+musical designs.
+.sp
+.in
+Logo Memo 13:   What's In A Tune, Jeanne Bamberger, July 1974 ($2.75)  (AIM 314)
+.in +15
+.sp
+What's In A Tune is a step by step account of two
+musically naive MIT students engaged in a musical problem-solving
+situation.  The paper focuses on such things as problem-solving
+strategies, modes of representations, problems of defining a problem,
+tacit models of a "sensible tune."  At the same time the paper looks
+at the assumptions inherent in the "categories" of description used
+traditionally by musicians in the light of the "categories"
+spontaneously generated by the students themselves.  The problem
+situation (creating a tune that "makes sense" from a given set of
+"tune blocks") becomes one of more general interest because it
+provides the opportunity to examine closely how individuals deal with
+the issue of "design" where the features, the constraints, the goals
+must emerge as part of the problem-solving process itself.  This
+is in contrast to problems where there is consensus as to what
+constitutes a good solution, where the elements of material are
+already defined and where there is general agreement on good
+heuristics for dealing with the problem.  Observations of the two
+students can thus be seen as a concrete instance of learning and
+thinking within those prevalent real-world situations where the
+structure of the task is itself a product of the learning and thinking
+process.  As such the paper is necessarily concerned with the
+interrelations between cognition, perception and representation.
+.sp
+.in
+Logo Memo 14:   A Glossary of Logo Primitives, Jim Adams and Hal Abelson,
+.in +15
+Sept. 1974.  NO LONGER AVAILABLE, replaced by Logo Memo 16.
+.sp
+.in
+Logo Memo 15:   Velocity Space and the Geometry of Planetary Orbits, Harold
+.in +15
+Abelson, Andrea diSessa, Lee Rudolph, December, 1974 ($1.75)
+.sp
+We develop a theory of orbits for the inverse-square central force law
+which differs considerably from the usual deductive approach.  In
+particular, we make no explicit use of calculus.  By beginning with
+qualitative aspects of solutions, we are led to a number
+of geometrically realizable physical invariants of the orbits.
+Consequently, most of our theorems rely only on geometrical
+relationships.  Despite its simplicity, our planetary geometry is
+powerful enough to treat a wide range of perturbations with relative
+ease.  Furthermore, without introducing any more machinery, we obtain
+full quantitative results.  The paper concludes with suggestions for
+further research into the geometry of planetary orbits.
+.sp
+(Also published as: "Velocity Space and the Geometry of Planetary
+Orbits," H. Abelson, A. diSessa and L. Rudolph. American Journal of
+Physics, Vol. 43 (1975), pp. 579-589.)
+.sp
+.in 
+Logo Memo 16:   A Glossary of PDP 11 Logo Primitives, E. Paul Goldenberg, March 1975
+.in +15
+(adapted from Memo 14 of Abelson and Adams) ($1.75)(AIM 315A)
+.sp
+NO LONGER AVAILABLE
+.sp
+.in
+Logo Memo 18:   The Art of Snaring Dragons,Harvey Cohen, November 1974,
+.in +15
+Revised May 1975 ($2.50) (AIM 338)
+.sp
+DRAGONS are formidable problems in elementary mechanics not amenable
+to solution by naive formula cranking.  What is the intellectual
+weaponry one needs to snare a Dragon?  To snare a Dragon one brings to
+mind an heuristic frame -- a specifically structured association of
+problem solving ideas.  Data on the anatomy of heuristic frames --
+just how and what ideas are linked together --  has been obtained from
+the protocols of many attacks on Dragons by students and physicists.
+In this paper various heuristic frames are delineated by detailing how
+they motivate attacks on particular Dragons, Milko and Jugglo, from
+the writers compilation.  This model of the evolution of problem
+solving skills has also been applied to the interpretation of the
+intellectual growth of children, and in an Appendix we use it to give
+a cogent interpretation for the protocols of Piagetian "Conservation"
+experiments.  The model provides a sorely needed theoretical framework
+to discuss teaching stratagems calculated to promote problem solving
+skills.
+.sp
+.in
+Logo Memo 19:   The Development of Musical Intelligence I:  Strategies for Representing
+.in +15
+Simple Rhythms, Jeanne Bamberger,
+November 1975, ($2.75)  (AIM 342)
+.sp
+This paper is the first in a series of monographs which will describe
+various aspects of the development of musical intelligence.
+This first paper describes two distinct and contrasting strategies
+which individuals use for making sense of simple rhythmic figures.
+The strategies are characterized by the particular features of the
+figures which each captures.  The distinctions between the two
+strategies are significant to the general development of musical
+intelligence and may also suggest implications for learning and
+teaching in other domains as well.
+.sp
+.in
+Logo Memo 20:   Leading a Child to a Computer Culture,Cynthia Solomon, December
+.in +15
+1975, ($1.25)  (AIM 343)
+.sp
+.in
+Logo Memo 21:   Turtle Escapes the Plane:  Some Advanced Turtle Geometry,
+.in +15
+Andy diSessa, December 1975, ($1.75)  (AIM 348)
+.sp
+This memo is superseded by Chapter 5 of Turtle Geometry, by Abelson
+and diSessa.
+.sp
+.in
+Logo Memo 22:   Logo Progress Report,  1973-1975, Ira Goldstein,Seymour Papert,
+.in +15
+Hal Abelson, Jeanne Bamberger, March 1976, ($1.75)
+NO LONGER AVAILABLE
+.sp
+.in
+Logo Memo 23:   Teaching Teachers Logo, The Lesley Experiments,
+.in +15
+Howard Austin, April 1976, ($1.75)  (AIM 336)
+.sp
+This research is concerned with the question of whether or not
+teachers who lack specialized backgrounds can adapt to and become
+proficient in the technically complex, philosophically sophisticated
+Logo learning environment.  Excellent results were obtained and are
+illustrated through a series of examples of student work.  The report
+then gives some brief observations about the thought styles observed
+and concludes with suggestions for further work.
+.sp
+.in
+Logo Memo 24:  Using Computer Technology to Provide a Creative
+.in +15
+Learning Environment for Preschool Children, Radia Perlman, May
+1976, ($1.75) (AIM 360)
+.sp
+TORTIS is a system of special terminals together with software which
+is designed to provide programming capabilities in small increments so
+that the child is never overwhelmed by too much to learn at one time,
+and maintains a feeling of control over the environment.
+.sp
+.in
+Logo Memo 25:   The TV Turtle, A Logo Graphics System for Raster
+.in +15
+Displays, Henry Lieberman, June 1976, ($1.25) (AIM 361)
+.sp
+Until recently, most computer graphics systems have been oriented
+toward the display of line drawings, continually refreshing the screen
+from a display list of vectors....Raster graphics systems instead
+associate some memory with each point on the screen and display points
+according to the contents of the memory.  This paper discusses the
+advantages and limitations of such systems.
+.sp
+.in 
+Logo Memo 26:   An Evaluative Study of Modern Technology in Education,
+.in +15
+(Proposal to the NSF), Seymour Papert, June 1976, ($2.75)
+(AIM 37)
+.sp
+This proposal to the NSF describes a new phase of research planned in
+Logo.  Previous phases have concentrated on developing a conceptual
+superstructure (theories and teaching methods) and a material infra-structure
+(hardware and software) for a new style of using computers in education.
+.sp
+.in 
+Logo Memo 27:  Some Poetic and Social Criteria for Education
+.in +15
+Design, Seymour Papert, June 1976, ($1.25) (AIM 373)
+.sp
+Also published as: A Ten Year Forecast for Computers and Communications
+Implications for Education.
+.sp
+.in
+Logo Memo 28:   A Case Study of a Young Child Doing Turtle Graphics
+.in +15
+in Logo, Cynthia Solomon and Seymour Papert, July 1976, ($1.25) (AIM
+375) (Formerly available as Working Paper #44, Published November
+1975)
+.sp
+This study was performed from January to April 1975, and explores some
+important issues with regard to using computers in education.  It
+probes into the question of what programming ideas and projects will
+engage young children.  In particular, a seven year old child's
+involvement in turtle graphics is presented as a case study.  
+.sp
+.in
+Logo Memo 29:   Student Science Training Program in Mathematics,
+.in +15
+Physics, and Computer Science, Final Report to the National Science
+Foundation, Hal Abelson and Andy diSessa, September 1976, ($2.75) (AIM 393)
+.sp
+During the summer of 1976, the MIT Artificial Intelligence Laboratory
+sponsored a Student Science Training Program in Mathematics, Physics,
+and Computer Science for high ability secondary school students.  This
+report describes, in some detail, the style of the program, the
+curriculum and the projects the students undertook.  We hope that this
+document can serve not only as a report to the National Science
+Foundation but also as an elaboration of our ideas about what would
+constitute a model educational environment for high ability secondary
+students students.
+.sp
+.in
+Logo Memo 30:  Overview of a Linguistic Theory of Design and its
+.in +15
+Applications,  Mark Miller and Ira Goldstein, December 1976, ($1.75)
+(AIM 384)
+.sp
+The application of artificial intelligence (AI) techniques to the
+design of personal learning environments is an enterprise of both
+theoretical and practical value.  In the short term, the process of
+developing and testing intelligent tutoring programs serves as a new
+experimental vehicle for exploring alternative cognitive and
+pedagogical theories.  In the long term, such programs should
+supplement the educational supervision and guidance provided by human
+teachers.  This paper illustrates our long term perspective by a
+scenario with a hypothetical tutoring system for elementary graphics
+programming.
+.sp
+.in
+Logo Memo 32:  Parsing Protocols Using Problem Solving Grammars,
+.in +15
+Mark Miller and Ira Goldstein, December 1976, ($2.75)  (AIM 385)
+.sp
+A theory of the planning and debugging of programs is formalized as a
+context free grammar.  The grammar is used to reveal the constituent
+structure of problem solving episodes, by parsing protocols in which
+programs are written, tested and debugged,  This is illustrated by the
+detailed analysis of an actual session with a beginning student.  The
+virtues and limitations of the context free formalism are considered.
+.sp
+.in
+Logo Memo 33:   SPADE:  A Grammar Based Editor for Planning and
+.in +15
+Debugging Programs, Mark Miller and Ira Goldstein, December 1976,
+($2.75) (AIM 386)
+.sp
+A grammar of plans is developed from a taxonomy of basic planning
+techniques.  This grammar serves as the basis for the design of a new
+kind of interactive programming environment (SPADE), in which programs
+are generated by explicitly articulating planning decisions.  The
+utility of this approach to program definition is that a record of
+these decisions, called the plan derivation, provides guidance for
+subsequent modification or debugging of the program.
+.sp
+.in
+Logo Memo 34:   Structured Planning and Debugging: A Linguistic
+.in +15
+Theory of Design, Ira Goldstein and Mark Miller, December 1976,
+($2.75) (AIM 387)
+.sp
+A unified theory of planning and debugging is explored by designing a
+problem solving program called PATN.  PATN uses an augmented
+transition network (ATN) to represent a broad range of planning
+techniques, including identification, decomposition, and
+reformulation.  (The ATN is a simple yet powerful formalism which has
+been effectively utilized in computational linguistics.)
+.sp
+.in
+Logo Memo 35:  Design for PAZATN:  A Linguistic Approach to
+.in +15
+Automatic Analysis of Elementary Programming Protocols, Mark Miller
+and Ira Goldstein, December 1976, ($2.75) (AIM 388)
+.sp
+A preliminary design is presented for PAZATN, an automatic protocol
+analyzer.  PAZATN is based on a theory of problem solving in which
+planning knowledge is represented in augmented transition networks
+(ATNs).  The design of PAZATN is significant in that is provides a
+domain independent framework for constructing specialized protocol
+analyzers.  In order to apply PAZATN to a particular task domain, one
+must supply a set of event specialists (ESPs) which embody
+syntactically organized analytic knowledge specific to that domain.
+The approach has implications for psychological modeling and
+evaluation, and the design of computerized tutors.  The initial task
+domain considered is elementary graphics programming in the Logo language.
+.sp
+.in
+Logo Memo 36:  Wumpus Advisor 1:  A First Implementation of a
+.in +15
+Program that Tutors Logical and Probabilistic Reasoning Skills, James
+Stansfield, Brian Carr, and Ira Goldstein, October 1976 ($2.75) (AIM
+389)
+.sp
+The Wumpus Advisor program offers advice to a player involved in
+choosing the best move in a game for which competence in dealing with
+incomplete and uncertain knowledge is required.  The design and
+implementation of the advisor explores a new paradigm in Computer
+Assisted Instruction, in which the performance of computer-based
+tutors is greatly improved through the application of Artificial
+Intelligence techniques.  This report describes the design of the
+Advisor and outlines directions for further work.  Our experience with
+the tutor is informal and psychological experimentation remains to be done.
+.sp
+.in
+Logo Memo 37:   The Computer As Coach:  An Athletic Paradigm for
+.in +15
+Intellectual Education, Ira Goldstein, December 1976, ($2.75) (AIM
+389)
+.sp
+Over the next five years, computer games will find their way into a
+vast number of American homes, creating a unique educational
+opportunity:  the development of "computer coaches" for the serious
+intellectual skills required by some of these games.  From the players
+perspective, the coach will be available to analyze alternative moves
+whenever the player wishes help.  But, from the perspective of the
+coach, the request for help is an opportunity to illustrate by
+example basic mathematical scientific or other kinds of knowledge that
+the game exercises.  The potential for establishing an "athletic"
+paradigm for certain knowledge and skills which have usually been
+considered the antithesis of ordinary sports is exciting, but there
+are critical research issues which must be addressed.  Although the
+hardware needed for homes and coaches will continue to drop in cost,
+the software technology for designing competent coaches does not
+exist.  The substance of this proposal is to develop the theory and
+design for such coaches, to implement prototypes and to experiment
+with their utility in conveying important intellectual skills.
+.sp
+.in 
+Logo Memo 38:   Issues in a Computational Theory of Design, Mark
+.in +15
+Miller and Ira Goldstein, (AIM 390)  No Longer Available
+.sp
+.in
+Logo Memo 39:   Grammar as Programming Language, Neil Rowe,
+.in +15
+October 1976 ($1.75)  (AIM 391)
+.sp
+This paper discusses some student projects involving generative
+grammars.  While grammars are usually associated with linguistics
+their usefulness goes far beyond just "language" to many different
+domains.  Their application is general enough to make grammars a sort
+of programming language in their own right.  A simple grammar-running
+control structure is presented, uncomplicated and very suitable for
+student tinkering.  So not only can students write grammars, but they
+can modify and improve the grammar interpreter itself. learning
+something about how a simple kind of computer parser works.
+.sp
+.in
+Logo Memo 40:  Pre-Readers' Concept of the English Word, Bob
+.in +15
+Lawler, November 1976, ($4.00) (AIM 395)
+.sp
+Pre-Readers exhibit concepts of the English word different from those
+of literate adults.  The inclusive word concept is primary: a word is
+what we call an utterance and any of its parts.  Pre-Readers suffer
+confusion between homophones at the syllabic level, e.g., the sound of
+the suffix in "puppy" is confused with the name of the letter "P."
+Conflict between implicit judgments of wordhood (inferred from the
+child's counting of the number of words in an utterance) and explicit
+judgments (responses to questions about whether an item is a word)
+vary from high, for pre-readers, to low, for beginning readers.  The
+justifications pre-readers offer to support their judgments of
+word-hood are notable for not including any arguments based on
+immediate verbal context.  A concept development theory is offered to
+interpret this data and their relation to learning to read.
+.sp
+.in
+Logo Memo 41:   Teaching the Computer to Add:  An Example of
+.in +15
+Problem-Solving in an Anthropomorphic Computer Culture, Cynthia J.
+Solomon, December 1976, ($1.75) (AIM 396)
+.sp
+Computers open up new ways to think about knowledge and learning.
+Learning computer science should draw upon and feed these new
+approaches.  In a previous paper called "Leading a Child to a Computer
+Culture"  I discuss some ways to do so in a very elementary context.
+This paper is a contribution to extending such thinking to a more
+advanced paper.
+.sp
+.in
+Logo Memo 42:   Capturing Intuitive Knowledge in Procedural
+.in +15
+Description, Jeanne Bamberger, December 1976, ($1.25) (AIM 398)
+.sp
+Trying to capture intuitive knowledge is a little like trying to
+capture the moment between what just happened and what is about to
+happen.  Or to quote a famous philosopher, "You can't put your foot in
+the same river once."*  The problem is that you can only "capture"
+what stands still.  Intuitive knowledge is not a static structure, but
+rather a continuing process of constructing coherence and meaning out
+of the sensory phenomena that come at you.  To capture intuitive
+knowledge then means:  Given some phenomena, what are your 
+spontaneous ways of selecting significant features or for choosing
+what constitutes an element, how do you determine what is the same and
+what is different, how do you aggregate or chunk the sensory data
+before you?
+  *Cratylus (5th Century B.C.) Paraphrased by Donald Schon, 1965.
+.sp
+.in
+Logo Memo 43:   Development of Musical Intelligence II:  Children's
+.in +15
+Representation of Pitch Relations, Jeanne Bamberger, December 1976,
+($1.75) (AIM 401)
+.sp
+The work reported here is an outgrowth of studies in the development
+of musical intelligence and learning that have been underway for about
+four years.  Beginning as one of the activities in the Logo Lab (a
+part of the MIT Artificial Intelligence Laboratory) the research has
+expanded to include more theoretical work in the MIT Division for
+Study and Research in Education.
+.sp
+.in 
+Logo Memo 44:   NOT AVAILABLE
+.sp
+Logo Memo 45:   Wusor II: A Computer Aided Instruction Program with
+.in +15
+Student Modeling Capabilities, Ira Goldstein and Briar Cart, NOT
+AVAILABLE
+.sp
+.in
+Logo Memo 46:   Teacher's Guide for Computational Models of Animal
+.in +15
+Behavior, Hal Abelson and Haul Goldenberg, April 1977, ($1.75) (AIM
+432)
+.sp
+This is an experimental curriculum unit which suggests how the
+computational perspective can be integrated into a subject such as
+elementary school biology.  In order to illustrate the interplay of
+computer and non-computer activities, we have prepared the unit as a
+companion to the Elementary School Science Study "Teacher's Guide to
+Behavior in Mealworms."  This material is based on use of the Logo
+computer language.
+.sp
+.in
+Logo Memo 47:   On "Learnable" Representations of Knowledge:  A
+.in +15
+Meaning for the Computational Metaphor, Andrea diSessa, September
+1977, ($2.75) (AIM 441)
+.sp
+The computational metaphor which proposes the comparison of processes
+of mind to realizable or imaginable computer activities suggests a
+number of educational concerns.  This paper discusses some of those
+concerns including procedural modes of knowledge representation and
+control knowledge--knowing what to do.
+.sp
+(Also published as: "On Learnable Representations of Knowledge: A
+Meaning for the Computational Metaphor," Cognitive Process
+Instruction, J. Lochhead, J. Clement, editors; Franklin Institute
+Press (1978), pp. 239-266.)
+.sp
+.in
+Logo Memo 48:   Assessment and Documentation of a Children's Computer
+.in +15
+Laboratory, Logo Group, September 1977, ($1.75) (AIM 460)
+.sp
+An NSF sponsored 12-Month project.  This research will thoroughly
+document the experiences of a small number of 5th grade children in an
+elementary school computer laboratory, using Logo, an advanced
+computer language designed for children.  Detailed anecdotal records
+will be kept, and observers will note the development of the
+children's computer programming skills, and the acquisition of
+knowledge in the areas of mathematics, science and language, and of
+cognitive strategies and attitudinal changes which transfer beyond the
+specific subject matter studied.
+.sp
+.in
+Logo Memo 49:   Interim Report of the Logo Project in the Brookline
+.in +15
+Public Schools:  An Assessment and Documentation of a Children's
+Computer Laboratory, Sylvia Weir, Dan Watt, Seymour Papert, Jeanne
+Bamberger, Hal Abelson, Andy diSessa, George Hein and Stephanie
+Dunning, June 1978, ($4.00)  (AIM 484)
+.sp
+The Logo activities of a group of 16 sixth-grade students,
+representing a full spectrum of ability, are being documented with a
+view of developing ways of capturing the learning possibilities of
+such an environment.  The first group of eight subjects have completed
+25 closely observed hours, extending over 7 weeks, in a Logo classroom
+situated in a Brookline school.  This is an interim report on these
+observations designed to exhibit the content of what has been learned;
+and insights into both the variety of cognitive styles of the pupils
+and the variety of learning situations available to a teacher with
+which to respond to different pupil styles and analysis, and we are
+interested in looking at this material from several points of view.
+The current state of our various analyses is presented here, without
+any effort to prune the considerable redundancy which has been
+generated in the process of doing this multiple-cut exercise.
+.sp
+.in
+Logo Memo 50:   Understanding Understanding Mathematics, Edwina R.	
+.in +15
+Michener, August 1978 ($1.75) (AIM 488)
+.sp
+In this paper we look at some of the ingredients and processes
+involved in the understanding of mathematics.  We analyze elements of
+mathematical knowledge, organize them in a coherent way and take note
+of certain classes of items that share noteworthy roles in
+understanding.  We thus build a conceptual framework in which to talk
+about mathematical knowledge.  We then use this representation to
+describe the acquisition of understanding.  We also report on
+classroom experience with these ideas.
+.sp
+.in
+Logo Memo 51:   Information Prosthetics for the Handicapped,
+.in +15
+Seymour Papert and Sylvia Weir, September 1978, ($1.75) (AIM 496)
+.sp
+In this proposal to the BEH we describe a technological step towards
+the realization of INFORMATION PROSTHETICS.  Our primary focus is on
+using rather than making the technology.  Specifically, our
+goal is to transpose for the use of cerebral-palsied children a
+computer-based learning environment we have developed, and to study in
+this environment a series of issues in developmental psychology, in
+the psychology of learning, in psycho-diagnostic techniques and in
+methods of instruction.
+.sp
+.in
+Logo Memo 52:  Logo Music Projects:  Experiments in Musical
+.in +15
+Perception and Design, Jeanne Bamberger, May 1979, ($2.50) (AIM 523)
+.sp
+This memo gives a series of experiments which one can use to get a
+better understanding of how music works and how music is apprehended
+by an active and knowing listener.  It does so by using the children's
+computer language, Logo, and capitalizes on the use of procedural
+thinking and other programming concepts in the designing and analysis
+of melody and rhythm.
+.sp
+.in
+Logo Memo 53:   Final Report of the Brookline Logo Project, Part II:
+.in +15
+Project Summary and Data Analysis, Seymour Papert, Daniel Watt,
+Andrea diSessa and Sylvia Weir, September 1979, ($6.00) (AIM 545)
+.sp
+During the school year 1977/78 four computers equipped with Logo and
+Turtle Graphics were installed in an elementary school in Brookline,
+MA.  All sixth grade students in the school had between 20 and 40
+hours of hands-on experience with the computers.  The work of 16
+students was documented in detail.  The volume includes: (1) an
+overview of the Brookline Logo project, (2) a description of the
+learning styles of different students who took part in the project,
+(3) the experience of students at both extremes of the range of
+abilities present in a typical public school, (4) a breakdown of the
+computer programming skills and concepts learned by the students
+during the course of the project, (5) a breakdown of the mathematical
+and geometrical skills and concepts learned by the students during the
+course of the project, and (6) a description of the results of a
+brief exposure of students to a dynamic turtle which simulates
+Newtonian motion. (See Logo Memo 54 Part III of this report.)
+.sp
+.in
+Logo Memo 54:   Final Report of the Brookline Logo Project, Part
+.in +15
+III: Profiles of Individual Student's Work, Daniel Watt, September
+1979, ($6.00) (AIM 546)
+.sp
+During the school year 1977/78 four computers equipped with Logo
+Turtle Graphics were installed in an elementary school in Brookline,
+MA.  All sixth grade students in the school had between 20 and 40
+hours of hands-on experience with the computers.  The work of 16
+students was documented in detail.  The profiles, written by the
+classroom teacher, are discursive essays on the experiences of each of
+the sixteen experimental subjects.  This illustrates the wide variety
+of learning styles and learning paths within the Logo learning
+environment.  They are particularly useful for teachers who anticipate
+using Logo with children, and offer a rich source of project ideas
+suitable for naive programmers.  (See Logo Memo 53 for Part II of this
+report.)
+.sp
+.in
+Logo Memo 55:   The Evaluation and Cultivation of Spatial and
+.in +15
+Linguistic Abilities in Individuals with Cerebral Palsy, Sylvia
+Weir, March 1980, ($2.75) (AIM 570)
+.sp
+Ongoing work using computers in the education of the physically
+handicapped is summarized in this report and the next phase of
+activity is outlined.  We address three issues of research with
+severely cerebral palsied children;  namely (1) the investigation of
+computer-based techniques to maximize their acquisition of spatial
+and linguistic skills (2) the development of computer-based
+diagnostic tools to facilitate the functional specification of
+subcategories of this group and (3) investigating how these results
+can inform our theories of the cognitive development of normal individuals.
+.sp
+.in
+Logo Memo 56:   One Child's Learning:  Introducing Writing with a
+.in +15
+Computer, Robert W. Lawler, March 1980, ($1.25) (AIM 575)
+.sp
+This is a case study of how one child learned to write in a
+computer-rich setting.  Although computer access did affect her
+learning significantly, the details presented here go beyond
+supporting that claim.  They provide a simple example of what a
+computer-based introduction to writing might be like for other
+children.  We conclude with a short discussion of issues raised by the
+study.
+.sp
+(Also published as "One Child's Learning," Robert Lawler, SIGQUE, July 1980)
+.sp
+.in
+Logo Memo 57:   The Progressive Construction of Mind (One Child's
+.in +15
+Learning: Addition), Robert W. Lawler, June 1980, ($2.75) (AIM 586)
+.sp
+An intensive, naturalistic study tracked one six year old's learning
+for six months and more.  The study was inspired by the hope that with
+concepts of Artificial Intelligence and sufficiently detailed
+observation we could describe the path of knowledge development
+through observing significant learning experiences.  The corpus
+includes a reasonably complete record of the child's public
+calculations, both formal and informal, during the period of the
+study.  We present an interpretation of addition-related matter from
+the corpus.  The interpretive focus is on the learning processes
+through which a broadly applicable skill emerges from the integration
+of knowledge based on specific, particular experiences.
+.sp
+(Also published as "The Progressive Construction of Mind," Robert Lawler,
+Cognitive Science, January 1981, Vol. V, p.1-30)
+.sp
+.in
+Logo Memo 58:   Extending a Powerful Idea, Robert W. Lawler, July
+.in +15
+1980, ($1.75) (AIM 590)
+.sp
+Mathematics is much more than the manipulation of numbers.  At its
+best, it involves simple, clear examples of thought so apt to the
+world we live in that those examples provide guidance for our thinking
+about problems we meet subsequently.  We call such examples, capable
+of heuristic use, POWERFUL IDEAS, after Papert (1980).  This article
+documents a child's introduction to a specific powerful idea in a
+computer environment.  We trace his extensions of that idea to other
+problem areas, the first similar to his initial experience and the
+second more remote from it.
+.sp
+.in
+Logo Memo 59:  The Articulation of Complementary Roles, Robert W.
+.in +15
+Lawler, May 1981, ($2.75) (AIM 594)
+.sp
+We analyze in detail one child's learning to play Tic tac toe by
+focusing on the developing organization of disparate cognitive
+structures.  This interpretation extends an earlier analysis of the
+same child's learning (Lawler, 1981) in two directions.  We propose
+and apply a vision of how social engagement leads to the personal
+construction of mind.  Further, we trace how knowledge based on one's
+own actions can develop into structures capable of predicting another
+agent's choices and relate that development to domain-specific,
+stage-like changes in modes of thought.  The six year old subject
+initially knew so little of Tic tac toe that she couldn't continue
+playing when confronted by an unanticipated response to her opening
+move in a game.  Six months later she was playing both sides of the
+game, making smart moves for both players.  Two years later, she
+invented a new strategy and was able to prove predictions of victories
+by detailing the offensive use of forced moves in games worked out in
+her mind.  The corpus of observations assembled during this period is
+rich in detail and reasonably complete in covering the child's overt behavior.
+.sp
+.in
+Logo Memo 60:   Some Powerful Ideas, Robert W. Lawler, December
+.in +15
+1981, ($1.75) (AIM 652)
+.sp
+Here is a set of problem solving ideas (absorbed by and
+developed through the MIT Logo project over many years) presented in
+such a way as to be useful to someone with a Logo computer.  With the ideas 
+on unbound, single sheets, you can easily pick out those you like and set 
+aside the others.  The ideas vary in sophistication and accessibility: no
+threshold, no ceiling.
+.sp
+(To be published as series in Creative Computing Magazine, starting in 1982)
+.sp
+.in
+Logo Memo 61:   Natural Learning, Laurence Miller, October 1981,
+.in +15
+($4.00) (AIM 640)
+.sp
+This memo reports the results of a case study into how children learn
+in the absence of explicit teaching.  The three subjects, an eight
+year old, a ten year old and a thirteen year old, were observed in
+both of two experimental micro-worlds.  The first of these
+micro-worlds, called the Chemicals World, included a large table, a
+collection of laboratory and household chemicals, and apparatus for
+conducting experiments with chemicals;  the second, called the Mork
+and Mindy World included a collection of video-taped episodes of the
+television series Mork and Mindy; a video-tape machine and an
+experimenter with whom the subjects could discuss the episodes.  The
+main result of the study is a theory of how children's interests
+interact with knowledge embodied in their environment causing them to
+learn new powerful ideas.  An early version of this theory is
+presented in chapter five.
+.sp
+.sp
+.in
+.fs 3
+II.  Books and Articles
+.sp
+.fs
+.in +15
+The following books and articles are about Logo but not available
+through M.I.T.
+.sp
+Books produced by the Logo Project:
+
+Abelson, Hal. Apple-Logo. Byte Press. Peterborough, New Hampshire
+(expected publication date: March, 1982)
+
+Abelson, Hal and diSessa, Andy. Turtle Geometry: The Computer as a
+Medium for Exploring Mathematics.  MIT Press.  Cambridge, MA. (1981)
+
+Goldenberg, Paul. Special Technology for Special Children. M.I.T. Press.
+Cambridge, MA. (1980)
+
+Papert, Seymour. MINDSTORMS: Computers, Children and Powerful Ideas. 
+Basic Books.  New York, New York. (1981)
+
+
+Papers about Logo:
+
+Carter, Ricky, "Logo and the Great Debate," Kilobaud Microcomputing
+Vol. V, No. 9, September, 198l.
+
+diSessa, Andy, "ORBIT: A Mini-Environment for Exploring Orbital
+Mechanics,"  Proceedings of the Second IFIP World Conference on
+Computers and Education (Marseille, France), O. Lecarme and R. Lewis,
+editors; North Holland Press (1975), pp. 359-365.
+
+
+diSessa, Andy, "Momentum Flow as an Alternative Perspective in
+Elementary Mechanics," The American Journal of Physics, Vol. 48
+(1980) pp. 365-369.
+
+diSessa, Andy, "Momentum Flow as an Alternative Perspective in
+Elementary Mechanics," MIT DSRE Working Paper 4, July, 1980 (an
+extended version of the published paper).
+
+diSessa, Andy, "Computation as a Physical and Intellectual Environment
+in Learning Physics," Computers and Education," Vol. 4, No. 1
+(1980), pp. 67-75.
+
+diSessa, Andy, "An Elementary Formalism for General Relativity," 
+American Journal of Physics," May, 1981, pp. 401-411.
+
+diSessa, Andy, "The Computer and Mathematical Experience,"
+Proceedings of the Fourth International Congress on Mathematics
+Education, in press.
+
+diSessa, Andy, "Unlearning Aristotelian Physics: A Study of Knowledge-Based
+Learning," to appear in Cognitive Science.
+
+diSessa, Andy, "Phenomenology and the Evolution of Intuitions," to
+appear in Mental Models, Dedre Gentner and Al Stevens, editors,
+Lawrence Erlbaum Press.
+
+Nelson, Harold, "Learning with Logo," On Computing Magazine, Summer, 1981.
+
+Teachers at the Lamplighter School, "Learning with Logo at the
+Lamplighter School," Kilobaud Microcomputing, Vol. V, No.
+9, September, 1981.
+
+Weir, Sylvia, "Using Logo to Catalyze Communication in an Autistic
+Child," with Ricky Emanuel, D.A.I. Research Report No. 15, University
+of Edinburgh, January 1976.
+
+Weir, Sylvia, "Logo as an Information Prosthetic for the Handicapped,"
+MIT DSRE Working Paper 9, May, 1981.
+
+Weir, Sylvia, "Logo as an Information Prosthetic for Communication and 
+Control," Proceedings of the IJCAI Conference 1981, August 1981.
+
+Weir, Sylvia, "Logo and the Exceptional Child," Kilobaud
+Microcomputing, Vol. V, No. 9, September, 1981.
+
+
+
+
+
+
+

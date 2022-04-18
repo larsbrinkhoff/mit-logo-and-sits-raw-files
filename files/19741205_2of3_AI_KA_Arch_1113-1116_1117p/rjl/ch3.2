@@ -1,0 +1,365 @@
+.HEADER 3-
+.QUOTE #
+.adjust
+.line 65
+.fill
+.double
+.ce
+Chapter 3
+.br
+.sect
+3 The PCLOSER Problem: System Calls and Pseudo-Interrupts
+.br
+.sect
+3.1 Introduction
+	In   a  non-timesharing  environment,   a  program  may
+interact with the hardware in  two ways:  the first is to  make
+demands  for certain operations synchronously with the program's
+need for  certain  services;  examples of  this  are  executing
+instructions  and   non-buffered  operation   of   input/output
+devices.   The  second  type  of  interaction  is  the hardware
+informing the program of certain conditions asynchronously from
+the programs  interogation of  these conditions;  for  example,
+generating  an  interrupt  when  an  input/output  device   has
+finished  a transfer, or when the program attempts some illegal
+operation.   The existence of this second type of communication
+allows programs to be written more efficiently and more easily.
+One  view  of  a timesharing  system  is that  it  simulates an
+extended computer  which  provides  more  facilities  than  the
+actual  hardware.   This  view  would imply  that  the software
+should provide both an expanded instruction set and a system of
+software interrupts.   Unfortunately, most timesharing  systems
+only	provide   for   an   expanded   instruction   set;  the
+implementation of software, or psuedo interrupts brings about a
+problem which  is traditionally  referred to,  on ITS,  as  the
+PCLOSER  problem.   When  a user  is executing  instructions, a
+condition may occur  about which the  user should be  informed;
+he  must  be  forced  to   execute  a  different  sequence   of
+instructions  than those he would execute otherwise.   However,
+
+
+if the condition occurs  while the user is  in the processs  of
+executing a system call (or a hardware instruction), either the
+instruction  must be run  to completion, or  any effects it has
+had so far  which would  leave the system  in some  undesirable
+state  must be undone, and information must be saved which will
+allow it to be  completed later.   This is  the essence of  the
+PCLOSER  problem.   In  fact  the  name  PCLOSER  refers  to a
+particular solution  to the  problem;  on the  PDP10, only  two
+hardware  instructions  can be  stopped  after having  had some
+effect but before completion;  in  both cases, restarting  the
+instruction  later is  trivial.   The problem  arises, however,
+when we wish  to interrupt  a user  who is  executing a  system
+call,  that is,  a psuedo-instruction;  the  solution which ITS
+adopts is to undo any undesirable effect the call has had,  and
+to  leave  information  in  user  core  which  will  allow  the
+instruction to be resumed if the user re-executes the call.  In
+any case, the program counter is backed up so that it points to
+the user's system call;  thus it is always a user (loser)  mode
+PC  which is saved  as the place  where the interrupt occurred.
+Some system calls are more easily undone than others;  in  some
+cases the user might have system resources and possibly another
+user tied up when we wish PCLOSER him.   In order to keep track
+of what facilities must be released to undo the effects of  the
+system  call, there is  a mechanism in ITS  known as the locked
+switch list.   Whenever, in  the course of  executing a  system
+
+
+call,  a user ties up  some resource, he makes  an entry on his
+locked switch list.   Then if he must be PCLOSER'ed the  system
+unravels  the locked  switch list,  undoing the  effects of the
+system call, and restoring the PC  to point to the system  call
+in  user core.   Any system call which  does not put entries on
+the locked switch list must be prepared for the possibility  of
+being restarted from the beginning.   This is often possible if
+the call stores  information about it's  progress in the  users
+core.   
+.br
+.sect
+3.2 A Solution to the PCLOSER Problem
+	Our  approach to  solving the  PCLOSER problem  in this
+system will be  nearly identical to  that taken by  ITS.   Each
+user  will have a word which points  to the newest entry on his
+locked switch list;  each entry on the list points to the  next
+oldest entry;  the pointer in the last element of the list is a
+zero.  Normally elements are removed from the list in a last-in
+first-out  fashion, but it is also  possible to splice an entry
+out from anywhere  on the list.   Each  entry consists of  four
+words;  the  first is the link word,  the second is the address
+of the routine to call to  unlock the switch, and the last  two
+are  data  words whose  meaning  depends on  the  routine which
+unlocks the  switch.   There  are  two basic  types  of  locked
+switch;  one  type is a system switch  which is used to control
+access to system data bases;  the other is a user switch  which
+is used for most  other backing out of the call functions.   The first
+
+
+data word in a system switch  is used to store the user  number
+of  the user who has locked  the switch;  if the switch is free
+this word is a -1.  When a user wishes to lock a system switch,
+for example in order to modify  some system data base, he  must
+first  wait for the switch to be free as indicated by the first
+data word, then he can lock the switch by placing his own  user
+number there.  User switches are located in the user variable
+area;  unlike  system switches,  their function  varies as they
+are dynamically allocated for various purposes. 
+	Another distinction between types of switches is  under
+what  circumstances the routine associated with the switch must
+actually do some work.   Since the  locked switch list must  be
+cleared  whenever  we return  to user  mode, switches  might be
+removed either  when a  user  is being  PCLOSERed or  when  the
+system  call returns normally to the user.   Some switches will
+act differently  depending on  how they  are removed  from  the
+list;  the  routine associated  with the  switch is responsible
+for deciding what to do, based on variables in the system which
+indicate how the switch is being unlocked.
+	Another   mechanism  which  is   helpful  in  returning
+gracefully   to  user   mode  is   the  register   storage  and
+modification scheme.   There are three copies of the  registers
+associated  with  each  user;  one contains  the  value  of the
+user's registers when he executed the call, the second contains
+the values  that the  registers  will be  set  to if  the  call
+
+
+returns, and the third contains the values of the registers for
+the  system call as  it progresses.   If the  call is PCLOSERed
+before it completes, the user's registers are restored to their
+values   when  the  system  call  was  executed;  if  the  call
+completes, the  modified  values  are put  into  the  registers
+instead.
+There is also a
+real and a modified PS;  when the EMT is executed, the real  PS
+is  set to the value saved on  the stack and the modified PS is
+set to the same thing but with the C, N, and V bits cleared and
+the Z bit set.  During the execution of the call, this might be
+modified to reflect the success or failure of the call. 
+.br
+.sect
+3.3 System Calls
+	We  feel that system  calls are easiest  to use if they
+are compatible  with the  instruction set  of the  machine  the
+system  is to run on,  especially if the machine's instructions
+are themselves  reasonably versatile.   Therefore,  our  system
+calls look and behave very much like PDP11 insctructions;  they
+have  either zero, one  or two operands,  specified by standard
+PDP11 addressing modes, and use  the condition codes to  return
+information about what they have done.  In general, a successful
+system  call returns  with the  Z bit  set and  the other flags
+cleared;  an unsuccessful call clears all of the flags.  In some
+cases the other flags are used to indicate a partial success  or
+some other condtion which may be of interest to the user.
+.br
+.sect
+3.3.1 The Format of a System Call
+	The  first  word  of a  system  call is  always  an EMT
+instruction;  the low  byte of  this  instruction is  free  for
+indicating the type of the call (figure 3-1).  The high order bit
+of  this byte  is always a  one;  system calls for  the DEC DOS
+system always have  this bit a  zero, so DOS  calls are  easily
+recognized.   The  next two bits in this  byte give the type of
+the call.   If both  of these  bits are  zero, the  call is  an
+
+
+immediate  zero operand call,  and the remaining  five bits are
+used as the op code.   If the type bits are 01, the call has no
+operands and the op code is in the next word following the EMT.
+If  the type is 10, the call  has one operand;  the top 12 bits
+ot the next word are the op code;  the remaining 6 bits are the
+address field.  Depending on the type of the address field, the
+following word might be used as part of the address calculation
+or as a data  word (immediate mode).   If the  type is 11,  the
+remaining  5 bits,  combined with  the top  4 bits  of the next
+word, are the op code.   The remaining 12 bits in the next word
+are  used as two 6 bit  address fields.   As with a hardware two
+operand instruction, the  following one or  two words might  be
+used as data or as part of the address calculation.
+.br
+.sect
+3.3.2 Handleing a System Call
+	When  the user executes an EMT, first his registers are
+stored in two places;  these are  called the real register  set
+and  the modified register set.   The  real register set always
+contains the values that the registers should be restored to if
+the call is PCLOSERed,  the modified set are  the values to  be
+restored  if the call completes.   The  PC in the real register
+set is backed up by 2 from the PC that is on the stack when the
+EMT traps;  the  PC  on the  stack  is put  into  the  modified
+register  set.   The EMT itself is then fetched from the user's
+core to be examined.  If the type field is 00, the 5 bits of op
+code are used  as an  index into a  32 word  table of  dispatch
+addresses;  the  appropriate routine is  immediately jumped to.
+
+
+In the case of other types the op code is also an index into a
+table of addresses, but there is a limit to the highest op code
+allowed  for  each of  the three  types;  this limit  of course
+changes as new op codes are defined.   If the type of the  call
+is  not 00, the word that the  modified PC points to is fetched
+and 2 is added to the PC.  In the case of type 01, this word is
+just the op  code, and we  dispatch immediately if  it is  less
+than  the limit.   If it is greater  than the limit, an illegal
+instruction interrupt is caused.   Type  10 calls  operate
+similarly,  but the first 12 bits of  the word are used for the
+op code.   In  addition to  the table  of addresses,  each  one
+operand instruction has a byte in another table associated with
+it;  this  byte is decoded before dispatching to determine how the
+operand is  to  be treated  (figure  3-2).   The first  two  bits
+indicate that data is to be transferred from the user;  either a
+byte  or a word is fetched if  one of these bits is set.   If a
+word is to be fetched and the user specifies an odd address,  an
+error  is caused unless the "word may start at odd address" bit
+is set,  in which  case  the two  bytes  starting at  the  user
+supplied  address are assembled into a word.   The "get operand
+address" bit  being set  will  cause the  address that  the  user
+specifies  to be passed  to the routine  for the call. Also, a
+flag is set if the address was specified as an auto-increment or
+auto-decrement  of  a  register.   Since  this  bit  being  set
+probably  means that  more than  one word  will be  used as the
+
+
+argument, register and  immediate modes  are illegal in the
+instructions for which it is set.
+   The  two "will return"  bits are similar  to the "fetch"
+bits, except that the actual operation is performed during  the
+execution of the call.   Note that a strange situation arises
+if both  a fetch  and  a store  bit are  set  and the  mode  is
+auto-increment  or decrement;  the index register is  modified once
+when the operand is fetched, then again when it is stored back.
+In the  case of  the two-operand  instrucions, the  op code  is
+determined  from the 5 low order bits of the EMT and the 4 high
+order bits of the next word.  The remaining 12 bits provide the
+two address fields.   There are two bytes, one for each address
+field,  associated with each op code in addition to the dispatch
+address;  they are interpreted  in exactly the  same manner  as
+the  byte for one operand calls.   As the operands are fetched,
+any auto-incrementing or  decrementing is done  in the  modified
+register  set;  the real  register set  is only  changed if the
+call has partially completed and needs to store a result so  it
+can be properly resumed if it gets PCLOSERed.
+.br
+.sect
+3.4 User Interupts
+	The types of conditions  which may cause  a user to  be
+interrupted are divided into five classes:  very bad things, bad
+
+
+things,  random things, input/output things  and inferior got a
+very bad thing things.   Very bad things are those errors which
+the  user  probably  cannot  recover  from  and  also   certain
+conditions  which indicate  that the user  needs attention from
+his superior.   Figure 3-3 lists  these conditions and their  bit
+assignments  in  the user  variable.   A  very bad  thing never
+causes  an  interrupt  to  the  user;  his  superior  is  always
+interrupted  by  these  conditions, if  they  are enabled.   Bad
+things (figure 3-4) cause an interrupt to the user if he has them
+enabled;  otherwise  a  very  bad  thing  is  caused,  and  the
+superior  is informed.   Random things (figure 3-5) only cause interrupts if
+they are enabled;  otherwise  they are  ignored.   Input/output
+things  are of  two types:  errors and  status changes.   If an
+error occurs and the interrupt for it is not enabled, a very bad
+thing is caused;  otherwise,  the user  is interrupted.   If a
+status  change happens and the interrupt  for it is not enabled,
+it is ignored.  Inferior got a very bad thing traps only happen
+if the  user has  them  enabled;  otherwise they  are  ignored.
+Each  of  the  four  types of  interrupts  (excluding  very bad
+things, since they correspond only  to inferior got a very  bad
+thing interrupts) have an interrupt disable bit which is part of
+the  user's pseudo-processor status;  if the "get operand address" bit is a one, interrupts of
+that type are  disabled.   If a  bad thing  or an  input/output
+error  occurs while the corresponding bit  is a one, a very bad
+thing is caused.  If a random thing, user got very bad thing or
+
+
+input/output  status  change  occurs  while  the  corresponding
+disable  bit is  set, the interrupt  is saved until  the bit is
+cleared.
+.br
+.sect
+3.4.1 Servicing an Interrupt
+	Whenever an interrupt  happens, the  PC, pseudo-PS  and
+reason for the interrupt are pushed onto the user's stack.   The
+PS (figure 3-6) includes the interrupt disable bits.   After the 3
+words  are pushed, the 4 disable  bits associated with the type
+of   interrupt  which is being generated are  ORed  into   the  PS.    For  example,  an
+input/output   error  could   prevent  bad   thing  traps  from
+happening.  It is also possible, for example, for the bad thing
+interrupt routine  to allow  further bad  thing interrrupts  to
+happen  while it is servicing the first one.   Since the reason
+for the  interrupt  is  stored  on  the  stack,  the  interrupt
+routines can easily be written recursively.  Of course, careless
+use  of this  feature will  result in  the user  get deeper and
+deeper into  trouble  until  he finally  overflows  his  stack.
+There  is a word  associated with each  type of interrupt which
+gives the  user  address  of the  routine  for  servicing  that
+interrupt;  also,  for bad  things and random  things, which are
+bit decoded, there are masks which specify which interrupts are
+enabled;  a one bit corresponds to an enabled  interrupt.   The
+word  pushed onto the  user's stack which  gives the reason for
+the interrupt depends on the  type of interrupt.   The user  is
+informed  of the  type of  interrupt because  he has specified
+(presumably) different addresses for each type of interrupt  to
+
+
+trap to.  For bad and random traps, the word pushed is the word
+shown in figures 3-4 and 3-5 respectivly.   Input/output traps push
+the number of the channel which the error or status change  occurred on in the low
+byte;  the low byte of the channel status word is put into  the
+high byte.   Inferior traps push the number of the user causing
+the trap onto the  superior's stack.   The interrupt routine  is
+expected to remove the reason for the interrupt from his stack;
+he may then return by executing a #.RTI or a #.RTT call.  These
+zero  operand calls  pop the  saved PC  and PS  from the user's
+stack and restore them as  the user's PC and PS.   After  doing
+that they check that no other enabled interrupts are pending;  if there
+are  any,  they  trap  immediately;  otherwise,  the  user   is
+continued  at the  new PC.   The  difference between  #.RTI and
+#.RTT is the same as  the difference between the  corresponding
+harware  instructions;  namely, if the  T bit is  set by a #.RTI
+the trap happens immediately, but if  it is set by a #.RTT  one
+instruction is executed before the trap occurs. 
+	The user can only be interrupted, of course, when he can
+be  PCLOSERed.   Thus  it  is  highly  desirable  that  he  be
+PCLOSERable most of  the time, and  absolutely necessary that a
+system  call that might  cause interrupts is  PCLOSERable at all
+places where it might cause  an interrupt.   In cases where  the
+call  cannot cause an  interrupt, it is  not quite as important
+that the  it is  always PCLOSERable;  however,  it is  highly
+desirable.	Some  of  the  conditions  which  might require
+
+
+interrupts during a system call are input/output errors, memory
+reference errors and illegal system calls.   Asyncronously from
+the   execution of  the user program and system
+calls, input/output status changes or other conditions may arise
+which will cause an interrupt;  it  is not critical that  these
+be serviced immediately, but should be taken care of as soon as
+possible.    Of  course,   whenever  the   user  is   executing
+instructions in user mode he may be immediately PCLOSERed.   In
+general, during a  system call,  whenever the user  is hung  up
+waiting  for something,  he may  be PCLOSERed;  it  is possible
+during a  call to  lock out  PCLOSERing temporarilly  even  while
+hung,  but  this  is  undesirable  and  will  only  be  used if
+absolutely necessary,  and  then with  great  care.   Improperly
+used, this feature could cause a user to be inexorably hung up.
+Whenever  the system decides to start  a user running, it first
+checks to see if he has any enabled interrupts pending;  if  he
+does,  it attempts to  PCLOSER him and  generate the interrupt;
+if the PCLOSER fails for some reason the pending interrupts are
+ignored and the user is started anyway. 
+.br
+.sect
+3.5 Conclusion
+	We have  attempted  to  explain  here  the  interaction
+between  system   calls   and   pseudo-interrupts,   how   this
+interaction  gives  rise  to  the PCLOSER  problem  and  how we
+propose to implement both system calls and pseudo-interrupts in
+a way which allows the PCLOSER problem to be solved.  It should
+be noted that the PCLOSER problem requires that system calls be
+
+
+carefully structured so that they  may never cause a  situation
+to exist where either a user gets locked up or a system call is
+not properly executed.  
+.end
+
+|

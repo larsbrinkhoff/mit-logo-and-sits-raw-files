@@ -1,0 +1,222 @@
+.xgp
+.ds				
+.he
+Computer Literacy/Citizenship  
+
+
+.ce
+Education For Citizenship in a Computer-Based Society
+
+.ce
+
+by Daniel H. Watt
+.nofill
+
+
+Research Associate, MIT LOGO Group
+LOGO Project Coordinator, Brookline Public Schools
+Director, Computer Resource Center, Technical Education Research Centers
+.ad
+
+
+With this paper I hope to focus discussion on some issues and problems connected with provinding the education needed by citizens of a computer based society. Rather than offer a laundry list of requirements for computer literacy, I have chosen to focus more broadly on the kinds of skills and understandings that might be needed by the majority of the population during the next decade or so, and to focus more narrowly on our role as educators in developing educational programs to meet those needs. As someone whose professional career for the last fifteen years has been concerned with pre-college education as a teacher, teacher trainer, curriculum developer and educational researcher (most recently with the LOGO Group at MIT), one of my major concerns is whether public schools in this country will be able to play a significant role in facing the educational challenges of the 1980s.
+
+In the body of the paper I will suggest some of the ways that the widespread proliferation of computers may have an impact on the lives of ordinary citizens, and offer my understanding of what should be meant by the term "computer literacy." I will also discuss the role of public education in developing a computer literate populace, raise some issues for  consideration in planning for computer literacy education, and suggest one particular activity as a step in meeting some of the goals of computer literacy education.
+
+
+.ce
+1. The Impact of Computers On People's Lives
+
+.ce
+Computers and Work
+
+.ad
+In the past, only a small percentage of the population was directly concerned with computers in their work. Those who had direct contact with computers were professional technicians, programmers or computer scientists, who required specialized technical training. People who made use of information processed by a computer only had to be comfortable reading computer printouts. Automation was a major economic and labor relations issue, as society tried to balance the increased productivity expected from automation against the dislocation and hardship experienced by workers whose skills were made obsolete in the process.
+
+In the future, we can expect the overwhelming majority of our working population to have significant interactions with computers as part of their daily work. As our economy becomes more dependent on information processing those whose work involves such information will need to have a great deal of direct involvement with computers. Word processors connected with computer-based filing, copying and communication systems will transform the nature and conditions of office work. In addition to economic and social issues concerning the pros and cons of replacing human workers by machines, automation will raise real issues of control of the work environment. Information systems will not only improve an organization's ability to produce and distribute their product - they will also provide managers with an unprecedented degree of control over the moment-by-moment functioning of employees whose work requires interaction with the system. "Big brother in the workplace" may become as significant a labor relations issue as replacement of workers by automation has been in the past.
+
+.ce
+Computers and Personal Life
+.ad
+
+In the past, most people's contact with computers was limited to receiving bills from the telephone company. A small, somewhat isolated minority had access to computers for professional and occasionally recreational pursuits.
+
+In the future we can expect to see dramatic increases in the contacts between individuals and computer systems in their daily lives. Personal computers and special purpose computer devices will find their way into the homes of many people for family business, household management, intellectual and educational development, recreational activities, and creative expression. Personal computers are so new that it is difficult to predict their consequences, but I personally believe that they will eventually have as much impact as the automobile or television. I expect that we will see mind-expanding effects for many people who learn to program their home computers and use them as creative personal tools for writing, composing and playing music, graphic arts, animation, communication and information retrieval. For others, there may be mind-deadening effects if they become dependent on limited forms of computerized instruction or addicted to fast paced and exotic, but fundamentally meaningless arcade games.
+
+Contact with large computer systems is also becoming a part of the personal lives of most people. When such a system is functioning smoothly and effectively, it is hardly noticed. It is undeniable that such systems may produce many gains for the public welfare. On the other hand, when a public system malfunctions the irritations are more obvious than the benefits of smooth operation. When a terminal is down or when an employee of a bank, travel agency or supermarket can't seem to find the correct magic word to make the system listen to him, or when the computer is seen as the cause of someone being denied a credit purchase, check cashing privileges, or a seat on an airplane, people tend exaggerate the negative consequences of living in a computer-based society, as ooposed to the positive ones. Alienation seems to be one of the characteristics of life in the late twentieth century, and regular public contact with computer systems whose functioning is too complex to understand may well increase rather than reduce such alienation.
+
+.ce
+Computers and a Citizen's Responsibilities
+
+A society ceases to be functionally democratic when decision making must be left in the hands of an influential minority with technical expertise and economic power, or when it is indeed exercised by the population at large if that population cannot make informed judgements about crucial technical matters. For the past twenty years we have had to face a series of public issues requiring understanding of technology and its impact on society. As we have progressed from concern about the testing of nuclear weapons, through a series of environmental and energy crises, to a renewed concern about the effects of nuclear power, we have had to make many decisions involving complex technological considerations.
+
+Our society has a poor track record for preparing its citizens for making judgements about such issues. Concerns about the impact of computers are not substantially different from other issues concerning technology and society. Some computer-related issues have become fairly clear to the public in recent years - for example, issues of privacy and individual rights that arise due to the existance of large data bases containing personal information. Many other issues have not yet had serious public consideration. The rapid rise of electronic banking, changes in the fabric of social organization brought about by large scale computer systems, the increasing influence of computer modeling on a host of public policy decisions, and the question of how society is going to regulate  the functioning of massive computer-based communications systems, are among the issues that require public attention, but do not yet seem to have reached public consciousness.
+
+It seems to be characteristic of such concerns that they don't become public issues until potentially harmful systems are deeply entrenched in the functioning of our society. When mass production of private automobiles began early in this century, noone could foresee the problems to be caused by air pollution, or the energy crisis. Many as yet unknown issues about the impact of computers on individuals and on society as a whole may be lurking ahead of us. The fact that we cannot clearly perceive them argues strongly for the development of a citizenry able to deal effectively with technological issues. In particular, it points to the need for universal computer literacy. 
+
+.ce
+2. What Should The Term "Computer Literacy" Mean?
+
+.ad
+My view of computer literacy follows from my sense of what the impact of computers will be, and from my understanding of what is commonly meant by the term literacy. When I consider a person literate, I usually mean that s/he can read and write well, and can use reading and writing fluently in a variety of contexts. Further, a literate person in our society will have had a range of experiences with the literature of our common cultural heritage. S/he will be able to read, understand, interpret, and make judgments about a news article or a literary work, and will be able to compare the works of different writers.
+
+A more complex aspect of literacy is its effect on a person's intellectual functioning. Without going into detail here, I will simply assert that a literate person can make use of a wider range of intellectual strategies than someone who is non-literate.
+
+Children grow into literate adults by growing up in a culture pervaded by literacy and pro-literacy values. Older playmates and siblings, parents and teachers, are all carriers of the culture. From the earliest years, at home and in school, children use literacy skills in a wide variety of every day tasks of importance to them.
+
+My concept of "computer literacy" goes beyond its common definition as a body of information primarily about computers, how they work, how they are used, and their impact on society (Ball and Charp, 1977, Billings and Morsund, 1979, Johnson, et. al., 1980). I believe that such a body of subject matter should more appropriately be termed "computer awareness" (Luehrmann, August 1980). Rather, I think of computer literacy as a cultural phenomenon which includes the full range of skills, knowledge, understandings, values and relationships necessary to function effectively and comfortably as a citizen of a computer-based society. The computer literacy needs of any individual will vary according to that person's particular involvement with computers, but computer literacy requirements for the average person should expand dramatically during the next decade (Molnar, 1978).
+
+To make this notion of computer literacy more specific, I have divided it into four distinct but interrelated categories (Watt, 1980):
+
+.in 5
+1. The ability to control and program a computer to achieve a variety of personal, academic, and professional goals. This includes the ability to write  programs in one or more computer languages, read, understand, and modify more complex computer programs, to use a computer as a problem-solving tool, and to analyze information generated by a computer program (for example, predictions about economic trends), in terms of how the program itself operates and the particular data chosen as program input (Luehrmann, July, 1980).
+
+2. The ability to use a variety of pre-programmed computer applications in personal, academic, and professional contexts. This includes the ability to make informed judgements as to the suitability of a particular software tool for a particular purpose, and to understand the assumptions, values, and limitations inherent in a particular piece of software.
+
+Both computer  programming and the use of computer applications will require a greater familiarity with representing and processing visual information than has been required in the past. Similarly, the understanding of hierarchically organized data structures has become significantly more important as people have access to previously inconceivable quantities of information stored in computerized data bases. (Molnar, 1978)
+
+3. The ability to make use of ideas from the cultures surrounding computer programming and computer applications as part of an individual's collection of strategies for information retrieval, communication and problem solving. This aspect of computer literacy corresponds to the effect on intellectual functioning of learning to read and write, and is probably the most difficult to incorporate specifically into educational programs since the effects themselves are not yet well understood. (Papert, 1980, Turkle, 1980, Papert et.al., l979) The fact that these concepts are difficult to integrate into school programs at present does not make them any less important to the functioning of a computer literate citizen.
+
+4. The ability to understand the growing economic, social, and psychological impact of computers on individuals and groups within our society and on society as a whole. This includes the recognition that computer applications embody particular social values and can have different kinds of impacts on different individuals and different segments of society. It includes the understandings necessary to play a serious role in the political process by which large and small scale decisions about computer use are made, and to transcend the dependent roles of consumer or victim. (Turkle, 1980, Kling and Lundegaard, 1980, Weizenbaum, 1976, Wessel, 1974)
+
+.ce
+3. Public Education and Computer Literacy
+
+.in 0
+Education for computer literacy, as I have defined it, should be thought of as more like the life-long process of acquiring a culture, than like the mastery of a well defined body of subject matter. Education for computer literacy requires many years of experience with computers and a long term fostering of concerns and values related to the use of computers and their impact on society. Above all, education for computer literacy implies the need for a computer literate culture of parents, teachers and older students for a child to grow into. The growth of computer literacy among teachers and the gradual incorporation of computers and ideas relating to computers into all subject areas should be of the highest priority to a school system trying to educate a computer literate public.
+
+Education for computer literacy is occuring in many places outside of formal educational institutions. Companies that use and manufacture computers provide training for their employees and their customers' employees. Computer stores, popular computer magazines, and local and national interest groups are all aiding the growth of knowledge about personal computers and their use. Adult education courses in computer programming are now being offered in many areas. Public access to computers in libraries, museums, and community computer centers is also likely to contribute significantly to the growth of computer literacy.
+
+Nevertheless, I believe that there is a clear need for an all out effort by public school educators. Only public schools can help ensure that all citizens have equal access to the opportunity for computer literacy education, and only the public schools in our society have responsibility for the education of citizens who can make effective decisions about the impact of technology on society. 
+
+How can we ensure that less affluent segments of our society will have equal educational opportunities? Affluent students already have more access to computers in their homes or parents' places of business than students from less privileged backgrounds. It is also generally the case that schools in more affluent areas are finding it easier to incorporate computers in their educational budgets. Given the ways in which present social, economic, demographic, and political trends impact on public schooling, providing equal educational opportunity will be a difficult challenge for public school systems.
+
+A more subtle concern relates to precisely how computers are being introduced into different types of school settings. It is my personal observation that when computers are introduced into suburban schools, it is often in the context of computer programming and computer awareness courses. In less affluent rural or inner city schools, it is more likely to be in the context of computer assisted instruction. Affluent students are thus learning to tell the computer what to do, while less affluent students are learning to do what the computer tells them! I am  not aware of any statistics confirming this observation, but I believe it bears careful examination. I am concerned that both the amount of computer access in schools and the ways in which computers are used in different communities may serve to reinforce existing socio-economic inequities rather than to foster educational equality.
+
+I do not care to debate here the relative merits of computer assisted instruction and instruction in computer programming, but I would like  to point out the relevance of the issue for computer literacy education. For the next few years at least, computers in the schools will remain a relatively scarce resource. I believe that schools should make a clear commitment to using those few computers they have, to develop the computer literacy of their teachers and students. Given existing social and economic inequities, this should be especially the case for schools serving less affluent populations.
+
+.ce
+4. Some Issues in Planning for Computer Literacy Education
+
+.ce Computer Literacy and Job Training
+
+.ad
+Many school officials seem to be unclear about their responsibility in educating and training students for computer related jobs and professions. Are computer related skills and understandings technical matters that should be left to vocational schools and to business and industry? Or are they basic survival skills that should be taught to all students in school? Opinion among educators is beginning to shift to the latter view, but this shift raises other issues of schools' resources and competance to provide the necessary background education, as well as specific technical training needed for computer-related employment.
+
+Consideration of a particular example may help to clarify some of the difficulties that schools face in dealing with this issue. In many high schools, computer related skills are taught within vocational and business education departments. Data entry by means of keypunch is often a required course in these departments. This has persisted despite the widespread shift to more interactive forms of data entry in the business world. The equipment is in place, the curriculum already exists, and the teachers are familiar with them. Substantial investments have been made in equipment and training. Shifts in what is taught will require new material investments as well as retraining or recruitment of teachers at a time when schools are facing a serious economic crunch. Nevertheless, in many schools, vocational and business departments are ahead of their colleagues in introducing and upgrading computer-related courses.
+
+The problem of recruiting and retraining teachers for such courses is made considerably more difficult by economic pressure from computer related industries. At the same time that high technology companies are decrying the shortage of qualified personnel, they are recruiting heavily from among high school and post-secondary teachers with technical or mathematical training, offering them substantially higher salaries than they can earn as teachers. This type of economic pressure is cutting deeply into schools' ability to provide students with adequate computer related skills.
+
+Recent conversations with two friends who are professionally involved in recruiting and training entry-level programmers and computer technicians helped me put the problem of job training into a broader perspective.  Having researched industrial needs by talking directly with lower level managers and shop foremen, they found that their contacts were not primarily concerned with their recruits' technical skills with a particular programming language or piece of equipment. Rather, they were worried about their new employees' lack of familiarity with computer systems and electronic equipment in general, and especially about their ability to engage in thoughtful problem solving and clear logical thinking - especially in debugging or trouble shooting situations - as well as their ability to work independently and responsibly on job-related tasks. These concerns go beyond the usual role of the vocational or business education department and raise again the question of the role of a student's entire educational experience in preparing for technically related jobs.
+
+
+.ce
+The Psychological Impact of Computers
+
+.ad
+The psychological impact of computers on individuals is not yet well understood. While it seems possible that some individuals may become overly dependent on, even adicted to, interaction with computers (Weizenbaum, 1976, Zimbardo, 1980), a kind of computer phobia seems to be more common among a wide section of the population. While programs for computer literacy education are generally directed at reducing computer phobia, developers of such programs do not usually take into account the wide variation in individual reactions to involvement with computers. Since it will be increasingly important for individuals to understand their own reactions to computers if they are to function comfortably with them and avoid pathological effects, understanding the psychology of human/computer interactions should be part of the computer literacy education of teachers, as well as explicitly built into computer literacy programs for students.
+
+Turkle (1980) has been carrying out a series of studies relating to the development of computer cultures and the infiltration of our general culture by concepts and values that have originated in computer cultures. Her work has included interviews with pre-college teachers and students who have been exposed to computers, young children interacting with computer toys, and students at university computer centers, as well as a number of computer professionals and hobbyists. She has begun to shed some light on an area in which much more research needs to be done. In her work (1980) she has raised a number of issues explicitly for consideration by computer literacy educators. Other issues realted to the psychological impact of computers on individuals have been raised by a team of researchers at Bolt, Beranek, and Newman, a Cambridge, Massachusetts, consulting firm (Bolt, Beranek & Newman, internal document, 1980), and by a study group of Boston area educators (Computer Education and Human Values Study Group, 1980). Drawing on these sources I would like to raise a few specific concerns for consideration by educators.
+
+.in 5
+
+1. Computer use may lead to isolation and separtism among students, or to cooperation and appropriate social interactions, depending largely on pedagogical and classroom management decisions made about their use. If a group of student "computer freaks" is seen as forming a powerful but isolated clique within a school, this could adversely effect the attitudes of the majority of students towrd computers. In particular, such polarization could reinforce male/female role stereotypes with regard to computers if computer cliques are predominantly male.
+
+2. There are many different styles of relating to computers. Educational programs that focus on only one approach (structured programming for example) may result in only some people coming to feel comfortable with computers. My own experiences teaching LOGO to children (Watt, 1979, Papert et. al., 1979) reinforce this concern. There were several different approaches to using the computer among a diverse group of sixth grade students. Because we explicitly recognized these differences and allowed for them in our planning, all the students attained some degree of comfort with the computer.
+
+3. If we acknowledge that computer literacy education involves training in habits of thought, how do different styles of relating to computers transfer to non-computer situations? Computer programming is often used explicitly to teach problem solving, yet current research has only begun to scratch the surface in exploring whether what students learn about problem solving by programming computers has any carry over into non-computer situations. Suppose it does have some carry over, even if we can't detect it yet. Can we help students understand which kinds of problems are amenable to computer related problem solving techniques? As computer literacy education becomes more widespread, such issues will become more interesting and important.
+
+4. Anthropomorphic imagery pervades the computer culture, both in the way that computer users tend to project human qualities onto computers, and in the use of anthropomorphic metaphors in problem solving (Solomon, 1976). (Even more pervasive is the attribution of human characteristics to the computer by those who write educational programs for young children.) While the consequences of these almost universal phenomena are not well understood, it is clear that they could have major impact on human/computer relationships, especially for young children. This concern requires immediate attention from educators and researchers before our culture is flooded with computer programs aimed at young children.
+
+5. The presence of computer programs which simulate intelligent behavior, as well as actual efforts to create artificial intelligence (Weizenbaum, 1976), raise disturbing questions in politics, religion, psychology, and education. Computer literacy educators should be prepared to deal openly with such questions and with the anxiety created by them for some people.
+
+.ce
+The Impact of Computers On Society
+.in 0
+
+Existing computer literacy curriculum materials and objectives usually include some information about the impact of computers on society (Johnson et. al.,1980). While the primary emphasis is usually on positive impacts of computers, some treatments of potentially harmful aspects of computers are also usually included. The privacy issue is probably the most common example. What are not commonly considered seriously in such materials are the changes in social, political, military and economic decision making owing to the use of computer-based models, or changes in the nature of social organizations and the overall organization of society brought about by widespread computer use (Weizenbaum, 1976, Anderson and Sim, 1978). Also lacking in most such materials is a concern for the particular social values embedded in a given social application of computers. An application may support the values and goals of one particular social group and be harmful to others, but this type of subtlety is rarely considered in material intended for school use. The work of Kling and Lundegaard (1980) dealing with values conflicts involved in the implementation of Electronic Funds Transfer systems provides a useful model for considering such issues.
+
+The issues involved in considering the social impact of computers (or other complex technology) are complex and controversial, and transcend the boundaries of traditional academic disciplines. For these reasons, and because computer literacy advocates are usually computer enthusiasts whose broad aim is to reduce public fear and anxiety about computers, computer literacy materials often tend to ignore or oversimplify such issues, to the detriment, I believe, of the more sophisticated understandings needed by citizens of our society.
+
+.ce
+5. Investigating The School As A Microcosm of Society
+.ad
+
+I think that there are ways that schools can begin to educate students for roles as citizens of a complex technological society. I would like to suggest one approach here as a technique for enhancing the computer literacy of both teachers and students in ways that may effect their functioning as citizens. I suggest treating the school itself as a microcosm of society for the purpose of investigating some of the types of issues I have raised.  By investigating the psychological effects of increased student interaction with computers, as well as changes occuring within the social organization of the school, students may gain insights that will serve them well as citizens. Students who are exposed to a range of experiences including being in full control of a computer as well as having their actions fully or partially computer controlled will learn to distinguish modes of computer use along such a spectrum. By investigating any number of situations within their own schools, students can learn an approach to social inquiry, relating the personal to the general, that will help them cope with a range of social issues. While particular issues to explore will vary with students' age and sophistication, I would like to suggest a few examples to serve as models of what I have in mind.
+
+.in 5
+1. Are computer resources within a school available equally to all students? How are decisions about computer access made? By whom?
+
+2. Do certain groups of students spend more time using computers than others? Are certain teachers more comfortable with computers than others? What are some of the characteristics of computer users and non-users? Is one of the groups more heavily male and the other female? Some of the causes of this can be explored. Can or should anything be done about it?
+
+3. Given limited computer terminals and computer power, who decides how the computers are to be used? Are students encouraged to write their own programs? To play computer games? To use the computer as a personal tool? Are there certain programs which all students must use? What are the rationales for such decisions? Are there competing rationales? 
+
+
+4. How do teachers feel when students know more about the computer than they do?
+
+5. Are students concerned about data bases containing student records? Can these records be abused? What safeguards exist? What rights of access and privacy do students have? Who decides these questions, and what rationales are used to justify the decisions?
+
+6. What are the concerns of other members of the school community -- janitors, secretaries or administrators -- with regard to non-instructional computer uses? Have computers simplified or complicated their jobs, as they see it? Do they perceive their work as more or less "human" when computers are involved?
+
+7. What kinds of changes have occurred in school organization as a whole as a result of administrative use of computers for scheduling, reporting, attendance, etc.? Are schedules more flexible or more rigid? Are grades reported more promptly and accurately, or are there more delays and errors? When an error or inefficiency in a computer program is found, who has responsibility for correcting it? How long does that typically take to accomplish?
+
+.in 0
+
+This type of exploration could be extended to the use of computers in particular academic departments, or to polling the attitudes of school committee members and the community at large, or to comparing the extent and kind of computer use in  the schools of neighboring communities with different socio-economic levels, etc.
+
+
+The learning attained by students engaged in such activities will depend heavily on teachers' skills in leading discussions and on their knowledge of well developed techniques such as role playing, values clarification, moral dilemmas and other approaches to personal growth and social inquiry. (Shaftel and Shaftel, 1967, Simon et.al., 1972, Kohlberg, 1978, Hawley, 1975)
+
+One useful result of such activities might be a collection of data for researchers investigating the impact of computers on education. Another consequence might be that teachers oriented toward humanistic education and teachers who specialize in the social sciences might collaborate directly with those who usually dominate computer literacy education - the mathematicians and scientists. This would be advantageous for the computer literacy education of the faculty as a whole, and it could also serve as a model for the collaboration of humanists, social scientists, and computer scientists in investigating some of these issues in the wider world.
+
+With a broad definition of computer literacy, and the development of some creative collaboration among teachers and students, it is still possible for schools to play a  critical role in developing the computer literacy needed by all citizens for the 1980s and beyond.
+
+.ce
+References
+
+.ad
+Anderson, Ronald E. and Francis Sim. "Sociology of Computing: Conceptual Framework and Curriculum Development," in Bailey, (Ed.)Computer Science in Social and Behavioral Science Education, Englewood Cliffs NJ, Educational Technology Press, 1978.
+
+Ball, Marion and Sylvia Charp. Be A Computer Literate, Morristown NJ, Creative Computing Press, 1977.
+
+Billings, Karen and David Morsund. Are You Computer Literate, dilithium Press, 1979.
+
+Bolt, Beranek and Newman Internal Document. Study of Issues Related to the Implementation of Computer Technology in Schools, Proposal # P80-ISD-97, 1980.
+
+Computer Education and Human Values Study Group. A Position Paper, c/o D. Watt, Technical Education Research Centers, 8 Eliot St., Cambridge, MA 02138. 1980.
+
+Hawley, Robert C. Human Values In The Classroom, Amherst MA, Education Research Associates, 1973.
+
+Johnson, David C., Ronald E. Anderson, Thomas P. Hansen, and Daniel Klassen. "Computer Literacy - What Is It?", The Mathematics Teacher, February, 1980.
+
+Kling Rob, and Karen Lundegaard. "Passing The Digital Buck," Society, Vol 17 #2, January/February 1980.
+
+Kohlberg, Lawrence. "The Cognitive Development Approach to Moral Education," Phi Delta Kappan, June 1975.
+
+Luehrmann, Arthur. "Computer Illiteracy - A National Crisis and A Solution", BYTE, July 1980.
+
+_________________ "Computer Literacy - What Should It Be?", August 1980. (published where ???)
+
+Molnar, Andrew. "The Next Great Crisis In American Education: Computer Literacy", THE Journal, Technological Horizons in Education, July/August 1978.
+
+Papert, Seymour. Mindstorms: Children, Computers, and Powerful Ideas, New York, Basic Books, 1980.
+
+Papert, Seymour, Andrea diSessa, Daniel Watt and Sylvia Weir. Final Report of the Brookline LOGO Project, LOGO Memos 53,54, Cambridge MA, MIT LOGO Group, 1979.
+
+Shaftel, Fannie R. and George Shaftel. Role Playing for Social Values: Decision Making in the Social Studies, Englewood Cliffs NJ, Prentice-Hall, 1967.
+
+Simon, Sidney, Leland Howe, and Howard Kirschenbaum. Values Clarification, A Handbook of Practical Strategies, New York, Hart Publishing Company, 1972.
+
+Solomon, Cynthia. Problem Solving in an Anthropomorphic Computer Culture, Unpublished masters thesis, Boston University, 1976.
+
+Turkle, Sherry. "Computer as Rorschach", Society, Vol 17 #2, January/February 1980.
+
+Watt, Daniel H. "A Comparison of the Problem Solving Styles of Two Students Learning LOGO", Proceedings, National Educational Computing Conference, June 1979, Reprinted, Creative Computing, December 1979.
+
+--------------- "Computer Literacy - What Schools Should Be Doing About It", Classroom Computer News, November/December 1980.
+
+Weizenbaum, Joseph. Computer Power and Human Reason, San Francisco, W. H. Freeman, 1976.
+
+Wessel, Milton. Freedom's Edge: The Computer Threat to Society, Reading MA, Addison Wesley, 1974.
+
+Zimbardo, Philip, ed. "The Hacker Papers", Psychology Today , August 1980.

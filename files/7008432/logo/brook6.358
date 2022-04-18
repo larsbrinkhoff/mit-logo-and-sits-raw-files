@@ -1,0 +1,818 @@
+.xgp
+.font 0 31vg
+.font 1 31vgb
+.font 2 25vg
+.dummy @
+.tabfnt 2
+.ss
+.adjust
+.chap 3
+.he1
+Exceptional Children
+.he2
+@@@@@@
+13. The Experience of Exceptional Children in the LOGO Learning
+Environment 
+
+0One of the most striking results of the Brookline LOGO experiment
+has been the success experienced by exceptional students.  We include within
+the category "exceptional," two groups of students whose education often
+poses problems within conventional elementary school programs --
+intellectually gifted students, and students with significant learning
+disabilities.  While the educational difficulties encountered by these
+groups of students differ markedly, both groups experience difficulties related to
+their inclusion in educational programs designed primarily for
+average students.  
+
+Faced with a choice between mainstreaming these students, and isolating
+them in special programs, schools have usually decided that the
+disadvantages of isolation outweigh the possible advantages of
+specialized programs.  Even when educational programs are partially
+individualized teachers continually confront the task of providing
+challenges and enrichment for gifted students and tutorial and remedial
+help for the learning disabled, while including them in an overall
+academic program designed for students of an average range of
+abilities.  The successful LOGO experiences of exceptional students,
+working side by side with students of average ability, indicates that a
+LOGO learning environment may prove useful to schools in meeting the
+problems posed in educating these students.
+
+.he2
+Gary: Learning Style
+It should not be surprising that intellectually gifted students were
+successful in LOGO classes -- many computer education programs have
+been targeted for bright students have generally been
+successful in learning to program computers.  What is surprising is
+that the students with the lowest level of previous academic success
+should also be successful in an educational context involving a full
+range of students working together.  In this chapter we will describe
+the work of three exceptional students, Gary, Karl and Tina.  Gary
+was one of three students, in our experimental sample of sixteen
+students who are considered "gifted" by their teachers.
+Karl and Tina are two of the three students in
+our experimental sample who have been diagnosed as having "learning
+disabilities," and who receive a minimum of one hour of specialized
+one-to-one tutoring each day.
+
+.block 5
+11.  The Work of Gary -- An "Intellectually Gifted" Student
+
+0Of all our experimental subjects, Gary seemed the most predisposed
+to success in LOGO.  Combining a strong prior interest in computers
+with a learning style that encompassed both analytical and
+trial-and-error approaches, Gary was able to successfully carry out
+projects in a number of different areas.
+
+Gary had had some previous exposure to computers, had attended a
+personal computer fair, and had been pressuring his parents to buy
+him a computer.  He absorbed new ideas voraciously, and rarely had to
+be shown something twice.  He tackled extremely ambitious projects, and
+always stayed with a project until some kind of completion was achieved.
+
+.block 5
+11.1 Gary's Learning Style as Seen Through his LOGO Work
+
+0Gary's work demonstrated some clear characteristics that set him
+apart from most of the other students:
+
+Gary easily understood the use of a procedure as an entity, recognizing
+the usefulness of naming a series of steps, and thereafter considering
+them as a "unit"; he often wrote procedures without trying out the
+steps individually first, recognizing that the series of steps could be
+considered to have a "total effect," as though it were a single command.
+
+Gary had faith in his ability to solve problems by reasoning as well
+as trial-and-error.  He was constantly trying things out "in his head",
+making use of a number of "abstract principles" to simplify and debug
+his work as he went along:  A series of FORWARD and BACK commands would
+easily be combined into one command; left/right reversibility would be
+used to correct an error.  At one point, for example, Gary had typed
+RIGHT 99, and saw from the effect that he should have used LEFT 99.  He
+then used the computer to add 99 + 99, and typed LEFT 198.  In writing
+his procedure later, he simply used the correct command LEFT 99,
+without ever having tried it explicitly.
+
+Gary tended to "plunge into a problem" impetuously, with very little
+advance planning, drawing on a quick analysis, based on partially
+understood ideas.  He then enjoyed the process of debugging his
+original idea, or of moving in a new direction, if his result was
+significantly different from what he had intended.  In the first class,
+Gary noticed that repeating a simple three step procedure made a
+"pattern" that looked something like a "circle".  When another student
+suggested making a smaller circle inside the first one, Gary began to
+make a new circle by using the same procedure with smaller inputs.
+When his new circle came out larger than the original one, Gary was
+delighted by the surprise.  He then tested another approach -- make all
+the inputs exactly half of the original, which led to a "circle" of
+almost the same size as his first one.  And so on, until he had tried
+many variations.
+
+.he2
+Gary: Drawing a Face
+Gary tended to work in a step-by-step fashion, rather than make use of
+planning.  While he generally had an overall idea of what he was
+trying to do, he tended to incorporate subprocedures one after another,
+rather than to break down his problem into parts and plan his
+subprocedures in advance.  He showed that he was capable of using a
+more structured approach when he was asked by his teacher to rewrite
+his STARSHIP procedure -- he created a set of simple modular
+subprocedures to draw his starship design. 
+
+Gary often sought out bugs, testing for extreme situations:  the
+largest possible inputs, the largest number of REPEATs, situations
+which would produce error messages, as a way of understanding both the
+capabilities and limitations of the computer, beyond the needs of any
+specific project on which he was working.
+
+Gary's work was usually directed toward ambitious goals.  He
+worked on four major projects, during his seven weeks of LOGO classes.
+While he enjoyed brief detours, such as the "circle" exploration
+described above, his work was usually directed quite specifically at
+his particular immediate goal.  Between projects, he often appeared to be
+restless; once a new task was selected, he was off and running again.
+
+.block 5
+11.2 Gary's LOGO Projects
+
+0Gary carried out four major projects, the last of which was still in
+process when the series of classes ended:  a rather elaborate "face"
+built from a large number of subprocedures; an interactive "math quiz"
+which gave a user a series of two-digit addition problems; a computer
+animated "starship"
+design; and a "morse code translator"
+which was intended to translate a printed sentence into a line
+of morse code, and vice-versa.
+
+His FACE project involved learning to use a large number of
+sub-procedures, and a great deal of Turtle Geometry -- especially arc
+and circle procedures.  Gary used functional procedure names,
+abbreviated procedure names, and "nonsense" names, all in a rather
+elbaorate scheme to "hide" the sub-procedures which actually "did the
+job". (See figure 1.1) Of course, this complex set of subprocedures was
+extremely difficult for Gary himself to debug, and he often had to
+trace through the entire "tree structure" of his project to find a
+bug in a particular procedure.
+
+.NOFILL
+.BLOCK 26 
+TO FACE	TO ENM	TO EN	TO M
+10 ENM	10 EN	1 EYES	1 MOUTH
+END	20 M	2 NOSE	END
+	END	END
+
+TO NOSE	TO EYES	TO MOUTH
+1 FOO7	1 FOO6	10 FOO8
+END	END	END
+END
+
+TO FOO6
+1 FOO5
+2 PENUP
+3 LEFT 90
+4 FORWARD 80
+5 PENDOWN
+6 RIGHT 90
+7 RCIRCLE 45
+8 PENUP
+9 RIGHT 90
+10 FORWARD 160
+11 LEFT 90
+12 PENDOWN
+13 LCIRCLE 45
+14 HIDETURTLE
+END
+.ri
+Figure 1.1
+
+.HE2
+Gary: Drawing a Starship
+.page
+.BLOCK 24
+TO FOO5		TO FOO7
+1 LCIRCLE 90	1 PENDOWN
+2 RCIRCLE 90	2 S
+END		3 FORWARD 100
+		4 RIGHT 99
+TO FOO8		5 FORWARD 30
+1 PENUP		6 RIGHT 90
+10 PENUP	7 RARC 10
+20 FORWARD 70	8 RARC 10
+30 PENDOWN	9 HIDETURTLE
+40 RIGHT 90	END
+50 PENUP
+55 RIGHT 90	TO S
+60 FORWARD 166	6
+70 RIGHT 90	10 PENUP
+80 FORWARD 70	20 SHOWTURTLE
+90 LEFT 90	30 LEFT 90
+100 PENDOWN	40 FORWARD 80
+110 LARC 80	50 LEFT 90
+120 HIDETURTLE	60 LEFT 9
+END		70 PENDOWN
+		END
+
+.ADJUST
+Gary's second project, a math quiz, involved the use of conditionals,
+PRINT statements, the naming of variables, and random numbers.
+Although he planned to extend the project to include subtraction,
+multiplication and division, he decided to go on to other activities
+after completing the addition portion of the quiz.*
+
+Gary's Starship project involved Turtle Geometry once again. (See fig.
+1.2) In order to avoid the type of debugging problems he encountered
+in his FACE project, Gary decided to carry out his starship project by
+writing one long procedure.  This led to a large number of
+unanticipated bugs as well.  Although Gary successfully debugged his
+lengthy procedure, his teacher suggested that he redo his starship
+project, making use of simple procedures and subprocedures.  This time,
+having experienced both extremes -- an unnecessarily complex hierarchy
+of subprocedures, and an unnecessarily long single procedure, Gary
+developed a
+set of modular, easily readable and easily debugged subprocedures to
+carry out his STARSHIP design.
+.br
+@@@@@@@@@@@@
+.br
+*During the following year, Gary went back to this project and
+completed it, making use of a LOGO computer provided by his school system.
+.page
+.nofill
+.sp 15
+Old Starship Procedure2
+
+TO STARSHIP
+10 RIGHT 90
+20 FORWARD 100
+30 LEFT 90
+40 FORWARD 50
+50 RIGHT 180
+60 FORWARD 100			0Figure 1.22
+70 PENUP
+71 LEFT 180
+72 FORWARD 50			
+73 LEFT 90
+74 FORWARD 100		0New Starship Procedures2	
+75 RIGHT 90
+90 LEFT 90	TO STARSHIP	TO STA		TO WINGR
+95 PENDOWN	10 STA		5 WRAP		10 MO
+100 FORWARD 100	20 WINGR	10 C		20 RIGHT 90
+105 RIGHT 90	30 WINGL	20 LI 100	30 LI 50
+110 FORWARD 50	END		END		40 MOVE
+120 LEFT 180					END
+
+(continued, next page)
+.page
+0(Old Starship, cont.)	(New Starship, cont.)2
+
+130 FORWARD 100	TO WINGL	TO MO
+140 PENUP	10 MOV		10 RIGHT 90	TO MOV
+141 RIGHT 180	20 LEFT 90	20 FORWARD 100	10 LEFT 90
+142 FORWARD 50	30 LI 50	30 LEFT 90	20 FORWARD 100
+143 RIGHT 90	35 RIGHT 90	END		30 RIGHT 90
+144 FORWARD 100	40 HIDETURTLE			END
+145 LEFT 90	END	
+155 PENDOWN
+160 RIGHT 90	TO C				TO LI :LE
+170 FORWARD 30	10 SQ.1				5 PENDOWN
+180 LEFT 90	20 PENDOWN RCIRCLE 10		10 RIGHT 90
+190 FORWARD 30	30 LCIRCLE 10			20 FORWARD :LE
+200 LEFT 90	40 PENUP FORWARD 30		30 LEFT 180
+210 FORWARD 60	45 PENDOWN			40 FORWARD 2 * :LE
+220 LEFT 90	50 REPEAT [RARC 10] 2		50 RIGHT 180
+230 FORWARD 60	60 PENUP REPEAT [RARC 10] 2	60 FORWARD :LE
+240 LEFT 90	70 PENDOWN REPEAT [LARC 10] 2	70 LEFT 90
+250 FORWARD 60	80 PENUP REPEAT [LARC 10] 2	END
+260 LEFT 90	90 BACK 30
+270 FORWARD 30	END		TO SQ.1
+280 PENUP			5 PENUP
+290 LEFT 90			10 RIGHT 90
+291 FORWARD 30			20 FORWARD 30
+292 RIGHT 90			30 RIGHT 90
+300 HIDETURTLE			35 PENDOWN
+310 PENDOWN			40 FORWARD 30
+320 RCIRCLE 10			50 RIGHT 90
+330 LCIRCLE 10			60 FORWARD 60
+340 PENUP FORWARD 30		70 RIGHT 90
+345 PENDOWN			80 FORWARD 60
+350 RARC 10			90 RIGHT 90
+360 RARC 10			100 FORWARD 60
+370 PENUP RARC 10		110 RIGHT 90
+380 RARC 10			120 FORWARD 30
+390 LARC 10			130 RIGHT 90
+400 LARC 10			135 PENUP
+410 HIDETURTLE			140 FORWARD 30
+END				150 FORWARD 30
+				END
+
+.he2
+Karl: Working Stle
+.adjust
+0For his last project, Gary decided to create a Morse Code Translator as
+the first step of a project to actually transmit morse code over radio
+waves, which he had read about in a computer hobbyist magazine.  In
+creating the Morse Code translator he had to make use of LOGO's list
+and word processing capabilities; of recursive procedures which used
+the concept of the empty word" and the "empty list" in STOP rules, and
+of conditionals which were used to decide which particular set of Morse
+Code symbols to output.  (This set of procedures is discussed more
+fully in Chapter 4, Section 7.3.4)
+
+.block 5
+11.3 Conclusions
+
+0Gary absorbed a great deal in approximately 25 hours of LOGO
+classes.  His projects involved a number of different content areas:
+Turtle Geometry, Interactive programming, animation, list processing,
+etc.  His enthusiasm remained at a fever pitch throughout the series of
+classes.  When the cycle of LOGO classes was finished, Gary helped
+establish an after school "computer club," so that he could carry on
+his work.
+
+The computer activities provided the kind of challenge and scope of
+intellectual activities that Gary wanted and needed to develop his
+abilities most fully.  The fact that this challenge and
+scope was not always present his regular classes was attested to
+frequently by his classroom teachers.  A LOGO capability in a
+classroom could help teachers meet the needs of students
+like Gary.
+
+.he2
+Karl: Working Style
+.block 5
+12. The Work of Karl:  A Severely Learning-Disabled Student
+
+0Karl is a student who has been diagnosed by the school staff as
+having severe learning disabilities.  Related to his difficulties in
+reading, writing and arithmetic, are readily observable hearing, speech
+and motor ability problems which interfere with communication.  Karl
+who is large for his age and somewhat awkward in manner, has few
+friends among his classmates other than two or three selected "cronies."
+
+In his LOGO work Karl demonstrated the ability to plan and carry out
+complex projects involving several subprocedures, to understand
+geometric concepts, to carry out mathematical calculations in his head,
+and to work in both a well organized step-by-step fashion and in an
+open-ended exploratory mode.  While Karl often needed help with routine
+tasks such as remembering the spelling of LOGO commands, he was able to
+make use of reasoning abilities that allowed him to surpass in the LOGO
+classes what he was normally able to accomplish in either his regular
+classes or his special tutoring sessions.
+
+.block 5
+12.1  Karl's Working Style in the LOGO Classes
+
+0Karl enjoyed the sense of control and accomplishment that he
+experienced in the LOGO classes.  He had to overcome severe typing and
+spelling problems, and to find ways of organizing his work, in order to
+achieve this success.  While spelling and typing difficulties made his
+work much slower and more painful than that of his peers, they did not
+seem to dampen his enthusiasm or impede his learning process.
+
+Karl's work alternated between carefully planned geometric designs and
+a more random, exploratory use of commands that he did not fully
+understand.  As he began to discover consistencies in the effects
+produced by different commands, he gradually came to exercise more
+purposeful control over the outcomes of all his work.
+
+Karl created a number of planned geometric designs making use of
+direct commands and previously defined procedures.  Once a procedure
+was completed, however, he enjoyed combining procedures and SPIN
+commands randomly to see the effect.  He would then sit for long
+periods of time watching the different combinations.  As the classes
+went on, he came to have more and more interest in controlling the
+designs, planning his combinations more carefully, and even editing one
+of his "conglomerate" procedures so that random effects were
+systematically eliminated.
+
+Karl developed an experimental approach to using the computer system
+and the LOGO language -- he would "ask questions of the computer" by
+trying things and seeing what happened.  He used a method of successive
+approximations to find the largest possible input to a SPIN command,
+and to determine the limits of the TURTLE screen.  He found the
+shortest procedure name (one letter) and the "longest"
+(QWERTYUIOPASDFGHJKLZXCVBNM).  He experimented with the adding and
+subtracting of extremely long numbers, to test the computer's limits in
+doing arithmetic.  Karl also made a point of learning to use all the
+peripheral devices that were part of the computer system:  the Floor
+TURTLE, plotter and printer.  Although seemingly random, it is clear
+that these explorations were an important part of his effort to
+establish control over the environment in which he was working.
+
+Karl made a major effort to exercise control over his typing
+difficulties as well.  His typing was characterized by a painfully slow
+and poorly coordinated approach to using the keyboard.  When he wanted
+to find a particular letter on the keyboard, he would scan with his
+eyes, moving his index finger back and forth, as his eyes shifted.
+Often his finger would pass the correct key several times before
+hitting it.  If a wrong key was hit, an error message would result, and
+the whole process would begin again.  Although he gradually improved
+his typing, he continued to have difficulty finding familiar keys.
+
+Karl used the same random scanning strategy for finding numbers.
+Although he knew that the numbers were on the top line of the keyboard,
+he was unable to make use of their inherent order to make them easier
+to find.  This was particularly striking when he was numbering steps in
+a procedure.  Going in a sequence 1, 2, 3, 4, ... he conducted an
+individual "search" for each number, using his scanning and finger
+moving technique.
+
+Karl also had difficulty reading error messages and spelling LOGO
+commands.  Although he was gradually able to include the new
+terminology in his sight vocabulary, he was unable to sound out words,
+even though he had seen them before.  He either "knew" a word, or could
+not read it.  Before long, he had become familiar with the most common
+commands and error messages, and knew how to respond to them.  He
+continued to have a problem whenever an unfamiliar error message appeared.
+
+Karl developed his own strategies for overcoming these problems.  He
+learned to write short procedure names and abbreviations for commonly
+used LOGO commands.  He kept a notebook of all the commands and
+procedures that he had learned or created, so that he could easzily
+find the correct spelling if he couldn't remember it.  At one point he
+named a procedure QWERTYUIOPASDFGHJKLZXCVBNM, utliizing every letter of
+the alphabet, in their sequence on the keyboard.  Since he could move
+his finger in order across all the letters, this procedure name
+required no scanning and was easier for Karl to type than even a three
+letter procedure name such as TAM, which required scanning.
+
+.he2
+Karl: Early Projects
+One of the Karl's major activities was an animated "car" project in
+which the TURTLE moved continuously, while it's motion could be altered
+interactively as the user typed certain keys on the keyboard.  The
+letters he used to control the motion of the turtle -- Q W E R A S and
+F -- are all located in a group on the left hand end of the keyboard.
+Originally he had planned to make a cardboard cover for the keyboard,
+with a hole cut in it so that only those letters could be seen.  He
+found this to be unnecessary, however.  By concentrating his attention
+on one small corner of the keyboard, he was able to select the correct
+keys easily, without any of the scanning or memory problems that
+occurred when he had the entire keyboard as his field.
+
+.block 5
+12.2  Some Examples of Karl's Work
+
+0Karl's earliest LOGO procedures were simple geometric designs.  His
+first project, TAM, was a rectangle, and the second, CULL, resulted from
+repeating TAM four times.  His third project, ACE, made use
+of symmetry, and the properties of circles in a carefully planned format.
+
+.nofill
+.block 11
+TO TAM		TO CULL		TO ACE
+1 FORWARD 190	1 TAM		1 RCIRCLE 50
+2 LEFT 90	2 TAM		2 LCIRCLE 50
+3 FORWARD 100	3 TAM		3 FORWARD 100
+4 LEFT 90	4 TAM		4 RCIRCLE 50
+5 FORWARD 190	END		5 LCIRCLE 50
+6 LEFT 90			6 BACK 100
+7 FORWARD 100			7 BACK 100
+END				8 RCIRCLE 50
+				9 LCIRCLE 50
+				END
+
+.block 23
+.sp 21
+.spread
+/Figure 2.1//Figure 2.2
+
+
+.block 5
+.adjust
+Having completed these designs, Karl's work entered a phase in which he
+created wildly spinning designs by random accumulation of previously
+defined procedures.  ACE2, ME, and ACE3 are examples of this type of
+procedure which culminated in the procedure BU:
+
+.nofill
+.block 17 
+TO ACE2		TO ME		TO ACE3	
+1 SPIN 1020	1 TAM		1 SPIN 1020
+2 ACE		2 CULL		2 TAM
+END		3 ACE		3 ACE
+		4 ACE2		4 ACE2
+TO BU		END		5 ME
+1 SPIN 200			6 HIDETURTLE
+2 CULL				END
+3 ACE
+4 ACE2
+5 ME
+6 NO
+7 NO
+8 XX78055
+9 PLUS
+10 TAM
+END
+
+.he2
+Karl: Animating the TURTLE
+.adjust
+At this point, Karl began to assert more control over the effects of
+his work.  He spent an entire class period editing BU, producing an
+elegant spinning design by going through the procedure step by step,
+systematically eliminating all random effects.
+
+.NOFILL
+.block 11
+TO BU
+1 SPIN 200
+2 CULL
+3 ACE
+4 HOME
+9 PLUS
+END
+
+.adjust
+12.3  Karl's Animation Project
+
+0Karl's major accomplishment was a set of procedures which 
+animated the turtle in such a way that he could "drive it around" on the
+display screen.  He was given the initial concepts for the procedures
+and filled in the specific instructions himself.  The procedure ideas
+he was given were.
+
+.nofill
+.block 7
+TO CAR		TO CH
+5 PENUP		10 MAKE "LETTER KEY
+10 MAKE "D 10	20 IF :LETTER = "R RT 30
+20 CH		30 IF :LETTER = "L LT 30
+30 FORWARD :D	END
+40 GO 20
+END
+
+.adjust
+(The command KEY was given as a "primitive" which "tells the computer
+which letter you type on the keyboard.")
+
+Using this basic idea.  Karl was able to define his own system of
+commands to control the TURTLE's motion:
+
+.NOFILL
+.block 10
+TO CAR 		TO CH
+1 WRAP		10 MAKE "LETTER KEY
+5 PENUP		20 IF :LETTER = "R RIGHT 30
+10 MAKE "D 10	30 IF :LETTER = "W LEFT 30
+20 CH		40 IF :LETTER = "F MAKE "D :D + 5
+25 WAIT 5	50 IF :LETTER = "S MAKE "D :D - 5
+30 FORWARD :D	60 IF :LETTER = "A PENUP
+40 GO 20	70 IF :LETTER = "Q PENDOWN
+END		80 IF :LETTER = "E MAKE "D 0
+		END
+
+.adjust
+The letters "R" (right turn), "F" (faster), "S" (slower), and "E"
+(emergency stop), all are abbreviations for their functions while the
+letters "W", "A" and "Q" were chosen for their position on the keyboard.
+
+Using these seven keys Karl could turn the TURTLE in any direction,
+make it speed up, slow down, or stop, and could decide whether the
+TURTLE should draw a line as it moved.  Karl discovered that repeatedly
+pressing "S" would slow the TURTLE down, and eventually make it move
+backwards.  By alternating between the "A" and "Q" keys he could make
+the TURTLE draw dotted lines.  By slowing the TURTLE down and carefully
+controlling its direction, he found he could use this device to create
+interesting free-form designs, or to write his name in script.
+
+.he2
+Karl: Affective Aspects
+.block 5
+12.4.  Affective Aspects of Karl's LOGO Experience
+
+0At the beginning of the LOGO classes, Karl tended to have a
+"deadpan" expression at all times.  This corresponded to his appearance
+when seen for interviews, or on random occasions throughout the school.
+Even when he was successful in using the computer for the first few
+sessions, his expression continued to be blank and non-committal.
+
+As he began to feel successful, Karl became more assertive and curious.
+He asked what error messages meant, and sought to understand how to use
+new commands.  He made a point of finding out how to use the Plotter
+and Printer, so that he could make his own "hard copy" of his computer
+work.  At about the same time, he began to express an interest in the
+work of other children, and to show them his work.  He
+invited a friend to class and swapped programs with him, his behavior
+demonstrating that he was feeling good and enjoying himself.  His face
+was becoming more expressive, his posture more relaxed.
+
+Changes in Karl's atitude toward his classroom work were noted by his
+regular teacher.  She reported that he was beginning to show that he
+really cared about his school work, that he had begun concentrating on
+his work in a way that she had not seen before, and that he seemed to
+have a great deal more confidence in his ability to carry out academic
+tasks.  She attributed these changes directly to his feeling of success
+in the LOGO classes.
+
+Karl's success in his LOGO classes demonstrated that with an
+appropriate educational environment, he was able to function at a
+higher level of ability than he had demonstrated in schoolwork, even
+with a great deal of one-to-one tutoring.
+
+By the time of his final interview, after the end of the LOGO classes,
+Karl had become significantly more articulate.  He listed ten uses for
+a tin can (as opposed to four uses for a brick in the first interview).
+Instead of carrying out the four color permutation task, he asked "Can
+I just show you how I do it?"  and proceeded to describe a system for
+finding six permutations that started with each of four colors.  With
+some difficulty, he correctly calculated that there were twenty four
+possibilities in all, and leaning over to speak directly into the
+interviewer's tape recorder, he said: "Twenty-four.  I'm a brain!"
+
+.he2
+Tina: Attitude Toward Computer
+.block 5
+13.  The Work of Tina:  A Learning-Disabled Student
+
+0Tina is a student with severe learning disabilities, whose academic
+abilities are extremely low compared with her classmates.  Like Karl
+whose work was described above, she was successful in the LOGO
+classes, making use of abilities that she was not using to full
+advantage in her regular classes, or in her daily one-to-one tutoring
+sessions. 
+
+Tina's pattern of computer use was unique among our sixteen
+experimental subjects in that she was not interested in Turtle Geometry
+and never learned to write her own LOGO procedures.  On the other hand,
+Tina established an intense, personal relationship with the computer,
+and, using the computer as a text editor and word processor wrote a
+series of stories that represented a major achievement in the area of
+creative writing.
+
+.block 5
+13.1  Tina's Attitude Toward the Computer
+
+0In the first class Tina established a special relationship with
+one of the four computers.  She personalized it by giving it a name,
+Peter, and behaving toward the computer in much the same way a child
+might behave toward a favorite doll, pet, or a much younger
+child.  Tina was extremely possessive of the computer she called
+"Peter", and would not allow other students to use that particular
+machine during her classes.
+
+In the early classes Tina made a number of efforts to communicate with
+the computer, typing questions such as "What's your name?" and
+responding angrily to error messages with messages of her own.
+
+Gradually, Tina's relationship with the computer tempered somewhat.
+She was shown how to make the computer communicate, and was helped
+to write the procedure, WHO:
+
+.nofill
+TO WHO
+1 PRINT [MY NAME IS PETER]
+END
+
+.he2
+Writing Stories
+.adjust
+The teacher continually stressed the fact that the computer was a "dumb
+machine", controlled by Tina and her friends, as well as by the teacher
+and other programmers.  
+Tina eventually developed a
+more balanced understanding of her role in relation to the computer.
+Her behavior with the computer became much more matter-of-fact, and
+although she continued to share credit with "Peter" for her
+accomplishments, she no longer expressed anger at error messages.  As
+she came to understand the mechanical predictability of the computer's
+responses to her, and as she began to take more pride in her own
+accomplishments, "Peter" came more and more to take on the status of a
+personal fantasy -- one which a child knows is a fantasy, but
+persists in "playing" sometimes because it's fun.
+
+In her actual work with the computer, Tina had some ideosyncrasies that
+differentiated her from other students.  Although she had a great deal
+of difficulty starting work at the beginning of a class period, Tina
+insisted on completing any task before the end of the period.  Her work
+often ended with a rush, or with requests to stay late to finish up.
+Once a class ended, she never returned to a task
+regardless of its
+actual state of completion.
+
+Tina also had a need to have all her work be "correct".
+When she made a typing error, or received an error message, Tina would clear
+the screen immediately by typing a long series of carriage returns.
+This habit interfered with her learning, as it prevented her from
+maintaining continuity in her work, and elminated the possibility of an
+appropriate response to an error message.  Even completed stories were
+often removed from the screen before they could be read, much less
+responded to.
+
+In addition to her compulsive aversion to errors, Tina had a strong
+desire for neatness.  She regularly straightened up the LOGO classroom,
+reminding other children to put their things away, etc.  She loved the
+printed copies of her work, and always made multiple copies to give to
+her friends, family and teachers.
+
+.he2
+Tina: Writing Stories
+.block 5
+13.2  Tina's Use of the Computer as an Editor
+
+0Tina devoted most of her time and effort in the LOGO classes to
+writing, editing and printing copies of a series of "stories" that she
+wrote.  A special program, LETTER, was created for her use, allowing
+her to type a story directly into the computer without having to write
+a procedure or use PRINT commands.  She used this procedure to write
+two "letters" and seven "stories" during the course of the LOGO
+classes.  At least three additional stories were discarded without
+being finished.
+
+Tina wrote about people who were part of her life.  Her first two
+letters were to her aunt and her mother; Tommy, Ann, Sonny, and Donell,
+subjects of her stories are all Tina's relatives.  Harriet, Mr. Lewis
+and Miss Hirsh, are a classmate and two of her teachers.  Each story
+was written during one class period,
+and was never continued or changed, once it had been
+finished.
+
+The letter, HELEN, is representative of Tina's first two attempts to
+use the computer for writing:
+
+.nofill
+.block 3
+2DEAR HELEN HOW ARE YOU IN YOUR NEW HOME.  I AM GOING TO GET YOU SOMETHING
+ FOR YOUR NEW HOME .AS SOON AS I GET MY MONEY
+LOVE TINA
+
+.adjust
+0In writing this letter Tina regularly asked for spelling and
+punctuation help.  She was concerned that it be gramatically correct,
+and in proper form.  A great deal of time was spent making sure each
+line was correct, before going on to the next.
+
+Once she shifted from writing letters to stories, Tina became less concerned with
+spelling and grammar (although she continued to ask for help in these
+areas).  Instead, she was more concerned with the details of the story:
+the names of the characters, the places they lived, the sequence of
+events, and the feelings of the characters involved.  Tina had deep
+feelings about her subject matter.  Her story, SONNY, is typical of
+her style and intensity of feeling:
+
+.nofill
+.block 9
+2SONNY IS A LITTLE BOY HE LIVES WITH HIS AUNT HELEN IN CALIFORNIA
+HE HAS BEEN LIVE WITH HER FOR 9 YEARS.  HE IS GOING TO A HOME FOR
+LITTLE WONDERS 4 WEEKS AFTER THAT TO
+COUPLE A ADOPTED SONNY HE WAS THE HAPPIEST BOY THAT YOU EVERY
+SEEN.  I GUESS IF THAT WAS ME I WOULD BE HAPPY IF SOME ONE WOULD
+ADOPT.  BUT SEE I AM NOT ADOPT I HAVE MY ON MOTHER AND I AM
+GLAD THAT I HAVE MY ON MOTHER.BECAUSE THE KIDS THAT HAVE FEELS
+REALLY BAD. THAT'S WHY ALL THE KIDS IN THE WORLD SHOULD BE
+GRATEFUL TO THEIR PARENTS. THE END.
+
+.adjust
+0After Tina had completed SONNY, her fifth piece of writing, 
+0she was asked for some samples of writing done in class.  "I don't have
+time to write stories in class," was her reply.  "I've got too much
+work to do."  Tina's English teacher and her learning disabilities
+teacher confirmed the fact that she had done virtually no creative
+writing in school during the year.  Her English teacher explained that
+she rarely completed any work, and pointed out that her computer
+stories were among her first finished pieces of work.
+
+After completing each of her stories, Tina printed out between ten and
+twelve copies to be distributed to her friends, family and teachers.
+The widespread distribution of her stories was an indication of the
+pride and satisfaction she felt in her work.
+
+We have attempt to determine the reasons for Tina's success at writing
+with a computer when many other approaches  had resulted
+in failure.  While our findings are somewhat speculative, we feel that
+we can offer the following insights:
+
+.block 3
+.indent 6
+1--0Tina is fanatic about work being "complete" and free of errors.
+Using the computer, she could rubout her errors as they occurred, and
+correct them without destroying all her previous work.  Once she
+declared a story "finished" she never proofread it or looked back to
+see if she could find any other errors.
+
+.block 3
+1--0The teacher in the LOGO classes offered no correction or
+criticism of her work, limiting his role to answering her questions
+about spelling, punctuation and grammar.  
+
+.block 3
+1--0The printed computer output had a "professional" quality that
+Tina liked. She could give away as many copies as she wanted -- thus
+obtaining positive feedback about her writing from many different people.
+
+.block 3
+1--0Tina felt that her work was unique, special, and competent.
+Since only Tina was writing stories using the LETTER proram, she did
+not have to compare her work with that of any other students.
+
+.indent 0
+The combination of these and other factors
+produced a profound effect on Tina that was apparent to everyone who
+dealt with her
+outside of the LOGO classes.  Having taken pride in her
+computer stories, Tina became more conscientious about her other school
+work, beginning to complete assignments consistently for the first time
+all year.  Having been accepted by the other children in her LOGO
+class, her "social position" within her class as a whole improved.
+Thus, although Tina's LOGO experience was perhaps the least
+conventional  of all the students, it seems to have been possibly the most profound.
+

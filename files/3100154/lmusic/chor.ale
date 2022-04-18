@@ -1,0 +1,37 @@
+
+TO P1
+10 PLAY "D*/Q C* B C* D* B A A D* C* B F A G F F E F G G F E D D A A B C* D* A F F E G F D F G F F E G F D F G F F/W"
+END
+
+TO P2
+10 PLAY "B/Q A G A A G E E F F D C F D D D C D D D D *B / / C E G G A E D D C D C *B C D D D C E C *B C D D D/W"
+END
+
+TO P3
+10 PLAY "*B/Q E D E F D C C *A / *B C C *B *A / / / *B / *A *G *F / *A CD E F E *A / / *B C E D *B *A / / *B *A D C *B *A /W"
+END
+
+TO P4
+10 MAKE "PIANOC" :PIANOC-12
+20 PLAY "G/Q A B A F G A A D F G A F G D D A D G *B D E *B / *A A G E D C D D A G A B A G D D A E F B A G D D/W"
+30 MAKE "PIANOC" :PIANOC+12
+END
+
+TO H1
+10 PLAY "G/Q D*/H C* B/Q A/E G/E F/Q G A/H D/Q D* E*/H F* G*/Q C* B A G/H."
+END
+
+TO H2
+10 PLAY "G/Q A F G D D D C *B *A/H *B/Q B G C* A/H D*/Q A G F REST/H."
+END
+
+TO H3
+10 PLAY "REST/Q REST/H. A/Q G/Q REST/H. F/H REST/H REST/H D*/H /Q A G F REST/H."
+END
+
+TO H4
+10 MAKE "PIANOC" :PIANOC-12
+20 PLAY "G/Q F D E F G *B *A *G D C *B *G C *A D C *B C D *D *G/H."
+30 MAKE "PIANOC" :PIANOC+12
+END
+

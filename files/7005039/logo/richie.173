@@ -1,0 +1,173 @@
+.xgp
+.font 0 30vr
+.adjust
+.ss
+.ce
+Individual Profiles; Ray
+
+From comments made by his teachers, and from observations made by myself and others in the LOGO classes, I have a model of Ray as a boy who has chosen to react to academic difficulties by adopting a pose of indifference, and refusing to take responsibility for his work or behavior in school.
+
+From the first day he came to class, in session 2, Ray insisted on remaining "aloof"; preventing himself from feeling personally involved with the LOGO activities.  Although he started off quite successfully, and actually was generally successful under close supervision in his first programming project -- causing the computer to draw his initials -- he maintained his "cool" until the last four or five sessions, when he began to allow himself to become interested in what he was doing.
+
+Before summarizing his work, it would be useful to list some of his techniques for maintaining and reinforcing his posture of aloofness from the activities.  He began by coming four or five minutes late for each class.  By coming to class late, he guaranteed that I would be already working with another student.  Thus he could waste several more minutes waiting for me to remind him how to LOGIN, and start him with a suggestion for his day's work.  He often walked into class whistling loudly, blatantly disregarding anything else that was going on.  He made a point of always leaving a few minutes early, and as he worked on activities, he would look at the clock, to see if it was time to leave yet.
+
+Ray made a point of not remembering how to do things.  He would not write things down in his notebook, and when asked to consult a reference sheet or an entry in his notebook, he would usually just sit there, and wait for personal help from me or one of his classmates -- usually Gary.  This was his way of reinforcing a sense of helplessness, of "I can't do it", of dependency on the teacher.  Rather than maximizing his use of available resources, Ray deliberately minimized them.
+
+Ray refused to learn the details of operation of the system and the language.  Not until class 12 did he LOGIN by himself.  He never wrote a file without assistance.  Likewise, he never wrote a procedure without help.  Although he was introduced to the REPEAT command, and used it to make turtle designs that were quite pleasing to him, he never remembered the format for using it, and would not look it up.
+
+I am quite seriously using words like "refused to learn", "techniques for maintaining..aloofness," "made a point of not remembering," because I am convinced that these were definite strategies of his, to protect himself from involvement, rather than a "sincere" inability to concentrate or learn.
+
+From my conversations with Ray's teachers, I learned that he uses similar strategies in his other school activities.  Ray is diagnosed as a boy with "learning disabilities."  He is reported to be reading at a "first or second grade level." He has individual tutoring at the school's "learning center" several times each week.  One of his teachers told me: "we are all very upset about Ray because we feel that he is `slipping through our fingers'."  When I reported that Ray had been absent for four of the first eleven classes, she asked me to check the school attendance records to see if Ray was "cutting", a practice which he has been developing lately as a response to his first year of "departmentalized" classes.
+
+At the same time, Ray is clearly intelligent, attractive and charming.  He has a definite natural aptitude for music -- he enjoyed spending time tapping rhythmically, whistling, and improvising intuitively on the piano.
+
+I would like to speculate that from his earliest school experiences, Ray has been afraid of failure, and especially of appearing to fail.  His strategy for coping with this has been the "class clown" approach -- act a little bit silly, charm everyone, and above all, don't let anyone know you're trying. My strategy with Ray was to try to structure situations so that he would be successful, and develop a sense of confidence -- a sense that he could do it.  I did this both by helping him with a special animation project, (which in the end proved too complex, requiring too much of my help) and by trying to set up situations in which he could be sucessful with very little input.  The latter approach proved to be the best for Ray, as I will describe in the detailed description of his work, which follows.
+
+Despite his difficulties, Ray was interested in the computer, and its power.  He showed a good deal of "natural ability" in turtle geometry, which made me quite hopeful about him at first.  Ray was very successful in directing the turtle, estimating quickly and accurately, both angles and distances.  His first project was making his initials, and he carried it out quite successfully, combining skill in turtle geometry with a quick understanding of using the keyboard, and it seemed, understanding of how to write procedures.  (See figure R-1)
+
+.block 17
+.sp 15
+.ce
+Figure R-1
+
+As Ray went on beyond this project, however, I found many difficulties impeding his progress.  He would rarely work purposefully unless I was present.  All his further turtle geometry explorations appeared to be random.  He did not remember how to write a procedure, and refused to "look it up", in his notebook.  He never wrote a procedure when I was not present!  I tried to solidify his understanding of procedure writing by showing him how to make a procedure out of two or three turtle steps, and the use REPEAT to make designs.  He made several simple designs -- SAM, TIM and JOE.  I found that he still did not remember from time to time, how to make a procedure, or how to use the REPEAT command.  Again, he refused to look it up in his notebook.
+
+After completing his initials project in class 4, Ray's work in classes 6-12 was characterized by short bursts of activity -- especially when I was present -- and frequent visits to the water fountain, and to the piano in the next room.  Ray was absent for classes 5, 7 and 10.  What I found that Ray did do successfully on his own was to experiment with different inputs to REPEAT.  He would use sequences like REPEAT [SAM]90, REPEAT [TIM] 30, REPEAT [JOE] 20, REPEAT [SAM] 30, etc. (See figure R-2)  
+
+.block 19
+.sp 17
+.ce
+Figure R-2
+
+After doing some of these, he'd return to ones he liked.  It seemed that he could focus for a short time on the task of choosing inputs to REPEAT, although he could not remember how to use REPEAT from class to class.  By class 12, however, this approach had lost interest for Ray, and it became clear that it had not resulted in his being able to write procedures independently, as I had hoped.
+
+In session 13, I suggested an animation project to Ray.  He agreed, and decided to animate a rocket.  Session 13 was spent drawing the rocket.  I spent a major part of the period working with him, first helping him figure out how to draw a triangle (see fig. R-3), and then helping him organize the task of teaching his rocket to the computer.  His ROCKET procedure had two subprocedures, TOP (triangle) and ROCK (rectangle). (See figure R-3)
+
+.block 15
+.sp 13
+.ce
+Figure R-3
+
+In class 14, I again worked closely with Ray.  We worked through the process of animating the rocket.  He decided that his ROCKET was too big, so I helped him make a smaller, scaled down version, which he decided to call FB.  His procedure to move the rocket was called NKP.  I introduced Ray to the idea of SNAPs.  He understood how they were used to animate the motion -- but of course he had difficulty remembering the format for using SNAPs.  I had the distinct sensation that I had introduced too much material during this class.
+
+In class 15, I again spent a great deal of time with Ray.  He was not especially interested in varying the WAIT and Distance for the animation (I had given him a procedure which he could use to do that easily), but he was interested in making the rocket turn.  I printed out his animation procedure NKP, and we figured out together where he could put a turn command, to make the rocket turn on the screen.  While still in edit mode, Ray experimented on his own with different inputs for the turn:  RT 300, RT 66, RT 2, RT 3, etc.  He finally settled on RT 9, as the largest number he could use without having his rocket go off the screen.  He then typed END, followed by GOODBYE (without a WRITE command).
+
+It was in analyzing the dribble file from this class that I became strongly aware that Ray had been consistently successful in activities that required varying only one paramter at a time.  I began serious consideration of how to use this observation to get Ray involved in a more consistent relationship with his work.
+
+Class 16 was spent in a whole class discussion about the story "ZEEP and the paint".  Ray was determinedly aloof.  Ray spent class 17 working with Jeanne on the pattern block task, and at the piano.  Class 18 was mostly wasted.  I tried to get Ray to use recursion, but he said "I don't like designs."  I also tried to start him on another turtle geometry project, but when I went to spend time with another student, that too fell flat.
+
+It was decided to introduce Ray to the LOGO music box, during the following week, to try to capitalize on his interest in musical improvisation, and to give Ray a special sphere of activity, in which his work would not be compared with anyone else's.  This did not work out because of breakdowns in the MIT LOGO system, to which the music box was to be connected, via remote terminal.
+
+In class 19,  I decided to just give Ray a POLY procedure, with a simple stop rule, and let him experiment with changing the inputs.  In this way, he would have only one thing to consider -- the choice of numbers to make interesting designs.  This was a successful choice and he continued to work with POLYs and a POLYSPI type procedure for the next six classes.
+
+In working with POLY during classes 19 and 20, Ray tended to choose inputs based on "number patterns" rather than on the effects produced by the POLY procedure itself.  For example, during class 19, the POLY inputs he chose were (see Figure R-4):
+
+.nofill
+.indent 6
+.block 14
+SIZE	ANGLE
+
+556	889	increasing and decreasing sequences
+765	987
+567	987
+1000	2000
+999	999
+1	1	he was intrigued by the fact that
+2	2	these made circles
+3	3	
+50	60	surprise! hexagon!
+70	80
+70	89	he really likes this
+70	90	I showed him this one, to go with it.
+.indent 0
+
+.block 18
+.sp 16
+.ce
+Figure R-4
+
+.adjust
+In class 20 I made a point of showing him that the first number effects the size, and the second number the shape.  His work was still based on number patterns.
+
+.nofill
+.indent 6
+.block 20
+SIZE 	ANGLE
+
+678	987
+70	89	an old friend
+40	40	
+50	50	same numbers
+60	60
+78	93
+1	1
+1	34	makes a bright dot
+98	89	reversing digits
+567	123
+1000	1000	same input
+200	7820
+678	876	reversal
+9000	9000	same
+765	897
+850	850	same
+100	850	here I showed him the effect of
+200	850	changing the first input, while keeping 
+		the second constant.
+
+.indent 0
+.adjust
+In class 21 I showed Ray a spiral procedure, SPI:SIDE:ANGLE, and later edited it to make the increment a variable as well, SPI:SIDE:ANGLE:GROW.  For the first time, Ray began to experiment with the effect of the changed input, by varying the rate of growth of the spiral.  First Ray experimented with small numbers like SPI 1 1 and SPI 3 4.  Even with inputs like SPI 22 33, Ray found the shapes "boring", because they all went off the screen so fast.  I suggested larger numbers for the second input, and Ray tried things like 1 100, 2 200, 3 300, and 4 400.  I showed him the relationship between POLY and SPI by putting POLY 100, 200, and SPI 2 200, on the screen one after the other. (See figure, R-5)
+
+.block 18
+.sp 16
+.ce
+Figure R-5
+
+Ray was a lot more interested now, but he still felt that they went off the screen too quickly.  I edited SPI to allow changes in the increment, adding the variable GROW, and I showed Ray how to use it.
+
+Ray liked the effect of the tighter spirals -- especially the emergent designs, which became apparent with small increments.  He tried 1 400 1, 1 400 3, 1 401 1, focussing now on the effect of changing the numbers, rather than on the numbers themselves.
+
+.epage 1
+Ray came in with his idea for class 22: "Can I put SPI and POLY together?" (I told him he could if he used the POLY first.)  I had also made up a worksheet for him which listed a few POLY and SPI designs, and left space for him to write down some "interesting" numbers of his own choosing.  He worked with these activities for a solid hour, asking for help at only two points, writing down several "good numbers" on the chart I had given him.  He liked one of the designs a lot, SPI 10, 150, 2, and called people over to see it.  At the end of the class he spontaneously punched holes in his papers and put them carefully in his notebook.  Today Ray's explorations were much more systematic:  changing only one variable at a time.
+.nofill
+
+.block 14
+POLY		SPI
+
+SIZE	ANGLE	SIZE	ANGLE	INCREMENT
+
+50 	100	10	30	2
+50	35	10	45	2
+50	49	10	150	2
+		10	300	2
+		10	100	1
+		10	200	1
+		10	300	1
+		10	400	1
+		10	500	1
+	Ray's 	10	150	1	
+	Favorite
+
+(See figure, R-6)
+
+.adjust
+In session 23, I gave Ray another procedure, LPOLY, with which he could make symmetrical shapes.  After using this a while, he went back to SPIs.  This time, focussing on the emergent spirals.  He had drawn SPI 1 250 2, and when I suggested making a small change in the "middle number", he followed through by using 245, 235, 225 and 215, in sequence.  I also showed him how varying the third input could create quite different effects, by decreasing the density of the design.  (See figure R-7)
+
+In this class, Ray began to use animation again as well.  He was finally becoming comfortable with the computer.  Although he was not defining procedures, he was engaging in significant mathematical explorations, and, best of all, feeling that he was in charge.
+
+In session 24 he continued to use right and left POLYs some of his favorite SPIs, and animation.  He learned that he could animate anything, using his NKP procedure, just by typing MAKE "FB SNAP, and then typing NKP -- which would animate whatever had been on the screen.  He also asked me to write down the WRITE command in his notebook.
+
+At the end of the period, he came over to where Gary was working and asked what he was doing.  This was the first time he had taken an obvious interest in anyone else's work.  In addition, he very carefully made sure to remind Gary: "better make sure to write your file before you say GOODBYE"  thus letting it be known to one and all that "he knew what it was all about" as well as anyone.
+
+.epage 1
+The next class was "visiting day" and Ray brought Paul, a seventh grader.  He showed Paul how to use POLY and SPI procedures and a few other procedures: NKP, SAM and RG.  Together they tried out different inputs to POLY and SPI.  Ray both referred to his notebook for ideas about what to try, and wrote down new ideas as he went along.  Ray stuck stricktly to what he was comfortable with:  POLYs, SPIs and moving his rocket.  He and Paul had a wonderful time, and both came away feeling wonderful.
+
+This turned out to be Ray's last class.  He truly went out in a "blaze of glory".  I feel that if I had understood how afraid of failure Ray was, and how important it was for him to have only one thing to vary at a time, I could have gotten him "hooked" much earlier.  Although he did not define any more procedures of his own, or do any "planning and debugging", Ray had finally achieved the first prerequisite for any success with the computer.  He had found a way to be in charge.  I honestly believe that continued progress would have been made, if there had been several more classes.
+
+One last "footnote" about Ray.  When the classroom teachers were interviewed, they felt that the computer experience had had a profound effect on Ray. A quote from one of his teachers:
+
+.indent 6
+"There was a breakthrough with Ray...He hasn't connected all year...been floating, not that there is any resistance or hostility, but just no connection...(he) was probably swamped by the reading required this year...The breakthrough for him in LOGO, the success he has had, is powerful information for me...he has produced the best piece of writing I've seen from him...His physical arrangement has changed, he was isolated in the room before, now he sits with others."
+
+.indent 0
+

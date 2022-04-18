@@ -1,0 +1,200 @@
+INTRODUCTION TO TURTLE GRAPHICS AND PROCEDURE WRITING
+
+COMMANDS
+
+FD.  Forward.  This command requires an input* of a number,
+e.g. FD 100.  This command will cause the turtle to move in
+the direction of its heading* the specified number of turtle
+units.  See what happens if the command is typed
+without an input.  Note that the turtle* does not move and	
+the error message* "FORWARD NEEDS MORE INPUTS" appears on
+the screen.  
+BK.  Back.  This command also requires an input of a number,
+e.g. BK 100.  This command will cause the turtle to move
+away from the direction of its heading the specified number
+of turtle units.  
+RT.  Right.  This command requires an input of a number,
+e.g. RT 90.  The input corresponds to the degree measure of
+the angle the turtle is to turn.  Remember that "right"
+means that the turtle will turn right the specified number
+of degree relative to a given heading.
+LT.  Left.  This command requires an input of a number, e.g.
+LT 90.  The command operates jusyt like the command "RT"
+except that the turtle turns left relative to its heading.
+PU.  Pen up.  This command allows you to move the turtle
+without indicating a line on the screen.
+PD.  Pen down.  This command causes the turtle to resume its
+practice of drawing lines on the screen as it moves about.
+ST.  Show turtle.  This command causes the turtle to be
+visible on the screen.  The turtle is representred in the
+form of an arrow point and is pointing in the direction of
+its heading.
+HT.  Hide turtle.  This command causes the turtle to be
+invisible on the screen.	
+CS.  Clear screen.  This command clears the screen. 
+WRAP.  Wrap.  This command permits you to give large inputs
+to the FD and BK commands without generating the "OUT OF
+BOUNDS" error message (see (3) below).  Instead, LOGO will
+"wrap" the out of bounds portion ofits trip back onto the screen.
+SOME COMMON BUGS
+
+(1) If you forget to specify an input to FD, BK, RT or LT,
+LOGO will generate an error message, as explaiuned in the
+definition of "FD" above.
+(2) If you forget to leave a space between any of the above
+commands and the number given as input,e.g. you type
+"FD100",  LOGO will generate the error message "YOU HAVEN'T
+ TOLD ME HOW TO FD100".  What has happened is that LOGO has
+read the LOGO word* "FD100" as a would-be user-defined
+procedure.
+(3)If you give FD or BK an input that would take the turtle
+off the screen, LOGO will generate the error message "OUT OF
+BOUNDS".  You can prevent this by using the LOGO command
+"WRAP".
+
+TERMINAL SESSION
+
+This terminal session* will introduce you to the basics of
+turtle* graphics and procedure* writing.  The object of the
+session will be to get LOGO* to draw a simple house [figure
+here] and to teach LOGO the procedure HOUSE.  Typical bugs*
+are included in the session to give you an idea of what is
+likely to arise when you  make drawings and define
+procedures on your own.  "Big ideas"* relevant to solving the
+problem will also be introduced, so that you will acquire
+some ideas of the style of procedure writing since these
+ideas are ideas that are typically useful in planning and
+executing such projects.
+				
+Type LOGIN.  When the question mark (?) appears on the
+screen, LOGO is ready to receive a command.  Right at the	
+outset you have a choice.        You can either set out to trace
+out the unsubdivided house figure as shown above (this is
+typically how children first draw such figures) or you can
+use the "big idea" of "Divide and Conquer" and break the
+problem down to one of drawing a square and a triangle and
+then figure out how to brig them together to draw a house.
+While the first method is fine as a beginning approach
+(children often make quite elaborate drawings using it), we
+will follow out the second since it will serve us as a
+paradigm for using subprocedures when, at the end of this
+session, we discuss how to write a program* we shall call
+HOUSE to draw the figure shwon above.
+
+First, let's draw a square.  So that we are able to follow
+the turtle as it draws our figure, first get it to appear on
+the screeen.  To do this, type ST.  Note that when the
+turtle first appears, it is situated in the middle of the
+screen, pointing upwards.  It should be easy to see that the
+following steps should give us a square with sides of 100
+turtle units length:
+
+     ?FD 100
+     ?RT 90
+     ?FD 100
+     ?RT 90
+     ?FD 100
+     ?RT 90
+     ?FD 100
+
+Now, let's draw a triangle.  You might like to experiment on	
+your own first by covering the following steps:
+
+     ?FD 100
+     ?RT 120
+     ?FD 100
+     ?RT 120
+     ?FD 100
+
+Did you mistakenly give RT an input of 60?  Remember that
+you have to tell LOGO the number of degrees that the turtle
+has to move, not how many degrees that the angle to be drawn
+will measure.
+
+We now have a squqre and a triangle.  If you just type in
+the commands as listed above the turtle will draw, not a
+house, but the following.  This is a bug* which needs now to
+be analyzed and corrected ("debugged").  There are a number
+of solutions that may occur to you.  The following is only
+one.
+
+If we first reorder the steps to make a square, thus:
+
+     ?RT 90
+     ?FD 100
+     ?RT 90
+     ?FD 100
+     ?RT 90
+     ?FD 100
+     ?RT 90
+     ?FD 100
+
+Note that this approach has the advantage of leaving the
+turtle facing in the same dire4ction as i8t was when we
+started.  If now we add the steps for the triangle, the
+turtle will draw this*		
+[figure]
+
+
+
+
+
+Clearly, it is necessary to make the turtle change direction
+before advancing another 100 steps.  With a little
+experimentation, you should arrive at the following list of
+commands for the house figure we set out to draw:
+
+     ?RT 90
+     ?FD 100
+     ?RT 90
+     ?FD 100
+     ?RT 90
+     ?FD 100
+     ?RT 90
+     ?FD 100
+     ?RT 120
+     ?FD 100
+     ?RT 120
+     ?FD 100
+
+It would be a good idea to return the turtle to its original
+heading.  Can you figure out which comand with what input
+will accomplish this?
+
+TO HOUSE--WRITING A PROGRAM
+
+COMMANDS
+
+TO.  This command followed by a LOGO word causes LOGO to
+enter the procedure-writing mode*.
+END.  This command tells LOGO that a procedure has been defined.  
+
+If you wanted to draw the particular house shown in figure
+___ or to use this house in a composite figure or drawing
+you could, of course, just include the above steps each
+time.  This , however, would entail a tremendous expenditure
+of time.  What you can do is to write a program that
+includes the above steps, allowing you to produce the house
+figure on the screen merely by typing HOUSE (or whatever
+name you choose to call the program--just so slong as there
+is no LOGO command or previously defined procedure by this
+name).  
+
+Type the word TO followed by the name you have chosen to
+give the program, say, CASA.  LOGO is now in
+procedure-writing mode [?].  
+
+You could now type in all the steps, type "END" at the end
+and, wiothout further ado, have a program "TO CASA" which
+will cause the turtle to draw a house each time you type
+"CASA".
+Note that you should only type the procedure name--and NOT
+the LOGO command "TO" when you want the program to be executed.
+
+If you had wanted to, you could have labelled sections of
+the program.  For example, you might have wanted to label
+that part of the program that draws a square as "SQUARE:"
+and that part of the program that draws a triangle as
+"TRIANGLE:". Or you may have wished to label each line
+separately.  Or you may have wished to do both. You can use
+any LOGO word followed by a colon as a label. 

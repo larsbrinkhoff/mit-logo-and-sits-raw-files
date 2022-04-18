@@ -1,0 +1,456 @@
+.xgp
+.font 0 30vr
+.font 1 37vrb
+.ds
+.ce
+1Student Profiles; AJ0
+
+AJ is considered to be an average student by his teachers.  (His most
+recent scores on the standardized tests given to all sixth graders
+place him in the 51st percentile nationally.)  He is a quiet, well
+mannered student, serious in his work, and well liked by his
+classmates.  When asked questions about himself or asked to explain his
+thinking, he tends to respond with brief statements, or to be non-committal.
+
+AJ thoroughly enjoyed working with the computer, and became deeply
+involved with computer activities at the very first class.  
+He rarely seemed to be at a loss or to need help in choosing an activity.
+He quickly
+became adept at moving the turtle around the screen, and using it to
+draw simple pictures.  He usually worked on his own, rarely asking for
+help, often working on a number of different small tasks during the
+course of a single class period.  Although he did tackle a couple of
+longer animation projects, he seemed most comfortable with shorter
+tasks that he could carry out without assistance.  AJ seemed to be
+largely unaware of the work of other students, concentrating deeply on
+his own activities.  
+
+Although AJ was successful in driving the turtle and in carrying out
+many small projects, he had difficulty in using subprocedures and
+variables, and in planning his work more than one step at a time.
+Within these limitations, he himself was extremely satisfied with his
+work, and expressed a strong interest in continuing to work with
+computers next year.
+
+.block 5
+1I - AJ's work in Turtle Geometry0
+.br
+AJ began his LOGO experience by "driving the turtle" with great
+proficiency.  In his first session of LOGO, AJ was able to use PENUP
+and PENDOWN to try out steps experimentally.  He readily used FORWARD
+and BACK, and RIGHT and LEFT as inverses, estimated distances and
+directions, and aggregated two forward steps into one (combining FD 35
+and FD 23 into one step by typing FD 58).  He made use of 90 degrees
+turns quite expertly to move the turtle into parallel positions, and at
+one point used a 45 degree turn to create a diagonal line.
+
+In the third
+class he made the computer draw a complex "face" by direct commands.
+The next two classes were spent writing and debugging lengthy
+procedure which drew the face.
+(These large spaces will be cut in half automatically when profile is
+finally written single spaced)
+.block 18
+.sp 16
+.ce
+Figure A-1
+
+In drawing his face, AJ used 90 degree turns in
+"driving the turtle" to different locations on the screen.  This
+enabled him to keep the different features of the face parallel to each
+other.  On the other hand, the repeated turns, as if manoeuvering on a
+grid, made it difficult for AJ to consolidate his steps, or to easily
+understand the purpose of each step or of a series of steps in his
+procedure.  He drew his design by trial and error, and
+then incorporated all the steps into his procedure by copying them
+into his notebook.  He did not copy exploratory steps
+which were carried out with PENUP.  Since
+some PENUP steps were needed to move the turtle over, and others were
+exploratory, and not needed in the final design, AJ experienced some
+confusion in figuring out which steps to include and which to
+eliminate.  This led to bugs in his procedure, which were difficult for
+him to understand.
+
+AJ also had difficulty deciding whether to use a circle that curved to
+the right or to the left for the interior features of his face.  He
+could get the turtle to the point where he wanted the eye drawn, but
+seemed unable to predict consistently whether the LCIRCLE or RCIRCLE
+command was needed to place the circle where he wanted it.  He explored
+by trying the circle first with PENUP, then repeating it with PENDOWN if it was
+right, or choosing the reverse circle if it came out in the wrong
+place.  This created more possibilities for copying errors and further
+complicated the process of debugging the final procedure.
+
+In the sessions that followed, AJ continued to move the turtle around
+the screen by creating a kind of "grid" composed of 90 degree turns.
+AJ made use of angles other than 90 degrees only when
+they were specifically needed for particular shapes.
+
+In class #6 AJ decided to make a five pointed star.  After several
+unsuccessful tries his teacher suggested that he use the REPEAT
+command, repeating a forward step and a turn five times, and then varying
+the angle to find the correct rotation.  
+Starting at 60 degrees, it took him seven tries to find the correct angle:
+he tried 60, 110,
+150, 140, 145, 143 and finally was completely successful with 144.  For
+the last three steps, the teacher suggested that he hide the turtle
+each time, to see if the star was "exactly right".
+
+.block 12
+.sp 10
+.ce
+Figure A-2
+
+In class #  AJ decided to have the computer draw his initials.  His
+problems with this project
+illustrate difficulties
+understanding the state of the Turtle and the use of subprocedures.  He
+was encouraged to make an A and a J as separate figures and then write
+a subprocedure putting the two initials together.
+
+In making his A, AJ estimated by eye, getting very close to a
+symmetrical A.  He first turned the turtle 20 degrees to the right, and
+made the first leg of the A.  He then used 144 (borrowed from his star)
+degrees for the vertex angle.  (A rotation of 140 degrees would have
+made an exactly symmetrical A.)   
+The rest of the design remained skewed at 4 degrees from the
+vertical and horizontal axes.
+
+Although making the subprocedure J posed no great problem for AJ,
+putting the A and the J together proved to be more difficult.
+AJ usually worked on a turtle geometry project by trying out all the
+steps first, and then copying them over to make a procedure.  He used this
+approach for making both of the letters for his initials.  When he
+came to making a procedure to put them together, however, he did not
+seem to realize that he could work in the same step-by-step manner,
+using the subprocedures, A and J as though they were direct commands.
+Instead he wrote the procedure first, then tested and debugged it.
+
+In addition to not realizing that he could use the A and J as though
+they were direct commands, AJ had difficulty realizing how the state of
+the turtle effected the position of the J.  Although he had an
+excellent grasp of the state of the turtle as it related to forward,
+back right and left commands, he seemed to lose track of it as it
+related to a procedure -- a combined sequence of commands.  This was
+similar to the problem he had in predicting where the RCIRCLE and
+LCIRCLE commands would draw certain features of his face in an earlier
+project.
+
+An analysis of AJ's separate procedures to draw an A and a J is shown
+below.  The turtle starts drawing the A at point 1.  It finishes the A
+at point 2.  It starts and finishes the J at points 3 and 4
+respectively (see figure A-3).  In his work however, AJ seemed unable
+to take these features of his subprocedures into account.
+.block 9
+.sp 7
+.ce
+Figure A-3
+
+.epage 1
+It took AJ seven tries to achieve his procedure MAME (he wanted to use
+the title "NAME", but NAME is a LOGO command).  Although each try got
+closer to the desired result, the whole approach seemed devoid of
+planning.  Figure A-4 shows the sequence of trials.  The dotted line on
+the left shows where the turtle moved before making the J.  The
+figure on the neighboring page shows the result of each attempt.
+
+.block 5
+1II - AJ's Learning of Computer Programming0
+.br
+AJ quickly understood basic turtle commands, and the idea of combining
+a string of turtle commands to write a procedure.  As we have seen, he
+developed a
+strategy of trying out a sequence of direct commands, and, if he liked
+the design, copying the entire list of commands to make a procedure.
+He easily learned to edit procedures to correct spelling or syntax
+errors and became proficient with filing.  On the other hand, AJ had
+difficulty debugging procedures where he had errors of substance rather
+than syntax.  His programming work, when carried out independently
+often suffered from a series of related confusions.
+
+.ss
+1--he failed to use step-by-step analysis of his
+procedures as a debugging tool; 
+
+1--0he had difficulty understanding the
+role of subprocedures as separate entities; 
+
+1--0he
+used both recursion and variables in a "mechanical" fashion, without
+really understanding how they worked.  Each of these will be discussed
+in more detail in the paragraphs that follow.
+
+.ds
+In the third class, AJ used the turtle to draw a rather involved
+"face".  He copied down more than 35 steps in writing a
+procedure called KEITH.  (See figure A-1).  When copying errors -- the
+omission of two or three necessary steps -- led to bugs, AJ was unable
+to resolve the problem without help.  He was shown how to use the STEP
+command, and was able to successfully edit his procedure using it.
+However, in later work, he rarely applied this approach on his own --
+preferring to start over completely, rather than go through a step by
+step debugging.
+
+While AJ learned how to use previously defined procedures as building
+blocks, he had great difficulty using the idea of subprocedures in his
+planning.  He seemed to have a fixed idea of a procedure as a
+sequential list of commands.  When a procedure was used as a
+subprocedure, he seemed to lose track of how it fit into his overall
+purpose.  An example of this, his "initials" project, was discussed above.
+
+In another project -- making a "spacewwar" animation in which a "UFO"
+orbited around a "planet", while shooting at it, AJ used subprocedures at
+the teacher's suggestion.  When bugs occured, he had difficulty
+realizing which subprocedure as at fault.  He put subprocedures in the
+wrong places often using them more than once.  He needed a good deal of
+help to debug his procedures successfully.
+
+It was not until the last few classes that he began to incorporate
+subprocedures into his work independently.
+
+A simillar situation occured in AJ's work with recursion.  He easily
+learned to use recursion in a "cliche" form, but had difficulty
+debugging improper uses of recursion.  During class #12, for example,
+AJ created a number of recursive "designs".  One of them, FLAIT, was
+intended to produce an effect something like an asterisk.  First he
+defined one "ray" of the asterisk:
+
+.ss
+.nofill
+.indent 6
+.block 7
+TO FLAIT
+1 FORWARD 56
+2 RIGHT 90
+3 FORWARD 2
+4 RIGHT 90
+5 FORWARD 56
+END
+
+.ds
+.indent 0
+.adjust
+What he needed to do was to rotate the turtle, and use recursion to
+repeat the whole process.  What he did was to add the recursion
+line without including the necessary rotation:
+
+.ss
+.indent 6
+.nofill
+.block 7
+TO FLAIT
+1 FORWARD 56
+2 RIGHT 90
+3 FORWARD 2
+4 RIGHT 90
+5 FORWARD 56 FLAIT
+END
+
+.ds
+.indent 0
+.adjust
+
+When this version of FLAIT did not produce the desired effect, AJ tried
+to use it as a subprocedure of 9FLAIT:
+
+.ss
+.indent 6
+.nofill
+.block 11
+TO 9FLAIT
+1 FLAIT
+2 FLAIT
+3 FLAIT
+4 FLAIT
+5 FLAIT
+6 FLAIT
+7 FLAIT
+8 FLAIT
+9 FLAIT
+END
+
+.ds
+.indent 0
+.adjust
+He was surprised that 9FLAIT was exactly the same as FLAIT, and gave up
+on his attempt.  Several weeks later, however, when asked why 9FLAIT
+and FLAIT were the same, AJ responded quite easily:  "Because FLAIT
+never stops," indicating that he realized that only line 1 of 9FLAIT
+was ever executed.  He never did understand his original bug --
+forgetting to put a rotation before the recursion line in FLAIT.
+
+AJ also learned to use variables to change the angle or size of a given
+predetermined shape.  He was able to debug problems that arose due to
+syntax errors -- but had difficulty with those that had to do with a
+misconception of the purpose of the variable or the way in which it was
+assigned.
+
+In class #6, AJ taught the computer to draw a 5-pointed star.
+
+.ss
+.indent 6
+.nofill
+.block 12
+TO STAR
+1 FORWARD 100
+2 RIGHT 144
+3 FORWARD 100
+4 RIGHT 144
+5 FORWARD 100
+6 RIGHT 144
+7 FORWARD 100
+8 RIGHT 144
+9 FORWARD 100
+10 RIGHT 144
+END
+
+.ds
+.indent 0
+.adjust
+Later, during class 10, he was shown how to make a star of variable
+size by substituting :SIZE for the value 100 in all the forward steps,
+and using :SIZE in the procedure title.  His new procedure was:
+
+.ss
+.indent 6
+.nofill
+.block 6
+TO AS :SIZE
+1 FORWARD :SIZE
+2 RIGHT 144
+3 FORWARD :SIZE
+4 RIGHT 144
+END
+
+.ds
+.indent 0
+.adjust
+Later, however, AJ had difficulty applying this idea to the task of
+designing a racetrack.  He was creating a shape consisting of two
+boxes, one inside the other, and realized that it would be convenient
+to have a procedure that could draw boxes of different sizes.  He had
+begun his work by moving the turtle from the origin to the lower left
+hand corner of the screen, and drawing a large box, using these steps:
+
+.ss
+.nofill
+.block 4
+PU LT 90
+FD 200		These steps move the turtle over
+RT 90		to the lower left handcorner of
+BK 200		the screen.
+
+
+.block 7
+PD FD 375
+RT 90
+FD 375
+RT 90		These steps draw a box with
+FD 375		sides of 375.
+RT 90 FD 375
+RT 90
+
+.ds
+.adjust
+When it was suggested to AJ that he make a variable box procedure, he
+followed the same process he did with his STAR:  he copied the steps,
+substituting :SIZE for the originally fixed length in all the forward
+steps, without changing the RIGHT or BACK step.  His procedure
+included the steps needed to move the turtle over, as well as those
+needed to draw the box:
+
+.SS
+.INDENT 6
+.NOFILL
+.block 13
+TO BX :SIZE
+5 PU LT 90
+10 FD :SIZE
+15 RT 90
+20 BK 200
+25 PD FD :SIZE
+30 RT 90
+35 FD :SIZE
+40 RT 90
+45 FD :SIZE
+50 RT 90 90 FD :SIZE
+55 RT 90
+END
+
+.ds
+.adjust
+.indent 0
+When this produced an
+off-center box, AJ was mystified.  With help he debugged this, step by
+step, and eventually got a "Box" procedure that "worked".
+He never did understand his
+original error -- not clearly differentiating between the parts of his
+procedure that "moved over," and the parts that "drew the box,".  Thus
+he was confused both about the use of variables to replace fixed steps
+in variablizing a procedure, and about separating his problem into
+subprocedures that had different functions.
+
+AJ's problems were compounded by the fact that he rarely asked for
+help.  He asked for assistance only when totally frustrated.  By that
+point he had usually tried so many alternatives that he was no longer
+aware of what his original difficulty had been.  In a class in which
+the other three students (David, Holly and Tammy) were extremely
+demanding, AJ, working quietly and confidently on his own, tended to
+get lost.  The problems he encountered remained confusions, and were
+rarely used as vehicles to help him improve his understanding, planning
+and organization.
+
+.block 5
+1III -- AJ's Work on Animation Projects.0
+.br
+Work involving animation of different kinds was a major theme of AJ's
+LOGO experience.  He began incorporating SPINs in his designs in the
+second and third class.  In the seventh and eighth classes he developed
+a "Starwars" project that involved using positive and negative SPINs to
+draw a UFO orbiting around a planet.  This project also made use of
+display commands, SNAP, DISPLAY and RUBDIS to create a shooting effect,
+and to make the planet disappear.  In class 14 he drew a car, and
+animated it using SPIN and MOVET.  He then got very absorbed
+in the process of designing tracks for the car to "race" on.  In class
+18 AJ animated a GOCART procedure using MOVET.  His major problem was
+in aiming the turtle so that the car was properly oriented and moving in the right
+direction.
+
+In class 19 AJ was given procedures to animate the turtle, and shown
+how to write a procedure that would allow him to change the turtle's
+motion by typing letters on the keyboard.  He was given the procedure
+DT, and the idea for the procedure CHANGE.  (KEY was given to him as a
+"primitive" which "tells which key on the keyboard you typed.")  The
+procedures were:
+
+.ss
+.nofill
+.block 7
+TO DT		TO CHANGE
+10 MAKE "D 10	10 MAKE "LETTER KEY
+20 PENUP	20 IF :LETTER = "R RIGHT 20
+30 FORWARD :D	30 IF :LETTER = "L LEFT 20
+40 CHANGE	40 IF :LETTER = "F MAKE "D :D+10
+50 GO 30	50 IF :LETTER = "B MAKE "D :D-10
+END		60 IF :LETTER = "C RCIRCLE 20
+		END
+
+.ds
+.adjust
+AJ himself chose the letters to use in CHANGE and decided what changes
+would occur when those letters were typed.
+
+Now AJ settled into an area that he could understand -- designing
+racetracks for the moving turtle.  He designed several:  one was box
+shaped, another oval, a third an oval with a figure eight in it.
+Throughout AJ's work with animation it was clear that he was not
+especially concerned with how the animation occurred, but rather with using the
+animated object in a context of his own design.  Therefore the last
+activity, where AJ was given procedures with which he could carry out
+a variety of projects, was the most successful.  Although he could
+explain how the procedures DT and CHANGE worked, he could not derive
+similar ones himself.  He did change the effect, by editing
+CHANGE several times to alter the angle turned, or the
+amount the distance increased and decreased and to add a new procedure
+which made the turtle jump instantaneously across the screen.
+

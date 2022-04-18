@@ -1,0 +1,55 @@
+(declare (special c= c# d d= d# e e= f= f# g g= g# a a= a# b b=))
+(setq c= 1.0s0 c# 1.0595s0 d= 1.1225s0 d# 1.1892s0 e= 1.2599s0 f= 1.3348s0
+      f# 1.4142s0 g= 1.4983s0 g# 1.5874s0 a= 1.6818s0 a# 1.7818s0 b= 1.8877s0)
+(setq d c# e d# f e= e# f= g f# a g# b a# c b= b# c=)
+
+(defun make-note (pitch dur &optional (spacer 0))
+  (let ((rest (* spacer dur)))
+    (let ((note-val (- dur rest)))
+      (sys:%beep pitch note-val)
+      (sys:%beep 1 rest)
+      )
+    )
+  )
+(defun standardize-note (a &aux (p 0) (d 1) (o 0))
+  (cond
+    ((atom a) (setq p (eval a)))
+    (t (selectq (length a)
+	 (1 (setq p (eval(caar a)) d (cadar a)))
+	 (2 (setq p (eval (car a)) o (cadr a)))
+	 (3 (setq p (eval (car a)) o (cadr a) d (caddr a)))
+	 ) ) ) 
+  (list p o d)
+  )
+
+(defun play-note (a &optional (pitchmod 1) (durmod 1) (spacer 0))  
+  (let ((a (standardize-note a)))
+    (let ((p (car a))
+	  (o (cadr a))
+	  (d (caddr a)))
+      (make-note
+	(fix (* 1350 (* (// (* (// p e=)
+			       (cond
+				 (( o 0) (^ 2 o))
+				 (t (// (^ 2.0s0 (- o))))
+				 ))) pitchmod)))
+	(fix (* 400000 d durmod))
+	spacer
+	)
+      )
+    )
+  )
+
+(defun melodize (l &optional (pitchmod 1) (durmod 1)(spacer 0))
+  (mapc (function (lambda (note) (play-note note pitchmod durmod spacer))) l)
+)
+
+(setq marsintro '( (g= -1) (g= -1 3) (g= -1 1)
+	     (c= 0 4) ((c= 4)) ((d= 4)) ((d= 4))
+	     ((g= 7)) ((e= 1)) ((c= 3))))
+
+(melodize marsintro .7 6666666 .0000001 )
+
+(melodize marsintro .7 .6 .9999999)
+						
+(melodize marsintro .03 .6 )

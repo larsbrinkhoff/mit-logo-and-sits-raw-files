@@ -1,0 +1,287 @@
+Continuous Speech Recognition: Psychological, Physiological,
+and Engineering Aspects
+
+Richard F. Lyon -- January 30, 1979
+
+Abstract -- Yet another mushy speech recognition
+architecture is proposed, building on the best features of
+other systems known to the author.  This architecture first
+divides the problem cleanly into "peripheral" and "central"
+functions, to separate the autonomous function of the
+auditory pathways from the cognitive functions of
+recognition and understanding.  These divisions will
+henceforth be considered separately.
+
+The Peripheral processing model is strongly motivated by
+phychophysical and physiological models of the mammalian
+hearing apparatus.  This model is somewhat more complicated
+than most acoustic analysis schemes in that it includes
+layers that model wave propagation in the cochlea, signal
+transduction of the hair cells, adaptation and inhibition of
+primary neurons, and further "nuclear" processing which
+reduces the rate of featural information to be consistent
+with the cognitive model.  Many of the shortcomings of
+spectral analysis mentioned by Klatt [1] are believed to be
+overcome by this model.  Implementation of the model on a
+single VLSI chip is foreseeable.
+
+The Central processing model has been taking form recently,
+motivated both by the engineering concerns of fast searching
+with massive concurrency and by models of human cognitive
+processing (e.g. Newell's production systems [2]).  It seems
+clear that compilation of knowledge into entries in a large
+memory with fast and powerful associative capabilities is
+the right general model, but the specifics are vague.  An
+interesting engineering observation is that whatever the
+architecture, the silicon real estate dedicated to storing
+the knowledge net will dominate the area needed for custom
+logic to do the associative functions (in a Harpy-like
+system, this will be true even if the size of the search
+beam is 100% of the states).  Thus, the cost of this
+very-smart memory is not much more than stupid memory!
+
+
+[1] Dennis Klatt.  Speech Perception: A Model of
+Acoustic-Phonetic Analysis and Lexical Access.  [2] Allen
+Newell.  Harpy, Production Systems, and Human Cognition.
+both in R. Cole (ed.) Perception and Production of Fluent
+Speech, Erlbaum (forthcoming).
+
+
+
+Speech Recognition: an Approach.
+
+(is it an AI problem?  cognitive science?  or engineering?
+who cares?  its all the same thing.)
+
+Acoustic Analysis / Peripheral Processing based on Ear:
+	Multi-layered Signal Processing.
+	Sound recognition: not limited to speech.
+
+Pattern Matching / Central Processing based on Brain:
+	Parallel Pattern Matching with Constraints.
+	Patterns may be words, phonemes, sentences, etc.
+
+
+
+Acoustic Analysis / Peripheral Processing
+
+Goal: Produce good feature vectors, at a rate just fast
+enough to represent perceived changes.
+
+Distance Measure and Feature Space Concepts:
+
+The concept of perceptually relevant distance is well
+understood, but has not been effectively attacked.  "Log
+power spectrum sum of absolute differences" is a typical
+distance measure.
+
+Feature space should be structured such that a simple
+Euclidean distance (L2 norm) is optimum.  Linear feature
+extraction techniques should suffice after a good analysis
+scheme.
+
+Pattern space is a "direct power" of feature space; i.e.
+patterns are sequences of feature vectors.  Distance measure
+in this space is more complicated, since time warping is a
+factor.
+
+
+
+Choice of speech analysis schemes:
+
+1.  Speech Production vs. Hearing Model motivation.  2.
+Incremental (continuous data flow) vs. Block Processing.  3.
+Frequency vs. Time Domain analysis.  4.  "Fast" vs. "Brute
+Force" algorithms.  5.  Choice of Suitability Criteria.  6.
+Parameter compromise (bandwidth, etc.)
+
+Examples:
+
+HARPY: Traditional block processed LPC, fast matrix
+formulation.
+
+SU/IBM (Morf): Incremental speech production (LPC) model
+based on frequency domain representation, time domain
+processing, with fast algorithms.
+
+LAFS/Scriber (Klatt): Hearing model, block frequency domain
+fast processing (FFT).
+
+IBM (Janet Baker): Time domain analysis (ZCC); fast but
+based on neither speech nor hearing.
+
+PARC (White) & Queen's University (Searle): Analog sharp 1/3
+octave filters, with envelope detection and logarithm:
+"based on human audition".
+
+PARC (Lyon): Hearing motivated; incremental brute force
+simulation of frequency and time domain response of ear.
+
+
+
+Simple Spectral Analysis by FFT:
+
+The method (Klatt): "Psychophysical filter bank" consists of
+overlapping critical band (1/3-octave) filters, covering 270
+to 5600 Hz.  Implementation is an FFT with power (absolute
+square) detection, then channels added together to form the
+critical band channels.  The outputs are the logarithms of
+the powers in each band.
+
+Some problems (adapted from Klatt): 1.  FFT block size
+tradeoff: maximize the accuracy of a spectral estimate while
+still retaining an ability to track the rapid spectral
+changes that occur in speech.  Whatever value is chosen (in
+10-30 msec), it will be too long to analyze short bursts ,
+and too short to resolve low pitch harmonics.  2.  Correct
+spread of masking requires asymmetric filter skirts and
+reasonable phase response, which are not easy to design
+using FFT.  3.  No adaptation to stationary signals, or
+enhancement of changes.  4.  Sudden onsets have no
+distinguishing representation.  5.  Logarithm flattens
+spectral peaks, emphasizes valleys.  6.  Provides no
+information about voicing vs. frication (periodic vs.
+aperiodic).  7.  The power intermediate result has twice the
+dynamic range of speech (varies by a factor of 1E+10, or 200
+dB).  8.  Low cost implementation by CCD chirp filter has
+other problems.
+
+
+
+A Signal-Processing Model of Hearing:
+
+Cochlea: A cascade of digital filters models wave
+propagation along the basilar membrane, using taps at 31
+points with CF from 200 to 6000 Hz.  Both phase and
+amplitude response are realistic.
+
+Hair Cells: Each frequency tap is half wave rectified to
+give a perceptually consistent representation of pitch, and
+to capture slight phase effects, dissonance and consonance,
+etc.  These signals are smoothed to about 1000 Hz, roughly
+neural bandwidth.
+
+Adaptation/Inhibition: These envelope signals are multiplied
+by a time varying gain controlled by a depletion/diffusion
+model of neural adaptation, giving a good tolerance to
+slowly varying phase and frequency distortion and loudness
+variation.  This also produces frequency sharpening, and
+time edge enhancement.
+
+Autocorrelation: For each envelope signal, the fine time
+structure representing periodicity pitch and timbre is
+demodulated into 8 to 16 slowly varying (30Hz)
+autocorrelation coefficients (analogous to Friedman's MDPML
+pitch estimation technique).  For binaural effects,
+crosscorrelation would be used also.
+
+Projection: The array of time delay vs. center frequency
+information is projected onto the cortex just like a visual
+image is, with time and space resolution comparable to
+foveal vision.  The potential for "visible speech" is
+obvious.
+
+Transformation: A linear transformation is chosen by
+heuristic pattern matching considerations to produce 8 to 16
+relatively independent featural dimensions from the array of
+parameters generated as described above.
+
+Ouptut: The output of the model is a sequence of 8- to
+16-dimensional feature vectors at 60 per second, to be used
+by the central processor to recognize sequences of sounds.
+
+
+Central Processing Model:
+
+Problem Statement: Search through all the things that might
+have been said, to find the one that most likely actually
+was said (conditioned on everything known).
+
+Some basic issues:
+
+1.  Representation of knowledge: precompiled (immediate) vs.
+procedural, etc.  2.  Search strategy: heuristic pruning
+(maybe knowledge driven) vs. brute force beam clipping vs.
+full search.  3.  Criteria for most likely--conditioned on
+what?
+
+
+
+The Associative nature of the problem (assuming precompiled
+knowledge):
+
+Many objects (phones, words, phrases, etc.) exist in the
+knowledge base.  Each such object should take responsibility
+for indicating when it thinks it matches the input.  The
+problem becomes the construction of a whole bunch of
+objects, and coordinating their activity.  Such massive
+concurrency and commingling of processing with memory is
+very suited to VLSI implementation.  PS.Harpy (on HPSA77)
+obtains massive concurrency from the matching fields in
+production memory.
+
+Claim: Concurrent pattern matching is the main activity of
+the brain, and should be the main activity of any
+recognition model, wheter for speech or whatever.
+
+
+
+Nets of phones or diphones: The precompiled representation
+of knowledge.
+
+HARPY uses phones, selected from a catalog of 96
+prototypical LPC spectra.  Paths through the network of
+phones correspond to syntactically legal utterances.
+
+LAFS uses networks of diphones (transitional spectra,
+including steady state as transition to self).  Paths
+through the network represent sequences of words from the
+lexicon, with no syntactic constraint.
+
+Both use Phonological Rules to convert from a rigidly
+stylized lexicon to a sequence of real sounds, as a
+precompilation phase.  Both search the net with a beam of
+some number of the best current possibilities.
+
+Network examples: Figures from Klatt and Newell.
+
+
+
+The Communications Decoder analogy: Perspectives,
+Strategies, Algorithms.
+
+Everything is a signal processing problem.
+
+Decisions are deferred as long as possible to take most
+advantage of processing improvement.
+
+Network search strategies and algorithms: sequential
+(beam-like), vs. Viterbi (full maximum-likelihood search),
+vs. reduced-state Viterbi (beam).
+
+What are the computational requirements?  Not bad, really.
+Each node only has to do O(branching factor) elementary ops
+per input interval (1/60 sec).  For 100,000 nodes and b=100,
+this is 600 M.op/sec, or 6 M.op/sec at each of 100 tiny
+silicon sites.
+
+What is the elementary op?  Select minimum and add new
+distance.
+
+What else needs to be computed?  Distances need to be
+calculated for each elementary op or for each prototypical
+feature vector (Harpy used only 96 of these).
+
+What's the catch?  The choice of which states to use as
+input to the minimization--not so easy for arbitrary nets,
+with non-local, irregular connections.
+
+
+
+Sufficiency tests:
+
+Is it any different from Harpy?  How?
+
+
+

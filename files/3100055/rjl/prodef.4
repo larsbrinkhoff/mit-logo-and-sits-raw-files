@@ -1,0 +1,92 @@
+LOGO PROCEDURE DEFINITION
+
+Word 0	Back pointer to binding node
+
+Word 1	Length of array
+
+Word 2	Type of array (PROCAR = 4) (if deleted procedure, -PROCAR)
+
+Word 3	Pointer to UOE (atom)
+
+Word 4	Count of references on the stack
+
+Word 5	Offset to end of procedure (relative to start of array)
+
+Word 6,7,8, and 9	Unused
+
+Starting at word 10. we have blocks sturctured as
+	length of block in bytes(always even, doesn't include self)
+	block of data
+
+The first two blocks are special:
+
+Word 10.	Length of first block, always 4
+
+Word 11.	Number of arguments to procedure
+
+Word 12.	CPSN (not used)
+
+Word 13.	Length of second block (list of variables)
+
+Word 14.	Number of arguments (again!)
+
+Word 15.-onwards	UVAR pointers to arguments
+
+Then come the procedure lines:
+
+Word n		Length
+
+Word n+1	Line number
+
+Word n+2 to whatever	Tokens for the line
+
+
+
+Stack frame for USER function call: (items listed in the order they are PUSHED)
+
+P pdl:
+
+First, the SAVEVL frame:
+
+	CPP	;Current Procedure Pointer; pointer to atom
+		;this is a node pointer, theoricially it is redundant
+	CPBND	;Current Procedure BiNDing; pointer to procedure array binding node
+		;this is an address, note a node pointer
+	NEXLIN	;Pointer to NEXt LINe to be executed; relative to start
+		;of procedure array. The low order bit, if set, indicates
+		;that NEXLIN is invalid because a GO has been done
+		;this bit is sometimes temporarilly set to make CONTINUE
+		;work properly in the case of a break
+	CLCNT	;Current Line CouNT; count of tokens left on the current line
+	CPLN	;Current Procedure LiNe number
+	CTP	;Current Token Pointer (actually points to next
+		;token to be execucted) realtive to start of procedure
+		;array
+	FLAGS	;FLAGS, too numerous to mention (yet)
+	CO	;Current Operator; function for whom args
+		;are currently being evaluated
+	CT	;Current Token; thing currently being evaluated
+	IFLEV	;IF LEVel; number of nested IF's
+	ERPROC	;ERror PROCedure; points to current ERSET procedure
+		;zero if none
+
+Then, the number of arguments to the function
+
+Then, the SAVPPS frame:
+	CSPDLP
+	CPDLP
+
+The low order bit of CPDLP is set to indicate that the frame on the
+stack is a procedure push frame. Note that this is not the CPDLP that
+was pushed but rather the new current CPDLP.
+
+On the S pdl:
+
+For each argument there are two words:
+
+	UOE (ATOM pointer) to the variable which has been pushed
+	pointer to old value of variable (0 indicates unbound)
+
+A RUN frame is exactly the same as a procedure frame except that
+the number of arguments is always zero and the DORF (Do (old name for RUN) Or Read
+Flag) is set in FLAGS. Again, this is the current FLAGS, not the one that gets pushed.

@@ -1,0 +1,670 @@
+Page Numbers: No
+
+Draft-1: Smalltalk: Dreams and Schemes, Chapter II Status: ready to edit, may
+need to put introduction of pseudo-variable, self, in this chapter; amusement
+park example will probably be replaced
+
+
+
+ II
+
+Smalltalk: Object-Oriented Programming
+
+
+
+
+
+A Model for Smalltalk
+
+The Smalltalk system is intended to serve as a vehicle for active description of
+the world around us.  It must provide a simple and expressive framework not only
+for the parts which make up that world or any other world which we imagine, but
+also for the ways in which those parts interact in the course of life as it is,
+or as we may choose to make it.  To this end, we have found the concepts of
+object (part), communication and classification to be both simple and powerful.
+Together, they comprise the basic framework for description in the Smalltalk
+language.
+
+In this chapter, we move from the living cell analogy of Chapter I to several
+simpler examples where we can clearly identify the notions of object,
+communication, and classification.  Preceding these examples, we look at issues
+which dominate in the design of a programming language, and Smalltalk's method
+for active description in light of those issues.  Finally, we define
+object-oriented programming, and point out specific differences between the
+Smalltalk system and the work of others.
+
+There are Only Objects
+
+The basic representation for information is called an object.  The term is
+chosen because it is a singular abstract noun connoting nothing but unity.
+
+An object demonstrates certain behavior.  Another way to say this is: an object
+is capable of responding to specific requests or messages.  Its behavior is
+defined by a set of templates or message patterns for messages which it can
+understand.  A message pattern describes several messages that differ only in
+their choice of arguments.  Symmetrically, objects can send messages to other
+objects, typically in response to a request.
+
+Objects can remember.  Since there are only objects, memory is in terms of
+objects.
+
+An object is defined by its state (memory) and its repertoire of behavior.  We
+construct these definitions synthetically when specifying simulations of a new
+class of objects.  We approach these definitions analytically when examining and
+using existing (system-provided) objects.
+
+Balancing the Hemispheres
+
+It must be pointed out before embarking on the importance of the notion of
+object, that there are two equally important ways to view the world: the
+holistic (right-brain, eastern) view which takes the world as it is--whole,
+perfect and out of time; and the analytical (left-brain, western) view which
+draws distinctions, makes comparisons and analyzes according to cause-effect
+relationships.
+
+The digital electronic medium brings with it a very divisionistic point of view,
+with a flute arpeggio or a sketch of a mountain scene being reduced alike to 1's
+and 0's.  As Smalltalk has evolved, we have worked with this divisionism in two
+main ways.  At the descriptive level, we have attempted to provide a simple and
+expressive model for the relationship of parts to wholes so that the process of
+building a system can draw on one's intuitive ability to synthesize and analyze.
+At the interactive level, where we are providing a human interface to the
+system, graphic aids such as menus, display viewports and a pointing device can
+carry much of the communication in an intuitive way, leaving the user free to
+focus his attention on what he wants to do.  We will return to this important
+subject of human interface after a deeper look at the descriptive elements of
+the language Smalltalk.
+
+The Principle of Modularity
+
+In our minds, we use many tools to reduce the unfathomable burden of dealing
+with a million bits of information.  Chief among these are:
+
+o	Distinction and the identification of objects,
+
+o	Separation of form from function, and
+
+o	Grouping of objects by similarity.
+
+It is not pure coincidence that modularity in Smalltalk springs from three
+analogous features of the language:
+
+o	Uniform reference to objects,
+
+o	Sending messages to obtain results, and
+
+o	Organization of objects into classes.
+
+In fact, the basic human ability to suppress detail in order to work effectively
+manifests as a principle for programming languages.
+
+No part of a complex system should depend on the internal details of any other
+part.
+
+In other words, as much as possible, the description should consist of many
+local descriptions, each small and easy to understand.
+
+Distinction and the Identification of Objects
+
+As we have said, all references in the Smalltalk language are to objects, which
+may be atomic or may consist of several named parts of its state, which refer in
+turn to other objects.  For example, a point in two dimensions could be an
+object consisting of two parts named 'x' and 'y'.  Each of these parts refers in
+turn to another object which (typically) represents a numeric value.  Note that,
+although the only truly atomic datum is the bit, it is often appropriate for
+such simple objects as names and numbers to be considered atomic.
+
+The principle of modularity dictates that, in a piece of code which reads the
+y-coordinate of a point p, nowhere should there be instructions such as: "load
+the second word relative to p," for this depends on how the point is
+represented.  In particular, such an instruction would perform improperly if it
+encountered a point represented in polar coordinates.  Smalltalk's solution to
+this situation is to allow the caller only to refer to the object p, and if a
+y-coordinate is desired, p must be asked to furnish it.
+
+Pure object reference establishes protection in the same way, for the only way
+to modify an object from the outside is to present it with a request for the
+modification.  Whether the request shall be granted or denied is entirely up to
+the object in question.
+
+Separation of Form From Function Through Messages
+
+The Smalltalk concept of message captures the notion of intent in programs, and
+serves as an interface between message senders and their receivers.  It is this
+interface which establishes the principle of modularity in Smalltalk.  Senders
+need have no knowledge about the objects to whom they send messages, other than
+that they respond appropriately to each message being sent.
+
+Communication is the metaphor for processing in the Smalltalk language.  Objects
+are created and manipulated by sending messages.  The same model describes
+activities ranging from ordinary arithmetic to communicating processes in
+separate machines.  To read a point's y-coordinate, send it the message
+readYValue; it will work for cartesian or polar points.  To change an employee's
+salary in a database, send the employee object the message changeSalary (you'll
+probably have to supply an authorization as well).
+
+The communication metaphor supports the principle of modularity, since any
+attempt to examine or alter the state of an object is sent as a message to that
+object; the sender need never know about internal representation.  For example,
+points represented in polar coordinates r and theta would have a method which
+responds to the message, y, by returning r multiplied by the sine of theta.
+
+The communication interface is not provided as a feature in the Smalltalk
+language; it is the fundamental metaphor upon which the system is constructed.
+When the expression 3+4 is evaluated, the message +4 is sent to 3.  Since all
+processing is done through communication interfaces, one can make changes or
+additions to very complex systems without getting caught in a maze of
+interdependencies.
+
+Grouping of Similar Objects By Class
+
+With data stored in objects, and process represented by the sending of messages,
+it is the concept of class which brings the two together in a form consistent
+with the principle of modularity.  Objects that respond to the same messages in
+the same way, and that share the same state description, can be grouped
+together.  We call the description of these objects a class description.
+
+Every object in Smalltalk is created as an instance of some class.  The class
+holds the representation of the fields for its instances, the messages to which
+they can respond, and methods for computing the appropriate responses.  The only
+information to be stored in an instance (besides its class) is the set of values
+for its named fields.  (This is the particular implementation of the
+object/message concept found in Smalltalk-76; other possible approaches are
+examined in subsequent chapters.  One alternative view of the grouping or
+classification scheme is that an object is specified in an object description
+that serves as a prototype for the object's behavior and parts of state; this
+prototype has values determined for its parts of state, not just a reference to
+potential parts; it is therefore less abstract than the class description.  The
+instance is a copy of the prototype that maintains its connection to any changes
+in the prototype's behavior, but controls changes to the values of its own parts
+of state.)
+
+For every type of object in the Smalltalk system, there is a class which
+describes it: Integer, String, Point, Rectangle; these are some of the classes
+which describe the basic data types in a typical Smalltalk system.  In class
+Rectangle will be found the names of the parts of state of a rectangle, the
+messages which are understood by rectangles, and the methods for responding to
+those messages.  The class is the natural unit of modularity; it describes all
+the external messages understood by its instances, as well as all the internal
+details about methods for computing responses to messages and the representation
+of data in the instances.
+
+Fruits of Modularity
+
+Adding a new kind of data to a programming system is soon followed by the desire
+to print objects of the new data type.  In many languages, this can be a
+difficult task at a time when things should be easy.  One is faced with having
+to edit the system 'print' routine which (a) is difficult to understand because
+it is full of details about the rest of the system, (b) was written by someone
+else and may even be in another language, and (c) will blow the system to bits
+if you make a false move.  Fear of this often leads to writing a separate
+'print' routine with a different name which then must be remembered, usually
+leading to an organizational rat's nest.  In an object-oriented system, on the
+other hand, printing is effected by sending a message to the object in question.
+Therefore the only place where code is needed is right in the description of the
+new kind of data (the new class).  If the new code should fail, there is no
+problem; the existing system is unmodified, and can continue to provide support.
+
+Suppose the parts of state of a Rectangle are corner and origin.  The code for
+moving a Rectangle would be more efficient if corner were relative to origin; in
+this way, the corner would not have to be relocated.  This could be accomplished
+by changing the parts of state from origin and corner, to origin and extent.
+The revised response to the message moveTo: pt would then eliminate the
+re-computation of the location of corner (that is, new corner is equal to old
+corner-origin+pt.)  In a conventional organization, once the response is
+revised, all the code in the system would have to be recompiled because it used
+to count on finding the corner coordinates as the second part.  In fact, most
+systems would require rewriting because access to the corner (which used to be a
+simple load or store) becomes a computation: compute origin+extent to learn the
+corner, or make extent equal to pt-origin in order to place the corner at point
+pt.
+
+The class and message discipline ensure that if the original message protocol is
+supported, then all code outside the class will continue to work.  Moreover, the
+only changes required will all be within the class whose representation is being
+changed.
+
+Modularity is not just an issue of "cleanliness."  If N parts depend on the
+insides of each other, then some aspect of the system will be proportional to
+N2.  Such interdependencies will interfere with the system's ability to handle
+complexity.  The phenomenon may manifest itself at any level; difficulty of
+design, language overgrown with features, long time required to make a change,
+or difficulty of debugging.  Encapsulating representation and message protocol
+in the concept of class establishes an organization which minimizes
+interdependencies.
+
+Defining an Object
+
+Let's take a closer look at this object-oriented semantics.
+
+Here is an object
+
+<==<chapter2-1.press<
+
+
+
+
+
+
+
+
+
+It has three message patterns with their methods (or programs) for responding to
+messages that match these patterns
+
+<==<chapter2-2.press<
+
+
+An object has state, parts that describe its properties.  This state
+distinguishes objects that may share the same behavior.  So the object looks
+more like
+
+<==<chapter2-3.press<
+
+
+
+
+
+
+
+
+
+
+
+The behavior of the object is described by message patterns and their
+corresponding methods,
+
+<==<chapter2-2.press<
+
+
+and the parts that specify the state.
+
+<==<chapter2-4.press<
+
+The behavior of an object is described in two segments: each message pattern is
+followed by a description of the intended response to that message.  These
+responses, or methods for responding to a message, may be described in terms of
+the object's state information.  One object in the system communicates with
+another object by sending it a message.  The response is typically made up of
+messages to itself, to other objects, or back to the original object; it may
+also include changes to its state.
+
+We could choose a better syntax for the description of the behavior in order to
+emphasize the two parts, the one that defines the language for communication
+among the objects (the message patterns) and the implementation of the messages
+(the methods).  For reasons that will become obvious later, we have chosen a
+dictionary-like format:
+
+<==<chapter2-5.press<
+
+
+
+
+
+
+
+We also add a list of items as the state description, and we add the name or
+title of the kind of object.
+
+Let's give this syntax a name: Dictionary, and talk about it as an object.  It
+has its own behavior, that of adding new message patterns, deleting messages and
+editing methods.  Whenever we create a new object, we provide a new Dictionary
+containing the message patterns and their methods.  Thus, an object will look
+like
+
+<==<chapter2-6.press<
+
+
+
+
+
+
+
+
+
+
+
+There are lots of objects in a system.  Each can carry around its own
+descriptions.  Or we could choose to implement the system in such a way as to
+share information about identical behavior.  Objects that respond to the same
+messages in the same way can be grouped together.  The state of an object
+distinguishes it from other objects that share the same behavior.  As introduced
+earlier, this classification of objects according to like behavior provides a
+powerful mechanism for creating a system consisting of thousands of independent
+yet inter-related and interacting objects.
+
+Example: Bank Account Objects
+
+To illustrate the idea of sending a message to an object in order to store or
+retrieve information, a record-like object for keeping deposits and withdrawals
+in a bank account is described using the above syntax.
+
+A description of the Bank Account object that resembles a record might be
+something like the following.
+
+
+title	BankAccount
+
+state	name number balance
+
+messages
+
+name: name number: number	Set the name and number of the account.
+
+balance	Return the current balance.
+
+balance_ amount	Store amount as the current balance.
+
+
+Suppose we create an object named savings that is a kind of BankAccount.
+Conceptually, the instance is created with a state dictionary of names and
+values, where each value is initially set to nil; nil is a special object
+denoting nothing.  savings' message dictionary is that of its class,
+BankAccount.
+
+title	savings
+
+state
+
+name	nil
+
+number	nil
+
+balance	nil
+
+messages
+
+name: name number: number	Set the name and number of the account.
+
+balance	Return the current balance.
+
+balance_ amount	Store amount as the current balance.
+
+Let's send the following sequence of messages to our new bank account object.
+
+savings name: 'S. Booker' number: 1234.
+
+savings balance _ 50.
+
+savings balance _ 100.
+
+savings balance _ 75.
+
+savings balance 75 
+
+We use the symbol  as a prompt symbol to indicate that Smalltalk is ready to
+receive the next message.
+
+The state dictionary for webster is now
+
+state
+
+name	'S. Booker'
+
+number	1234
+
+balance	75
+
+This object is not very interesting, indeed, it does nothing more than provide
+storage space for three items of information.  Suppose instead that we want to
+keep separate record of deposits and withdrawals.  In the description of
+BankAccountA, we have four parts of state; the name and number of the owner of
+the account, a running total of deposits, and a running total of withdrawal.
+Withdrawals can only be made if sufficient funds are in the account.  When an
+account is first opened, deposits and withdrawals are initialized to zero each.
+We have also added a reporting capability.
+
+title	BankAccountA
+
+state	name number deposits withdrawals
+
+messages
+
+init	Set deposits and withdrawals to 0.
+
+name: name number: number	Set the name and number of the account.
+
+deposit: money	Increase the value of deposits by money.
+
+withdraw: money	Determine if there is sufficient funds (is the difference
+between deposits and withdrawals greater than or equal to money?)  If there is,
+increase withdrawals by money.
+
+balance	Return the difference between deposits and withdrawals.
+
+report	Print out a bank statement: the name, number, total deposits, total
+withdrawals, and balance.
+
+Note, that in the above examples of message patterns, we have introduced some
+conventions having to do with the actual syntax of Smalltalk-76 as defined in
+Chapter VI.  In particular, message patterns are made up of literal parts
+(tokens) and parameter parts.  Tokens cannot have hyphens nor spaces, so we
+capitalize embedded English-like words to aid readability (BankAccount).  We
+have been capitalizing the first letter in the names of classes of objects
+(BankAccount), while using lower-case first letters for the names of instances
+(savings).  A unary message is a single token (balance).  If a parameter is
+expected, we attach a colon to the token (deposit:).  Multiple parameters are
+possible simply by specifying a sequence of tokens with colons and parameter
+names (name: x number: y).  We employ this syntax and these conventions now in
+order to avoid syntactic confusion later.
+
+We can send an instance of BankAccount, savingsA, the following sequence of
+messages.
+
+savingsA init savingsA name: 'S. Booker' number: 1234 savingsA deposit: 500
+savingsA withdraw: 100 savingsA balance 400 
+
+savingsA responds to the message balance by printing the value 400.  We might
+continue our transactions.
+
+savingsA withdraw: 200 savingsA deposit: 50 savingsA withdraw: 250 savingsA
+report
+
+S. Booker	 1234 Total Deposits: 550 Total Withdrawals: 550 Balance: 0
+
+
+
+savingsA responds with a report of the total transactions for this account.
+
+Now suppose reporting totals is not satisfactory for the bank customers who are
+complaining that they want to see an itemization of each deposit and withdrawal.
+We could modify the implementation of the object BankAccountA by defining
+deposits and withdrawals to be sequences of numbers; the computation of the
+balance and the report is somewhat more complex, but no change in the external
+view (the messages) is needed.  We have placed asterisks in the left margin to
+indicate where changes in the definition of a response to a message was made.
+
+title	BankAccountA
+
+state	name number deposits withdrawals
+
+messages
+
+*	init	Create deposits and withdrawals as empty sequences.
+
+name: name number: number	Set the name and number of the account.
+
+*	deposit: money	Store the value of money in the sequence deposits.
+
+*	withdraw: money	Determine if there is sufficient funds (is the
+difference between the sum of the deposits and withdrawals greater than or equal
+to money?).  If there is, store the value of money in the sequence withdrawals.
+
+*	balance	Return the difference between the total of all deposits and the
+total of all withdrawals.
+
+*	report	Print out a bank statement: the name, number, each deposit and
+the total deposits, each withdrawal and the total withdrawals, and balance.
+
+If we now create savingsA as an instance of this kind of bank account, and
+execute the messages presented earlier, then the only difference apparent to the
+message sender will be the result of the message report.
+
+savingsA report
+
+S. Booker 1234
+Deposits: 500 50				Total Deposits: 550 Withdrawals:
+100 200 250	Total Withdrawals: 550 Balance: 0 
+
+Of course, the customers are still complaining: They want to see more
+information about each transaction, at least the date.  Again, without changing
+the message patterns and thereby not having to change any users of BankAccount
+objects, we redefine its implementation.  This time, however, we provide
+additional kinds of objects, a Deposit and a Withdrawal; these objects will hold
+appropriate information about each transaction such as the date.  We then
+require that the bank account maintain a sequence of the Deposits and
+Withdrawals.
+
+
+
+title	Deposit
+
+state	date amount
+
+messages
+
+	on: date value: amount	Store the record of this deposit.
+
+print	Print the stored information.
+
+	value	Return the amount of this deposit.
+
+
+
+title	Withdrawal
+
+state	date amount
+
+messages
+
+	on: date value: amount	Store the record of this withdrawal.
+
+print	Print the stored information, showing a negative amount.
+
+	value	Return the negative of the amount of this deposit.
+
+
+
+title	BankAccountB
+
+state	name number transactions
+
+messages
+
+*	init	Create transactions as an empty sequence.
+
+name: name number: number	Set the name and number of the account.
+
+*	deposit: money	Create a Deposit for today with money as the amount.
+Store this new Deposit in transactions.
+
+*	withdraw: money	Determine if there is sufficient funds (is the
+difference between the sum of the deposits and withdrawals greater than or equal
+to money?)  If there is, create a Withdrawal for today with money as the amount.
+Store this new Withdrawal in transactions.
+
+*	balance	Return the the total of all transactions.
+
+	report	Print out a bank statement: the name, number, each deposit and
+the total deposits, each withdrawal and the total withdrawals, and balance.
+
+Again, no change to the set of message patterns is required.  Printing the
+report involves sending each item in transactions the message print; depending
+on the kind of transaction (Deposit or Withdrawal), the date and a negative or
+positive amount will print.
+
+The actual definition of each variation of BankAccount, as written in
+Smalltalk-76, is provided in Appendix 1, along with the code for all other
+object descriptions used as examples in this chapter.
+
+Example: A Simple Calculator
+
+The notion of state is familiar to users of calculators.  The ones we will
+examine in this example are quite simple, including only arithmetic operations
+and the ten digits.  If we had a graphics display of the calculator, it might
+look like:
+
+			<==<chapter2-12.press<
+
+
+
+
+
+
+
+
+
+
+
+
+The reset option clears all operands and operators; selecting clear once sets
+the operand to zero, while two clears in a row act as a reset.
+
+Our purpose in this example is to emphasize the notion of state of an object, so
+we will simplify matters by assuming that a "nice" user interface to a graphic
+display of the calculator is available for selecting digits, operators (+, -, *,
+/, and =), reset, and clear.  For example, an image of one or more calculators
+with name and current result also displayed, might be accessed via a touch
+sensitive display medium. (See Chapter XIIIff for the introduction of user
+interface technqiues.)  The simplification includes omitting the messages needed
+to have the calculator actually apply an operator to its operands.
+
+Here is a description of the Calculator object.  Its state consists of the two
+operands, op1 and op2, the operator, opr, and a flag to indicate whether or not
+the last selection was a digit or not.  There are only four messages as shown
+below.  Note that it will be the responsibility of the user interface methods to
+translate pointing ones' finger at the display screen into one of the first four
+messages, providing the appropriate numeric or message-selector parameter; the
+interface will also have to determine when to send the calculator the display message.
+
+title	Calculator
+
+state	op1 op2 opr nflag
+
+messages
+
+reset	Set op1 and op2 to 0; set opr to the addition message (+).
+
+clear	If nflag is true, then set op2 to 0 and nflag to false; otherwise, do
+the reset.
+
+digit: d 	If nflag is true, then set op2 to the value of ((op2 * 10) + d);
+otherwise set op2 to d and nflag to true.
+
+operator: nopr 	Set nflag to false; set op1 to the result of applying the binary
+operator opr to the two operands op1 and op2; and then set opr to the next
+operator, nopr.
+
+display 	If nflag is true, then show op2, otherwise show op1.
+
+
+
+Clearly other display methods are possible.  The issue of how to apply the
+binary operator to the operands is dealt with as a programming style issue in
+Chapter VIII.  One possible implementation is shown in Appendix I.
+
+Suppose we create a calculator, calc, and then select the various "buttons", one
+at a time, in the order shown in the following table.  The corresponding state
+changes are shown in adjacent columns of the table.
+
+Buttons	op1	op2	opr	nflag
+
+reset	0	0	+	false
+2	0	2	+	true
+3	0	23	+	true
+-	23	23	-	false	(The computation was 0+23)
+2	23	2	-	true
+clear	23	0	-	false
+1	23	1	-	true
+5	23	15	-	false
+*	8	15	*	false	(The computation was 23-15)
++=	120	15	+	false	(The computation was 8*15)
++=	135	15	+	false	(The computation was 120+15)
+5	135	5	+	true
+clear	135	0	+	false	(The computation was 135+0)
+-	135	0	-	false
+clear	0	0	+	false
+
+We could now create several calculators for each bank teller and even give one
+teller two.
+

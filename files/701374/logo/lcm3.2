@@ -1,0 +1,385 @@
+.dv press
+.fo 0 timesRoman12
+.fo 1 timesRoman12b
+.tr @
+.so r;r macros
+.begin_table_of_contents
+.ls 2
+--DRAFT--
+
+LOGO Cuurriculum Materials
+
+6/20/80
+.sp 5
+
+Booklet III
+
+SYSTEM MECHANICS
+
+.fi b
+This booklet provides information you will need for using
+the keyboard, editing LOGO procedures, saving procedures and shapes on
+cassette and recalling them from a cassette.
+.bp
+.chapter "bold(Using the Keyboard)"
+The computer keyboard is like an electric typewriter which allows you to communicate
+with the computer.  Like a typewriter it prints each character you type 
+but it prints out on the TV screen.  
+The blinking cursor shows you where the next character will appear.  Some keys have
+other special functions.
+
+To send a command to the computer
+.br
+type the  ENTER key.
+
+To erase one character, or move the cursor back one space
+.br
+type SHIFT-U
+.br
+(When using the SHIFT-key, hold down the shift first, then type the other
+key.)
+
+WARNING!!  DO NOT TYPE SHIFT-Q
+.br
+This will restart the computer, erasing all your procedures.
+
+Other special keys are used to edit procedures or create sprite and
+tile shapes.  These will be described in the appropriate section.
+
+The LOGO comand, CS or CLEARSCREEN will  clear
+all text from the screen.
+
+.chapter "bold(LOGO Typing Hints)"
+Every computer language has its own special rules which can be confusing when you
+are learning to use it.  When you type something the computer does not understand
+it will complain by sending you an error message. Following a few simple procedures
+you can avoid some typing difficulties.
+
+1.  Always leave a space after a LOGO command or input (except at the
+end of a line.)  The computer needs a space after every word to avoid confusion,
+just as we leave a space after a word in English.
+
+Examples
+.br
+Type	TELL	0	not	TELL0
+
+Type	SETCOLOR	:RED	not	 SETCOLOR:RED
+
+2.  When using an input name such as   :RED,  think of the : as the first "letter"
+of the name.  The color or "dots" tells the computer to find the number associated
+with the name.  (Never leave a space after the   :   .)
+
+Type	SETCOLOR	:RED	not	SETCOLOR:   RED
+				or	SETCOLOR   :   RED
+
+.keep
+3.  Don't use  :  when typing numbers.
+
+Type 	SETCOLOR   6	 not	 SETCOLOR   :6
+.end_keep
+
+4.  Explore what happens when you make a typing mistake by
+trying to type some buggy commands.
+
+.nf l
+.keep
+Examples:
+TELL0
+SETC:   RED
+CARRY   :   PLANE
+SETS   :10
+.end_keep
+
+.fi b
+.chapter "bold(Using the LOGO Editor)"
+The LOGO text editor makes it easy to change or define a procedure.
+You can use special editing keys to:
+
+- add something to a line
+.br
+- rub out and change part of a line
+.br
+- erase an entire line
+.br
+- add a new line
+
+
+To change an existing procedure type ED, or EDIT followed by the procedure
+name:
+
+	ED   DANCE      or      EDIT   DANCE
+
+After a few seconds the computer will display the text of the procedure, DANCE.
+
+.nf L
+.keep
+.in 2i
+TO   DANCE
+SETS    10      WAIT    20
+SETS   -10      WAIT    20
+RT    15
+DANCE
+END
+.end_keep
+.in
+
+.fi b
+The red object under the letter T is called the edit cursor.  You can change DANCE by
+moving the cursor and using editing commands.
+
+bold(Commands to Move the Cursor)
+ 
+You can move the cursor using shift, and the arrow keys.
+
+.nf L
+.keep
+	Shift-			s(m)moves cursor up one line
+	Shift-			t(m)moves cursor down one line
+	Shift-			t(m)moves cursor left one space
+	Shift-			t(m)moves the cursor right one space
+	Shift-A			t(m)moves the cursor back to the beginning 
+				t(m)of a line
+.end_keep
+
+.keep
+bold(Editing Commands)
+
+	Shift-T			t(m)erases the character above the cursor
+	Shift-C			t(m)erases everything on a line to the right
+				     of the cursor
+	Shift-V			t(m)inserts a blank line and moves the existing
+				     line down one space.
+.end_keep
+.keep
+	Shift-U			t(m)rubs out the character behind the cursor,
+				     just as it does when you are typing normal LOGO
+				     commands. 
+	Enter			t(m)moves the cursor down to the beginning of
+				     the next line.  If there is any text to
+				     the right of the cursor it will be moved too.
+.end_keep
+
+When you are finished editing type:
+	Shift-F
+After a few seconds the computer will print:
+	DONE!   THANK YOU FOR WAITING.
+
+.fi b
+Here is an example to try if you want to practice using the editor.
+Let's change the procedure DANCE so that a sprite turns 30 degrees each
+time, and add a line, changing a sprite's color.
+
+.keep
+1.  If you have not already done so, type  ED   DANCE.  DANCE will now
+appear on the screen:
+
+.nf L
+.in 2i
+TO   DANCE			
+SETS    10     WAIT    20
+SETS   -10     WAIT    20
+RT   15
+DANCE
+END
+.end_keep
+.in
+
+2.  Move the cursor down using shift-@@@@@ until it is under the  R  of  RT:
+
+.keep
+.in 2i
+TO   DANCE
+SETS    10     WAIT    20
+SETS   -10     WAIT    20
+RT   15
+DANCE
+END
+.end_keep
+.in
+
+3.  Move the cursor to the right using shift-@@@@@so that it is  under the  1:
+
+.in 1i
+RT    15
+.in
+
+4.  Replace the  15  by  30.  There are several ways:
+
+.keep				
+a)  Type shift-T twice:
+.in 1i
+RT    15
+RT    5
+RT    @@@
+.in
+Then type 30:
+.in 1i
+RT    3@@@
+RT    30@@@
+.end_keep
+.in
+
+.keep
+b)  Type shift-C:
+.in 1i
+RT    15
+RT    @@@      t(m)The rest of the line has been deleted.  
+.in
+Then type 30.
+.end_keep
+
+.keep
+c)  Type 30:
+.in 1i
+RT    15	t(m)As 30 is inserted into the text, both the cursor
+RT    315 	t(m)and the remaining text are moved two spaces to
+RT    3015 	t(m)the right.
+.in
+.end_keep
+.fi b
+Now type shift-C or shift-T twice, to eliminate the  15.
+.in 1i
+RT    30@@@
+.in
+
+To add a line which changes a sprite's color, first decide where the line
+should be placed in the procedure.  It could go just before the RT   30
+command.
+.br
+The procedure now looks like this:
+.keep
+.nf L
+.in 2i
+
+TO   DANCE
+SETS    10     WAIT   20
+SETS   -10     WAIT   20
+RT   30@@
+DANCE
+END
+.end_keep
+.in
+
+.keep
+5.  Use shift-A to move the cursor back to the beginning of the line:
+
+.in 2i
+TO   DANCE
+SETS    10     WAIT   20
+SETS   -10     WAIT   20
+RT   30
+DANCE
+END
+.end_keep
+.in
+
+.keep
+6.  Shift-V inserts a new line and moves the existing line down one space:
+
+.in 2i
+TO   DANCE
+SETS    10     WAIT   20
+SETS   -10     WAIT   20
+@@@
+RT   30
+DANCE
+END
+.end_keep
+.in
+
+.keep
+7.  Type in the new command on the blank line:
+
+.in 2i
+TO   DANCE
+SETS    10    WAIT    20
+SETS   -10    WAIT    20
+SETC    COLOR   +   1@@@
+RT    30
+DANCE
+END
+.end_keep
+.in
+
+To finish editing type shift-F.
+.br
+Now type DANCE and see how the procedure behaves differently.1
+.fi b
+
+.keep
+Further Information About the Editor
+.br
+0It is possible to start writing a procedure with the editor, by typing
+EDIT.  The computer will then display a blank screen, on which you can
+define a procedure in the usual way by typing  TO   FOO, etc.
+.end_keep
+
+You can define more than one procedure at a time, using the editor.  After
+typing END, go on to define another procedure in the usual way.
+
+WARNING!!! If your typing goes beyond the bottom of the screen, any lines you type will
+be lost.
+
+.chapter "bold(Saving and Recalling Information)"
+.section "bold(Saving Your Procedures and Shapes on Cassette)"
+Once you have taught the computer some new procedures or created some
+new
+shapes you may want to save them, so that you can use the procedures
+and shapes at a later date.
+
+First, make sure the cassette reorder is properly connected to the
+computer, as
+shown in the figure:
+.bp
+Second, Make sure the tone and volume controls of the cassette
+recorder are set properly.  Set the tone to 9 and set the volume to 7.
+These settings work for a panasonic RQ-2309A cassette recorder.  If you
+have a different kind of recorder you will have to experiment to find the
+proper setting.
+
+Third, insert a tape in the recorder.  If you use an old tape, be sure
+that it does not contain procedures that you want to keep.  When you
+save
+your current procedures, any other information stored on the tape will
+be lost.
+
+Now, type SAVE
+
+Once you type SAVE, the computer will ask you questions and give
+instructions.
+The computer will ask you three questions.
+
+SAVE  YOUR  WORKSPACE (Y or N)	s(m)You respond by typing Y for "yes"
+.br
+SAVE  YOUR  SPRITES (Y or N)	t(m)or N for "No" for each question.
+.br
+SAVE  YOUR  TILES (Y or N)
+
+Your workspace is all your procedures and names.  Your sprites are any
+sprite shapes you may have invented.  Your tiles are any tile shapes
+you may have created.
+
+After answering the questions, follow the directions printed by the
+computer.
+
+REWIND  CASSETTE  TAPE  CS1
+.BR
+THEN  PRESS  ENTER
+
+PRESS  CASSETTE  RECORD  CS1
+.BR
+THEN  PRESS  ENTER
+
+After the tape has been running for some time -- possibly 5 minutes
+or more, the computer will print,
+
+PRESS  CASSETTE  STOP  CS1
+.BR
+THEN  PRESS  ENTER
+
+.section "bold(Recalling Information)"
+To read information from a tape into the computer's memory, type
+RECALL,
+and follow the directions printed by the computer.  The connections
+and settings are the same as for using SAVE to store information on
+the cassette.
