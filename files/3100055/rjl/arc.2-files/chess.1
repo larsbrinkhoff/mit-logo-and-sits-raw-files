@@ -1,0 +1,128 @@
+
+
+(DEFUN MOVES (PIECE) 
+       (PROG (R F SIDE PIE) 
+	     (SETQ R (CAR PIECE))
+	     (SETQ F (CADR PIECE))
+	     (SETQ SIDE (CADDR PIECE))
+	     (SETQ PIE (CADDDR PIECE))
+	     (RETURN (EVAL (LIST (IMPLODE (LIST 'P 'I 'E PIE))
+				 R
+				 F
+				 'SIDE)))))
+
+(DEFUN PIEP (R F SIDE) 
+       (PROG NIL 
+	     (COND ((EQ SIDE 'W)
+		    (COND ((= R 1) (RETURN (LIST (LIST 2 F) (LIST 3 F))))
+			  (T (COND ((= R 7) (RETURN '(NIL)))
+				   (T (RETURN (LIST (LIST (1+ R) F))))))))
+		   (T (COND ((= R 6) (RETURN (LIST (LIST 5 F) (LIST 4 F))))
+			    (T (COND ((= R 0) (RETURN '(NIL)))
+				     (T (RETURN (LIST (LIST (1- R) F)))))))))))
+ 
+
+
+(DEFUN REMP (R F) 
+       (PROG (B TEM) 
+	     (SETQ B BOARD)
+	LOOP (COND ((NULL B) (RETURN NIL))
+		   ((AND (= R (CAAR B)) (= F (CADAR B)))
+		    (SETQ TEM (CAR B))
+		    (DELETE TEM BOARD)
+		    (RETURN NIL))
+		   (T (SETQ B (CDR B)) (GO LOOP)))))
+
+(DEFUN EVENP (X) (NOT (ODDP X)))
+
+(SETQ BOARD '((1 0 W P)
+	      (1 1 W P)
+	      (1 2 W P)
+	      (1 3 W P)
+	      (1 4 W P)
+	      (1 5 W P)
+	      (1 6 W P)
+	      (1 7 W P)
+	      (0 1 W N)
+	      (0 2 W B)
+	      (0 3 W K)
+	      (0 4 W Q)
+	      (0 5 W B)
+	      (0 6 W N)
+	      (0 7 W R)
+	      (6 0 B P)
+	      (6 1 B P)
+	      (6 2 B P)
+	      (6 3 B P)
+	      (6 4 B P)
+	      (6 5 B P)
+	      (6 6 B P)
+	      (6 7 B P)
+	      (7 0 B R)
+	      (7 1 B N)
+	      (7 2 B B)
+	      (7 3 B K)
+	      (7 4 B Q)
+	      (7 5 B B)
+	      (7 6 B N)
+	      (7 7 B R)))
+
+(DEFUN BOARD NIL 
+       (PRINC '/
+)      (PROG (X) 
+	     (DO RANK
+		 0
+		 (1+ RANK)
+		 (> RANK 7)
+		 (DO FILE
+		     0
+		     (1+ FILE)
+		     (> FILE 7)
+		     (COND ((SETQ X (FIND BOARD (LIST RANK FILE '* '*)))
+			    (PRINC (MAKNAM (CDDAR X)))
+			    (PRINC '/ ))
+			   ((ODDP (+ RANK FILE)) (PRINC '**/ ))
+			   (T (PRINC '--/ ))))
+		 (PRINC '/
+))))
+
+(DEFUN RESET NIL 
+       (SETQ BOARD '(NIL))
+       (DO ((SIDE 'W 'B) (N 0 (1+ N)) (ZRNK 1 6) (ORNK 0 7))
+	   ((> N 1) (SETQ BOARD (CDR BOARD)))
+	   (DO I
+	       0
+	       (1+ I)
+	       (> I 7)
+	       (SETQ BOARD (APPEND BOARD (LIST (LIST ZRNK I SIDE 'P)))))
+	   (DO P
+	       '(R N B K Q B N R)
+	       (CDR P)
+	       (NULL P)
+	       (SETQ BOARD (APPEND BOARD (LIST (LIST ORNK (- 10 (LENGTH P)) SIDE (CAR P)))))))
+)
+
+(DEFUN *EQUAL (FIRST SECOND) 
+       (PROG NIL 
+	LOOP (COND ((AND (NULL FIRST) (NULL SECOND)) (RETURN T))
+		   ((EQ (CAR FIRST) '*) (GO NEXT))
+		   ((EQ (CAR SECOND) '*) (GO NEXT))
+		   ((EQ (CAR FIRST) (CAR SECOND)) (GO NEXT))
+		   (T (RETURN NIL)))
+	NEXT (SETQ FIRST (CDR FIRST))
+	     (SETQ SECOND (CDR SECOND))
+	     (GO LOOP)))
+
+(DEFUN FIND (LIST MEMBER) 
+       (PROG (RET) 
+	     (SETQ RET '(NIL))
+	SEARCH
+	     (COND ((NULL LIST) (RETURN (CDR RET)))
+		   (T (COND ((*EQUAL (CAR LIST) MEMBER)
+			     (SETQ RET (APPEND RET (LIST (CAR LIST))))))
+		      (SETQ LIST (CDR LIST))
+		      (GO SEARCH)))))
+
+(SETQ FLIST '(REMP EVENP BOARD RESET *EQUAL FIND FLIST PIEP MOVES))
+ 
+

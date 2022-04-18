@@ -1,0 +1,186 @@
+.xgp
+.font 0 30vr
+.vsp 10
+0
+.ce
+Son of SITS
+.sp
+	Several months ago I began joint a project with Societe Generale Tortue
+Ltee (succesor to the original General Turtle), with the blessing of Seymour,
+to develop a stand alone LOGO system, sometimes known as the 3500. This
+paper is a report on that now almost complete project and the reasons
+why I feel it is important.
+.sp
+The impact
+.sp
+	Let me begin by saying that I believe that the development
+of the 3500 is the single most important thing to happen in the
+last few years to affect the future possibilities of funding
+for the LOGO project at MIT. We have been repeatedly critisized,
+I think justly, that LOGO, both as a language system and as
+a curiculum, has not been available outside of MIT. Even
+if this were not true we can hardly expect to sustain interest
+in LOGO if we are not able to distribute it. While it might be
+true that various PDP10 versions of LOGO were available and
+that SITS LOGO might have been distributed the 3500 is by
+far the most economical way to begin a small LOGO project
+in a school which does not already have access to a PDP10 or
+a PDP11.
+	One example of this is the BOCES project in New York,
+where Kathy O'Brien is using two 3500's working with handicapped
+children. With a rather small investment she has two terminals
+with display capability running LOGO in an evironment with no
+other computers, no system programmmers and no hardware hackers.
+The only hardware and software support she has is that provided
+as a standard product by Tortue.
+	Another example is the two 3500's running in Darmstat, Germany.
+In this case the people involved are more able to deal with
+problems of hardware and software but are doing very well very
+far away from any assitance.
+	My last example is the discussions I have been having
+with Dan Watt about the econmics of placing computer terminals
+in each of 8 schools in Brookline. Without going into great detail,
+our investigations seem to indicate that Brookline can rent
+8 of the smallest systems from Tortue for about half of
+the cost of rented terminals, phone lines and compter time
+on a PDP10.
+	At this point Torue has sold about 15 3500 systems,
+only 2 or 3 of which have been to colleges, the rest going
+mainly to high school level institutions. As the number of
+systems increases presumably the interest in LOGO will
+increase, benfiting both us and Tortue.
+.sp
+Usefullness to us
+.sp
+	While the main intention in developing the 3500 was to
+provide a system which could be distributed outside of MIT it is
+also true that the 3500 is very interesting for our work here
+and in schools. In particular, the cost of running high bandwidth
+displays at a remote location is prohibitive; the 3500 will
+allow high performance graphics to be brought into schools for
+our experiments. Mulitiple 3500's also provide higher
+reliability and better response time than possible
+with a single timesharing system. For these reasons 3500s
+have been included in several of the recently subbmitted
+LOGO proposals.
+.sp
+What is a 3500?
+.sp
+	The name 3500 was obtained by adding 1000 to 2500, based on the
+original idea that a standalone LOGO system could be obtained by
+improvments to the 2500 display terminal which Marvin and others had developed.
+This approach was not taken for several reasons, the most important
+being that rewriting LOGO for another processor would be a rather
+large task. With the availability from DEC of the LSI-11 processor
+it seemed that the most efficient method for obtaining a standalone
+LOGO would be to use that processor for running the PDP11 LOGO code
+which had been developed to run under the SITS timesharing system.
+Thus, what is now known as a 3500 is a combination of an LSI-11
+and a 2500 display.
+	The 3500 is available from Tortue in a variety of configurations:
+the smallest consists of an LSI-11 with 28K of memory, floating point hardware,
+a digital cassette system and a terminal (either a DEC LA36 printing terminal
+or a DEC VT52 display terminal). The largest configuration has an LSI-11
+with floating point, 30K of memory, floppy disk file storage, 60CPS
+printer and a 2500 display terminal. The price range of these systems
+are from $9K to $16K.
+.sp
+Software development
+.sp
+	While it is true that the LOGO which runs on the 3500
+is essentially the same as the LOGO which runs under SITS on
+the PDP11/45, the differences between the two processors and
+the two environments (timesharing vs standalone) were sufficient
+to require considerable software development. This work was
+begun by Gary Dresher, who wrote an 11/45 floating point
+emulator for the LSI-11 and also wrote a SITS emulator
+to do the teletype operations on the LSI-11 that were
+performed by SITS on the 11/45. He also made modifications
+to LOGO to reorganize storage alocation to conform with
+what was possible on the LSI-11. All of the these changes,
+and all subsequent changes were made in a way which was
+compatable with the SITS version of LOGO; the same source
+code can be assembled as a version for SITS or a version
+for the LSI-11 depending on the setting of an assembly flag.
+All of the code was debugged using a modification of DDT
+on SITS, done by Bruce Edwards, which allowed debugging
+code running on the LSI-11 with a symbolic debugger
+running under SITS.
+	The remaining software work was mostly done by me.
+The major part of this was adding to the SITS emulator
+the system calls to support file operations on the
+floppy disk and the 60CPS lineprinter. It was also nessesary
+to write a number of disk utility programs to handle
+loading and dumping of binary programs and general
+disk maintence.
+	The result of this software development is that the LOGO
+avaiable on the LSI-11 has all of the power of the one
+available on SITS. The filing system available on the floppy
+disk is identical to the one on SITS except for the fact
+that that there is less storage on the floppy disk than
+on the SITS disks and the floppy disks can be changed
+while the system is running (thus giving infinite off-line
+storage capability). The working storage available to users of
+the LSI-11 is not as large as that available on the 11/45,
+but future hardware and software developments might
+fix this.
+.sp
+Hardware development
+.sp
+	The hardware development for the 3500 can be divided
+into that done to the 2500 and that for the LSI-11. The main
+problem with the 2500 was that its font memory and control
+memory were volatile and therefore had to be reloaded
+(at least) every time power was turned on. In practice
+loading was occasionally required when the machine
+got "zapped" also. Since the 2500 was going to serve
+as the terminal for the system it was unacceptable to
+have to worry about loading a program into it; therefore
+the font memory and control memory were replaced by PROMs.
+Brian Silverman did the software work needed for this conversion
+to PROMs.
+	The development for the LSI-11 was mostly concentrated
+on replacing things which, although available from DEC, were
+unacceptably expensive. It is also true that reliable delivery
+cannot always be obtained from DEC; it is the goal of Tortue
+to buy only the LSI-11 processor from DEC. To achieve this goal,
+which was percieved as nessesary to bringing the price of
+the system within reach of more schools, several subprojects
+were executed. The cabient and power supplies were the simplest;
+the cabients and power supplies used for the 2500 were adapted
+for use witht the LSI-11. Memory for the LSI-11 was purchased
+from independant vendors; currently National Semiconductor
+and Monolithic Systems Inc are providing plug-in memory boards
+to Tortue. The floppy disk system is a hybrid consisting of
+disk drives purchased from General Systems International,
+a controller purchased from Scientific Micro Systems and
+an interface designed by me. The DEC serial interface
+has also been replaced by one of my design.
+.sp
+Future plans
+.sp
+	The software developed for this project will, with fairly
+small modifications, run on a large number of existing PDP11
+configurations. It is planned to make the changes to support
+the standard DEC floppy disk system and one on the most
+popular DEC hard disks. The existance of this software will
+probably be published in some as yet undertermined fashion.
+When sufficient documentation exists the system will
+be offered to DECUS for distribution.
+.sp
+Whose fault is it?
+.sp
+	The responisbility for the development of the 3500 is
+quite spread around. Of course all of the previous work on PDP11
+LOGO contributed to it, as did all of the previous work in
+developing the 2500 and in creating General Turtle.
+The idea of creating the 3500 by running LOGO on the LSI-11
+was originally mine, but only gradually received support.
+The project was actually begun when Guy Montpetit asked
+me to help with it. It would have been impossible for the
+LOGO project to have developed the 3500 without the support
+of the staff at Tortue which greatly aided in the hardware development.
+.ce
+Ron Lebel
+.end
+

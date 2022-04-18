@@ -1,0 +1,99 @@
+.title Program for patching th e990 and PDP10 to the 2500
+
+a=%0
+b=%1
+c=%2
+d=%3
+e=%4
+f=%5
+p=%6
+pc=%7
+
+dhscr==160020
+dhnrc==dhscr+2
+dhlpr==dhscr+4
+dhca==dhscr+6
+dhbc==dhscr+10
+dhbar==dhscr+12
+
+
+the990==9.-1
+the10==10.-1
+the25==11.-1
+
+.=600
+comp:	the990			;default is to connect to 990
+attnfl:	0			;2500 command coming?
+atchr==3
+bites:	.blkb 16.		;xmit bytes
+pdl:	
+.=1000
+
+start:	mov #pdl,p
+	mov #the990,dhscr
+	mov #31403,dhlpr	;set the line speeds
+	mov #the10,dhscr
+	mov #31403,dhlpr	;set the line speeds
+	mov #the25,dhscr
+	mov #31403,dhlpr	;set the line speeds
+
+loop:	mov dhnrc,a		;get a character
+	bge loop		;none
+	mov a,b			;copy
+	bic #177600,a		;get the character
+	swab b
+	bic #177760,b		;get the line number
+	cmp comp,b		;from the computer?
+	beq send25		;send to the 2500
+	cmp #the25,b		;from the 2500?
+	bne loop		;ignore all others
+	tst attnfl		;attention before?
+	bne mswit		;maybe switch
+	cmp #atchr,a		;control c?
+	bne sendcm		;send to the computer
+	inc attnfl		;set the flag
+	br loop
+
+mswit:	mov #the10,c
+	cmp #61,a		;asking for the 10?
+	beq swit		;yup, switch it
+	mov #the990,c
+	cmp #71,a		;assking for the 990?
+	beq swit
+	clr attnfl		;flush the flag
+	mov a,-(p)		;save the character
+	mov #atchr,a
+	mov comp,b		;send to the computer
+	jsr pc,sendc
+	mov (p)+,a
+	br sendcm
+
+swit:	mov c,comp		;set the computer
+	br loop
+
+send25:	mov #the25,b		;send to the 2500
+	cmp #'&,a		;magic?
+	bne 1$			;nope
+	mov #33,a		;if it weren't for this we wouldn't be here!!!!
+1$:	jsr pc,sendc
+	br loop
+
+sendcm:	mov comp,b
+	jsr pc,sendc
+	br loop
+
+sendc:	mov #1,f
+	ash b,f			;get the right bit
+1$:	bit f,dhbar		;active?
+	bne 1$
+	mov b,dhscr
+	mov #bites,e
+	add b,e
+	movb a,(e)
+	mov e,dhca
+	mov #-1,dhbc
+	bis f,dhbar
+	rts pc
+
+.end start
+

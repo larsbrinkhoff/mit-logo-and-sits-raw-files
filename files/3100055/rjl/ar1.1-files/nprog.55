@@ -1,0 +1,191 @@
+
+
+(DECLARE (SETQ SPECIAL T)) 
+
+(DEFUN DOALL NIL (INIT) (CASES-BY-YEAR)) 
+
+(DEFUN PRINTALL NIL 
+       (LINEL TYO 132.)
+       (COND ((NOT (NULL OUTFILES)) (LINEL (CAR OUTFILES) 132.)))
+       (TERPRI)
+       (PR-TOTAL-CASES)
+       (PR-NUMBER-PER-YEAR)
+       (TYO 12.)
+       (PR-NUMBER-PER-YEAR-GRP 5.)
+       (TERPRI)
+       (TERPRI)
+       (TERPRI)
+       (PR-NUMBER-PER-YEAR-GRP 10.)
+       (TYO 12.)
+       (PR-NUMBER-PER-YEAR-PER-GRADE)
+       (TYO 12.)
+       (PR-NUMBER-PER-CODE-PER-GRADE)
+       (TYO 12.)
+       (PR-F-VALUES-PER-YEAR-GRP 0.0 1.)
+       (TYO 12.)
+       (PR-F-VALUES-PER-YEAR-GRP 0.0 5.)
+       (TERPRI)
+       (TERPRI)
+       (TERPRI)
+       (PR-F-VALUES-PER-YEAR-GRP 0.0 10.)
+       (TYO 12.)
+       (PR-F-VALUES-PER-YEAR-GRP 1.52587889E-5 1.)
+       (TYO 12.)
+       (PR-F-VALUES-PER-YEAR-GRP 1.52587889E-5 5.)
+       (TERPRI)
+       (TERPRI)
+       (TERPRI)
+       (PR-F-VALUES-PER-YEAR-GRP 1.52587889E-5 10.)
+       (TYO 12.)
+       (PR-QTABLE)
+       (TYO 12.)
+       (TYO 12.)) 
+
+(DEFUN PR-TOTAL-CASES NIL 
+       (PRINC '|Total cases=|)
+       (PRINC NCASES)
+       (TERPRI)
+       (TERPRI)) 
+(DEFUN PR-NUMBER-PER-YEAR NIL 
+       (PRINC '|Number of cases per year|)
+       (TERPRI)
+       (PRINC
+	'|Year  Number %of total (Q) Number 1st cousin %of total|)
+       (TERPRI)
+       (DO ((I 1847. (1+ I)))
+	   ((> I 1976.))
+	   (PRINT I)
+	   (SETHPOS 6.)
+	   (PRINT-RIGHT 2. (YEARTOT I))
+	   (SETHPOS 13.)
+	   (PRINC (QUOTIENT (TIMES 100.0 (YEARTOT I)) (QTABLE I)))
+	   (SETHPOS 33.)
+	   (PRINT-RIGHT 2.
+			(SETQ FOO (+ (CASES-YEAR 1. I)
+				     (CASES-YEAR 3. I))))
+	   (SETHPOS 45.)
+	   (PRINC (QUOTIENT (TIMES 100.0 FOO) (QTABLE I))))) 
+
+(DEFUN PR-NUMBER-PER-YEAR-GRP (GROUP) 
+       (PRINC '|Number of cases per year grouped in |)
+       (PRINC GROUP)
+       (PRINC '| year intervals|)
+       (TERPRI)
+       (PRINC
+	'|Year  Number %of total (Q) Number 1st cousin %of total|)
+       (TERPRI)
+       (DO ((I 1847. (+ GROUP I)))
+	   ((> I 1976.))
+	   (PRINT I)
+	   (SETHPOS 6.)
+	   (PRINT-RIGHT 2. (SUM I GROUP '(YEARTOT I)))
+	   (SETHPOS 13.)
+	   (PRINC (QUOTIENT (TIMES 100.0
+				   (SUM I GROUP '(YEARTOT I)))
+			    (SUM I GROUP '(QTABLE I))))
+	   (SETHPOS 33.)
+	   (PRINT-RIGHT 2.
+			(SETQ FOO (SUM I
+				       GROUP
+				       '(+ (CASES-YEAR 1. I)
+					   (CASES-YEAR 3. I)))))
+	   (SETHPOS 45.)
+	   (PRINC (QUOTIENT (TIMES 100.0 FOO)
+			    (SUM I GROUP '(QTABLE I)))))) 
+
+(DEFUN SUM (INIT NUM FUNC) 
+       (SETQ NUM (+ -1. INIT NUM))
+       (DO ((I INIT (1+ I)) (SUM 0.))
+	   ((> I NUM) SUM)
+	   (SETQ SUM (PLUS SUM (EVAL FUNC))))) 
+(DEFUN PR-NUMBER-PER-YEAR-PER-GRADE NIL 
+       (PRINC '|Number of cases per year per grade|)
+       (TERPRI)
+       (TYPEPRINT 23.)
+       (PRINC '|Year|)
+       (TERPRI)
+       (PRINTAB 'CASES-YEAR 1847. 1976. 23.)) 
+
+(DEFUN PR-NUMBER-PER-CODE-PER-GRADE NIL 
+       (PRINC '|Number of each code for each grade|)
+       (TERPRI)
+       (TYPEPRINT 23.)
+       (PRINC '|Code|)
+       (TERPRI)
+       (PRINTAB 'GRADE-CODE 1. 99. 23.)) 
+
+(DEFUN PR-F-VALUES-PER-YEAR-GRP (OFFSET GROUP) 
+       (PRINC '|F values by |)
+       (PRINC GROUP)
+       (PRINC '| year groups, offset |)
+       (PRINC OFFSET)
+       (TERPRI)
+       (PRINC '|Year   Value|)
+       (DO ((I 1847. (+ I GROUP)))
+	   ((> I 1976.))
+	   (PRINT I)
+	   (PRINT-F-VAL (QUOTIENT (SUM I
+				       GROUP
+				       '(+$ (FTABLE I)
+					    (TIMES OFFSET
+						   (- (QTABLE I)
+						      (YEARTOT I)))))
+				  (SUM I GROUP (QTABLE I)))))) 
+
+(DEFUN PRINT-F-VAL (X) (PRINC (*$ 100000.0 X)) (PRINC 'E-5)) 
+
+(DEFUN DOPRINT (BEG END FUNC) 
+       (DO ((I BEG (1+ I)))
+	   ((> I END))
+	   (PRINT I)
+	   (SETHPOS 7.)
+	   (PRINC (EVAL FUNC)))) 
+(DEFUN TYPEPRINT (WIDTH) 
+       (PRINC
+	'|Grade:      0  .5   1 1.5   2 2.5   3  1D 1.5D 2D 2.5D 3D 0+2|)
+       (PRINC '| 2+3 3//1 .. ... 2+2.5 1//3 1.5+2 1+2|)
+       (TERPRI)) 
+
+(DEFUN PRINTAB (TABLE START END WIDTH) 
+       (DO ((J START (1+ J)))
+	   ((> J END))
+	   (PRINC J)
+	   (SETHPOS 9.)
+	   (DO ((I 1. (1+ I)))
+	       ((> I WIDTH))
+	       (PRINC '| |)
+	       (PRINT-RIGHT 3. (EVAL (LIST TABLE I J))))
+	   (TERPRI))) 
+
+(DEFUN PR-QTABLE NIL 
+       (PRINC '|Table of Q values|)
+       (TERPRI)
+       (PRINC '|Year  Value|)
+       (DOPRINT 1847. 1976. '(QTABLE I))) 
+
+(DEFUN CASES-BY-YEAR NIL 
+       (FILLARRAY 'YEARTOT '(0.))
+       (FILLARRAY 'CASES-YEAR '(0.))
+       (FILLARRAY 'FTABLE '(0.0))
+       (FILLARRAY 'GRADE-CODE '(0.))
+       (DO ((I 1. (1+ I)))
+	   ((> I NCASES))
+	   (SETQ YEAR (CAR (DATA I)))
+	   (SETQ GRD (CADR (DATA I)))
+	   (SETQ CODE (CADDR (DATA I)))
+	   (STORE (YEARTOT YEAR) (1+ (YEARTOT YEAR)))
+	   (STORE (CASES-YEAR GRD YEAR) (1+ (CASES-YEAR GRD YEAR)))
+	   (STORE (FTABLE YEAR) (PLUS (FTABLE YEAR) (VTAB GRD)))
+	   (STORE (GRADE-CODE GRD CODE) (1+ (GRADE-CODE GRD CODE))))) 
+
+(DEFUN SETHPOS (X) 
+       (PRINC '| |)
+       (COND ((< (CHARPOS (COND (^R (CAR OUTFILES)) (T TYO))) X)
+	      (SETHPOS X)))) 
+
+(DEFUN PRINT-RIGHT (SIZE VALUE) 
+       (COND ((< (FLATC VALUE) SIZE)
+	      (PRINC '| |)
+	      (PRINT-RIGHT (1- SIZE) VALUE))
+	     (T (PRINC VALUE)))) 
+

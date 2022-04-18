@@ -1,0 +1,263 @@
+.xgp
+.font 0 25fg
+.ce
+The Kiddie LSI-11 System
+.ce
+or
+.ce
+How to Build Hardware Without Really Wanting To
+.ce
+or
+.ce
+An Index of Improbabilities
+.sp
+.adjust
+.double
+	This is a quick and dirty summary of the possiblites
+for building our small LOGO systems. The idea is to present
+what I think are possible choices so everyone can think about
+them without my biasing the choices too much, except where I think
+the choice is fairly clear. If I've missed someone's favorite
+idea, let me know. Also, please ignore all spelling and
+gramatical errors.
+	The problem with the idea  of building a small  LOGO
+system for a  kid to  play with is  that there  are lots  of
+decisions to make  about how to  configure the hardware  for
+the system. Since there are going to be 10 to 20  individual
+systems and only zero to two central systems, it seems to be
+more important  to decide  what we  want in  the  individual
+systems first and let that shape what we need in the central
+system(s), if any. The problem with most of these  descions,
+as implied by the title, is that most commercially available
+hardware is in at least  some ways inadequate, but we  would
+like to  avoid building  anything that  we don't  absolutely
+have to.  So  we  have  to  set  our  "absolutely  have  to"
+threshold, and set  it high enough  so that we  can get  the
+thing together in time.
+	First, what the system is intended to do: we want to
+provide a system which will  run a reasonably well  debugged
+LOGO interpreter, including a display of at least the  general
+quality and capabilities  of the Lisp  LOGO TV display.  The
+system  should  also  provide  text  editing  and  justifing
+capabilities,  and  file  storage.  Printing  and  interuser
+communication will either be provided by a central system or
+by physically transporting  a floppy disk  or cassette to  a
+machine with a  printer, or  the machine where  the file  is
+desired. We want  to produce  these systems  in quantity  in
+about a year.
+
+The Issuses:
+
+	The biggest  problem that  we  could have  would  be
+writing a whole new  LOGO system for  some new processor.  I
+think everyone agrees this is impractical, so any  processor
+we chose should execute the  PDP11 instruction set. I  think
+everyone also agrees the the  LSI-11 is the best choice  for
+the processor. We will also  want the floating point  option
+on the LSI11. This is probably the only easy decision.
+
+The box and power supply:
+	The standard PDP11/03  box that DEC  makes only  has
+room in it for  3 cards in addition  to the processor.  It's
+pretty clear that we'll want to  put more than that on.  DEC
+may make a  larger box,  which I'll  check on,  but if  they
+don't we'll be pretty much stuck with building our own. This
+should be pretty easy, since most of the work can be  farmed
+out.
+
+The memory:
+	Given the rather large core requirements of LOGO  we
+will probably want to  have at least 28K  of memory on  each
+system. DEC makes memory that  would be suitable, but it  is
+relatively expensive and kludegy, taking 1/2 card space  for
+every 4K.  Other manufacturers make memory  at much  better
+prices that  takes  only 1  board  space for  16K.  The  DEC
+salesman has hinted that they will sometime produce a  board
+with  32K  on  it,  presumably  using  16K  RAMs,  but   the
+availability of  the 16K  RAMs  is questionable,  and  other
+manufacturers probably will also put 32K on a board when 16K RAMs
+become available.
+	It would be nice to be able to have more than 28K on
+the system. Users of the  current LOGO system are  painfully
+aware of the limitations on the size of programs and arrays,
+and this will  get worse on  the LSI11 since  the push  down
+stacks will probably have to stay in core all the time  (but
+see Disks, below) and the arrays  will have to fit into  28K
+along with the LOGO interperter, the nodespace, the pushdown
+lists, etc. This  problem could be  partiallly aleviated  by
+expanding to 31K  of memory, a  fairly easy thing  to do  in
+hardware, but not possible with memory from the manufacturer
+we are currently dealing with.
+They might be presuaded to fix that, or we might be able to
+find a  company that  already  has the  right thing.  To  go
+beyond 31K we would have to build some sort of  segmentation
+box. We could do this  and still use commercially  available
+memories if we  use a non-standard  backplane wiring,  which
+would mean we couldn't buy the box and power supply from DEC
+even if suitable  one is  available (see  above). The  other
+question about  memory  is  about  parity.  No  commercially
+available LSI-11  memory  provides parity;  parity  checking
+makes it difficult  for programmers to  blame flakey  memory
+for thier non  reproducible program bugs;  it also makes  it
+possible to spot  bad memory before  anyone spends 69  hours
+wondering why the  machine craps out  in strange ways.  Most
+reasonable people believe that anyone who uses semiconductor
+memory without  parity checking  will probably  get what  he
+deserves. There are two  ways to add  parity to the  LSI-11s
+memory: it  can be  added outside  of the  actual memory  (a
+separate memory  will  notice all  memory  transactions  and
+store or check the parity) or by building it into the memory
+system. The second  technique would  mean that  we would  be
+building our own LSI-11 memory. The first technique could be
+implemented on  the same  board as a memory  segmentation
+device.
+
+File storage:
+	File storage can either be done on a central  system
+or locally in each system. If files are stored locally  then
+there still needs to be a way to share files, which could be
+done through a central system or by physically moving around
+disks or  tapes, or  by  some sort  of "patch"  between  two
+systems. Any scheme  that doesn't involve  a central  system
+requires the owner of a file to cooperate with whoever wants
+the  file  in  order  for  him  to  get  it.  Also,  dynamic
+communication between users is  difficult without a  central
+system, although possible by  "patching".  A central  system
+is also  desirable  to  provide  printing  and  backup  file
+storage capabilities, even  if the primary  file storage  is
+local to each  system. If all  files are kept  on a  central
+system then if that system  is down noone may access  files.
+Also, the  bandwidth  for  a  local  central  system  (local
+meaning not accessed by phone lines) would not be as good as
+that of a  floppy disk  on each system,  so that  operations
+requiring large  amounts  of data  (reloading  LOGO,  moving
+around in a large text  file, and possibly swapping pushdown lists
+in and out) would be slower; this  problem
+would get really  bad if  the central  system were  accessed
+over  phone  lines.  What  seems  to  be  optimal  from  the
+standpoint of reliablity and performance  is to have both  a
+local storage device  (probably floppy disk  is best) and  a
+central system, but that means  that more software needs  to
+developed (the individual systems  need to know about  both)
+and the cost of the system is increased.
+	Assuming we  want  to  have a  floppy  disk  on  the
+systems, we are back to the make or buy decision. DEC has  a
+floppy disk and controller but,  as usual, it is  relatively
+expensive and  somewhat of  a crock.  Remex makes  a  double
+density floppy disk (e.i. at least twice the storage of  the
+DEC disk, actually almost 3 times) which General Turtle will
+soon have some experience with. Other floppy disk  companies
+make them too; presumably  one or more of  them makes or  is
+planning to make an LSI-11  controller, but if not we  would
+have to build one. I'll investigate this.
+
+Displays: (arg!)
+
+	This is certainly the problem with the most  choices
+and all of them have lots of problems. The most obvious  and
+most infamous suggestion is to use 2500's. According to  the
+literature 2500's are  the greatest  thing since  disposable
+diapers. Indeed, they  provide a nice  vector display and  a
+nice text display. The  vector display can put  up a lot  of
+stuff without flickering,  can display  moving pictures  and
+looks better than  most people think  (the newer models  are
+better than the ones we have at the lab). The problems  with
+it are mainly unreliability (which is claimed to have muchly
+abated in new  models) and  availability. Also,  there is  a
+certain amount of nervousness about the General  Turtle/LOGO
+Lab relationship, and the question of whether MIT would  let
+us buy them and at what price they might be available. There
+is  also  the  debate  about  the  desireablity  of   vector
+displays.
+	Other than  the 2500,  there don't  seem to  be  any
+commercially  available  displays   which  would  suit   our
+purposes. We  could build  either a  vector display  with  a
+separate text display (a la 2500), a vector/text display  (a
+la GT40) or one of a range of possible raster displays (a la
+Knight TVs, ALTOs).
+
+Vector displays:
+	Vector  displays   which  also   display  text   are
+notorious for  thier  complexity (read  cost),  poor  visual
+characteristics, and unreliability. I think any system using
+a vector display  should have separate  text display; a  DEC
+VT52 would be good for this  purpose, or a text display could  be
+built. The vector  display itself could  be of the  standard
+X-Y type (like the vector displays on the PDP11/45) or could
+use turtle type commands (like the 2500). The use of  turtle
+commands increases the  complexity of  the display,  perhaps
+indicating the use of a microprocessor (yes, that is how the
+2500 got to where it is now), while the X-Y type either puts
+more computation burden  onto the  LSI-11 (which  it is  ill
+equiped to handle) or limits the capabilities of the  system
+with respect to  moving pictures. It  should be pointed  out
+however that (a) as Greenblat  points out, animation is  not
+central to LOGO and is an  infinite sink of time and  money,
+and (b) noone has really figured out how a LOGO program  can
+meaningfully control the pretty pictures on the 2500 screen;
+they more or less have a life of thier own.
+
+Raster Displays:
+
+	Raster displays  seem  to be  the  general  favorite
+these   days,   for   various   good   reasons.   The   most
+straightforward way to  build a raster  display would be  to
+take Knight  and  Holloway's design  for  a 2  board  raster
+display (assumming they are willing)  and modify it for  the
+LSI-11 (a fairly easy task) and  use it. This would give  us
+approximately the  same capabilities  we  have on  the  SITS
+TV's, except for  the fact  that the  LSI-11 processor  runs
+considerably slower than the  PDP11/45 processor. There  are
+several things we might want to improve on. It is  sometimes
+thought that  having  both text  and  pictures on  the  same
+screen is undesirable; using timing signals from the  raster
+display a text display  could be built  fairly simply, or  a
+VT52 could be added to the system. The other major  drawback
+of the raster display is the amount of computation  required
+to draw and  move around  pictures. As  mentioned above,  we
+should be cautious  about how  many consessions  we make  to
+animation, but  there  are  some  ideas  we  might  want  to
+consider. One simple thing is to  add a second TV buffer  to
+the system. A picture could be drawn in one buffer while the
+other is being displayed, then that picture is displayed and
+the other buffer gets  the next new  picture. The 2  buffers
+could also  be  used for  4  level  gray scale  or  4  color
+pictures. A somewhat  more complex  change is to  add a  1/4
+resolution mode where one quarter  of the memory is  displayed
+on the whole  screen (using 4  times larger points)  leaving
+the other  3 quadrants  free for  drawing new  pictures.  An
+additional advantage of this is  that a picture using  fewer
+points requires less computation. With a 16K display  memory
+it is difficult to think of a reasonable way to display much
+more than 1/4 of the memory  but less than the whole  thing,
+due to the  digital nature  of scan  lines, but  with a  20K
+display memory we could display half of the memory in a  400
+by 400  format and  display  the whole  memory in  a  larger
+format when the quick switch  feature wasn't needed. In  the
+most complex scheme, a  small micro processor would  control
+the raster  display (and  possibly  a text  display)  giving
+programmable screen  possiblities similar  to those  of  the
+ALTO. It's  not  clear what  we  would use  this  additional
+flexibility for.  A somewhat  separate question  is that  of
+providing assistance for  the LSI-11 for  drawing in to  the
+video buffer(s).  This could  range from  building a  device
+which takes X and  Y and draws a  vector to something  which
+draws a picture from turtle commands. The most complex  such
+device would be good enough for fairly reasonable animation;
+the simplest device would probably not help the LSI-11 much,
+since I believe that actually drawing the vector is a fairly
+small fraction of the computation needed to interpret a LOGO
+program  and   draw   a  picture   from   turtle   commands.
+The micro processor suggested above for suppling display
+flexibility might also do the vector generation if that was
+desired.
+
+	I have avoided tring to give estimates of how much any of these
+ideas might cost, in time and money, to implement. This is mainly
+because such estimates are notriously inaccurate and difficult to
+make. The general rule should probably be that anything we
+feel we can get away with buying we should and then we can try
+to guess how hard it will be to make the things we want to make.
+
+.end
+

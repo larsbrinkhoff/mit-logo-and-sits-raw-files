@@ -1,0 +1,52 @@
+[  S,SYS]		UPG MES KIL DEV TLK FBW 
+Default protection = 0	
+[DOC,TVR]	  CVUI
+Default protection = 0	
+[ DP,DAV]	   DCS
+Default protection = 0	
+[  1, RS]	    RS
+Default protection = 0	
+[  1,WRS]	 BILLY
+Default protection = 0	
+[  S, WD]	MELLON	KIL TLK 
+Default protection = 0	
+[  P,LES]	  BANG	KIL TLK 
+Default protection = 0	
+[  S, ME]	   IOU	PRI PRO REA WRT UPG MES KIL DEV ACW INF FBW 
+Default protection = 0	
+[  F,RPH]	 LOSER	PRI REA ACW INF TLK FBW LUP 
+Default protection = 0	
+[ SL,SYS]	SAKATA	SSL 
+Default protection = 0	
+[  1,ACH]	LESTER
+Default protection = 0	
+[MAL,DRB]	 NEWEY
+Default protection = 0	
+[  X,SRS]	BAGELS%
+Default protection = 0	
+[ MA,JAM]	     G%	ACW FBW 
+Default protection = 0	
+[  H,CCC]	REMOTE%
+Default protection = 0	
+[  1,CDR]	HENAFA
+Default protection = 77	
+[DOC,EMO]	   EMO
+Default protection = 0	
+[NJM,NJM]	  PASS
+Default protection = 0	
+[  1,DAV]	   DCS
+Default protection = 0	
+[  2,DAV]	   DCS
+Default protection = 0	
+[  1,DCL]	 LUCKY
+Default protection = 77	
+[  1,DCS]	   XAS
+Default protection = 0	
+[  2,TVR]	     2%
+Default protection = 45	
+[  1,MWK]	THISAN%
+Default protection = 407	
+[  1,MTK]	   MAT
+Default protection = 0	
+[  S,RHT]	   JPA%
+Default protecti
